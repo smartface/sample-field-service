@@ -31,7 +31,7 @@ const pgNotification = extend(pgNotificationDesign)(
             flNotifications = new FlexLayout({
                 left: 0,
                 right: 0,
-                height: 1000,
+                height: 0,
                 align: ScrollView.Align.VERTICAL,
                 backgroundColor: Color.TRANSPARENT,
             });
@@ -89,7 +89,6 @@ const pgNotification = extend(pgNotificationDesign)(
                 height += notificationRow.height;
             }
             flNotifications.height = height;
-
         }
 
 
