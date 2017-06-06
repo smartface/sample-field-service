@@ -1,3 +1,4 @@
+/*globals SMF*/
 SMF.i18n.defineLanguage('tr', {
 	"cancel": "İptal",
 	"copy": "Kopyala",
@@ -13,5 +14,12 @@ SMF.i18n.defineLanguage('tr', {
 	"sureToDelete": "Silmek istediğinize emin misiniz?",
 	"networkError": "Bir ağ bağlantı hatası oluştu, lütfen daha sonra tekrar deneyiniz",
 	"applicationError": "Beklenmeyen Uygulama Hatası",
-	"delete": "Sil"
+	"delete": "Sil",
+	"secondsAgo": "saniye önce",
+	"aMinuteAgo": "bir dakika önce",
+	"minutesAgo": "dakika önce",
+	"anHourAgo": "bir saat önce",
+	"hoursAgo": "saat önce",
+	"aDayAgo": "bir gün önce",
+	"daysAgo": "gün önce"
 });

@@ -14,7 +14,8 @@ function getNotifications(callback) {
     }, mcs.createRequestOptions(options));
 
     http.request(requestOptions, function(response) {
-        callback && callback(null, response);
+        var res = JSON.parse(response.body.toString());
+        callback && callback(null, res);
     }, function(error) {
         callback && callback(error);
     });

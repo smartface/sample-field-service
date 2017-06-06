@@ -4,24 +4,32 @@ const Color = require('sf-core/ui/color');
 const Label = require('sf-core/ui/label');
 const TextAlignment = require('sf-core/ui/textalignment');
 const Font = require('sf-core/ui/font');
-
+const View = require('sf-core/ui/view');
+const relativeTime = require("../relative-time");
+const Screen = require('sf-core/device/screen');
 
 const NotificationRow = extend(FlexLayout)(
 	//constructor
 	function(_super, props) {
-		// initalizes super class for this component scope
+		var row = this;
 		_super(this, props);
-
+		var lblTitleMinHeight = 2;
+		var lblTitleMaxHeight = 30.5;
+		var topShift = 35 * 1.5;
+		var contentStartLeft = 126;
 
 		var flLeft = new FlexLayout({
+			left: 0,
+			top: 0,
+			bottom: 0,
 			width: 105,
 			alignContent: FlexLayout.AlignContent.STRETCH,
 			alignItems: FlexLayout.AlignItems.STRETCH,
 			justifyContent: FlexLayout.JustifyContent.FLEX_START,
 			flexWrap: FlexLayout.FlexWrap.NOWRAP,
 			flexDirection: FlexLayout.FlexDirection.COLUMN,
-			positionType: FlexLayout.PositionType.RELATIVE,
-			backgroundColor: Color.GREEN,
+			positionType: FlexLayout.PositionType.ABSOLUTE,
+			backgroundColor: Color.TRANSPARENT,
 			alpha: 1,
 			borderColor: Color.create(255, 0, 0, 0),
 			borderWidth: 0,
@@ -29,14 +37,17 @@ const NotificationRow = extend(FlexLayout)(
 		});
 		this.addChild(flLeft);
 
-		var flLine = new FlexLayout({
+		var flLine = new View({
+			left: 105,
+			top: 0,
+			bottom: 0,
 			width: 1,
 			alignContent: FlexLayout.AlignContent.STRETCH,
 			alignItems: FlexLayout.AlignItems.STRETCH,
 			justifyContent: FlexLayout.JustifyContent.FLEX_START,
 			flexWrap: FlexLayout.FlexWrap.NOWRAP,
 			flexDirection: FlexLayout.FlexDirection.COLUMN,
-			positionType: FlexLayout.PositionType.RELATIVE,
+			positionType: FlexLayout.PositionType.ABSOLUTE,
 			backgroundColor: Color.create(255, 242, 242, 242),
 			alpha: 1,
 			borderColor: Color.create(255, 0, 0, 0),
@@ -46,17 +57,17 @@ const NotificationRow = extend(FlexLayout)(
 		this.addChild(flLine);
 
 		var flContent = new FlexLayout({
-			width: 400,
-			height: 200,
+			left: contentStartLeft,
+			top: topShift,
+			right: 2,
+			bottom: 2,
 			alignContent: FlexLayout.AlignContent.STRETCH,
 			alignItems: FlexLayout.AlignItems.STRETCH,
 			justifyContent: FlexLayout.JustifyContent.FLEX_START,
 			flexWrap: FlexLayout.FlexWrap.NOWRAP,
 			flexDirection: FlexLayout.FlexDirection.COLUMN,
-			positionType: FlexLayout.PositionType.RELATIVE,
-			marginTop: 70,
-			marginLeft: 40,
-			backgroundColor: Color.RED,
+			positionType: FlexLayout.PositionType.ABSOLUTE,
+			backgroundColor: Color.TRANSPARENT,
 			alpha: 1,
 			borderColor: Color.create(255, 0, 0, 0),
 			borderWidth: 0,
@@ -64,9 +75,9 @@ const NotificationRow = extend(FlexLayout)(
 		});
 		this.addChild(flContent);
 
-		var flBall = new FlexLayout({
+		var flBall = new View({
 			left: 99.75,
-			top: 70,
+			top: topShift + 4,
 			width: 10.5,
 			height: 10.5,
 			alignContent: FlexLayout.AlignContent.STRETCH,
@@ -87,7 +98,7 @@ const NotificationRow = extend(FlexLayout)(
 		var lblDate = new Label({
 			height: 31,
 			positionType: FlexLayout.PositionType.RELATIVE,
-			marginTop: 70,
+			marginTop: topShift,
 			backgroundColor: Color.TRANSPARENT,
 			alpha: 1,
 			borderColor: Color.create(255, 0, 0, 0),
@@ -98,23 +109,23 @@ const NotificationRow = extend(FlexLayout)(
 			text: "<Date>",
 			multiline: false
 		});
-		lblDate.font = Font.create("Lato", 26, Font.NORMAL);
+		lblDate.font = Font.create("Lato", 13, Font.NORMAL);
 		flLeft.addChild(lblDate);
 
 		var lblTitle = new Label({
-			height: 30.5,
+			height: lblTitleMinHeight,
 			positionType: FlexLayout.PositionType.RELATIVE,
 			backgroundColor: Color.TRANSPARENT,
 			alpha: 1,
 			borderColor: Color.create(255, 0, 0, 0),
 			borderWidth: 0,
 			textColor: Color.create(255, 39, 39, 49),
-			textAlignment: TextAlignment.MIDLEFT,
+			textAlignment: TextAlignment.TOPLEFT,
 			visible: true,
-			text: "<Title>",
+			text: "",
 			multiline: false
 		});
-		lblTitle.font = Font.create("Lato", 26, Font.NORMAL);
+		lblTitle.font = Font.create("Lato", 13, Font.NORMAL);
 		flContent.addChild(lblTitle);
 
 		var lblContent = new Label({
@@ -124,12 +135,12 @@ const NotificationRow = extend(FlexLayout)(
 			borderColor: Color.create(255, 0, 0, 0),
 			borderWidth: 0,
 			textColor: Color.create(255, 155, 155, 155),
-			textAlignment: TextAlignment.MIDLEFT,
+			textAlignment: TextAlignment.TOPLEFT,
 			visible: true,
 			text: "<Content>",
 			multiline: true
 		});
-		lblContent.font = Font.create("Arial", 24, Font.NORMAL);
+		lblContent.font = Font.create("Arial", 12, Font.NORMAL);
 		flContent.addChild(lblContent);
 
 
@@ -150,6 +161,55 @@ const NotificationRow = extend(FlexLayout)(
 		flContent.children = Object.assign({}, {
 			lblTitle: lblTitle,
 			lblContent: lblContent
+		});
+
+		var date;
+		var title;
+		var text;
+		Object.defineProperties(this, {
+			"date": {
+				enumerable: true,
+				configurable: true,
+				get: function() {
+					return date;
+				},
+				set: function(value) {
+					date = value;
+					lblDate.text = relativeTime(date);
+				}
+			},
+			"title": {
+				enumerable: true,
+				configurable: true,
+				get: function() {
+					return title;
+				},
+				set: function(value) {
+					title = value;
+					lblTitle.height = !!title ? lblTitleMaxHeight : lblTitleMinHeight;
+					lblTitle.text = title;
+				}
+			},
+			"text": {
+				enumerable: true,
+				configurable: true,
+				get: function() {
+					return text;
+				},
+				set: function(value) {
+					text = value;
+					var areaWidth = Screen.width - contentStartLeft;
+					var numberOfCharactersPerLine = areaWidth / 8;
+					var extraLines = (text.match(/\n/g) || []).length;
+					var numberOfLines = Math.floor(1 + (text.length / numberOfCharactersPerLine) + extraLines);
+					var lblHeight = numberOfLines * 21;
+					lblContent.height = lblHeight;
+					lblContent.text = text;
+
+					var rowHeight = topShift + lblHeight + lblTitle.height;
+					row.height = rowHeight;
+				}
+			}
 		});
 	}
 );

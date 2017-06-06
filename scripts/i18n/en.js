@@ -1,3 +1,4 @@
+/*globals SMF*/
 SMF.i18n.defineLanguage('en', {
 	"cancel": "Cancel",
 	"copy": "Copy",
@@ -13,5 +14,12 @@ SMF.i18n.defineLanguage('en', {
 	"sureToDelete": "Are you sure to delete?",
 	"networkError": "There has been a network error, please try again later",
 	"applicationError": "There has been an unhandled application error, please inform developers",
-	"delete": "Delete"
+	"delete": "Delete",
+	"secondsAgo": "seconds ago",
+	"aMinuteAgo": "a minute ago",
+	"minutesAgo": "minutes ago",
+	"anHourAgo": "an hour ago",
+	"hoursAgo": "hours ago",
+	"aDayAgo": "a day ago",
+	"daysAgo": "days ago"
 });

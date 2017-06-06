@@ -1,3 +1,4 @@
+/*globals SMF, Device*/
 /* 
 	"lang" variable is required for things like system level error messages and alert button messages.
 	Current implementation tries to load the value found in the variable "Device.language".
@@ -40,9 +41,7 @@ SMF.i18n = {
 	}
 };
 
-require('i18n/de.js');
 require('i18n/en.js');
-require('i18n/fi.js');
 require('i18n/tr.js');
 
 SMF.i18n.switchLanguage(Device.language);
