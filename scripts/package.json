@@ -1,0 +1,8 @@
+{
+  "dependencies": {
+    "js-base": "^1.0.0",
+    "sf-core": "1.1.10-beta.11",
+    "sf-extension-mcs": "^2.0.0",
+    "timers-smf": "git+https://github.com/alperozisik/timers-smf.git"
+  }
+}
