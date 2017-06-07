@@ -82,8 +82,8 @@ const pgLogin = extend(pgLoginDesign)(
             
 
             mcs.login({
-                username: tiUserName.text,
-                password: tiUserName.text
+                username: tiUserName.text.toLowerCase().trim(),
+                password: tiPassword.text.trim()
             }, function(err, result) {
                 page.setState(true);
                 if (err) {
