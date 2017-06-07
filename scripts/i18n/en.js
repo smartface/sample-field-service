@@ -21,5 +21,11 @@ SMF.i18n.defineLanguage('en', {
 	"anHourAgo": "an hour ago",
 	"hoursAgo": "hours ago",
 	"aDayAgo": "a day ago",
-	"daysAgo": "days ago"
+	"daysAgo": "days ago",
+	"username": "User Name",
+	"password": "Password",
+	"loginErrorTitle": "Login Failed",
+	"loginErrorInvalid": "Please check user name and password",
+	"checkInternet": "Make sure that you are connected to Internet",
+	"login": "Login"
 });

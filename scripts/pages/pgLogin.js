@@ -1,0 +1,117 @@
+/*globals lang*/
+const extend = require("js-base/core/extend");
+const Router = require("sf-core/ui/router");
+const notifications = require("../model/notifications");
+const mcs = require("../lib/mcs");
+const pgLoginDesign = require("../ui/ui_pgLogin");
+const TextInput = require("../lib/ui").TextInput;
+const ActionKeyType = require('sf-core/ui/actionkeytype');
+const Network = require('sf-core/device/network');
+
+const pgLogin = extend(pgLoginDesign)(
+    function(_super) {
+        const page = this;
+        _super(this);
+        var baseOnLoad = page.onLoad;
+        var baseOnShow = page.onShow;
+        var tiUserName, tiPassword;
+        page.onLoad = function onLoad() {
+            baseOnLoad && baseOnLoad();
+
+            tiUserName = new TextInput();
+            Object.assign(tiUserName, {
+                height: 30,
+                hint: lang.username,
+                actionKeyType: ActionKeyType.NEXT,
+                onActionButtonPress: function(e) {
+                    tiPassword.requestFocus();
+                }
+            });
+            tiPassword = new TextInput();
+            Object.assign(tiPassword, {
+                height: 30,
+                hint: lang.password,
+                isPassword: true,
+                actionKeyType: ActionKeyType.GO,
+                onActionButtonPress: function(e) {
+                    doLogin();
+                }
+            });
+
+            page.flInputs.addChild(tiUserName);
+            page.flInputs.addChild(tiPassword);
+            page.btnLogin.onPress = doLogin;
+            page.btnLogin.text = lang.login;
+
+        };
+
+        page.onShow = function onShow(data) {
+            baseOnShow && baseOnShow(data);
+            page.setState(true);
+        };
+
+        page.setState = function setState(enabled) {
+            page.aiLogin.visible = !enabled;
+            page.btnLogin.enabled = !!enabled;
+            tiPassword.touchEnabled = !!enabled;
+            tiUserName.touchEnabled = !!enabled;
+            tiPassword.hideKeyboard();
+            tiUserName.hideKeyboard();
+        };
+
+
+        function doLogin() {
+            if (!tiPassword || !tiUserName)
+                return;
+            var isValid = true;
+            if (tiUserName.text.length === 0) {
+                tiUserName.invalidate();
+                isValid = false;
+            }
+            if (tiPassword.text.length === 0) {
+                tiPassword.invalidate();
+                isValid = false;
+            }
+            if(Network.connectionType === Network.ConnectionType.None){
+                isValid = false;
+                alert("No Internet Connection", "Cannot Connect");
+            }
+            if (!isValid)
+                return;
+            page.setState(false);
+            
+
+            mcs.login({
+                username: tiUserName.text,
+                password: tiUserName.text
+            }, function(err, result) {
+                page.setState(true);
+                if (err) {
+                    return alert("LOGIN FAILED.  " + err, "MCS Login Error");
+                }
+                alert("success");
+                // proceedNotifications();
+
+            });
+
+            function proceedNotifications() {
+                console.log("before getting notifications");
+                notifications.getNotifications(function(err, notificationsData) {
+                    console.log("after getting notifications. Is there error? " + !!err);
+                    if (err) {
+                        return alert(JSON.stringify(err), "Notifications Service Error");
+                    }
+
+                    //Router.go("pgNotification", notificationsData);
+                });
+            }
+        }
+
+
+
+
+    });
+
+
+
+module && (module.exports = pgLogin);

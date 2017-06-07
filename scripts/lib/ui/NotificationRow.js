@@ -176,6 +176,7 @@ const NotificationRow = extend(FlexLayout)(
 				set: function(value) {
 					date = value;
 					lblDate.text = relativeTime(date);
+					return value;
 				}
 			},
 			"title": {
@@ -188,6 +189,7 @@ const NotificationRow = extend(FlexLayout)(
 					title = value;
 					lblTitle.height = !!title ? lblTitleMaxHeight : lblTitleMinHeight;
 					lblTitle.text = title;
+					return value;
 				}
 			},
 			"text": {
@@ -208,6 +210,8 @@ const NotificationRow = extend(FlexLayout)(
 
 					var rowHeight = topShift + lblHeight + lblTitle.height;
 					row.height = rowHeight;
+					
+					return value;
 				}
 			}
 		});

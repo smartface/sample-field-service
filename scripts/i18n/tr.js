@@ -21,5 +21,11 @@ SMF.i18n.defineLanguage('tr', {
 	"anHourAgo": "bir saat önce",
 	"hoursAgo": "saat önce",
 	"aDayAgo": "bir gün önce",
-	"daysAgo": "gün önce"
+	"daysAgo": "gün önce",
+	"username": "Kullanıcı Adı",
+	"password": "Şifre",
+	"loginErrorTitle": "Oturum Açma Başarısız",
+	"loginErrorInvalid": "Lütfen kullanıcı adı ve şifrenizi kontrol ediniz",
+	"checkInternet": "İnternete bağlı olduğunuza emin olunuz",
+	"login": "Oturum Aç"
 });

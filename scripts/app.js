@@ -12,9 +12,13 @@ Application.onUnhandledError = function (e) {
     });
 };
 
+require("sf-extension-alert");
 require("timers-smf");
 require("./lib/mcs");
 
 Router.add("pgEntry", require("./pages/pgEntry"));
 Router.add("pgNotification", require("./pages/pgNotification"));
-Router.go("pgEntry", true);
+Router.add("pgLogin", require("./pages/pgLogin"));
+
+Router.go("pgLogin");
+//Router.go("pgEntry", true);
