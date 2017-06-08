@@ -18,3 +18,6 @@ scripts/node_modules/library/*
 !output/iOS/README.md
 !plugin/Android/README.md
 !plugin/iOS/README.md
+config/Other\ Fonts
+.ui/newPage001.pgx
+scripts/ui/ui_newPage001.js
