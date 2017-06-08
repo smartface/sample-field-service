@@ -4,6 +4,8 @@ const Color = require('sf-core/ui/color');
 const FlexLayout = require('sf-core/ui/flexlayout');
 const HeaderBarItem = require('sf-core/ui/headerbaritem');
 const Image = require('sf-core/ui/image');
+const mapProperties = require("./lib/map-properties");
+const userData = require("./model/user");
 
 var sliderDrawerWidth = 333;
 var sliderDrawer = new SliderDrawer({
@@ -35,11 +37,22 @@ var sliderDrawer = new SliderDrawer({
         sliderDrawer.shown = false;
         sliderDrawer.children = sliderDrawer.children || {};
         sliderDrawer.children.content = uiSliderDrawer;
+        mapProperties(sliderDrawer, uiSliderDrawer, ["lblUserName", "lblTitle", "imgUserPicture"]);
+        if (userData.currentUser) {
+            var userFullName = userData.currentUser.firstName + " " + userData.currentUser.lastName;
+            sliderDrawer.lblUserName.text = userFullName;
+            //TODO: use title instead of email
+            sliderDrawer.lblTitle.text = userData.currentUser.email;
+        }
     },
-
 });
 sliderDrawer.drawerPosition = SliderDrawer.Position.LEFT;
 module.exports = exports = sliderDrawer;
+
+
+
+
+
 
 sliderDrawer.setLeftItem = function setLeftItem(headerBar, force) {
     if (headerBar.leftItemSetBy === sliderDrawer && !force)

@@ -473,8 +473,8 @@
 			"type": "ActivityIndicator",
 			"id": "278c172a",
 			"props": {
-				"width": 65,
-				"height": 65,
+				"width": 42,
+				"height": 42,
 				"children": [],
 				"usePageVariable": true,
 				"name": "aiLogin",
@@ -482,8 +482,8 @@
 				"flexProps": {
 					"positionType": "RELATIVE",
 					"marginRight": 20,
-					"marginTop": 15,
-					"marginBottom": 15
+					"marginTop": null,
+					"marginBottom": null
 				},
 				"style": {
 					"backgroundColor": "rgba( 255, 255, 255, 0 )",
@@ -493,8 +493,8 @@
 					"font": {}
 				},
 				"layout": {
-					"width": 32.5,
-					"height": 32.5,
+					"width": 21,
+					"height": 21,
 					"minWidth": 10.5,
 					"minHeight": 10.5
 				},

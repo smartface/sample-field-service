@@ -34,5 +34,8 @@ SMF.i18n.defineLanguage('en', {
 	"customers": "Customers",
 	"notifications": "Notifications",
 	"groupNotifications": "Group Notifications",
-	"openNotifications": "Open Notifications"
+	"openNotifications": "Open Notifications",
+	"notificationHistory": "Notification History",
+	"noInternetMessage": "No Internet Connection",
+	"noInternetTitle": "Cannot Connect",
 });

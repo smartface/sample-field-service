@@ -1,3 +1,4 @@
+/*globals lang*/
 const extend = require("js-base/core/extend");
 const ScrollView = require("sf-core/ui/scrollview");
 const pgNotificationDesign = require("../ui/ui_pgNotification");
@@ -5,6 +6,7 @@ const FlexLayout = require("sf-core/ui/flexlayout");
 const Color = require("sf-core/ui/color");
 const NotificationRow = require("../lib/ui").NotificationRow;
 const sliderDrawer = require("../sliderDrawer");
+const Router = require("sf-core/ui/router");
 
 const pgNotification = extend(pgNotificationDesign)(
     function(_super) {
@@ -17,7 +19,7 @@ const pgNotification = extend(pgNotificationDesign)(
         page.onLoad = function onLoad() {
             baseOnLoad && baseOnLoad();
             sliderDrawer.setLeftItem(page.headerBar);
-
+            page.headerBar.title = lang.notificationHistory;
             var svNotifications = new ScrollView({
                 left: 0,
                 right: 0,
@@ -38,7 +40,9 @@ const pgNotification = extend(pgNotificationDesign)(
             });
             svNotifications.addChild(flNotifications);
 
-
+            page.onBackButtonPressed = function(e) {
+                Router.goBack("pgDashboard");
+            };
         };
 
         page.onShow = function onShow(notificationsData) {

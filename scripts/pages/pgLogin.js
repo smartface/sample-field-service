@@ -7,6 +7,7 @@ const TextInput = require("../lib/ui").TextInput;
 const ActionKeyType = require('sf-core/ui/actionkeytype');
 const Network = require('sf-core/device/network');
 const sliderDrawer = require("../sliderDrawer");
+const userData = require("../model/user");
 // const Application = require("sf-core/application");
 
 const pgLogin = extend(pgLoginDesign)(
@@ -44,6 +45,10 @@ const pgLogin = extend(pgLoginDesign)(
             page.btnLogin.onPress = doLogin;
             page.btnLogin.text = lang.login;
 
+            page.onBackButtonPressed = function(e) {
+                Application.exit();
+            };
+
         };
 
         page.onShow = function onShow(data) {
@@ -52,6 +57,7 @@ const pgLogin = extend(pgLoginDesign)(
             sliderDrawer.enabled = false;
             tiUserName.text = tiPassword.text = "";
             page.setState(true);
+            userData.currentUser = null;
         };
 
         page.setState = function setState(enabled) {
@@ -78,7 +84,7 @@ const pgLogin = extend(pgLoginDesign)(
             }
             if (Network.connectionType === Network.ConnectionType.None) {
                 isValid = false;
-                alert("No Internet Connection", "Cannot Connect");
+                alert(lang.noInternetMessage, lang.noInternetTitle);
             }
             if (!isValid)
                 return;
@@ -93,6 +99,16 @@ const pgLogin = extend(pgLoginDesign)(
                 if (err) {
                     return alert("LOGIN FAILED.  " + err, "MCS Login Error");
                 }
+                if (typeof result === "string") {
+                    try {
+                        result = JSON.parse(result);
+                    }
+                    finally {}
+                }
+                userData.currentUser = result;
+
+                // console.log(JSON.stringify(result));
+
                 // alert("success");
                 // proceedNotifications();
                 showDashboard();
@@ -116,7 +132,7 @@ const pgLogin = extend(pgLoginDesign)(
             //     });
             // }
         }
-        
+
         if (Application.currentReleaseChannel === "test") {
             page.imgLogo.onTouch = function() {
                 tiPassword.text = "123qweASD";

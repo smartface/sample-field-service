@@ -34,5 +34,8 @@ SMF.i18n.defineLanguage('tr', {
 	"customers": "Müşteriler",
 	"notifications": "Bildirimler",
 	"groupNotifications": "Grup Bildirimleri",
-	"openNotifications": "Açık Bildirimler"
+	"openNotifications": "Açık Bildirimler",
+	"notificationHistory": "Bildirim Tarihçesi",
+	"noInternetMessage": "İnternet Bağlantısı yok",
+	"noInternetTitle": "Bağlanamıyor",
 });

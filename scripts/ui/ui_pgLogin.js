@@ -190,12 +190,10 @@ const PgLogin_ = extend(Page)(
 		flTexts.addChild(lblSubTitle);
 		
 		var aiLogin = new ActivityIndicator({
-			width: 65,
-			height: 65,
+			width: 42,
+			height: 42,
 			positionType: FlexLayout.PositionType.RELATIVE,
 			marginRight: 20,
-			marginTop: 15,
-			marginBottom: 15,
 			backgroundColor: Color.create(0, 255, 255, 255),
 			alpha: 1,
 			borderColor: Color.create(255, 0, 0, 0),

@@ -1,107 +1,107 @@
 {
-    "info": {
-        "name": "Field Service",
-        "company": "Smartface User",
-        "webSite": "https://www.smartface.io",
-        "version": "1.0.0",
-        "runtimeVersion": "1100",
-        "description": "Smartface Field Service App powered by Oracle MCS"
-    },
-    "config": {
-        "cache": {
-            "size": 50
-        },
-        "debug": {
-            "logs": false
-        },
-        "orientation": {
-            "portrait": true,
-            "upsideDown": false,
-            "landScapeLeft": false,
-            "landScapeRight": false
-        }
-    },
-    "api": {
-        "facebook": {
-            "appUID": "",
-            "appSecret": ""
-        },
-        "twitter": {
-            "consumerKey": "",
-            "consumerSecret": ""
-        },
-        "googleMaps": {
-            "androidKey": "01u81e3cP5lidl1HRJ55hoBH0N5_Kmlvku4EIYg",
-            "iosKey": ""
-        },
-        "adMob": {
-            "publisherId": ""
-        },
-        "googleCloudMessaging": {
-            "senderID": ""
-        },
-        "googlePlayServices": {
-            "inAppPurchaseProductKey": ""
-        }
-    },
-    "workspace": {
-        "autoUpdatePlayers": true
-    },
-    "build": {
-        "input": {
-            "ios": {
-                "scripts": "scripts",
-                "images": "images/iOS",
-                "assets": "assets",
-                "infoPlist": "config/iOS/Info.plist",
-                "urlIdentifier": "",
-                "urlSchemes": "",
-                "plugins": {
-                    "codereaderios": {
-                        "url": "https://az793023.vo.msecnd.net/smartface-bin/plugins/CodeReader/iOS/2.0.0/codereaderios.zip",
-                        "path": "plugins/iOS/codereaderios.zip",
-                        "active": false
-                    }
-                },
-                "playerPath": "players/iOS/player-6.0.3-beta.72.zip"
-            },
-            "android": {
-                "scripts": "scripts",
-                "images": "images/Android",
-                "assets": "assets",
-                "manifest": "config/Android/AndroidManifest.xml",
-                "packageProfiles": "config/Android/PackageProfiles.xml",
-                "sign": {
-                    "keystoreFile": "config/Android/smfdefault.keystore",
-                    "keystorePass": "smartface",
-                    "aliasName": "smartface",
-                    "keyPass": "smartface"
-                },
-                "plugins": {
-                    "smfimagecode": {
-                        "url": "https://az793023.vo.msecnd.net/smartface-bin/plugins/CodeReader/Android/2.0.0/CodeReaderAndroid.zip",
-                        "path": "plugins/Android/CodeReaderAndroid.zip",
-                        "active": false
-                    }
-                },
-                "playerPath": "players/Android/player-6.0.5-beta.1.zip"
-            },
-            "keys": {
-                "project3DesKey": "",
-                "projectEncryptedKey": ""
-            }
-        },
-        "output": {
-            "ios": {
-                "outputFolder": "output/iOS",
-                "bundleIdentifier": "io.smartface.fieldservice"
-            },
-            "android": {
-                "outputFolder": "output/Android",
-                "packageName": "io.smartface.fieldservice"
-            }
-        },
-        "tempFolder": "output/.tmp"
-    },
-    "projectID": "757b661d-f5f6-4434-9a3f-91c6e7796bc4"
+	"info": {
+		"name": "Field Service",
+		"company": "Smartface User",
+		"webSite": "https://www.smartface.io",
+		"version": "1.0.0",
+		"runtimeVersion": "1100",
+		"description": "Smartface Field Service App powered by Oracle MCS"
+	},
+	"config": {
+		"cache": {
+			"size": 50
+		},
+		"debug": {
+			"logs": false
+		},
+		"orientation": {
+			"portrait": true,
+			"upsideDown": false,
+			"landScapeLeft": false,
+			"landScapeRight": false
+		}
+	},
+	"api": {
+		"facebook": {
+			"appUID": "",
+			"appSecret": ""
+		},
+		"twitter": {
+			"consumerKey": "",
+			"consumerSecret": ""
+		},
+		"googleMaps": {
+			"androidKey": "01u81e3cP5lidl1HRJ55hoBH0N5_Kmlvku4EIYg",
+			"iosKey": ""
+		},
+		"adMob": {
+			"publisherId": ""
+		},
+		"googleCloudMessaging": {
+			"senderID": ""
+		},
+		"googlePlayServices": {
+			"inAppPurchaseProductKey": ""
+		}
+	},
+	"workspace": {
+		"autoUpdatePlayers": true
+	},
+	"build": {
+		"input": {
+			"ios": {
+				"scripts": "scripts",
+				"images": "images/iOS",
+				"assets": "assets",
+				"infoPlist": "config/iOS/Info.plist",
+				"urlIdentifier": "",
+				"urlSchemes": "",
+				"plugins": {
+					"codereaderios": {
+						"url": "https://az793023.vo.msecnd.net/smartface-bin/plugins/CodeReader/iOS/2.0.0/codereaderios.zip",
+						"path": "plugins/iOS/codereaderios.zip",
+						"active": false
+					}
+				},
+				"playerPath": "players/iOS/player-6.0.3-beta.72.zip"
+			},
+			"android": {
+				"scripts": "scripts",
+				"images": "images/Android",
+				"assets": "assets",
+				"manifest": "config/Android/AndroidManifest.xml",
+				"packageProfiles": "config/Android/PackageProfiles.xml",
+				"sign": {
+					"keystoreFile": "config/Android/smfdefault.keystore",
+					"keystorePass": "smartface",
+					"aliasName": "smartface",
+					"keyPass": "smartface"
+				},
+				"plugins": {
+					"smfimagecode": {
+						"url": "https://az793023.vo.msecnd.net/smartface-bin/plugins/CodeReader/Android/2.0.0/CodeReaderAndroid.zip",
+						"path": "plugins/Android/CodeReaderAndroid.zip",
+						"active": false
+					}
+				},
+				"playerPath": "players/Android/player-6.0.5-beta.1.zip"
+			},
+			"keys": {
+				"project3DesKey": "OGZX+aN+KdKD2JNKHBJguikZrYnuahOt",
+				"projectEncryptedKey": "6gyR/oWzhlSN11vLAas1DKUclCqqBNvwAiTdYjIubJQ/GQbOYrO25tDgm/fdIgQTto+hx3bOJGuanBZKst9MzELY8oThZsCePZcS6mqzZv0B1h2M3o0l1pAerMo+At90kCx7k/Ke8hItv3djWt2vWGWeZzKIHUx697eO07B7Q0A="
+			}
+		},
+		"output": {
+			"ios": {
+				"outputFolder": "output/iOS",
+				"bundleIdentifier": "io.smartface.fieldservice"
+			},
+			"android": {
+				"outputFolder": "output/Android",
+				"packageName": "io.smartface.fieldservice"
+			}
+		},
+		"tempFolder": "output/.tmp"
+	},
+	"projectID": "757b661d-f5f6-4434-9a3f-91c6e7796bc4"
 }
