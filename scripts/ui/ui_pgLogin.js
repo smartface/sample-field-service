@@ -11,10 +11,10 @@ const Color = require('sf-core/ui/color');
 const ImageView = require('sf-core/ui/imageview');
 const Image = require('sf-core/ui/image');
 const ImageFillType = require('sf-core/ui/imagefilltype');
-const Button = require('sf-core/ui/button');
+const Label = require('sf-core/ui/label');
 const TextAlignment = require('sf-core/ui/textalignment');
 const Font = require('sf-core/ui/font');
-const Label = require('sf-core/ui/label');
+const Button = require('sf-core/ui/button');
 const ActivityIndicator = require('sf-core/ui/activityindicator');
 
 
@@ -52,6 +52,8 @@ const PgLogin_ = extend(Page)(
 			flexDirection: FlexLayout.FlexDirection.COLUMN,
 			positionType: FlexLayout.PositionType.RELATIVE,
 			flexGrow: 5,
+			marginTop: 59.31,
+			marginBottom: 133.81,
 			backgroundColor: Color.create(255, 255, 255, 255),
 			alpha: 1,
 			borderColor: Color.create(255, 0, 0, 0),
@@ -75,22 +77,6 @@ const PgLogin_ = extend(Page)(
 			visible: true
 		}); 
 		this.layout.addChild(flRight);
-		
-		var placeholder1 = new FlexLayout({
-			height: 20,
-			alignContent: FlexLayout.AlignContent.STRETCH,
-			alignItems: FlexLayout.AlignItems.STRETCH,
-			justifyContent: FlexLayout.JustifyContent.FLEX_START,
-			flexWrap: FlexLayout.FlexWrap.NOWRAP,
-			flexDirection: FlexLayout.FlexDirection.COLUMN,
-			positionType: FlexLayout.PositionType.RELATIVE,
-			backgroundColor: Color.create(0, 189, 16, 224),
-			alpha: 1,
-			borderColor: Color.create(255, 0, 0, 0),
-			borderWidth: 0,
-			visible: true
-		}); 
-		flMiddle.addChild(placeholder1);
 		
 		var imgLogo = new ImageView({
 			height: 67,
@@ -153,21 +139,20 @@ const PgLogin_ = extend(Page)(
 		}); 
 		flMiddle.addChild(flButton);
 		
-		var placeholder2 = new FlexLayout({
-			height: 30,
-			alignContent: FlexLayout.AlignContent.STRETCH,
-			alignItems: FlexLayout.AlignItems.STRETCH,
-			justifyContent: FlexLayout.JustifyContent.FLEX_START,
-			flexWrap: FlexLayout.FlexWrap.NOWRAP,
-			flexDirection: FlexLayout.FlexDirection.COLUMN,
+		var lblTitle = new Label({
+			height: 37,
 			positionType: FlexLayout.PositionType.RELATIVE,
-			backgroundColor: Color.create(0, 52, 129, 74),
+			backgroundColor: Color.create("#FFFFFF"),
 			alpha: 1,
 			borderColor: Color.create(255, 0, 0, 0),
 			borderWidth: 0,
-			visible: true
-		}); 
-		flMiddle.addChild(placeholder2);
+			textColor: Color.create(255, 60, 67, 80),
+			textAlignment: TextAlignment.MIDCENTER,
+			visible: true,
+			text: "Customer Services"
+		});
+		lblTitle.font = Font.create("Arial", 27.5, Font.NORMAL); 
+		flTexts.addChild(lblTitle);
 		
 		var btnLogin = new Button({
 			left: 0,
@@ -188,21 +173,6 @@ const PgLogin_ = extend(Page)(
 		btnLogin.font = Font.create("default", 18, Font.NORMAL); 
 		flButton.addChild(btnLogin);
 		this.btnLogin = btnLogin;
-		var lblTitle = new Label({
-			height: 37,
-			positionType: FlexLayout.PositionType.RELATIVE,
-			backgroundColor: Color.create("#FFFFFF"),
-			alpha: 1,
-			borderColor: Color.create(255, 0, 0, 0),
-			borderWidth: 0,
-			textColor: Color.create(255, 60, 67, 80),
-			textAlignment: TextAlignment.MIDCENTER,
-			visible: true,
-			text: "Customer Services"
-		});
-		lblTitle.font = Font.create("Arial", 27.5, Font.NORMAL); 
-		flTexts.addChild(lblTitle);
-		
 		var lblSubTitle = new Label({
 			height: 44,
 			positionType: FlexLayout.PositionType.RELATIVE,
@@ -243,12 +213,10 @@ const PgLogin_ = extend(Page)(
 		
 		//assign the children of flMiddle
 		flMiddle.children =  Object.assign({}, {
-			placeholder1: placeholder1,
 			imgLogo: imgLogo,
 			flTexts: flTexts,
 			flInputs: flInputs,
-			flButton: flButton,
-			placeholder2: placeholder2
+			flButton: flButton
 		});
 		
 		//assign the children of flTexts

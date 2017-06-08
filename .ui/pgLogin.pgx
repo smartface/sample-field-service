@@ -3,8 +3,8 @@
 		{
 			"type": "Page",
 			"props": {
-				"width": 187.5,
-				"height": 333.5,
+				"width": 207,
+				"height": 368,
 				"children": [
 					"statusBar",
 					"headerBar",
@@ -123,12 +123,10 @@
 				"width": null,
 				"height": null,
 				"children": [
-					"placeholder1",
 					"imgLogo",
 					"flTexts",
 					"flInputs",
-					"flButton",
-					"placeholder2"
+					"flButton"
 				],
 				"name": "flMiddle",
 				"parent": "pgLogin",
@@ -140,7 +138,9 @@
 					"flexDirection": "COLUMN",
 					"positionType": "RELATIVE",
 					"flexGrow": 5,
-					"bottom": null
+					"bottom": null,
+					"marginTop": 59.31,
+					"marginBottom": 133.81
 				},
 				"style": {
 					"backgroundColor": "rgba( 255, 255, 255, 1 )",
@@ -500,82 +500,6 @@
 				},
 				"visibility": true,
 				"color": "#ADADAD"
-			}
-		},
-		{
-			"type": "FlexLayout",
-			"id": "eaacb706",
-			"props": {
-				"width": null,
-				"height": 20,
-				"children": [],
-				"name": "placeholder1",
-				"parent": "flMiddle",
-				"flexProps": {
-					"alignContent": "STRETCH",
-					"alignItems": "STRETCH",
-					"justifyContent": "FLEX_START",
-					"flexWrap": "NOWRAP",
-					"flexDirection": "COLUMN",
-					"positionType": "RELATIVE"
-				},
-				"style": {
-					"backgroundColor": "rgba( 189, 16, 224, 0 )",
-					"opacity": 1,
-					"borderColor": "rgba(0,0,0,1)",
-					"borderWidth": 0,
-					"font": {}
-				},
-				"layout": {
-					"height": 10
-				},
-				"flex": {
-					"alignContent": 4,
-					"alignItems": 4,
-					"justifyContent": 0,
-					"flexWrap": 0,
-					"flexDirection": 0,
-					"positionType": 0
-				},
-				"visibility": true
-			}
-		},
-		{
-			"type": "FlexLayout",
-			"id": "b00cbaec",
-			"props": {
-				"width": null,
-				"height": 30,
-				"children": [],
-				"name": "placeholder2",
-				"parent": "flMiddle",
-				"flexProps": {
-					"alignContent": "STRETCH",
-					"alignItems": "STRETCH",
-					"justifyContent": "FLEX_START",
-					"flexWrap": "NOWRAP",
-					"flexDirection": "COLUMN",
-					"positionType": "RELATIVE"
-				},
-				"style": {
-					"backgroundColor": "rgba( 52, 129, 74, 0 )",
-					"opacity": 1,
-					"borderColor": "rgba(0,0,0,1)",
-					"borderWidth": 0,
-					"font": {}
-				},
-				"layout": {
-					"height": 15
-				},
-				"flex": {
-					"alignContent": 4,
-					"alignItems": 4,
-					"justifyContent": 0,
-					"flexWrap": 0,
-					"flexDirection": 0,
-					"positionType": 0
-				},
-				"visibility": true
 			}
 		}
 	]
