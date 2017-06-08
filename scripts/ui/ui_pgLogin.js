@@ -239,7 +239,7 @@ function onLoad() {
   this.headerBar.titleColor = Color.create("#000000");
   this.headerBar.backgroundColor = Color.create("#FFFFFF");
   this.headerBar.visible = false;
-  this.statusBar.visible = true;this.statusBar.android && (this.statusBar.android.color = Color.create(255, 255, 255, 255));
+  this.statusBar.visible = true;this.statusBar.android && (this.statusBar.android.color = Color.create(26, 255, 255, 255));
   this.layout.alignContent = FlexLayout.AlignContent.STRETCH;
   this.layout.alignItems = FlexLayout.AlignItems.STRETCH;
   this.layout.direction = FlexLayout.Direction.INHERIT;

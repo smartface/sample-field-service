@@ -8,9 +8,12 @@ output/.tmp
 output/publish-error.log
 plugin/Android/*
 plugin/iOS/*
-scripts/node_modules
+!scripts/node_modules/
+scripts/node_modules/*
+!scripts/node_modules/library/
+scripts/node_modules/library/*
+!scripts/node_modules/library/SliderDrawer.js
 !output/Android/README.md
 !output/iOS/README.md
 !plugin/Android/README.md
 !plugin/iOS/README.md
-

@@ -27,5 +27,12 @@ SMF.i18n.defineLanguage('en', {
 	"loginErrorTitle": "Login Failed",
 	"loginErrorInvalid": "Please check user name and password",
 	"checkInternet": "Make sure that you are connected to Internet",
-	"login": "Login"
+	"login": "Login",
+	"signout": "Sign Out",
+	"settings": "Settings",
+	"dashboard": "Dashboard",
+	"customers": "Customers",
+	"notifications": "Notifications",
+	"groupNotifications": "Group Notifications",
+	"openNotifications": "Open Notifications"
 });

@@ -3,8 +3,8 @@
 		{
 			"type": "Page",
 			"props": {
-				"width": 207,
-				"height": 368,
+				"width": 187.5,
+				"height": 333.5,
 				"children": [
 					"statusBar",
 					"headerBar",
@@ -53,7 +53,7 @@
 				},
 				"flex": {},
 				"visibility": true,
-				"color": "rgba( 255, 255, 255, 1 )"
+				"color": "rgba( 255, 255, 255, 0.1 )"
 			}
 		},
 		{
@@ -491,9 +491,7 @@
 				},
 				"layout": {
 					"width": 32.5,
-					"height": 32.5,
-					"minWidth": 10.5,
-					"minHeight": 10.5
+					"height": 32.5
 				},
 				"flex": {
 					"positionType": 0

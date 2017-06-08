@@ -27,5 +27,12 @@ SMF.i18n.defineLanguage('tr', {
 	"loginErrorTitle": "Oturum Açma Başarısız",
 	"loginErrorInvalid": "Lütfen kullanıcı adı ve şifrenizi kontrol ediniz",
 	"checkInternet": "İnternete bağlı olduğunuza emin olunuz",
-	"login": "Oturum Aç"
+	"login": "Oturum Aç",
+	"signout": "Oturumu Kapat",
+	"settings": "Ayarlar",
+	"dashboard": "Gösterge Paneli",
+	"customers": "Müşteriler",
+	"notifications": "Bildirimler",
+	"groupNotifications": "Grup Bildirimleri",
+	"openNotifications": "Açık Bildirimler"
 });
