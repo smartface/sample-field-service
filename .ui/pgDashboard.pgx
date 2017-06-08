@@ -1,0 +1,112 @@
+{
+	"components": [
+		{
+			"type": "Page",
+			"props": {
+				"width": 187.5,
+				"height": 301.5,
+				"children": [
+					"statusBar",
+					"headerBar",
+					"imgReports"
+				],
+				"name": "pgDashboard",
+				"flexProps": {
+					"alignContent": "STRETCH",
+					"alignItems": "STRETCH",
+					"direction": "INHERIT",
+					"flexDirection": "COLUMN",
+					"flexWrap": "NOWRAP",
+					"justifyContent": "FLEX_START"
+				},
+				"style": {
+					"backgroundColor": "rgba( 36, 42, 52, 1 )",
+					"font": {}
+				},
+				"isRemovable": true,
+				"layout": {
+					"width": 93.75,
+					"height": 150.75
+				},
+				"flex": {},
+				"orientation": "PORTRAIT"
+			}
+		},
+		{
+			"type": "StatusBar",
+			"props": {
+				"height": 20,
+				"children": [],
+				"name": "statusBar",
+				"parent": "pgDashboard",
+				"flexProps": {},
+				"style": {
+					"font": {}
+				},
+				"isRemovable": false,
+				"layout": {
+					"height": 10
+				},
+				"flex": {},
+				"visibility": true,
+				"color": "rgba( 44, 50, 57, 1 )",
+				"_style": "LIGHTCONTENT"
+			}
+		},
+		{
+			"type": "HeaderBar",
+			"props": {
+				"height": 44,
+				"children": [],
+				"title": "Dashboard",
+				"titleColor": "rgba( 255, 255, 255, 1 )",
+				"name": "headerBar",
+				"parent": "pgDashboard",
+				"flexProps": {},
+				"style": {
+					"backgroundColor": "rgba( 44, 50, 57, 1 )",
+					"font": {}
+				},
+				"isRemovable": false,
+				"layout": {
+					"height": 22
+				},
+				"flex": {},
+				"visibility": true
+			}
+		},
+		{
+			"type": "ImageView",
+			"id": "a5c19250",
+			"props": {
+				"width": null,
+				"height": null,
+				"children": [],
+				"name": "imgReports",
+				"parent": "pgDashboard",
+				"flexProps": {
+					"positionType": "RELATIVE",
+					"flexGrow": 1,
+					"marginLeft": 20,
+					"marginRight": 20,
+					"marginTop": 20,
+					"marginBottom": 20
+				},
+				"style": {
+					"backgroundColor": "rgba( 255, 255, 255, 0 )",
+					"opacity": 1,
+					"borderColor": "rgba(0,0,0,1)",
+					"borderWidth": 0,
+					"font": {}
+				},
+				"layout": {},
+				"flex": {
+					"positionType": 0
+				},
+				"visibility": true,
+				"image": "reports.png",
+				"imageFillType": "ASPECTFIT"
+			}
+		}
+	]
+}

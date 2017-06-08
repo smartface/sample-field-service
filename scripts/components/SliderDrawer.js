@@ -3,44 +3,62 @@
 		You can modify its contents.
 */
 const extend = require('js-base/core/extend');
-
+const Router = require("sf-core/ui/router");
 const SliderDrawer = require('library/SliderDrawer');
-
+const mcs = require("../lib/mcs");
+const DialogWait = require("./DialogWait");
 const SliderDrawer_ = extend(SliderDrawer)(
 	//constructor
 	function(_super, props, pageName) {
-		// initalizes super class for this scope
 		_super(this, props || SliderDrawer.defaults);
 		this.pageName = pageName;
 
 		this.btnSigout.onPress = function() {
+			hide();
 			if (touchControl.target) {
 				touchControl.target.alpha = 1;
 			}
-			alert("signout");
+			mcs.logout();
+			Router.goBack("pgLogin");
 		};
 
 
 		var touchControl = {};
 
 		mimicPressed(this.flSettings, function() {
+			hide();
 			alert("settings pressed");
 		}, touchControl);
 
 		mimicPressed(this.flDashboard, function() {
-			alert("dashboard");
+			hide();
+			Router.goBack("pgDashboard");
+
 		}, touchControl);
 
 		mimicPressed(this.flCustomers, function() {
+			hide();
 			alert("customers");
 		}, touchControl);
 
 		mimicPressed(this.flGroupNotifications, function() {
-			alert("group notifications");
+			hide();
+			Router.go("pgNotification");
 		}, touchControl);
 
 		mimicPressed(this.flOpenNotifications, function() {
-			alert("open notifications");
+			hide();
+			var dialogWait = DialogWait.show();
+			const notifications = require("../model/notifications");
+			notifications.getNotifications(function(err, notificationsData) {
+				dialogWait.hide();
+				console.log("after getting notifications. Is there error? " + !!err);
+				if (err) {
+					return alert(JSON.stringify(err), "Notifications Service Error");
+				}
+
+				Router.go("pgNotification", notificationsData);
+			});
 		}, touchControl);
 
 		this.onTouchEnded = function() {
@@ -94,6 +112,11 @@ function mimicPressed(target, eventFunction, touchControl) {
 		}
 		touchControl.target = null;
 	};
+}
+
+function hide() {
+	var sliderDrawer = require("../sliderDrawer");
+	sliderDrawer.hide();
 }
 
 

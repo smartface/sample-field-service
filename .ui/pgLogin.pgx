@@ -205,6 +205,7 @@
 				"width": null,
 				"height": 67,
 				"children": [],
+				"usePageVariable": true,
 				"name": "imgLogo",
 				"parent": "flMiddle",
 				"flexProps": {
@@ -480,7 +481,9 @@
 				"parent": "flButton",
 				"flexProps": {
 					"positionType": "RELATIVE",
-					"marginRight": 20
+					"marginRight": 20,
+					"marginTop": 15,
+					"marginBottom": 15
 				},
 				"style": {
 					"backgroundColor": "rgba( 255, 255, 255, 0 )",
@@ -491,13 +494,15 @@
 				},
 				"layout": {
 					"width": 32.5,
-					"height": 32.5
+					"height": 32.5,
+					"minWidth": 10.5,
+					"minHeight": 10.5
 				},
 				"flex": {
 					"positionType": 0
 				},
 				"visibility": true,
-				"color": "#ADADAD"
+				"color": "rgba( 44, 50, 57, 1 )"
 			}
 		}
 	]

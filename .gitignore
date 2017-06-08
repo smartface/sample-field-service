@@ -13,6 +13,7 @@ scripts/node_modules/*
 !scripts/node_modules/library/
 scripts/node_modules/library/*
 !scripts/node_modules/library/SliderDrawer.js
+!scripts/node_modules/library/DialogWait.js
 !output/Android/README.md
 !output/iOS/README.md
 !plugin/Android/README.md

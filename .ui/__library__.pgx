@@ -8,7 +8,8 @@
 				"children": [
 					"statusBar",
 					"headerBar",
-					"sliderDrawer"
+					"sliderDrawer",
+					"dialogWait"
 				],
 				"name": "__library__",
 				"flexProps": {
@@ -1324,6 +1325,135 @@
 				},
 				"visibility": true,
 				"text": "Settings"
+			}
+		},
+		{
+			"type": "FlexLayout",
+			"id": "ca2cae1e",
+			"source": {
+				"page": "__library__"
+			},
+			"props": {
+				"left": 0,
+				"top": 0,
+				"width": null,
+				"height": null,
+				"children": [
+					"flWaitWhite"
+				],
+				"name": "dialogWait",
+				"parent": "__library__",
+				"flexProps": {
+					"alignContent": "STRETCH",
+					"alignItems": "STRETCH",
+					"justifyContent": "CENTER",
+					"flexWrap": "NOWRAP",
+					"flexDirection": "COLUMN",
+					"positionType": "ABSOLUTE",
+					"right": 0,
+					"bottom": 0
+				},
+				"style": {
+					"backgroundColor": "rgba( 0, 0, 0, 0.8 )",
+					"opacity": 1,
+					"borderColor": "rgba(0,0,0,1)",
+					"borderWidth": 0,
+					"font": {}
+				},
+				"layout": {
+					"right": 0,
+					"bottom": 0,
+					"left": 0,
+					"top": 0
+				},
+				"flex": {
+					"alignContent": 4,
+					"alignItems": 4,
+					"justifyContent": 1,
+					"flexWrap": 0,
+					"flexDirection": 0,
+					"positionType": 1
+				},
+				"visibility": true
+			}
+		},
+		{
+			"type": "FlexLayout",
+			"id": "b73001ff",
+			"source": {
+				"page": "__library__"
+			},
+			"props": {
+				"width": null,
+				"height": 150,
+				"children": [
+					"aiWait"
+				],
+				"name": "flWaitWhite",
+				"parent": "dialogWait",
+				"flexProps": {
+					"alignContent": "STRETCH",
+					"alignItems": "CENTER",
+					"justifyContent": "CENTER",
+					"flexWrap": "NOWRAP",
+					"flexDirection": "COLUMN",
+					"positionType": "RELATIVE",
+					"marginLeft": 60,
+					"marginRight": 60
+				},
+				"style": {
+					"backgroundColor": "#FFFFFF",
+					"opacity": 1,
+					"borderColor": "rgba( 255, 255, 255, 1 )",
+					"borderWidth": 1,
+					"font": {},
+					"borderRadius": 15
+				},
+				"layout": {
+					"height": 75
+				},
+				"flex": {
+					"alignContent": 4,
+					"alignItems": 2,
+					"justifyContent": 1,
+					"flexWrap": 0,
+					"flexDirection": 0,
+					"positionType": 0
+				},
+				"visibility": true
+			}
+		},
+		{
+			"type": "ActivityIndicator",
+			"id": "5a455961",
+			"source": {
+				"page": "__library__"
+			},
+			"props": {
+				"width": 42,
+				"height": 42,
+				"children": [],
+				"name": "aiWait",
+				"parent": "flWaitWhite",
+				"flexProps": {
+					"positionType": "RELATIVE"
+				},
+				"style": {
+					"backgroundColor": "rgba( 255, 255, 255, 0 )",
+					"opacity": 1,
+					"borderColor": "rgba(0,0,0,1)",
+					"borderWidth": 0,
+					"font": {}
+				},
+				"layout": {
+					"width": 21,
+					"height": 21
+				},
+				"flex": {
+					"positionType": 0
+				},
+				"visibility": true,
+				"color": "rgba( 44, 50, 57, 1 )"
 			}
 		}
 	]

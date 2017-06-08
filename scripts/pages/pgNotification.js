@@ -4,6 +4,7 @@ const pgNotificationDesign = require("../ui/ui_pgNotification");
 const FlexLayout = require("sf-core/ui/flexlayout");
 const Color = require("sf-core/ui/color");
 const NotificationRow = require("../lib/ui").NotificationRow;
+const sliderDrawer = require("../sliderDrawer");
 
 const pgNotification = extend(pgNotificationDesign)(
     function(_super) {
@@ -15,7 +16,7 @@ const pgNotification = extend(pgNotificationDesign)(
 
         page.onLoad = function onLoad() {
             baseOnLoad && baseOnLoad();
-            page.headerBar.leftItemEnabled = false;
+            sliderDrawer.setLeftItem(page.headerBar);
 
             var svNotifications = new ScrollView({
                 left: 0,

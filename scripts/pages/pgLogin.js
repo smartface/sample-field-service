@@ -1,12 +1,13 @@
-/*globals lang*/
+/*globals lang, Application*/
 const extend = require("js-base/core/extend");
 const Router = require("sf-core/ui/router");
-const notifications = require("../model/notifications");
 const mcs = require("../lib/mcs");
 const pgLoginDesign = require("../ui/ui_pgLogin");
 const TextInput = require("../lib/ui").TextInput;
 const ActionKeyType = require('sf-core/ui/actionkeytype');
 const Network = require('sf-core/device/network');
+const sliderDrawer = require("../sliderDrawer");
+// const Application = require("sf-core/application");
 
 const pgLogin = extend(pgLoginDesign)(
     function(_super) {
@@ -47,6 +48,9 @@ const pgLogin = extend(pgLoginDesign)(
 
         page.onShow = function onShow(data) {
             baseOnShow && baseOnShow(data);
+            page.headerBar.visible = false;
+            sliderDrawer.enabled = false;
+            tiUserName.text = tiPassword.text = "";
             page.setState(true);
         };
 
@@ -72,14 +76,14 @@ const pgLogin = extend(pgLoginDesign)(
                 tiPassword.invalidate();
                 isValid = false;
             }
-            if(Network.connectionType === Network.ConnectionType.None){
+            if (Network.connectionType === Network.ConnectionType.None) {
                 isValid = false;
                 alert("No Internet Connection", "Cannot Connect");
             }
             if (!isValid)
                 return;
             page.setState(false);
-            
+
 
             mcs.login({
                 username: tiUserName.text.toLowerCase().trim(),
@@ -89,24 +93,36 @@ const pgLogin = extend(pgLoginDesign)(
                 if (err) {
                     return alert("LOGIN FAILED.  " + err, "MCS Login Error");
                 }
-                alert("success");
+                // alert("success");
                 // proceedNotifications();
-
+                showDashboard();
             });
 
-            function proceedNotifications() {
-                console.log("before getting notifications");
-                notifications.getNotifications(function(err, notificationsData) {
-                    console.log("after getting notifications. Is there error? " + !!err);
-                    if (err) {
-                        return alert(JSON.stringify(err), "Notifications Service Error");
-                    }
-
-                    //Router.go("pgNotification", notificationsData);
-                });
+            function showDashboard() {
+                //TODO: set sliderDrawerValues
+                sliderDrawer.enabled = true;
+                Router.go("pgDashboard");
             }
-        }
 
+            // function proceedNotifications() {
+            //     console.log("before getting notifications");
+            //     notifications.getNotifications(function(err, notificationsData) {
+            //         console.log("after getting notifications. Is there error? " + !!err);
+            //         if (err) {
+            //             return alert(JSON.stringify(err), "Notifications Service Error");
+            //         }
+
+            //         //Router.go("pgNotification", notificationsData);
+            //     });
+            // }
+        }
+        
+        if (Application.currentReleaseChannel === "test") {
+            page.imgLogo.onTouch = function() {
+                tiPassword.text = "123qweASD";
+                tiUserName.text = "fieldservice";
+            };
+        }
 
 
 

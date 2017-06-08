@@ -90,7 +90,7 @@ const PgLogin_ = extend(Page)(
 			imageFillType: ImageFillType.NORMAL
 		}); 
 		flMiddle.addChild(imgLogo);
-		
+		this.imgLogo = imgLogo;
 		var flTexts = new FlexLayout({
 			height: 90,
 			alignContent: FlexLayout.AlignContent.STRETCH,
@@ -194,12 +194,14 @@ const PgLogin_ = extend(Page)(
 			height: 65,
 			positionType: FlexLayout.PositionType.RELATIVE,
 			marginRight: 20,
+			marginTop: 15,
+			marginBottom: 15,
 			backgroundColor: Color.create(0, 255, 255, 255),
 			alpha: 1,
 			borderColor: Color.create(255, 0, 0, 0),
 			borderWidth: 0,
 			visible: true,
-			color: Color.create("#ADADAD")
+			color: Color.create(255, 44, 50, 57)
 		}); 
 		flButton.addChild(aiLogin);
 		this.aiLogin = aiLogin;
