@@ -27,6 +27,7 @@ DialogWait_.show = function showWaitdialog(page) {
 	var backButtonPressed = null;
 
 	var dialogWait = new DialogWait_();
+	dialogWait.visible = true;
 	var waitDialog = new Dialog();
 	showDialog();
 
