@@ -18,6 +18,8 @@ Router.add("pgEntry", require("./pages/pgEntry"));
 Router.add("pgNotification", require("./pages/pgNotification"));
 Router.add("pgLogin", require("./pages/pgLogin"));
 Router.add("pgDashboard", require("./pages/pgDashboard"));
+Router.add("pgCustomerFilter", require("./pages/pgCustomerFilter"));
+
 
 Router.go("pgLogin");
 var sliderDrawer = require("./sliderDrawer");

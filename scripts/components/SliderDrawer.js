@@ -38,7 +38,9 @@ const SliderDrawer_ = extend(SliderDrawer)(
 
 		mimicPressed(this.flCustomers, function() {
 			hide();
-			alert("customers");
+			Router.go("pgCustomerFilter", {
+				reset: true
+			});
 		}, touchControl);
 
 		mimicPressed(this.flGroupNotifications, function() {
