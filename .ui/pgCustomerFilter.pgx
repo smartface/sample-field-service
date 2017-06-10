@@ -25,8 +25,8 @@
 				"backgroundColor": "#FFFFFF",
 				"orientation": "PORTRAIT",
 				"isRemovable": true,
-				"height": 603,
-				"width": 375,
+				"height": 301.5,
+				"width": 187.5,
 				"flexProps": {
 					"alignContent": "STRETCH",
 					"alignItems": "STRETCH",
@@ -43,8 +43,8 @@
 				],
 				"name": "pgCustomerFilter",
 				"layout": {
-					"width": 187.5,
-					"height": 301.5
+					"width": 93.75,
+					"height": 150.75
 				},
 				"flex": {
 					"alignContent": 4,
@@ -80,7 +80,7 @@
 				"height": 20,
 				"style": "DEFAULT",
 				"layout": {
-					"height": 20
+					"height": 10
 				},
 				"children": [],
 				"parent": "pgCustomerFilter",
@@ -114,7 +114,7 @@
 				"isRemovable": false,
 				"height": 44,
 				"layout": {
-					"height": 44
+					"height": 22
 				},
 				"children": [],
 				"parent": "pgCustomerFilter",
@@ -177,7 +177,7 @@
 					"positionType": "RELATIVE"
 				},
 				"layout": {
-					"height": 42.5,
+					"height": 21.25,
 					"borderWidth": 0
 				},
 				"flex": {
@@ -650,7 +650,7 @@
 					"flexGrow": 1
 				},
 				"layout": {
-					"height": 5,
+					"height": 2.5,
 					"borderWidth": 0
 				},
 				"flex": {
@@ -861,6 +861,7 @@
 				"alpha": 1,
 				"borderColor": "rgba(0,0,0,1)",
 				"borderWidth": 0,
+				"usePageVariable": true,
 				"flexProps": {
 					"alignSelf": "AUTO",
 					"direction": "INHERIT",
@@ -872,7 +873,7 @@
 					"positionType": "RELATIVE"
 				},
 				"layout": {
-					"height": 61,
+					"height": 30.5,
 					"borderWidth": 0
 				},
 				"flex": {
@@ -889,8 +890,7 @@
 				],
 				"parent": "flInputs",
 				"name": "flFirstLine",
-				"font": {},
-				"usePageVariable": true
+				"font": {}
 			}
 		},
 		{
@@ -954,7 +954,7 @@
 					"flexGrow": 1
 				},
 				"layout": {
-					"paddingTop": 22.5,
+					"paddingTop": 11.25,
 					"borderWidth": 0
 				},
 				"flex": {
@@ -1028,7 +1028,7 @@
 					"positionType": "RELATIVE"
 				},
 				"layout": {
-					"width": 65,
+					"width": 32.5,
 					"borderWidth": 0
 				},
 				"flex": {
@@ -1089,7 +1089,7 @@
 				"borderWidth": 0,
 				"image": "filter_customer.png",
 				"usePageVariable": true,
-				"imageURL": "https://dispatcher.r0.smartface.io/smartface9/fieldservice2/ui-editor/img/filter_customer.png?os=iOS&osVersion=10.2&density=326&densityRatio=0.5&zoomLevel=1&brandModel=iPhone%207",
+				"imageURL": "https://dispatcher.r0.smartface.io/smartface9/fieldservice2/ui-editor/img/filter_customer.png?os=iOS&osVersion=10.2&density=326&densityRatio=0.5&zoomLevel=0.5&brandModel=iPhone%207?random=0.44103446635094956",
 				"flexProps": {
 					"alignSelf": "AUTO",
 					"positionType": "RELATIVE",
@@ -1242,7 +1242,7 @@
 					"flexGrow": 0
 				},
 				"layout": {
-					"paddingTop": 22.5,
+					"paddingTop": 11.25,
 					"borderWidth": 0
 				},
 				"flex": {
@@ -1316,7 +1316,7 @@
 					"positionType": "RELATIVE"
 				},
 				"layout": {
-					"width": 65,
+					"width": 32.5,
 					"borderWidth": 0
 				},
 				"flex": {
@@ -1376,14 +1376,14 @@
 				"borderWidth": 0,
 				"image": "filter_card.png",
 				"usePageVariable": true,
-				"imageURL": "https://dispatcher.r0.smartface.io/smartface9/fieldservice2/ui-editor/img/filter_card.png?os=iOS&osVersion=10.2&density=326&densityRatio=0.5&zoomLevel=1&brandModel=iPhone%207?random=0.044667727290291115",
+				"imageURL": "https://dispatcher.r0.smartface.io/smartface9/fieldservice2/ui-editor/img/filter_card.png?os=iOS&osVersion=10.2&density=326&densityRatio=0.5&zoomLevel=0.5&brandModel=iPhone%207?random=0.21642303321461642",
 				"flexProps": {
 					"alignSelf": "AUTO",
 					"positionType": "RELATIVE"
 				},
 				"layout": {
-					"width": 23,
-					"height": 22,
+					"width": 11.5,
+					"height": 11,
 					"borderWidth": 0
 				},
 				"flex": {

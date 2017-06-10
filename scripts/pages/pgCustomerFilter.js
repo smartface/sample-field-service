@@ -18,7 +18,7 @@ const pgCustomerFilter = extend(pgCustomerFilterDesign)(
         var baseOnLoad = page.onLoad;
         var baseOnShow = page.onShow;
 
-        var tiName;
+        var tiName, tiCard;
         if (!page.layout.applyLayout)
             page.layout.applyLayou = function dummyApplyLayout() {};
 
@@ -39,33 +39,55 @@ const pgCustomerFilter = extend(pgCustomerFilterDesign)(
             });
             page.flNameInputArea.addChild(tiName);
 
+            tiCard = Object.assign(new TextInput(), {
+                hint: "Card Number",
+                textAlignment: TextAlignment.TOPLEFT,
+                positionType: FlexLayout.PositionType.ABSOLUTE,
+                top: 0,
+                left: 0,
+                right: 0,
+                bottom: 0
+            });
+            page.flCardInputArea.addChild(tiCard);
+
+
+
+
             page.btnName.onPress = function() {
+                page.flCardInput.flexGrow = 0;
+                page.flNameInput.flexGrow = 1;
+                page.flFirstLine.applyLayout();
                 Animator.animate((System.OS === "iOS") ? page.layout : page.flButtons, 350, function() {
                     page.placeHolderLeft.flexGrow = 0;
                     page.placeHolderRight.flexGrow = 1;
                     page.btnName.textColor = tabActiveTextColor;
                     page.btnCard.textColor = tabInactiveTextColor;
                 }).complete(function() {
-                    
+
                 });
             };
 
 
             page.btnCard.onPress = function() {
+                page.flCardInput.flexGrow = 1;
+                page.flNameInput.flexGrow = 0;
+                page.flFirstLine.applyLayout();
                 Animator.animate((System.OS === "iOS") ? page.layout : page.flButtons, 350, function() {
                     page.placeHolderLeft.flexGrow = 1;
                     page.placeHolderRight.flexGrow = 0;
                     page.btnName.textColor = tabInactiveTextColor;
                     page.btnCard.textColor = tabActiveTextColor;
                 }).complete(function() {
-                    
+
                 });
             };
         };
 
         page.onShow = function onShow(data) {
             baseOnShow && baseOnShow(data);
-
+            if (data) {
+                data.reset && reset();
+            }
         };
 
         function reset() {
@@ -74,6 +96,9 @@ const pgCustomerFilter = extend(pgCustomerFilterDesign)(
             page.placeHolderRight.flexGrow = 1;
             page.btnName.textColor = tabActiveTextColor;
             page.btnCard.textColor = tabInactiveTextColor;
+            page.flCardInput.flexGrow = 0;
+            page.flNameInput.flexGrow = 1;
+            page.flFirstLine.applyLayout();
         }
     });
 
