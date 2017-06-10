@@ -2,15 +2,14 @@
 	"components": [
 		{
 			"type": "Page",
-			"props": {
-				"width": 187.5,
+			"id": "311d38b2",
+			"themeProps": {},
+			"userProps": {
+				"isRemovable": true,
+				"backgroundColor": "rgba( 36, 42, 52, 1 )",
 				"height": 301.5,
-				"children": [
-					"statusBar",
-					"headerBar",
-					"imgReports"
-				],
-				"name": "pgDashboard",
+				"orientation": "PORTRAIT",
+				"width": 187.5,
 				"flexProps": {
 					"alignContent": "STRETCH",
 					"alignItems": "STRETCH",
@@ -19,93 +18,185 @@
 					"flexWrap": "NOWRAP",
 					"justifyContent": "FLEX_START"
 				},
-				"style": {
-					"backgroundColor": "rgba( 36, 42, 52, 1 )",
-					"font": {}
-				},
+				"layout": {
+					"width": 93.75,
+					"height": 150.75
+				}
+			},
+			"className": ".page",
+			"version": "6.3.5",
+			"props": {
+				"backgroundColor": "rgba( 36, 42, 52, 1 )",
+				"orientation": "PORTRAIT",
 				"isRemovable": true,
+				"height": 301.5,
+				"width": 187.5,
+				"flexProps": {
+					"alignContent": "STRETCH",
+					"alignItems": "STRETCH",
+					"direction": "INHERIT",
+					"flexDirection": "COLUMN",
+					"flexWrap": "NOWRAP",
+					"justifyContent": "FLEX_START"
+				},
 				"layout": {
 					"width": 93.75,
 					"height": 150.75
 				},
-				"flex": {},
-				"orientation": "PORTRAIT"
+				"children": [
+					"statusBar",
+					"headerBar",
+					"imgReports"
+				],
+				"name": "pgDashboard",
+				"flex": {
+					"alignContent": 4,
+					"alignItems": 4,
+					"flexDirection": 0,
+					"flexWrap": 0,
+					"justifyContent": 0
+				},
+				"font": {}
 			}
 		},
 		{
 			"type": "StatusBar",
-			"props": {
-				"height": 20,
-				"children": [],
-				"name": "statusBar",
-				"parent": "pgDashboard",
-				"flexProps": {},
-				"style": {
-					"font": {}
-				},
+			"id": "58a9e235",
+			"themeProps": {},
+			"userProps": {
 				"isRemovable": false,
+				"_style": "LIGHTCONTENT",
+				"height": 20,
+				"visible": true,
+				"color": "rgba( 44, 50, 57, 1 )",
+				"layout": {
+					"height": 10
+				}
+			},
+			"className": ".statusBar",
+			"props": {
+				"color": "rgba( 44, 50, 57, 1 )",
+				"visible": true,
+				"isRemovable": false,
+				"_style": "LIGHTCONTENT",
+				"height": 20,
 				"layout": {
 					"height": 10
 				},
+				"children": [],
+				"parent": "pgDashboard",
+				"name": "statusBar",
 				"flex": {},
-				"visibility": true,
-				"color": "rgba( 44, 50, 57, 1 )",
-				"_style": "LIGHTCONTENT"
+				"font": {},
+				"flexProps": {}
 			}
 		},
 		{
 			"type": "HeaderBar",
-			"props": {
+			"id": "d3af0270",
+			"themeProps": {},
+			"userProps": {
+				"isRemovable": false,
+				"backgroundColor": "rgba( 44, 50, 57, 1 )",
 				"height": 44,
-				"children": [],
+				"visible": true,
 				"title": "Dashboard",
 				"titleColor": "rgba( 255, 255, 255, 1 )",
-				"name": "headerBar",
-				"parent": "pgDashboard",
-				"flexProps": {},
-				"style": {
-					"backgroundColor": "rgba( 44, 50, 57, 1 )",
-					"font": {}
-				},
+				"layout": {
+					"height": 22
+				}
+			},
+			"className": ".headerBar",
+			"props": {
+				"title": "Dashboard",
+				"titleColor": "rgba( 255, 255, 255, 1 )",
+				"visible": true,
+				"backgroundColor": "rgba( 44, 50, 57, 1 )",
 				"isRemovable": false,
+				"height": 44,
 				"layout": {
 					"height": 22
 				},
+				"children": [],
+				"parent": "pgDashboard",
+				"name": "headerBar",
 				"flex": {},
-				"visibility": true
+				"font": {},
+				"flexProps": {}
 			}
 		},
 		{
 			"type": "ImageView",
 			"id": "a5c19250",
+			"themeProps": {},
+			"userProps": {
+				"backgroundColor": "rgba( 255, 255, 255, 0 )",
+				"alpha": 1,
+				"borderColor": "rgba(0,0,0,1)",
+				"borderWidth": 0,
+				"marginBottom": 20,
+				"marginLeft": 20,
+				"marginRight": 20,
+				"marginTop": 20,
+				"height": null,
+				"image": "reports.png",
+				"imageFillType": "ASPECTFIT",
+				"visible": true,
+				"width": null,
+				"imageURL": "https://dispatcher.r0.smartface.io/smartface9/fieldservice2/ui-editor/img/reports.png?os=iOS&osVersion=10.2&density=326&densityRatio=0.5&zoomLevel=0.5&brandModel=iPhone%207?random=0.085541011017225",
+				"flexProps": {
+					"positionType": "RELATIVE",
+					"flexGrow": 1
+				},
+				"layout": {
+					"marginBottom": 10,
+					"marginLeft": 10,
+					"marginTop": 10,
+					"marginRight": 10,
+					"borderWidth": 0
+				},
+				"flex": {
+					"positionType": 0,
+					"flexGrow": 1
+				}
+			},
+			"className": ".imageView",
 			"props": {
 				"width": null,
 				"height": null,
-				"children": [],
-				"name": "imgReports",
-				"parent": "pgDashboard",
-				"flexProps": {
-					"positionType": "RELATIVE",
-					"flexGrow": 1,
-					"marginLeft": 20,
-					"marginRight": 20,
-					"marginTop": 20,
-					"marginBottom": 20
-				},
-				"style": {
-					"backgroundColor": "rgba( 255, 255, 255, 0 )",
-					"opacity": 1,
-					"borderColor": "rgba(0,0,0,1)",
-					"borderWidth": 0,
-					"font": {}
-				},
-				"layout": {},
-				"flex": {
-					"positionType": 0
-				},
-				"visibility": true,
+				"touchEnabled": true,
+				"visible": true,
+				"imageFillType": "ASPECTFIT",
+				"backgroundColor": "rgba( 255, 255, 255, 0 )",
+				"alpha": 1,
+				"borderColor": "rgba(0,0,0,1)",
+				"borderWidth": 0,
+				"marginBottom": 20,
+				"marginLeft": 20,
+				"marginRight": 20,
+				"marginTop": 20,
 				"image": "reports.png",
-				"imageFillType": "ASPECTFIT"
+				"imageURL": "https://dispatcher.r0.smartface.io/smartface9/fieldservice2/ui-editor/img/reports.png?os=iOS&osVersion=10.2&density=326&densityRatio=0.5&zoomLevel=0.5&brandModel=iPhone%207?random=0.5080859225612229",
+				"flexProps": {
+					"alignSelf": "AUTO",
+					"positionType": "RELATIVE",
+					"flexGrow": 1
+				},
+				"layout": {
+					"marginBottom": 10,
+					"marginLeft": 10,
+					"marginTop": 10,
+					"marginRight": 10,
+					"borderWidth": 0
+				},
+				"flex": {
+					"positionType": 0,
+					"flexGrow": 1
+				},
+				"children": [],
+				"parent": "pgDashboard",
+				"name": "imgReports",
+				"font": {}
 			}
 		}
 	]

@@ -2,14 +2,31 @@
 	"components": [
 		{
 			"type": "Page",
-			"props": {
-				"width": 187.5,
+			"id": "b2b995f4",
+			"themeProps": {},
+			"userProps": {
+				"isRemovable": true,
+				"backgroundColor": "#FFFFFF",
 				"height": 301.5,
-				"children": [
-					"statusBar",
-					"headerBar"
-				],
-				"name": "pgNotification",
+				"orientation": "PORTRAIT",
+				"width": 187.5,
+				"flexProps": {
+					"alignContent": "STRETCH",
+					"alignItems": "STRETCH",
+					"direction": "INHERIT",
+					"flexDirection": "COLUMN",
+					"flexWrap": "NOWRAP",
+					"justifyContent": "FLEX_START"
+				}
+			},
+			"className": ".page",
+			"version": "6.3.5",
+			"props": {
+				"backgroundColor": "#FFFFFF",
+				"orientation": "PORTRAIT",
+				"isRemovable": true,
+				"height": 301.5,
+				"width": 187.5,
 				"flexProps": {
 					"alignContent": "STRETCH",
 					"alignItems": "STRETCH",
@@ -18,57 +35,91 @@
 					"flexWrap": "NOWRAP",
 					"justifyContent": "FLEX_START"
 				},
-				"style": {
-					"backgroundColor": "#FFFFFF",
-					"font": {}
+				"children": [
+					"statusBar",
+					"headerBar"
+				],
+				"name": "pgNotification",
+				"layout": {
+					"width": 93.75,
+					"height": 150.75
 				},
-				"isRemovable": true,
-				"layout": {},
-				"flex": {},
-				"orientation": "PORTRAIT"
+				"flex": {
+					"alignContent": 4,
+					"alignItems": 4,
+					"flexDirection": 0,
+					"flexWrap": 0,
+					"justifyContent": 0
+				},
+				"font": {}
 			}
 		},
 		{
 			"type": "StatusBar",
-			"props": {
-				"height": 20,
-				"children": [],
-				"name": "statusBar",
-				"parent": "pgNotification",
-				"flexProps": {},
-				"style": {
-					"font": {}
-				},
+			"id": "8b798ab9",
+			"themeProps": {},
+			"userProps": {
 				"isRemovable": false,
+				"_style": "LIGHTCONTENT",
+				"height": 20,
+				"visible": true,
+				"color": "rgba( 44, 50, 57, 1 )",
+				"style": "LIGHTCONTENT",
+				"layout": {
+					"height": 10
+				}
+			},
+			"className": ".statusBar",
+			"props": {
+				"color": "rgba( 44, 50, 57, 1 )",
+				"visible": true,
+				"isRemovable": false,
+				"_style": "LIGHTCONTENT",
+				"height": 20,
+				"style": "LIGHTCONTENT",
 				"layout": {
 					"height": 10
 				},
+				"children": [],
+				"parent": "pgNotification",
+				"name": "statusBar",
 				"flex": {},
-				"visibility": true,
-				"color": "rgba( 44, 50, 57, 1 )",
-				"_style": "LIGHTCONTENT"
+				"font": {},
+				"flexProps": {}
 			}
 		},
 		{
 			"type": "HeaderBar",
-			"props": {
+			"id": "524b1de8",
+			"themeProps": {},
+			"userProps": {
+				"isRemovable": false,
+				"backgroundColor": "rgba( 44, 50, 57, 1 )",
 				"height": 44,
-				"children": [],
+				"visible": true,
 				"title": "Notification History",
 				"titleColor": "rgba( 255, 255, 255, 1 )",
-				"name": "headerBar",
-				"parent": "pgNotification",
-				"flexProps": {},
-				"style": {
-					"backgroundColor": "rgba( 44, 50, 57, 1 )",
-					"font": {}
-				},
+				"layout": {
+					"height": 22
+				}
+			},
+			"className": ".headerBar",
+			"props": {
+				"title": "Notification History",
+				"titleColor": "rgba( 255, 255, 255, 1 )",
+				"visible": true,
+				"backgroundColor": "rgba( 44, 50, 57, 1 )",
 				"isRemovable": false,
+				"height": 44,
 				"layout": {
 					"height": 22
 				},
+				"children": [],
+				"parent": "pgNotification",
+				"name": "headerBar",
 				"flex": {},
-				"visibility": true
+				"font": {},
+				"flexProps": {}
 			}
 		}
 	]

@@ -1,7 +1,6 @@
 /* globals lang */
 require("i18n/i18n.js"); //generates global lang object
 const Application = require("sf-core/application");
-const Router = require("sf-core/ui/router");
 
 Application.onUnhandledError = function(e) {
     alert({
@@ -9,6 +8,12 @@ Application.onUnhandledError = function(e) {
         message: e.message + "\n\n*" + e.sourceURL + "\n*" + e.line + "\n*" + e.stack
     });
 };
+const Router = require("sf-core/ui/router");
+
+const stylerBuilder = require("library/styler-builder");
+const settings = require("./.settings.json");
+stylerBuilder.registerThemes(settings.config.theme.themes || "Defaults");
+stylerBuilder.setActiveTheme(settings.config.theme.currentTheme);
 
 require("sf-extension-alert");
 require("timers-smf");

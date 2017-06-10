@@ -2,15 +2,14 @@
 	"components": [
 		{
 			"type": "Page",
-			"props": {
-				"width": 187.5,
+			"id": "f3ac7554",
+			"themeProps": {},
+			"userProps": {
+				"isRemovable": true,
+				"backgroundColor": "#FFFFFF",
 				"height": 301.5,
-				"children": [
-					"statusBar",
-					"headerBar",
-					"activityindicator1"
-				],
-				"name": "pgEntry",
+				"orientation": "PORTRAIT",
+				"width": 187.5,
 				"flexProps": {
 					"alignContent": "STRETCH",
 					"alignItems": "CENTER",
@@ -19,11 +18,6 @@
 					"flexWrap": "NOWRAP",
 					"justifyContent": "CENTER"
 				},
-				"style": {
-					"backgroundColor": "#FFFFFF",
-					"font": {}
-				},
-				"isRemovable": true,
 				"layout": {
 					"width": 93.75,
 					"height": 150.75
@@ -31,82 +25,174 @@
 				"flex": {
 					"justifyContent": 1,
 					"alignItems": 2
+				}
+			},
+			"className": ".page",
+			"version": "6.3.5",
+			"props": {
+				"backgroundColor": "#FFFFFF",
+				"orientation": "PORTRAIT",
+				"isRemovable": true,
+				"height": 301.5,
+				"width": 187.5,
+				"flexProps": {
+					"alignContent": "STRETCH",
+					"alignItems": "CENTER",
+					"direction": "INHERIT",
+					"flexDirection": "COLUMN",
+					"flexWrap": "NOWRAP",
+					"justifyContent": "CENTER"
 				},
-				"orientation": "PORTRAIT"
+				"layout": {
+					"width": 93.75,
+					"height": 150.75
+				},
+				"flex": {
+					"alignContent": 4,
+					"alignItems": 2,
+					"flexDirection": 0,
+					"flexWrap": 0,
+					"justifyContent": 1
+				},
+				"children": [
+					"statusBar",
+					"headerBar",
+					"activityindicator1"
+				],
+				"name": "pgEntry",
+				"font": {}
 			}
 		},
 		{
 			"type": "StatusBar",
-			"props": {
-				"height": 20,
-				"children": [],
-				"name": "statusBar",
-				"parent": "pgEntry",
-				"flexProps": {},
-				"style": {
-					"font": {}
-				},
+			"id": "f70cd5db",
+			"themeProps": {},
+			"userProps": {
 				"isRemovable": false,
+				"height": 20,
+				"visible": true,
+				"color": "#00A1F1",
+				"layout": {
+					"height": 10
+				}
+			},
+			"className": ".statusBar",
+			"props": {
+				"color": "#00A1F1",
+				"visible": true,
+				"isRemovable": false,
+				"height": 20,
 				"layout": {
 					"height": 10
 				},
+				"children": [],
+				"parent": "pgEntry",
+				"name": "statusBar",
 				"flex": {},
-				"visibility": true,
-				"color": "#00A1F1"
+				"font": {},
+				"flexProps": {}
 			}
 		},
 		{
 			"type": "HeaderBar",
-			"props": {
+			"id": "53bf9db0",
+			"themeProps": {},
+			"userProps": {
+				"isRemovable": false,
+				"backgroundColor": "#FFFFFF",
 				"height": 44,
-				"children": [],
+				"visible": true,
 				"title": "Field Service",
 				"titleColor": "#000000",
-				"name": "headerBar",
-				"parent": "pgEntry",
-				"flexProps": {},
-				"style": {
-					"backgroundColor": "#FFFFFF",
-					"font": {}
-				},
+				"layout": {
+					"height": 22
+				}
+			},
+			"className": ".headerBar",
+			"props": {
+				"title": "Field Service",
+				"titleColor": "#000000",
+				"visible": true,
+				"backgroundColor": "#FFFFFF",
 				"isRemovable": false,
+				"height": 44,
 				"layout": {
 					"height": 22
 				},
+				"children": [],
+				"parent": "pgEntry",
+				"name": "headerBar",
 				"flex": {},
-				"visibility": true
+				"font": {},
+				"flexProps": {}
 			}
 		},
 		{
 			"type": "ActivityIndicator",
 			"id": "d98491c8",
-			"props": {
-				"width": 42,
+			"themeProps": {},
+			"userProps": {
+				"backgroundColor": "#FFFFFF",
+				"alpha": 1,
+				"borderColor": "rgba(0,0,0,1)",
+				"borderWidth": 0,
 				"height": 42,
-				"children": [],
-				"name": "activityindicator1",
-				"parent": "pgEntry",
+				"visible": true,
+				"width": 42,
+				"color": "#ADADAD",
+				"minHeight": 21,
+				"minWidth": 21,
 				"flexProps": {
 					"positionType": "RELATIVE"
 				},
-				"style": {
-					"backgroundColor": "#FFFFFF",
-					"opacity": 1,
-					"borderColor": "rgba(0,0,0,1)",
-					"borderWidth": 0,
-					"font": {}
+				"layout": {
+					"width": 21,
+					"height": 21,
+					"borderWidth": 0
+				},
+				"flex": {
+					"positionType": 0
+				},
+				"input": {
+					"height": 21,
+					"width": 21
+				}
+			},
+			"className": ".activityIndicator",
+			"props": {
+				"touchEnabled": true,
+				"width": 42,
+				"height": 42,
+				"color": "#ADADAD",
+				"visible": true,
+				"backgroundColor": "#FFFFFF",
+				"alpha": 1,
+				"borderColor": "rgba(0,0,0,1)",
+				"borderWidth": 0,
+				"minHeight": 21,
+				"minWidth": 21,
+				"flexProps": {
+					"positionType": "RELATIVE",
+					"alignSelf": "AUTO"
 				},
 				"layout": {
 					"width": 21,
 					"height": 21,
 					"minWidth": 10.5,
-					"minHeight": 10.5
+					"minHeight": 10.5,
+					"borderWidth": 0
 				},
 				"flex": {
 					"positionType": 0
 				},
-				"visibility": true,
-				"color": "#ADADAD"
+				"input": {
+					"height": 21,
+					"width": 21
+				},
+				"children": [],
+				"parent": "pgEntry",
+				"name": "activityindicator1",
+				"font": {}
 			}
 		}
 	]
