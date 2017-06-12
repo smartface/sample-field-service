@@ -7,9 +7,18 @@ const FlexLayout = require('sf-core/ui/flexlayout');
 const Color = require('sf-core/ui/color');
 const Animator = require('sf-core/ui/animator');
 const System = require('sf-core/device/system');
+const KeyboardType = require('sf-core/ui/keyboardtype');
 
 const tabActiveTextColor = Color.create("#50D2C2");
 const tabInactiveTextColor = Color.create('#C6C6C6');
+const textInputDefaults = {
+    textAlignment: TextAlignment.TOPLEFT,
+    positionType: FlexLayout.PositionType.ABSOLUTE,
+    top: 0,
+    left: 0,
+    right: 0,
+    bottom: 0
+};
 
 const pgCustomerFilter = extend(pgCustomerFilterDesign)(
     function(_super) {
@@ -18,7 +27,7 @@ const pgCustomerFilter = extend(pgCustomerFilterDesign)(
         var baseOnLoad = page.onLoad;
         var baseOnShow = page.onShow;
 
-        var tiName, tiCard;
+        var tiName, tiCard, tiEmail, tiPhone;
         if (!page.layout.applyLayout)
             page.layout.applyLayou = function dummyApplyLayout() {};
 
@@ -28,29 +37,29 @@ const pgCustomerFilter = extend(pgCustomerFilterDesign)(
 
             page.flTabIndicator.touchEnabled = false;
 
-            tiName = Object.assign(new TextInput(), {
+            tiName = Object.assign(new TextInput(), textInputDefaults, {
                 hint: "Name Surname",
-                textAlignment: TextAlignment.TOPLEFT,
-                positionType: FlexLayout.PositionType.ABSOLUTE,
-                top: 0,
-                left: 0,
-                right: 0,
-                bottom: 0
             });
             page.flNameInputArea.addChild(tiName);
 
-            tiCard = Object.assign(new TextInput(), {
+            tiCard = Object.assign(new TextInput(), textInputDefaults, {
                 hint: "Card Number",
-                textAlignment: TextAlignment.TOPLEFT,
-                positionType: FlexLayout.PositionType.ABSOLUTE,
-                top: 0,
-                left: 0,
-                right: 0,
-                bottom: 0
+                keyboardType: KeyboardType.NUMBER,
             });
             page.flCardInputArea.addChild(tiCard);
 
+            tiPhone = Object.assign(new TextInput(), textInputDefaults, {
+                hint: "Phone",
+                keyboardType: KeyboardType.PHONE,
+            });
+            page.flCardInputArea.addChild(tiPhone);
 
+
+            tiEmail = Object.assign(new TextInput(), textInputDefaults, {
+                hint: "E-mail",
+                keyboardType: KeyboardType.EMAILADDRESS,
+            });
+            page.flCardInputArea.addChild(tiEmail);
 
 
             page.btnName.onPress = function() {
@@ -67,8 +76,7 @@ const pgCustomerFilter = extend(pgCustomerFilterDesign)(
                 });
             };
 
-
-            page.btnCard.onPress = function() {
+          page.btnCard.onPress = function() {
                 page.flCardInput.flexGrow = 1;
                 page.flNameInput.flexGrow = 0;
                 page.flFirstLine.applyLayout();
@@ -92,6 +100,9 @@ const pgCustomerFilter = extend(pgCustomerFilterDesign)(
 
         function reset() {
             tiName.text = "";
+            tiCard.text = "";
+            tiEmail.text = "";
+            tiPhone.text = "";
             page.placeHolderLeft.flexGrow = 0;
             page.placeHolderRight.flexGrow = 1;
             page.btnName.textColor = tabActiveTextColor;

@@ -1,0 +1,218 @@
+{
+	"components": [
+		{
+			"type": "Page",
+			"id": "56dad56b",
+			"themeProps": {},
+			"userProps": {},
+			"className": ".page",
+			"version": "6.3.5",
+			"props": {
+				"backgroundColor": "#EEEEEE",
+				"orientation": "PORTRAIT",
+				"flexProps": {
+					"alignContent": "STRETCH",
+					"alignItems": "STRETCH",
+					"direction": "INHERIT",
+					"flexDirection": "COLUMN",
+					"flexWrap": "NOWRAP",
+					"justifyContent": "FLEX_START"
+				},
+				"parent": null,
+				"children": [
+					"statusBar",
+					"headerBar",
+					"lvCustomers",
+					"btnAddCustomer"
+				],
+				"name": "pgCustomers",
+				"layout": {},
+				"flex": {
+					"alignContent": 4,
+					"alignItems": 4,
+					"flexDirection": 0,
+					"flexWrap": 0,
+					"justifyContent": 0
+				},
+				"font": {},
+				"width": 187.5,
+				"height": 301.5
+			}
+		},
+		{
+			"type": "StatusBar",
+			"id": "d88ee3ce",
+			"themeProps": {},
+			"userProps": {
+				"color": "rgba( 44, 50, 57, 1 )",
+				"style": "LIGHTCONTENT"
+			},
+			"className": ".statusBar",
+			"props": {
+				"color": "rgba( 44, 50, 57, 1 )",
+				"visible": true,
+				"style": "LIGHTCONTENT",
+				"parent": "pgCustomers",
+				"children": [],
+				"isRemovable": false,
+				"name": "statusBar",
+				"layout": {
+					"height": 10
+				},
+				"flex": {},
+				"font": {},
+				"flexProps": {},
+				"height": 20
+			}
+		},
+		{
+			"type": "HeaderBar",
+			"id": "bca0846a",
+			"themeProps": {},
+			"userProps": {
+				"title": "Customers",
+				"backgroundColor": "rgba( 44, 50, 57, 1 )",
+				"titleColor": "rgba( 255, 255, 255, 1 )"
+			},
+			"className": ".headerBar",
+			"props": {
+				"title": "Customers",
+				"titleColor": "rgba( 255, 255, 255, 1 )",
+				"visible": true,
+				"backgroundColor": "rgba( 44, 50, 57, 1 )",
+				"parent": "pgCustomers",
+				"children": [],
+				"isRemovable": false,
+				"name": "headerBar",
+				"layout": {
+					"height": 22
+				},
+				"flex": {},
+				"font": {},
+				"flexProps": {},
+				"height": 44
+			}
+		},
+		{
+			"type": "ListView",
+			"id": "dfc49879",
+			"themeProps": {},
+			"userProps": {
+				"width": null,
+				"height": null,
+				"left": 0,
+				"top": 0,
+				"right": 0,
+				"bottom": 0,
+				"usePageVariable": true,
+				"flexProps": {
+					"positionType": "ABSOLUTE",
+					"right": 0,
+					"bottom": 0
+				}
+			},
+			"className": ".listView",
+			"props": {
+				"height": null,
+				"width": null,
+				"touchEnabled": true,
+				"multiline": false,
+				"rowHeight": 60,
+				"itemCount": 3,
+				"visible": true,
+				"backgroundColor": "#FFFFFF",
+				"alpha": 1,
+				"borderColor": "rgba(0,0,0,1)",
+				"borderWidth": 0,
+				"left": 0,
+				"top": 0,
+				"right": 0,
+				"bottom": 0,
+				"usePageVariable": true,
+				"flexProps": {
+					"alignSelf": "AUTO",
+					"positionType": "ABSOLUTE",
+					"right": 0,
+					"bottom": 0
+				},
+				"name": "lvCustomers",
+				"parent": "pgCustomers",
+				"children": [],
+				"layout": {
+					"right": 0,
+					"bottom": 0,
+					"left": 0,
+					"top": 0,
+					"borderWidth": 0
+				},
+				"flex": {
+					"positionType": 1,
+					"right": 0,
+					"bottom": 0
+				},
+				"font": {}
+			}
+		},
+		{
+			"type": "Button",
+			"id": "9653a2f3",
+			"themeProps": {},
+			"userProps": {
+				"usePageVariable": true,
+				"text": "+",
+				"textColor": "rgba( 46, 193, 169, 1 )",
+				"backgroundColor": "rgba( 255, 255, 255, 1 )",
+				"width": 50,
+				"height": 50,
+				"borderRadius": 25,
+				"right": 8.5,
+				"bottom": 10,
+				"flexProps": {
+					"positionType": "ABSOLUTE"
+				}
+			},
+			"props": {
+				"name": "btnAddCustomer",
+				"isReady": true,
+				"flexProps": {
+					"positionType": "ABSOLUTE",
+					"alignSelf": "AUTO"
+				},
+				"width": 50,
+				"height": 50,
+				"touchEnabled": true,
+				"text": "+",
+				"visible": true,
+				"backgroundColor": "rgba( 255, 255, 255, 1 )",
+				"alpha": 1,
+				"borderColor": "rgba(0,0,0,1)",
+				"borderWidth": 0,
+				"textColor": "rgba( 46, 193, 169, 1 )",
+				"textAlignment": "MIDCENTER",
+				"font": {
+					"size": 16,
+					"bold": false,
+					"italic": false,
+					"family": "Arial"
+				},
+				"flex": {
+					"positionType": 1
+				},
+				"parent": "pgCustomers",
+				"children": [],
+				"layout": {
+					"right": 4.25,
+					"bottom": 5,
+					"width": 25,
+					"height": 25,
+					"borderWidth": 0,
+					"borderRadius": 12.5
+				},
+				"usePageVariable": true,
+				"borderRadius": 25,
+				"right": 8.5,
+				"bottom": 10
+			}
+		}
+	]
+}
