@@ -8,6 +8,9 @@ const Color = require('sf-core/ui/color');
 const Animator = require('sf-core/ui/animator');
 const System = require('sf-core/device/system');
 const KeyboardType = require('sf-core/ui/keyboardtype');
+const ActionKeyType = require('sf-core/ui/actionkeytype');
+const StatusBarStyle = require('sf-core/ui/statusbarstyle');
+const backAction = require("../lib/ui").backAction;
 
 const tabActiveTextColor = Color.create("#50D2C2");
 const tabInactiveTextColor = Color.create('#C6C6C6');
@@ -26,7 +29,7 @@ const pgCustomerFilter = extend(pgCustomerFilterDesign)(
         _super(this);
         var baseOnLoad = page.onLoad;
         var baseOnShow = page.onShow;
-
+        var searchMode = "name";
         var tiName, tiCard, tiEmail, tiPhone;
         if (!page.layout.applyLayout)
             page.layout.applyLayou = function dummyApplyLayout() {};
@@ -39,27 +42,43 @@ const pgCustomerFilter = extend(pgCustomerFilterDesign)(
 
             tiName = Object.assign(new TextInput(), textInputDefaults, {
                 hint: "Name Surname",
+                onActionButtonPress: function() {
+                    tiPhone.focus();
+                },
+                actionKeyType: ActionKeyType.NEXT
             });
             page.flNameInputArea.addChild(tiName);
 
             tiCard = Object.assign(new TextInput(), textInputDefaults, {
                 hint: "Card Number",
                 keyboardType: KeyboardType.NUMBER,
+                onActionButtonPress: function() {
+                    tiPhone.focus();
+                },
+                actionKeyType: ActionKeyType.NEXT
             });
             page.flCardInputArea.addChild(tiCard);
 
             tiPhone = Object.assign(new TextInput(), textInputDefaults, {
                 hint: "Phone",
                 keyboardType: KeyboardType.PHONE,
+                onActionButtonPress: function() {
+                    tiEmail.focus();
+                },
+                actionKeyType: ActionKeyType.NEXT
             });
-            page.flCardInputArea.addChild(tiPhone);
+            page.flPhoneInputArea.addChild(tiPhone);
 
 
             tiEmail = Object.assign(new TextInput(), textInputDefaults, {
                 hint: "E-mail",
                 keyboardType: KeyboardType.EMAILADDRESS,
+                onActionButtonPress: function() {
+                    doSearch();
+                },
+                actionKeyType: ActionKeyType.SEARCH
             });
-            page.flCardInputArea.addChild(tiEmail);
+            page.flEmailInputArea.addChild(tiEmail);
 
 
             page.btnName.onPress = function() {
@@ -74,6 +93,7 @@ const pgCustomerFilter = extend(pgCustomerFilterDesign)(
                 }).complete(function() {
 
                 });
+                searchMode = "name";
             };
 
           page.btnCard.onPress = function() {
@@ -88,7 +108,21 @@ const pgCustomerFilter = extend(pgCustomerFilterDesign)(
                 }).complete(function() {
 
                 });
+                searchMode = "card";
             };
+            
+            function doSearch() {
+                if(searchMode === "name") {
+                    
+                } else { // searchMode == "card" then
+                    
+                }
+                
+                //TODO: go to service then pgCustomers
+                Router.go("pgCustomers");
+            }
+            
+            page.btnSearch.onPress = doSearch;
         };
 
         page.onShow = function onShow(data) {
@@ -96,6 +130,8 @@ const pgCustomerFilter = extend(pgCustomerFilterDesign)(
             if (data) {
                 data.reset && reset();
             }
+            page.statusBar.ios.style = StatusBarStyle.LIGHTCONTENT;
+            backAction(page, "pgDashboard");
         };
 
         function reset() {
@@ -110,6 +146,7 @@ const pgCustomerFilter = extend(pgCustomerFilterDesign)(
             page.flCardInput.flexGrow = 0;
             page.flNameInput.flexGrow = 1;
             page.flFirstLine.applyLayout();
+            searchMode = "name";
         }
     });
 

@@ -72,4 +72,5 @@ sliderDrawer.setLeftItem = function setLeftItem(headerBar, force) {
     });
     headerBar.setLeftItem(sliderDrawerItem);
     headerBar.leftItem = sliderDrawerItem;
+    sliderDrawer.enabled = true;
 };
