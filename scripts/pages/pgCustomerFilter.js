@@ -37,7 +37,7 @@ const pgCustomerFilter = extend(pgCustomerFilterDesign)(
 
         page.onLoad = function onLoad() {
             baseOnLoad && baseOnLoad();
-            page.headerBar.title = pg
+            page.headerBar.title = lang.search;
 
             page.flTabIndicator.touchEnabled = false;
 
