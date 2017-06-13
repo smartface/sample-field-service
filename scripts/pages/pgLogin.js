@@ -59,8 +59,10 @@ const pgLogin = extend(pgLoginDesign)(
             tiUserName.text = tiPassword.text = "";
             page.setState(true);
             userData.currentUser = null;
-            if(data && data.checkUpdate) {
-                rau.checkUpdate();
+            if (data && data.checkUpdate) {
+                setTimeout(function() {
+                    rau.checkUpdate();
+                }, 10);
             }
         };
 

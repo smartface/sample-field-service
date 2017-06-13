@@ -12,11 +12,13 @@ const KeyboardType = require('sf-core/ui/keyboardtype');
 const ActionKeyType = require('sf-core/ui/actionkeytype');
 const StatusBarStyle = require('sf-core/ui/statusbarstyle');
 const backAction = require("../lib/ui").backAction;
+const HeaderBarItem = require('sf-core/ui/headerbaritem');
+const Image = require('sf-core/ui/image');
 
 const tabActiveTextColor = Color.create("#50D2C2");
 const tabInactiveTextColor = Color.create('#C6C6C6');
 const textInputDefaults = {
-    textAlignment: TextAlignment.TOPLEFT,
+    textAlignment: TextAlignment.MIDLEFT,
     positionType: FlexLayout.PositionType.ABSOLUTE,
     top: 0,
     left: 0,
@@ -97,7 +99,7 @@ const pgCustomerFilter = extend(pgCustomerFilterDesign)(
                 searchMode = "name";
             };
 
-          page.btnCard.onPress = function() {
+            page.btnCard.onPress = function() {
                 page.flCardInput.flexGrow = 1;
                 page.flNameInput.flexGrow = 0;
                 page.flFirstLine.applyLayout();
@@ -111,19 +113,31 @@ const pgCustomerFilter = extend(pgCustomerFilterDesign)(
                 });
                 searchMode = "card";
             };
-            
+
             function doSearch() {
-                if(searchMode === "name") {
-                    
-                } else { // searchMode == "card" then
-                    
+                if (searchMode === "name") {
+
                 }
-                
+                else { // searchMode == "card" then
+
+                }
+
                 //TODO: go to service then pgCustomers
                 Router.go("pgCustomers");
             }
-            
+
             page.btnSearch.onPress = doSearch;
+
+
+            var searchItem = new HeaderBarItem({
+                title: "",
+                onPress: function() {
+                    doSearch();
+                },
+                image: Image.createFromFile("images://search_icon.png"),
+                color: Color.WHITE
+            });
+            page.headerBar.setItems([searchItem]);
         };
 
         page.onShow = function onShow(data) {

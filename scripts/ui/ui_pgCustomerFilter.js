@@ -72,6 +72,7 @@ const PgCustomerFilter_ = extend(Page)(
 			width: null,
 			height: 95,
 			backgroundColor: Color.create(0, 218, 170, 170),
+			visible: false,
 			alignItems: FlexLayout.AlignItems.CENTER
 		});
 		var flSearch = new FlexLayout(flSearchStyle);

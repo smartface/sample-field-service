@@ -20,7 +20,7 @@
 				}
 			},
 			"className": ".page",
-			"version": "6.3.5",
+			"version": "6.3.6",
 			"props": {
 				"backgroundColor": "#FFFFFF",
 				"orientation": "PORTRAIT",
@@ -1092,7 +1092,7 @@
 				"borderWidth": 0,
 				"image": "filter_customer.png",
 				"usePageVariable": true,
-				"imageURL": "https://dispatcher.r0.smartface.io/smartface9/fieldservice2/ui-editor/img/filter_customer.png?os=iOS&osVersion=10.2&density=326&densityRatio=0.5&zoomLevel=0.5&brandModel=iPhone%207?random=0.4502700903172603",
+				"imageURL": "https://dispatcher.r0.smartface.io/smartface9/fieldservice2/ui-editor/img/filter_customer.png?os=iOS&osVersion=10.2&density=326&densityRatio=0.5&zoomLevel=0.5&brandModel=iPhone%207?random=0.24599967748396478",
 				"flexProps": {
 					"alignSelf": "AUTO",
 					"positionType": "RELATIVE",
@@ -1380,7 +1380,7 @@
 				"borderWidth": 0,
 				"image": "filter_card.png",
 				"usePageVariable": true,
-				"imageURL": "https://dispatcher.r0.smartface.io/smartface9/fieldservice2/ui-editor/img/filter_card.png?os=iOS&osVersion=10.2&density=326&densityRatio=0.5&zoomLevel=0.5&brandModel=iPhone%207?random=0.08975868188556446",
+				"imageURL": "https://dispatcher.r0.smartface.io/smartface9/fieldservice2/ui-editor/img/filter_card.png?os=iOS&osVersion=10.2&density=326&densityRatio=0.5&zoomLevel=0.5&brandModel=iPhone%207?random=0.518427617516698",
 				"flexProps": {
 					"alignSelf": "AUTO",
 					"positionType": "RELATIVE",
@@ -1670,7 +1670,7 @@
 				"borderWidth": 0,
 				"image": "filter_phone.png",
 				"usePageVariable": true,
-				"imageURL": "https://dispatcher.r0.smartface.io/smartface9/fieldservice2/ui-editor/img/filter_phone.png?os=iOS&osVersion=10.2&density=326&densityRatio=0.5&zoomLevel=0.5&brandModel=iPhone%207?random=0.9526891949599654",
+				"imageURL": "https://dispatcher.r0.smartface.io/smartface9/fieldservice2/ui-editor/img/filter_phone.png?os=iOS&osVersion=10.2&density=326&densityRatio=0.5&zoomLevel=0.5&brandModel=iPhone%207?random=0.9646020151787758",
 				"flexProps": {
 					"alignSelf": "AUTO",
 					"positionType": "RELATIVE",
@@ -1960,7 +1960,7 @@
 				"borderWidth": 0,
 				"image": "filter_email.png",
 				"usePageVariable": true,
-				"imageURL": "https://dispatcher.r0.smartface.io/smartface9/fieldservice2/ui-editor/img/filter_email.png?os=iOS&osVersion=10.2&density=326&densityRatio=0.5&zoomLevel=0.5&brandModel=iPhone%207?random=0.47360424501333",
+				"imageURL": "https://dispatcher.r0.smartface.io/smartface9/fieldservice2/ui-editor/img/filter_email.png?os=iOS&osVersion=10.2&density=326&densityRatio=0.5&zoomLevel=0.5&brandModel=iPhone%207?random=0.904026684581515",
 				"flexProps": {
 					"alignSelf": "AUTO",
 					"positionType": "RELATIVE",
@@ -2061,6 +2061,7 @@
 				"width": null,
 				"height": 95,
 				"backgroundColor": "rgba( 218, 170, 170, 0 )",
+				"visible": false,
 				"flexProps": {
 					"alignItems": "CENTER"
 				}
@@ -2070,7 +2071,7 @@
 				"height": 95,
 				"width": null,
 				"touchEnabled": true,
-				"visible": true,
+				"visible": false,
 				"backgroundColor": "rgba( 218, 170, 170, 0 )",
 				"alpha": 1,
 				"borderColor": "rgba(0,0,0,1)",
