@@ -20,7 +20,7 @@
 				}
 			},
 			"className": ".page",
-			"version": "6.3.5",
+			"version": "6.3.6",
 			"props": {
 				"backgroundColor": "#FFFFFF",
 				"orientation": "PORTRAIT",

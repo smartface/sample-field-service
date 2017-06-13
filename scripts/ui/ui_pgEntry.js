@@ -6,7 +6,6 @@
 
 const extend = require('js-base/core/extend');
 const Page = require('sf-core/ui/page');
-const ActivityIndicator = require('sf-core/ui/activityindicator');
 const Color = require('sf-core/ui/color');
 const FlexLayout = require('sf-core/ui/flexlayout');
 
@@ -24,27 +23,7 @@ const PgEntry_ = extend(Page)(
 			orientation: Page.Orientation.PORTRAIT
 		}, props || {}));
 
-		const activityindicator1Style = getCombinedStyle(".activityIndicator", {
-			backgroundColor: Color.create("#FFFFFF"),
-			alpha: 1,
-			borderColor: Color.create(255, 0, 0, 0),
-			borderWidth: 0,
-			height: 42,
-			visible: true,
-			width: 42,
-			color: Color.create("#ADADAD"),
-			minHeight: 21,
-			minWidth: 21,
-			positionType: FlexLayout.PositionType.RELATIVE
-		});
-		var activityindicator1 = new ActivityIndicator(activityindicator1Style);
-		this.layout.addChild(activityindicator1);
-		
-		//assign the children to page 
-		this.children = Object.assign({}, {
-			activityindicator1: activityindicator1
-		});
-		
+
 	});
 
 // Page.onShow -> This event is called when a page appears on the screen (everytime).

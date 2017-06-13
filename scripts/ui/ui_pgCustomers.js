@@ -8,9 +8,9 @@ const extend = require('js-base/core/extend');
 const Page = require('sf-core/ui/page');
 const ListView = require('sf-core/ui/listview');
 const ListViewItem = require('sf-core/ui/listviewitem');
+const Color = require('sf-core/ui/color');
 const FlexLayout = require('sf-core/ui/flexlayout');
 const Button = require('sf-core/ui/button');
-const Color = require('sf-core/ui/color');
 const StatusBarStyle = require('sf-core/ui/statusbarstyle');
 
 
@@ -30,9 +30,12 @@ const PgCustomers_ = extend(Page)(
 			width: null,
 			height: null,
 			left: 0,
-			top: 0,
+			top: 7.43,
 			right: 0,
 			bottom: 0,
+			backgroundColor: Color.create(0, 255, 255, 255),
+			itemCount: 4,
+			rowHeight: 106.43,
 			positionType: FlexLayout.PositionType.ABSOLUTE
 		});
 		var lvCustomers = new ListView(lvCustomersStyle);
@@ -92,7 +95,9 @@ function onShow() {
 // Page.onLoad -> This event is called once when page is created.
 function onLoad() { 
 
-  const pageStyle = getCombinedStyle(".page", {});
+  const pageStyle = getCombinedStyle(".page", {
+		backgroundColor: Color.create(255, 255, 255, 255)
+	});
 	
 	Object.assign(this.layout, pageStyle);
 	

@@ -7,6 +7,8 @@ const Color = require("sf-core/ui/color");
 const NotificationRow = require("../lib/ui").NotificationRow;
 const sliderDrawer = require("../sliderDrawer");
 const Router = require("sf-core/ui/router");
+const backAction = require("../lib/ui").backAction;
+const StatusBarStyle = require('sf-core/ui/statusbarstyle');
 
 const pgNotification = extend(pgNotificationDesign)(
     function(_super) {
@@ -48,6 +50,8 @@ const pgNotification = extend(pgNotificationDesign)(
         page.onShow = function onShow(notificationsData) {
             baseOnShow && baseOnShow(notificationsData);
             notificationsData && loadData(notificationsData);
+            backAction(page, "pgDashboard");
+            page.statusBar.ios.style = StatusBarStyle.LIGHTCONTENT;
         };
 
 
