@@ -8,6 +8,7 @@ Application.onUnhandledError = function(e) {
         message: e.message + "\n\n*" + e.sourceURL + "\n*" + e.line + "\n*" + e.stack
     });
 };
+
 const Router = require("sf-core/ui/router");
 
 const stylerBuilder = require("library/styler-builder");

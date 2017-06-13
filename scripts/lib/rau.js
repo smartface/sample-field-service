@@ -2,6 +2,8 @@
 const Application = global.Application;
 const AlertView = require('sf-core/ui/alertview');
 const Network = require('sf-core/device/network');
+const permission = require("./permission");
+const skipErrList = ["channel not found"];
 
 function checkUpdate(options) {
     options = options || {};
@@ -24,7 +26,8 @@ function checkUpdate(options) {
 
                 }
             }
-            alert((lang.updateFail || "Update failed") + ": " + err);
+            if(skipErrList.indexOf(err) === -1)
+                alert((lang.updateFail || "Update failed") + ": " + err);
         }
         else {
             //Update check is successful. We can show the meta info to inform our app user.
@@ -69,7 +72,14 @@ function checkUpdate(options) {
             }
         }
 
+
         function startUpdate() {
+            permission.checkPermission(Application.android.Permissions.WRITE_EXTERNAL_STORAGE, function() {
+                performUpdate();
+            });
+        }
+
+        function performUpdate() {
             var updateProgressAlert = alert({
                 message: lang.updateIsInProgress || "Update is in progress",
                 buttons: []
@@ -114,6 +124,7 @@ function checkUpdate(options) {
                 alert((lang.updateFail || "Update failed") + ": " + err);
             }
         }
+
         //We will do nothing on cancel for the timebeing.
         function doNothing() {
             //do nothing

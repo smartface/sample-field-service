@@ -11,6 +11,8 @@ const FlexLayout = require('sf-core/ui/flexlayout');
 const ActionKeyType = require('sf-core/ui/actionkeytype');
 const KeyboardType = require('sf-core/ui/keyboardtype');
 const TextAlignment = require('sf-core/ui/textalignment');
+const permission = require("../lib/permission");
+const Application = global.Application;
 const textInputDefaults = {
     positionType: FlexLayout.PositionType.ABSOLUTE,
     top: 0,
@@ -137,11 +139,15 @@ const pgNewCustomer = extend(pgNewCustomerDesign)(
 
         function pickPicture() {
             //TODO: Android permission
-            Multimedia.pickFromGallery({
-                type: Multimedia.Type.IMAGE,
-                onSuccess: onSuccess,
-                page: page
+
+            permission.checkPermission(Application.android.Permissions.READ_EXTERNAL_STORAGE, function() {
+                Multimedia.pickFromGallery({
+                    type: Multimedia.Type.IMAGE,
+                    onSuccess: onSuccess,
+                    page: page
+                });
             });
+
 
             function onSuccess(picked) {
                 var image = picked.image;

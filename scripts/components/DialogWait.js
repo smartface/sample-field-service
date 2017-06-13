@@ -3,20 +3,20 @@
 */
 const extend = require('js-base/core/extend');
 const Router = require("sf-core/ui/router");
-const DialogWait = require('library/DialogWait');
+const DialogWaitDesign = require('library/DialogWait');
 const Dialog = require("sf-core/ui/dialog");
 const Page = require('sf-core/ui/page');
-const DialogWait_ = extend(DialogWait)(
+const DialogWait = extend(DialogWaitDesign)(
 	//constructor
 	function(_super, props, pageName) {
 		// initalizes super class for this scope
-		_super(this, props || DialogWait.defaults);
+		_super(this, props || DialogWaitDesign.defaults);
 		this.pageName = pageName;
 	}
 
 );
 
-DialogWait_.show = function showWaitdialog(page) {
+DialogWait.show = function showWaitdialog(page) {
 	if (!page)
 		page = Router.getCurrent();
 	var sliderDrawer = require("../sliderDrawer");
@@ -26,8 +26,14 @@ DialogWait_.show = function showWaitdialog(page) {
 	var headerBar;
 	var backButtonPressed = null;
 
-	var dialogWait = new DialogWait_();
-	dialogWait.visible = true;
+	var dialogWait = Object.assign(new DialogWait(), {
+		visible: true,
+		left: 0,
+		right: 0,
+		top: 0,
+		bottom: 0
+	});
+	
 	var waitDialog = new Dialog();
 	showDialog();
 
@@ -87,4 +93,4 @@ DialogWait_.show = function showWaitdialog(page) {
 
 function empty() {}
 
-module && (module.exports = DialogWait_);
+module && (module.exports = DialogWait);
