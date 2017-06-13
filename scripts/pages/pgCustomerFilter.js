@@ -1,3 +1,4 @@
+/* globals lang */
 const extend = require("js-base/core/extend");
 const Router = require("sf-core/ui/router");
 const pgCustomerFilterDesign = require("../ui/ui_pgCustomerFilter");
@@ -32,16 +33,16 @@ const pgCustomerFilter = extend(pgCustomerFilterDesign)(
         var searchMode = "name";
         var tiName, tiCard, tiEmail, tiPhone;
         if (!page.layout.applyLayout)
-            page.layout.applyLayou = function dummyApplyLayout() {};
-
+            page.layout.applyLayout = function dummyApplyLayout() {};
 
         page.onLoad = function onLoad() {
             baseOnLoad && baseOnLoad();
+            page.headerBar.title = pg
 
             page.flTabIndicator.touchEnabled = false;
 
             tiName = Object.assign(new TextInput(), textInputDefaults, {
-                hint: "Name Surname",
+                hint: lang.nameSurname,
                 onActionButtonPress: function() {
                     tiPhone.focus();
                 },
@@ -50,7 +51,7 @@ const pgCustomerFilter = extend(pgCustomerFilterDesign)(
             page.flNameInputArea.addChild(tiName);
 
             tiCard = Object.assign(new TextInput(), textInputDefaults, {
-                hint: "Card Number",
+                hint: lang.cardNumber,
                 keyboardType: KeyboardType.NUMBER,
                 onActionButtonPress: function() {
                     tiPhone.focus();
@@ -60,7 +61,7 @@ const pgCustomerFilter = extend(pgCustomerFilterDesign)(
             page.flCardInputArea.addChild(tiCard);
 
             tiPhone = Object.assign(new TextInput(), textInputDefaults, {
-                hint: "Phone",
+                hint: lang.phone,
                 keyboardType: KeyboardType.PHONE,
                 onActionButtonPress: function() {
                     tiEmail.focus();
@@ -71,7 +72,7 @@ const pgCustomerFilter = extend(pgCustomerFilterDesign)(
 
 
             tiEmail = Object.assign(new TextInput(), textInputDefaults, {
-                hint: "E-mail",
+                hint: lang.eMail,
                 keyboardType: KeyboardType.EMAILADDRESS,
                 onActionButtonPress: function() {
                     doSearch();

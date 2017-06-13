@@ -1,3 +1,4 @@
+/*globals lang */
 const extend = require("js-base/core/extend");
 const Router = require("sf-core/ui/router");
 const CustomerRow = require("../components/CustomerRow");
@@ -15,13 +16,18 @@ const pgCustomers = extend(pgCustomersDesign)(
         var baseOnShow = page.onShow;
         page.onLoad = function onLoad() {
             baseOnLoad && baseOnLoad();
+            
+            page.headerBar.title = lang.customers;
 
             Object.assign(page.btnAddCustomer, {
                 text: "",
                 backgroundImage: {
                     normal: Image.createFromFile("images://add_customer.png")
                 },
-                borderRadius: 0
+                borderRadius: 0,
+                onPress: function() {
+                    Router.go("pgNewCustomer");
+                }
             });
 
 
@@ -44,22 +50,24 @@ const pgCustomers = extend(pgCustomersDesign)(
             lvCustomers.onRowSelected = function(listViewItem, index) {
                 Router.go("pgCustomerDetails", {
                     fields: [{
-                        name: "Customer Number",
+                        name: lang["Customer Number"],
                         value: "7645980"
                     }, {
-                        name: "Mobile Phone",
+                        name: lang["Mobile Phone"],
                         value: "+905337441232"
                     }, {
-                        name: "Work Phone",
+                        name: lang["Work Phone"],
                         value: "905337441232"
                     }, {
                         name: "Adress",
                         value: "PO Box 2364 Malta, NY 12030"
                     }, ],
                     actions: [{
-                        name: "Notes"
+                        name: "Notes",
+                        text: lang["Notes"]
                     }, {
-                        name: "Notification flow"
+                        name: "Notification flow",
+                        text: lang["Notification flow"]
                     }]
                 });
             };

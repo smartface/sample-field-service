@@ -1,10 +1,10 @@
 <ApplicationPackageLicenses>
     <ApplicationPackageLicense>
-        <CompanyName>Smartface User</CompanyName>
-        <LicenseName>Field Service</LicenseName>
+        <CompanyName>Smartface, Inc.</CompanyName>
+        <LicenseName>Field Services</LicenseName>
         <SASVersion>v5.0.0</SASVersion>
-        <CreateDate>04.05.2017 21:45:28</CreateDate>
-        <ExpireDate>02.05.2027 21:45:28</ExpireDate>
+        <CreateDate>02.05.2017 08:37:59</CreateDate>
+        <ExpireDate>00.05.2027 08:37:59</ExpireDate>
         <LicenseType>Professional</LicenseType>
         <PackageType>iOS</PackageType>
         <PackageName>io.smartface.fieldservice</PackageName>
@@ -18,11 +18,11 @@
         <SignData></SignData>
     </ApplicationPackageLicense>
     <ApplicationPackageLicense>
-        <CompanyName>Smartface User</CompanyName>
-        <LicenseName>Field Service</LicenseName>
+        <CompanyName>Smartface, Inc.</CompanyName>
+        <LicenseName>Field Services</LicenseName>
         <SASVersion>v5.0.0</SASVersion>
-        <CreateDate>04.05.2017 21:45:28</CreateDate>
-        <ExpireDate>02.05.2027 21:45:28</ExpireDate>
+        <CreateDate>02.05.2017 08:37:59</CreateDate>
+        <ExpireDate>00.05.2027 08:37:59</ExpireDate>
         <LicenseType>Professional</LicenseType>
         <PackageType>Android</PackageType>
         <PackageName>io.smartface.fieldservice</PackageName>

@@ -1,11 +1,11 @@
 {
 	"info": {
-		"name": "Field Service",
-		"company": "Smartface User",
+		"name": "Field Services",
+		"company": "Smartface, Inc.",
 		"webSite": "https://www.smartface.io",
 		"version": "1.0.0",
 		"runtimeVersion": "1100",
-		"description": "Smartface Field Service App powered by Oracle MCS"
+		"description": "Smartface Field Services App powered by Oracle MCS"
 	},
 	"config": {
 		"cache": {

@@ -27,7 +27,7 @@
 				}
 			},
 			"className": ".page",
-			"version": "6.3.5",
+			"version": "6.3.6",
 			"props": {
 				"backgroundColor": "#FFFFFF",
 				"orientation": "PORTRAIT",
@@ -401,7 +401,7 @@
 				"borderWidth": 0,
 				"image": "logo.png",
 				"usePageVariable": true,
-				"imageURL": "https://dispatcher.r0.smartface.io/smartface9/fieldservice2/ui-editor/img/logo.png?os=iOS&osVersion=10.2&density=326&densityRatio=0.5&zoomLevel=0.5&brandModel=iPhone%207?random=0.24094529123706354",
+				"imageURL": "https://dispatcher.r0.smartface.io/smartface9/fieldservice2/ui-editor/img/logo.png?os=iOS&osVersion=10.2&density=326&densityRatio=0.5&zoomLevel=0.5&brandModel=iPhone%207?random=0.10114489732224374",
 				"flexProps": {
 					"alignSelf": "AUTO",
 					"positionType": "RELATIVE"
@@ -500,13 +500,13 @@
 				"alpha": 1,
 				"borderColor": "rgba(0,0,0,1)",
 				"borderWidth": 0,
-				"height": 65,
+				"height": 63,
 				"visible": true,
-				"width": null,
+				"width": 267.8571472167969,
 				"flexProps": {
 					"alignContent": "STRETCH",
 					"alignItems": "CENTER",
-					"flexDirection": "ROW",
+					"flexDirection": "ROW_REVERSE",
 					"flexWrap": "NOWRAP",
 					"justifyContent": "FLEX_END",
 					"positionType": "RELATIVE"
@@ -525,8 +525,8 @@
 			},
 			"className": ".flexLayout",
 			"props": {
-				"height": 65,
-				"width": null,
+				"height": 63,
+				"width": 267.8571472167969,
 				"touchEnabled": true,
 				"visible": true,
 				"backgroundColor": "#FFFFFF",
@@ -540,11 +540,12 @@
 					"alignItems": "CENTER",
 					"justifyContent": "FLEX_END",
 					"flexWrap": "NOWRAP",
-					"flexDirection": "ROW",
+					"flexDirection": "ROW_REVERSE",
 					"positionType": "RELATIVE"
 				},
 				"layout": {
-					"height": 32.5,
+					"width": 133.92857360839844,
+					"height": 31.5,
 					"borderWidth": 0
 				},
 				"flex": {
@@ -552,7 +553,7 @@
 					"alignItems": 2,
 					"justifyContent": 2,
 					"flexWrap": 0,
-					"flexDirection": 2,
+					"flexDirection": 3,
 					"positionType": 0
 				},
 				"children": [
@@ -649,7 +650,7 @@
 				"textAlignment": "MIDCENTER",
 				"textColor": "rgba( 60, 67, 80, 1 )",
 				"height": 37,
-				"text": "Customer Services",
+				"text": "Field Services",
 				"visible": true,
 				"width": null,
 				"flexProps": {
@@ -673,7 +674,7 @@
 				"width": null,
 				"height": 37,
 				"touchEnabled": true,
-				"text": "Customer Services",
+				"text": "Field Services",
 				"visible": true,
 				"multiline": false,
 				"backgroundColor": "#FFFFFF",
@@ -794,7 +795,9 @@
 				"width": null,
 				"usePageVariable": true,
 				"flexProps": {
-					"positionType": "ABSOLUTE"
+					"positionType": "ABSOLUTE",
+					"right": 0,
+					"bottom": 0
 				},
 				"layout": {
 					"right": 0,
@@ -841,7 +844,9 @@
 				},
 				"flexProps": {
 					"positionType": "ABSOLUTE",
-					"alignSelf": "AUTO"
+					"alignSelf": "AUTO",
+					"right": 0,
+					"bottom": 0
 				},
 				"layout": {
 					"right": 0,
@@ -852,7 +857,9 @@
 					"borderRadius": 16.25
 				},
 				"flex": {
-					"positionType": 1
+					"positionType": 1,
+					"right": 0,
+					"bottom": 0
 				},
 				"children": [],
 				"parent": "flButton",
@@ -869,7 +876,7 @@
 				"borderColor": "rgba(0,0,0,1)",
 				"borderWidth": 0,
 				"marginBottom": null,
-				"marginRight": 20,
+				"marginRight": null,
 				"marginTop": null,
 				"height": 42,
 				"visible": true,
@@ -878,6 +885,7 @@
 				"color": "rgba( 44, 50, 57, 1 )",
 				"minHeight": 21,
 				"minWidth": 21,
+				"marginLeft": 20,
 				"flexProps": {
 					"positionType": "RELATIVE"
 				},
@@ -909,7 +917,7 @@
 				"minHeight": 21,
 				"minWidth": 21,
 				"marginBottom": null,
-				"marginRight": 20,
+				"marginRight": null,
 				"marginTop": null,
 				"usePageVariable": true,
 				"flexProps": {
@@ -917,7 +925,7 @@
 					"alignSelf": "AUTO"
 				},
 				"layout": {
-					"marginRight": 10,
+					"marginLeft": 10,
 					"width": 21,
 					"height": 21,
 					"minWidth": 10.5,
@@ -934,7 +942,8 @@
 				"children": [],
 				"parent": "flButton",
 				"name": "aiLogin",
-				"font": {}
+				"font": {},
+				"marginLeft": 20
 			}
 		}
 	]

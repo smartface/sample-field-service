@@ -150,12 +150,12 @@ const PgLogin_ = extend(Page)(
 			alpha: 1,
 			borderColor: Color.create(255, 0, 0, 0),
 			borderWidth: 0,
-			height: 65,
+			height: 63,
 			visible: true,
-			width: null,
+			width: 267.8571472167969,
 			alignContent: FlexLayout.AlignContent.STRETCH,
 			alignItems: FlexLayout.AlignItems.CENTER,
-			flexDirection: FlexLayout.FlexDirection.ROW,
+			flexDirection: FlexLayout.FlexDirection.ROW_REVERSE,
 			flexWrap: FlexLayout.FlexWrap.NOWRAP,
 			justifyContent: FlexLayout.JustifyContent.FLEX_END,
 			positionType: FlexLayout.PositionType.RELATIVE
@@ -171,7 +171,7 @@ const PgLogin_ = extend(Page)(
 			textAlignment: TextAlignment.MIDCENTER,
 			textColor: Color.create(255, 60, 67, 80),
 			height: 37,
-			text: "Customer Services",
+			text: "Field Services",
 			visible: true,
 			width: null,
 			positionType: FlexLayout.PositionType.RELATIVE,
@@ -227,7 +227,7 @@ const PgLogin_ = extend(Page)(
 			borderColor: Color.create(255, 0, 0, 0),
 			borderWidth: 0,
 			marginBottom: null,
-			marginRight: 20,
+			marginRight: null,
 			marginTop: null,
 			height: 42,
 			visible: true,
@@ -235,6 +235,7 @@ const PgLogin_ = extend(Page)(
 			color: Color.create(255, 44, 50, 57),
 			minHeight: 21,
 			minWidth: 21,
+			marginLeft: 20,
 			positionType: FlexLayout.PositionType.RELATIVE
 		});
 		var aiLogin = new ActivityIndicator(aiLoginStyle);

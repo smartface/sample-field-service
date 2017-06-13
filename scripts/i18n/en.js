@@ -38,4 +38,15 @@ SMF.i18n.defineLanguage('en', {
 	"notificationHistory": "Notification History",
 	"noInternetMessage": "No Internet Connection",
 	"noInternetTitle": "Cannot Connect",
+	"nameSurname": "Name Surname",
+	"cardNumber": "Card Number",
+	"phone": "Phone",
+	"eMail": "E-mail",
+	"Customer Number": "Customer Number",
+	"Mobile Phone": "Mobile Phone",
+	"Work Phone": "Work Phone",
+	"Adress": "Adress",
+	"Notes": "Notes",
+	"Notification flow": "Notification flow",
+	"search": "Search"
 });

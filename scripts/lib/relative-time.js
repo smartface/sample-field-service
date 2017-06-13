@@ -5,7 +5,7 @@ module.exports = exports = relativeTime;
 function relativeTime(date) {
     if (!date)
         return;
-    var parsed_date
+    var parsed_date;
     if (typeof date === "string") {
         date = date.trim();
         date = date.replace(/\.\d\d\d+/, ""); // remove the milliseconds

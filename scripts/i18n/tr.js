@@ -38,4 +38,15 @@ SMF.i18n.defineLanguage('tr', {
 	"notificationHistory": "Bildirim Tarihçesi",
 	"noInternetMessage": "İnternet Bağlantısı yok",
 	"noInternetTitle": "Bağlanamıyor",
+	"nameSurname": "Ad Soyad",
+	"cardNumber": "Kart Numarası",
+	"phone": "Telefon",
+	"eMail": "E-posta",
+	"Customer Number": "Müşteri Numarası",
+	"Mobile Phone": "Cep Telefonu",
+	"Work Phone": "İş Telefonu",
+	"Adress": "Adres",
+	"Notes": "Notlar",
+	"Notification flow": "Bildirim akışı",
+	"search": "Search"
 });

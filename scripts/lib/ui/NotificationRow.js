@@ -210,7 +210,7 @@ const NotificationRow = extend(FlexLayout)(
 
 					var rowHeight = topShift + lblHeight + lblTitle.height;
 					row.height = rowHeight;
-					
+
 					return value;
 				}
 			}

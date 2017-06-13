@@ -109,7 +109,7 @@ const pgCustomerDetails = extend(pgCustomerDetailsDesign)(
                         marginLeft: fieldMargin,
                         marginRight: fieldMargin,
                         showLine: index !== (customerDetails.actions.length - 1),
-                        fieldName: action.name,
+                        fieldName: action.text || action.name,
                         onPress: actions[action.name].bind(page, customerDetails)
                     });
                     layout.addChild(customerActionRow);

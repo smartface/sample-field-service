@@ -87,7 +87,10 @@ const PgNewCustomer_ = extend(Page)(
 			height: 73,
 			width: 73,
 			text: null,
-			borderRadius: 36.5
+			borderRadius: 36.5,
+			borderColor: Color.create(255, 151, 151, 151),
+			borderWidth: 0.5,
+			backgroundColor: Color.create(255, 255, 255, 255)
 		});
 		var btnPicture = new Button(btnPictureStyle);
 		flNameSurnamePicture.addChild(btnPicture);
@@ -112,6 +115,7 @@ const PgNewCustomer_ = extend(Page)(
 		const flNameSurnameStyle = getCombinedStyle(".flexLayout", {
 			width: null,
 			height: null,
+			marginLeft: 18,
 			flexGrow: 1,
 			justifyContent: FlexLayout.JustifyContent.SPACE_BETWEEN
 		});
@@ -125,7 +129,8 @@ const PgNewCustomer_ = extend(Page)(
 		});
 		var flEmail = new FlexLayout(flEmailStyle);
 		flEmailRow.addChild(flEmail);
-		
+		this.flEmail = flEmail;
+
 		const flPhoneStyle = getCombinedStyle(".flexLayout", {
 			width: null,
 			height: null,
@@ -133,7 +138,8 @@ const PgNewCustomer_ = extend(Page)(
 		});
 		var flPhone = new FlexLayout(flPhoneStyle);
 		flPhoneRow.addChild(flPhone);
-		
+		this.flPhone = flPhone;
+
 		const flAddressStyle = getCombinedStyle(".flexLayout", {
 			width: null,
 			height: null,
@@ -141,7 +147,8 @@ const PgNewCustomer_ = extend(Page)(
 		});
 		var flAddress = new FlexLayout(flAddressStyle);
 		flAddressRow.addChild(flAddress);
-		
+		this.flAddress = flAddress;
+
 		const flNameStyle = getCombinedStyle(".flexLayout", {
 			width: null,
 			height: 33
@@ -220,7 +227,7 @@ function onShow() {
 
   //HeaderBar props
   const headerBarStyle = getCombinedStyle(".headerBar", {
-		title: "new Customer",
+		title: "New Customer",
 		backgroundColor: Color.create(255, 44, 50, 57),
 		titleColor: Color.create(255, 255, 255, 255)
 	});
