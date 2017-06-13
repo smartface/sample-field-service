@@ -30,7 +30,9 @@ Router.add("pgNewCustomer", require("./pages/pgNewCustomer"));
 
 
 
-Router.go("pgLogin");
+Router.go("pgLogin", {
+    checkUpdate: true
+});
 var sliderDrawer = require("./sliderDrawer");
 Router.sliderDrawer = sliderDrawer;
 

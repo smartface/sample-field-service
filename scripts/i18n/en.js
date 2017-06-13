@@ -48,5 +48,14 @@ SMF.i18n.defineLanguage('en', {
 	"Adress": "Adress",
 	"Notes": "Notes",
 	"Notification flow": "Notification flow",
-	"search": "Search"
+	"search": "Search",
+	"newVersionAvailable": "A new update is ready!",
+	"version": "Version",
+	"isReadyToInstall": "is ready to install",
+	"updateMandatory": "This update is mandatory!",
+	"updateOptional": "Do you want to update?",
+	"updateNow": "Update Now",
+	"later": "Later",
+	"updateFail": "Update failed",
+	"updateIsInProgress": "Update is in progress"
 });

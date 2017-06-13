@@ -152,7 +152,7 @@ const PgLogin_ = extend(Page)(
 			borderWidth: 0,
 			height: 63,
 			visible: true,
-			width: 267.8571472167969,
+			width: null,
 			alignContent: FlexLayout.AlignContent.STRETCH,
 			alignItems: FlexLayout.AlignItems.CENTER,
 			flexDirection: FlexLayout.FlexDirection.ROW_REVERSE,

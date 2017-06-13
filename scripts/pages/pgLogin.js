@@ -8,6 +8,7 @@ const ActionKeyType = require('sf-core/ui/actionkeytype');
 const Network = require('sf-core/device/network');
 const sliderDrawer = require("../sliderDrawer");
 const userData = require("../model/user");
+const rau = require("../lib/rau");
 // const Application = require("sf-core/application");
 
 const pgLogin = extend(pgLoginDesign)(
@@ -58,6 +59,9 @@ const pgLogin = extend(pgLoginDesign)(
             tiUserName.text = tiPassword.text = "";
             page.setState(true);
             userData.currentUser = null;
+            if(data && data.checkUpdate) {
+                rau.checkUpdate();
+            }
         };
 
         page.setState = function setState(enabled) {

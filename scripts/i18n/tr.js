@@ -48,5 +48,14 @@ SMF.i18n.defineLanguage('tr', {
 	"Adress": "Adres",
 	"Notes": "Notlar",
 	"Notification flow": "Bildirim akışı",
-	"search": "Search"
+	"search": "Search",
+	"newVersionAvailable": "Yeni sürüm hazır!",
+	"version": "Sürüm",
+	"isReadyToInstall": "yüklemeye hazır",
+	"updateMandatory": "Bu güncelleme mecburidir!",
+	"updateOptional": "Güncellemek istiyor musun?",
+	"updateNow": "Şimdi güncelle",
+	"later": "Sonra",
+	"updateFail": "Güncelleme başarısız oldu",
+	"updateIsInProgress": "Güncelleme sürüyor"
 });

@@ -401,7 +401,7 @@
 				"borderWidth": 0,
 				"image": "logo.png",
 				"usePageVariable": true,
-				"imageURL": "https://dispatcher.r0.smartface.io/smartface9/fieldservice2/ui-editor/img/logo.png?os=iOS&osVersion=10.2&density=326&densityRatio=0.5&zoomLevel=0.5&brandModel=iPhone%207?random=0.10114489732224374",
+				"imageURL": "https://dispatcher.r0.smartface.io/smartface9/fieldservice2/ui-editor/img/logo.png?os=iOS&osVersion=10.2&density=326&densityRatio=0.5&zoomLevel=0.5&brandModel=iPhone%207?random=0.6375836934337773",
 				"flexProps": {
 					"alignSelf": "AUTO",
 					"positionType": "RELATIVE"
@@ -502,7 +502,7 @@
 				"borderWidth": 0,
 				"height": 63,
 				"visible": true,
-				"width": 267.8571472167969,
+				"width": null,
 				"flexProps": {
 					"alignContent": "STRETCH",
 					"alignItems": "CENTER",
@@ -526,7 +526,7 @@
 			"className": ".flexLayout",
 			"props": {
 				"height": 63,
-				"width": 267.8571472167969,
+				"width": null,
 				"touchEnabled": true,
 				"visible": true,
 				"backgroundColor": "#FFFFFF",
@@ -544,7 +544,6 @@
 					"positionType": "RELATIVE"
 				},
 				"layout": {
-					"width": 133.92857360839844,
 					"height": 31.5,
 					"borderWidth": 0
 				},
@@ -920,6 +919,7 @@
 				"marginRight": null,
 				"marginTop": null,
 				"usePageVariable": true,
+				"marginLeft": 20,
 				"flexProps": {
 					"positionType": "RELATIVE",
 					"alignSelf": "AUTO"
@@ -942,8 +942,7 @@
 				"children": [],
 				"parent": "flButton",
 				"name": "aiLogin",
-				"font": {},
-				"marginLeft": 20
+				"font": {}
 			}
 		}
 	]
