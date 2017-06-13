@@ -44,6 +44,7 @@ const TextInput = extend(FlexLayout)(
 			}
 		});
 		textbox.font = Font.create("Lato", 16, Font.NORMAL);
+		textbox.ios.clearButtonEnabled = true;
 		this.addChild(textbox);
 		this.textbox = textbox;
 		var line = new View({
@@ -75,7 +76,9 @@ const TextInput = extend(FlexLayout)(
 			"hideKeyboard", "showKeyboard", "keyboardType", "textAlignment",
 			"isPassword", "actionKeyType", "requestFocus", "removeFocus"
 		]);
-		
+
+		//mapProperties(textInput, textbox.ios, ["clearButtonEnabled"]);
+
 		textInput.invalidate = function invalidate() {
 			line.backgroundColor = lineColorInvalid;
 		};
