@@ -65,7 +65,10 @@ const SliderDrawer_ = extend(SliderDrawer)(
 					return alert(JSON.stringify(err), "Notifications Service Error");
 				}
 				moveHighlight(2);
-				Router.go("pgNotification", notificationsData);
+				Router.go("pgNotification", {
+					notificationsData: notificationsData,
+					from: "sliderDrawer"
+				});
 			});
 
 		}, touchControl);

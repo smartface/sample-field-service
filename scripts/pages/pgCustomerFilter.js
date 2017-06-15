@@ -11,10 +11,11 @@ const System = require('sf-core/device/system');
 const KeyboardType = require('sf-core/ui/keyboardtype');
 const ActionKeyType = require('sf-core/ui/actionkeytype');
 const StatusBarStyle = require('sf-core/ui/statusbarstyle');
-const backAction = require("../lib/ui").backAction;
+//const backAction = require("../lib/ui").backAction;
 const HeaderBarItem = require('sf-core/ui/headerbaritem');
 const Image = require('sf-core/ui/image');
 const theme = require("../lib/theme");
+const sliderDrawer = require("../sliderDrawer");
 
 
 const textInputDefaults = {
@@ -45,6 +46,7 @@ const pgCustomerFilter = extend(pgCustomerFilterDesign)(
 
         page.onLoad = function onLoad() {
             baseOnLoad && baseOnLoad();
+            sliderDrawer.setLeftItem(page.headerBar);
             page.headerBar.title = lang.search;
 
             page.flTabIndicator.touchEnabled = false;
@@ -151,7 +153,8 @@ const pgCustomerFilter = extend(pgCustomerFilterDesign)(
                 data.reset && reset();
             }
             page.statusBar.ios.style = StatusBarStyle.LIGHTCONTENT;
-            backAction(page, "pgDashboard");
+            //backAction(page, "pgDashboard");
+            sliderDrawer.enabled = true;
             applyTheme();
         };
 

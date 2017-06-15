@@ -48,10 +48,16 @@ const pgNotification = extend(pgNotificationDesign)(
             };
         };
 
-        page.onShow = function onShow(notificationsData) {
+        page.onShow = function onShow(data) {
+            var notificationsData = data.notificationsData;
             baseOnShow && baseOnShow(notificationsData);
             notificationsData && loadData(notificationsData);
-            backAction(page, "pgDashboard");
+            if(data.from === "sliderDrawer") {
+                sliderDrawer.setLeftItem(page.headerBar);
+                sliderDrawer.enabled = true;
+            }
+            else 
+                backAction(page);
             page.statusBar.ios.style = StatusBarStyle.LIGHTCONTENT;
             applyTheme();
         };
