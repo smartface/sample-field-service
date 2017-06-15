@@ -1,29 +1,44 @@
 /*globals lang*/
-/* 
-		You can modify its contents.
-*/
+const Application = global.Application;
 const extend = require('js-base/core/extend');
 const Router = require("sf-core/ui/router");
 const SliderDrawer = require('library/SliderDrawer');
 const mcs = require("../lib/mcs");
 const DialogWait = require("./DialogWait");
+const AlertView = require('sf-core/ui/alertview');
 const SliderDrawer_ = extend(SliderDrawer)(
 	//constructor
 	function(_super, props, pageName) {
 		_super(this, props || SliderDrawer.defaults);
 		this.pageName = pageName;
 
-		this.btnSigout.onPress = function() {
-			hide();
-			if (touchControl.target) {
-				touchControl.target.alpha = 1;
-			}
-			mcs.logout();
-			Router.goBack("pgLogin");
-		};
-
-
 		var touchControl = {};
+
+
+		mimicPressed(this.flSignout, function() {
+			alert({
+				message: "Would you like to sign out?",
+				title: "Confirm Signout",
+				buttons: [{
+					type: AlertView.Android.ButtonType.NEGATIVE,
+					text: "Yes",
+					onClick: function() {
+						hide();
+						if (touchControl.target) {
+							touchControl.target.alpha = 1;
+						}
+						mcs.logout();
+						Router.goBack("pgLogin");
+					}
+				}, {
+					type: AlertView.Android.ButtonType.POSITIVE,
+					text: "No",
+					onClick: function() {}
+				}]
+			});
+
+
+		}, touchControl);
 
 		mimicPressed(this.flSettings, function() {
 			hide();
@@ -77,13 +92,14 @@ const SliderDrawer_ = extend(SliderDrawer)(
 
 
 
-		this.btnSigout.text = lang.signout;
+		this.lblSignout.text = lang.signout;
 		this.lblSettings.text = lang.settings;
 		this.lblDashboard.text = lang.dashboard;
 		this.lblCustomers.text = lang.customers;
 		this.lblNotifications.text = lang.notifications;
 		this.lblGroupNotifications.text = lang.groupNotifications;
 		this.lblOpenNotifications.text = lang.openNotifications;
+		this.lblVersion.text = "v" + Application.version;
 
 	}
 
@@ -95,7 +111,6 @@ function mimicPressed(target, eventFunction, touchControl) {
 		let child = target.children[i];
 		child.touchEnabled = false;
 	}
-
 
 	target.onTouch = function(e) {
 		if (touchControl.target) {
