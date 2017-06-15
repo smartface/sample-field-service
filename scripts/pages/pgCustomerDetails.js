@@ -7,20 +7,15 @@ const Color = require('sf-core/ui/color');
 const CustomerDetailRow = require("../components/CustomerDetailRow");
 const CustomerActionRow = require("../components/CustomerActionRow");
 const fieldMargin = 24.5;
-const View = require('sf-core/ui/view');
 const StatusBarStyle = require('sf-core/ui/statusbarstyle');
 const sliderDrawer = require("../sliderDrawer");
 const Image = require('sf-core/ui/image');
-const gradientColor = Color.createGradient({
-    direction: Color.GradientDirection.HORIZONTAL,
-    startColor: Color.create("#06BEBD"),
-    endColor: Color.create("#B7CE63")
-});
 const emptyColor = Color.create(61, 216, 216, 216);
 const actions = {
     "Notes": showNotes,
     "Notification flow": showNotificationFlow
 };
+const theme = require("../lib/theme");
 const shadow = require("../lib/ui").shadow;
 
 const pgCustomerDetails = extend(pgCustomerDetailsDesign)(
@@ -47,9 +42,10 @@ const pgCustomerDetails = extend(pgCustomerDetailsDesign)(
                 text: "",
                 backgroundImage: Image.createFromFile("images://back_dark.png"),
             });
-            // page.imgCustomerPicture.borderColor = gradientColor;
-            page.flLine.backgroundColor = gradientColor;
-
+            
+            var selectedTheme = theme[theme.selected];
+            page.flLine.backgroundColor = selectedTheme.lineSeparator;
+            page.imgCustomerPicture.borderColor = selectedTheme.mainColor;
 
         };
 

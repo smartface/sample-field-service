@@ -1128,7 +1128,7 @@
 				"borderWidth": 0,
 				"image": "filter_customer.png",
 				"usePageVariable": true,
-				"imageURL": "https://dispatcher.r0.smartface.io/smartface9/fieldservice2/ui-editor/img/filter_customer.png?os=iOS&osVersion=10.2&density=326&densityRatio=0.5&zoomLevel=0.5&brandModel=iPhone%207?random=0.31826436355890597",
+				"imageURL": "https://dispatcher.r0.smartface.io/smartface9/fieldservice2/ui-editor/img/filter_customer.png?os=iOS&osVersion=10.2&density=326&densityRatio=0.5&zoomLevel=0.5&brandModel=iPhone%207?random=0.7295025684888519",
 				"children": [],
 				"flexProps": {
 					"alignSelf": "AUTO",
@@ -1424,7 +1424,7 @@
 				"borderWidth": 0,
 				"image": "filter_card.png",
 				"usePageVariable": true,
-				"imageURL": "https://dispatcher.r0.smartface.io/smartface9/fieldservice2/ui-editor/img/filter_card.png?os=iOS&osVersion=10.2&density=326&densityRatio=0.5&zoomLevel=0.5&brandModel=iPhone%207?random=0.9297997397270907",
+				"imageURL": "https://dispatcher.r0.smartface.io/smartface9/fieldservice2/ui-editor/img/filter_card.png?os=iOS&osVersion=10.2&density=326&densityRatio=0.5&zoomLevel=0.5&brandModel=iPhone%207?random=0.7745350381889196",
 				"children": [],
 				"flexProps": {
 					"alignSelf": "AUTO",
@@ -1722,7 +1722,7 @@
 				"borderWidth": 0,
 				"image": "filter_phone.png",
 				"usePageVariable": true,
-				"imageURL": "https://dispatcher.r0.smartface.io/smartface9/fieldservice2/ui-editor/img/filter_phone.png?os=iOS&osVersion=10.2&density=326&densityRatio=0.5&zoomLevel=0.5&brandModel=iPhone%207?random=0.8142606819874945",
+				"imageURL": "https://dispatcher.r0.smartface.io/smartface9/fieldservice2/ui-editor/img/filter_phone.png?os=iOS&osVersion=10.2&density=326&densityRatio=0.5&zoomLevel=0.5&brandModel=iPhone%207?random=0.5067471826593488",
 				"children": [],
 				"flexProps": {
 					"alignSelf": "AUTO",
@@ -2020,7 +2020,7 @@
 				"borderWidth": 0,
 				"image": "filter_email.png",
 				"usePageVariable": true,
-				"imageURL": "https://dispatcher.r0.smartface.io/smartface9/fieldservice2/ui-editor/img/filter_email.png?os=iOS&osVersion=10.2&density=326&densityRatio=0.5&zoomLevel=0.5&brandModel=iPhone%207?random=0.07894446485144346",
+				"imageURL": "https://dispatcher.r0.smartface.io/smartface9/fieldservice2/ui-editor/img/filter_email.png?os=iOS&osVersion=10.2&density=326&densityRatio=0.5&zoomLevel=0.5&brandModel=iPhone%207?random=0.4175300994893867",
 				"children": [],
 				"flexProps": {
 					"alignSelf": "AUTO",

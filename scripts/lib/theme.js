@@ -25,6 +25,7 @@ exports.PURPLE = {
     addCustomer: Image.createFromFile("images://add_customer_purple.png"),
     lineSeparator: Color.create("#979797"),
     secondaryColor: Color.create("#F6A623"),
+    inactiveColor: Color.create("#B395F0"),
 };
 
 exports.NAVY = {
@@ -52,4 +53,5 @@ exports.NAVY = {
         endColor: Color.create("#B7CE63")
     }),
     secondaryColor: Color.create("#50D2C2"),
+    inactiveColor: Color.create("#C6C6C6"),
 };

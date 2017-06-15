@@ -1,11 +1,6 @@
 const theme = require("../lib/theme");
 const extend = require('js-base/core/extend');
-const Color = require('sf-core/ui/color');
-const gradientColor = Color.createGradient({
-	direction: Color.GradientDirection.HORIZONTAL,
-	startColor: Color.create("#06BEBD"),
-	endColor: Color.create("#B7CE63")
-});
+
 const CustomerActionRowDesign = require('library/CustomerActionRow');
 
 const CustomerActionRow = extend(CustomerActionRowDesign)(
@@ -14,8 +9,8 @@ const CustomerActionRow = extend(CustomerActionRowDesign)(
 		var customerActionRow = this;
 		_super(this, props || CustomerActionRowDesign.defaults);
 		this.pageName = pageName;
-
-		customerActionRow.flCustomerActionLine.backgroundColor = gradientColor;
+		var selectedTheme = theme[theme.selected];
+		customerActionRow.flCustomerActionLine.backgroundColor = selectedTheme.lineSeparator;
 
 		Object.defineProperties(customerActionRow, {
 			showLine: {

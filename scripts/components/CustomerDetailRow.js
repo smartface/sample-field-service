@@ -1,11 +1,6 @@
 const theme = require("../lib/theme");
 const extend = require('js-base/core/extend');
-const Color = require('sf-core/ui/color');
-const gradientColor = Color.createGradient({
-	direction: Color.GradientDirection.HORIZONTAL,
-	startColor: Color.create("#06BEBD"),
-	endColor: Color.create("#B7CE63")
-});
+
 const CustomerDetailRowDesign = require('library/CustomerDetailRow');
 
 const CustomerDetailRow = extend(CustomerDetailRowDesign)(
@@ -14,7 +9,8 @@ const CustomerDetailRow = extend(CustomerDetailRowDesign)(
 		var customerDetailRow = this;
 		_super(this, props || CustomerDetailRowDesign.defaults);
 		this.pageName = pageName;
-		this.flCustomerDetailLine.backgroundColor = gradientColor;
+		var selectedTheme = theme[theme.selected];
+		this.flCustomerDetailLine.backgroundColor = selectedTheme.lineSeparator;
 
 
 		Object.defineProperties(customerDetailRow, {

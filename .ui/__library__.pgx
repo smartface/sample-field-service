@@ -2375,7 +2375,7 @@
 			"source": {
 				"page": "__library__"
 			},
-			"hiddenComponent": true,
+			"hiddenComponent": false,
 			"themeProps": {},
 			"userProps": {
 				"backgroundColor": "rgba( 0, 0, 0, 0.8 )",
@@ -2576,6 +2576,7 @@
 				"color": "rgba( 44, 50, 57, 1 )",
 				"minHeight": 21,
 				"minWidth": 21,
+				"usePageVariable": true,
 				"flexProps": {
 					"positionType": "RELATIVE"
 				},
@@ -2628,7 +2629,8 @@
 				},
 				"parent": "flWaitWhite",
 				"name": "aiWait",
-				"font": {}
+				"font": {},
+				"usePageVariable": true
 			}
 		},
 		{
@@ -3703,7 +3705,7 @@
 			"source": {
 				"page": "__library__"
 			},
-			"hiddenComponent": false,
+			"hiddenComponent": true,
 			"themeProps": {},
 			"userProps": {
 				"left": 0,

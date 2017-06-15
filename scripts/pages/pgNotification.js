@@ -9,6 +9,7 @@ const sliderDrawer = require("../sliderDrawer");
 const Router = require("sf-core/ui/router");
 const backAction = require("../lib/ui").backAction;
 const StatusBarStyle = require('sf-core/ui/statusbarstyle');
+const theme = require("../lib/theme");
 
 const pgNotification = extend(pgNotificationDesign)(
     function(_super) {
@@ -52,7 +53,14 @@ const pgNotification = extend(pgNotificationDesign)(
             notificationsData && loadData(notificationsData);
             backAction(page, "pgDashboard");
             page.statusBar.ios.style = StatusBarStyle.LIGHTCONTENT;
+            applyTheme();
         };
+
+        function applyTheme() {
+            var selectedTheme = theme[theme.selected];
+            page.statusBar.android && (page.statusBar.android.color = selectedTheme.topBarColor);
+            page.headerBar.backgroundColor = selectedTheme.topBarColor;
+        }
 
 
 

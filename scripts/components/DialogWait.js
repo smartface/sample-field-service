@@ -1,6 +1,4 @@
-/* 
-		You can modify its contents.
-*/
+const theme = require("../lib/theme");
 const extend = require('js-base/core/extend');
 const Router = require("sf-core/ui/router");
 const DialogWaitDesign = require('library/DialogWait');
@@ -12,6 +10,8 @@ const DialogWait = extend(DialogWaitDesign)(
 		// initalizes super class for this scope
 		_super(this, props || DialogWaitDesign.defaults);
 		this.pageName = pageName;
+		var selectedTheme = theme[theme.selected];
+		this.aiWait.color = selectedTheme.topBarColor;
 	}
 
 );

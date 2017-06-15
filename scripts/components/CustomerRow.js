@@ -19,6 +19,7 @@ const CustomerRow = extend(CustomerRowDesign)(
 		this.pageName = pageName;
 		var selectedTheme = theme[theme.selected];
 		this.customerRowLine.backgroundColor = selectedTheme.lineSeparator;
+		this.imgCustomerPicture.borderColor = selectedTheme.mainColor;
 	}
 
 );

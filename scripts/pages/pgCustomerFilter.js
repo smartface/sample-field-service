@@ -14,9 +14,9 @@ const StatusBarStyle = require('sf-core/ui/statusbarstyle');
 const backAction = require("../lib/ui").backAction;
 const HeaderBarItem = require('sf-core/ui/headerbaritem');
 const Image = require('sf-core/ui/image');
+const theme = require("../lib/theme");
 
-const tabActiveTextColor = Color.create("#50D2C2");
-const tabInactiveTextColor = Color.create('#C6C6C6');
+
 const textInputDefaults = {
     textAlignment: TextAlignment.MIDLEFT,
     positionType: FlexLayout.PositionType.ABSOLUTE,
@@ -32,6 +32,12 @@ const pgCustomerFilter = extend(pgCustomerFilterDesign)(
         _super(this);
         var baseOnLoad = page.onLoad;
         var baseOnShow = page.onShow;
+
+        var selectedTheme = theme[theme.selected];
+        const tabActiveTextColor = selectedTheme.secondaryColor;
+        const tabInactiveTextColor = selectedTheme.inactiveColor;
+        page.btnCard.backgroundColor = page.btnName.backgroundColor = selectedTheme.topBarColor;
+
         var searchMode = "name";
         var tiName, tiCard, tiEmail, tiPhone;
         if (!page.layout.applyLayout)
@@ -82,7 +88,7 @@ const pgCustomerFilter = extend(pgCustomerFilterDesign)(
                 actionKeyType: ActionKeyType.SEARCH
             });
             page.flEmailInputArea.addChild(tiEmail);
-            
+
             page.btnName.onPress = function() {
                 page.flCardInput.flexGrow = 0;
                 page.flNameInput.flexGrow = 1;
@@ -146,7 +152,17 @@ const pgCustomerFilter = extend(pgCustomerFilterDesign)(
             }
             page.statusBar.ios.style = StatusBarStyle.LIGHTCONTENT;
             backAction(page, "pgDashboard");
+            applyTheme();
         };
+
+        function applyTheme() {
+            var selectedTheme = theme[theme.selected];
+            page.statusBar.android && (page.statusBar.android.color = selectedTheme.topBarColor);
+            page.headerBar.backgroundColor = selectedTheme.topBarColor;
+
+            page.flTabHighlight.backgroundColor = selectedTheme.secondaryColor;
+        }
+
 
         function reset() {
             tiName.text = "";

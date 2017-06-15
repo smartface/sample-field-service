@@ -7,12 +7,16 @@ const Font = require('sf-core/ui/font');
 const View = require('sf-core/ui/view');
 const relativeTime = require("../relative-time");
 const Screen = require('sf-core/device/screen');
+const theme = require("../theme");
 
 const NotificationRow = extend(FlexLayout)(
 	//constructor
 	function(_super, props) {
 		var row = this;
 		_super(this, props);
+		
+		var selectedTheme = theme[theme.selected];
+		
 		var lblTitleMinHeight = 2;
 		var lblTitleMaxHeight = 30.5;
 		var topShift = 35 * 1.5;
@@ -75,7 +79,7 @@ const NotificationRow = extend(FlexLayout)(
 		});
 		this.addChild(flContent);
 
-		var flBall = new View({
+		var vBall = new View({
 			left: 99.75,
 			top: topShift + 4,
 			width: 10.5,
@@ -86,14 +90,14 @@ const NotificationRow = extend(FlexLayout)(
 			flexWrap: FlexLayout.FlexWrap.NOWRAP,
 			flexDirection: FlexLayout.FlexDirection.COLUMN,
 			positionType: FlexLayout.PositionType.ABSOLUTE,
-			backgroundColor: Color.create(255, 80, 210, 194),
+			backgroundColor: selectedTheme.mainColor,
 			alpha: 1,
-			borderColor: Color.create(255, 80, 210, 194),
+			borderColor: selectedTheme.mainColor,
 			borderWidth: 0,
 			borderRadius: 5.25,
 			visible: true
 		});
-		this.addChild(flBall);
+		this.addChild(vBall);
 
 		var lblDate = new Label({
 			height: 31,
@@ -149,7 +153,7 @@ const NotificationRow = extend(FlexLayout)(
 			flLeft: flLeft,
 			flLine: flLine,
 			flContent: flContent,
-			flBall: flBall
+			flBall: vBall
 		});
 
 		//assign the children of flLeft
