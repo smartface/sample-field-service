@@ -41,10 +41,15 @@ var sliderDrawer = new SliderDrawer({
             sliderDrawer.lblTitle.text = userData.currentUser.email;
         }
         sliderDrawer.applyTheme();
+
     },
+    onShow: function() {
+        console.log("sliderDrawer is shown");
+    }
 });
 sliderDrawer.drawerPosition = SliderDrawer.Position.LEFT;
 module.exports = exports = sliderDrawer;
+
 
 
 sliderDrawer.applyTheme = function sliderDrawer_applyTheme() {
