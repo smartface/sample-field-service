@@ -17,16 +17,27 @@
 					"flexDirection": "COLUMN",
 					"flexWrap": "NOWRAP",
 					"justifyContent": "FLEX_START"
-				}
+				},
+				"layout": {},
+				"flex": {},
+				"font": {},
+				"defaults": {}
 			},
 			"className": ".page",
-			"version": "6.3.6",
+			"version": "6.3.9",
 			"props": {
 				"backgroundColor": "#FFFFFF",
 				"orientation": "PORTRAIT",
 				"isRemovable": true,
 				"height": 301.5,
 				"width": 187.5,
+				"children": [
+					"statusBar",
+					"headerBar",
+					"flTab",
+					"flInputs",
+					"flSearch"
+				],
 				"flexProps": {
 					"alignContent": "STRETCH",
 					"alignItems": "STRETCH",
@@ -35,13 +46,6 @@
 					"flexWrap": "NOWRAP",
 					"justifyContent": "FLEX_START"
 				},
-				"children": [
-					"statusBar",
-					"headerBar",
-					"flTab",
-					"flInputs",
-					"flSearch"
-				],
 				"name": "pgCustomerFilter",
 				"layout": {
 					"width": 93.75,
@@ -70,7 +74,11 @@
 				"style": "LIGHTCONTENT",
 				"layout": {
 					"height": 10
-				}
+				},
+				"flex": {},
+				"font": {},
+				"flexProps": {},
+				"defaults": {}
 			},
 			"className": ".statusBar",
 			"props": {
@@ -80,10 +88,10 @@
 				"_style": "LIGHTCONTENT",
 				"height": 20,
 				"style": "LIGHTCONTENT",
+				"children": [],
 				"layout": {
 					"height": 10
 				},
-				"children": [],
 				"parent": "pgCustomerFilter",
 				"name": "statusBar",
 				"flex": {},
@@ -104,7 +112,11 @@
 				"titleColor": "rgba( 255, 255, 255, 1 )",
 				"layout": {
 					"height": 22
-				}
+				},
+				"flex": {},
+				"font": {},
+				"flexProps": {},
+				"defaults": {}
 			},
 			"className": ".headerBar",
 			"props": {
@@ -114,10 +126,10 @@
 				"backgroundColor": "rgba( 44, 50, 57, 1 )",
 				"isRemovable": false,
 				"height": 44,
+				"children": [],
 				"layout": {
 					"height": 22
 				},
-				"children": [],
 				"parent": "pgCustomerFilter",
 				"name": "headerBar",
 				"flex": {},
@@ -155,7 +167,9 @@
 					"flexWrap": 0,
 					"justifyContent": 0,
 					"positionType": 0
-				}
+				},
+				"font": {},
+				"defaults": {}
 			},
 			"className": ".flexLayout",
 			"props": {
@@ -167,6 +181,10 @@
 				"alpha": 1,
 				"borderColor": "rgba(0,0,0,1)",
 				"borderWidth": 0,
+				"children": [
+					"flButtons",
+					"flTabIndicator"
+				],
 				"flexProps": {
 					"alignSelf": "AUTO",
 					"direction": "INHERIT",
@@ -189,10 +207,6 @@
 					"flexDirection": 2,
 					"positionType": 0
 				},
-				"children": [
-					"flButtons",
-					"flTabIndicator"
-				],
 				"parent": "pgCustomerFilter",
 				"name": "flTab",
 				"font": {}
@@ -236,7 +250,9 @@
 					"flexWrap": 0,
 					"justifyContent": 0,
 					"positionType": 1
-				}
+				},
+				"font": {},
+				"defaults": {}
 			},
 			"className": ".flexLayout",
 			"props": {
@@ -253,6 +269,10 @@
 				"left": 0,
 				"top": 0,
 				"usePageVariable": true,
+				"children": [
+					"btnName",
+					"btnCard"
+				],
 				"flexProps": {
 					"alignSelf": "AUTO",
 					"direction": "INHERIT",
@@ -278,10 +298,6 @@
 					"flexDirection": 2,
 					"positionType": 1
 				},
-				"children": [
-					"btnName",
-					"btnCard"
-				],
 				"parent": "flTab",
 				"name": "flButtons",
 				"font": {}
@@ -325,7 +341,9 @@
 					"flexWrap": 0,
 					"justifyContent": 0,
 					"positionType": 1
-				}
+				},
+				"font": {},
+				"defaults": {}
 			},
 			"className": ".flexLayout",
 			"props": {
@@ -342,6 +360,11 @@
 				"left": 0,
 				"top": 0,
 				"usePageVariable": true,
+				"children": [
+					"placeHolderLeft",
+					"flTabHighlight",
+					"placeHolderRight"
+				],
 				"flexProps": {
 					"alignSelf": "AUTO",
 					"direction": "INHERIT",
@@ -367,11 +390,6 @@
 					"flexDirection": 2,
 					"positionType": 1
 				},
-				"children": [
-					"placeHolderLeft",
-					"flTabHighlight",
-					"placeHolderRight"
-				],
 				"parent": "flTab",
 				"name": "flTabIndicator",
 				"font": {}
@@ -409,7 +427,8 @@
 					"size": 16,
 					"italic": false,
 					"bold": false
-				}
+				},
+				"defaults": {}
 			},
 			"className": ".button",
 			"props": {
@@ -425,6 +444,7 @@
 				"textColor": "rgba( 80, 210, 194, 1 )",
 				"textAlignment": "MIDCENTER",
 				"usePageVariable": true,
+				"children": [],
 				"font": {
 					"size": 16,
 					"bold": false,
@@ -443,7 +463,6 @@
 					"positionType": 0,
 					"flexGrow": 1
 				},
-				"children": [],
 				"parent": "flButtons",
 				"name": "btnName"
 			}
@@ -480,7 +499,8 @@
 					"size": 16,
 					"italic": false,
 					"bold": false
-				}
+				},
+				"defaults": {}
 			},
 			"className": ".button",
 			"props": {
@@ -496,6 +516,7 @@
 				"textColor": "rgba( 198, 198, 198, 1 )",
 				"textAlignment": "MIDCENTER",
 				"usePageVariable": true,
+				"children": [],
 				"font": {
 					"size": 16,
 					"bold": false,
@@ -514,7 +535,6 @@
 					"positionType": 0,
 					"flexGrow": 1
 				},
-				"children": [],
 				"parent": "flButtons",
 				"name": "btnCard"
 			}
@@ -551,7 +571,9 @@
 					"justifyContent": 0,
 					"positionType": 0,
 					"flexGrow": 0
-				}
+				},
+				"font": {},
+				"defaults": {}
 			},
 			"className": ".flexLayout",
 			"props": {
@@ -564,6 +586,7 @@
 				"borderColor": "rgba(0,0,0,1)",
 				"borderWidth": 0,
 				"usePageVariable": true,
+				"children": [],
 				"flexProps": {
 					"alignSelf": "AUTO",
 					"direction": "INHERIT",
@@ -587,7 +610,6 @@
 					"positionType": 0,
 					"flexGrow": 0
 				},
-				"children": [],
 				"parent": "flTabIndicator",
 				"name": "placeHolderLeft",
 				"font": {}
@@ -626,7 +648,9 @@
 					"justifyContent": 0,
 					"positionType": 0,
 					"flexGrow": 1
-				}
+				},
+				"font": {},
+				"defaults": {}
 			},
 			"className": ".flexLayout",
 			"props": {
@@ -639,6 +663,7 @@
 				"borderColor": "rgba(0,0,0,1)",
 				"borderWidth": 0,
 				"usePageVariable": true,
+				"children": [],
 				"flexProps": {
 					"alignSelf": "AUTO",
 					"direction": "INHERIT",
@@ -663,7 +688,6 @@
 					"positionType": 0,
 					"flexGrow": 1
 				},
-				"children": [],
 				"parent": "flTabIndicator",
 				"name": "flTabHighlight",
 				"font": {}
@@ -701,7 +725,9 @@
 					"justifyContent": 0,
 					"positionType": 0,
 					"flexGrow": 1
-				}
+				},
+				"font": {},
+				"defaults": {}
 			},
 			"className": ".flexLayout",
 			"props": {
@@ -714,6 +740,7 @@
 				"borderColor": "rgba(0,0,0,1)",
 				"borderWidth": 0,
 				"usePageVariable": true,
+				"children": [],
 				"flexProps": {
 					"alignSelf": "AUTO",
 					"direction": "INHERIT",
@@ -737,7 +764,6 @@
 					"positionType": 0,
 					"flexGrow": 1
 				},
-				"children": [],
 				"parent": "flTabIndicator",
 				"name": "placeHolderRight",
 				"font": {}
@@ -775,7 +801,9 @@
 					"justifyContent": 0,
 					"positionType": 0,
 					"flexGrow": 1
-				}
+				},
+				"font": {},
+				"defaults": {}
 			},
 			"className": ".flexLayout",
 			"props": {
@@ -788,6 +816,11 @@
 				"borderColor": "rgba(0,0,0,1)",
 				"borderWidth": 0,
 				"paddingTop": null,
+				"children": [
+					"flFirstLine",
+					"flPhoneInput",
+					"flEmailInput"
+				],
 				"flexProps": {
 					"alignSelf": "AUTO",
 					"direction": "INHERIT",
@@ -811,11 +844,6 @@
 					"positionType": 0,
 					"flexGrow": 1
 				},
-				"children": [
-					"flFirstLine",
-					"flPhoneInput",
-					"flEmailInput"
-				],
 				"parent": "pgCustomerFilter",
 				"name": "flInputs",
 				"font": {}
@@ -852,7 +880,9 @@
 					"flexWrap": 0,
 					"justifyContent": 0,
 					"positionType": 0
-				}
+				},
+				"font": {},
+				"defaults": {}
 			},
 			"className": ".flexLayout",
 			"props": {
@@ -865,6 +895,10 @@
 				"borderColor": "rgba(0,0,0,1)",
 				"borderWidth": 0,
 				"usePageVariable": true,
+				"children": [
+					"flNameInput",
+					"flCardInput"
+				],
 				"flexProps": {
 					"alignSelf": "AUTO",
 					"direction": "INHERIT",
@@ -887,10 +921,6 @@
 					"flexDirection": 0,
 					"positionType": 0
 				},
-				"children": [
-					"flNameInput",
-					"flCardInput"
-				],
 				"parent": "flInputs",
 				"name": "flFirstLine",
 				"font": {}
@@ -931,7 +961,9 @@
 					"flexWrap": 0,
 					"justifyContent": 0,
 					"positionType": 0
-				}
+				},
+				"font": {},
+				"defaults": {}
 			},
 			"className": ".flexLayout",
 			"props": {
@@ -945,6 +977,10 @@
 				"borderWidth": 0,
 				"paddingTop": 22.5,
 				"usePageVariable": true,
+				"children": [
+					"flNameIcon",
+					"flNameInputArea"
+				],
 				"flexProps": {
 					"alignSelf": "AUTO",
 					"direction": "INHERIT",
@@ -969,10 +1005,6 @@
 					"positionType": 0,
 					"flexGrow": 1
 				},
-				"children": [
-					"flNameIcon",
-					"flNameInputArea"
-				],
 				"parent": "flFirstLine",
 				"name": "flNameInput",
 				"font": {}
@@ -1008,7 +1040,9 @@
 					"flexWrap": 0,
 					"justifyContent": 1,
 					"positionType": 0
-				}
+				},
+				"font": {},
+				"defaults": {}
 			},
 			"className": ".flexLayout",
 			"props": {
@@ -1020,6 +1054,9 @@
 				"alpha": 1,
 				"borderColor": "rgba(0,0,0,1)",
 				"borderWidth": 0,
+				"children": [
+					"imgName"
+				],
 				"flexProps": {
 					"alignSelf": "AUTO",
 					"direction": "INHERIT",
@@ -1042,9 +1079,6 @@
 					"flexDirection": 0,
 					"positionType": 0
 				},
-				"children": [
-					"imgName"
-				],
 				"parent": "flNameInput",
 				"name": "flNameIcon",
 				"font": {}
@@ -1077,7 +1111,9 @@
 				},
 				"flex": {
 					"positionType": 0
-				}
+				},
+				"font": {},
+				"defaults": {}
 			},
 			"className": ".imageView",
 			"props": {
@@ -1092,7 +1128,8 @@
 				"borderWidth": 0,
 				"image": "filter_customer.png",
 				"usePageVariable": true,
-				"imageURL": "https://dispatcher.r0.smartface.io/smartface9/fieldservice2/ui-editor/img/filter_customer.png?os=iOS&osVersion=10.2&density=326&densityRatio=0.5&zoomLevel=0.5&brandModel=iPhone%207?random=0.24599967748396478",
+				"imageURL": "https://dispatcher.r0.smartface.io/smartface9/fieldservice2/ui-editor/img/filter_customer.png?os=iOS&osVersion=10.2&density=326&densityRatio=0.5&zoomLevel=0.5&brandModel=iPhone%207?random=0.31826436355890597",
+				"children": [],
 				"flexProps": {
 					"alignSelf": "AUTO",
 					"positionType": "RELATIVE",
@@ -1105,7 +1142,6 @@
 					"positionType": 0,
 					"flexGrow": 1
 				},
-				"children": [],
 				"parent": "flNameIcon",
 				"name": "imgName",
 				"font": {}
@@ -1143,7 +1179,9 @@
 					"justifyContent": 0,
 					"positionType": 0,
 					"flexGrow": 1
-				}
+				},
+				"font": {},
+				"defaults": {}
 			},
 			"className": ".flexLayout",
 			"props": {
@@ -1156,6 +1194,7 @@
 				"borderColor": "rgba(0,0,0,1)",
 				"borderWidth": 0,
 				"usePageVariable": true,
+				"children": [],
 				"flexProps": {
 					"alignSelf": "AUTO",
 					"direction": "INHERIT",
@@ -1179,7 +1218,6 @@
 					"positionType": 0,
 					"flexGrow": 1
 				},
-				"children": [],
 				"parent": "flNameInput",
 				"name": "flNameInputArea",
 				"font": {}
@@ -1219,7 +1257,9 @@
 					"flexWrap": 0,
 					"justifyContent": 0,
 					"positionType": 0
-				}
+				},
+				"font": {},
+				"defaults": {}
 			},
 			"className": ".flexLayout",
 			"props": {
@@ -1233,6 +1273,10 @@
 				"borderWidth": 0,
 				"paddingTop": 22.5,
 				"usePageVariable": true,
+				"children": [
+					"flCardIcon",
+					"flCardInputArea"
+				],
 				"flexProps": {
 					"alignSelf": "AUTO",
 					"direction": "INHERIT",
@@ -1257,10 +1301,6 @@
 					"positionType": 0,
 					"flexGrow": 0
 				},
-				"children": [
-					"flCardIcon",
-					"flCardInputArea"
-				],
 				"parent": "flFirstLine",
 				"name": "flCardInput",
 				"font": {}
@@ -1296,7 +1336,9 @@
 					"flexWrap": 0,
 					"justifyContent": 1,
 					"positionType": 0
-				}
+				},
+				"font": {},
+				"defaults": {}
 			},
 			"className": ".flexLayout",
 			"props": {
@@ -1308,6 +1350,9 @@
 				"alpha": 1,
 				"borderColor": "rgba(0,0,0,1)",
 				"borderWidth": 0,
+				"children": [
+					"imgCard"
+				],
 				"flexProps": {
 					"alignSelf": "AUTO",
 					"direction": "INHERIT",
@@ -1330,9 +1375,6 @@
 					"flexDirection": 0,
 					"positionType": 0
 				},
-				"children": [
-					"imgCard"
-				],
 				"parent": "flCardInput",
 				"name": "flCardIcon",
 				"font": {}
@@ -1365,7 +1407,9 @@
 				},
 				"flex": {
 					"positionType": 0
-				}
+				},
+				"font": {},
+				"defaults": {}
 			},
 			"className": ".imageView",
 			"props": {
@@ -1380,7 +1424,8 @@
 				"borderWidth": 0,
 				"image": "filter_card.png",
 				"usePageVariable": true,
-				"imageURL": "https://dispatcher.r0.smartface.io/smartface9/fieldservice2/ui-editor/img/filter_card.png?os=iOS&osVersion=10.2&density=326&densityRatio=0.5&zoomLevel=0.5&brandModel=iPhone%207?random=0.518427617516698",
+				"imageURL": "https://dispatcher.r0.smartface.io/smartface9/fieldservice2/ui-editor/img/filter_card.png?os=iOS&osVersion=10.2&density=326&densityRatio=0.5&zoomLevel=0.5&brandModel=iPhone%207?random=0.9297997397270907",
+				"children": [],
 				"flexProps": {
 					"alignSelf": "AUTO",
 					"positionType": "RELATIVE",
@@ -1393,7 +1438,6 @@
 					"positionType": 0,
 					"flexGrow": 1
 				},
-				"children": [],
 				"parent": "flCardIcon",
 				"name": "imgCard",
 				"font": {}
@@ -1431,7 +1475,9 @@
 					"justifyContent": 0,
 					"positionType": 0,
 					"flexGrow": 1
-				}
+				},
+				"font": {},
+				"defaults": {}
 			},
 			"className": ".flexLayout",
 			"props": {
@@ -1444,6 +1490,7 @@
 				"borderColor": "rgba(0,0,0,1)",
 				"borderWidth": 0,
 				"usePageVariable": true,
+				"children": [],
 				"flexProps": {
 					"alignSelf": "AUTO",
 					"direction": "INHERIT",
@@ -1467,7 +1514,6 @@
 					"positionType": 0,
 					"flexGrow": 1
 				},
-				"children": [],
 				"parent": "flCardInput",
 				"name": "flCardInputArea",
 				"font": {}
@@ -1508,7 +1554,9 @@
 					"flexWrap": 0,
 					"justifyContent": 0,
 					"positionType": 0
-				}
+				},
+				"font": {},
+				"defaults": {}
 			},
 			"className": ".flexLayout",
 			"props": {
@@ -1522,6 +1570,10 @@
 				"borderWidth": 0,
 				"paddingTop": 22.5,
 				"usePageVariable": true,
+				"children": [
+					"flPhoneIcon",
+					"flPhoneInputArea"
+				],
 				"flexProps": {
 					"alignSelf": "AUTO",
 					"direction": "INHERIT",
@@ -1547,10 +1599,6 @@
 					"positionType": 0,
 					"flexGrow": null
 				},
-				"children": [
-					"flPhoneIcon",
-					"flPhoneInputArea"
-				],
 				"parent": "flInputs",
 				"name": "flPhoneInput",
 				"font": {}
@@ -1586,7 +1634,9 @@
 					"flexWrap": 0,
 					"justifyContent": 1,
 					"positionType": 0
-				}
+				},
+				"font": {},
+				"defaults": {}
 			},
 			"className": ".flexLayout",
 			"props": {
@@ -1598,6 +1648,9 @@
 				"alpha": 1,
 				"borderColor": "rgba(0,0,0,1)",
 				"borderWidth": 0,
+				"children": [
+					"imgPhone"
+				],
 				"flexProps": {
 					"alignSelf": "AUTO",
 					"direction": "INHERIT",
@@ -1620,9 +1673,6 @@
 					"flexDirection": 0,
 					"positionType": 0
 				},
-				"children": [
-					"imgPhone"
-				],
 				"parent": "flPhoneInput",
 				"name": "flPhoneIcon",
 				"font": {}
@@ -1655,7 +1705,9 @@
 				},
 				"flex": {
 					"positionType": 0
-				}
+				},
+				"font": {},
+				"defaults": {}
 			},
 			"className": ".imageView",
 			"props": {
@@ -1670,7 +1722,8 @@
 				"borderWidth": 0,
 				"image": "filter_phone.png",
 				"usePageVariable": true,
-				"imageURL": "https://dispatcher.r0.smartface.io/smartface9/fieldservice2/ui-editor/img/filter_phone.png?os=iOS&osVersion=10.2&density=326&densityRatio=0.5&zoomLevel=0.5&brandModel=iPhone%207?random=0.9646020151787758",
+				"imageURL": "https://dispatcher.r0.smartface.io/smartface9/fieldservice2/ui-editor/img/filter_phone.png?os=iOS&osVersion=10.2&density=326&densityRatio=0.5&zoomLevel=0.5&brandModel=iPhone%207?random=0.8142606819874945",
+				"children": [],
 				"flexProps": {
 					"alignSelf": "AUTO",
 					"positionType": "RELATIVE",
@@ -1683,7 +1736,6 @@
 					"positionType": 0,
 					"flexGrow": 1
 				},
-				"children": [],
 				"parent": "flPhoneIcon",
 				"name": "imgPhone",
 				"font": {}
@@ -1721,7 +1773,9 @@
 					"justifyContent": 0,
 					"positionType": 0,
 					"flexGrow": 1
-				}
+				},
+				"font": {},
+				"defaults": {}
 			},
 			"className": ".flexLayout",
 			"props": {
@@ -1734,6 +1788,7 @@
 				"borderColor": "rgba(0,0,0,1)",
 				"borderWidth": 0,
 				"usePageVariable": true,
+				"children": [],
 				"flexProps": {
 					"alignSelf": "AUTO",
 					"direction": "INHERIT",
@@ -1757,7 +1812,6 @@
 					"positionType": 0,
 					"flexGrow": 1
 				},
-				"children": [],
 				"parent": "flPhoneInput",
 				"name": "flPhoneInputArea",
 				"font": {}
@@ -1798,7 +1852,9 @@
 					"flexWrap": 0,
 					"justifyContent": 0,
 					"positionType": 0
-				}
+				},
+				"font": {},
+				"defaults": {}
 			},
 			"className": ".flexLayout",
 			"props": {
@@ -1812,6 +1868,10 @@
 				"borderWidth": 0,
 				"paddingTop": 22.5,
 				"usePageVariable": true,
+				"children": [
+					"flEmailIcon",
+					"flEmailInputArea"
+				],
 				"flexProps": {
 					"alignSelf": "AUTO",
 					"direction": "INHERIT",
@@ -1837,10 +1897,6 @@
 					"positionType": 0,
 					"flexGrow": null
 				},
-				"children": [
-					"flEmailIcon",
-					"flEmailInputArea"
-				],
 				"parent": "flInputs",
 				"name": "flEmailInput",
 				"font": {}
@@ -1876,7 +1932,9 @@
 					"flexWrap": 0,
 					"justifyContent": 1,
 					"positionType": 0
-				}
+				},
+				"font": {},
+				"defaults": {}
 			},
 			"className": ".flexLayout",
 			"props": {
@@ -1888,6 +1946,9 @@
 				"alpha": 1,
 				"borderColor": "rgba(0,0,0,1)",
 				"borderWidth": 0,
+				"children": [
+					"imgEmail"
+				],
 				"flexProps": {
 					"alignSelf": "AUTO",
 					"direction": "INHERIT",
@@ -1910,9 +1971,6 @@
 					"flexDirection": 0,
 					"positionType": 0
 				},
-				"children": [
-					"imgEmail"
-				],
 				"parent": "flEmailInput",
 				"name": "flEmailIcon",
 				"font": {}
@@ -1945,7 +2003,9 @@
 				},
 				"flex": {
 					"positionType": 0
-				}
+				},
+				"font": {},
+				"defaults": {}
 			},
 			"className": ".imageView",
 			"props": {
@@ -1960,7 +2020,8 @@
 				"borderWidth": 0,
 				"image": "filter_email.png",
 				"usePageVariable": true,
-				"imageURL": "https://dispatcher.r0.smartface.io/smartface9/fieldservice2/ui-editor/img/filter_email.png?os=iOS&osVersion=10.2&density=326&densityRatio=0.5&zoomLevel=0.5&brandModel=iPhone%207?random=0.904026684581515",
+				"imageURL": "https://dispatcher.r0.smartface.io/smartface9/fieldservice2/ui-editor/img/filter_email.png?os=iOS&osVersion=10.2&density=326&densityRatio=0.5&zoomLevel=0.5&brandModel=iPhone%207?random=0.07894446485144346",
+				"children": [],
 				"flexProps": {
 					"alignSelf": "AUTO",
 					"positionType": "RELATIVE",
@@ -1973,7 +2034,6 @@
 					"positionType": 0,
 					"flexGrow": 1
 				},
-				"children": [],
 				"parent": "flEmailIcon",
 				"name": "imgEmail",
 				"font": {}
@@ -2011,7 +2071,9 @@
 					"justifyContent": 0,
 					"positionType": 0,
 					"flexGrow": 1
-				}
+				},
+				"font": {},
+				"defaults": {}
 			},
 			"className": ".flexLayout",
 			"props": {
@@ -2024,6 +2086,7 @@
 				"borderColor": "rgba(0,0,0,1)",
 				"borderWidth": 0,
 				"usePageVariable": true,
+				"children": [],
 				"flexProps": {
 					"alignSelf": "AUTO",
 					"direction": "INHERIT",
@@ -2047,7 +2110,6 @@
 					"positionType": 0,
 					"flexGrow": 1
 				},
-				"children": [],
 				"parent": "flEmailInput",
 				"name": "flEmailInputArea",
 				"font": {}
@@ -2064,7 +2126,11 @@
 				"visible": false,
 				"flexProps": {
 					"alignItems": "CENTER"
-				}
+				},
+				"layout": {},
+				"flex": {},
+				"font": {},
+				"defaults": {}
 			},
 			"className": ".flexLayout",
 			"props": {
@@ -2076,6 +2142,9 @@
 				"alpha": 1,
 				"borderColor": "rgba(0,0,0,1)",
 				"borderWidth": 0,
+				"children": [
+					"btnSearch"
+				],
 				"flexProps": {
 					"alignSelf": "AUTO",
 					"direction": "INHERIT",
@@ -2088,9 +2157,6 @@
 				},
 				"name": "flSearch",
 				"parent": "pgCustomerFilter",
-				"children": [
-					"btnSearch"
-				],
 				"layout": {
 					"height": 47.5,
 					"borderWidth": 0
@@ -2120,7 +2186,11 @@
 				"font": {
 					"family": "default",
 					"size": 18
-				}
+				},
+				"layout": {},
+				"flex": {},
+				"flexProps": {},
+				"defaults": {}
 			},
 			"className": ".button",
 			"props": {
@@ -2137,6 +2207,7 @@
 				"textAlignment": "MIDCENTER",
 				"usePageVariable": true,
 				"borderRadius": 32.5,
+				"children": [],
 				"font": {
 					"size": 18,
 					"bold": false,
@@ -2149,7 +2220,6 @@
 				},
 				"name": "btnSearch",
 				"parent": "flSearch",
-				"children": [],
 				"layout": {
 					"width": 91.25,
 					"height": 32.5,

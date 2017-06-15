@@ -5,13 +5,24 @@
 			"id": "56dad56b",
 			"themeProps": {},
 			"userProps": {
-				"backgroundColor": "rgba( 255, 255, 255, 1 )"
+				"backgroundColor": "rgba( 255, 255, 255, 1 )",
+				"layout": {},
+				"flex": {},
+				"font": {},
+				"flexProps": {},
+				"defaults": {}
 			},
 			"className": ".page",
-			"version": "6.3.6",
+			"version": "6.3.9",
 			"props": {
 				"backgroundColor": "rgba( 255, 255, 255, 1 )",
 				"orientation": "PORTRAIT",
+				"children": [
+					"statusBar",
+					"headerBar",
+					"lvCustomers",
+					"btnAddCustomer"
+				],
 				"flexProps": {
 					"alignContent": "STRETCH",
 					"alignItems": "STRETCH",
@@ -21,12 +32,6 @@
 					"justifyContent": "FLEX_START"
 				},
 				"parent": null,
-				"children": [
-					"statusBar",
-					"headerBar",
-					"lvCustomers",
-					"btnAddCustomer"
-				],
 				"name": "pgCustomers",
 				"layout": {
 					"width": 93.75,
@@ -50,15 +55,20 @@
 			"themeProps": {},
 			"userProps": {
 				"color": "rgba( 44, 50, 57, 1 )",
-				"style": "LIGHTCONTENT"
+				"style": "LIGHTCONTENT",
+				"layout": {},
+				"flex": {},
+				"font": {},
+				"flexProps": {},
+				"defaults": {}
 			},
 			"className": ".statusBar",
 			"props": {
 				"color": "rgba( 44, 50, 57, 1 )",
 				"visible": true,
 				"style": "LIGHTCONTENT",
-				"parent": "pgCustomers",
 				"children": [],
+				"parent": "pgCustomers",
 				"isRemovable": false,
 				"name": "statusBar",
 				"layout": {
@@ -77,7 +87,12 @@
 			"userProps": {
 				"title": "Customers",
 				"backgroundColor": "rgba( 44, 50, 57, 1 )",
-				"titleColor": "rgba( 255, 255, 255, 1 )"
+				"titleColor": "rgba( 255, 255, 255, 1 )",
+				"layout": {},
+				"flex": {},
+				"font": {},
+				"flexProps": {},
+				"defaults": {}
 			},
 			"className": ".headerBar",
 			"props": {
@@ -85,8 +100,8 @@
 				"titleColor": "rgba( 255, 255, 255, 1 )",
 				"visible": true,
 				"backgroundColor": "rgba( 44, 50, 57, 1 )",
-				"parent": "pgCustomers",
 				"children": [],
+				"parent": "pgCustomers",
 				"isRemovable": false,
 				"name": "headerBar",
 				"layout": {
@@ -117,7 +132,11 @@
 					"positionType": "ABSOLUTE",
 					"right": 0,
 					"bottom": 0
-				}
+				},
+				"layout": {},
+				"flex": {},
+				"font": {},
+				"defaults": {}
 			},
 			"className": ".listView",
 			"props": {
@@ -137,6 +156,7 @@
 				"right": 0,
 				"bottom": 0,
 				"usePageVariable": true,
+				"children": [],
 				"flexProps": {
 					"alignSelf": "AUTO",
 					"positionType": "ABSOLUTE",
@@ -145,7 +165,6 @@
 				},
 				"name": "lvCustomers",
 				"parent": "pgCustomers",
-				"children": [],
 				"layout": {
 					"right": 0,
 					"bottom": 0,
@@ -179,7 +198,11 @@
 					"positionType": "ABSOLUTE",
 					"right": 8.5,
 					"bottom": 10
-				}
+				},
+				"layout": {},
+				"flex": {},
+				"font": {},
+				"defaults": {}
 			},
 			"className": ".button",
 			"props": {
@@ -198,6 +221,7 @@
 				"borderRadius": 25,
 				"right": 8.5,
 				"bottom": 10,
+				"children": [],
 				"font": {
 					"size": 16,
 					"bold": false,
@@ -212,7 +236,6 @@
 				},
 				"name": "btnAddCustomer",
 				"parent": "pgCustomers",
-				"children": [],
 				"layout": {
 					"right": 4.25,
 					"bottom": 5,

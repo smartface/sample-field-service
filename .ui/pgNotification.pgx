@@ -17,16 +17,24 @@
 					"flexDirection": "COLUMN",
 					"flexWrap": "NOWRAP",
 					"justifyContent": "FLEX_START"
-				}
+				},
+				"layout": {},
+				"flex": {},
+				"font": {},
+				"defaults": {}
 			},
 			"className": ".page",
-			"version": "6.3.6",
+			"version": "6.3.9",
 			"props": {
 				"backgroundColor": "#FFFFFF",
 				"orientation": "PORTRAIT",
 				"isRemovable": true,
 				"height": 301.5,
 				"width": 187.5,
+				"children": [
+					"statusBar",
+					"headerBar"
+				],
 				"flexProps": {
 					"alignContent": "STRETCH",
 					"alignItems": "STRETCH",
@@ -35,10 +43,6 @@
 					"flexWrap": "NOWRAP",
 					"justifyContent": "FLEX_START"
 				},
-				"children": [
-					"statusBar",
-					"headerBar"
-				],
 				"name": "pgNotification",
 				"layout": {
 					"width": 93.75,
@@ -67,7 +71,11 @@
 				"style": "LIGHTCONTENT",
 				"layout": {
 					"height": 10
-				}
+				},
+				"flex": {},
+				"font": {},
+				"flexProps": {},
+				"defaults": {}
 			},
 			"className": ".statusBar",
 			"props": {
@@ -77,10 +85,10 @@
 				"_style": "LIGHTCONTENT",
 				"height": 20,
 				"style": "LIGHTCONTENT",
+				"children": [],
 				"layout": {
 					"height": 10
 				},
-				"children": [],
 				"parent": "pgNotification",
 				"name": "statusBar",
 				"flex": {},
@@ -101,7 +109,11 @@
 				"titleColor": "rgba( 255, 255, 255, 1 )",
 				"layout": {
 					"height": 22
-				}
+				},
+				"flex": {},
+				"font": {},
+				"flexProps": {},
+				"defaults": {}
 			},
 			"className": ".headerBar",
 			"props": {
@@ -111,10 +123,10 @@
 				"backgroundColor": "rgba( 44, 50, 57, 1 )",
 				"isRemovable": false,
 				"height": 44,
+				"children": [],
 				"layout": {
 					"height": 22
 				},
-				"children": [],
 				"parent": "pgNotification",
 				"name": "headerBar",
 				"flex": {},

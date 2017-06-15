@@ -21,16 +21,24 @@
 				"layout": {
 					"width": 93.75,
 					"height": 150.75
-				}
+				},
+				"flex": {},
+				"font": {},
+				"defaults": {}
 			},
 			"className": ".page",
-			"version": "6.3.5",
+			"version": "6.3.9",
 			"props": {
 				"backgroundColor": "rgba( 36, 42, 52, 1 )",
 				"orientation": "PORTRAIT",
 				"isRemovable": true,
 				"height": 301.5,
 				"width": 187.5,
+				"children": [
+					"statusBar",
+					"headerBar",
+					"imgReports"
+				],
 				"flexProps": {
 					"alignContent": "STRETCH",
 					"alignItems": "STRETCH",
@@ -43,11 +51,6 @@
 					"width": 93.75,
 					"height": 150.75
 				},
-				"children": [
-					"statusBar",
-					"headerBar",
-					"imgReports"
-				],
 				"name": "pgDashboard",
 				"flex": {
 					"alignContent": 4,
@@ -71,7 +74,11 @@
 				"color": "rgba( 44, 50, 57, 1 )",
 				"layout": {
 					"height": 10
-				}
+				},
+				"flex": {},
+				"font": {},
+				"flexProps": {},
+				"defaults": {}
 			},
 			"className": ".statusBar",
 			"props": {
@@ -80,10 +87,10 @@
 				"isRemovable": false,
 				"_style": "LIGHTCONTENT",
 				"height": 20,
+				"children": [],
 				"layout": {
 					"height": 10
 				},
-				"children": [],
 				"parent": "pgDashboard",
 				"name": "statusBar",
 				"flex": {},
@@ -104,7 +111,11 @@
 				"titleColor": "rgba( 255, 255, 255, 1 )",
 				"layout": {
 					"height": 22
-				}
+				},
+				"flex": {},
+				"font": {},
+				"flexProps": {},
+				"defaults": {}
 			},
 			"className": ".headerBar",
 			"props": {
@@ -114,10 +125,10 @@
 				"backgroundColor": "rgba( 44, 50, 57, 1 )",
 				"isRemovable": false,
 				"height": 44,
+				"children": [],
 				"layout": {
 					"height": 22
 				},
-				"children": [],
 				"parent": "pgDashboard",
 				"name": "headerBar",
 				"flex": {},
@@ -158,7 +169,9 @@
 				"flex": {
 					"positionType": 0,
 					"flexGrow": 1
-				}
+				},
+				"font": {},
+				"defaults": {}
 			},
 			"className": ".imageView",
 			"props": {
@@ -176,7 +189,8 @@
 				"marginRight": 20,
 				"marginTop": 20,
 				"image": "reports.png",
-				"imageURL": "https://dispatcher.r0.smartface.io/smartface9/fieldservice2/ui-editor/img/reports.png?os=iOS&osVersion=10.2&density=326&densityRatio=0.5&zoomLevel=0.5&brandModel=iPhone%207?random=0.5080859225612229",
+				"imageURL": "https://dispatcher.r0.smartface.io/smartface9/fieldservice2/ui-editor/img/reports.png?os=iOS&osVersion=10.2&density=326&densityRatio=0.5&zoomLevel=0.5&brandModel=iPhone%207?random=0.4888838047199344",
+				"children": [],
 				"flexProps": {
 					"alignSelf": "AUTO",
 					"positionType": "RELATIVE",
@@ -193,7 +207,6 @@
 					"positionType": 0,
 					"flexGrow": 1
 				},
-				"children": [],
 				"parent": "pgDashboard",
 				"name": "imgReports",
 				"font": {}
