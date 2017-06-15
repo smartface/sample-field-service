@@ -57,5 +57,8 @@ SMF.i18n.defineLanguage('en', {
 	"updateNow": "Update Now",
 	"later": "Later",
 	"updateFail": "Update failed",
-	"updateIsInProgress": "Update is in progress"
+	"updateIsInProgress": "Update is in progress",
+	"signOutMessage": "Would you like to sign out?",
+	"signOutTitle": "Confirm Signout",
+	"about": "About"
 });

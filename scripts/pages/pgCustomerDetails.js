@@ -16,10 +16,12 @@ const gradientColor = Color.createGradient({
     startColor: Color.create("#06BEBD"),
     endColor: Color.create("#B7CE63")
 });
+const emptyColor = Color.create(61, 216, 216, 216);
 const actions = {
     "Notes": showNotes,
     "Notification flow": showNotificationFlow
 };
+const shadow = require("../lib/ui").shadow;
 
 const pgCustomerDetails = extend(pgCustomerDetailsDesign)(
     function(_super) {
@@ -35,7 +37,8 @@ const pgCustomerDetails = extend(pgCustomerDetailsDesign)(
 
             svCustomerDetail = new ScrollView({
                 flexGrow: 1,
-                align: ScrollView.Align.VERTICAL
+                align: ScrollView.Align.VERTICAL,
+                backgroundColor: emptyColor
             });
             page.layout.addChild(svCustomerDetail);
             page.onBackButtonPressed = goBack;
@@ -71,7 +74,7 @@ const pgCustomerDetails = extend(pgCustomerDetailsDesign)(
                 top: 0,
                 right: 0,
                 positionType: FlexLayout.PositionType.ABSOLUTE,
-                backgroundColor: Color.WHITE,
+                backgroundColor: Color.TRANSPARENT,
                 alignItems: FlexLayout.AlignItems.STRETCH,
                 flexDirection: FlexLayout.FlexDirection.COLUMN,
                 justifyContent: FlexLayout.JustifyContent.FLEX_START
@@ -84,36 +87,61 @@ const pgCustomerDetails = extend(pgCustomerDetailsDesign)(
                 customerDetails.fields.forEach(function(field, index) {
                     layoutHeight += detailRowHeight;
                     var customerDetailRow = Object.assign(new CustomerDetailRow(), {
-                        marginLeft: fieldMargin,
-                        marginRight: fieldMargin,
+                        paddingLeft: fieldMargin,
+                        paddingRight: fieldMargin,
                         showLine: index !== (customerDetails.fields.length - 1),
                         fieldName: field.name,
                         fieldValue: field.value
                     });
+                    Object.assign(customerDetailRow.children.flCustomerDetailLine, {
+                        marginLeft: fieldMargin,
+                        marginRight: fieldMargin,
+                    });
                     layout.addChild(customerDetailRow);
                 });
                 if (customerDetails.actions) {
-                    var vPlaceholder = new View({
-                        backgroundColor: Color.create("#D8D8D8"),
-                        alpha: 0.24,
+                    var flPlaceholder = new FlexLayout({
+                        backgroundColor: Color.create(61, 216, 216, 216),
                         height: placeholderHeight
+                    });
+                    var shadow1 = shadow.createVShadowDown({
+                        left: 0,
+                        top: 0,
+                        right: 0,
+                        positionType: FlexLayout.PositionType.ABSOLUTE,
+                    });
+                    flPlaceholder.addChild(shadow1);
+                    flPlaceholder.children = Object.assign(flPlaceholder.children || {}, {
+                        shadow1: shadow1
                     });
                     layoutHeight += placeholderHeight;
                 }
-                layout.addChild(vPlaceholder);
+                layout.addChild(flPlaceholder);
             }
             if (customerDetails.actions) {
                 customerDetails.actions.forEach(function(action, index) {
                     layoutHeight += actionRowHeight;
                     var customerActionRow = Object.assign(new CustomerActionRow(), {
-                        marginLeft: fieldMargin,
-                        marginRight: fieldMargin,
+                        paddingLeft: fieldMargin,
+                        paddingRight: fieldMargin,
                         showLine: index !== (customerDetails.actions.length - 1),
                         fieldName: action.text || action.name,
                         onPress: actions[action.name].bind(page, customerDetails)
                     });
+
+                    Object.assign(customerActionRow.children.flCustomerActionLine, {
+                        marginLeft: fieldMargin,
+                        marginRight: fieldMargin
+                    });
                     layout.addChild(customerActionRow);
                 });
+            }
+            if (customerDetails.fields || customerDetails.actions) {
+                var shadow2 = shadow.createVShadowDown({
+                    positionType: FlexLayout.PositionType.RELATIVE
+                });
+                layout.addChild(shadow2);
+                layoutHeight += shadow.size;
             }
             layout.height = layoutHeight;
             svCustomerDetail.addChild(layout);

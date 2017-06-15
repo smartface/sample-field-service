@@ -7,6 +7,7 @@ const Image = require('sf-core/ui/image');
 const ListViewItem = require('sf-core/ui/listviewitem');
 const StatusBarStyle = require('sf-core/ui/statusbarstyle');
 const backAction = require("../lib/ui").backAction;
+const theme = require("../lib/theme");
 
 const pgCustomers = extend(pgCustomersDesign)(
     function(_super) {
@@ -16,14 +17,11 @@ const pgCustomers = extend(pgCustomersDesign)(
         var baseOnShow = page.onShow;
         page.onLoad = function onLoad() {
             baseOnLoad && baseOnLoad();
-            
+
             page.headerBar.title = lang.customers;
 
             Object.assign(page.btnAddCustomer, {
                 text: "",
-                backgroundImage: {
-                    normal: Image.createFromFile("images://add_customer.png")
-                },
                 borderRadius: 0,
                 onPress: function() {
                     Router.go("pgNewCustomer");
@@ -79,7 +77,18 @@ const pgCustomers = extend(pgCustomersDesign)(
             data && bindData(data);
             page.statusBar.ios.style = StatusBarStyle.LIGHTCONTENT;
             backAction(page);
+            applyTheme();
         };
+
+        function applyTheme() {
+            var selectedTheme = theme[theme.selected];
+            page.statusBar.android && (page.statusBar.android.color = selectedTheme.topBarColor);
+            page.headerBar.backgroundColor = selectedTheme.topBarColor;
+
+            page.btnAddCustomer.backgroundImage = {
+                normal: selectedTheme.addCustomer
+            };
+        }
 
         function bindData(customerData) {
             page.lvCustomers.itemCount = customerData.length;

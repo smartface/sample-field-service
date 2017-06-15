@@ -21,6 +21,7 @@ const textInputDefaults = {
     bottom: 0,
     textAlignment: TextAlignment.MIDLEFT
 };
+const theme = require("../lib/theme");
 
 const pgNewCustomer = extend(pgNewCustomerDesign)(
     function(_super) {
@@ -40,6 +41,7 @@ const pgNewCustomer = extend(pgNewCustomerDesign)(
                 image: Image.createFromFile("images://new_customer_ok.png"),
                 color: Color.WHITE
             });
+            page.headerBar.items = [saveItem];
             page.headerBar.setItems([saveItem]);
 
             var cancelItem = new HeaderBarItem({
@@ -49,6 +51,7 @@ const pgNewCustomer = extend(pgNewCustomerDesign)(
                 },
                 color: Color.create("#50D2C2")
             });
+            page.headerBar.leftItem = cancelItem;
             page.headerBar.setLeftItem(cancelItem);
 
             page.btnPicture.backgroundImage = {
@@ -110,8 +113,16 @@ const pgNewCustomer = extend(pgNewCustomerDesign)(
         page.onShow = function onShow(data) {
             baseOnShow && baseOnShow(data);
             page.statusBar.ios.style = StatusBarStyle.LIGHTCONTENT;
-
+applyTheme();
         };
+
+        function applyTheme() {
+            var selectedTheme = theme[theme.selected];
+            page.statusBar.android && (page.statusBar.android.color = selectedTheme.topBarColor);
+            page.headerBar.backgroundColor = selectedTheme.topBarColor;
+
+            page.headerBar.leftItem && (page.headerBar.leftItem.color = selectedTheme.secondaryColor);
+        }
 
         function back() {
             //TODO: check values ask save?

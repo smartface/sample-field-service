@@ -57,5 +57,8 @@ SMF.i18n.defineLanguage('tr', {
 	"updateNow": "Şimdi güncelle",
 	"later": "Sonra",
 	"updateFail": "Güncelleme başarısız oldu",
-	"updateIsInProgress": "Güncelleme sürüyor"
+	"updateIsInProgress": "Güncelleme sürüyor",
+	"signOutMessage": "Oturumu kapatmak ister misiniz?",
+	"signOutTitle": "Oturum kapatmayı onayla",
+	"about": "Hakkında"
 });

@@ -89,13 +89,13 @@ function displayRationale(permissions, callback) {
             onClick: function() {
                 callback(null);
             },
-            index: AlertView.ButtonType.POSITIVE,
+            index: AlertView.Android.ButtonType.POSITIVE,
         }, {
             text: "Cancel",
             onClick: function() {
                 callback("user cancelled permission rationale displayed");
             },
-            index: AlertView.ButtonType.NEGATIVE,
+            index: AlertView.Android.ButtonType.NEGATIVE,
         }]
     });
 }

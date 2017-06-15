@@ -1,11 +1,7 @@
 const FlexLayout = require('sf-core/ui/flexlayout');
 const extend = require('js-base/core/extend');
-const Color = require('sf-core/ui/color');
-const lineColor = Color.createGradient({
-	direction: Color.GradientDirection.HORIZONTAL,
-	startColor: Color.create("#06BEBD"),
-	endColor: Color.create("#B7CE63")
-});
+const theme = require("../lib/theme");
+
 
 const CustomerRowDesign = require('library/CustomerRow');
 
@@ -21,7 +17,8 @@ const CustomerRow = extend(CustomerRowDesign)(
 			right: 0,
 		}));
 		this.pageName = pageName;
-		this.customerRowLine.backgroundColor = lineColor;
+		var selectedTheme = theme[theme.selected];
+		this.customerRowLine.backgroundColor = selectedTheme.lineSeparator;
 	}
 
 );

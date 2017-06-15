@@ -45,7 +45,8 @@ const PgDashboard_ = extend(Page)(
 		});
 		var imgReports = new ImageView(imgReportsStyle);
 		this.layout.addChild(imgReports);
-		
+		this.imgReports = imgReports;
+
 		//assign the children to page 
 		this.children = Object.assign({}, {
 			imgReports: imgReports

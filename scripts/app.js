@@ -10,6 +10,7 @@ Application.onUnhandledError = function(e) {
 };
 
 const Router = require("sf-core/ui/router");
+const System = require("sf-core/device/system");
 
 const stylerBuilder = require("library/styler-builder");
 const settings = require("./settings.json");
@@ -20,6 +21,13 @@ require("sf-extension-alert");
 require("timers-smf");
 require("./lib/mcs");
 
+var sliderDrawer;
+
+if (System.OS === "iOS") {
+    sliderDrawer = require("./sliderDrawer");
+    Router.sliderDrawer = sliderDrawer;
+}
+
 Router.add("pgEntry", require("./pages/pgEntry"));
 Router.add("pgNotification", require("./pages/pgNotification"));
 Router.add("pgLogin", require("./pages/pgLogin"));
@@ -28,14 +36,17 @@ Router.add("pgCustomerFilter", require("./pages/pgCustomerFilter"));
 Router.add("pgCustomers", require("./pages/pgCustomers"));
 Router.add("pgCustomerDetails", require("./pages/pgCustomerDetails"));
 Router.add("pgNewCustomer", require("./pages/pgNewCustomer"));
-
+Router.add("pgSettings", require("./pages/pgSettings"));
 
 
 Router.go("pgLogin", {
     checkUpdate: true
 });
-var sliderDrawer = require("./sliderDrawer");
-Router.sliderDrawer = sliderDrawer;
+
+if (System.OS === "Android") {
+    sliderDrawer = require("./sliderDrawer");
+    Router.sliderDrawer = sliderDrawer;
+}
 
 // Router.add("test", require("./ui/ui_newPage001"));
 // Router.go("test");

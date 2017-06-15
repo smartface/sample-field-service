@@ -1,6 +1,4 @@
-/* 
-		You can modify its contents.
-*/
+const theme = require("../lib/theme");
 const extend = require('js-base/core/extend');
 const Color = require('sf-core/ui/color');
 const gradientColor = Color.createGradient({

@@ -17,11 +17,11 @@ const SliderDrawer_ = extend(SliderDrawer)(
 
 		mimicPressed(this.flSignout, function() {
 			alert({
-				message: "Would you like to sign out?",
-				title: "Confirm Signout",
+				message: lang.signOutMessage,
+				title: lang.signOutTitle,
 				buttons: [{
 					type: AlertView.Android.ButtonType.NEGATIVE,
-					text: "Yes",
+					text: lang.yes,
 					onClick: function() {
 						hide();
 						if (touchControl.target) {
@@ -32,7 +32,7 @@ const SliderDrawer_ = extend(SliderDrawer)(
 					}
 				}, {
 					type: AlertView.Android.ButtonType.POSITIVE,
-					text: "No",
+					text: lang.no,
 					onClick: function() {}
 				}]
 			});
@@ -42,7 +42,7 @@ const SliderDrawer_ = extend(SliderDrawer)(
 
 		mimicPressed(this.flSettings, function() {
 			hide();
-			alert("settings pressed");
+			Router.go("pgSettings");
 		}, touchControl);
 
 		mimicPressed(this.flDashboard, function() {

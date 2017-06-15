@@ -6,17 +6,14 @@ const HeaderBarItem = require('sf-core/ui/headerbaritem');
 const Image = require('sf-core/ui/image');
 const mapProperties = require("./lib/map-properties");
 const userData = require("./model/user");
+const theme = require("./lib/theme");
 
 var sliderDrawerWidth = 333;
 var sliderDrawer = new SliderDrawer({
     width: sliderDrawerWidth,
     enabled: false,
     onLoad: function() {
-        sliderDrawer.layout.backgroundColor = Color.createGradient({
-            direction: Color.GradientDirection.HORIZONTAL,
-            startColor: Color.create("#06BEBD"),
-            endColor: Color.create("#7CC981")
-        });
+        sliderDrawer.applyTheme();
         var uiSliderDrawer = new UISliderDrawer({
             width: sliderDrawerWidth,
             top: 0,
@@ -49,6 +46,11 @@ var sliderDrawer = new SliderDrawer({
 sliderDrawer.drawerPosition = SliderDrawer.Position.LEFT;
 module.exports = exports = sliderDrawer;
 
+
+sliderDrawer.applyTheme = function sliderDrawer_applyTheme() {
+    var selectedTheme = theme[theme.selected];
+    sliderDrawer.layout.backgroundColor = selectedTheme.sliderDrawer;
+};
 
 
 

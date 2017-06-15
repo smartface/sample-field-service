@@ -9,6 +9,7 @@ const Network = require('sf-core/device/network');
 const sliderDrawer = require("../sliderDrawer");
 const userData = require("../model/user");
 const rau = require("../lib/rau");
+const theme = require("../lib/theme");
 // const Application = require("sf-core/application");
 
 const pgLogin = extend(pgLoginDesign)(
@@ -64,7 +65,17 @@ const pgLogin = extend(pgLoginDesign)(
                     rau.checkUpdate();
                 }, 10);
             }
+            applyTheme();
         };
+
+        function applyTheme() {
+            var selectedTheme = theme[theme.selected];
+            page.statusBar.android && (page.statusBar.android.color = selectedTheme.topBarColor);
+            page.headerBar.backgroundColor = selectedTheme.topBarColor;
+
+            page.imgLogo.image = selectedTheme.logo;
+            page.btnLogin.backgroundColor = selectedTheme.mainColor;
+        }
 
         page.setState = function setState(enabled) {
             page.aiLogin.visible = !enabled;

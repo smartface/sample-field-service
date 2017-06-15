@@ -49,7 +49,7 @@ function checkUpdate(options) {
                         buttons: [{
                             text: lang.updateNow || "Update now",
                             onClick: startUpdate,
-                            index: AlertView.ButtonType.POSITIVE
+                            index: AlertView.Android.ButtonType.POSITIVE
                         }]
 
                     });
@@ -61,11 +61,11 @@ function checkUpdate(options) {
                         buttons: [{
                             text: lang.updateNow || "Update now",
                             onClick: startUpdate,
-                            index: AlertView.ButtonType.POSITIVE
+                            index: AlertView.Android.ButtonType.POSITIVE
                         }, {
                             text: lang.later || "Later",
                             onClick: doNothing,
-                            index: AlertView.ButtonType.NEUTRAL
+                            index: AlertView.Android.ButtonType.NEUTRAL
                         }]
                     });
                 }

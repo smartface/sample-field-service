@@ -4,6 +4,7 @@ const Router = require("sf-core/ui/router");
 const pgDashboardDesign = require("../ui/ui_pgDashboard");
 const sliderDrawer = require("../sliderDrawer");
 const StatusBarStyle = require('sf-core/ui/statusbarstyle');
+const theme = require("../lib/theme");
 
 const pgDashboard = extend(pgDashboardDesign)(
     function(_super) {
@@ -24,7 +25,17 @@ const pgDashboard = extend(pgDashboardDesign)(
             baseOnShow && baseOnShow(data);
             sliderDrawer.enabled = true;
             page.statusBar.ios.style = StatusBarStyle.LIGHTCONTENT;
+            applyTheme();
         };
+
+        function applyTheme() {
+            var selectedTheme = theme[theme.selected];
+            page.statusBar.android && (page.statusBar.android.color = selectedTheme.topBarColor);
+            page.headerBar.backgroundColor = selectedTheme.topBarColor;
+
+            page.imgReports.image = selectedTheme.reportImage;
+            page.layout.backgroundColor = selectedTheme.dashboardColor;
+        }
 
 
 

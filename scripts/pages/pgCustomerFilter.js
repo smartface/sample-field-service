@@ -82,8 +82,7 @@ const pgCustomerFilter = extend(pgCustomerFilterDesign)(
                 actionKeyType: ActionKeyType.SEARCH
             });
             page.flEmailInputArea.addChild(tiEmail);
-
-
+            
             page.btnName.onPress = function() {
                 page.flCardInput.flexGrow = 0;
                 page.flNameInput.flexGrow = 1;

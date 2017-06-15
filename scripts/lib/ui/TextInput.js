@@ -6,12 +6,8 @@ const TextAlignment = require('sf-core/ui/textalignment');
 const Font = require('sf-core/ui/font');
 const View = require('sf-core/ui/view');
 const mapProperties = require("../map-properties");
+const theme = require("../theme");
 
-var lineColorActive = Color.createGradient({
-	direction: Color.GradientDirection.HORIZONTAL,
-	startColor: Color.create("#06BEBD"),
-	endColor: Color.create("#B7CE63")
-});
 var lineColorInactive = Color.create("#CCCCCC");
 var lineColorInvalid = Color.RED;
 
@@ -37,7 +33,8 @@ const TextInput = extend(FlexLayout)(
 			visible: true,
 			text: "",
 			onEditBegins: function() {
-				line.backgroundColor = lineColorActive;
+				var selectedTheme = theme[theme.selected];
+				line.backgroundColor = selectedTheme.gradient;
 			},
 			onEditEnds: function() {
 				line.backgroundColor = lineColorInactive;
@@ -82,7 +79,6 @@ const TextInput = extend(FlexLayout)(
 		textInput.invalidate = function invalidate() {
 			line.backgroundColor = lineColorInvalid;
 		};
-
 	}
 );
 
