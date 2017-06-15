@@ -29,8 +29,8 @@
 				"backgroundColor": "#FFFFFF",
 				"orientation": "PORTRAIT",
 				"isRemovable": false,
-				"height": 311.5,
-				"width": 187.5,
+				"height": 346,
+				"width": 207,
 				"children": [
 					"statusBar",
 					"headerBar",
@@ -50,8 +50,8 @@
 				},
 				"name": "__library__",
 				"layout": {
-					"width": 93.75,
-					"height": 155.75
+					"width": 103.5,
+					"height": 173
 				},
 				"flex": {
 					"alignContent": 4,
@@ -141,7 +141,7 @@
 			"source": {
 				"page": "__library__"
 			},
-			"hiddenComponent": true,
+			"hiddenComponent": false,
 			"themeProps": {},
 			"userProps": {
 				"backgroundColor": "rgba( 122, 207, 36, 1 )",
@@ -711,7 +711,7 @@
 				"borderRadius": 48,
 				"image": "user_picture_test.png",
 				"usePageVariable": true,
-				"imageURL": "https://dispatcher.r0.smartface.io/smartface9/fieldservice2/ui-editor/img/user_picture_test.png?os=iOS&osVersion=10.2&density=326&densityRatio=0.5&zoomLevel=0.5&brandModel=iPhone%207",
+				"imageURL": "https://dispatcher.r0.smartface.io/smartface9/fieldservice2/ui-editor/img/user_picture_test.png?os=iOS&osVersion=10.2&density=401&densityRatio=0.3333333333333333&zoomLevel=0.5&brandModel=iPhone%207%20Plus?random=0.33967277878572855",
 				"children": [],
 				"flexProps": {
 					"alignSelf": "AUTO",
@@ -934,11 +934,10 @@
 				"marginBottom": 0,
 				"marginTop": 2,
 				"children": [
+					"flHighlight",
 					"flDashboard",
 					"flCustomers",
 					"flNotifications",
-					"flGroupNotifications",
-					"flOpenNotifications",
 					"flSettings"
 				],
 				"flexProps": {
@@ -1105,7 +1104,7 @@
 				"borderWidth": 0,
 				"image": "sliderdrawer_dashboard.png",
 				"usePageVariable": true,
-				"imageURL": "https://dispatcher.r0.smartface.io/smartface9/fieldservice2/ui-editor/img/sliderdrawer_dashboard.png?os=iOS&osVersion=10.2&density=326&densityRatio=0.5&zoomLevel=0.5&brandModel=iPhone%207",
+				"imageURL": "https://dispatcher.r0.smartface.io/smartface9/fieldservice2/ui-editor/img/sliderdrawer_dashboard.png?os=iOS&osVersion=10.2&density=401&densityRatio=0.3333333333333333&zoomLevel=0.5&brandModel=iPhone%207%20Plus?random=0.16029153544905883",
 				"children": [],
 				"flexProps": {
 					"alignSelf": "AUTO",
@@ -1338,7 +1337,7 @@
 				"borderWidth": 0,
 				"image": "sliderdrawer_customer.png",
 				"usePageVariable": true,
-				"imageURL": "https://dispatcher.r0.smartface.io/smartface9/fieldservice2/ui-editor/img/sliderdrawer_customer.png?os=iOS&osVersion=10.2&density=326&densityRatio=0.5&zoomLevel=0.5&brandModel=iPhone%207",
+				"imageURL": "https://dispatcher.r0.smartface.io/smartface9/fieldservice2/ui-editor/img/sliderdrawer_customer.png?os=iOS&osVersion=10.2&density=401&densityRatio=0.3333333333333333&zoomLevel=0.5&brandModel=iPhone%207%20Plus?random=0.012967371975233677",
 				"children": [],
 				"flexProps": {
 					"alignSelf": "AUTO",
@@ -1454,7 +1453,7 @@
 				"height": 22,
 				"visible": true,
 				"width": null,
-				"usePageVariable": false,
+				"usePageVariable": true,
 				"flexProps": {
 					"alignContent": "STRETCH",
 					"alignItems": "STRETCH",
@@ -1491,7 +1490,7 @@
 				"borderWidth": 0,
 				"marginLeft": 26,
 				"marginTop": 30,
-				"usePageVariable": false,
+				"usePageVariable": true,
 				"children": [
 					"imgNotifications",
 					"lblNotifications"
@@ -1571,7 +1570,7 @@
 				"borderWidth": 0,
 				"image": "sliderdrawer_notifications_big.png",
 				"usePageVariable": false,
-				"imageURL": "https://dispatcher.r0.smartface.io/smartface9/fieldservice2/ui-editor/img/sliderdrawer_notifications_big.png?os=iOS&osVersion=10.2&density=326&densityRatio=0.5&zoomLevel=0.5&brandModel=iPhone%207",
+				"imageURL": "https://dispatcher.r0.smartface.io/smartface9/fieldservice2/ui-editor/img/sliderdrawer_notifications_big.png?os=iOS&osVersion=10.2&density=401&densityRatio=0.3333333333333333&zoomLevel=0.5&brandModel=iPhone%207%20Plus?random=0.047983403277332526",
 				"children": [],
 				"flexProps": {
 					"alignSelf": "AUTO",
@@ -1668,472 +1667,6 @@
 				},
 				"parent": "flNotifications",
 				"name": "lblNotifications"
-			}
-		},
-		{
-			"type": "FlexLayout",
-			"id": "c336cc37",
-			"source": {
-				"page": "__library__"
-			},
-			"themeProps": {},
-			"userProps": {
-				"backgroundColor": "rgba( 255, 255, 255, 0 )",
-				"alpha": 1,
-				"borderColor": "rgba(0,0,0,1)",
-				"borderWidth": 0,
-				"marginLeft": 52,
-				"marginTop": 30,
-				"height": 22,
-				"visible": true,
-				"width": null,
-				"usePageVariable": true,
-				"flexProps": {
-					"alignContent": "STRETCH",
-					"alignItems": "STRETCH",
-					"flexDirection": "ROW",
-					"flexWrap": "NOWRAP",
-					"justifyContent": "FLEX_START",
-					"positionType": "RELATIVE"
-				},
-				"layout": {
-					"marginLeft": 26,
-					"marginTop": 15,
-					"height": 11,
-					"borderWidth": 0
-				},
-				"flex": {
-					"alignItems": 4,
-					"flexDirection": 2,
-					"flexWrap": 0,
-					"justifyContent": 0,
-					"positionType": 0
-				},
-				"font": {},
-				"defaults": {}
-			},
-			"className": ".flexLayout",
-			"props": {
-				"height": 22,
-				"width": null,
-				"touchEnabled": true,
-				"visible": true,
-				"backgroundColor": "rgba( 255, 255, 255, 0 )",
-				"alpha": 1,
-				"borderColor": "rgba(0,0,0,1)",
-				"borderWidth": 0,
-				"marginLeft": 52,
-				"marginTop": 30,
-				"usePageVariable": true,
-				"children": [
-					"imgGroupNotifications",
-					"lblGroupNotifications"
-				],
-				"flexProps": {
-					"alignSelf": "AUTO",
-					"direction": "INHERIT",
-					"alignContent": "STRETCH",
-					"alignItems": "STRETCH",
-					"justifyContent": "FLEX_START",
-					"flexWrap": "NOWRAP",
-					"flexDirection": "ROW",
-					"positionType": "RELATIVE"
-				},
-				"layout": {
-					"marginLeft": 26,
-					"marginTop": 15,
-					"height": 11,
-					"borderWidth": 0
-				},
-				"flex": {
-					"alignContent": 4,
-					"alignItems": 4,
-					"justifyContent": 0,
-					"flexWrap": 0,
-					"flexDirection": 2,
-					"positionType": 0
-				},
-				"parent": "flActions",
-				"name": "flGroupNotifications",
-				"font": {}
-			}
-		},
-		{
-			"type": "ImageView",
-			"id": "964c4b61",
-			"source": {
-				"page": "__library__"
-			},
-			"themeProps": {},
-			"userProps": {
-				"backgroundColor": "rgba( 255, 255, 255, 0 )",
-				"alpha": 1,
-				"borderColor": "rgba(0,0,0,1)",
-				"borderWidth": 0,
-				"height": 22,
-				"image": "sliderdrawer_notifications_small.png",
-				"imageFillType": "NORMAL",
-				"visible": true,
-				"width": 22,
-				"usePageVariable": true,
-				"imageURL": "https://dispatcher.r0.smartface.io/smartface9/fieldservice2/ui-editor/img/sliderdrawer_notifications_small.png?os=iOS&osVersion=10.2&density=326&densityRatio=0.5&zoomLevel=0.5&brandModel=iPhone%207",
-				"flexProps": {
-					"positionType": "RELATIVE"
-				},
-				"layout": {
-					"width": 11,
-					"height": 11,
-					"borderWidth": 0
-				},
-				"flex": {
-					"positionType": 0
-				},
-				"font": {},
-				"defaults": {}
-			},
-			"className": ".imageView",
-			"props": {
-				"width": 22,
-				"height": 22,
-				"touchEnabled": true,
-				"visible": true,
-				"imageFillType": "NORMAL",
-				"backgroundColor": "rgba( 255, 255, 255, 0 )",
-				"alpha": 1,
-				"borderColor": "rgba(0,0,0,1)",
-				"borderWidth": 0,
-				"image": "sliderdrawer_notifications_small.png",
-				"usePageVariable": true,
-				"imageURL": "https://dispatcher.r0.smartface.io/smartface9/fieldservice2/ui-editor/img/sliderdrawer_notifications_small.png?os=iOS&osVersion=10.2&density=326&densityRatio=0.5&zoomLevel=0.5&brandModel=iPhone%207",
-				"children": [],
-				"flexProps": {
-					"alignSelf": "AUTO",
-					"positionType": "RELATIVE"
-				},
-				"layout": {
-					"width": 11,
-					"height": 11,
-					"borderWidth": 0
-				},
-				"flex": {
-					"positionType": 0
-				},
-				"parent": "flGroupNotifications",
-				"name": "imgGroupNotifications",
-				"font": {}
-			}
-		},
-		{
-			"type": "Label",
-			"id": "ce840005",
-			"source": {
-				"page": "__library__"
-			},
-			"themeProps": {},
-			"userProps": {
-				"backgroundColor": "rgba( 255, 255, 255, 0 )",
-				"alpha": 1,
-				"borderColor": "rgba(0,0,0,1)",
-				"borderWidth": 0,
-				"textAlignment": "MIDLEFT",
-				"textColor": "rgba( 255, 255, 255, 1 )",
-				"marginLeft": 16,
-				"height": null,
-				"text": "Group Notifications",
-				"visible": true,
-				"width": null,
-				"usePageVariable": true,
-				"flexProps": {
-					"positionType": "RELATIVE",
-					"flexGrow": 1
-				},
-				"layout": {
-					"marginLeft": 8,
-					"borderWidth": 0
-				},
-				"flex": {
-					"positionType": 0,
-					"flexGrow": 1
-				},
-				"font": {
-					"family": "Lato",
-					"size": 16,
-					"italic": false,
-					"bold": false
-				},
-				"defaults": {}
-			},
-			"className": ".label",
-			"props": {
-				"width": null,
-				"height": null,
-				"touchEnabled": true,
-				"text": "Group Notifications",
-				"visible": true,
-				"multiline": false,
-				"backgroundColor": "rgba( 255, 255, 255, 0 )",
-				"alpha": 1,
-				"borderColor": "rgba(0,0,0,1)",
-				"borderWidth": 0,
-				"textColor": "rgba( 255, 255, 255, 1 )",
-				"textAlignment": "MIDLEFT",
-				"marginLeft": 16,
-				"usePageVariable": true,
-				"children": [],
-				"font": {
-					"size": 16,
-					"bold": false,
-					"italic": false,
-					"family": "Lato"
-				},
-				"flexProps": {
-					"alignSelf": "AUTO",
-					"positionType": "RELATIVE",
-					"flexGrow": 1
-				},
-				"layout": {
-					"marginLeft": 8,
-					"borderWidth": 0
-				},
-				"flex": {
-					"positionType": 0,
-					"flexGrow": 1
-				},
-				"parent": "flGroupNotifications",
-				"name": "lblGroupNotifications"
-			}
-		},
-		{
-			"type": "FlexLayout",
-			"id": "29025271",
-			"source": {
-				"page": "__library__"
-			},
-			"themeProps": {},
-			"userProps": {
-				"backgroundColor": "rgba( 255, 255, 255, 0 )",
-				"alpha": 1,
-				"borderColor": "rgba(0,0,0,1)",
-				"borderWidth": 0,
-				"marginLeft": 52,
-				"marginTop": 30,
-				"height": 22,
-				"visible": true,
-				"width": null,
-				"usePageVariable": true,
-				"flexProps": {
-					"alignContent": "STRETCH",
-					"alignItems": "STRETCH",
-					"flexDirection": "ROW",
-					"flexWrap": "NOWRAP",
-					"justifyContent": "FLEX_START",
-					"positionType": "RELATIVE"
-				},
-				"layout": {
-					"marginLeft": 26,
-					"marginTop": 15,
-					"height": 11,
-					"borderWidth": 0
-				},
-				"flex": {
-					"alignItems": 4,
-					"flexDirection": 2,
-					"flexWrap": 0,
-					"justifyContent": 0,
-					"positionType": 0
-				},
-				"font": {},
-				"defaults": {}
-			},
-			"className": ".flexLayout",
-			"props": {
-				"height": 22,
-				"width": null,
-				"touchEnabled": true,
-				"visible": true,
-				"backgroundColor": "rgba( 255, 255, 255, 0 )",
-				"alpha": 1,
-				"borderColor": "rgba(0,0,0,1)",
-				"borderWidth": 0,
-				"marginLeft": 52,
-				"marginTop": 30,
-				"usePageVariable": true,
-				"children": [
-					"imgOpenNotifications",
-					"lblOpenNotifications"
-				],
-				"flexProps": {
-					"alignSelf": "AUTO",
-					"direction": "INHERIT",
-					"alignContent": "STRETCH",
-					"alignItems": "STRETCH",
-					"justifyContent": "FLEX_START",
-					"flexWrap": "NOWRAP",
-					"flexDirection": "ROW",
-					"positionType": "RELATIVE"
-				},
-				"layout": {
-					"marginLeft": 26,
-					"marginTop": 15,
-					"height": 11,
-					"borderWidth": 0
-				},
-				"flex": {
-					"alignContent": 4,
-					"alignItems": 4,
-					"justifyContent": 0,
-					"flexWrap": 0,
-					"flexDirection": 2,
-					"positionType": 0
-				},
-				"parent": "flActions",
-				"name": "flOpenNotifications",
-				"font": {}
-			}
-		},
-		{
-			"type": "ImageView",
-			"id": "2c451428",
-			"source": {
-				"page": "__library__"
-			},
-			"themeProps": {},
-			"userProps": {
-				"backgroundColor": "rgba( 255, 255, 255, 0 )",
-				"alpha": 1,
-				"borderColor": "rgba(0,0,0,1)",
-				"borderWidth": 0,
-				"height": 22,
-				"image": "sliderdrawer_notifications_small.png",
-				"imageFillType": "NORMAL",
-				"visible": true,
-				"width": 22,
-				"usePageVariable": true,
-				"imageURL": "https://dispatcher.r0.smartface.io/smartface9/fieldservice2/ui-editor/img/sliderdrawer_notifications_small.png?os=iOS&osVersion=10.2&density=326&densityRatio=0.5&zoomLevel=0.5&brandModel=iPhone%207",
-				"flexProps": {
-					"positionType": "RELATIVE"
-				},
-				"layout": {
-					"width": 11,
-					"height": 11,
-					"borderWidth": 0
-				},
-				"flex": {
-					"positionType": 0
-				},
-				"font": {},
-				"defaults": {}
-			},
-			"className": ".imageView",
-			"props": {
-				"width": 22,
-				"height": 22,
-				"touchEnabled": true,
-				"visible": true,
-				"imageFillType": "NORMAL",
-				"backgroundColor": "rgba( 255, 255, 255, 0 )",
-				"alpha": 1,
-				"borderColor": "rgba(0,0,0,1)",
-				"borderWidth": 0,
-				"image": "sliderdrawer_notifications_small.png",
-				"usePageVariable": true,
-				"imageURL": "https://dispatcher.r0.smartface.io/smartface9/fieldservice2/ui-editor/img/sliderdrawer_notifications_small.png?os=iOS&osVersion=10.2&density=326&densityRatio=0.5&zoomLevel=0.5&brandModel=iPhone%207",
-				"children": [],
-				"flexProps": {
-					"alignSelf": "AUTO",
-					"positionType": "RELATIVE"
-				},
-				"layout": {
-					"width": 11,
-					"height": 11,
-					"borderWidth": 0
-				},
-				"flex": {
-					"positionType": 0
-				},
-				"parent": "flOpenNotifications",
-				"name": "imgOpenNotifications",
-				"font": {}
-			}
-		},
-		{
-			"type": "Label",
-			"id": "fa84deb9",
-			"source": {
-				"page": "__library__"
-			},
-			"themeProps": {},
-			"userProps": {
-				"backgroundColor": "rgba( 255, 255, 255, 0 )",
-				"alpha": 1,
-				"borderColor": "rgba(0,0,0,1)",
-				"borderWidth": 0,
-				"textAlignment": "MIDLEFT",
-				"textColor": "rgba( 255, 255, 255, 1 )",
-				"marginLeft": 16,
-				"height": null,
-				"text": "Open Notifications",
-				"visible": true,
-				"width": null,
-				"usePageVariable": true,
-				"flexProps": {
-					"positionType": "RELATIVE",
-					"flexGrow": 1
-				},
-				"layout": {
-					"marginLeft": 8,
-					"borderWidth": 0
-				},
-				"flex": {
-					"positionType": 0,
-					"flexGrow": 1
-				},
-				"font": {
-					"family": "Lato",
-					"size": 16,
-					"italic": false,
-					"bold": false
-				},
-				"defaults": {}
-			},
-			"className": ".label",
-			"props": {
-				"width": null,
-				"height": null,
-				"touchEnabled": true,
-				"text": "Open Notifications",
-				"visible": true,
-				"multiline": false,
-				"backgroundColor": "rgba( 255, 255, 255, 0 )",
-				"alpha": 1,
-				"borderColor": "rgba(0,0,0,1)",
-				"borderWidth": 0,
-				"textColor": "rgba( 255, 255, 255, 1 )",
-				"textAlignment": "MIDLEFT",
-				"marginLeft": 16,
-				"usePageVariable": true,
-				"children": [],
-				"font": {
-					"size": 16,
-					"bold": false,
-					"italic": false,
-					"family": "Lato"
-				},
-				"flexProps": {
-					"alignSelf": "AUTO",
-					"positionType": "RELATIVE",
-					"flexGrow": 1
-				},
-				"layout": {
-					"marginLeft": 8,
-					"borderWidth": 0
-				},
-				"flex": {
-					"positionType": 0,
-					"flexGrow": 1
-				},
-				"parent": "flOpenNotifications",
-				"name": "lblOpenNotifications"
 			}
 		},
 		{
@@ -2270,7 +1803,7 @@
 				"borderWidth": 0,
 				"image": "sliderdrawer_settings.png",
 				"usePageVariable": true,
-				"imageURL": "https://dispatcher.r0.smartface.io/smartface9/fieldservice2/ui-editor/img/sliderdrawer_settings.png?os=iOS&osVersion=10.2&density=326&densityRatio=0.5&zoomLevel=0.5&brandModel=iPhone%207",
+				"imageURL": "https://dispatcher.r0.smartface.io/smartface9/fieldservice2/ui-editor/img/sliderdrawer_settings.png?os=iOS&osVersion=10.2&density=401&densityRatio=0.3333333333333333&zoomLevel=0.5&brandModel=iPhone%207%20Plus?random=0.11179493969545096",
 				"children": [],
 				"flexProps": {
 					"alignSelf": "AUTO",
@@ -2375,7 +1908,7 @@
 			"source": {
 				"page": "__library__"
 			},
-			"hiddenComponent": false,
+			"hiddenComponent": true,
 			"themeProps": {},
 			"userProps": {
 				"backgroundColor": "rgba( 0, 0, 0, 0.8 )",
@@ -2608,6 +2141,7 @@
 				"borderWidth": 0,
 				"minHeight": 21,
 				"minWidth": 21,
+				"usePageVariable": true,
 				"children": [],
 				"flexProps": {
 					"positionType": "RELATIVE",
@@ -2629,8 +2163,7 @@
 				},
 				"parent": "flWaitWhite",
 				"name": "aiWait",
-				"font": {},
-				"usePageVariable": true
+				"font": {}
 			}
 		},
 		{
@@ -2916,7 +2449,7 @@
 					"positionType": 1
 				},
 				"font": {},
-				"imageURL": "https://dispatcher.r0.smartface.io/smartface9/fieldservice2/ui-editor/img/customers_1.png?os=iOS&osVersion=10.2&density=326&densityRatio=0.5&zoomLevel=0.5&brandModel=iPhone%207"
+				"imageURL": "https://dispatcher.r0.smartface.io/smartface9/fieldservice2/ui-editor/img/customers_1.png?os=iOS&osVersion=10.2&density=401&densityRatio=0.3333333333333333&zoomLevel=0.5&brandModel=iPhone%207%20Plus?random=0.8341828261728017"
 			}
 		},
 		{
@@ -3171,7 +2704,7 @@
 					"positionType": 0
 				},
 				"font": {},
-				"imageURL": "https://dispatcher.r0.smartface.io/smartface9/fieldservice2/ui-editor/img/customers_email.png?os=iOS&osVersion=10.2&density=326&densityRatio=0.5&zoomLevel=0.5&brandModel=iPhone%207"
+				"imageURL": "https://dispatcher.r0.smartface.io/smartface9/fieldservice2/ui-editor/img/customers_email.png?os=iOS&osVersion=10.2&density=401&densityRatio=0.3333333333333333&zoomLevel=0.5&brandModel=iPhone%207%20Plus?random=0.42429555624302684"
 			}
 		},
 		{
@@ -3346,7 +2879,7 @@
 					"positionType": 0
 				},
 				"font": {},
-				"imageURL": "https://dispatcher.r0.smartface.io/smartface9/fieldservice2/ui-editor/img/customers_phone.png?os=iOS&osVersion=10.2&density=326&densityRatio=0.5&zoomLevel=0.5&brandModel=iPhone%207"
+				"imageURL": "https://dispatcher.r0.smartface.io/smartface9/fieldservice2/ui-editor/img/customers_phone.png?os=iOS&osVersion=10.2&density=401&densityRatio=0.3333333333333333&zoomLevel=0.5&brandModel=iPhone%207%20Plus?random=0.4777446935637626"
 			}
 		},
 		{
@@ -4042,7 +3575,7 @@
 					"positionType": 0
 				},
 				"font": {},
-				"imageURL": "https://dispatcher.r0.smartface.io/smartface9/fieldservice2/ui-editor/img/next_page.png?os=iOS&osVersion=10.2&density=326&densityRatio=0.5&zoomLevel=0.5&brandModel=iPhone%207"
+				"imageURL": "https://dispatcher.r0.smartface.io/smartface9/fieldservice2/ui-editor/img/next_page.png?os=iOS&osVersion=10.2&density=401&densityRatio=0.3333333333333333&zoomLevel=0.5&brandModel=iPhone%207%20Plus?random=0.34069510820783866"
 			}
 		},
 		{
@@ -4457,7 +3990,7 @@
 					"positionType": 0
 				},
 				"font": {},
-				"imageURL": "https://dispatcher.r0.smartface.io/smartface9/fieldservice2/ui-editor/img/logout.png?os=iOS&osVersion=10.2&density=326&densityRatio=0.5&zoomLevel=0.5&brandModel=iPhone%207"
+				"imageURL": "https://dispatcher.r0.smartface.io/smartface9/fieldservice2/ui-editor/img/logout.png?os=iOS&osVersion=10.2&density=401&densityRatio=0.3333333333333333&zoomLevel=0.5&brandModel=iPhone%207%20Plus?random=0.5431810094745186"
 			}
 		},
 		{
@@ -4583,6 +4116,77 @@
 					"positionType": 0,
 					"flexGrow": 1
 				}
+			}
+		},
+		{
+			"type": "FlexLayout",
+			"id": "5994f375",
+			"source": {
+				"page": "__library__"
+			},
+			"themeProps": {},
+			"userProps": {
+				"width": null,
+				"left": 10.5,
+				"right": -21,
+				"height": 47.42,
+				"backgroundColor": "rgba( 153, 236, 105, 1 )",
+				"borderRadius": 23.71,
+				"top": 17.29,
+				"usePageVariable": true,
+				"flexProps": {
+					"positionType": "ABSOLUTE"
+				},
+				"layout": {},
+				"flex": {},
+				"font": {},
+				"defaults": {}
+			},
+			"className": ".flexLayout",
+			"props": {
+				"height": 47.42,
+				"width": null,
+				"touchEnabled": true,
+				"visible": true,
+				"backgroundColor": "rgba( 153, 236, 105, 1 )",
+				"alpha": 1,
+				"borderColor": "rgba(0,0,0,1)",
+				"borderWidth": 0,
+				"children": [],
+				"left": 10.5,
+				"right": -21,
+				"borderRadius": 23.71,
+				"top": 17.29,
+				"flexProps": {
+					"alignSelf": "AUTO",
+					"direction": "INHERIT",
+					"alignContent": "STRETCH",
+					"alignItems": "STRETCH",
+					"justifyContent": "FLEX_START",
+					"flexWrap": "NOWRAP",
+					"flexDirection": "COLUMN",
+					"positionType": "ABSOLUTE"
+				},
+				"name": "flHighlight",
+				"parent": "flActions",
+				"layout": {
+					"right": -10.5,
+					"left": 5.25,
+					"top": 8.645,
+					"height": 23.71,
+					"borderWidth": 0,
+					"borderRadius": 11.855
+				},
+				"flex": {
+					"alignContent": 4,
+					"alignItems": 4,
+					"justifyContent": 0,
+					"flexWrap": 0,
+					"flexDirection": 0,
+					"positionType": 1
+				},
+				"font": {},
+				"usePageVariable": true
 			}
 		}
 	]

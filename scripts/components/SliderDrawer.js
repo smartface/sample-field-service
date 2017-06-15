@@ -9,9 +9,9 @@ const AlertView = require('sf-core/ui/alertview');
 const SliderDrawer_ = extend(SliderDrawer)(
 	//constructor
 	function(_super, props, pageName) {
+		var self = this;
 		_super(this, props || SliderDrawer.defaults);
 		this.pageName = pageName;
-
 		var touchControl = {};
 
 
@@ -40,15 +40,10 @@ const SliderDrawer_ = extend(SliderDrawer)(
 
 		}, touchControl);
 
-		mimicPressed(this.flSettings, function() {
-			hide();
-			Router.go("pgSettings");
-		}, touchControl);
-
 		mimicPressed(this.flDashboard, function() {
 			hide();
 			Router.goBack("pgDashboard");
-
+			moveHighlight(0);
 		}, touchControl);
 
 		mimicPressed(this.flCustomers, function() {
@@ -56,14 +51,10 @@ const SliderDrawer_ = extend(SliderDrawer)(
 			Router.go("pgCustomerFilter", {
 				reset: true
 			});
+			moveHighlight(1);
 		}, touchControl);
 
-		mimicPressed(this.flGroupNotifications, function() {
-			hide();
-			Router.go("pgNotification");
-		}, touchControl);
-
-		mimicPressed(this.flOpenNotifications, function() {
+		mimicPressed(this.flNotifications, function() {
 			hide();
 			var dialogWait = DialogWait.show();
 			const notifications = require("../model/notifications");
@@ -73,10 +64,30 @@ const SliderDrawer_ = extend(SliderDrawer)(
 				if (err) {
 					return alert(JSON.stringify(err), "Notifications Service Error");
 				}
-
+				moveHighlight(2);
 				Router.go("pgNotification", notificationsData);
 			});
+
 		}, touchControl);
+
+		mimicPressed(this.flSettings, function() {
+			hide();
+			Router.go("pgSettings");
+			moveHighlight(3);
+		}, touchControl);
+
+		function moveHighlight(index) {
+			var target = {
+				top: 30 + ((30 + 22) * index),
+				height: 22
+			};
+			var flHighlightHeight = 47.42;
+
+			var top = Math.round(target.top + ((target.height - flHighlightHeight) / 2), 2);
+			self.flHighlight.top = top;
+			self.flHighlight.applyLayout();
+		}
+
 
 		this.onTouchEnded = function() {
 			if (touchControl.target) {
@@ -90,15 +101,11 @@ const SliderDrawer_ = extend(SliderDrawer)(
 			}
 		};
 
-
-
 		this.lblSignout.text = lang.signout;
 		this.lblSettings.text = lang.settings;
 		this.lblDashboard.text = lang.dashboard;
 		this.lblCustomers.text = lang.customers;
 		this.lblNotifications.text = lang.notifications;
-		this.lblGroupNotifications.text = lang.groupNotifications;
-		this.lblOpenNotifications.text = lang.openNotifications;
 		this.lblVersion.text = "v" + Application.version;
 
 	}

@@ -26,6 +26,7 @@ exports.PURPLE = {
     lineSeparator: Color.create("#979797"),
     secondaryColor: Color.create("#F6A623"),
     inactiveColor: Color.create("#B395F0"),
+    highlight: Color.create("#AF5CEE"),
 };
 
 exports.NAVY = {
@@ -54,4 +55,5 @@ exports.NAVY = {
     }),
     secondaryColor: Color.create("#50D2C2"),
     inactiveColor: Color.create("#C6C6C6"),
+    highlight: Color.create("#99EC69"),
 };

@@ -13,7 +13,6 @@ var sliderDrawer = new SliderDrawer({
     width: sliderDrawerWidth,
     enabled: false,
     onLoad: function() {
-        sliderDrawer.applyTheme();
         var uiSliderDrawer = new UISliderDrawer({
             width: sliderDrawerWidth,
             top: 0,
@@ -41,6 +40,7 @@ var sliderDrawer = new SliderDrawer({
             //TODO: use title instead of email
             sliderDrawer.lblTitle.text = userData.currentUser.email;
         }
+        sliderDrawer.applyTheme();
     },
 });
 sliderDrawer.drawerPosition = SliderDrawer.Position.LEFT;
@@ -50,6 +50,7 @@ module.exports = exports = sliderDrawer;
 sliderDrawer.applyTheme = function sliderDrawer_applyTheme() {
     var selectedTheme = theme[theme.selected];
     sliderDrawer.layout.backgroundColor = selectedTheme.sliderDrawer;
+    sliderDrawer.children.content.flHighlight.backgroundColor = selectedTheme.highlight;
 };
 
 
