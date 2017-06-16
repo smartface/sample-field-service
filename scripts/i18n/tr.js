@@ -60,5 +60,15 @@ SMF.i18n.defineLanguage('tr', {
 	"updateIsInProgress": "Güncelleme sürüyor",
 	"signOutMessage": "Oturumu kapatmak ister misiniz?",
 	"signOutTitle": "Oturum kapatmayı onayla",
-	"about": "Hakkında"
+	"about": "Hakkında",
+	"takePicture": "Bir resim çek",
+	"selectFromGallery": "Galeriden resim seç",
+	"addAPicture": "Bir resim ekle",
+	"name": "Name",
+	"surname": "Surname",
+	"contactAddSuccess": "Kişi başarıyla kayedildi",
+	"contactAddFailure": "Kişi kaydedilemedi",
+	"Cutomer Type": "Müşteri Tipi",
+	"Normal": "Normal",
+	"VIP": "VIP"
 });

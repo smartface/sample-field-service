@@ -43,7 +43,7 @@ const pgNotification = extend(pgNotificationDesign)(
             });
             svNotifications.addChild(flNotifications);
 
-            page.onBackButtonPressed = function(e) {
+            page.android.onBackButtonPressed = function(e) {
                 Router.goBack("pgDashboard");
             };
         };

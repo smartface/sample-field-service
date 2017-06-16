@@ -141,7 +141,7 @@
 			"source": {
 				"page": "__library__"
 			},
-			"hiddenComponent": false,
+			"hiddenComponent": true,
 			"themeProps": {},
 			"userProps": {
 				"backgroundColor": "rgba( 122, 207, 36, 1 )",
@@ -2251,6 +2251,7 @@
 				"right": 24.5,
 				"top": 14.57,
 				"bottom": 0,
+				"id": 152,
 				"flexProps": {
 					"positionType": "ABSOLUTE",
 					"right": 24.5,
@@ -2275,6 +2276,7 @@
 				"right": 24.5,
 				"top": 14.57,
 				"bottom": 0,
+				"id": 152,
 				"children": [
 					"customerRowLine",
 					"imgCustomerPicture",
@@ -2406,6 +2408,7 @@
 				"left": 0,
 				"usePageVariable": true,
 				"imageFillType": "ASPECTFIT",
+				"id": 159,
 				"flexProps": {
 					"positionType": "ABSOLUTE"
 				},
@@ -2430,6 +2433,7 @@
 				"top": 3.93,
 				"left": 0,
 				"usePageVariable": true,
+				"id": 159,
 				"children": [],
 				"flexProps": {
 					"alignSelf": "AUTO",
@@ -2467,6 +2471,7 @@
 				"backgroundColor": "rgba( 255, 255, 255, 0 )",
 				"left": 72,
 				"right": 0,
+				"id": 153,
 				"flexProps": {
 					"positionType": "ABSOLUTE",
 					"right": 0,
@@ -2491,6 +2496,7 @@
 				"top": 0,
 				"left": 72,
 				"right": 0,
+				"id": 153,
 				"children": [
 					"lblCustomerRowName",
 					"flCustomerRowEmail",
@@ -2545,6 +2551,7 @@
 				"textColor": "rgba( 74, 74, 74, 1 )",
 				"text": "Adam Stewart",
 				"usePageVariable": true,
+				"id": 158,
 				"font": {
 					"size": 20
 				},
@@ -2572,6 +2579,7 @@
 				"left": 0,
 				"right": 0,
 				"usePageVariable": true,
+				"id": 158,
 				"children": [],
 				"font": {
 					"size": 20,
@@ -2609,6 +2617,7 @@
 				"width": null,
 				"height": 20,
 				"marginTop": 10,
+				"id": 156,
 				"flexProps": {
 					"flexDirection": "ROW"
 				},
@@ -2628,6 +2637,7 @@
 				"borderColor": "rgba(0,0,0,1)",
 				"borderWidth": 0,
 				"marginTop": 10,
+				"id": 156,
 				"children": [
 					"imgCustomerRowEmail",
 					"lblCustomerRowEmail"
@@ -2722,6 +2732,7 @@
 				"textColor": "rgba( 74, 74, 74, 1 )",
 				"alpha": 0.54,
 				"usePageVariable": true,
+				"id": 157,
 				"flexProps": {
 					"flexGrow": 1
 				},
@@ -2749,6 +2760,7 @@
 				"textAlignment": "MIDLEFT",
 				"left": 8,
 				"usePageVariable": true,
+				"id": 157,
 				"children": [],
 				"font": {
 					"size": 13,
@@ -2784,6 +2796,7 @@
 				"width": null,
 				"height": 20,
 				"marginTop": 10,
+				"id": 154,
 				"flexProps": {
 					"flexDirection": "ROW"
 				},
@@ -2803,6 +2816,7 @@
 				"borderColor": "rgba(0,0,0,1)",
 				"borderWidth": 0,
 				"marginTop": 10,
+				"id": 154,
 				"children": [
 					"imgCustomerRowPhone",
 					"lblCustomerRowPhone"
@@ -2896,6 +2910,7 @@
 				"text": "90 533 634 2312",
 				"textColor": "rgba( 74, 74, 74, 1 )",
 				"usePageVariable": true,
+				"id": 155,
 				"flexProps": {
 					"flexGrow": 1
 				},
@@ -2923,6 +2938,7 @@
 				"textAlignment": "MIDLEFT",
 				"left": 8,
 				"usePageVariable": true,
+				"id": 155,
 				"children": [],
 				"font": {
 					"size": 13,
@@ -2953,7 +2969,7 @@
 			"source": {
 				"page": "__library__"
 			},
-			"hiddenComponent": true,
+			"hiddenComponent": false,
 			"themeProps": {},
 			"userProps": {
 				"width": null,
@@ -3111,7 +3127,7 @@
 			},
 			"themeProps": {},
 			"userProps": {
-				"height": 12,
+				"height": 14,
 				"width": null,
 				"backgroundColor": "rgba( 255, 255, 255, 0 )",
 				"textColor": "rgba( 29, 29, 38, 1 )",
@@ -3131,7 +3147,7 @@
 			"className": ".label",
 			"props": {
 				"width": null,
-				"height": 12,
+				"height": 14,
 				"touchEnabled": true,
 				"text": "Customer Number",
 				"visible": true,
@@ -3159,7 +3175,7 @@
 				"parent": "customerDetailRow",
 				"layout": {
 					"marginLeft": 0.25,
-					"height": 6,
+					"height": 7,
 					"borderWidth": 0
 				},
 				"flex": {
@@ -3177,10 +3193,10 @@
 			"userProps": {
 				"usePageVariable": true,
 				"width": null,
-				"height": 14,
+				"height": 16,
 				"marginLeft": 0.5,
 				"textColor": "rgba( 29, 29, 38, 1 )",
-				"marginTop": 8,
+				"marginTop": 7,
 				"text": "7645980",
 				"font": {
 					"family": "Lato",
@@ -3194,7 +3210,7 @@
 			"className": ".label",
 			"props": {
 				"width": null,
-				"height": 14,
+				"height": 16,
 				"touchEnabled": true,
 				"text": "7645980",
 				"visible": true,
@@ -3207,7 +3223,7 @@
 				"textAlignment": "MIDLEFT",
 				"usePageVariable": true,
 				"marginLeft": 0.5,
-				"marginTop": 8,
+				"marginTop": 7,
 				"children": [],
 				"font": {
 					"size": 14,
@@ -3223,8 +3239,8 @@
 				"parent": "customerDetailRow",
 				"layout": {
 					"marginLeft": 0.25,
-					"marginTop": 4,
-					"height": 7,
+					"marginTop": 3.5,
+					"height": 8,
 					"borderWidth": 0
 				},
 				"flex": {

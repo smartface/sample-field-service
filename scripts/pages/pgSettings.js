@@ -16,7 +16,7 @@ const pgSettings = extend(pgSettingsDesign)(
         page.onLoad = function onLoad() {
             baseOnLoad && baseOnLoad();
             sliderDrawer.setLeftItem(page.headerBar);
-            page.onBackButtonPressed = function(e) {
+            page.android.onBackButtonPressed = function(e) {
                 Router.goBack("pgDashboard");
             };
 
@@ -70,6 +70,8 @@ const pgSettings = extend(pgSettingsDesign)(
             
             page.swNotifications.thumbOnColor = selectedTheme.thumbOnColor;
             page.swNotifications.toggleOnColor = selectedTheme.toggleOnColor;
+            page.flLineTheme.backgroundColor = selectedTheme.lineSeparator;
+            page.flLineNotifications.backgroundColor = selectedTheme.lineSeparator;
         }
 
 

@@ -3,9 +3,9 @@ const Application = global.Application;
 const extend = require('js-base/core/extend');
 const Router = require("sf-core/ui/router");
 const SliderDrawer = require('library/SliderDrawer');
-const mcs = require("../lib/mcs");
 const DialogWait = require("./DialogWait");
-const AlertView = require('sf-core/ui/alertview');
+const user = require("../lib/user");
+
 const SliderDrawer_ = extend(SliderDrawer)(
 	//constructor
 	function(_super, props, pageName) {
@@ -16,27 +16,15 @@ const SliderDrawer_ = extend(SliderDrawer)(
 
 
 		mimicPressed(this.flSignout, function() {
-			alert({
-				message: lang.signOutMessage,
-				title: lang.signOutTitle,
-				buttons: [{
-					type: AlertView.Android.ButtonType.NEGATIVE,
-					text: lang.yes,
-					onClick: function() {
-						hide();
-						if (touchControl.target) {
-							touchControl.target.alpha = 1;
-						}
-						mcs.logout();
-						Router.goBack("pgLogin");
+			user.logOut(function(err, loggingOut) {
+				if (err) return;
+				if (loggingOut) {
+					hide();
+					if (touchControl.target) {
+						touchControl.target.alpha = 1;
 					}
-				}, {
-					type: AlertView.Android.ButtonType.POSITIVE,
-					text: lang.no,
-					onClick: function() {}
-				}]
+				}
 			});
-
 
 		}, touchControl);
 
@@ -90,7 +78,7 @@ const SliderDrawer_ = extend(SliderDrawer)(
 			self.flHighlight.top = top;
 			self.flHighlight.applyLayout();
 		}
-
+		this.moveHighlight = moveHighlight;
 
 		this.onTouchEnded = function() {
 			if (touchControl.target) {

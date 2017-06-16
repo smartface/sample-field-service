@@ -16,7 +16,9 @@ const HeaderBarItem = require('sf-core/ui/headerbaritem');
 const Image = require('sf-core/ui/image');
 const theme = require("../lib/theme");
 const sliderDrawer = require("../sliderDrawer");
-
+const getCustomers = require("../model/customers").getCustomers;
+const DialogWait = require("../components/DialogWait");
+const pageLength = 20;
 
 const textInputDefaults = {
     textAlignment: TextAlignment.MIDLEFT,
@@ -48,6 +50,10 @@ const pgCustomerFilter = extend(pgCustomerFilterDesign)(
             baseOnLoad && baseOnLoad();
             sliderDrawer.setLeftItem(page.headerBar);
             page.headerBar.title = lang.search;
+
+            page.android.onBackButtonPressed = function(e) {
+                Router.goBack("pgDashboard");
+            };
 
             page.flTabIndicator.touchEnabled = false;
 
@@ -122,15 +128,34 @@ const pgCustomerFilter = extend(pgCustomerFilterDesign)(
             };
 
             function doSearch() {
-                if (searchMode === "name") {
-
+                var filter = {
+                    start: 0
+                };
+                if (searchMode === "name" && tiName.text.length > 0) {
+                    filter.name = tiName.text;
                 }
-                else { // searchMode == "card" then
-
+                else if (tiCard.text.length > 0) { // searchMode == "card" then
+                    filter.cardnumber = tiCard.text;
                 }
+                if (tiEmail.text.length > 0)
+                    filter.email = tiEmail.text;
+                if (tiPhone.text.length > 0)
+                    filter.phone = tiPhone.text;
+                var dialogWait = DialogWait.show();
+                filter.length = pageLength;
+                getCustomers(filter, function(err, customers) {
+                    dialogWait.hide();
+                    console.log("after getting customers. Is there error? " + !!err);
+                    if (err) {
+                        return alert(JSON.stringify(err), "Customers Service Error");
+                    }
+                    Router.go("pgCustomers", {
+                        customers: customers,
+                        filter: filter
+                    });
+                });
 
-                //TODO: go to service then pgCustomers
-                Router.go("pgCustomers");
+
             }
 
             page.btnSearch.onPress = doSearch;

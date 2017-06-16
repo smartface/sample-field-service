@@ -1,3 +1,4 @@
+/* globals lang */
 const extend = require("js-base/core/extend");
 const Router = require("sf-core/ui/router");
 const pgCustomerDetailsDesign = require("../ui/ui_pgCustomerDetails");
@@ -15,8 +16,13 @@ const actions = {
     "Notes": showNotes,
     "Notification flow": showNotificationFlow
 };
+const Share = require('sf-core/share');
 const theme = require("../lib/theme");
 const shadow = require("../lib/ui").shadow;
+const Application = require("sf-core/application");
+const Contacts = require("sf-core/device/contacts");
+const System = require('sf-core/device/system');
+const permission = require("../lib/permission");
 
 const pgCustomerDetails = extend(pgCustomerDetailsDesign)(
     function(_super) {
@@ -36,16 +42,18 @@ const pgCustomerDetails = extend(pgCustomerDetailsDesign)(
                 backgroundColor: emptyColor
             });
             page.layout.addChild(svCustomerDetail);
-            page.onBackButtonPressed = goBack;
+            page.android.onBackButtonPressed = goBack;
             Object.assign(page.btnBack, {
                 onPress: goBack,
                 text: "",
                 backgroundImage: Image.createFromFile("images://back_dark.png"),
             });
-            
+
             var selectedTheme = theme[theme.selected];
             page.flLine.backgroundColor = selectedTheme.lineSeparator;
             page.imgCustomerPicture.borderColor = selectedTheme.mainColor;
+            page.btnShare.backgroundImage = selectedTheme.share;
+            page.btnAddToContacts.backgroundImage = selectedTheme.addToContacts;
 
         };
 
@@ -64,6 +72,7 @@ const pgCustomerDetails = extend(pgCustomerDetailsDesign)(
                 svCustomerDetail.removeChild(oldLayout);
                 delete svCustomerDetail.layout;
             }
+            var contactData = {};
 
             var layout = new FlexLayout({
                 left: 0,
@@ -94,6 +103,7 @@ const pgCustomerDetails = extend(pgCustomerDetailsDesign)(
                         marginRight: fieldMargin,
                     });
                     layout.addChild(customerDetailRow);
+                    contactData[field.name] = field.value;
                 });
                 if (customerDetails.actions) {
                     var flPlaceholder = new FlexLayout({
@@ -142,6 +152,44 @@ const pgCustomerDetails = extend(pgCustomerDetailsDesign)(
             layout.height = layoutHeight;
             svCustomerDetail.addChild(layout);
             svCustomerDetail.layout = layout;
+            page.imgCustomerPicture.image = customerDetails.picture ||
+                Image.createFromFile("images://customers_empty.png");
+
+
+            page.btnAddToContacts.onPress = function() {
+                if (System.OS === "Android") {
+                    permission.checkPermission(Application.android.Permissions.WRITE_CONTACTS, function(err) {
+                        if (err) return;
+                        addToContacts();
+                    });
+                }
+                else {
+                    addToContacts();
+                }
+
+                function addToContacts() {
+                    Contacts.add({
+                        contact: {
+                            displayName: "Adam Stewart",
+                            phoneNumber: "+16506173265",
+                            email: "info@smartface.io",
+                            address: "347 N Canon Dr Beverly Hills, CA 90210"
+                        },
+                        //contactData,
+                        onSuccess: function() {
+                            alert(lang.contactAddSuccess);
+                        },
+                        onFailure: function() {
+                            alert(lang.contactAddFailure);
+                        }
+                    });
+                }
+            };
+
+            page.btnShare.onPress = function() {
+                var contactDataString = JSON.stringify(contactData, null, "\t");
+                Share.shareText(contactDataString, page, []);
+            };
         }
     });
 

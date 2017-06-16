@@ -8,9 +8,9 @@ const extend = require('js-base/core/extend');
 const Page = require('sf-core/ui/page');
 const FlexLayout = require('sf-core/ui/flexlayout');
 const Color = require('sf-core/ui/color');
+const Switch = require('sf-core/ui/switch');
 const Label = require('sf-core/ui/label');
 const Font = require('sf-core/ui/font');
-const Switch = require('sf-core/ui/switch');
 const TextAlignment = require('sf-core/ui/textalignment');
 const StatusBarStyle = require('sf-core/ui/statusbarstyle');
 
@@ -65,6 +65,19 @@ const PgSettings_ = extend(Page)(
 		var flTexts = new FlexLayout(flTextsStyle);
 		this.layout.addChild(flTexts);
 		
+		const swNotificationsStyle = getCombinedStyle(".switch", {
+			minWidth: 37,
+			minHeight: 20,
+			width: null,
+			thumbOnColor: Color.create(255, 80, 210, 194),
+			toggleOnColor: Color.create(128, 131, 108, 179)
+		});
+		var swNotifications = new Switch(swNotificationsStyle);
+		if(swNotificationsStyle.toggleOffColor)
+			swNotifications.android && (swNotifications.android.toggleOffColor = swNotificationsStyle.toggleOffColor);
+		flNotifications.addChild(swNotifications);
+		this.swNotifications = swNotifications;
+
 		const lblThemeStyle = getCombinedStyle(".label", {
 			text: "Theme",
 			width: null,
@@ -89,31 +102,6 @@ const PgSettings_ = extend(Page)(
 		flTexts.addChild(lblAbout);
 		this.lblAbout = lblAbout;
 
-		const swNotificationsStyle = getCombinedStyle(".switch", {
-			minWidth: 37,
-			minHeight: 20,
-			width: null,
-			thumbOnColor: Color.create(255, 80, 210, 194),
-			toggleOnColor: Color.create(128, 131, 108, 179)
-		});
-		var swNotifications = new Switch(swNotificationsStyle);
-		if(swNotificationsStyle.toggleOffColor)
-			swNotifications.android && (swNotifications.android.toggleOffColor = swNotificationsStyle.toggleOffColor);
-		flNotifications.addChild(swNotifications);
-		this.swNotifications = swNotifications;
-
-		const flThemeSelectionsStyle = getCombinedStyle(".flexLayout", {
-			backgroundColor: Color.create(0, 255, 255, 255),
-			width: 68,
-			height: null,
-			flexGrow: null,
-			flexDirection: FlexLayout.FlexDirection.ROW_REVERSE,
-			alignItems: FlexLayout.AlignItems.CENTER,
-			justifyContent: FlexLayout.JustifyContent.SPACE_BETWEEN
-		});
-		var flThemeSelections = new FlexLayout(flThemeSelectionsStyle);
-		flTheme.addChild(flThemeSelections);
-		
 		const lblTextStyle = getCombinedStyle(".label", {
 			width: null,
 			text: "Lorem ipsum dolor sit amet, veniam melius duo ei, ea his esse sonet, eu rebum tation vituperatoribus his. Lorem ipsum dolor sit amet, veniam melius duo ei eu rebum tation vituperatoribus his.",
@@ -143,6 +131,44 @@ const PgSettings_ = extend(Page)(
 		var lblNotifications = new Label(lblNotificationsStyle);
 		flNotifications.addChild(lblNotifications);
 		
+		const flThemeSelectionsStyle = getCombinedStyle(".flexLayout", {
+			backgroundColor: Color.create(0, 255, 255, 255),
+			width: 68,
+			height: null,
+			flexGrow: null,
+			flexDirection: FlexLayout.FlexDirection.ROW_REVERSE,
+			alignItems: FlexLayout.AlignItems.CENTER,
+			justifyContent: FlexLayout.JustifyContent.SPACE_BETWEEN
+		});
+		var flThemeSelections = new FlexLayout(flThemeSelectionsStyle);
+		flTheme.addChild(flThemeSelections);
+		
+		const flLineThemeStyle = getCombinedStyle(".flexLayout", {
+			width: null,
+			height: 0.5,
+			left: 0,
+			right: 0,
+			bottom: 0,
+			backgroundColor: Color.create(255, 80, 210, 194),
+			positionType: FlexLayout.PositionType.ABSOLUTE
+		});
+		var flLineTheme = new FlexLayout(flLineThemeStyle);
+		flTheme.addChild(flLineTheme);
+		this.flLineTheme = flLineTheme;
+
+		const flLineNotificationsStyle = getCombinedStyle(".flexLayout", {
+			width: null,
+			height: 0.5,
+			left: 0,
+			right: 0,
+			bottom: 0,
+			backgroundColor: Color.create(255, 80, 210, 194),
+			positionType: FlexLayout.PositionType.ABSOLUTE
+		});
+		var flLineNotifications = new FlexLayout(flLineNotificationsStyle);
+		flNotifications.addChild(flLineNotifications);
+		this.flLineNotifications = flLineNotifications;
+
 		const flPurpleSelectionStyle = getCombinedStyle(".flexLayout", {
 			backgroundColor: Color.create(0, 255, 255, 255),
 			width: 30,
@@ -203,13 +229,15 @@ const PgSettings_ = extend(Page)(
 		//assign the children of flTheme
 		flTheme.children = Object.assign({}, {
 			lblTheme: lblTheme,
-			flThemeSelections: flThemeSelections
+			flThemeSelections: flThemeSelections,
+			flLineTheme: flLineTheme
 		});
 		
 		//assign the children of flNotifications
 		flNotifications.children = Object.assign({}, {
 			swNotifications: swNotifications,
-			lblNotifications: lblNotifications
+			lblNotifications: lblNotifications,
+			flLineNotifications: flLineNotifications
 		});
 		
 		//assign the children of flTexts

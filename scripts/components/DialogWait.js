@@ -64,8 +64,8 @@ DialogWait.show = function showWaitdialog(page) {
 					}
 				}
 			}
-			backButtonPressed = page.onBackButtonPressed;
-			page.onBackButtonPressed = empty;
+			backButtonPressed = page.android.onBackButtonPressed;
+			page.android.onBackButtonPressed = empty;
 		}
 		waitDialog.layout.addChild(dialogWait);
 		waitDialog.show();

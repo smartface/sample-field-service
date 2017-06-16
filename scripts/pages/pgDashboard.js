@@ -5,6 +5,7 @@ const pgDashboardDesign = require("../ui/ui_pgDashboard");
 const sliderDrawer = require("../sliderDrawer");
 const StatusBarStyle = require('sf-core/ui/statusbarstyle');
 const theme = require("../lib/theme");
+const user = require("../lib/user");
 
 const pgDashboard = extend(pgDashboardDesign)(
     function(_super) {
@@ -16,8 +17,8 @@ const pgDashboard = extend(pgDashboardDesign)(
             baseOnLoad && baseOnLoad();
             page.headerBar.title = lang.dashboard;
             sliderDrawer.setLeftItem(page.headerBar);
-            page.onBackButtonPressed = function(e) {
-                Router.goBack("pgLogin");
+            page.android.onBackButtonPressed = function(e) {
+                user.logOut();
             };
         };
 
@@ -26,6 +27,7 @@ const pgDashboard = extend(pgDashboardDesign)(
             sliderDrawer.enabled = true;
             page.statusBar.ios.style = StatusBarStyle.LIGHTCONTENT;
             applyTheme();
+            sliderDrawer.moveHighlight(0);
         };
 
         function applyTheme() {

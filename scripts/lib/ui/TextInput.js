@@ -32,6 +32,7 @@ const TextInput = extend(FlexLayout)(
 			textAlignment: TextAlignment.MIDCENTER,
 			visible: true,
 			text: "",
+			padding: 0,
 			onEditBegins: function() {
 				var selectedTheme = theme[theme.selected];
 				line.backgroundColor = selectedTheme.gradient;

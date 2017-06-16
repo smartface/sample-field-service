@@ -29,8 +29,8 @@ function applyDefaultBackAction(page, backAction) {
         });
         page.headerBar.setLeftItem(leftItem);
     }
-    if (!page.onBackButtonPressed) {
-        page.onBackButtonPressed = function() {
+    if (!page.android.onBackButtonPressed) {
+        page.android.onBackButtonPressed = function() {
             backAction();
         };
     }

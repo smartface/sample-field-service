@@ -5,7 +5,7 @@ exports.themes = {
     PURPLE: "PURPLE"
 };
 
-exports.selected = exports.themes.NAVY;
+exports.selected = exports.themes.PURPLE;
 
 
 exports.PURPLE = {
@@ -26,7 +26,9 @@ exports.PURPLE = {
     lineSeparator: Color.create("#979797"),
     secondaryColor: Color.create("#F6A623"),
     inactiveColor: Color.create("#B395F0"),
-    highlight: Color.create("#AF5CEE"),
+    highlight: Color.create(135, 175, 92, 238),
+    share: Image.createFromFile("images://share_purple.png"),
+    addToContacts: Image.createFromFile("images://add_to_contacts_purple.png"),
 };
 
 exports.NAVY = {
@@ -55,5 +57,7 @@ exports.NAVY = {
     }),
     secondaryColor: Color.create("#50D2C2"),
     inactiveColor: Color.create("#C6C6C6"),
-    highlight: Color.create("#99EC69"),
+    highlight: Color.create(135, 153, 236, 105),
+    share: Image.createFromFile("images://share.png"),
+    addToContacts: Image.createFromFile("images://add_to_contacts.png"),
 };

@@ -113,7 +113,7 @@ const NotificationRow = extend(FlexLayout)(
 			text: "<Date>",
 			multiline: false
 		});
-		lblDate.font = Font.create("Lato", 13, Font.NORMAL);
+		lblDate.font = Font.create("Lato", 15, Font.NORMAL);
 		flLeft.addChild(lblDate);
 
 		var lblTitle = new Label({
@@ -129,7 +129,7 @@ const NotificationRow = extend(FlexLayout)(
 			text: "",
 			multiline: false
 		});
-		lblTitle.font = Font.create("Lato", 13, Font.NORMAL);
+		lblTitle.font = Font.create("Lato", 17, Font.NORMAL);
 		flContent.addChild(lblTitle);
 
 		var lblContent = new Label({
@@ -144,7 +144,7 @@ const NotificationRow = extend(FlexLayout)(
 			text: "<Content>",
 			multiline: true
 		});
-		lblContent.font = Font.create("Arial", 12, Font.NORMAL);
+		lblContent.font = Font.create("Lato", 15, Font.NORMAL);
 		flContent.addChild(lblContent);
 
 

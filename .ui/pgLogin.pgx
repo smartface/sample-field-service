@@ -419,7 +419,7 @@
 				"borderWidth": 0,
 				"image": "logo.png",
 				"usePageVariable": true,
-				"imageURL": "https://dispatcher.r0.smartface.io/smartface9/fieldservice2/ui-editor/img/logo.png?os=iOS&osVersion=10.2&density=326&densityRatio=0.5&zoomLevel=0.5&brandModel=iPhone%207?random=0.12354379502062929",
+				"imageURL": "https://dispatcher.r0.smartface.io/smartface9/fieldservice2/ui-editor/img/logo.png?os=iOS&osVersion=10.2&density=326&densityRatio=0.5&zoomLevel=0.5&brandModel=iPhone%207?random=0.41344323573731034",
 				"children": [],
 				"flexProps": {
 					"alignSelf": "AUTO",
@@ -836,7 +836,7 @@
 					"positionType": 1
 				},
 				"font": {
-					"family": "default",
+					"family": "Lato",
 					"size": 18,
 					"italic": false,
 					"bold": false
@@ -867,7 +867,7 @@
 					"size": 18,
 					"bold": false,
 					"italic": false,
-					"family": "default"
+					"family": "Lato"
 				},
 				"flexProps": {
 					"positionType": "ABSOLUTE",

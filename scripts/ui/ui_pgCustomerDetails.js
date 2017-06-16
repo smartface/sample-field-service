@@ -9,12 +9,12 @@ const Page = require('sf-core/ui/page');
 const Button = require('sf-core/ui/button');
 const Color = require('sf-core/ui/color');
 const FlexLayout = require('sf-core/ui/flexlayout');
-const ImageView = require('sf-core/ui/imageview');
-const Image = require('sf-core/ui/image');
-const ImageFillType = require('sf-core/ui/imagefilltype');
 const Label = require('sf-core/ui/label');
 const TextAlignment = require('sf-core/ui/textalignment');
 const Font = require('sf-core/ui/font');
+const ImageView = require('sf-core/ui/imageview');
+const Image = require('sf-core/ui/image');
+const ImageFillType = require('sf-core/ui/imagefilltype');
 
 
 
@@ -43,21 +43,20 @@ const PgCustomerDetails_ = extend(Page)(
 		this.layout.addChild(btnBack);
 		this.btnBack = btnBack;
 
-		const imgCustomerPictureStyle = getCombinedStyle(".imageView", {
-			width: 88,
-			height: 88,
+		const flCustomerTopStyle = getCombinedStyle(".flexLayout", {
+			height: 90,
+			width: 247,
+			backgroundColor: Color.create(0, 255, 255, 255),
+			marginLeft: null,
 			marginTop: 50,
-			image: Image.createFromFile("images://customer_detail_picture.png"),
-			imageFillType: ImageFillType.ASPECTFIT,
-			borderWidth: 0.5,
-			borderColor: Color.create(255, 91, 198, 149),
-			borderRadius: 44,
-			alignSelf: FlexLayout.AlignSelf.CENTER
+			alignSelf: FlexLayout.AlignSelf.CENTER,
+			flexDirection: FlexLayout.FlexDirection.ROW,
+			justifyContent: FlexLayout.JustifyContent.SPACE_BETWEEN,
+			alignItems: FlexLayout.AlignItems.CENTER
 		});
-		var imgCustomerPicture = new ImageView(imgCustomerPictureStyle);
-		this.layout.addChild(imgCustomerPicture);
-		this.imgCustomerPicture = imgCustomerPicture;
-
+		var flCustomerTop = new FlexLayout(flCustomerTopStyle);
+		this.layout.addChild(flCustomerTop);
+		
 		const lblNameStyle = getCombinedStyle(".label", {
 			textAlignment: TextAlignment.MIDCENTER,
 			textColor: Color.create(255, 36, 42, 52),
@@ -95,13 +94,59 @@ const PgCustomerDetails_ = extend(Page)(
 		this.layout.addChild(flLine);
 		this.flLine = flLine;
 
+		const btnShareStyle = getCombinedStyle(".button", {
+			backgroundColor: Color.create(255, 244, 244, 244),
+			borderRadius: 25,
+			height: 50,
+			width: 50,
+			marginTop: null,
+			text: null
+		});
+		var btnShare = new Button(btnShareStyle);
+		flCustomerTop.addChild(btnShare);
+		this.btnShare = btnShare;
+
+		const imgCustomerPictureStyle = getCombinedStyle(".imageView", {
+			width: 88,
+			height: 88,
+			marginTop: null,
+			image: Image.createFromFile("images://customer_detail_picture.png"),
+			imageFillType: ImageFillType.ASPECTFIT,
+			borderWidth: 0.5,
+			borderColor: Color.create(255, 91, 198, 149),
+			borderRadius: 44,
+			alignSelf: FlexLayout.AlignSelf.CENTER
+		});
+		var imgCustomerPicture = new ImageView(imgCustomerPictureStyle);
+		flCustomerTop.addChild(imgCustomerPicture);
+		this.imgCustomerPicture = imgCustomerPicture;
+
+		const btnAddToContactsStyle = getCombinedStyle(".button", {
+			backgroundColor: Color.create(255, 244, 244, 244),
+			borderRadius: 25,
+			height: 50,
+			width: 50,
+			marginTop: null,
+			text: null
+		});
+		var btnAddToContacts = new Button(btnAddToContactsStyle);
+		flCustomerTop.addChild(btnAddToContacts);
+		this.btnAddToContacts = btnAddToContacts;
+
 		//assign the children to page 
 		this.children = Object.assign({}, {
 			btnBack: btnBack,
-			imgCustomerPicture: imgCustomerPicture,
+			flCustomerTop: flCustomerTop,
 			lblName: lblName,
 			lblTitle: lblTitle,
 			flLine: flLine
+		});
+		
+		//assign the children of flCustomerTop
+		flCustomerTop.children = Object.assign({}, {
+			btnShare: btnShare,
+			imgCustomerPicture: imgCustomerPicture,
+			btnAddToContacts: btnAddToContacts
 		});
 		
 	});

@@ -21,7 +21,7 @@
 					"statusBar",
 					"headerBar",
 					"btnBack",
-					"imgCustomerPicture",
+					"flCustomerTop",
 					"lblName",
 					"lblTitle",
 					"flLine"
@@ -173,65 +173,6 @@
 				"flex": {
 					"positionType": 1
 				}
-			}
-		},
-		{
-			"type": "ImageView",
-			"id": "eb8a7e2d",
-			"themeProps": {},
-			"userProps": {
-				"width": 88,
-				"height": 88,
-				"marginTop": 50,
-				"image": "customer_detail_picture.png",
-				"imageFillType": "ASPECTFIT",
-				"borderWidth": 0.5,
-				"borderColor": "rgba( 91, 198, 149, 1 )",
-				"borderRadius": 44,
-				"usePageVariable": true,
-				"flexProps": {
-					"alignSelf": "CENTER"
-				},
-				"layout": {},
-				"flex": {},
-				"font": {},
-				"defaults": {}
-			},
-			"className": ".imageView",
-			"props": {
-				"width": 88,
-				"height": 88,
-				"touchEnabled": true,
-				"visible": true,
-				"imageFillType": "ASPECTFIT",
-				"backgroundColor": "rgba(0,0,0,0)",
-				"alpha": 1,
-				"borderColor": "rgba( 91, 198, 149, 1 )",
-				"borderWidth": 0.5,
-				"marginTop": 50,
-				"image": "customer_detail_picture.png",
-				"borderRadius": 44,
-				"usePageVariable": true,
-				"children": [],
-				"flexProps": {
-					"alignSelf": "CENTER",
-					"positionType": "RELATIVE"
-				},
-				"name": "imgCustomerPicture",
-				"parent": "pgCustomerDetails",
-				"layout": {
-					"marginTop": 25,
-					"width": 44,
-					"height": 44,
-					"borderWidth": 0.25,
-					"borderRadius": 22
-				},
-				"flex": {
-					"alignSelf": 2,
-					"positionType": 0
-				},
-				"font": {},
-				"imageURL": "https://dispatcher.r0.smartface.io/smartface9/fieldservice2/ui-editor/img/customer_detail_picture.png?os=iOS&osVersion=10.2&density=326&densityRatio=0.5&zoomLevel=0.5&brandModel=iPhone%207?random=0.17740677332624277"
 			}
 		},
 		{
@@ -412,6 +353,248 @@
 					"positionType": 0
 				},
 				"font": {}
+			}
+		},
+		{
+			"type": "FlexLayout",
+			"id": "d18b63ca",
+			"themeProps": {},
+			"userProps": {
+				"height": 90,
+				"width": 247,
+				"backgroundColor": "rgba( 255, 255, 255, 0 )",
+				"marginLeft": null,
+				"marginTop": 50,
+				"flexProps": {
+					"alignSelf": "CENTER",
+					"flexDirection": "ROW",
+					"justifyContent": "SPACE_BETWEEN",
+					"alignItems": "CENTER"
+				},
+				"layout": {},
+				"flex": {},
+				"font": {},
+				"defaults": {}
+			},
+			"className": ".flexLayout",
+			"props": {
+				"height": 90,
+				"width": 247,
+				"touchEnabled": true,
+				"visible": true,
+				"backgroundColor": "rgba( 255, 255, 255, 0 )",
+				"alpha": 1,
+				"borderColor": "rgba(0,0,0,1)",
+				"borderWidth": 0,
+				"children": [
+					"btnShare",
+					"imgCustomerPicture",
+					"btnAddToContacts"
+				],
+				"marginLeft": null,
+				"marginTop": 50,
+				"flexProps": {
+					"alignSelf": "CENTER",
+					"direction": "INHERIT",
+					"alignContent": "STRETCH",
+					"alignItems": "CENTER",
+					"justifyContent": "SPACE_BETWEEN",
+					"flexWrap": "NOWRAP",
+					"flexDirection": "ROW",
+					"positionType": "RELATIVE"
+				},
+				"name": "flCustomerTop",
+				"parent": "pgCustomerDetails",
+				"layout": {
+					"marginTop": 25,
+					"width": 123.5,
+					"height": 45,
+					"borderWidth": 0
+				},
+				"flex": {
+					"alignSelf": 2,
+					"alignContent": 4,
+					"alignItems": 2,
+					"justifyContent": 3,
+					"flexWrap": 0,
+					"flexDirection": 2,
+					"positionType": 0
+				},
+				"font": {}
+			}
+		},
+		{
+			"type": "Button",
+			"id": "96d01729",
+			"themeProps": {},
+			"userProps": {
+				"backgroundColor": "rgba( 244, 244, 244, 1 )",
+				"borderRadius": 25,
+				"height": 50,
+				"width": 50,
+				"marginTop": null,
+				"usePageVariable": true,
+				"text": null,
+				"layout": {},
+				"flex": {},
+				"font": {},
+				"flexProps": {},
+				"defaults": {}
+			},
+			"className": ".button",
+			"props": {
+				"width": 50,
+				"height": 50,
+				"touchEnabled": true,
+				"text": null,
+				"visible": true,
+				"backgroundColor": "rgba( 244, 244, 244, 1 )",
+				"alpha": 1,
+				"borderColor": "rgba(0,0,0,1)",
+				"borderWidth": 0,
+				"textColor": "#FFFFFF",
+				"textAlignment": "MIDCENTER",
+				"children": [],
+				"borderRadius": 25,
+				"marginTop": null,
+				"usePageVariable": true,
+				"font": {
+					"size": 16,
+					"bold": false,
+					"italic": false,
+					"family": "Arial"
+				},
+				"flexProps": {
+					"positionType": "RELATIVE",
+					"alignSelf": "AUTO"
+				},
+				"name": "btnShare",
+				"parent": "flCustomerTop",
+				"layout": {
+					"width": 25,
+					"height": 25,
+					"borderWidth": 0,
+					"borderRadius": 12.5
+				},
+				"flex": {
+					"positionType": 0
+				}
+			}
+		},
+		{
+			"type": "ImageView",
+			"id": "cfa286f7",
+			"themeProps": {},
+			"userProps": {
+				"width": 88,
+				"height": 88,
+				"marginTop": null,
+				"image": "customer_detail_picture.png",
+				"imageFillType": "ASPECTFIT",
+				"borderWidth": 0.5,
+				"borderColor": "rgba( 91, 198, 149, 1 )",
+				"borderRadius": 44,
+				"usePageVariable": true,
+				"flexProps": {
+					"alignSelf": "CENTER"
+				},
+				"layout": {},
+				"flex": {},
+				"font": {},
+				"defaults": {}
+			},
+			"className": ".imageView",
+			"props": {
+				"width": 88,
+				"height": 88,
+				"touchEnabled": true,
+				"visible": true,
+				"imageFillType": "ASPECTFIT",
+				"backgroundColor": "rgba(0,0,0,0)",
+				"alpha": 1,
+				"borderColor": "rgba( 91, 198, 149, 1 )",
+				"borderWidth": 0.5,
+				"marginTop": null,
+				"image": "customer_detail_picture.png",
+				"borderRadius": 44,
+				"usePageVariable": true,
+				"children": [],
+				"flexProps": {
+					"alignSelf": "CENTER",
+					"positionType": "RELATIVE"
+				},
+				"name": "imgCustomerPicture",
+				"parent": "flCustomerTop",
+				"layout": {
+					"width": 44,
+					"height": 44,
+					"borderWidth": 0.25,
+					"borderRadius": 22
+				},
+				"flex": {
+					"alignSelf": 2,
+					"positionType": 0
+				},
+				"font": {},
+				"imageURL": "https://dispatcher.r0.smartface.io/smartface9/fieldservice2/ui-editor/img/customer_detail_picture.png?os=iOS&osVersion=10.2&density=326&densityRatio=0.5&zoomLevel=0.5&brandModel=iPhone%207?random=0.40193989387130236"
+			}
+		},
+		{
+			"type": "Button",
+			"id": "a64965e1",
+			"themeProps": {},
+			"userProps": {
+				"backgroundColor": "rgba( 244, 244, 244, 1 )",
+				"borderRadius": 25,
+				"height": 50,
+				"width": 50,
+				"marginTop": null,
+				"usePageVariable": true,
+				"text": null,
+				"layout": {},
+				"flex": {},
+				"font": {},
+				"flexProps": {},
+				"defaults": {}
+			},
+			"className": ".button",
+			"props": {
+				"width": 50,
+				"height": 50,
+				"touchEnabled": true,
+				"text": null,
+				"visible": true,
+				"backgroundColor": "rgba( 244, 244, 244, 1 )",
+				"alpha": 1,
+				"borderColor": "rgba(0,0,0,1)",
+				"borderWidth": 0,
+				"textColor": "#FFFFFF",
+				"textAlignment": "MIDCENTER",
+				"children": [],
+				"borderRadius": 25,
+				"marginTop": null,
+				"usePageVariable": true,
+				"font": {
+					"size": 16,
+					"bold": false,
+					"italic": false,
+					"family": "Arial"
+				},
+				"flexProps": {
+					"positionType": "RELATIVE",
+					"alignSelf": "AUTO"
+				},
+				"name": "btnAddToContacts",
+				"parent": "flCustomerTop",
+				"layout": {
+					"width": 25,
+					"height": 25,
+					"borderWidth": 0,
+					"borderRadius": 12.5
+				},
+				"flex": {
+					"positionType": 0
+				}
 			}
 		}
 	]

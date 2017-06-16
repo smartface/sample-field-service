@@ -22,6 +22,7 @@ var sliderDrawer = new SliderDrawer({
             visible: true,
             positionType: FlexLayout.PositionType.ABSOLUTE
         });
+        this.moveHighlight = uiSliderDrawer.moveHighlight;
         sliderDrawer.layout.addChild(uiSliderDrawer);
         sliderDrawer.onHide = function sliderDrawer_onHide() {
             uiSliderDrawer.whenHide();
@@ -34,12 +35,16 @@ var sliderDrawer = new SliderDrawer({
         sliderDrawer.children = sliderDrawer.children || {};
         sliderDrawer.children.content = uiSliderDrawer;
         mapProperties(sliderDrawer, uiSliderDrawer, ["lblUserName", "lblTitle", "imgUserPicture"]);
-        if (userData.currentUser) {
-            var userFullName = userData.currentUser.firstName + " " + userData.currentUser.lastName;
-            sliderDrawer.lblUserName.text = userFullName;
-            //TODO: use title instead of email
-            sliderDrawer.lblTitle.text = userData.currentUser.email;
-        }
+
+        sliderDrawer.setUserData = function sliderDrawerSetUserData() {
+            if (userData.currentUser) {
+                var userFullName = userData.currentUser.firstName + " " + userData.currentUser.lastName;
+                sliderDrawer.lblUserName.text = userFullName;
+                //TODO: use title instead of email
+                sliderDrawer.lblTitle.text = userData.currentUser.email;
+            }
+        };
+        sliderDrawer.setUserData();
         sliderDrawer.applyTheme();
 
     },
@@ -49,7 +54,8 @@ var sliderDrawer = new SliderDrawer({
 });
 sliderDrawer.drawerPosition = SliderDrawer.Position.LEFT;
 module.exports = exports = sliderDrawer;
-
+sliderDrawer.moveHighlight = function() {};
+sliderDrawer.setUserData = function() {};
 
 
 sliderDrawer.applyTheme = function sliderDrawer_applyTheme() {

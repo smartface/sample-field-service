@@ -197,7 +197,7 @@ const PgLogin_ = extend(Page)(
 			visible: true,
 			width: null,
 			positionType: FlexLayout.PositionType.ABSOLUTE,
-			font: Font.create("default", 18, Font.NORMAL)
+			font: Font.create("Lato", 18, Font.NORMAL)
 		});
 		var btnLogin = new Button(btnLoginStyle);
 		flButton.addChild(btnLogin);

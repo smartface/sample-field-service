@@ -60,5 +60,15 @@ SMF.i18n.defineLanguage('en', {
 	"updateIsInProgress": "Update is in progress",
 	"signOutMessage": "Would you like to sign out?",
 	"signOutTitle": "Confirm Signout",
-	"about": "About"
+	"about": "About",
+	"takePicture": "Take a picture",
+	"selectFromGallery": "Select from Gallery",
+	"addAPicture": "Add a picture",
+	"name": "Name",
+	"surname": "Surname",
+	"contactAddSuccess": "Contact has been added successfuly",
+	"contactAddFailure": "Could not add the contact",
+	"Cutomer Type": "Customer Type",
+	"Normal": "Normal",
+	"VIP": "VIP,"
 });

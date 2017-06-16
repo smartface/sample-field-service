@@ -1,4 +1,5 @@
 /*globals lang, Application*/
+const System = require('sf-core/device/system');
 const extend = require("js-base/core/extend");
 const Router = require("sf-core/ui/router");
 const mcs = require("../lib/mcs");
@@ -10,6 +11,7 @@ const sliderDrawer = require("../sliderDrawer");
 const userData = require("../model/user");
 const rau = require("../lib/rau");
 const theme = require("../lib/theme");
+const KeyboardType = require('sf-core/ui/keyboardtype');
 // const Application = require("sf-core/application");
 
 const pgLogin = extend(pgLoginDesign)(
@@ -41,13 +43,16 @@ const pgLogin = extend(pgLoginDesign)(
                     doLogin();
                 }
             });
+            if(System.OS === "Android") {
+                tiPassword.keyboardType = KeyboardType.android.TEXTNOSUGGESTIONS;
+            }
 
             page.flInputs.addChild(tiUserName);
             page.flInputs.addChild(tiPassword);
             page.btnLogin.onPress = doLogin;
             page.btnLogin.text = lang.login;
 
-            page.onBackButtonPressed = function(e) {
+            page.android.onBackButtonPressed = function(e) {
                 Application.exit();
             };
 
@@ -123,6 +128,7 @@ const pgLogin = extend(pgLoginDesign)(
                     finally {}
                 }
                 userData.currentUser = result;
+                sliderDrawer.setUserData();
 
                 // console.log(JSON.stringify(result));
 
