@@ -110,7 +110,7 @@ const pgCustomers = extend(pgCustomersDesign)(
                     loadingLayout.visible = true;
                     customerRow.visible = false;
                 }
-                else if (item) {
+                else {
                     loadingLayout.visible = false;
                     customerRow.visible = true;
                     if (item.customFields && item.customFields.CO) {
