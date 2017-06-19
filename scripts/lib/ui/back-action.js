@@ -27,6 +27,7 @@ function applyDefaultBackAction(page, backAction) {
             image: Image.createFromFile("images://back.png"),
             color: Color.WHITE
         });
+        page.headerBar.leftItem = leftItem;
         page.headerBar.setLeftItem(leftItem);
     }
     if (!page.android.onBackButtonPressed) {
