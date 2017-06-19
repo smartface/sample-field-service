@@ -23,6 +23,7 @@ const Application = require("sf-core/application");
 const Contacts = require("sf-core/device/contacts");
 const System = require('sf-core/device/system');
 const permission = require("../lib/permission");
+const HeaderBarItem = require('sf-core/ui/headerbaritem');
 
 const pgCustomerDetails = extend(pgCustomerDetailsDesign)(
     function(_super) {
@@ -55,6 +56,28 @@ const pgCustomerDetails = extend(pgCustomerDetailsDesign)(
             page.btnShare.backgroundImage = selectedTheme.share;
             page.btnAddToContacts.backgroundImage = selectedTheme.addToContacts;
 
+
+            page.headerBar.leftItemEnabled = true;
+
+            if (System.OS === "iOS") { //default android will do the trick;
+                var leftItem = new HeaderBarItem({
+                    title: "",
+                    onPress: function() {
+                        goBack();
+                    },
+                    image: Image.createFromFile("images://back_dark.png"),
+                    color: Color.BLACK
+                });
+                page.headerBar.leftItem = leftItem;
+                page.headerBar.setLeftItem(leftItem);
+            }
+            if (!page.android.onBackButtonPressed) {
+                page.android.onBackButtonPressed = function() {
+                    goBack();
+                };
+            }
+
+
         };
 
         page.onShow = function onShow(data) {
@@ -62,6 +85,12 @@ const pgCustomerDetails = extend(pgCustomerDetailsDesign)(
             data && loadData(data);
             page.statusBar.ios.style = StatusBarStyle.DEFAULT;
             sliderDrawer.enabled = false;
+            var selectedTheme = theme[theme.selected];
+            page.statusBar.android.color = selectedTheme.topBarColor;
+            if (System.OS === "Android") {
+                page.headerBar.titleColor = Color.WHITE;
+                page.headerBar.backgroundColor = selectedTheme.topBarColor;
+            }
         };
 
         function loadData(customerDetails) {

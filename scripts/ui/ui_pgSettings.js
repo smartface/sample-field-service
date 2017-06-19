@@ -42,7 +42,7 @@ const PgSettings_ = extend(Page)(
 		const flNotificationsStyle = getCombinedStyle(".flexLayout", {
 			backgroundColor: Color.create(0, 255, 255, 255),
 			width: null,
-			height: 41.5,
+			height: 48.5,
 			marginLeft: 20,
 			marginRight: 15,
 			marginTop: 20,
@@ -89,7 +89,8 @@ const PgSettings_ = extend(Page)(
 		});
 		var lblTheme = new Label(lblThemeStyle);
 		flTheme.addChild(lblTheme);
-		
+		this.lblTheme = lblTheme;
+
 		const lblAboutStyle = getCombinedStyle(".label", {
 			width: null,
 			text: "About v1.0.0",
@@ -130,7 +131,8 @@ const PgSettings_ = extend(Page)(
 		});
 		var lblNotifications = new Label(lblNotificationsStyle);
 		flNotifications.addChild(lblNotifications);
-		
+		this.lblNotifications = lblNotifications;
+
 		const flThemeSelectionsStyle = getCombinedStyle(".flexLayout", {
 			backgroundColor: Color.create(0, 255, 255, 255),
 			width: 68,

@@ -112,7 +112,7 @@ const pgCustomers = extend(pgCustomersDesign)(
                     loadingLayout.visible = true;
                     customerRow.visible = false;
                 }
-                else {
+                else if(item){
                     loadingLayout.visible = false;
                     customerRow.visible = true;
                     if (item.customFields && item.customFields.CO) {
@@ -134,11 +134,8 @@ const pgCustomers = extend(pgCustomersDesign)(
                         var imageNameNumber = (index % 4) + 1;
                         var imageName = "images://customers_" + imageNameNumber + ".png";
                         imgCustomerPicture.image = Image.createFromFile(imageName);
-
                     }
-
                     lblCustomerRowName.text = item.lookupName || "";
-
                 }
             };
 

@@ -37,6 +37,7 @@ const PgCustomerDetails_ = extend(Page)(
 			height: 19.56,
 			left: 12,
 			top: 30,
+			visible: false,
 			positionType: FlexLayout.PositionType.ABSOLUTE
 		});
 		var btnBack = new Button(btnBackStyle);
@@ -48,7 +49,7 @@ const PgCustomerDetails_ = extend(Page)(
 			width: 247,
 			backgroundColor: Color.create(0, 255, 255, 255),
 			marginLeft: null,
-			marginTop: 50,
+			marginTop: 5,
 			alignSelf: FlexLayout.AlignSelf.CENTER,
 			flexDirection: FlexLayout.FlexDirection.ROW,
 			justifyContent: FlexLayout.JustifyContent.SPACE_BETWEEN,
@@ -168,7 +169,7 @@ function onShow() {
   //HeaderBar props
   const headerBarStyle = getCombinedStyle(".headerBar", {
 		title: "Customer Details",
-		visible: false
+		visible: true
 	});
 	
 	Object.assign(this.headerBar,	headerBarStyle);

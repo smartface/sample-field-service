@@ -49,7 +49,7 @@
 				},
 				"font": {},
 				"width": 187.5,
-				"height": 333.5
+				"height": 301.5
 			}
 		},
 		{
@@ -87,7 +87,7 @@
 			"themeProps": {},
 			"userProps": {
 				"title": "Customer Details",
-				"visible": false,
+				"visible": true,
 				"layout": {},
 				"flex": {},
 				"font": {},
@@ -98,7 +98,7 @@
 			"props": {
 				"title": "Customer Details",
 				"titleColor": "#000000",
-				"visible": false,
+				"visible": true,
 				"backgroundColor": "#FFFFFF",
 				"children": [],
 				"parent": "pgCustomerDetails",
@@ -126,6 +126,7 @@
 				"height": 19.56,
 				"left": 12,
 				"top": 30,
+				"visible": false,
 				"flexProps": {
 					"positionType": "ABSOLUTE"
 				},
@@ -140,7 +141,7 @@
 				"height": 19.56,
 				"touchEnabled": true,
 				"text": "<",
-				"visible": true,
+				"visible": false,
 				"backgroundColor": "rgba( 0, 161, 241, 0 )",
 				"alpha": 1,
 				"borderColor": "rgba(0,0,0,1)",
@@ -364,7 +365,7 @@
 				"width": 247,
 				"backgroundColor": "rgba( 255, 255, 255, 0 )",
 				"marginLeft": null,
-				"marginTop": 50,
+				"marginTop": 5,
 				"flexProps": {
 					"alignSelf": "CENTER",
 					"flexDirection": "ROW",
@@ -386,13 +387,13 @@
 				"alpha": 1,
 				"borderColor": "rgba(0,0,0,1)",
 				"borderWidth": 0,
+				"marginLeft": null,
+				"marginTop": 5,
 				"children": [
 					"btnShare",
 					"imgCustomerPicture",
 					"btnAddToContacts"
 				],
-				"marginLeft": null,
-				"marginTop": 50,
 				"flexProps": {
 					"alignSelf": "CENTER",
 					"direction": "INHERIT",
@@ -406,7 +407,7 @@
 				"name": "flCustomerTop",
 				"parent": "pgCustomerDetails",
 				"layout": {
-					"marginTop": 25,
+					"marginTop": 2.5,
 					"width": 123.5,
 					"height": 45,
 					"borderWidth": 0
@@ -454,10 +455,10 @@
 				"borderWidth": 0,
 				"textColor": "#FFFFFF",
 				"textAlignment": "MIDCENTER",
-				"children": [],
 				"borderRadius": 25,
 				"marginTop": null,
 				"usePageVariable": true,
+				"children": [],
 				"font": {
 					"size": 16,
 					"bold": false,
@@ -536,7 +537,7 @@
 					"positionType": 0
 				},
 				"font": {},
-				"imageURL": "https://dispatcher.r0.smartface.io/smartface9/fieldservice2/ui-editor/img/customer_detail_picture.png?os=iOS&osVersion=10.2&density=326&densityRatio=0.5&zoomLevel=0.5&brandModel=iPhone%207?random=0.40193989387130236"
+				"imageURL": "https://dispatcher.r0.smartface.io/smartface9/fieldservice2/ui-editor/img/customer_detail_picture.png?os=iOS&osVersion=10.2&density=326&densityRatio=0.5&zoomLevel=0.5&brandModel=iPhone%207?random=0.6815725782446844"
 			}
 		},
 		{
@@ -570,10 +571,10 @@
 				"borderWidth": 0,
 				"textColor": "#FFFFFF",
 				"textAlignment": "MIDCENTER",
-				"children": [],
 				"borderRadius": 25,
 				"marginTop": null,
 				"usePageVariable": true,
+				"children": [],
 				"font": {
 					"size": 16,
 					"bold": false,
