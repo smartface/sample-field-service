@@ -70,5 +70,7 @@ SMF.i18n.defineLanguage('tr', {
 	"contactAddFailure": "Kişi kaydedilemedi",
 	"Cutomer Type": "Müşteri Tipi",
 	"Normal": "Normal",
-	"VIP": "VIP"
+	"VIP": "VIP",
+	"theme": "Tema",
+	"notification": "Bildirim",
 });

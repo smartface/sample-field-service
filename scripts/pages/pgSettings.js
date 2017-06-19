@@ -40,6 +40,9 @@ const pgSettings = extend(pgSettingsDesign)(
                     sliderDrawer.applyTheme();
                 }
             };
+
+            page.lblTheme.text = lang.theme;
+            page.lblNotifications.text = lang.notification;
         };
 
         page.onShow = function onShow(data) {
@@ -48,6 +51,8 @@ const pgSettings = extend(pgSettingsDesign)(
             page.statusBar.ios.style = StatusBarStyle.LIGHTCONTENT;
             setThemeBox();
             applyTheme();
+
+            page.headerBar.title = lang.settings;
 
         };
 
@@ -67,18 +72,12 @@ const pgSettings = extend(pgSettingsDesign)(
             var selectedTheme = theme[theme.selected];
             page.statusBar.android && (page.statusBar.android.color = selectedTheme.topBarColor);
             page.headerBar.backgroundColor = selectedTheme.topBarColor;
-            
+
             page.swNotifications.thumbOnColor = selectedTheme.thumbOnColor;
             page.swNotifications.toggleOnColor = selectedTheme.toggleOnColor;
             page.flLineTheme.backgroundColor = selectedTheme.lineSeparator;
             page.flLineNotifications.backgroundColor = selectedTheme.lineSeparator;
         }
-
-
-
-
-
-
     });
 
 

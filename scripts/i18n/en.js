@@ -70,5 +70,7 @@ SMF.i18n.defineLanguage('en', {
 	"contactAddFailure": "Could not add the contact",
 	"Cutomer Type": "Customer Type",
 	"Normal": "Normal",
-	"VIP": "VIP,"
+	"VIP": "VIP",
+	"theme": "Theme",
+	"notification": "Notification",
 });
