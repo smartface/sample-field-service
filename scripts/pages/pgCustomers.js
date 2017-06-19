@@ -32,8 +32,6 @@ const pgCustomers = extend(pgCustomersDesign)(
         page.onLoad = function onLoad() {
             baseOnLoad && baseOnLoad();
 
-            page.headerBar.title = lang.customers;
-
             Object.assign(page.btnAddCustomer, {
                 text: "",
                 borderRadius: 0,
@@ -112,7 +110,7 @@ const pgCustomers = extend(pgCustomersDesign)(
                     loadingLayout.visible = true;
                     customerRow.visible = false;
                 }
-                else if(item){
+                else if (item) {
                     loadingLayout.visible = false;
                     customerRow.visible = true;
                     if (item.customFields && item.customFields.CO) {
@@ -223,6 +221,7 @@ const pgCustomers = extend(pgCustomersDesign)(
             page.statusBar.ios.style = StatusBarStyle.LIGHTCONTENT;
             backAction(page);
             applyTheme();
+            page.headerBar.title = lang.customers;
         };
 
         function applyTheme() {

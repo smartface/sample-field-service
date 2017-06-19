@@ -73,4 +73,6 @@ SMF.i18n.defineLanguage('en', {
 	"VIP": "VIP",
 	"theme": "Theme",
 	"notification": "Notification",
+	"customerDetails": "Customer Details",
+	"newCustomer": "New Customer",
 });

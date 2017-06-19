@@ -15,7 +15,6 @@ const pgDashboard = extend(pgDashboardDesign)(
         var baseOnShow = page.onShow;
         page.onLoad = function onLoad() {
             baseOnLoad && baseOnLoad();
-            page.headerBar.title = lang.dashboard;
             sliderDrawer.setLeftItem(page.headerBar);
             page.android.onBackButtonPressed = function(e) {
                 user.logOut();
@@ -28,6 +27,7 @@ const pgDashboard = extend(pgDashboardDesign)(
             page.statusBar.ios.style = StatusBarStyle.LIGHTCONTENT;
             applyTheme();
             sliderDrawer.moveHighlight(0);
+            page.headerBar.title = lang.dashboard;
         };
 
         function applyTheme() {

@@ -47,7 +47,6 @@ const pgNewCustomer = extend(pgNewCustomerDesign)(
             };
 
             var saveItem = new HeaderBarItem({
-                title: "",
                 onPress: function() {
                     save();
                 },
@@ -58,7 +57,7 @@ const pgNewCustomer = extend(pgNewCustomerDesign)(
             page.headerBar.setItems([saveItem]);
 
             var cancelItem = new HeaderBarItem({
-                title: "Cancel",
+                title: lang.cancel,
                 onPress: function() {
                     back();
                 },
@@ -152,6 +151,7 @@ const pgNewCustomer = extend(pgNewCustomerDesign)(
                     }
                 );
             });
+            page.headerBar.title = lang.newCustomer;
         };
 
         function applyTheme() {

@@ -49,7 +49,6 @@ const pgCustomerFilter = extend(pgCustomerFilterDesign)(
         page.onLoad = function onLoad() {
             baseOnLoad && baseOnLoad();
             sliderDrawer.setLeftItem(page.headerBar);
-            page.headerBar.title = lang.search;
 
             page.android.onBackButtonPressed = function(e) {
                 Router.goBack("pgDashboard");
@@ -111,6 +110,7 @@ const pgCustomerFilter = extend(pgCustomerFilterDesign)(
                 });
                 searchMode = "name";
             };
+            page.btnName.text = lang.nameSurname;
 
             page.btnCard.onPress = function() {
                 page.flCardInput.flexGrow = 1;
@@ -126,6 +126,7 @@ const pgCustomerFilter = extend(pgCustomerFilterDesign)(
                 });
                 searchMode = "card";
             };
+            page.btnCard.text = lang.cardNumber;
 
             function doSearch() {
                 var filter = {
@@ -181,6 +182,7 @@ const pgCustomerFilter = extend(pgCustomerFilterDesign)(
             //backAction(page, "pgDashboard");
             sliderDrawer.enabled = true;
             applyTheme();
+            page.headerBar.title = lang.search;
         };
 
         function applyTheme() {

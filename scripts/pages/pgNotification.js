@@ -22,7 +22,6 @@ const pgNotification = extend(pgNotificationDesign)(
         page.onLoad = function onLoad() {
             baseOnLoad && baseOnLoad();
             sliderDrawer.setLeftItem(page.headerBar);
-            page.headerBar.title = lang.notificationHistory;
             var svNotifications = new ScrollView({
                 left: 0,
                 right: 0,
@@ -60,6 +59,7 @@ const pgNotification = extend(pgNotificationDesign)(
                 backAction(page);
             page.statusBar.ios.style = StatusBarStyle.LIGHTCONTENT;
             applyTheme();
+            page.headerBar.title = lang.notificationHistory;
         };
 
         function applyTheme() {

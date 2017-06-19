@@ -91,6 +91,7 @@ const pgCustomerDetails = extend(pgCustomerDetailsDesign)(
                 page.headerBar.titleColor = Color.WHITE;
                 page.headerBar.backgroundColor = selectedTheme.topBarColor;
             }
+            page.headerBar.title = lang.customerDetails;
         };
 
         function loadData(customerDetails) {
