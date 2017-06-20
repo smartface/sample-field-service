@@ -26,6 +26,7 @@ const permission = require("../lib/permission");
 const HeaderBarItem = require('sf-core/ui/headerbaritem');
 const initTime = require("../lib/init-time");
 const getSingleCustomer = require("../model/customers").getSingleCustomer;
+const Blob = require('sf-core/blob');
 
 const pgCustomerDetails = extend(pgCustomerDetailsDesign)(
     function(_super) {
@@ -128,9 +129,8 @@ const pgCustomerDetails = extend(pgCustomerDetailsDesign)(
                         };
                         var pictureAssigned = false;
 
-                        /*if (customerData.customFields.CO.Picture) {
+                        if (customerData.customFields.CO.Picture) {
                                 try {
-                                    var Blob = global.Blob;
                                     customerDetails.picture = Image.createFromBlob(Blob.createFromBase64(customerData.customFields.CO.Picture));
                                     pictureAssigned = true;
                                 }
@@ -140,7 +140,7 @@ const pgCustomerDetails = extend(pgCustomerDetailsDesign)(
                             customerDetails.picture = Image.createFromFile("images://customers_empty.png");
 
                         //TODO due to the bug of missing blob
-                        customerDetails.picture = Image.createFromFile("images://customers_1.png");
+                        //customerDetails.picture = Image.createFromFile("images://customers_1.png");
                         
                         loadData(customerDetails);
                         page.flWait.visible = false;

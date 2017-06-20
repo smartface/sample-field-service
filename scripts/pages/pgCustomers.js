@@ -18,6 +18,7 @@ const Color = require("sf-core/ui/color");
 const FlexLayout = require("sf-core/ui/flexlayout");
 const ActivityIndicator = require("sf-core/ui/activityindicator");
 const initTime = require("../lib/init-time");
+const Blob = require('sf-core/blob');
 
 const pgCustomers = extend(pgCustomersDesign)(
     function(_super) {
@@ -117,9 +118,8 @@ const pgCustomers = extend(pgCustomersDesign)(
                         lblCustomerRowPhone.text = item.customFields.CO.Phone || "";
                         lblCustomerRowEmail.text = item.customFields.CO.Email || "";
                         var pictureAssigned = false;
-                        /*if (item.customFields.CO.Picture) {
+                        if (item.customFields.CO.Picture) {
                             try {
-                                var Blob = global.Blob;
                                 imgCustomerPicture.image = Image.createFromBlob(Blob.createFromBase64(item.customFields.CO.Picture));
                                 pictureAssigned = true;
                             }
@@ -129,9 +129,9 @@ const pgCustomers = extend(pgCustomersDesign)(
                             imgCustomerPicture.image = Image.createFromFile("images://customers_empty.png");
 
                         //TODO due to the bug of missing blob
-                        var imageNameNumber = (index % 4) + 1;
-                        var imageName = "images://customers_" + imageNameNumber + ".png";
-                        imgCustomerPicture.image = Image.createFromFile(imageName);
+                        //var imageNameNumber = (index % 4) + 1;
+                        //var imageName = "images://customers_" + imageNameNumber + ".png";
+                        //imgCustomerPicture.image = Image.createFromFile(imageName);
                     }
                     lblCustomerRowName.text = item.lookupName || "";
                 }
