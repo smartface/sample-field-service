@@ -21,16 +21,16 @@ exports.checkPermission = function checkPermission(permissions, rationaleDisplay
         if (typeof p !== "string") {
             throw Error(String(p) + " is not a valid permission");
         }
-        p = permissions[i] = p.toUpperCase();
-        if (Application.checkPermission(p)) {
+        //p = permissions[i] = p.toUpperCase();
+        if (Application.android.checkPermission(p)) {
             permissions.splice(i, 1);
         }
-        if (Application.shouldShowRequestPermissionRationale(p)) {
+        if (Application.android.shouldShowRequestPermissionRationale(p)) {
             rationalsToShow.push(p);
         }
     }
     if (permissions.length === 0) {
-        callback(null); //all granted
+        callback && callback(null); //all granted
         return;
     }
 
@@ -59,22 +59,19 @@ exports.checkPermission = function checkPermission(permissions, rationaleDisplay
         permissionRequestMap[requestPermissionCode] = {
             requestPermissionCode: requestPermissionCode,
             result: function(e) {
-                var allPassed = true,
-                    i, result = {},
-                    keys = Object.keys(e.results);
-                //Using keys for bypassing AND-2351
-                for (i = 0; i < keys.length; i++) {
-                    allPassed = allPassed && e.results[i];
-                    result[e.requestedPermissions[i]] = e.results[i];
-                }
-                callback(
-                    allPassed ? null : "there are failed permissions",
-                    result
-                );
+                //var allPassed = true,
+                //    i, result = {},
+                //    keys = Object.keys(e.results);
+                ////Using keys for bypassing AND-2351
+                //for (i = 0; i < keys.length; i++) {
+                //    allPassed = allPassed && e.results[i];
+                //    result[e.requestedPermissions[i]] = e.results[i];
+                //}
+                callback(!e.result);
             }
         };
         var checkPermissionArguments = [requestPermissionCode].concat(permissions);
-        Application.requestPermissions.apply(Application, checkPermissionArguments);
+        Application.android.requestPermissions.apply(Application, checkPermissionArguments);
     }
 
 };
@@ -100,6 +97,7 @@ function displayRationale(permissions, callback) {
     });
 }
 
-Application.onRequestPermissionsResult = function onRequestPermissionsResult(e) {
-    permissionRequestMap[e.requestCode].result(e);
+Application.android.onRequestPermissionsResult = function onRequestPermissionsResult(e) {
+    var permissionRequest = permissionRequestMap[e.requestCode];
+    permissionRequest && permissionRequest.result(e);
 };

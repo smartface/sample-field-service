@@ -1,12 +1,13 @@
 /* globals lang */
 const Application = require("sf-core/application");
-if(!Application.checkUpdate)
-    Application.checkUpdate = global.Application.checkUpdate;
 const AlertView = require('sf-core/ui/alertview');
 const Network = require('sf-core/device/network');
 const permission = require("./permission");
 const skipErrList = ["channel not found", "No update"];
 const System = require('sf-core/device/system');
+const app = {
+    checkUpdate: Application.checkUpdate ? Application.checkUpdate : global.Application.checkUpdate
+};
 
 function checkUpdate(options) {
     options = options || {};
@@ -19,7 +20,7 @@ function checkUpdate(options) {
     }
 
     //Checks if there is a valid update. If yes returns result object.    
-    Application.checkUpdate(function(err, result) {
+    app.checkUpdate(function(err, result) {
         if (err) {
             if (typeof err === "object") {
                 try {

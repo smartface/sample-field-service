@@ -145,6 +145,7 @@ const pgCustomerDetails = extend(pgCustomerDetailsDesign)(
                         loadData(customerDetails);
                         page.flWait.visible = false;
                         svCustomerDetail.visible = true;
+                        page.layout.applyLayout();
                     });
 
                     
