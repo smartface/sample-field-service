@@ -75,4 +75,5 @@ SMF.i18n.defineLanguage('en', {
 	"notification": "Push Notifications",
 	"customerDetails": "Customer Details",
 	"newCustomer": "New Customer",
+	"savingCustomer": "Saving New Customer",
 });

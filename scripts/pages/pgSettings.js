@@ -6,6 +6,7 @@ const pgSettingsDesign = require("../ui/ui_pgSettings");
 const sliderDrawer = require("../sliderDrawer");
 const StatusBarStyle = require('sf-core/ui/statusbarstyle');
 const theme = require("../lib/theme");
+const Data = require('sf-core/data');
 
 const pgSettings = extend(pgSettingsDesign)(
     function(_super) {
@@ -29,6 +30,7 @@ const pgSettings = extend(pgSettingsDesign)(
                     setThemeBox();
                     applyTheme();
                     sliderDrawer.applyTheme();
+                    Data.setStringVariable("theme", theme.selected);
                 }
             };
 
@@ -38,6 +40,7 @@ const pgSettings = extend(pgSettingsDesign)(
                     setThemeBox();
                     applyTheme();
                     sliderDrawer.applyTheme();
+                    Data.setStringVariable("theme", theme.selected);
                 }
             };
 

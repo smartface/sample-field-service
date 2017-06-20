@@ -17,6 +17,7 @@ const Image = require('sf-core/ui/image');
 const theme = require("../lib/theme");
 const sliderDrawer = require("../sliderDrawer");
 const pageLength = 20;
+const animationDuration = 200;
 
 const textInputDefaults = {
     textAlignment: TextAlignment.MIDLEFT,
@@ -95,32 +96,31 @@ const pgCustomerFilter = extend(pgCustomerFilterDesign)(
             page.flEmailInputArea.addChild(tiEmail);
 
             page.btnName.onPress = function() {
-                page.flCardInput.flexGrow = 0;
-                page.flNameInput.flexGrow = 1;
-                page.flFirstLine.applyLayout();
-                Animator.animate((System.OS === "iOS") ? page.layout : page.flButtons, 350, function() {
+                tiCard.hideKeyboard();
+                Animator.animate(page.layout, animationDuration, function() {
                     page.placeHolderLeft.flexGrow = 0;
                     page.placeHolderRight.flexGrow = 1;
                     page.btnName.textColor = tabActiveTextColor;
                     page.btnCard.textColor = tabInactiveTextColor;
                 }).complete(function() {
-
+                    page.flCardInput.flexGrow = 0;
+                    page.flNameInput.flexGrow = 1;
+                    page.flFirstLine.applyLayout();
                 });
                 searchMode = "name";
             };
             page.btnName.text = lang.nameSurname;
-
             page.btnCard.onPress = function() {
-                page.flCardInput.flexGrow = 1;
-                page.flNameInput.flexGrow = 0;
-                page.flFirstLine.applyLayout();
-                Animator.animate((System.OS === "iOS") ? page.layout : page.flButtons, 350, function() {
+                tiName.hideKeyboard();
+                Animator.animate(page.layout, animationDuration, function() {
                     page.placeHolderLeft.flexGrow = 1;
                     page.placeHolderRight.flexGrow = 0;
                     page.btnName.textColor = tabInactiveTextColor;
                     page.btnCard.textColor = tabActiveTextColor;
                 }).complete(function() {
-
+                    page.flCardInput.flexGrow = 1;
+                    page.flNameInput.flexGrow = 0;
+                    page.flFirstLine.applyLayout();
                 });
                 searchMode = "card";
             };
@@ -150,7 +150,6 @@ const pgCustomerFilter = extend(pgCustomerFilterDesign)(
 
 
             var searchItem = new HeaderBarItem({
-                title: "",
                 onPress: function() {
                     doSearch();
                 },
@@ -158,6 +157,7 @@ const pgCustomerFilter = extend(pgCustomerFilterDesign)(
                 color: Color.WHITE
             });
             page.headerBar.setItems([searchItem]);
+            page.headerBar.items = [searchItem];
         };
 
         page.onShow = function onShow(data) {

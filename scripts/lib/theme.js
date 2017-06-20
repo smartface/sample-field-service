@@ -1,11 +1,12 @@
 const Color = require('sf-core/ui/color');
 const Image = require('sf-core/ui/image');
+const Data = require('sf-core/data');
 exports.themes = {
     NAVY: "NAVY",
     PURPLE: "PURPLE"
 };
 
-exports.selected = exports.themes.PURPLE;
+exports.selected =  Data.getStringVariable("theme") ||  exports.themes.PURPLE;
 
 
 exports.PURPLE = {

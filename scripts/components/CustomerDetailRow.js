@@ -11,7 +11,8 @@ const CustomerDetailRow = extend(CustomerDetailRowDesign)(
 		this.pageName = pageName;
 		var selectedTheme = theme[theme.selected];
 		this.flCustomerDetailLine.backgroundColor = selectedTheme.lineSeparator;
-
+		customerDetailRow.lblFieldName.touchEnabled = false;
+		customerDetailRow.lblFieldValue.touchEnabled = false;
 
 		Object.defineProperties(customerDetailRow, {
 			showLine: {

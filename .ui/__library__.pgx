@@ -2058,11 +2058,12 @@
 				"borderRadius": 15,
 				"marginLeft": 60,
 				"marginRight": 60,
+				"usePageVariable": true,
 				"children": [
+					"lblSaving",
 					"aiWait",
 					"flCheck"
 				],
-				"usePageVariable": true,
 				"flexProps": {
 					"alignSelf": "AUTO",
 					"direction": "INHERIT",
@@ -2113,6 +2114,8 @@
 				"minHeight": 21,
 				"minWidth": 21,
 				"usePageVariable": true,
+				"marginTop": null,
+				"marginBottom": 40,
 				"flexProps": {
 					"positionType": "RELATIVE"
 				},
@@ -2146,11 +2149,14 @@
 				"minWidth": 21,
 				"usePageVariable": true,
 				"children": [],
+				"marginTop": null,
+				"marginBottom": 40,
 				"flexProps": {
 					"positionType": "RELATIVE",
 					"alignSelf": "AUTO"
 				},
 				"layout": {
+					"marginBottom": 20,
 					"width": 21,
 					"height": 21,
 					"minWidth": 10.5,
@@ -4247,14 +4253,14 @@
 				"alpha": 1,
 				"borderColor": "rgba(0,0,0,1)",
 				"borderWidth": 0,
-				"children": [
-					"imgCheck"
-				],
 				"left": 0,
 				"top": 0,
 				"right": 0,
 				"bottom": 0,
 				"usePageVariable": true,
+				"children": [
+					"imgCheck"
+				],
 				"flexProps": {
 					"alignSelf": "AUTO",
 					"direction": "INHERIT",
@@ -4318,9 +4324,9 @@
 				"alpha": 1,
 				"borderColor": "rgba(0,0,0,1)",
 				"borderWidth": 0,
-				"children": [],
 				"usePageVariable": true,
 				"image": "check.png",
+				"children": [],
 				"flexProps": {
 					"alignSelf": "AUTO",
 					"positionType": "RELATIVE"
@@ -4336,7 +4342,73 @@
 					"positionType": 0
 				},
 				"font": {},
-				"imageURL": "https://dispatcher.r0.smartface.io/smartface9/fieldservice2/ui-editor/img/check.png?os=iOS&osVersion=10.2&density=326&densityRatio=0.5&zoomLevel=0.5&brandModel=iPhone%207?random=0.6976980776016619"
+				"imageURL": "https://dispatcher.r0.smartface.io/smartface9/fieldservice2/ui-editor/img/check.png?os=iOS&osVersion=10.2&density=326&densityRatio=0.5&zoomLevel=0.5&brandModel=iPhone%207"
+			}
+		},
+		{
+			"type": "Label",
+			"id": "96c54b87",
+			"source": {
+				"page": "__library__"
+			},
+			"themeProps": {},
+			"userProps": {
+				"usePageVariable": true,
+				"textAlignment": "MIDCENTER",
+				"width": 200,
+				"height": 30,
+				"marginBottom": 25,
+				"text": "Saving New Customer",
+				"flexProps": {
+					"flexGrow": null
+				},
+				"font": {
+					"family": "Lato"
+				},
+				"layout": {},
+				"flex": {},
+				"defaults": {}
+			},
+			"className": ".label",
+			"props": {
+				"width": 200,
+				"height": 30,
+				"touchEnabled": true,
+				"text": "Saving New Customer",
+				"visible": true,
+				"multiline": false,
+				"backgroundColor": "#FFFFFF",
+				"alpha": 1,
+				"borderColor": "rgba(0,0,0,1)",
+				"borderWidth": 0,
+				"textColor": "#000000",
+				"textAlignment": "MIDCENTER",
+				"children": [],
+				"usePageVariable": true,
+				"marginBottom": 25,
+				"font": {
+					"size": 16,
+					"bold": false,
+					"italic": false,
+					"family": "Lato"
+				},
+				"flexProps": {
+					"alignSelf": "AUTO",
+					"positionType": "RELATIVE",
+					"flexGrow": null
+				},
+				"name": "lblSaving",
+				"parent": "flWaitWhite",
+				"layout": {
+					"marginBottom": 12.5,
+					"width": 100,
+					"height": 15,
+					"borderWidth": 0
+				},
+				"flex": {
+					"positionType": 0,
+					"flexGrow": null
+				}
 			}
 		}
 	]

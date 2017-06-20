@@ -7,7 +7,7 @@ const Color = require('sf-core/ui/color');
 
 module.exports = applyDefaultBackAction;
 
-function applyDefaultBackAction(page, backAction) {
+function applyDefaultBackAction(page, backAction, styleSelection) {
     sliderDrawer.enabled = false;
     page.headerBar.leftItemEnabled = true;
     var backPageName = "";
@@ -18,18 +18,32 @@ function applyDefaultBackAction(page, backAction) {
     else {
         backAction = backAction || defaultGoBack.bind(page);
     }
-    if (System.OS === "iOS") { //default android will do the trick;
-        var leftItem = new HeaderBarItem({
-            title: "",
-            onPress: function() {
-                backAction();
-            },
-            image: Image.createFromFile("images://back.png"),
-            color: Color.WHITE
-        });
-        page.headerBar.leftItem = leftItem;
-        page.headerBar.setLeftItem(leftItem);
-    }
+    var style = {
+        "DARK": {
+            imageName: "images://back_dark.png",
+            textColor: Color.BLACK
+        },
+        
+        "LIGHT": {
+            imageName: "images://back.png",
+            textColor: Color.WHITE
+        }
+    };
+    var selectedStyle = style[styleSelection || "LIGHT"];
+    
+    //if (System.OS === "iOS") { //default android will do the trick;
+    //    var leftItem = new HeaderBarItem({
+    //        title: "",
+    //        onPress: function() {
+    //            backAction();
+    //        },
+    //        image: Image.createFromFile(selectedStyle.imageName),
+    //        color: Color.WHITE
+    //    });
+    //    page.headerBar.leftItem = leftItem;
+    //    page.headerBar.setLeftItem(leftItem);
+    //}
+    page.headerBar.itemColor = selectedStyle.textColor;
     if (!page.android.onBackButtonPressed) {
         page.android.onBackButtonPressed = function() {
             backAction();

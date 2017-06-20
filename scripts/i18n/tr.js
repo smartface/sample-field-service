@@ -75,4 +75,5 @@ SMF.i18n.defineLanguage('tr', {
 	"notification": "Bildirim",
 	"customerDetails": "Müşteri Bilgileri",
 	"newCustomer": "Yeni Müşteri",
+	"savingCustomer": "Yeni müşteri kaydediliyor",
 });

@@ -27,6 +27,7 @@ const HeaderBarItem = require('sf-core/ui/headerbaritem');
 const initTime = require("../lib/init-time");
 const getSingleCustomer = require("../model/customers").getSingleCustomer;
 const Blob = require('sf-core/blob');
+const backAction = require("../lib/ui").backAction;
 
 const pgCustomerDetails = extend(pgCustomerDetailsDesign)(
     function(_super) {
@@ -47,7 +48,6 @@ const pgCustomerDetails = extend(pgCustomerDetailsDesign)(
                 visible: false
             });
             page.layout.addChild(svCustomerDetail);
-            page.android.onBackButtonPressed = goBack;
             Object.assign(page.btnBack, {
                 onPress: goBack,
                 text: "",
@@ -63,26 +63,6 @@ const pgCustomerDetails = extend(pgCustomerDetailsDesign)(
 
 
             page.headerBar.leftItemEnabled = true;
-
-            if (System.OS === "iOS") { //default android will do the trick;
-                var leftItem = new HeaderBarItem({
-                    title: "",
-                    onPress: function() {
-                        goBack();
-                    },
-                    image: Image.createFromFile("images://back_dark.png"),
-                    color: Color.BLACK
-                });
-                page.headerBar.leftItem = leftItem;
-                page.headerBar.setLeftItem(leftItem);
-            }
-            if (!page.android.onBackButtonPressed) {
-                page.android.onBackButtonPressed = function() {
-                    goBack();
-                };
-            }
-
-
         };
 
         page.onShow = function onShow(id) {
@@ -130,27 +110,28 @@ const pgCustomerDetails = extend(pgCustomerDetailsDesign)(
                         var pictureAssigned = false;
 
                         if (customerData.customFields.CO.Picture) {
-                                try {
-                                    customerDetails.picture = Image.createFromBlob(Blob.createFromBase64(customerData.customFields.CO.Picture));
-                                    pictureAssigned = true;
-                                }
-                                finally {}
-                            }/**/
+                            try {
+                                customerDetails.picture = Image.createFromBlob(Blob.createFromBase64(customerData.customFields.CO.Picture));
+                                pictureAssigned = true;
+                            }
+                            finally {}
+                        } /**/
                         if (!pictureAssigned)
                             customerDetails.picture = Image.createFromFile("images://customers_empty.png");
 
                         //TODO due to the bug of missing blob
                         //customerDetails.picture = Image.createFromFile("images://customers_1.png");
-                        
+
                         loadData(customerDetails);
                         page.flWait.visible = false;
                         svCustomerDetail.visible = true;
                         page.layout.applyLayout();
                     });
 
-                    
+
 
                 }, initTime);
+                backAction(page, goBack, "DARK");
             }
         };
 
@@ -271,7 +252,8 @@ const pgCustomerDetails = extend(pgCustomerDetailsDesign)(
                         },
                         onFailure: function() {
                             alert(lang.contactAddFailure);
-                        }
+                        },
+                        page
                     });
                 }
             };

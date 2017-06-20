@@ -19,6 +19,10 @@ const FlexLayout = require("sf-core/ui/flexlayout");
 const ActivityIndicator = require("sf-core/ui/activityindicator");
 const initTime = require("../lib/init-time");
 const Blob = require('sf-core/blob');
+const HeaderBarItem = require('sf-core/ui/headerbaritem');
+const SearchView = require('sf-core/ui/searchview');
+const System = require('sf-core/device/system');
+const Font = require('sf-core/ui/font');
 
 const pgCustomers = extend(pgCustomersDesign)(
     function(_super) {
@@ -28,7 +32,10 @@ const pgCustomers = extend(pgCustomersDesign)(
         var baseOnShow = page.onShow;
         var isLoading = false;
         var dataset = [];
+        var unfilteredDataset = [];
+        var filterActive = false;
         var filter = null;
+        var svFilter = null;
         page.onLoad = function onLoad() {
             baseOnLoad && baseOnLoad();
 
@@ -124,7 +131,7 @@ const pgCustomers = extend(pgCustomersDesign)(
                                 pictureAssigned = true;
                             }
                             finally {}
-                        }/**/
+                        } /**/
                         if (!pictureAssigned)
                             imgCustomerPicture.image = Image.createFromFile("images://customers_empty.png");
 
@@ -161,6 +168,7 @@ const pgCustomers = extend(pgCustomersDesign)(
 
                 Router.go("pgCustomerDetails", item.id);
             };
+
         };
 
         page.onShow = function onShow(data) {
@@ -177,17 +185,72 @@ const pgCustomers = extend(pgCustomersDesign)(
                         page.aiWait.visible = false;
                         page.lvCustomers.visible = true;
                         page.btnAddCustomer.visible = true;
+                        initSearchView();
                     });
                 }, initTime);
 
             }
-
 
             page.statusBar.ios.style = StatusBarStyle.LIGHTCONTENT;
             backAction(page);
             applyTheme();
             page.headerBar.title = lang.customers;
         };
+
+        function initSearchView() {
+            if (System.OS === "iOS") {
+                var filterItem = new HeaderBarItem({
+                    onPress: function() {
+                        if (!filterActive) {
+                            showFilter();
+                        }
+                        else {
+                            hideFilter();
+                        }
+                    },
+                    image: Image.createFromFile("images://filter.png"),
+                    color: Color.WHITE
+                });
+                page.headerBar.setItems([filterItem]);
+                page.headerBar.items = [filterItem];
+            }
+            svFilter = new SearchView({
+                //borderWidth: 8,
+                //borderColor: Color.create("#6FCAF7"),
+                android: {
+                    hintTextColor: Color.create("#CCCCCC"),
+                    font: Font.create("Lato", 18, Font.NORMAL)
+                },
+                ios: {
+                    showsCancelButton: true,
+                    onCancelButtonClicked: function() {
+                        hideFilter();
+                    }
+                },
+                textColor: System.OS === "Android" ? Color.WHITE : Color.BLACK,
+                hint: lang.search,
+                onSearchBegin: function() {
+                    unfilteredDataset = dataset;
+                    filterActive = true;
+                },
+                onTextChanged: function(searchText) {
+                    console.log("searched text : " + searchText);
+                    var text = searchText.toLowerCase();
+                    var datasetFitered = unfilteredDataset.filter(function(item) {
+                        console.log(JSON.stringify(item));
+                        return item.customFields.CO.Phone.toLowerCase().indexOf(text) > -1 ||
+                            item.customFields.CO.Email.toLowerCase().indexOf(text) > -1 ||
+                            item.lookupName.toLowerCase().indexOf(text) > -1;
+                    });
+                    bindData({
+                        items: datasetFitered
+                    }, false);
+                }
+            });
+            if (System.OS === "Android") {
+                svFilter.addToHeaderBar(page);
+            }
+        }
 
         function applyTheme() {
             var selectedTheme = theme[theme.selected];
@@ -214,11 +277,29 @@ const pgCustomers = extend(pgCustomersDesign)(
                 dataset = [];
             }
             dataset = dataset.concat(items);
-            if (dataset.length % pageLength === 0 && dataset.length !== previousDatasetLength)
+            if (dataset.length % pageLength === 0 && dataset.length !== previousDatasetLength && !filterActive)
                 dataset.push(loadingRowData); // add loading row
 
             page.lvCustomers.itemCount = dataset.length;
             page.lvCustomers.refreshData();
+        }
+
+        function showFilter() {
+            filterActive = true;
+            //if (!svFilter) return;
+            svFilter.addToHeaderBar(page);
+            svFilter.requestFocus();
+            console.log("added to header bar");
+            page.headerBar.setItems([]);
+
+        }
+
+        function hideFilter() {
+            filterActive = false;
+            //if (!svFilter) return;
+            svFilter.removeFromHeaderBar(page);
+            console.log("removed from header bar");
+            page.headerBar.setItems(page.headerBar.items);
         }
     });
 

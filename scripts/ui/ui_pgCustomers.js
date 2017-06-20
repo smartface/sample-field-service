@@ -53,7 +53,7 @@ const PgCustomers_ = extend(Page)(
 		const btnAddCustomerStyle = getCombinedStyle(".button", {
 			text: "+",
 			textColor: Color.create(255, 46, 193, 169),
-			backgroundColor: Color.create(255, 255, 255, 255),
+			backgroundColor: Color.create(0, 144, 19, 254),
 			width: 50,
 			height: 50,
 			borderRadius: 25,

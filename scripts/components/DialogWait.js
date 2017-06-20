@@ -1,3 +1,4 @@
+/*globals lang*/
 const theme = require("../lib/theme");
 const extend = require('js-base/core/extend');
 const Router = require("sf-core/ui/router");
@@ -17,9 +18,12 @@ const DialogWait = extend(DialogWaitDesign)(
 		dialogWait.aiWait.color = selectedTheme.topBarColor;
 		dialogWait.imgCheck.image = selectedTheme.checkImage;
 		dialogWait.imgCheck.alpha = 1;
+		dialogWait.lblSaving.text = lang.savingCustomer;
+		dialogWait.lblSaving.textColor = selectedTheme.topBarColor;
 
 		dialogWait.showOK = function(callback) {
 			dialogWait.aiWait.visible = false;
+			dialogWait.lblSaving.visible = false;
 			dialogWait.flCheck.visible = true;
 			dialogWait.applyLayout();
 
