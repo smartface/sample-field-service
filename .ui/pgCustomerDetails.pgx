@@ -363,10 +363,12 @@
 			"themeProps": {},
 			"userProps": {
 				"height": 90,
-				"width": 247,
+				"width": 249,
 				"backgroundColor": "rgba( 255, 255, 255, 0 )",
 				"marginLeft": null,
 				"marginTop": 5,
+				"paddingLeft": 1,
+				"paddingRight": 1,
 				"flexProps": {
 					"alignSelf": "CENTER",
 					"flexDirection": "ROW",
@@ -381,7 +383,7 @@
 			"className": ".flexLayout",
 			"props": {
 				"height": 90,
-				"width": 247,
+				"width": 249,
 				"touchEnabled": true,
 				"visible": true,
 				"backgroundColor": "rgba( 255, 255, 255, 0 )",
@@ -409,8 +411,10 @@
 				"parent": "pgCustomerDetails",
 				"layout": {
 					"marginTop": 2.5,
-					"width": 123.5,
+					"width": 124.5,
 					"height": 45,
+					"paddingLeft": 0.5,
+					"paddingRight": 0.5,
 					"borderWidth": 0
 				},
 				"flex": {
@@ -422,7 +426,9 @@
 					"flexDirection": 2,
 					"positionType": 0
 				},
-				"font": {}
+				"font": {},
+				"paddingLeft": 1,
+				"paddingRight": 1
 			}
 		},
 		{
@@ -602,6 +608,7 @@
 		{
 			"type": "FlexLayout",
 			"id": "06e4485a",
+			"hiddenComponent": true,
 			"themeProps": {},
 			"userProps": {
 				"width": null,
@@ -610,7 +617,7 @@
 				"left": 0,
 				"right": 0,
 				"bottom": 0,
-				"top": 0,
+				"top": 2,
 				"flexProps": {
 					"positionType": "ABSOLUTE",
 					"right": 0,
@@ -633,14 +640,14 @@
 				"alpha": 1,
 				"borderColor": "rgba(0,0,0,1)",
 				"borderWidth": 0,
-				"children": [
-					"aiWait"
-				],
 				"usePageVariable": true,
 				"left": 0,
 				"right": 0,
 				"bottom": 0,
-				"top": 0,
+				"top": 2,
+				"children": [
+					"aiWait"
+				],
 				"flexProps": {
 					"alignSelf": "AUTO",
 					"direction": "INHERIT",
@@ -659,7 +666,7 @@
 					"right": 0,
 					"bottom": 0,
 					"left": 0,
-					"top": 0,
+					"top": 1,
 					"borderWidth": 0
 				},
 				"flex": {
@@ -700,8 +707,8 @@
 				"borderWidth": 0,
 				"minHeight": 21,
 				"minWidth": 21,
-				"children": [],
 				"usePageVariable": true,
+				"children": [],
 				"flexProps": {
 					"positionType": "RELATIVE",
 					"alignSelf": "AUTO"
@@ -718,11 +725,7 @@
 				"flex": {
 					"positionType": 0
 				},
-				"font": {},
-				"input": {
-					"height": 21,
-					"width": 21
-				}
+				"font": {}
 			}
 		}
 	]

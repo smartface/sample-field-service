@@ -1,6 +1,6 @@
 /*globals lang */
 const System = require('sf-core/device/system');
-const Application = global.Application;
+const Application = require("sf-core/application");
 var lastRequestPermissionCode = 2000;
 var permissionRequestMap = {};
 const AlertView = require('sf-core/ui/alertview');

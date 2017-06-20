@@ -1,5 +1,7 @@
 /* globals lang */
-const Application = global.Application;
+const Application = require("sf-core/application");
+if(!Application.checkUpdate)
+    Application.checkUpdate = global.Application.checkUpdate;
 const AlertView = require('sf-core/ui/alertview');
 const Network = require('sf-core/device/network');
 const permission = require("./permission");

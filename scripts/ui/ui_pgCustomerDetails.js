@@ -47,10 +47,12 @@ const PgCustomerDetails_ = extend(Page)(
 
 		const flCustomerTopStyle = getCombinedStyle(".flexLayout", {
 			height: 90,
-			width: 247,
+			width: 249,
 			backgroundColor: Color.create(0, 255, 255, 255),
 			marginLeft: null,
 			marginTop: 5,
+			paddingLeft: 1,
+			paddingRight: 1,
 			alignSelf: FlexLayout.AlignSelf.CENTER,
 			flexDirection: FlexLayout.FlexDirection.ROW,
 			justifyContent: FlexLayout.JustifyContent.SPACE_BETWEEN,
@@ -102,7 +104,7 @@ const PgCustomerDetails_ = extend(Page)(
 			left: 0,
 			right: 0,
 			bottom: 0,
-			top: 0,
+			top: 2,
 			positionType: FlexLayout.PositionType.ABSOLUTE,
 			alignItems: FlexLayout.AlignItems.CENTER,
 			justifyContent: FlexLayout.JustifyContent.CENTER
