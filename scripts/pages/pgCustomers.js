@@ -17,8 +17,6 @@ Object.freeze(loadingRowData);
 const Color = require("sf-core/ui/color");
 const FlexLayout = require("sf-core/ui/flexlayout");
 const ActivityIndicator = require("sf-core/ui/activityindicator");
-const DialogWait = require("../components/DialogWait");
-const getSingleCustomer = require("../model/customers").getSingleCustomer;
 const initTime = require("../lib/init-time");
 
 const pgCustomers = extend(pgCustomersDesign)(
@@ -161,54 +159,7 @@ const pgCustomers = extend(pgCustomersDesign)(
                 if (item === loadingRowData)
                     return;
 
-                var dialogWait = DialogWait.show();
-                getSingleCustomer(item.id, function(err, customerData) {
-                    dialogWait.hide();
-                    console.log("after getting single. Is there error? " + !!err);
-                    if (err) {
-                        return alert(JSON.stringify(err), "Customer Service Error");
-                    }
-                    var customerDetails = {
-                        fields: [{
-                            name: lang["Customer Number"],
-                            value: customerData.customFields.CO.CardNo || ""
-                        }, {
-                            name: lang["Mobile Phone"],
-                            value: customerData.customFields.CO.Phone || ""
-                        }, {
-                            name: lang["Cutomer Type"],
-                            value: lang[customerData.customFields.CO.CustType] || ""
-                        }, {
-                            name: lang.Adress,
-                            value: customerData.address.street || ""
-                        }, ],
-                        actions: [{
-                            name: "Notes",
-                            text: lang["Notes"]
-                        }, {
-                            name: "Notification flow",
-                            text: lang["Notification flow"]
-                        }],
-                    };
-                    var pictureAssigned = false;
-
-                    /*if (customerData.customFields.CO.Picture) {
-                            try {
-                                var Blob = global.Blob;
-                                customerDetails.picture = Image.createFromBlob(Blob.createFromBase64(customerData.customFields.CO.Picture));
-                                pictureAssigned = true;
-                            }
-                            finally {}
-                        }/**/
-                    if (!pictureAssigned)
-                        customerDetails.picture = Image.createFromFile("images://customers_empty.png");
-
-                    //TODO due to the bug of missing blob
-                    customerDetails.picture = Image.createFromFile("images://customers_1.png");
-
-
-                    Router.go("pgCustomerDetails", customerDetails);
-                });
+                Router.go("pgCustomerDetails", item.id);
             };
         };
 

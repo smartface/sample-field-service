@@ -24,7 +24,8 @@
 					"flCustomerTop",
 					"lblName",
 					"lblTitle",
-					"flLine"
+					"flLine",
+					"flWait"
 				],
 				"flexProps": {
 					"alignContent": "STRETCH",
@@ -595,6 +596,132 @@
 				},
 				"flex": {
 					"positionType": 0
+				}
+			}
+		},
+		{
+			"type": "FlexLayout",
+			"id": "06e4485a",
+			"themeProps": {},
+			"userProps": {
+				"width": null,
+				"height": null,
+				"usePageVariable": true,
+				"left": 0,
+				"right": 0,
+				"bottom": 0,
+				"top": 0,
+				"flexProps": {
+					"positionType": "ABSOLUTE",
+					"right": 0,
+					"bottom": 0,
+					"alignItems": "CENTER",
+					"justifyContent": "CENTER"
+				},
+				"layout": {},
+				"flex": {},
+				"font": {},
+				"defaults": {}
+			},
+			"className": ".flexLayout",
+			"props": {
+				"height": null,
+				"width": null,
+				"touchEnabled": true,
+				"visible": true,
+				"backgroundColor": "#FFFFFF",
+				"alpha": 1,
+				"borderColor": "rgba(0,0,0,1)",
+				"borderWidth": 0,
+				"children": [
+					"aiWait"
+				],
+				"usePageVariable": true,
+				"left": 0,
+				"right": 0,
+				"bottom": 0,
+				"top": 0,
+				"flexProps": {
+					"alignSelf": "AUTO",
+					"direction": "INHERIT",
+					"alignContent": "STRETCH",
+					"alignItems": "CENTER",
+					"justifyContent": "CENTER",
+					"flexWrap": "NOWRAP",
+					"flexDirection": "COLUMN",
+					"positionType": "ABSOLUTE",
+					"right": 0,
+					"bottom": 0
+				},
+				"name": "flWait",
+				"parent": "pgCustomerDetails",
+				"layout": {
+					"right": 0,
+					"bottom": 0,
+					"left": 0,
+					"top": 0,
+					"borderWidth": 0
+				},
+				"flex": {
+					"alignContent": 4,
+					"alignItems": 2,
+					"justifyContent": 1,
+					"flexWrap": 0,
+					"flexDirection": 0,
+					"positionType": 1,
+					"right": 0,
+					"bottom": 0
+				},
+				"font": {}
+			}
+		},
+		{
+			"type": "ActivityIndicator",
+			"id": "68b6e082",
+			"themeProps": {},
+			"userProps": {
+				"usePageVariable": true,
+				"layout": {},
+				"flex": {},
+				"font": {},
+				"flexProps": {},
+				"defaults": {}
+			},
+			"className": ".activityIndicator",
+			"props": {
+				"touchEnabled": true,
+				"width": 42,
+				"height": 42,
+				"color": "#ADADAD",
+				"visible": true,
+				"backgroundColor": "#FFFFFF",
+				"alpha": 1,
+				"borderColor": "rgba(0,0,0,1)",
+				"borderWidth": 0,
+				"minHeight": 21,
+				"minWidth": 21,
+				"children": [],
+				"usePageVariable": true,
+				"flexProps": {
+					"positionType": "RELATIVE",
+					"alignSelf": "AUTO"
+				},
+				"name": "aiWait",
+				"parent": "flWait",
+				"layout": {
+					"width": 21,
+					"height": 21,
+					"minWidth": 10.5,
+					"minHeight": 10.5,
+					"borderWidth": 0
+				},
+				"flex": {
+					"positionType": 0
+				},
+				"font": {},
+				"input": {
+					"height": 21,
+					"width": 21
 				}
 			}
 		}

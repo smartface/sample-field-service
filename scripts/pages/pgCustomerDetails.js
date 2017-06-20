@@ -24,6 +24,8 @@ const Contacts = require("sf-core/device/contacts");
 const System = require('sf-core/device/system');
 const permission = require("../lib/permission");
 const HeaderBarItem = require('sf-core/ui/headerbaritem');
+const initTime = require("../lib/init-time");
+const getSingleCustomer = require("../model/customers").getSingleCustomer;
 
 const pgCustomerDetails = extend(pgCustomerDetailsDesign)(
     function(_super) {
@@ -40,7 +42,8 @@ const pgCustomerDetails = extend(pgCustomerDetailsDesign)(
             svCustomerDetail = new ScrollView({
                 flexGrow: 1,
                 align: ScrollView.Align.VERTICAL,
-                backgroundColor: emptyColor
+                backgroundColor: emptyColor,
+                visible: false
             });
             page.layout.addChild(svCustomerDetail);
             page.android.onBackButtonPressed = goBack;
@@ -55,6 +58,7 @@ const pgCustomerDetails = extend(pgCustomerDetailsDesign)(
             page.imgCustomerPicture.borderColor = selectedTheme.mainColor;
             page.btnShare.backgroundImage = selectedTheme.share;
             page.btnAddToContacts.backgroundImage = selectedTheme.addToContacts;
+            page.aiWait.color = selectedTheme.topBarColor;
 
 
             page.headerBar.leftItemEnabled = true;
@@ -80,9 +84,9 @@ const pgCustomerDetails = extend(pgCustomerDetailsDesign)(
 
         };
 
-        page.onShow = function onShow(data) {
-            baseOnShow && baseOnShow(data);
-            data && loadData(data);
+        page.onShow = function onShow(id) {
+            baseOnShow && baseOnShow();
+
             page.statusBar.ios.style = StatusBarStyle.DEFAULT;
             sliderDrawer.enabled = false;
             var selectedTheme = theme[theme.selected];
@@ -92,6 +96,61 @@ const pgCustomerDetails = extend(pgCustomerDetailsDesign)(
                 page.headerBar.backgroundColor = selectedTheme.topBarColor;
             }
             page.headerBar.title = lang.customerDetails;
+            if (id) {
+                setTimeout(function() {
+                    getSingleCustomer(id, function(err, customerData) {
+                        page.flWait.visible = true;
+                        console.log("after getting single. Is there error? " + !!err);
+                        if (err) {
+                            return alert(JSON.stringify(err), "Customer Service Error");
+                        }
+                        var customerDetails = {
+                            fields: [{
+                                name: lang["Customer Number"],
+                                value: customerData.customFields.CO.CardNo || ""
+                            }, {
+                                name: lang["Mobile Phone"],
+                                value: customerData.customFields.CO.Phone || ""
+                            }, {
+                                name: lang["Cutomer Type"],
+                                value: lang[customerData.customFields.CO.CustType] || ""
+                            }, {
+                                name: lang.Adress,
+                                value: customerData.address.street || ""
+                            }, ],
+                            actions: [{
+                                name: "Notes",
+                                text: lang["Notes"]
+                            }, {
+                                name: "Notification flow",
+                                text: lang["Notification flow"]
+                            }],
+                        };
+                        var pictureAssigned = false;
+
+                        /*if (customerData.customFields.CO.Picture) {
+                                try {
+                                    var Blob = global.Blob;
+                                    customerDetails.picture = Image.createFromBlob(Blob.createFromBase64(customerData.customFields.CO.Picture));
+                                    pictureAssigned = true;
+                                }
+                                finally {}
+                            }/**/
+                        if (!pictureAssigned)
+                            customerDetails.picture = Image.createFromFile("images://customers_empty.png");
+
+                        //TODO due to the bug of missing blob
+                        customerDetails.picture = Image.createFromFile("images://customers_1.png");
+                        
+                        loadData(customerDetails);
+                        page.flWait.visible = false;
+                        svCustomerDetail.visible = true;
+                    });
+
+                    
+
+                }, initTime);
+            }
         };
 
         function loadData(customerDetails) {

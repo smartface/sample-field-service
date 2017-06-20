@@ -12,6 +12,7 @@ const FlexLayout = require('sf-core/ui/flexlayout');
 const Label = require('sf-core/ui/label');
 const TextAlignment = require('sf-core/ui/textalignment');
 const Font = require('sf-core/ui/font');
+const ActivityIndicator = require('sf-core/ui/activityindicator');
 const ImageView = require('sf-core/ui/imageview');
 const Image = require('sf-core/ui/image');
 const ImageFillType = require('sf-core/ui/imagefilltype');
@@ -95,6 +96,21 @@ const PgCustomerDetails_ = extend(Page)(
 		this.layout.addChild(flLine);
 		this.flLine = flLine;
 
+		const flWaitStyle = getCombinedStyle(".flexLayout", {
+			width: null,
+			height: null,
+			left: 0,
+			right: 0,
+			bottom: 0,
+			top: 0,
+			positionType: FlexLayout.PositionType.ABSOLUTE,
+			alignItems: FlexLayout.AlignItems.CENTER,
+			justifyContent: FlexLayout.JustifyContent.CENTER
+		});
+		var flWait = new FlexLayout(flWaitStyle);
+		this.layout.addChild(flWait);
+		this.flWait = flWait;
+
 		const btnShareStyle = getCombinedStyle(".button", {
 			backgroundColor: Color.create(255, 244, 244, 244),
 			borderRadius: 25,
@@ -106,6 +122,11 @@ const PgCustomerDetails_ = extend(Page)(
 		var btnShare = new Button(btnShareStyle);
 		flCustomerTop.addChild(btnShare);
 		this.btnShare = btnShare;
+
+		const aiWaitStyle = getCombinedStyle(".activityIndicator", {});
+		var aiWait = new ActivityIndicator(aiWaitStyle);
+		flWait.addChild(aiWait);
+		this.aiWait = aiWait;
 
 		const imgCustomerPictureStyle = getCombinedStyle(".imageView", {
 			width: 88,
@@ -140,7 +161,8 @@ const PgCustomerDetails_ = extend(Page)(
 			flCustomerTop: flCustomerTop,
 			lblName: lblName,
 			lblTitle: lblTitle,
-			flLine: flLine
+			flLine: flLine,
+			flWait: flWait
 		});
 		
 		//assign the children of flCustomerTop
@@ -148,6 +170,11 @@ const PgCustomerDetails_ = extend(Page)(
 			btnShare: btnShare,
 			imgCustomerPicture: imgCustomerPicture,
 			btnAddToContacts: btnAddToContacts
+		});
+		
+		//assign the children of flWait
+		flWait.children = Object.assign({}, {
+			aiWait: aiWait
 		});
 		
 	});
