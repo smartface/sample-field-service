@@ -32,7 +32,7 @@ const PgLogin_ = extend(Page)(
 		}, props || {}));
 
 		const flLeftStyle = getCombinedStyle(".flexLayout", {
-			backgroundColor: Color.create("#FFFFFF"),
+			backgroundColor: Color.create(0, 248, 231, 28),
 			alpha: 1,
 			borderColor: Color.create(255, 0, 0, 0),
 			borderWidth: 0,
@@ -51,7 +51,7 @@ const PgLogin_ = extend(Page)(
 		this.layout.addChild(flLeft);
 		
 		const flMiddleStyle = getCombinedStyle(".flexLayout", {
-			backgroundColor: Color.create(255, 255, 255, 255),
+			backgroundColor: Color.create(0, 255, 255, 255),
 			alpha: 1,
 			borderColor: Color.create(255, 0, 0, 0),
 			borderWidth: 0,
@@ -74,7 +74,7 @@ const PgLogin_ = extend(Page)(
 		this.layout.addChild(flMiddle);
 		
 		const flRightStyle = getCombinedStyle(".flexLayout", {
-			backgroundColor: Color.create("#FFFFFF"),
+			backgroundColor: Color.create(0, 208, 2, 27),
 			alpha: 1,
 			borderColor: Color.create(255, 0, 0, 0),
 			borderWidth: 0,

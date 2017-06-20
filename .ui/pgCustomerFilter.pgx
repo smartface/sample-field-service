@@ -862,6 +862,7 @@
 				"visible": true,
 				"width": null,
 				"usePageVariable": true,
+				"paddingTop": 22.5,
 				"flexProps": {
 					"alignContent": "STRETCH",
 					"alignItems": "STRETCH",
@@ -899,6 +900,7 @@
 					"flNameInput",
 					"flCardInput"
 				],
+				"paddingTop": 22.5,
 				"flexProps": {
 					"alignSelf": "AUTO",
 					"direction": "INHERIT",
@@ -911,6 +913,7 @@
 				},
 				"layout": {
 					"height": 30.5,
+					"paddingTop": 11.25,
 					"borderWidth": 0
 				},
 				"flex": {
@@ -936,7 +939,7 @@
 				"alpha": 1,
 				"borderColor": "rgba(0,0,0,1)",
 				"borderWidth": 0,
-				"paddingTop": 22.5,
+				"paddingTop": null,
 				"height": null,
 				"visible": true,
 				"width": null,
@@ -975,7 +978,7 @@
 				"alpha": 1,
 				"borderColor": "rgba(0,0,0,1)",
 				"borderWidth": 0,
-				"paddingTop": 22.5,
+				"paddingTop": null,
 				"usePageVariable": true,
 				"children": [
 					"flNameIcon",
@@ -993,7 +996,6 @@
 					"flexGrow": 1
 				},
 				"layout": {
-					"paddingTop": 11.25,
 					"borderWidth": 0
 				},
 				"flex": {
@@ -1128,7 +1130,7 @@
 				"borderWidth": 0,
 				"image": "filter_customer.png",
 				"usePageVariable": true,
-				"imageURL": "https://dispatcher.r0.smartface.io/smartface9/fieldservice2/ui-editor/img/filter_customer.png?os=iOS&osVersion=10.2&density=326&densityRatio=0.5&zoomLevel=0.5&brandModel=iPhone%207?random=0.7295025684888519",
+				"imageURL": "https://dispatcher.r0.smartface.io/smartface9/fieldservice2/ui-editor/img/filter_customer.png?os=iOS&osVersion=10.2&density=326&densityRatio=0.5&zoomLevel=0.5&brandModel=iPhone%207?random=0.6943295209504063",
 				"children": [],
 				"flexProps": {
 					"alignSelf": "AUTO",
@@ -1232,7 +1234,7 @@
 				"alpha": 1,
 				"borderColor": "rgba(0,0,0,1)",
 				"borderWidth": 0,
-				"paddingTop": 22.5,
+				"paddingTop": null,
 				"height": null,
 				"visible": true,
 				"width": null,
@@ -1271,7 +1273,7 @@
 				"alpha": 1,
 				"borderColor": "rgba(0,0,0,1)",
 				"borderWidth": 0,
-				"paddingTop": 22.5,
+				"paddingTop": null,
 				"usePageVariable": true,
 				"children": [
 					"flCardIcon",
@@ -1289,7 +1291,6 @@
 					"flexGrow": 0
 				},
 				"layout": {
-					"paddingTop": 11.25,
 					"borderWidth": 0
 				},
 				"flex": {
@@ -1424,7 +1425,7 @@
 				"borderWidth": 0,
 				"image": "filter_card.png",
 				"usePageVariable": true,
-				"imageURL": "https://dispatcher.r0.smartface.io/smartface9/fieldservice2/ui-editor/img/filter_card.png?os=iOS&osVersion=10.2&density=326&densityRatio=0.5&zoomLevel=0.5&brandModel=iPhone%207?random=0.7745350381889196",
+				"imageURL": "https://dispatcher.r0.smartface.io/smartface9/fieldservice2/ui-editor/img/filter_card.png?os=iOS&osVersion=10.2&density=326&densityRatio=0.5&zoomLevel=0.5&brandModel=iPhone%207?random=0.6970901990815583",
 				"children": [],
 				"flexProps": {
 					"alignSelf": "AUTO",
@@ -1722,7 +1723,7 @@
 				"borderWidth": 0,
 				"image": "filter_phone.png",
 				"usePageVariable": true,
-				"imageURL": "https://dispatcher.r0.smartface.io/smartface9/fieldservice2/ui-editor/img/filter_phone.png?os=iOS&osVersion=10.2&density=326&densityRatio=0.5&zoomLevel=0.5&brandModel=iPhone%207?random=0.5067471826593488",
+				"imageURL": "https://dispatcher.r0.smartface.io/smartface9/fieldservice2/ui-editor/img/filter_phone.png?os=iOS&osVersion=10.2&density=326&densityRatio=0.5&zoomLevel=0.5&brandModel=iPhone%207?random=0.3731147201242453",
 				"children": [],
 				"flexProps": {
 					"alignSelf": "AUTO",
@@ -2020,7 +2021,7 @@
 				"borderWidth": 0,
 				"image": "filter_email.png",
 				"usePageVariable": true,
-				"imageURL": "https://dispatcher.r0.smartface.io/smartface9/fieldservice2/ui-editor/img/filter_email.png?os=iOS&osVersion=10.2&density=326&densityRatio=0.5&zoomLevel=0.5&brandModel=iPhone%207?random=0.4175300994893867",
+				"imageURL": "https://dispatcher.r0.smartface.io/smartface9/fieldservice2/ui-editor/img/filter_email.png?os=iOS&osVersion=10.2&density=326&densityRatio=0.5&zoomLevel=0.5&brandModel=iPhone%207?random=0.9672138022137053",
 				"children": [],
 				"flexProps": {
 					"alignSelf": "AUTO",

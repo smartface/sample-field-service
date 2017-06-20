@@ -38,7 +38,7 @@
 				"name": "pgCustomerDetails",
 				"layout": {
 					"width": 93.75,
-					"height": 166.75
+					"height": 145.55
 				},
 				"flex": {
 					"alignContent": 4,
@@ -537,7 +537,7 @@
 					"positionType": 0
 				},
 				"font": {},
-				"imageURL": "https://dispatcher.r0.smartface.io/smartface9/fieldservice2/ui-editor/img/customer_detail_picture.png?os=iOS&osVersion=10.2&density=326&densityRatio=0.5&zoomLevel=0.5&brandModel=iPhone%207?random=0.6815725782446844"
+				"imageURL": "https://dispatcher.r0.smartface.io/smartface9/fieldservice2/ui-editor/img/customer_detail_picture.png?os=iOS&osVersion=10.2&density=326&densityRatio=0.5&zoomLevel=0.5&brandModel=iPhone%207?random=0.11377307056484298"
 			}
 		},
 		{

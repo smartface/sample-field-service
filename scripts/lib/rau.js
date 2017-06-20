@@ -3,7 +3,8 @@ const Application = global.Application;
 const AlertView = require('sf-core/ui/alertview');
 const Network = require('sf-core/device/network');
 const permission = require("./permission");
-const skipErrList = ["channel not found"];
+const skipErrList = ["channel not found", "No update"];
+const System = require('sf-core/device/system');
 
 function checkUpdate(options) {
     options = options || {};
@@ -26,7 +27,7 @@ function checkUpdate(options) {
 
                 }
             }
-            if(skipErrList.indexOf(err) === -1)
+            if (skipErrList.indexOf(err) === -1)
                 alert((lang.updateFail || "Update failed") + ": " + err);
         }
         else {
@@ -74,9 +75,15 @@ function checkUpdate(options) {
 
 
         function startUpdate() {
-            permission.checkPermission(Application.android.Permissions.WRITE_EXTERNAL_STORAGE, function() {
+            if (System.OS === "iOS") {
                 performUpdate();
-            });
+            }
+            else {
+                permission.checkPermission(Application.android.Permissions.WRITE_EXTERNAL_STORAGE, function() {
+                    performUpdate();
+                });
+            }
+
         }
 
         function performUpdate() {

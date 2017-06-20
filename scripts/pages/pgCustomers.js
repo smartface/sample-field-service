@@ -42,6 +42,7 @@ const pgCustomers = extend(pgCustomersDesign)(
 
 
             var lvCustomers = page.lvCustomers;
+            lvCustomers.itemCount = 0;
             lvCustomers.refreshEnabled = false;
             var customerRowID = 149,
                 loadingLayoutID = 150,
