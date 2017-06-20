@@ -127,7 +127,7 @@ const pgNewCustomer = extend(pgNewCustomerDesign)(
             page.statusBar.ios.style = StatusBarStyle.LIGHTCONTENT;
             applyTheme();
             location.getLocation(function(err, location) {
-                if (err)  {
+                if (err) {
                     console.log("location err");
                     return;
                 }
@@ -178,12 +178,18 @@ const pgNewCustomer = extend(pgNewCustomerDesign)(
                 isValid = false;
                 tiSurname.invalidate();
             }
+            
+            tiAddress.hideKeyboard();
+            tiEmail.hideKeyboard();
+            tiName.hideKeyboard();
+            tiPhone.hideKeyboard();
+            tiSurname.hideKeyboard();
 
             if (!isValid) {
                 return;
             }
             var dialogWait = DialogWait.show();
-            
+
             var customerData = {
                 lookupName: tiName.text + " " + tiSurname,
                 address: {
@@ -192,22 +198,25 @@ const pgNewCustomer = extend(pgNewCustomerDesign)(
                 CO: {
                     Email: tiEmail.text,
                     Phone: tiPhone.text,
-                    
+
                 }
             };
-            if(pictureSet) {
+            if (pictureSet) {
                 var picture = page.btnPicture.backgroundImage.normal || page.btnPicture.backgroundImage;
                 customerData.CO.Picture = picture.compress(Image.Format.JPEG, 100).toBase64();
             }
-            
+
             addCustomer(customerData, function(err, newCustomerData) {
+                console.log("after adding customer. Is there error? " + !!err);
+                if (err) {
+                    return alert(JSON.stringify(err), "Customer Service Error");
+                }
+                dialogWait.showOK(function() {
                     dialogWait.hide();
-                    console.log("after adding customer. Is there error? " + !!err);
-                    if (err) {
-                        return alert(JSON.stringify(err), "Customer Service Error");
-                    }
                     Router.goBack();
                 });
+
+            });
         }
 
         function pickPicture() {

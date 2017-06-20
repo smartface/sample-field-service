@@ -29,6 +29,7 @@ exports.PURPLE = {
     highlight: Color.create(135, 175, 92, 238),
     share: Image.createFromFile("images://share_purple.png"),
     addToContacts: Image.createFromFile("images://add_to_contacts_purple.png"),
+    checkImage: Image.createFromFile("images://check_purple.png"),
 };
 
 exports.NAVY = {
@@ -60,4 +61,5 @@ exports.NAVY = {
     highlight: Color.create(135, 153, 236, 105),
     share: Image.createFromFile("images://share.png"),
     addToContacts: Image.createFromFile("images://add_to_contacts.png"),
+    checkImage: Image.createFromFile("images://check.png"),
 };

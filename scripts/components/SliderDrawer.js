@@ -3,7 +3,6 @@ const Application = global.Application;
 const extend = require('js-base/core/extend');
 const Router = require("sf-core/ui/router");
 const SliderDrawer = require('library/SliderDrawer');
-const DialogWait = require("./DialogWait");
 const user = require("../lib/user");
 
 const SliderDrawer_ = extend(SliderDrawer)(

@@ -4,16 +4,35 @@ const Router = require("sf-core/ui/router");
 const DialogWaitDesign = require('library/DialogWait');
 const Dialog = require("sf-core/ui/dialog");
 const Page = require('sf-core/ui/page');
+const Animator = require('sf-core/ui/animator');
+const System = require('sf-core/device/system');
+
 const DialogWait = extend(DialogWaitDesign)(
 	//constructor
 	function(_super, props, pageName) {
-		// initalizes super class for this scope
-		_super(this, props || DialogWaitDesign.defaults);
-		this.pageName = pageName;
+		var dialogWait = this;
+		_super(dialogWait, props || DialogWaitDesign.defaults);
+		dialogWait.pageName = pageName;
 		var selectedTheme = theme[theme.selected];
-		this.aiWait.color = selectedTheme.topBarColor;
-	}
+		dialogWait.aiWait.color = selectedTheme.topBarColor;
+		dialogWait.imgCheck.image = selectedTheme.checkImage;
+		dialogWait.imgCheck.alpha = 1;
 
+		dialogWait.showOK = function(callback) {
+			dialogWait.aiWait.visible = false;
+			dialogWait.flCheck.visible = true;
+			dialogWait.applyLayout();
+
+			var dialogObject = (dialogWait.dialogObject && dialogWait.dialogObject.layout) || dialogWait.getParent();
+			var animationParent = System.OS === "Android" ? dialogWait.flWaitWhite : dialogObject;
+
+			Animator.animate(animationParent, 1000, function() {
+				dialogWait.imgCheck.alpha = 0.05;
+			}).complete(function() {
+				callback && callback();
+			});
+		};
+	}
 );
 
 DialogWait.show = function showWaitdialog(page) {
@@ -33,8 +52,9 @@ DialogWait.show = function showWaitdialog(page) {
 		top: 0,
 		bottom: 0
 	});
-	
+
 	var waitDialog = new Dialog();
+	dialogWait.dialogObject = waitDialog;
 	showDialog();
 
 	function showDialog() {
@@ -87,7 +107,8 @@ DialogWait.show = function showWaitdialog(page) {
 
 	return {
 		show: showDialog,
-		hide: hideDialog
+		hide: hideDialog,
+		showOK: dialogWait.showOK
 	};
 };
 
