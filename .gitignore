@@ -18,3 +18,4 @@ scripts/node_modules/*
 config/Other\ Fonts
 .ui/newPage001.pgx
 scripts/ui/ui_newPage001.js
+output/players/

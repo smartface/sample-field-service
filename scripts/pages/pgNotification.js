@@ -10,6 +10,8 @@ const Router = require("sf-core/ui/router");
 const backAction = require("../lib/ui").backAction;
 const StatusBarStyle = require('sf-core/ui/statusbarstyle');
 const theme = require("../lib/theme");
+const notifications = require("../model/notifications");
+const initTime = require("../lib/init-time");
 
 const pgNotification = extend(pgNotificationDesign)(
     function(_super) {
@@ -45,18 +47,31 @@ const pgNotification = extend(pgNotificationDesign)(
             page.android.onBackButtonPressed = function(e) {
                 Router.goBack("pgDashboard");
             };
+            
+            
         };
 
         page.onShow = function onShow(data) {
-            var notificationsData = data.notificationsData;
-            baseOnShow && baseOnShow(notificationsData);
-            notificationsData && loadData(notificationsData);
-            if(data.from === "sliderDrawer") {
+            baseOnShow && baseOnShow();
+
+            if (data.from === "sliderDrawer") {
                 sliderDrawer.setLeftItem(page.headerBar);
                 sliderDrawer.enabled = true;
+                page.aiWait.visible = true;
+                setTimeout(function() {
+                    notifications.getNotifications(function(err, notificationsData) {
+                        console.log("after getting notifications. Is there error? " + !!err);
+                        if (err) {
+                            return alert(JSON.stringify(err), "Notifications Service Error");
+                        }
+                        notificationsData && loadData(notificationsData);
+                        page.aiWait.visible = false;
+                    });
+                }, initTime);
             }
-            else 
+            else {
                 backAction(page);
+            }
             page.statusBar.ios.style = StatusBarStyle.LIGHTCONTENT;
             applyTheme();
             page.headerBar.title = lang.notificationHistory;
@@ -66,9 +81,8 @@ const pgNotification = extend(pgNotificationDesign)(
             var selectedTheme = theme[theme.selected];
             page.statusBar.android && (page.statusBar.android.color = selectedTheme.topBarColor);
             page.headerBar.backgroundColor = selectedTheme.topBarColor;
+            page.aiWait.color = selectedTheme.topBarColor;
         }
-
-
 
         function loadData(notificationsData) {
             if (!flNotifications)
@@ -112,6 +126,7 @@ const pgNotification = extend(pgNotificationDesign)(
                 height += notificationRow.height;
             }
             flNotifications.height = height;
+            flNotifications.applyLayout();
         }
 
 

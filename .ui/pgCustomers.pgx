@@ -6,10 +6,13 @@
 			"themeProps": {},
 			"userProps": {
 				"backgroundColor": "rgba( 255, 255, 255, 1 )",
+				"flexProps": {
+					"alignItems": "CENTER",
+					"justifyContent": "CENTER"
+				},
 				"layout": {},
 				"flex": {},
 				"font": {},
-				"flexProps": {},
 				"defaults": {}
 			},
 			"className": ".page",
@@ -20,29 +23,30 @@
 				"children": [
 					"statusBar",
 					"headerBar",
+					"aiWait",
 					"lvCustomers",
 					"btnAddCustomer"
 				],
 				"flexProps": {
 					"alignContent": "STRETCH",
-					"alignItems": "STRETCH",
+					"alignItems": "CENTER",
 					"direction": "INHERIT",
 					"flexDirection": "COLUMN",
 					"flexWrap": "NOWRAP",
-					"justifyContent": "FLEX_START"
+					"justifyContent": "CENTER"
 				},
 				"parent": null,
 				"name": "pgCustomers",
 				"layout": {
 					"width": 93.75,
-					"height": 145.55
+					"height": 150.75
 				},
 				"flex": {
 					"alignContent": 4,
-					"alignItems": 4,
+					"alignItems": 2,
 					"flexDirection": 0,
 					"flexWrap": 0,
-					"justifyContent": 0
+					"justifyContent": 1
 				},
 				"font": {},
 				"width": 187.5,
@@ -128,6 +132,7 @@
 				"backgroundColor": "rgba( 255, 255, 255, 0 )",
 				"itemCount": 4,
 				"rowHeight": 106.43,
+				"visible": false,
 				"flexProps": {
 					"positionType": "ABSOLUTE",
 					"right": 0,
@@ -146,7 +151,7 @@
 				"multiline": false,
 				"rowHeight": 106.43,
 				"itemCount": 4,
-				"visible": true,
+				"visible": false,
 				"backgroundColor": "rgba( 255, 255, 255, 0 )",
 				"alpha": 1,
 				"borderColor": "rgba(0,0,0,1)",
@@ -194,6 +199,7 @@
 				"borderRadius": 25,
 				"right": 8.5,
 				"bottom": 10,
+				"visible": false,
 				"flexProps": {
 					"positionType": "ABSOLUTE",
 					"right": 8.5,
@@ -210,7 +216,7 @@
 				"height": 50,
 				"touchEnabled": true,
 				"text": "+",
-				"visible": true,
+				"visible": false,
 				"backgroundColor": "rgba( 255, 255, 255, 1 )",
 				"alpha": 1,
 				"borderColor": "rgba(0,0,0,1)",
@@ -249,6 +255,56 @@
 					"right": 8.5,
 					"bottom": 10
 				}
+			}
+		},
+		{
+			"type": "ActivityIndicator",
+			"id": "f9c1dfb3",
+			"themeProps": {},
+			"userProps": {
+				"usePageVariable": true,
+				"layout": {},
+				"flex": {},
+				"font": {},
+				"flexProps": {},
+				"defaults": {}
+			},
+			"props": {
+				"name": "aiWait",
+				"isReady": true,
+				"flexProps": {
+					"positionType": "RELATIVE",
+					"alignSelf": "AUTO"
+				},
+				"touchEnabled": true,
+				"width": 42,
+				"height": 42,
+				"color": "#ADADAD",
+				"visible": true,
+				"backgroundColor": "#FFFFFF",
+				"alpha": 1,
+				"borderColor": "rgba(0,0,0,1)",
+				"borderWidth": 0,
+				"font": {},
+				"minHeight": 21,
+				"minWidth": 21,
+				"input": {
+					"height": 21,
+					"width": 21
+				},
+				"flex": {
+					"positionType": 0
+				},
+				"parent": "pgCustomers",
+				"children": [],
+				"layout": {
+					"width": 21,
+					"height": 21,
+					"minWidth": 10.5,
+					"minHeight": 10.5,
+					"borderWidth": 0
+				},
+				"usePageVariable": true
 			}
 		}
 	]

@@ -6,9 +6,10 @@
 
 const extend = require('js-base/core/extend');
 const Page = require('sf-core/ui/page');
-const StatusBarStyle = require('sf-core/ui/statusbarstyle');
+const ActivityIndicator = require('sf-core/ui/activityindicator');
 const Color = require('sf-core/ui/color');
 const FlexLayout = require('sf-core/ui/flexlayout');
+const StatusBarStyle = require('sf-core/ui/statusbarstyle');
 
 
 
@@ -24,7 +25,25 @@ const PgNotification_ = extend(Page)(
 			orientation: Page.Orientation.PORTRAIT
 		}, props || {}));
 
+		const aiWaitStyle = getCombinedStyle(".activityIndicator", {
+			backgroundColor: Color.create(0, 255, 255, 255),
+			left: null,
+			top: null,
+			right: null,
+			bottom: null,
+			width: 42,
+			height: 42,
+			positionType: FlexLayout.PositionType.RELATIVE
+		});
+		var aiWait = new ActivityIndicator(aiWaitStyle);
+		this.layout.addChild(aiWait);
+		this.aiWait = aiWait;
 
+		//assign the children to page 
+		this.children = Object.assign({}, {
+			aiWait: aiWait
+		});
+		
 	});
 
 // Page.onShow -> This event is called when a page appears on the screen (everytime).
@@ -59,13 +78,13 @@ function onShow() {
 function onLoad() { 
 
   const pageStyle = getCombinedStyle(".page", {
-		backgroundColor: Color.create("#FFFFFF"),
+		backgroundColor: Color.create(255, 255, 255, 255),
 		alignContent: FlexLayout.AlignContent.STRETCH,
-		alignItems: FlexLayout.AlignItems.STRETCH,
+		alignItems: FlexLayout.AlignItems.CENTER,
 		direction: FlexLayout.Direction.INHERIT,
 		flexDirection: FlexLayout.FlexDirection.COLUMN,
 		flexWrap: FlexLayout.FlexWrap.NOWRAP,
-		justifyContent: FlexLayout.JustifyContent.FLEX_START
+		justifyContent: FlexLayout.JustifyContent.CENTER
 	});
 	
 	Object.assign(this.layout, pageStyle);

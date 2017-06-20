@@ -782,6 +782,7 @@
 				"height": null,
 				"visible": true,
 				"width": null,
+				"paddingRight": 15,
 				"flexProps": {
 					"alignContent": "STRETCH",
 					"alignItems": "STRETCH",
@@ -833,6 +834,7 @@
 					"flexGrow": 1
 				},
 				"layout": {
+					"paddingRight": 7.5,
 					"borderWidth": 0
 				},
 				"flex": {
@@ -846,7 +848,8 @@
 				},
 				"parent": "pgCustomerFilter",
 				"name": "flInputs",
-				"font": {}
+				"font": {},
+				"paddingRight": 15
 			}
 		},
 		{
@@ -896,11 +899,11 @@
 				"borderColor": "rgba(0,0,0,1)",
 				"borderWidth": 0,
 				"usePageVariable": true,
+				"paddingTop": 22.5,
 				"children": [
 					"flNameInput",
 					"flCardInput"
 				],
-				"paddingTop": 22.5,
 				"flexProps": {
 					"alignSelf": "AUTO",
 					"direction": "INHERIT",

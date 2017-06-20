@@ -16,8 +16,6 @@ const HeaderBarItem = require('sf-core/ui/headerbaritem');
 const Image = require('sf-core/ui/image');
 const theme = require("../lib/theme");
 const sliderDrawer = require("../sliderDrawer");
-const getCustomers = require("../model/customers").getCustomers;
-const DialogWait = require("../components/DialogWait");
 const pageLength = 20;
 
 const textInputDefaults = {
@@ -142,21 +140,10 @@ const pgCustomerFilter = extend(pgCustomerFilterDesign)(
                     filter.email = tiEmail.text;
                 if (tiPhone.text.length > 0)
                     filter.phone = tiPhone.text;
-                var dialogWait = DialogWait.show();
                 filter.length = pageLength;
-                getCustomers(filter, function(err, customers) {
-                    dialogWait.hide();
-                    console.log("after getting customers. Is there error? " + !!err);
-                    if (err) {
-                        return alert(JSON.stringify(err), "Customers Service Error");
-                    }
-                    Router.go("pgCustomers", {
-                        customers: customers,
-                        filter: filter
-                    });
+                Router.go("pgCustomers", {
+                    filter: filter
                 });
-
-
             }
 
             page.btnSearch.onPress = doSearch;

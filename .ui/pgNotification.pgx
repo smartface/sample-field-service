@@ -6,17 +6,17 @@
 			"themeProps": {},
 			"userProps": {
 				"isRemovable": true,
-				"backgroundColor": "#FFFFFF",
+				"backgroundColor": "rgba( 255, 255, 255, 1 )",
 				"height": 301.5,
 				"orientation": "PORTRAIT",
 				"width": 187.5,
 				"flexProps": {
 					"alignContent": "STRETCH",
-					"alignItems": "STRETCH",
+					"alignItems": "CENTER",
 					"direction": "INHERIT",
 					"flexDirection": "COLUMN",
 					"flexWrap": "NOWRAP",
-					"justifyContent": "FLEX_START"
+					"justifyContent": "CENTER"
 				},
 				"layout": {},
 				"flex": {},
@@ -26,22 +26,23 @@
 			"className": ".page",
 			"version": "6.3.9",
 			"props": {
-				"backgroundColor": "#FFFFFF",
+				"backgroundColor": "rgba( 255, 255, 255, 1 )",
 				"orientation": "PORTRAIT",
 				"isRemovable": true,
 				"height": 301.5,
 				"width": 187.5,
 				"children": [
 					"statusBar",
-					"headerBar"
+					"headerBar",
+					"aiWait"
 				],
 				"flexProps": {
 					"alignContent": "STRETCH",
-					"alignItems": "STRETCH",
+					"alignItems": "CENTER",
 					"direction": "INHERIT",
 					"flexDirection": "COLUMN",
 					"flexWrap": "NOWRAP",
-					"justifyContent": "FLEX_START"
+					"justifyContent": "CENTER"
 				},
 				"name": "pgNotification",
 				"layout": {
@@ -50,10 +51,10 @@
 				},
 				"flex": {
 					"alignContent": 4,
-					"alignItems": 4,
+					"alignItems": 2,
 					"flexDirection": 0,
 					"flexWrap": 0,
-					"justifyContent": 0
+					"justifyContent": 1
 				},
 				"font": {}
 			}
@@ -132,6 +133,75 @@
 				"flex": {},
 				"font": {},
 				"flexProps": {}
+			}
+		},
+		{
+			"type": "ActivityIndicator",
+			"id": "84c7fa3e",
+			"themeProps": {},
+			"userProps": {
+				"usePageVariable": true,
+				"backgroundColor": "rgba( 255, 255, 255, 0 )",
+				"left": null,
+				"top": null,
+				"right": null,
+				"bottom": null,
+				"width": 42,
+				"height": 42,
+				"flexProps": {
+					"positionType": "RELATIVE",
+					"right": 0,
+					"bottom": 0
+				},
+				"layout": {},
+				"flex": {},
+				"font": {},
+				"defaults": {}
+			},
+			"className": ".activityIndicator",
+			"props": {
+				"touchEnabled": true,
+				"width": 42,
+				"height": 42,
+				"color": "#ADADAD",
+				"visible": true,
+				"backgroundColor": "rgba( 255, 255, 255, 0 )",
+				"alpha": 1,
+				"borderColor": "rgba(0,0,0,1)",
+				"borderWidth": 0,
+				"minHeight": 21,
+				"minWidth": 21,
+				"children": [],
+				"usePageVariable": true,
+				"left": null,
+				"top": null,
+				"right": null,
+				"bottom": null,
+				"flexProps": {
+					"positionType": "RELATIVE",
+					"alignSelf": "AUTO",
+					"right": 0,
+					"bottom": 0
+				},
+				"name": "aiWait",
+				"parent": "pgNotification",
+				"layout": {
+					"width": 21,
+					"height": 21,
+					"minWidth": 10.5,
+					"minHeight": 10.5,
+					"borderWidth": 0
+				},
+				"flex": {
+					"positionType": 0,
+					"right": 0,
+					"bottom": 0
+				},
+				"font": {},
+				"input": {
+					"height": 21,
+					"width": 21
+				}
 			}
 		}
 	]

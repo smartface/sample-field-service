@@ -19,6 +19,7 @@ const FlexLayout = require("sf-core/ui/flexlayout");
 const ActivityIndicator = require("sf-core/ui/activityindicator");
 const DialogWait = require("../components/DialogWait");
 const getSingleCustomer = require("../model/customers").getSingleCustomer;
+const initTime = require("../lib/init-time");
 
 const pgCustomers = extend(pgCustomersDesign)(
     function(_super) {
@@ -28,7 +29,7 @@ const pgCustomers = extend(pgCustomersDesign)(
         var baseOnShow = page.onShow;
         var isLoading = false;
         var dataset = [];
-        var filter = {};
+        var filter = null;
         page.onLoad = function onLoad() {
             baseOnLoad && baseOnLoad();
 
@@ -36,7 +37,7 @@ const pgCustomers = extend(pgCustomersDesign)(
                 text: "",
                 borderRadius: 0,
                 onPress: function() {
-                    Router.go("pgNewCustomer");
+                    Router.go("pgNewCustomer", filter);
                 }
             });
 
@@ -213,9 +214,21 @@ const pgCustomers = extend(pgCustomersDesign)(
 
         page.onShow = function onShow(data) {
             baseOnShow && baseOnShow(data);
-            if (data) {
-                data.customers && bindData(data.customers);
-                data.filter && (filter = data.filter);
+            if (data && data.filter) {
+                filter = data.filter;
+                setTimeout(function() {
+                    getCustomers(filter, function(err, customers) {
+                        console.log("after getting customers. Is there error? " + !!err);
+                        if (err) {
+                            return alert(JSON.stringify(err), "Customers Service Error");
+                        }
+                        bindData(customers);
+                        page.aiWait.visible = false;
+                        page.lvCustomers.visible = true;
+                        page.btnAddCustomer.visible = true;
+                    });
+                }, initTime);
+
             }
 
 
@@ -229,6 +242,7 @@ const pgCustomers = extend(pgCustomersDesign)(
             var selectedTheme = theme[theme.selected];
             page.statusBar.android && (page.statusBar.android.color = selectedTheme.topBarColor);
             page.headerBar.backgroundColor = selectedTheme.topBarColor;
+            page.aiWait.color = selectedTheme.topBarColor;
 
             page.btnAddCustomer.backgroundImage = {
                 normal: selectedTheme.addCustomer

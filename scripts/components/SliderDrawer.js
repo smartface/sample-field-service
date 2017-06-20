@@ -30,7 +30,7 @@ const SliderDrawer_ = extend(SliderDrawer)(
 
 		mimicPressed(this.flDashboard, function() {
 			hide();
-			Router.goBack("pgDashboard");
+			Router.goBack("pgDashboard", null, false);
 			moveHighlight(0);
 		}, touchControl);
 
@@ -38,32 +38,21 @@ const SliderDrawer_ = extend(SliderDrawer)(
 			hide();
 			Router.go("pgCustomerFilter", {
 				reset: true
-			});
+			}, false);
 			moveHighlight(1);
 		}, touchControl);
 
 		mimicPressed(this.flNotifications, function() {
 			hide();
-			var dialogWait = DialogWait.show();
-			const notifications = require("../model/notifications");
-			notifications.getNotifications(function(err, notificationsData) {
-				dialogWait.hide();
-				console.log("after getting notifications. Is there error? " + !!err);
-				if (err) {
-					return alert(JSON.stringify(err), "Notifications Service Error");
-				}
-				moveHighlight(2);
-				Router.go("pgNotification", {
-					notificationsData: notificationsData,
-					from: "sliderDrawer"
-				});
-			});
-
+			moveHighlight(2);
+			Router.go("pgNotification", {
+				from: "sliderDrawer"
+			}, false);
 		}, touchControl);
 
 		mimicPressed(this.flSettings, function() {
 			hide();
-			Router.go("pgSettings");
+			Router.go("pgSettings", null, false);
 			moveHighlight(3);
 		}, touchControl);
 

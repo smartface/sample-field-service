@@ -57,6 +57,7 @@ const PgCustomerFilter_ = extend(Page)(
 			height: null,
 			visible: true,
 			width: null,
+			paddingRight: 15,
 			alignContent: FlexLayout.AlignContent.STRETCH,
 			alignItems: FlexLayout.AlignItems.STRETCH,
 			flexDirection: FlexLayout.FlexDirection.COLUMN,

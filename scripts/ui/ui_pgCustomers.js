@@ -6,6 +6,7 @@
 
 const extend = require('js-base/core/extend');
 const Page = require('sf-core/ui/page');
+const ActivityIndicator = require('sf-core/ui/activityindicator');
 const ListView = require('sf-core/ui/listview');
 const ListViewItem = require('sf-core/ui/listviewitem');
 const Color = require('sf-core/ui/color');
@@ -26,6 +27,11 @@ const PgCustomers_ = extend(Page)(
 			onLoad: onLoad.bind(this)
 		}, props || {}));
 
+		const aiWaitStyle = getCombinedStyle(".activityIndicator", {});
+		var aiWait = new ActivityIndicator(aiWaitStyle);
+		this.layout.addChild(aiWait);
+		this.aiWait = aiWait;
+
 		const lvCustomersStyle = getCombinedStyle(".listView", {
 			width: null,
 			height: null,
@@ -36,6 +42,7 @@ const PgCustomers_ = extend(Page)(
 			backgroundColor: Color.create(0, 255, 255, 255),
 			itemCount: 4,
 			rowHeight: 106.43,
+			visible: false,
 			positionType: FlexLayout.PositionType.ABSOLUTE
 		});
 		var lvCustomers = new ListView(lvCustomersStyle);
@@ -52,6 +59,7 @@ const PgCustomers_ = extend(Page)(
 			borderRadius: 25,
 			right: 8.5,
 			bottom: 10,
+			visible: false,
 			positionType: FlexLayout.PositionType.ABSOLUTE
 		});
 		var btnAddCustomer = new Button(btnAddCustomerStyle);
@@ -60,6 +68,7 @@ const PgCustomers_ = extend(Page)(
 
 		//assign the children to page 
 		this.children = Object.assign({}, {
+			aiWait: aiWait,
 			lvCustomers: lvCustomers,
 			btnAddCustomer: btnAddCustomer
 		});
@@ -96,7 +105,9 @@ function onShow() {
 function onLoad() { 
 
   const pageStyle = getCombinedStyle(".page", {
-		backgroundColor: Color.create(255, 255, 255, 255)
+		backgroundColor: Color.create(255, 255, 255, 255),
+		alignItems: FlexLayout.AlignItems.CENTER,
+		justifyContent: FlexLayout.JustifyContent.CENTER
 	});
 	
 	Object.assign(this.layout, pageStyle);
