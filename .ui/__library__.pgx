@@ -2148,9 +2148,9 @@
 				"minHeight": 21,
 				"minWidth": 21,
 				"usePageVariable": true,
-				"children": [],
 				"marginTop": null,
 				"marginBottom": 40,
+				"children": [],
 				"flexProps": {
 					"positionType": "RELATIVE",
 					"alignSelf": "AUTO"
@@ -4354,16 +4354,18 @@
 			"themeProps": {},
 			"userProps": {
 				"usePageVariable": true,
-				"textAlignment": "MIDCENTER",
-				"width": 200,
-				"height": 30,
-				"marginBottom": 25,
+				"textAlignment": "TOPCENTER",
+				"width": 245,
+				"height": 54,
+				"marginBottom": null,
 				"text": "Saving New Customer",
+				"multiline": true,
 				"flexProps": {
 					"flexGrow": null
 				},
 				"font": {
-					"family": "Lato"
+					"family": "Lato",
+					"size": 22
 				},
 				"layout": {},
 				"flex": {},
@@ -4371,23 +4373,23 @@
 			},
 			"className": ".label",
 			"props": {
-				"width": 200,
-				"height": 30,
+				"width": 245,
+				"height": 54,
 				"touchEnabled": true,
 				"text": "Saving New Customer",
 				"visible": true,
-				"multiline": false,
+				"multiline": true,
 				"backgroundColor": "#FFFFFF",
 				"alpha": 1,
 				"borderColor": "rgba(0,0,0,1)",
 				"borderWidth": 0,
 				"textColor": "#000000",
-				"textAlignment": "MIDCENTER",
-				"children": [],
+				"textAlignment": "TOPCENTER",
 				"usePageVariable": true,
-				"marginBottom": 25,
+				"marginBottom": null,
+				"children": [],
 				"font": {
-					"size": 16,
+					"size": 22,
 					"bold": false,
 					"italic": false,
 					"family": "Lato"
@@ -4400,9 +4402,8 @@
 				"name": "lblSaving",
 				"parent": "flWaitWhite",
 				"layout": {
-					"marginBottom": 12.5,
-					"width": 100,
-					"height": 15,
+					"width": 122.5,
+					"height": 27,
 					"borderWidth": 0
 				},
 				"flex": {

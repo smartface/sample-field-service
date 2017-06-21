@@ -7,6 +7,7 @@ const Dialog = require("sf-core/ui/dialog");
 const Page = require('sf-core/ui/page');
 const Animator = require('sf-core/ui/animator');
 const System = require('sf-core/device/system');
+const ActivityIndicator = require('sf-core/ui/activityindicator');
 
 const DialogWait = extend(DialogWaitDesign)(
 	//constructor
@@ -20,6 +21,8 @@ const DialogWait = extend(DialogWaitDesign)(
 		dialogWait.imgCheck.alpha = 1;
 		dialogWait.lblSaving.text = lang.savingCustomer;
 		dialogWait.lblSaving.textColor = selectedTheme.topBarColor;
+		
+		dialogWait.aiWait.ios.style = ActivityIndicator.iOS.Type.WHITELARGE;
 
 		dialogWait.showOK = function(callback) {
 			dialogWait.aiWait.visible = false;
@@ -108,7 +111,7 @@ DialogWait.show = function showWaitdialog(page) {
 		page.onBackButtonPressed = backButtonPressed;
 		waitDialog.hide();
 	}
-
+	
 	return {
 		show: showDialog,
 		hide: hideDialog,
