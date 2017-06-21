@@ -188,6 +188,7 @@
 				"width": null,
 				"marginTop": 14.64,
 				"text": "Adam Stewart",
+				"usePageVariable": true,
 				"flexProps": {
 					"alignSelf": "AUTO"
 				},
@@ -234,7 +235,8 @@
 				},
 				"flex": {
 					"positionType": 0
-				}
+				},
+				"usePageVariable": true
 			}
 		},
 		{
@@ -392,6 +394,8 @@
 				"borderWidth": 0,
 				"marginLeft": null,
 				"marginTop": 5,
+				"paddingLeft": 1,
+				"paddingRight": 1,
 				"children": [
 					"btnShare",
 					"imgCustomerPicture",
@@ -426,9 +430,7 @@
 					"flexDirection": 2,
 					"positionType": 0
 				},
-				"font": {},
-				"paddingLeft": 1,
-				"paddingRight": 1
+				"font": {}
 			}
 		},
 		{
@@ -544,7 +546,7 @@
 					"positionType": 0
 				},
 				"font": {},
-				"imageURL": "https://dispatcher.r0.smartface.io/smartface9/fieldservice2/ui-editor/img/customer_detail_picture.png?os=iOS&osVersion=10.2&density=326&densityRatio=0.5&zoomLevel=0.5&brandModel=iPhone%207?random=0.11377307056484298"
+				"imageURL": "https://dispatcher.r0.smartface.io/smartface9/fieldservice2/ui-editor/img/customer_detail_picture.png?os=iOS&osVersion=10.2&density=326&densityRatio=0.5&zoomLevel=0.5&brandModel=iPhone%207?random=0.05681606825090024"
 			}
 		},
 		{
@@ -725,7 +727,11 @@
 				"flex": {
 					"positionType": 0
 				},
-				"font": {}
+				"font": {},
+				"input": {
+					"height": 21,
+					"width": 21
+				}
 			}
 		}
 	]

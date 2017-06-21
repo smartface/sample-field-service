@@ -5,15 +5,18 @@ var lastRequestPermissionCode = 2000;
 var permissionRequestMap = {};
 const AlertView = require('sf-core/ui/alertview');
 exports.checkPermission = function checkPermission(permissions, rationaleDisplay, callback) {
-    if (System.OS === "iOS") { //hardcoded logic for iOS to pass
-        callback(null);
-    }
-
-    if (!(permissions instanceof Array)) permissions = [permissions];
     if (!callback) {
         callback = rationaleDisplay;
         rationaleDisplay = null;
     }
+    
+    if (System.OS === "iOS") { //hardcoded logic for iOS to pass
+        callback && callback(null);
+        return;
+    }
+
+    if (!(permissions instanceof Array)) permissions = [permissions];
+
 
     var i, p, rationalsToShow = [];
     for (i = permissions.length - 1; i > -1; i--) {

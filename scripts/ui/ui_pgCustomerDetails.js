@@ -73,7 +73,8 @@ const PgCustomerDetails_ = extend(Page)(
 		});
 		var lblName = new Label(lblNameStyle);
 		this.layout.addChild(lblName);
-		
+		this.lblName = lblName;
+
 		const lblTitleStyle = getCombinedStyle(".label", {
 			textAlignment: TextAlignment.MIDCENTER,
 			textColor: Color.create(255, 47, 55, 68),

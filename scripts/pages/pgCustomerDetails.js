@@ -23,11 +23,14 @@ const Application = require("sf-core/application");
 const Contacts = require("sf-core/device/contacts");
 const System = require('sf-core/device/system');
 const permission = require("../lib/permission");
-const HeaderBarItem = require('sf-core/ui/headerbaritem');
+//const HeaderBarItem = require('sf-core/ui/headerbaritem');
 const initTime = require("../lib/init-time");
 const getSingleCustomer = require("../model/customers").getSingleCustomer;
 const Blob = require('sf-core/blob');
 const backAction = require("../lib/ui").backAction;
+const File = require('sf-core/io/file');
+const Path = require('sf-core/io/path');
+const FileStream = require('sf-core/io/filestream');
 
 const pgCustomerDetails = extend(pgCustomerDetailsDesign)(
     function(_super) {
@@ -36,6 +39,7 @@ const pgCustomerDetails = extend(pgCustomerDetailsDesign)(
         var baseOnLoad = page.onLoad;
         var baseOnShow = page.onShow;
         var svCustomerDetail;
+        var customerInfo = null;
 
 
         page.onLoad = function onLoad() {
@@ -121,7 +125,17 @@ const pgCustomerDetails = extend(pgCustomerDetailsDesign)(
 
                         //TODO due to the bug of missing blob
                         //customerDetails.picture = Image.createFromFile("images://customers_1.png");
-
+                        page.lblName.text = customerData.lookupName;
+                        customerInfo = {
+                            displayName: customerData.lookupName || "",
+                            phoneNumber: customerData.customFields.CO.Phone || "",
+                            email: customerData.customFields.CO.Email || "",
+                            address: customerData.address.street || "",
+                            picture: customerDetails.picture,
+                            notes: String(customerData.customFields.CO.CardNo || ""),
+                            firstName: customerData.name.first || "",
+                            lastName: customerData.name.last || ""
+                        };
                         loadData(customerDetails);
                         page.flWait.visible = false;
                         svCustomerDetail.visible = true;
@@ -228,25 +242,19 @@ const pgCustomerDetails = extend(pgCustomerDetailsDesign)(
 
 
             page.btnAddToContacts.onPress = function() {
-                if (System.OS === "Android") {
-                    permission.checkPermission(Application.android.Permissions.WRITE_CONTACTS, function(err) {
-                        if (err) return;
-                        addToContacts();
-                    });
-                }
-                else {
+                //if (System.OS === "Android") {
+                permission.checkPermission(Application.android.Permissions.WRITE_CONTACTS, function(err) {
+                    if (err) return;
                     addToContacts();
-                }
+                });
+                //}
+                //else {
+                //    addToContacts();
+                //}
 
                 function addToContacts() {
                     Contacts.add({
-                        contact: {
-                            displayName: "Adam Stewart",
-                            phoneNumber: "+16506173265",
-                            email: "info@smartface.io",
-                            address: "347 N Canon Dr Beverly Hills, CA 90210"
-                        },
-                        //contactData,
+                        contact: customerInfo,
                         onSuccess: function() {
                             alert(lang.contactAddSuccess);
                         },
@@ -259,9 +267,45 @@ const pgCustomerDetails = extend(pgCustomerDetailsDesign)(
             };
 
             page.btnShare.onPress = function() {
-                var contactDataString = JSON.stringify(contactData, null, "\t");
-                Share.shareText(contactDataString, page, []);
+                //var contactDataString = JSON.stringify(contactData, null, "\t");
+                //Share.shareText(contactDataString, page, []);
+
+
+                permission.checkPermission(Application.android.Permissions.WRITE_EXTERNAL_STORAGE, function(err) {
+                    if (err) return;
+                    var fileName = "test.vcf";
+                    var path;
+                    if (System.OS === "Android") {
+                        path = Path.android.storages.internal + Path.Separator + fileName;
+                    }
+                    else {
+                        path = Path.DataDirectory + Path.Separator + fileName;
+                    }
+                    createAndSendVCF(path);
+                });
+
             };
+
+            function createAndSendVCF(destinationPath, contact) {
+                var vcfFile = new File({
+                    path: destinationPath
+                });
+                vcfFile.createFile();
+                var fileStream = vcfFile.openStream(FileStream.StreamType.WRITE);
+                var fileContent =
+                    "BEGIN:VCARD\r\n" +
+                    "VERSION:3.0\r\n" +
+                    "N:" + customerInfo.lastName + ";" + customerInfo.firstName + "\r\n" +
+                    "FN:" + customerInfo.displayName + "\r\n" +
+                    "NOTE:" + customerInfo.notes + "\r\n" +
+                    "TEL;TYPE=PREF,CELL:" + customerInfo.phoneNumber + "\r\n" +
+                    "EMAIL;TYPE=PREF,INTERNET:" + customerInfo.email + "\r\n" +
+                    "END:VCARD\r\n";
+                fileStream.write(fileContent);
+                fileStream.close();
+
+                Share.shareFile(vcfFile, page);
+            }
         }
     });
 
