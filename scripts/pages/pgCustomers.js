@@ -42,7 +42,7 @@ const pgCustomers = extend(pgCustomersDesign)(
             Object.assign(page.btnAddCustomer, {
                 text: "",
                 onPress: function() {
-                    Router.go("pgNewCustomer", filter);
+                    Router.go("pgNewCustomer");
                 }
             });
 
@@ -213,29 +213,15 @@ const pgCustomers = extend(pgCustomersDesign)(
                 page.headerBar.items = [filterItem];
             }
             svFilter = new SearchView({
-                //borderWidth: 8,
-                //borderColor: Color.create("#6FCAF7"),
-                android: {
-                    hintTextColor: Color.create("#CCCCCC"),
-                    font: Font.create("Lato", 18, Font.NORMAL)
-                },
-                ios: {
-                    showsCancelButton: true,
-                    onCancelButtonClicked: function() {
-                        hideFilter();
-                    }
-                },
                 textColor: System.OS === "Android" ? Color.WHITE : Color.BLACK,
                 hint: lang.search,
                 onSearchBegin: function() {
-                    unfilteredDataset = dataset;
                     filterActive = true;
                 },
                 onTextChanged: function(searchText) {
                     console.log("searched text : " + searchText);
                     var text = searchText.toLowerCase();
                     var datasetFitered = unfilteredDataset.filter(function(item) {
-                        console.log(JSON.stringify(item));
                         return item.customFields.CO.Phone.toLowerCase().indexOf(text) > -1 ||
                             item.customFields.CO.Email.toLowerCase().indexOf(text) > -1 ||
                             item.lookupName.toLowerCase().indexOf(text) > -1;
@@ -245,6 +231,14 @@ const pgCustomers = extend(pgCustomersDesign)(
                     }, false);
                 }
             });
+            svFilter.android.hintTextColor = Color.create("#CCCCCC");
+            svFilter.androidfont = Font.create("Lato", 18, Font.NORMAL);
+            svFilter.ios.showsCancelButton = true;
+            svFilter.ios.onCancelButtonClicked = function() {
+                hideFilter();
+            };
+
+
             if (System.OS === "Android") {
                 svFilter.addToHeaderBar(page);
             }
@@ -283,6 +277,7 @@ const pgCustomers = extend(pgCustomersDesign)(
 
         function showFilter() {
             filterActive = true;
+            unfilteredDataset = dataset;
             //if (!svFilter) return;
             svFilter.addToHeaderBar(page);
             svFilter.requestFocus();
@@ -297,6 +292,13 @@ const pgCustomers = extend(pgCustomersDesign)(
             svFilter.removeFromHeaderBar(page);
             console.log("removed from header bar");
             page.headerBar.setItems(page.headerBar.items);
+            if (dataset !== unfilteredDataset) {
+                bindData({
+                    items: unfilteredDataset
+                }, false);
+
+            }
+            filterActive = false;
         }
     });
 
