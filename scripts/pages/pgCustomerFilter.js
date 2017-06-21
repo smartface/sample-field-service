@@ -7,7 +7,6 @@ const TextAlignment = require('sf-core/ui/textalignment');
 const FlexLayout = require('sf-core/ui/flexlayout');
 const Color = require('sf-core/ui/color');
 const Animator = require('sf-core/ui/animator');
-const System = require('sf-core/device/system');
 const KeyboardType = require('sf-core/ui/keyboardtype');
 const ActionKeyType = require('sf-core/ui/actionkeytype');
 const StatusBarStyle = require('sf-core/ui/statusbarstyle');
@@ -126,28 +125,16 @@ const pgCustomerFilter = extend(pgCustomerFilterDesign)(
             };
             page.btnCard.text = lang.cardNumber;
 
-            function doSearch() {
-                var filter = {
-                    start: 0
-                };
-                if (searchMode === "name" && tiName.text.length > 0) {
-                    filter.name = tiName.text;
-                }
-                else if (tiCard.text.length > 0) { // searchMode == "card" then
-                    filter.cardnumber = tiCard.text;
-                }
-                if (tiEmail.text.length > 0)
-                    filter.email = tiEmail.text;
-                if (tiPhone.text.length > 0)
-                    filter.phone = tiPhone.text;
-                filter.length = pageLength;
-                Router.go("pgCustomers", {
-                    filter: filter
-                });
-            }
-
             page.btnSearch.onPress = doSearch;
 
+        };
+
+        page.onShow = function onShow(data) {
+            baseOnShow && baseOnShow(data);
+            if (data) {
+                data.reset && reset();
+            }
+            page.statusBar.ios.style = StatusBarStyle.LIGHTCONTENT;
 
             var searchItem = new HeaderBarItem({
                 onPress: function() {
@@ -158,19 +145,33 @@ const pgCustomerFilter = extend(pgCustomerFilterDesign)(
             });
             page.headerBar.setItems([searchItem]);
             page.headerBar.items = [searchItem];
-        };
+            console.log("headerbarItems is set");
 
-        page.onShow = function onShow(data) {
-            baseOnShow && baseOnShow(data);
-            if (data) {
-                data.reset && reset();
-            }
-            page.statusBar.ios.style = StatusBarStyle.LIGHTCONTENT;
             //backAction(page, "pgDashboard");
             sliderDrawer.enabled = true;
             applyTheme();
             page.headerBar.title = lang.search;
         };
+
+        function doSearch() {
+            var filter = {
+                start: 0
+            };
+            if (searchMode === "name" && tiName.text.length > 0) {
+                filter.name = tiName.text;
+            }
+            else if (tiCard.text.length > 0) { // searchMode == "card" then
+                filter.cardnumber = tiCard.text;
+            }
+            if (tiEmail.text.length > 0)
+                filter.email = tiEmail.text;
+            if (tiPhone.text.length > 0)
+                filter.phone = tiPhone.text;
+            filter.length = pageLength;
+            Router.go("pgCustomers", {
+                filter: filter
+            });
+        }
 
         function applyTheme() {
             var selectedTheme = theme[theme.selected];
