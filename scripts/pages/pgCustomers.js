@@ -257,7 +257,7 @@ const pgCustomers = extend(pgCustomersDesign)(
             page.aiWait.color = selectedTheme.topBarColor;
 
             page.btnAddCustomer.backgroundImage = selectedTheme.addCustomer;
-            page.btnAddCustomer.android.elevation = 0;
+            page.btnAddCustomer.android && (page.btnAddCustomer.android.elevation = 0);
         }
 
         function bindData(customerData, append) {
