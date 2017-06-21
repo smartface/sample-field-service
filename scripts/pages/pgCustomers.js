@@ -41,12 +41,10 @@ const pgCustomers = extend(pgCustomersDesign)(
 
             Object.assign(page.btnAddCustomer, {
                 text: "",
-                borderRadius: 0,
                 onPress: function() {
                     Router.go("pgNewCustomer", filter);
                 }
             });
-
 
             var lvCustomers = page.lvCustomers;
             lvCustomers.itemCount = 0;
@@ -258,9 +256,8 @@ const pgCustomers = extend(pgCustomersDesign)(
             page.headerBar.backgroundColor = selectedTheme.topBarColor;
             page.aiWait.color = selectedTheme.topBarColor;
 
-            page.btnAddCustomer.backgroundImage = {
-                normal: selectedTheme.addCustomer
-            };
+            page.btnAddCustomer.backgroundImage = selectedTheme.addCustomer;
+            page.btnAddCustomer.android.elevation = 0;
         }
 
         function bindData(customerData, append) {
