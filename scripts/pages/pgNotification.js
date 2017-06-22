@@ -35,20 +35,23 @@ const pgNotification = extend(pgNotificationDesign)(
             });
             page.layout.addChild(svNotifications);
 
-            flNotifications = new FlexLayout({
-                left: 0,
-                right: 0,
-                height: 0,
-                align: ScrollView.Align.VERTICAL,
-                backgroundColor: Color.TRANSPARENT,
-            });
-            svNotifications.addChild(flNotifications);
-
+            if (svNotifications.layout)
+                flNotifications = svNotifications.layout;
+            else {
+                flNotifications = new FlexLayout({
+                    left: 0,
+                    right: 0,
+                    height: 0,
+                    align: ScrollView.Align.VERTICAL,
+                    backgroundColor: Color.TRANSPARENT,
+                });
+                svNotifications.addChild(flNotifications);
+            }
             page.android.onBackButtonPressed = function(e) {
                 Router.goBack("pgDashboard");
             };
-            
-            
+
+
         };
 
         page.onShow = function onShow(data) {
