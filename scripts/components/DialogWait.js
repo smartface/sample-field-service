@@ -22,7 +22,7 @@ const DialogWait = extend(DialogWaitDesign)(
 		dialogWait.lblSaving.text = lang.savingCustomer;
 		dialogWait.lblSaving.textColor = selectedTheme.topBarColor;
 		
-		dialogWait.aiWait.ios.style = ActivityIndicator.iOS.Type.WHITELARGE;
+		dialogWait.aiWait.ios.type = ActivityIndicator.iOS.Type.WHITELARGE;
 
 		dialogWait.showOK = function(callback) {
 			dialogWait.aiWait.visible = false;
