@@ -43,7 +43,7 @@ const pgLogin = extend(pgLoginDesign)(
                     doLogin();
                 }
             });
-            if(System.OS === "Android") {
+            if (System.OS === "Android") {
                 tiPassword.keyboardType = KeyboardType.android.TEXTNOSUGGESTIONS;
             }
 
@@ -71,6 +71,8 @@ const pgLogin = extend(pgLoginDesign)(
                 }, 10);
             }
             applyTheme();
+
+            //TODO: delete
         };
 
         function applyTheme() {
