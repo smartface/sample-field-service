@@ -131,19 +131,19 @@ const pgNewCustomer = extend(pgNewCustomerDesign)(
                     console.log("location err");
                     return;
                 }
-                Http.request({
-                        'url': 'http://maps.googleapis.com/maps/api/geocode/json?latlng=' + location.latitude + ',' + location.longitude + '&sensor=true',
-                        'method': 'GET'
-                    },
+                var requestOptions = {
+                    'url': 'http://maps.googleapis.com/maps/api/geocode/json?latlng=' + location.latitude + ',' + location.longitude + '&sensor=true',
+                    'method': 'GET'
+                };
+                Http.request(requestOptions,
                     function(response) {
-                        if (response.headers["Content-Type"] && response.headers["Content-Type"].indexOf("applicaiton/json") > -1 && tiAddress) {
+                        if (response.headers["Content-Type"] && response.headers["Content-Type"].indexOf("application/json") > -1 && tiAddress) {
                             var locationResponse = JSON.parse(response.body.toString());
                             if (locationResponse.status === "OK" && locationResponse.results &&
                                 locationResponse.results[0] && locationResponse.results[0].formatted_address
                             ) {
                                 tiAddress.text = locationResponse.results[0].formatted_address;
                             }
-
                         }
                     },
                     function() {
@@ -178,7 +178,7 @@ const pgNewCustomer = extend(pgNewCustomerDesign)(
                 isValid = false;
                 tiSurname.invalidate();
             }
-            
+
             tiAddress.hideKeyboard();
             tiEmail.hideKeyboard();
             tiName.hideKeyboard();
@@ -189,7 +189,7 @@ const pgNewCustomer = extend(pgNewCustomerDesign)(
                 return;
             }
             var dialogWait = DialogWait.show();
-
+            
             var customerData = {
                 lookupName: tiName.text + " " + tiSurname,
                 address: {
@@ -203,12 +203,14 @@ const pgNewCustomer = extend(pgNewCustomerDesign)(
             };
             if (pictureSet) {
                 var picture = page.btnPicture.backgroundImage.normal || page.btnPicture.backgroundImage;
-                customerData.CO.Picture = picture.compress(Image.Format.JPEG, 100).toBase64();
+                //TODO: increase quality
+                customerData.CO.Picture = picture.compress(Image.Format.JPEG, 1).toBase64();
             }
-
+            
             addCustomer(customerData, function(err, newCustomerData) {
                 console.log("after adding customer. Is there error? " + !!err);
                 if (err) {
+                    dialogWait.hide();
                     return alert(JSON.stringify(err), "Customer Service Error");
                 }
                 dialogWait.showOK(function() {
@@ -270,15 +272,15 @@ const pgNewCustomer = extend(pgNewCustomerDesign)(
             }
 
             function startCamera() {
-                if (System.OS === "startCameraAction") {
-                    permission.checkPermission([Application.android.Permissions.READ_EXTERNAL_STORAGE, Application.android.Permissions.CAMERA], function() {
+                permission.checkPermission(Application.android.Permissions.CAMERA, function(err) {
+                    if (err)
+                        return;
+                    permission.checkPermission(Application.android.Permissions.WRITE_EXTERNAL_STORAGE, function(err) {
+                        if (err)
+                            return;
                         startCameraAction();
                     });
-                    alert("This feature not implemented yet");
-                }
-                else {
-                    startCameraAction();
-                }
+                });
             }
 
             function startCameraAction() {

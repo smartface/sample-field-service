@@ -39,7 +39,7 @@ function getLocation(callback) {
             console.log("pending location request called");
             callback(null, location);
         });
-        Location.start();
+        Location.start(Location.android.Provider.AUTO);
         console.log("started location");
     }
 }

@@ -273,7 +273,7 @@ const pgCustomerDetails = extend(pgCustomerDetailsDesign)(
 
                 permission.checkPermission(Application.android.Permissions.WRITE_EXTERNAL_STORAGE, function(err) {
                     if (err) return;
-                    var fileName = "test.vcf";
+                    var fileName = customerInfo.firstName.toLocaleLowerCase() + "_" + customerInfo.lastName.toLowerCase() + ".vcf";
                     var path;
                     if (System.OS === "Android") {
                         path = Path.android.storages.internal + Path.Separator + fileName;

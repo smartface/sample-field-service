@@ -75,7 +75,6 @@ sliderDrawer.setLeftItem = function setLeftItem(headerBar, force) {
     headerBar.leftItemEnabled = true;
     var sliderDrawerItem = new HeaderBarItem({
         image: Image.createFromFile("images://sliderdrawer.png"),
-        title: "",
         color: Color.WHITE,
         onPress: function() {
             if (sliderDrawer.shown)
