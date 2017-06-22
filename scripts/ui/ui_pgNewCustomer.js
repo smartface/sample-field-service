@@ -75,34 +75,13 @@ const PgNewCustomer_ = extend(Page)(
 		var flAddressRow = new FlexLayout(flAddressRowStyle);
 		flContent.addChild(flAddressRow);
 		
-		const imgAddressStyle = getCombinedStyle(".imageView", {
-			width: 43.5,
-			height: null,
-			image: Image.createFromFile("images://new_customer_location.png")
-		});
-		var imgAddress = new ImageView(imgAddressStyle);
-		flAddressRow.addChild(imgAddress);
-		
-		const btnPictureStyle = getCombinedStyle(".button", {
-			height: 73,
+		const flPictureStyle = getCombinedStyle(".flexLayout", {
 			width: 73,
-			text: null,
-			borderRadius: 36.5,
-			borderColor: Color.create(255, 151, 151, 151),
-			borderWidth: 0.5,
-			backgroundColor: Color.create(255, 255, 255, 255)
+			height: 73,
+			backgroundColor: Color.create(0, 255, 255, 255)
 		});
-		var btnPicture = new Button(btnPictureStyle);
-		flNameSurnamePicture.addChild(btnPicture);
-		this.btnPicture = btnPicture;
-
-		const imgEmailStyle = getCombinedStyle(".imageView", {
-			width: 43.5,
-			height: null,
-			image: Image.createFromFile("images://new_customer_email.png")
-		});
-		var imgEmail = new ImageView(imgEmailStyle);
-		flEmailRow.addChild(imgEmail);
+		var flPicture = new FlexLayout(flPictureStyle);
+		flNameSurnamePicture.addChild(flPicture);
 		
 		const imgPhoneStyle = getCombinedStyle(".imageView", {
 			width: 43.5,
@@ -112,15 +91,21 @@ const PgNewCustomer_ = extend(Page)(
 		var imgPhone = new ImageView(imgPhoneStyle);
 		flPhoneRow.addChild(imgPhone);
 		
-		const flNameSurnameStyle = getCombinedStyle(".flexLayout", {
-			width: null,
+		const imgAddressStyle = getCombinedStyle(".imageView", {
+			width: 43.5,
 			height: null,
-			marginLeft: 18,
-			flexGrow: 1,
-			justifyContent: FlexLayout.JustifyContent.SPACE_BETWEEN
+			image: Image.createFromFile("images://new_customer_location.png")
 		});
-		var flNameSurname = new FlexLayout(flNameSurnameStyle);
-		flNameSurnamePicture.addChild(flNameSurname);
+		var imgAddress = new ImageView(imgAddressStyle);
+		flAddressRow.addChild(imgAddress);
+		
+		const imgEmailStyle = getCombinedStyle(".imageView", {
+			width: 43.5,
+			height: null,
+			image: Image.createFromFile("images://new_customer_email.png")
+		});
+		var imgEmail = new ImageView(imgEmailStyle);
+		flEmailRow.addChild(imgEmail);
 		
 		const flEmailStyle = getCombinedStyle(".flexLayout", {
 			width: null,
@@ -149,6 +134,16 @@ const PgNewCustomer_ = extend(Page)(
 		flAddressRow.addChild(flAddress);
 		this.flAddress = flAddress;
 
+		const flNameSurnameStyle = getCombinedStyle(".flexLayout", {
+			width: null,
+			height: null,
+			marginLeft: 18,
+			flexGrow: 1,
+			justifyContent: FlexLayout.JustifyContent.SPACE_BETWEEN
+		});
+		var flNameSurname = new FlexLayout(flNameSurnameStyle);
+		flNameSurnamePicture.addChild(flNameSurname);
+		
 		const flNameStyle = getCombinedStyle(".flexLayout", {
 			width: null,
 			height: 33
@@ -157,6 +152,23 @@ const PgNewCustomer_ = extend(Page)(
 		flNameSurname.addChild(flName);
 		this.flName = flName;
 
+		const btnPictureStyle = getCombinedStyle(".button", {
+			height: 73,
+			width: 73,
+			text: null,
+			borderRadius: 36.5,
+			borderColor: Color.create(255, 151, 151, 151),
+			borderWidth: 0.5,
+			backgroundColor: Color.create(255, 255, 255, 255),
+			left: 0,
+			top: 0,
+			visible: false,
+			positionType: FlexLayout.PositionType.ABSOLUTE
+		});
+		var btnPicture = new Button(btnPictureStyle);
+		flPicture.addChild(btnPicture);
+		this.btnPicture = btnPicture;
+
 		const flSurnameStyle = getCombinedStyle(".flexLayout", {
 			width: null,
 			height: 33
@@ -164,6 +176,21 @@ const PgNewCustomer_ = extend(Page)(
 		var flSurname = new FlexLayout(flSurnameStyle);
 		flNameSurname.addChild(flSurname);
 		this.flSurname = flSurname;
+
+		const imgPictureStyle = getCombinedStyle(".imageView", {
+			width: 73,
+			height: 73,
+			borderRadius: 36.5,
+			image: Image.createFromFile("images://new_customer_picture.png"),
+			visible: false,
+			top: 0,
+			borderWidth: 0.5,
+			borderColor: Color.create(255, 151, 151, 151),
+			positionType: FlexLayout.PositionType.ABSOLUTE
+		});
+		var imgPicture = new ImageView(imgPictureStyle);
+		flPicture.addChild(imgPicture);
+		this.imgPicture = imgPicture;
 
 		//assign the children to page 
 		this.children = Object.assign({}, {
@@ -180,7 +207,7 @@ const PgNewCustomer_ = extend(Page)(
 		
 		//assign the children of flNameSurnamePicture
 		flNameSurnamePicture.children = Object.assign({}, {
-			btnPicture: btnPicture,
+			flPicture: flPicture,
 			flNameSurname: flNameSurname
 		});
 		
@@ -200,6 +227,12 @@ const PgNewCustomer_ = extend(Page)(
 		flAddressRow.children = Object.assign({}, {
 			imgAddress: imgAddress,
 			flAddress: flAddress
+		});
+		
+		//assign the children of flPicture
+		flPicture.children = Object.assign({}, {
+			btnPicture: btnPicture,
+			imgPicture: imgPicture
 		});
 		
 		//assign the children of flNameSurname

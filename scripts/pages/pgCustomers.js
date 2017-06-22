@@ -23,6 +23,7 @@ const HeaderBarItem = require('sf-core/ui/headerbaritem');
 const SearchView = require('sf-core/ui/searchview');
 const System = require('sf-core/device/system');
 const Font = require('sf-core/ui/font');
+const mimicPressed = require("../lib/ui").mimicPressed;
 
 const pgCustomers = extend(pgCustomersDesign)(
     function(_super) {
@@ -36,8 +37,13 @@ const pgCustomers = extend(pgCustomersDesign)(
         var filterActive = false;
         var filter = null;
         var svFilter = null;
+        var touchControl = {};
         page.onLoad = function onLoad() {
             baseOnLoad && baseOnLoad();
+
+            mimicPressed(this.imgAddCustomer, function() {
+                Router.go("pgNewCustomer");
+            }, touchControl);
 
             Object.assign(page.btnAddCustomer, {
                 text: "",
@@ -182,7 +188,12 @@ const pgCustomers = extend(pgCustomersDesign)(
                         bindData(customers);
                         page.aiWait.visible = false;
                         page.lvCustomers.visible = true;
-                        page.btnAddCustomer.visible = true;
+                        if (System.OS === "iOS") {
+                            page.btnAddCustomer.visible = true;
+                        }
+                        else {
+                            page.imgAddCustomer.visible = true;
+                        }
                         initSearchView();
                     });
                 }, initTime);
@@ -251,6 +262,7 @@ const pgCustomers = extend(pgCustomersDesign)(
             page.aiWait.color = selectedTheme.topBarColor;
 
             page.btnAddCustomer.backgroundImage = selectedTheme.addCustomer;
+            page.imgAddCustomer.image = selectedTheme.addCustomer;
             page.btnAddCustomer.android && (page.btnAddCustomer.android.elevation = 0);
         }
 

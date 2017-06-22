@@ -1,9 +1,10 @@
 /*globals lang*/
-const Application = global.Application;
+const Application = require("sf-core/application");
 const extend = require('js-base/core/extend');
 const Router = require("sf-core/ui/router");
 const SliderDrawer = require('library/SliderDrawer');
 const user = require("../lib/user");
+const mimicPressed = require("../lib/ui/mimicPressed");
 
 const SliderDrawer_ = extend(SliderDrawer)(
 	//constructor
@@ -12,8 +13,6 @@ const SliderDrawer_ = extend(SliderDrawer)(
 		_super(this, props || SliderDrawer.defaults);
 		this.pageName = pageName;
 		var touchControl = {};
-
-
 		mimicPressed(this.flSignout, function() {
 			user.logOut(function(err, loggingOut) {
 				if (err) return;
@@ -92,30 +91,7 @@ const SliderDrawer_ = extend(SliderDrawer)(
 );
 
 
-function mimicPressed(target, eventFunction, touchControl) {
-	for (var i in target.children) {
-		let child = target.children[i];
-		child.touchEnabled = false;
-	}
 
-	target.onTouch = function(e) {
-		if (touchControl.target) {
-			touchControl.target.alpha = 1;
-		}
-		touchControl.target = target;
-		target.alpha = 0.5;
-	};
-
-	target.onTouchEnded = function(e) {
-		if (eventFunction && touchControl.target === target) {
-			eventFunction.call(target, e);
-		}
-		if (touchControl.target) {
-			touchControl.target.alpha = 1;
-		}
-		touchControl.target = null;
-	};
-}
 
 function hide() {
 	var sliderDrawer = require("../sliderDrawer");

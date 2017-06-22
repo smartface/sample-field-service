@@ -215,7 +215,7 @@
 				"borderColor": "rgba(0,0,0,1)",
 				"borderWidth": 0,
 				"children": [
-					"btnPicture",
+					"flPicture",
 					"flNameSurname"
 				],
 				"flexProps": {
@@ -243,64 +243,6 @@
 					"positionType": 0
 				},
 				"font": {}
-			}
-		},
-		{
-			"type": "Button",
-			"id": "1f4bf132",
-			"themeProps": {},
-			"userProps": {
-				"height": 73,
-				"width": 73,
-				"text": null,
-				"usePageVariable": true,
-				"borderRadius": 36.5,
-				"borderColor": "rgba( 151, 151, 151, 1 )",
-				"borderWidth": 0.5,
-				"backgroundColor": "rgba( 255, 255, 255, 1 )",
-				"layout": {},
-				"flex": {},
-				"font": {},
-				"flexProps": {},
-				"defaults": {}
-			},
-			"className": ".button",
-			"props": {
-				"width": 73,
-				"height": 73,
-				"touchEnabled": true,
-				"text": null,
-				"visible": true,
-				"backgroundColor": "rgba( 255, 255, 255, 1 )",
-				"alpha": 1,
-				"borderColor": "rgba( 151, 151, 151, 1 )",
-				"borderWidth": 0.5,
-				"textColor": "#FFFFFF",
-				"textAlignment": "MIDCENTER",
-				"usePageVariable": true,
-				"borderRadius": 36.5,
-				"children": [],
-				"font": {
-					"size": 16,
-					"bold": false,
-					"italic": false,
-					"family": "Arial"
-				},
-				"flexProps": {
-					"positionType": "RELATIVE",
-					"alignSelf": "AUTO"
-				},
-				"name": "btnPicture",
-				"parent": "flNameSurnamePicture",
-				"layout": {
-					"width": 36.5,
-					"height": 36.5,
-					"borderWidth": 0.25,
-					"borderRadius": 18.25
-				},
-				"flex": {
-					"positionType": 0
-				}
 			}
 		},
 		{
@@ -570,7 +512,7 @@
 					"positionType": 0
 				},
 				"font": {},
-				"imageURL": "https://dispatcher.r0.smartface.io/smartface9/fieldservice2/ui-editor/img/new_customer_email.png?os=iOS&osVersion=10.2&density=326&densityRatio=0.5&zoomLevel=0.5&brandModel=iPhone%207?random=0.609009998351006"
+				"imageURL": "https://dispatcher.r0.smartface.io/smartface9/fieldservice2/ui-editor/img/new_customer_email.png?os=iOS&osVersion=10.2&density=326&densityRatio=0.5&zoomLevel=0.5&brandModel=iPhone%207?random=0.44842399448876225"
 			}
 		},
 		{
@@ -729,7 +671,7 @@
 					"positionType": 0
 				},
 				"font": {},
-				"imageURL": "https://dispatcher.r0.smartface.io/smartface9/fieldservice2/ui-editor/img/new_customer_phone.png?os=iOS&osVersion=10.2&density=326&densityRatio=0.5&zoomLevel=0.5&brandModel=iPhone%207?random=0.630806868080722"
+				"imageURL": "https://dispatcher.r0.smartface.io/smartface9/fieldservice2/ui-editor/img/new_customer_phone.png?os=iOS&osVersion=10.2&density=326&densityRatio=0.5&zoomLevel=0.5&brandModel=iPhone%207?random=0.8098614348084638"
 			}
 		},
 		{
@@ -888,7 +830,7 @@
 					"positionType": 0
 				},
 				"font": {},
-				"imageURL": "https://dispatcher.r0.smartface.io/smartface9/fieldservice2/ui-editor/img/new_customer_location.png?os=iOS&osVersion=10.2&density=326&densityRatio=0.5&zoomLevel=0.5&brandModel=iPhone%207?random=0.9297677617097051"
+				"imageURL": "https://dispatcher.r0.smartface.io/smartface9/fieldservice2/ui-editor/img/new_customer_location.png?os=iOS&osVersion=10.2&density=326&densityRatio=0.5&zoomLevel=0.5&brandModel=iPhone%207?random=0.8468047976465503"
 			}
 		},
 		{
@@ -945,6 +887,189 @@
 					"flexGrow": 1
 				},
 				"font": {}
+			}
+		},
+		{
+			"type": "FlexLayout",
+			"id": "b9db9780",
+			"themeProps": {},
+			"userProps": {
+				"width": 73,
+				"height": 73,
+				"backgroundColor": "rgba( 255, 255, 255, 0 )",
+				"layout": {},
+				"flex": {},
+				"font": {},
+				"flexProps": {},
+				"defaults": {}
+			},
+			"className": ".flexLayout",
+			"props": {
+				"height": 73,
+				"width": 73,
+				"touchEnabled": true,
+				"visible": true,
+				"backgroundColor": "rgba( 255, 255, 255, 0 )",
+				"alpha": 1,
+				"borderColor": "rgba(0,0,0,1)",
+				"borderWidth": 0,
+				"children": [
+					"btnPicture",
+					"imgPicture"
+				],
+				"flexProps": {
+					"alignSelf": "AUTO",
+					"direction": "INHERIT",
+					"alignContent": "STRETCH",
+					"alignItems": "STRETCH",
+					"justifyContent": "FLEX_START",
+					"flexWrap": "NOWRAP",
+					"flexDirection": "COLUMN",
+					"positionType": "RELATIVE"
+				},
+				"name": "flPicture",
+				"parent": "flNameSurnamePicture",
+				"layout": {
+					"width": 36.5,
+					"height": 36.5,
+					"borderWidth": 0
+				},
+				"flex": {
+					"alignContent": 4,
+					"alignItems": 4,
+					"justifyContent": 0,
+					"flexWrap": 0,
+					"flexDirection": 0,
+					"positionType": 0
+				},
+				"font": {}
+			}
+		},
+		{
+			"type": "Button",
+			"id": "3f06ff3f",
+			"hiddenComponent": false,
+			"themeProps": {},
+			"userProps": {
+				"height": 73,
+				"width": 73,
+				"text": null,
+				"usePageVariable": true,
+				"borderRadius": 36.5,
+				"borderColor": "rgba( 151, 151, 151, 1 )",
+				"borderWidth": 0.5,
+				"backgroundColor": "rgba( 255, 255, 255, 1 )",
+				"left": 0,
+				"top": 0,
+				"visible": false,
+				"flexProps": {
+					"positionType": "ABSOLUTE"
+				},
+				"layout": {},
+				"flex": {},
+				"font": {},
+				"defaults": {}
+			},
+			"className": ".button",
+			"props": {
+				"width": 73,
+				"height": 73,
+				"touchEnabled": true,
+				"text": null,
+				"visible": false,
+				"backgroundColor": "rgba( 255, 255, 255, 1 )",
+				"alpha": 1,
+				"borderColor": "rgba( 151, 151, 151, 1 )",
+				"borderWidth": 0.5,
+				"textColor": "#FFFFFF",
+				"textAlignment": "MIDCENTER",
+				"usePageVariable": true,
+				"borderRadius": 36.5,
+				"children": [],
+				"left": 0,
+				"top": 0,
+				"font": {
+					"size": 16,
+					"bold": false,
+					"italic": false,
+					"family": "Arial"
+				},
+				"flexProps": {
+					"positionType": "ABSOLUTE",
+					"alignSelf": "AUTO"
+				},
+				"name": "btnPicture",
+				"parent": "flPicture",
+				"layout": {
+					"left": 0,
+					"top": 0,
+					"width": 36.5,
+					"height": 36.5,
+					"borderWidth": 0.25,
+					"borderRadius": 18.25
+				},
+				"flex": {
+					"positionType": 1
+				}
+			}
+		},
+		{
+			"type": "ImageView",
+			"id": "2eccd427",
+			"hiddenComponent": false,
+			"themeProps": {},
+			"userProps": {
+				"usePageVariable": true,
+				"width": 73,
+				"height": 73,
+				"borderRadius": 36.5,
+				"image": "new_customer_picture.png",
+				"visible": false,
+				"top": 0,
+				"borderWidth": 0.5,
+				"borderColor": "rgba( 151, 151, 151, 1 )",
+				"flexProps": {
+					"positionType": "ABSOLUTE"
+				},
+				"layout": {},
+				"flex": {},
+				"font": {},
+				"defaults": {}
+			},
+			"className": ".imageView",
+			"props": {
+				"width": 73,
+				"height": 73,
+				"touchEnabled": true,
+				"visible": false,
+				"imageFillType": "NORMAL",
+				"backgroundColor": "rgba(0,0,0,0)",
+				"alpha": 1,
+				"borderColor": "rgba( 151, 151, 151, 1 )",
+				"borderWidth": 0.5,
+				"children": [],
+				"usePageVariable": true,
+				"borderRadius": 36.5,
+				"image": "new_customer_picture.png",
+				"top": 0,
+				"flexProps": {
+					"alignSelf": "AUTO",
+					"positionType": "ABSOLUTE"
+				},
+				"name": "imgPicture",
+				"parent": "flPicture",
+				"layout": {
+					"top": 0,
+					"width": 36.5,
+					"height": 36.5,
+					"borderWidth": 0.25,
+					"borderRadius": 18.25
+				},
+				"flex": {
+					"positionType": 1
+				},
+				"font": {},
+				"imageURL": "https://dispatcher.r0.smartface.io/smartface9/fieldservice2/ui-editor/img/new_customer_picture.png?os=iOS&osVersion=10.2&density=326&densityRatio=0.5&zoomLevel=0.5&brandModel=iPhone%207?random=0.39121891129615816"
 			}
 		}
 	]

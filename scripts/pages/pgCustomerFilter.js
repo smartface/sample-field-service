@@ -145,7 +145,6 @@ const pgCustomerFilter = extend(pgCustomerFilterDesign)(
             });
             page.headerBar.setItems([searchItem]);
             page.headerBar.items = [searchItem];
-            console.log("headerbarItems is set");
 
             //backAction(page, "pgDashboard");
             sliderDrawer.enabled = true;

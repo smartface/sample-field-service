@@ -30,6 +30,7 @@ const textInputDefaults = {
 const theme = require("../lib/theme");
 const DialogWait = require("../components/DialogWait");
 const addCustomer = require("../model/customers").addCustomer;
+const mimicPressed = require("../lib/ui").mimicPressed;
 
 const pgNewCustomer = extend(pgNewCustomerDesign)(
     function(_super) {
@@ -39,6 +40,7 @@ const pgNewCustomer = extend(pgNewCustomerDesign)(
         var baseOnShow = page.onShow;
         var tiName, tiSurname, tiEmail, tiPhone, tiAddress;
         var pictureSet = false;
+        var touchControl = {};
         page.onLoad = function onLoad() {
             baseOnLoad && baseOnLoad();
 
@@ -66,10 +68,12 @@ const pgNewCustomer = extend(pgNewCustomerDesign)(
             page.headerBar.leftItem = cancelItem;
             page.headerBar.setLeftItem(cancelItem);
 
-            page.btnPicture.backgroundImage = {
-                normal: Image.createFromFile("images://new_customer_picture.png")
-            };
+            page.btnPicture.backgroundImage = Image.createFromFile("images://new_customer_picture.png");
             page.btnPicture.onPress = pickPicture;
+
+            mimicPressed(page.imgPicture, function() {
+                pickPicture();
+            }, touchControl);
 
 
             tiName = Object.assign(new TextInput, textInputDefaults, {
@@ -119,6 +123,15 @@ const pgNewCustomer = extend(pgNewCustomerDesign)(
                 }
             });
             page.flAddress.addChild(tiAddress);
+
+            if (System.OS === "iOS") {
+                page.btnPicture.visible = true;
+                page.imgPicture.visible = false;
+            }
+            else {
+                page.btnPicture.visible = false;
+                page.imgPicture.visible = true;
+            }
 
         };
 
@@ -189,7 +202,7 @@ const pgNewCustomer = extend(pgNewCustomerDesign)(
                 return;
             }
             var dialogWait = DialogWait.show();
-            
+
             var customerData = {
                 lookupName: tiName.text + " " + tiSurname,
                 address: {
@@ -202,11 +215,11 @@ const pgNewCustomer = extend(pgNewCustomerDesign)(
                 }
             };
             if (pictureSet) {
-                var picture = page.btnPicture.backgroundImage.normal || page.btnPicture.backgroundImage;
+                var picture = pictureSet;
                 //TODO: increase quality
                 customerData.CO.Picture = picture.compress(Image.Format.JPEG, 1).toBase64();
             }
-            
+
             addCustomer(customerData, function(err, newCustomerData) {
                 console.log("after adding customer. Is there error? " + !!err);
                 if (err) {
@@ -293,10 +306,11 @@ const pgNewCustomer = extend(pgNewCustomerDesign)(
 
             function onSuccess(picked) {
                 var image = picked.image;
-                page.btnPicture.backgroundImage = {
-                    normal: image
-                };
-                pictureSet = true;
+                pictureSet = image;
+                if (System.OS === "iOS")
+                    page.btnPicture.backgroundImage = pictureSet;
+                else
+                    page.imgPicture.image = pictureSet;
             }
         }
     });

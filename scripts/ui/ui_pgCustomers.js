@@ -12,6 +12,8 @@ const ListViewItem = require('sf-core/ui/listviewitem');
 const Color = require('sf-core/ui/color');
 const FlexLayout = require('sf-core/ui/flexlayout');
 const Button = require('sf-core/ui/button');
+const ImageView = require('sf-core/ui/imageview');
+const Image = require('sf-core/ui/image');
 const StatusBarStyle = require('sf-core/ui/statusbarstyle');
 
 
@@ -66,11 +68,25 @@ const PgCustomers_ = extend(Page)(
 		this.layout.addChild(btnAddCustomer);
 		this.btnAddCustomer = btnAddCustomer;
 
+		const imgAddCustomerStyle = getCombinedStyle(".imageView", {
+			width: 50,
+			height: 50,
+			right: 8.5,
+			bottom: 10,
+			image: Image.createFromFile("images://add_customer.png"),
+			visible: false,
+			positionType: FlexLayout.PositionType.ABSOLUTE
+		});
+		var imgAddCustomer = new ImageView(imgAddCustomerStyle);
+		this.layout.addChild(imgAddCustomer);
+		this.imgAddCustomer = imgAddCustomer;
+
 		//assign the children to page 
 		this.children = Object.assign({}, {
 			aiWait: aiWait,
 			lvCustomers: lvCustomers,
-			btnAddCustomer: btnAddCustomer
+			btnAddCustomer: btnAddCustomer,
+			imgAddCustomer: imgAddCustomer
 		});
 		
 	});
