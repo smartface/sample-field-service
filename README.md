@@ -9,9 +9,9 @@
 A sample app to demonstrate Field Service Application that can be developed by Smartface.
 
 <div style="display:flex;">
-<img width=250 src="https://github.com/smartface/sample-self-service/blob/master/temp/sc1.png">
-<img width=250 src="https://github.com/smartface/sample-self-service/blob/master/temp/sc2.png" hspace="30">
-<img width=250 src="https://github.com/smartface/sample-self-service/blob/master/temp/sc3.png">
+<img width=250 src="https://github.com/smartface/sample-field-service/blob/master/temp/sc1.png">
+<img width=250 src="https://github.com/smartface/sample-field-service/blob/master/temp/sc2.png" hspace="30">
+<img width=250 src="https://github.com/smartface/sample-field-service/blob/master/temp/sc3.png">
 </div>
 
 ## Installation
