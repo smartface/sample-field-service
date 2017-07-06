@@ -16,18 +16,10 @@
 				"defaults": {}
 			},
 			"className": ".page",
-			"version": "6.3.9",
+			"version": "6.3.19",
 			"props": {
 				"backgroundColor": "rgba( 255, 255, 255, 1 )",
 				"orientation": "PORTRAIT",
-				"children": [
-					"statusBar",
-					"headerBar",
-					"aiWait",
-					"lvCustomers",
-					"btnAddCustomer",
-					"imgAddCustomer"
-				],
 				"flexProps": {
 					"alignContent": "STRETCH",
 					"alignItems": "CENTER",
@@ -36,20 +28,16 @@
 					"flexWrap": "NOWRAP",
 					"justifyContent": "CENTER"
 				},
+				"children": [
+					"statusBar",
+					"headerBar",
+					"aiWait",
+					"lvCustomers",
+					"btnAddCustomer",
+					"imgAddCustomer"
+				],
 				"parent": null,
 				"name": "pgCustomers",
-				"layout": {
-					"width": 93.75,
-					"height": 145.55
-				},
-				"flex": {
-					"alignContent": 4,
-					"alignItems": 2,
-					"flexDirection": 0,
-					"flexWrap": 0,
-					"justifyContent": 1
-				},
-				"font": {},
 				"width": 187.5,
 				"height": 301.5
 			}
@@ -76,12 +64,6 @@
 				"parent": "pgCustomers",
 				"isRemovable": false,
 				"name": "statusBar",
-				"layout": {
-					"height": 10
-				},
-				"flex": {},
-				"font": {},
-				"flexProps": {},
 				"height": 20
 			}
 		},
@@ -109,12 +91,6 @@
 				"parent": "pgCustomers",
 				"isRemovable": false,
 				"name": "headerBar",
-				"layout": {
-					"height": 22
-				},
-				"flex": {},
-				"font": {},
-				"flexProps": {},
 				"height": 44
 			}
 		},
@@ -162,28 +138,15 @@
 				"right": 0,
 				"bottom": 0,
 				"usePageVariable": true,
-				"children": [],
 				"flexProps": {
 					"alignSelf": "AUTO",
 					"positionType": "ABSOLUTE",
 					"right": 0,
 					"bottom": 0
 				},
+				"children": [],
 				"name": "lvCustomers",
-				"parent": "pgCustomers",
-				"layout": {
-					"right": 0,
-					"bottom": 0,
-					"left": 0,
-					"top": 3.715,
-					"borderWidth": 0
-				},
-				"flex": {
-					"positionType": 1,
-					"right": 0,
-					"bottom": 0
-				},
-				"font": {}
+				"parent": "pgCustomers"
 			}
 		},
 		{
@@ -228,7 +191,6 @@
 				"borderRadius": 25,
 				"right": 8.5,
 				"bottom": 10,
-				"children": [],
 				"font": {
 					"size": 16,
 					"bold": false,
@@ -241,21 +203,9 @@
 					"right": 8.5,
 					"bottom": 10
 				},
+				"children": [],
 				"name": "btnAddCustomer",
-				"parent": "pgCustomers",
-				"layout": {
-					"right": 4.25,
-					"bottom": 5,
-					"width": 25,
-					"height": 25,
-					"borderWidth": 0,
-					"borderRadius": 12.5
-				},
-				"flex": {
-					"positionType": 1,
-					"right": 8.5,
-					"bottom": 10
-				}
+				"parent": "pgCustomers"
 			}
 		},
 		{
@@ -284,24 +234,13 @@
 				"minHeight": 21,
 				"minWidth": 21,
 				"usePageVariable": true,
-				"children": [],
 				"flexProps": {
 					"positionType": "RELATIVE",
 					"alignSelf": "AUTO"
 				},
+				"children": [],
 				"name": "aiWait",
 				"parent": "pgCustomers",
-				"layout": {
-					"width": 21,
-					"height": 21,
-					"minWidth": 10.5,
-					"minHeight": 10.5,
-					"borderWidth": 0
-				},
-				"flex": {
-					"positionType": 0
-				},
-				"font": {},
 				"input": {
 					"height": 21,
 					"width": 21
@@ -313,8 +252,8 @@
 			"id": "86a2247c",
 			"themeProps": {},
 			"userProps": {
-				"width": 50,
-				"height": 50,
+				"width": 55,
+				"height": 55,
 				"right": 8.5,
 				"bottom": 10,
 				"image": "add_customer.png",
@@ -324,16 +263,12 @@
 					"positionType": "ABSOLUTE",
 					"right": 8.5,
 					"bottom": 10
-				},
-				"layout": {},
-				"flex": {},
-				"font": {},
-				"defaults": {}
+				}
 			},
 			"className": ".imageView",
 			"props": {
-				"width": 50,
-				"height": 50,
+				"width": 55,
+				"height": 55,
 				"touchEnabled": true,
 				"visible": false,
 				"imageFillType": "NORMAL",
@@ -344,30 +279,17 @@
 				"right": 8.5,
 				"bottom": 10,
 				"image": "add_customer.png",
-				"children": [],
+				"usePageVariable": true,
 				"flexProps": {
 					"alignSelf": "AUTO",
 					"positionType": "ABSOLUTE",
 					"right": 8.5,
 					"bottom": 10
 				},
+				"children": [],
 				"name": "imgAddCustomer",
 				"parent": "pgCustomers",
-				"layout": {
-					"right": 4.25,
-					"bottom": 5,
-					"width": 25,
-					"height": 25,
-					"borderWidth": 0
-				},
-				"flex": {
-					"positionType": 1,
-					"right": 8.5,
-					"bottom": 10
-				},
-				"font": {},
-				"imageURL": "https://dispatcher.r0.smartface.io/smartface9/fieldservice2/ui-editor/img/add_customer.png?os=iOS&osVersion=10.2&density=326&densityRatio=0.5&zoomLevel=0.5&brandModel=iPhone%207?random=0.8435136889131132",
-				"usePageVariable": true
+				"imageURL": "https://dispatcher.r0.smartface.io/smartface9/fieldservice2/ui-editor/img/add_customer.png?os=iOS&osVersion=10.2&density=326&densityRatio=0.5&zoomLevel=0.5&brandModel=iPhone%207?random=0.18470967625353674"
 			}
 		}
 	]

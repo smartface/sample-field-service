@@ -69,8 +69,8 @@ const PgCustomers_ = extend(Page)(
 		this.btnAddCustomer = btnAddCustomer;
 
 		const imgAddCustomerStyle = getCombinedStyle(".imageView", {
-			width: 50,
-			height: 50,
+			width: 55,
+			height: 55,
 			right: 8.5,
 			bottom: 10,
 			image: Image.createFromFile("images://add_customer.png"),
