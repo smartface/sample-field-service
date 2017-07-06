@@ -1,0 +1,11 @@
+{
+  "name": "registrationPage",
+  "title": "Registration Page",
+  "description": "Registration Page",
+  "tags": [],
+  "resources": {
+    "fonts": ["Nunito"],
+    "images": ["sign_up_head_image"]
+  },
+  "version": "1.0.0"
+}

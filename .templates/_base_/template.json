@@ -1,0 +1,11 @@
+{
+  "name": "%name%",
+  "title": "%title%",
+  "description": "",
+  "tags": [],
+  "resources": {
+    "fonts": [],
+    "images": []
+  },
+  "version": "1.0.0"
+}

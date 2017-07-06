@@ -1,0 +1,11 @@
+{
+  "name": "profilePage",
+  "title": "Profile Page",
+  "description": "Profile Page",
+  "tags": [],
+  "resources": {
+    "fonts": [],
+    "images": ["right_arrow"]
+  },
+  "version": "1.0.0"
+}

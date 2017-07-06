@@ -1,0 +1,117 @@
+{
+	"components": [
+		{
+			"type": "Page",
+			"id": "9e906df0",
+			"themeProps": {},
+			"userProps": {
+				"flexProps": {
+					"flexDirection": "COLUMN",
+					"flexWrap": "WRAP"
+				},
+				"layout": {},
+				"flex": {},
+				"font": {},
+				"defaults": {}
+			},
+			"className": ".page",
+			"version": "6.3.19",
+			"props": {
+				"backgroundColor": "#EEEEEE",
+				"orientation": "PORTRAIT",
+				"children": [
+					"statusBar",
+					"headerBar"
+				],
+				"flexProps": {
+					"alignContent": "STRETCH",
+					"alignItems": "STRETCH",
+					"direction": "INHERIT",
+					"flexDirection": "ROW",
+					"flexWrap": "WRAP",
+					"justifyContent": "FLEX_START"
+				},
+				"parent": null,
+				"name": "mapPage",
+				"layout": {
+					"width": 360,
+					"height": 558.4
+				},
+				"flex": {
+					"alignContent": 4,
+					"alignItems": 4,
+					"flexDirection": 2,
+					"flexWrap": 1,
+					"justifyContent": 0
+				},
+				"font": {},
+				"width": 360,
+				"height": 558.4
+			}
+		},
+		{
+			"type": "StatusBar",
+			"id": "a80b2b6a",
+			"hiddenComponent": false,
+			"themeProps": {},
+			"userProps": {
+				"color": "rgba( 55, 134, 255, 1 )",
+				"layout": {},
+				"flex": {},
+				"font": {},
+				"flexProps": {},
+				"defaults": {}
+			},
+			"className": ".statusBar",
+			"props": {
+				"color": "rgba( 55, 134, 255, 1 )",
+				"visible": true,
+				"children": [],
+				"parent": "mapPage",
+				"isRemovable": false,
+				"name": "statusBar",
+				"layout": {
+					"height": 25
+				},
+				"flex": {},
+				"font": {},
+				"flexProps": {},
+				"height": 25
+			}
+		},
+		{
+			"type": "HeaderBar",
+			"id": "191ebe9e",
+			"hiddenComponent": false,
+			"themeProps": {},
+			"userProps": {
+				"title": "Map",
+				"backgroundColor": "rgba( 55, 134, 255, 1 )",
+				"titleColor": "rgba( 255, 255, 255, 1 )",
+				"layout": {},
+				"flex": {},
+				"font": {},
+				"flexProps": {},
+				"defaults": {}
+			},
+			"className": ".headerBar",
+			"props": {
+				"title": "Map",
+				"titleColor": "rgba( 255, 255, 255, 1 )",
+				"visible": true,
+				"backgroundColor": "rgba( 55, 134, 255, 1 )",
+				"children": [],
+				"parent": "mapPage",
+				"isRemovable": false,
+				"name": "headerBar",
+				"layout": {
+					"height": 56.6
+				},
+				"flex": {},
+				"font": {},
+				"flexProps": {},
+				"height": 56.6
+			}
+		}
+	]
+}

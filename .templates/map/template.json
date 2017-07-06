@@ -1,0 +1,11 @@
+{
+  "name": "navigationPage",
+  "title": "Navigation Page",
+  "description": "Navigation Page",
+  "tags": [],
+  "resources": {
+    "fonts": [],
+    "images": ["current_location"]
+  },
+  "version": "1.0.0"
+}

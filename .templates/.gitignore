@@ -1,0 +1,11 @@
+*/.c9/*
+*/.smf/*
+*/.npm
+*/.tmp
+*/output
+*/plugin
+*/scripts/node_modules
+*/scripts/ui
+*/scripts/settings.json
+*/scripts/themes
+*/.templates
