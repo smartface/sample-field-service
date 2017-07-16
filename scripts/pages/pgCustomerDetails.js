@@ -120,6 +120,7 @@ const pgCustomerDetails = extend(pgCustomerDetailsDesign)(
                         //TODO due to the bug of missing blob
                         //customerDetails.picture = Image.createFromFile("images://customers_1.png");
                         page.lblName.text = customerData.lookupName;
+                        page.lblTitle.text = customerData.customFields.CO.Title;
                         customerInfo = {
                             displayName: customerData.lookupName || "",
                             phoneNumber: customerData.customFields.CO.Phone || "",
@@ -139,7 +140,7 @@ const pgCustomerDetails = extend(pgCustomerDetailsDesign)(
 
 
                 }, initTime);
-                backAction(page, goBack, "DARK");
+                backAction(page, goBack);
             }
         };
 

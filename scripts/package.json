@@ -6,6 +6,7 @@
     "sf-core": "^1.1.13-beta.0",
     "sf-extension-alert": "git+https://github.com/alperozisik/sf-extension-alert.git",
     "sf-extension-mcs": "^2.0.0",
+    "sf-extension-utils": "^1.1.2",
     "timers-smf": "git+https://github.com/alperozisik/timers-smf.git"
   }
 }

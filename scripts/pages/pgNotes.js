@@ -62,6 +62,8 @@ function onShow(superOnShow, data) {
 
 	backAction(page);
 	applyTheme.call(page);
+	
+	page.headerBar.title = lang.Notes;
 }
 
 function applyTheme() {
@@ -82,7 +84,7 @@ function onLoad(superOnLoad) {
 	const flNoteRowId = 4845;
 	const lblNoteNameId = 4846;
 	const lblDateId = 4847;
-
+	
 
 	lvNotes.onRowCreate = function() {
 		var lvNotesItem = new ListViewItem();

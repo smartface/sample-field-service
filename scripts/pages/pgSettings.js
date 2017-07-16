@@ -23,6 +23,7 @@ const pgSettings = extend(pgSettingsDesign)(
 
             page.lblAbout.text = lang.about + " v" + Application.version;
             page.swNotifications.toggle = true;
+            page.lblText.text = lang.aboutContent;
 
             page.flNavySelection.onTouchEnded = function() {
                 if (theme.selected !== theme.themes.NAVY) {

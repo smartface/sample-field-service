@@ -90,7 +90,8 @@ const PgCustomerDetails_ = extend(Page)(
 		if(lblTitleStyle.scrollEnabled === false)
 			lblTitle.ios && (lblTitle.ios.scrollEnabled = false);
 		this.layout.addChild(lblTitle);
-		
+		this.lblTitle = lblTitle;
+
 		const flLineStyle = getCombinedStyle(".flexLayout", {
 			height: 0.5,
 			width: null,

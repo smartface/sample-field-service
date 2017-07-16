@@ -109,7 +109,7 @@ const PgSettings_ = extend(Page)(
 
 		const lblTextStyle = getCombinedStyle(".label", {
 			width: null,
-			text: "Lorem ipsum dolor sit amet, veniam melius duo ei, ea his esse sonet, eu rebum tation vituperatoribus his. Lorem ipsum dolor sit amet, veniam melius duo ei eu rebum tation vituperatoribus his.",
+			text: "With the Field Service application, you manage field operations and deliver the best customer service on-the-go",
 			height: null,
 			textColor: Color.create(255, 155, 155, 155),
 			backgroundColor: Color.create(0, 255, 255, 255),

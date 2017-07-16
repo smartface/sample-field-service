@@ -3,7 +3,9 @@
 		{
 			"type": "Page",
 			"id": "c821d7f2",
-			"themeProps": {},
+			"themeProps": {
+				"Highlights": "Default"
+			},
 			"userProps": {
 				"backgroundColor": "rgba( 255, 255, 255, 1 )",
 				"layout": {},
@@ -42,7 +44,9 @@
 		{
 			"type": "StatusBar",
 			"id": "a2c76033",
-			"themeProps": {},
+			"themeProps": {
+				"Highlights": "Default"
+			},
 			"userProps": {
 				"color": "rgba( 44, 50, 57, 1 )",
 				"style": "LIGHTCONTENT",
@@ -67,7 +71,9 @@
 		{
 			"type": "HeaderBar",
 			"id": "d24043bc",
-			"themeProps": {},
+			"themeProps": {
+				"Highlights": "Default"
+			},
 			"userProps": {
 				"title": "Settings",
 				"backgroundColor": "rgba( 44, 50, 57, 1 )",
@@ -94,7 +100,10 @@
 		{
 			"type": "FlexLayout",
 			"id": "069f4a53",
-			"themeProps": {},
+			"themeProps": {
+				"Sizes": "Default",
+				"Highlights": "Default"
+			},
 			"userProps": {
 				"backgroundColor": "rgba( 255, 255, 255, 0 )",
 				"width": null,
@@ -145,7 +154,10 @@
 		{
 			"type": "FlexLayout",
 			"id": "87542d4c",
-			"themeProps": {},
+			"themeProps": {
+				"Sizes": "Default",
+				"Highlights": "Default"
+			},
 			"userProps": {
 				"backgroundColor": "rgba( 255, 255, 255, 0 )",
 				"width": null,
@@ -197,7 +209,10 @@
 		{
 			"type": "FlexLayout",
 			"id": "43744164",
-			"themeProps": {},
+			"themeProps": {
+				"Sizes": "Default",
+				"Highlights": "Default"
+			},
 			"userProps": {
 				"backgroundColor": "rgba( 255, 255, 255, 0 )",
 				"width": null,
@@ -250,7 +265,10 @@
 			"type": "Label",
 			"id": "db4cb20a",
 			"hiddenComponent": false,
-			"themeProps": {},
+			"themeProps": {
+				"Sizes": "Default",
+				"Highlights": "Default"
+			},
 			"userProps": {
 				"text": "Theme",
 				"width": null,
@@ -303,7 +321,10 @@
 		{
 			"type": "FlexLayout",
 			"id": "6a45f740",
-			"themeProps": {},
+			"themeProps": {
+				"Sizes": "Default",
+				"Highlights": "Default"
+			},
 			"userProps": {
 				"backgroundColor": "rgba( 255, 255, 255, 0 )",
 				"width": 68,
@@ -351,7 +372,10 @@
 		{
 			"type": "FlexLayout",
 			"id": "b69378c1",
-			"themeProps": {},
+			"themeProps": {
+				"Sizes": "Default",
+				"Highlights": "Default"
+			},
 			"userProps": {
 				"backgroundColor": "rgba( 255, 255, 255, 0 )",
 				"width": 30,
@@ -401,7 +425,10 @@
 		{
 			"type": "FlexLayout",
 			"id": "ce1d1ba0",
-			"themeProps": {},
+			"themeProps": {
+				"Sizes": "Default",
+				"Highlights": "Default"
+			},
 			"userProps": {
 				"width": 20,
 				"height": 20.28,
@@ -444,7 +471,10 @@
 		{
 			"type": "FlexLayout",
 			"id": "70f4ad02",
-			"themeProps": {},
+			"themeProps": {
+				"Sizes": "Default",
+				"Highlights": "Default"
+			},
 			"userProps": {
 				"backgroundColor": "rgba( 255, 255, 255, 0 )",
 				"width": 30,
@@ -494,7 +524,10 @@
 		{
 			"type": "FlexLayout",
 			"id": "3b8720f1",
-			"themeProps": {},
+			"themeProps": {
+				"Sizes": "Default",
+				"Highlights": "Default"
+			},
 			"userProps": {
 				"width": 20,
 				"height": 20.28,
@@ -538,7 +571,10 @@
 			"type": "Label",
 			"id": "66a34714",
 			"hiddenComponent": false,
-			"themeProps": {},
+			"themeProps": {
+				"Sizes": "Default",
+				"Highlights": "Default"
+			},
 			"userProps": {
 				"text": "Notification",
 				"width": null,
@@ -592,7 +628,10 @@
 		{
 			"type": "Switch",
 			"id": "76489fb4",
-			"themeProps": {},
+			"themeProps": {
+				"Sizes": "Default",
+				"Highlights": "Default"
+			},
 			"userProps": {
 				"minWidth": 51,
 				"minHeight": 31,
@@ -642,7 +681,10 @@
 		{
 			"type": "Label",
 			"id": "032dc6d7",
-			"themeProps": {},
+			"themeProps": {
+				"Sizes": "Default",
+				"Highlights": "Default"
+			},
 			"userProps": {
 				"width": null,
 				"text": "About v1.0.0",
@@ -691,10 +733,13 @@
 		{
 			"type": "Label",
 			"id": "7b6c74f1",
-			"themeProps": {},
+			"themeProps": {
+				"Sizes": "Default",
+				"Highlights": "Default"
+			},
 			"userProps": {
 				"width": null,
-				"text": "Lorem ipsum dolor sit amet, veniam melius duo ei, ea his esse sonet, eu rebum tation vituperatoribus his. Lorem ipsum dolor sit amet, veniam melius duo ei eu rebum tation vituperatoribus his.",
+				"text": "With the Field Service application, you manage field operations and deliver the best customer service on-the-go",
 				"usePageVariable": true,
 				"height": null,
 				"textColor": "rgba( 155, 155, 155, 1 )",
@@ -707,17 +752,14 @@
 				},
 				"flexProps": {
 					"flexGrow": 1
-				},
-				"layout": {},
-				"flex": {},
-				"defaults": {}
+				}
 			},
 			"className": ".label",
 			"props": {
 				"width": null,
 				"height": null,
 				"touchEnabled": true,
-				"text": "Lorem ipsum dolor sit amet, veniam melius duo ei, ea his esse sonet, eu rebum tation vituperatoribus his. Lorem ipsum dolor sit amet, veniam melius duo ei eu rebum tation vituperatoribus his.",
+				"text": "With the Field Service application, you manage field operations and deliver the best customer service on-the-go",
 				"visible": true,
 				"multiline": true,
 				"backgroundColor": "rgba( 255, 255, 255, 0 )",
@@ -747,7 +789,10 @@
 		{
 			"type": "FlexLayout",
 			"id": "72f4ecf2",
-			"themeProps": {},
+			"themeProps": {
+				"Sizes": "Default",
+				"Highlights": "Default"
+			},
 			"userProps": {
 				"usePageVariable": true,
 				"width": null,
@@ -800,7 +845,10 @@
 		{
 			"type": "FlexLayout",
 			"id": "d038acef",
-			"themeProps": {},
+			"themeProps": {
+				"Sizes": "Default",
+				"Highlights": "Default"
+			},
 			"userProps": {
 				"usePageVariable": true,
 				"width": null,
