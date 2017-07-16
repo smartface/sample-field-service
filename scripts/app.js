@@ -37,11 +37,15 @@ Router.add("pgCustomers", require("./pages/pgCustomers"));
 Router.add("pgCustomerDetails", require("./pages/pgCustomerDetails"));
 Router.add("pgNewCustomer", require("./pages/pgNewCustomer"));
 Router.add("pgSettings", require("./pages/pgSettings"));
+Router.add("pgNotes", require("./pages/pgNotes"));
+Router.add("pgNoteContent", require("./pages/pgNoteContent"));
+
 
 
 Router.go("pgLogin", {
     checkUpdate: true
 });
+
 
 if (System.OS === "Android") {
     sliderDrawer = require("./sliderDrawer");
@@ -50,4 +54,3 @@ if (System.OS === "Android") {
 
 // Router.add("test", require("./ui/ui_newPage001"));
 // Router.go("test");
-

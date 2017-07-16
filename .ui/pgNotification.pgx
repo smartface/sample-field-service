@@ -24,7 +24,7 @@
 				"defaults": {}
 			},
 			"className": ".page",
-			"version": "6.3.9",
+			"version": "6.4.1",
 			"props": {
 				"backgroundColor": "rgba( 255, 255, 255, 1 )",
 				"orientation": "PORTRAIT",
@@ -45,19 +45,9 @@
 					"justifyContent": "CENTER"
 				},
 				"name": "pgNotification",
-				"layout": {
-					"width": 93.75,
-					"height": 150.75
-				},
-				"flex": {
-					"alignContent": 4,
-					"alignItems": 2,
-					"flexDirection": 0,
-					"flexWrap": 0,
-					"justifyContent": 1
-				},
 				"font": {}
-			}
+			},
+			"initialized": true
 		},
 		{
 			"type": "StatusBar",
@@ -87,12 +77,8 @@
 				"height": 20,
 				"style": "LIGHTCONTENT",
 				"children": [],
-				"layout": {
-					"height": 10
-				},
 				"parent": "pgNotification",
 				"name": "statusBar",
-				"flex": {},
 				"font": {},
 				"flexProps": {}
 			}
@@ -125,12 +111,8 @@
 				"isRemovable": false,
 				"height": 44,
 				"children": [],
-				"layout": {
-					"height": 22
-				},
 				"parent": "pgNotification",
 				"name": "headerBar",
-				"flex": {},
 				"font": {},
 				"flexProps": {}
 			}
@@ -156,7 +138,13 @@
 				"layout": {},
 				"flex": {},
 				"font": {},
-				"defaults": {}
+				"defaults": {},
+				"input": {
+					"height": 21,
+					"width": 21
+				},
+				"minHeight": 21,
+				"minWidth": 21
 			},
 			"className": ".activityIndicator",
 			"props": {
@@ -185,18 +173,6 @@
 				},
 				"name": "aiWait",
 				"parent": "pgNotification",
-				"layout": {
-					"width": 21,
-					"height": 21,
-					"minWidth": 10.5,
-					"minHeight": 10.5,
-					"borderWidth": 0
-				},
-				"flex": {
-					"positionType": 0,
-					"right": 0,
-					"bottom": 0
-				},
 				"font": {},
 				"input": {
 					"height": 21,

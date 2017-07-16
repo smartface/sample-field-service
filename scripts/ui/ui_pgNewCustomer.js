@@ -35,8 +35,8 @@ const PgNewCustomer_ = extend(Page)(
 			right: 15,
 			bottom: 0,
 			positionType: FlexLayout.PositionType.ABSOLUTE
-		});
-		var flContent = new FlexLayout(flContentStyle);
+		});  
+		var flContent = new FlexLayout(flContentStyle);  
 		this.layout.addChild(flContent);
 		
 		const flNameSurnamePictureStyle = getCombinedStyle(".flexLayout", {
@@ -44,8 +44,8 @@ const PgNewCustomer_ = extend(Page)(
 			width: null,
 			height: 88.76,
 			flexDirection: FlexLayout.FlexDirection.ROW
-		});
-		var flNameSurnamePicture = new FlexLayout(flNameSurnamePictureStyle);
+		});  
+		var flNameSurnamePicture = new FlexLayout(flNameSurnamePictureStyle);  
 		flContent.addChild(flNameSurnamePicture);
 		
 		const flEmailRowStyle = getCombinedStyle(".flexLayout", {
@@ -53,8 +53,8 @@ const PgNewCustomer_ = extend(Page)(
 			height: 33,
 			marginTop: 42,
 			flexDirection: FlexLayout.FlexDirection.ROW
-		});
-		var flEmailRow = new FlexLayout(flEmailRowStyle);
+		});  
+		var flEmailRow = new FlexLayout(flEmailRowStyle);  
 		flContent.addChild(flEmailRow);
 		
 		const flPhoneRowStyle = getCombinedStyle(".flexLayout", {
@@ -62,8 +62,8 @@ const PgNewCustomer_ = extend(Page)(
 			height: 33,
 			marginTop: 24,
 			flexDirection: FlexLayout.FlexDirection.ROW
-		});
-		var flPhoneRow = new FlexLayout(flPhoneRowStyle);
+		});  
+		var flPhoneRow = new FlexLayout(flPhoneRowStyle);  
 		flContent.addChild(flPhoneRow);
 		
 		const flAddressRowStyle = getCombinedStyle(".flexLayout", {
@@ -71,48 +71,48 @@ const PgNewCustomer_ = extend(Page)(
 			height: 33,
 			marginTop: 24,
 			flexDirection: FlexLayout.FlexDirection.ROW
-		});
-		var flAddressRow = new FlexLayout(flAddressRowStyle);
+		});  
+		var flAddressRow = new FlexLayout(flAddressRowStyle);  
 		flContent.addChild(flAddressRow);
 		
 		const flPictureStyle = getCombinedStyle(".flexLayout", {
 			width: 73,
 			height: 73,
 			backgroundColor: Color.create(0, 255, 255, 255)
-		});
-		var flPicture = new FlexLayout(flPictureStyle);
+		});  
+		var flPicture = new FlexLayout(flPictureStyle);  
 		flNameSurnamePicture.addChild(flPicture);
 		
 		const imgPhoneStyle = getCombinedStyle(".imageView", {
 			width: 43.5,
 			height: null,
 			image: Image.createFromFile("images://new_customer_phone.png")
-		});
-		var imgPhone = new ImageView(imgPhoneStyle);
+		});  
+		var imgPhone = new ImageView(imgPhoneStyle);  
 		flPhoneRow.addChild(imgPhone);
 		
 		const imgAddressStyle = getCombinedStyle(".imageView", {
 			width: 43.5,
 			height: null,
 			image: Image.createFromFile("images://new_customer_location.png")
-		});
-		var imgAddress = new ImageView(imgAddressStyle);
+		});  
+		var imgAddress = new ImageView(imgAddressStyle);  
 		flAddressRow.addChild(imgAddress);
 		
 		const imgEmailStyle = getCombinedStyle(".imageView", {
 			width: 43.5,
 			height: null,
 			image: Image.createFromFile("images://new_customer_email.png")
-		});
-		var imgEmail = new ImageView(imgEmailStyle);
+		});  
+		var imgEmail = new ImageView(imgEmailStyle);  
 		flEmailRow.addChild(imgEmail);
 		
 		const flEmailStyle = getCombinedStyle(".flexLayout", {
 			width: null,
 			height: null,
 			flexGrow: 1
-		});
-		var flEmail = new FlexLayout(flEmailStyle);
+		});  
+		var flEmail = new FlexLayout(flEmailStyle);  
 		flEmailRow.addChild(flEmail);
 		this.flEmail = flEmail;
 
@@ -120,8 +120,8 @@ const PgNewCustomer_ = extend(Page)(
 			width: null,
 			height: null,
 			flexGrow: 1
-		});
-		var flPhone = new FlexLayout(flPhoneStyle);
+		});  
+		var flPhone = new FlexLayout(flPhoneStyle);  
 		flPhoneRow.addChild(flPhone);
 		this.flPhone = flPhone;
 
@@ -129,8 +129,8 @@ const PgNewCustomer_ = extend(Page)(
 			width: null,
 			height: null,
 			flexGrow: 1
-		});
-		var flAddress = new FlexLayout(flAddressStyle);
+		});  
+		var flAddress = new FlexLayout(flAddressStyle);  
 		flAddressRow.addChild(flAddress);
 		this.flAddress = flAddress;
 
@@ -140,15 +140,15 @@ const PgNewCustomer_ = extend(Page)(
 			marginLeft: 18,
 			flexGrow: 1,
 			justifyContent: FlexLayout.JustifyContent.SPACE_BETWEEN
-		});
-		var flNameSurname = new FlexLayout(flNameSurnameStyle);
+		});  
+		var flNameSurname = new FlexLayout(flNameSurnameStyle);  
 		flNameSurnamePicture.addChild(flNameSurname);
 		
 		const flNameStyle = getCombinedStyle(".flexLayout", {
 			width: null,
 			height: 33
-		});
-		var flName = new FlexLayout(flNameStyle);
+		});  
+		var flName = new FlexLayout(flNameStyle);  
 		flNameSurname.addChild(flName);
 		this.flName = flName;
 
@@ -164,16 +164,16 @@ const PgNewCustomer_ = extend(Page)(
 			top: 0,
 			visible: false,
 			positionType: FlexLayout.PositionType.ABSOLUTE
-		});
-		var btnPicture = new Button(btnPictureStyle);
+		});  
+		var btnPicture = new Button(btnPictureStyle);  
 		flPicture.addChild(btnPicture);
 		this.btnPicture = btnPicture;
 
 		const flSurnameStyle = getCombinedStyle(".flexLayout", {
 			width: null,
 			height: 33
-		});
-		var flSurname = new FlexLayout(flSurnameStyle);
+		});  
+		var flSurname = new FlexLayout(flSurnameStyle);  
 		flNameSurname.addChild(flSurname);
 		this.flSurname = flSurname;
 
@@ -187,8 +187,8 @@ const PgNewCustomer_ = extend(Page)(
 			borderWidth: 0.5,
 			borderColor: Color.create(255, 151, 151, 151),
 			positionType: FlexLayout.PositionType.ABSOLUTE
-		});
-		var imgPicture = new ImageView(imgPictureStyle);
+		});  
+		var imgPicture = new ImageView(imgPictureStyle);  
 		flPicture.addChild(imgPicture);
 		this.imgPicture = imgPicture;
 

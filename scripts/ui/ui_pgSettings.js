@@ -35,8 +35,8 @@ const PgSettings_ = extend(Page)(
 			marginRight: 15,
 			marginTop: 28.5,
 			flexDirection: FlexLayout.FlexDirection.ROW
-		});
-		var flTheme = new FlexLayout(flThemeStyle);
+		});  
+		var flTheme = new FlexLayout(flThemeStyle);  
 		this.layout.addChild(flTheme);
 		
 		const flNotificationsStyle = getCombinedStyle(".flexLayout", {
@@ -48,8 +48,8 @@ const PgSettings_ = extend(Page)(
 			marginTop: 20,
 			flexDirection: FlexLayout.FlexDirection.ROW_REVERSE,
 			alignItems: FlexLayout.AlignItems.CENTER
-		});
-		var flNotifications = new FlexLayout(flNotificationsStyle);
+		});  
+		var flNotifications = new FlexLayout(flNotificationsStyle);  
 		this.layout.addChild(flNotifications);
 		
 		const flTextsStyle = getCombinedStyle(".flexLayout", {
@@ -61,18 +61,18 @@ const PgSettings_ = extend(Page)(
 			marginTop: 61.3,
 			flexGrow: 1,
 			flexDirection: FlexLayout.FlexDirection.COLUMN
-		});
-		var flTexts = new FlexLayout(flTextsStyle);
+		});  
+		var flTexts = new FlexLayout(flTextsStyle);  
 		this.layout.addChild(flTexts);
 		
 		const swNotificationsStyle = getCombinedStyle(".switch", {
-			minWidth: 37,
-			minHeight: 20,
+			minWidth: 51,
+			minHeight: 31,
 			width: null,
 			thumbOnColor: Color.create(255, 80, 210, 194),
 			toggleOnColor: Color.create(128, 131, 108, 179)
-		});
-		var swNotifications = new Switch(swNotificationsStyle);
+		});  
+		var swNotifications = new Switch(swNotificationsStyle);  
 		if(swNotificationsStyle.toggleOffColor)
 			swNotifications.android && (swNotifications.android.toggleOffColor = swNotificationsStyle.toggleOffColor);
 		flNotifications.addChild(swNotifications);
@@ -86,8 +86,10 @@ const PgSettings_ = extend(Page)(
 			backgroundColor: Color.create(0, 255, 255, 255),
 			flexGrow: 1,
 			font: Font.create("Lato", 14, Font.NORMAL)
-		});
-		var lblTheme = new Label(lblThemeStyle);
+		});  
+		var lblTheme = new Label(lblThemeStyle);  
+		if(lblThemeStyle.scrollEnabled === false)
+			lblTheme.ios && (lblTheme.ios.scrollEnabled = false);
 		flTheme.addChild(lblTheme);
 		this.lblTheme = lblTheme;
 
@@ -98,8 +100,10 @@ const PgSettings_ = extend(Page)(
 			textColor: Color.create(255, 29, 29, 38),
 			backgroundColor: Color.create(0, 255, 255, 255),
 			font: Font.create("Arial", 14, Font.NORMAL)
-		});
-		var lblAbout = new Label(lblAboutStyle);
+		});  
+		var lblAbout = new Label(lblAboutStyle);  
+		if(lblAboutStyle.scrollEnabled === false)
+			lblAbout.ios && (lblAbout.ios.scrollEnabled = false);
 		flTexts.addChild(lblAbout);
 		this.lblAbout = lblAbout;
 
@@ -114,8 +118,10 @@ const PgSettings_ = extend(Page)(
 			marginTop: 11,
 			flexGrow: 1,
 			font: Font.create("Arial", 14, Font.NORMAL)
-		});
-		var lblText = new Label(lblTextStyle);
+		});  
+		var lblText = new Label(lblTextStyle);  
+		if(lblTextStyle.scrollEnabled === false)
+			lblText.ios && (lblText.ios.scrollEnabled = false);
 		flTexts.addChild(lblText);
 		this.lblText = lblText;
 
@@ -128,8 +134,10 @@ const PgSettings_ = extend(Page)(
 			flexGrow: 1,
 			alignSelf: FlexLayout.AlignSelf.STRETCH,
 			font: Font.create("Lato", 14, Font.NORMAL)
-		});
-		var lblNotifications = new Label(lblNotificationsStyle);
+		});  
+		var lblNotifications = new Label(lblNotificationsStyle);  
+		if(lblNotificationsStyle.scrollEnabled === false)
+			lblNotifications.ios && (lblNotifications.ios.scrollEnabled = false);
 		flNotifications.addChild(lblNotifications);
 		this.lblNotifications = lblNotifications;
 
@@ -141,8 +149,8 @@ const PgSettings_ = extend(Page)(
 			flexDirection: FlexLayout.FlexDirection.ROW_REVERSE,
 			alignItems: FlexLayout.AlignItems.CENTER,
 			justifyContent: FlexLayout.JustifyContent.SPACE_BETWEEN
-		});
-		var flThemeSelections = new FlexLayout(flThemeSelectionsStyle);
+		});  
+		var flThemeSelections = new FlexLayout(flThemeSelectionsStyle);  
 		flTheme.addChild(flThemeSelections);
 		
 		const flLineThemeStyle = getCombinedStyle(".flexLayout", {
@@ -153,8 +161,8 @@ const PgSettings_ = extend(Page)(
 			bottom: 0,
 			backgroundColor: Color.create(255, 80, 210, 194),
 			positionType: FlexLayout.PositionType.ABSOLUTE
-		});
-		var flLineTheme = new FlexLayout(flLineThemeStyle);
+		});  
+		var flLineTheme = new FlexLayout(flLineThemeStyle);  
 		flTheme.addChild(flLineTheme);
 		this.flLineTheme = flLineTheme;
 
@@ -166,8 +174,8 @@ const PgSettings_ = extend(Page)(
 			bottom: 0,
 			backgroundColor: Color.create(255, 80, 210, 194),
 			positionType: FlexLayout.PositionType.ABSOLUTE
-		});
-		var flLineNotifications = new FlexLayout(flLineNotificationsStyle);
+		});  
+		var flLineNotifications = new FlexLayout(flLineNotificationsStyle);  
 		flNotifications.addChild(flLineNotifications);
 		this.flLineNotifications = flLineNotifications;
 
@@ -180,8 +188,8 @@ const PgSettings_ = extend(Page)(
 			borderRadius: 6,
 			alignItems: FlexLayout.AlignItems.CENTER,
 			justifyContent: FlexLayout.JustifyContent.CENTER
-		});
-		var flPurpleSelection = new FlexLayout(flPurpleSelectionStyle);
+		});  
+		var flPurpleSelection = new FlexLayout(flPurpleSelectionStyle);  
 		flThemeSelections.addChild(flPurpleSelection);
 		this.flPurpleSelection = flPurpleSelection;
 
@@ -194,8 +202,8 @@ const PgSettings_ = extend(Page)(
 			borderRadius: 6,
 			alignItems: FlexLayout.AlignItems.CENTER,
 			justifyContent: FlexLayout.JustifyContent.CENTER
-		});
-		var flNavySelection = new FlexLayout(flNavySelectionStyle);
+		});  
+		var flNavySelection = new FlexLayout(flNavySelectionStyle);  
 		flThemeSelections.addChild(flNavySelection);
 		this.flNavySelection = flNavySelection;
 
@@ -206,8 +214,8 @@ const PgSettings_ = extend(Page)(
 			backgroundColor: Color.create(255, 44, 50, 57),
 			borderWidth: 0.5,
 			borderColor: Color.create(255, 44, 50, 57)
-		});
-		var flNavy = new FlexLayout(flNavyStyle);
+		});  
+		var flNavy = new FlexLayout(flNavyStyle);  
 		flNavySelection.addChild(flNavy);
 		
 		const flPurpleStyle = getCombinedStyle(".flexLayout", {
@@ -217,8 +225,8 @@ const PgSettings_ = extend(Page)(
 			backgroundColor: Color.create(255, 131, 108, 179),
 			borderWidth: 0.5,
 			borderColor: Color.create(255, 131, 108, 179)
-		});
-		var flPurple = new FlexLayout(flPurpleStyle);
+		});  
+		var flPurple = new FlexLayout(flPurpleStyle);  
 		flPurpleSelection.addChild(flPurple);
 		
 		//assign the children to page 

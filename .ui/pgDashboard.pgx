@@ -3,7 +3,9 @@
 		{
 			"type": "Page",
 			"id": "311d38b2",
-			"themeProps": {},
+			"themeProps": {
+				"Highlights": "Default"
+			},
 			"userProps": {
 				"isRemovable": true,
 				"backgroundColor": "rgba( 36, 42, 52, 1 )",
@@ -27,18 +29,13 @@
 				"defaults": {}
 			},
 			"className": ".page",
-			"version": "6.3.9",
+			"version": "6.4.1",
 			"props": {
 				"backgroundColor": "rgba( 36, 42, 52, 1 )",
 				"orientation": "PORTRAIT",
 				"isRemovable": true,
 				"height": 301.5,
 				"width": 187.5,
-				"children": [
-					"statusBar",
-					"headerBar",
-					"imgReports"
-				],
 				"flexProps": {
 					"alignContent": "STRETCH",
 					"alignItems": "STRETCH",
@@ -47,38 +44,31 @@
 					"flexWrap": "NOWRAP",
 					"justifyContent": "FLEX_START"
 				},
-				"layout": {
-					"width": 93.75,
-					"height": 150.75
-				},
-				"name": "pgDashboard",
-				"flex": {
-					"alignContent": 4,
-					"alignItems": 4,
-					"flexDirection": 0,
-					"flexWrap": 0,
-					"justifyContent": 0
-				},
-				"font": {}
-			}
+				"children": [
+					"statusBar",
+					"headerBar",
+					"imgReports"
+				],
+				"name": "pgDashboard"
+			},
+			"initialized": true
 		},
 		{
 			"type": "StatusBar",
 			"id": "58a9e235",
-			"themeProps": {},
+			"themeProps": {
+				"Highlights": "Default"
+			},
 			"userProps": {
 				"isRemovable": false,
 				"_style": "LIGHTCONTENT",
 				"height": 20,
 				"visible": true,
 				"color": "rgba( 44, 50, 57, 1 )",
+				"style": "LIGHTCONTENT",
 				"layout": {
 					"height": 10
-				},
-				"flex": {},
-				"font": {},
-				"flexProps": {},
-				"defaults": {}
+				}
 			},
 			"className": ".statusBar",
 			"props": {
@@ -88,20 +78,17 @@
 				"_style": "LIGHTCONTENT",
 				"height": 20,
 				"children": [],
-				"layout": {
-					"height": 10
-				},
 				"parent": "pgDashboard",
 				"name": "statusBar",
-				"flex": {},
-				"font": {},
-				"flexProps": {}
+				"style": "LIGHTCONTENT"
 			}
 		},
 		{
 			"type": "HeaderBar",
 			"id": "d3af0270",
-			"themeProps": {},
+			"themeProps": {
+				"Highlights": "Default"
+			},
 			"userProps": {
 				"isRemovable": false,
 				"backgroundColor": "rgba( 44, 50, 57, 1 )",
@@ -126,20 +113,17 @@
 				"isRemovable": false,
 				"height": 44,
 				"children": [],
-				"layout": {
-					"height": 22
-				},
 				"parent": "pgDashboard",
-				"name": "headerBar",
-				"flex": {},
-				"font": {},
-				"flexProps": {}
+				"name": "headerBar"
 			}
 		},
 		{
 			"type": "ImageView",
 			"id": "a5c19250",
-			"themeProps": {},
+			"themeProps": {
+				"Sizes": "Default",
+				"Highlights": "Default"
+			},
 			"userProps": {
 				"backgroundColor": "rgba( 255, 255, 255, 0 )",
 				"alpha": 1,
@@ -190,28 +174,16 @@
 				"marginRight": 20,
 				"marginTop": 20,
 				"image": "reports.png",
-				"imageURL": "https://dispatcher.r0.smartface.io/smartface9/fieldservice2/ui-editor/img/reports.png?os=iOS&osVersion=10.2&density=326&densityRatio=0.5&zoomLevel=0.5&brandModel=iPhone%207?random=0.00022332705613803405",
+				"imageURL": "https://dispatcher.r0.smartface.io/smartface9/fieldservice2/ui-editor/img/reports.png?os=iOS&osVersion=10.2&density=326&densityRatio=0.5&zoomLevel=0.5&brandModel=iPhone%207?random=0.8999013851935451",
 				"usePageVariable": true,
-				"children": [],
 				"flexProps": {
 					"alignSelf": "AUTO",
 					"positionType": "RELATIVE",
 					"flexGrow": 1
 				},
-				"layout": {
-					"marginBottom": 10,
-					"marginLeft": 10,
-					"marginTop": 10,
-					"marginRight": 10,
-					"borderWidth": 0
-				},
-				"flex": {
-					"positionType": 0,
-					"flexGrow": 1
-				},
+				"children": [],
 				"parent": "pgDashboard",
-				"name": "imgReports",
-				"font": {}
+				"name": "imgReports"
 			}
 		}
 	]

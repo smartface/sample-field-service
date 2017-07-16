@@ -44,8 +44,8 @@ const PgCustomerFilter_ = extend(Page)(
 			flexWrap: FlexLayout.FlexWrap.NOWRAP,
 			justifyContent: FlexLayout.JustifyContent.FLEX_START,
 			positionType: FlexLayout.PositionType.RELATIVE
-		});
-		var flTab = new FlexLayout(flTabStyle);
+		});  
+		var flTab = new FlexLayout(flTabStyle);  
 		this.layout.addChild(flTab);
 		
 		const flInputsStyle = getCombinedStyle(".flexLayout", {
@@ -65,8 +65,8 @@ const PgCustomerFilter_ = extend(Page)(
 			justifyContent: FlexLayout.JustifyContent.FLEX_START,
 			positionType: FlexLayout.PositionType.RELATIVE,
 			flexGrow: 1
-		});
-		var flInputs = new FlexLayout(flInputsStyle);
+		});  
+		var flInputs = new FlexLayout(flInputsStyle);  
 		this.layout.addChild(flInputs);
 		
 		const flSearchStyle = getCombinedStyle(".flexLayout", {
@@ -75,8 +75,8 @@ const PgCustomerFilter_ = extend(Page)(
 			backgroundColor: Color.create(0, 218, 170, 170),
 			visible: false,
 			alignItems: FlexLayout.AlignItems.CENTER
-		});
-		var flSearch = new FlexLayout(flSearchStyle);
+		});  
+		var flSearch = new FlexLayout(flSearchStyle);  
 		this.layout.addChild(flSearch);
 		
 		const flButtonsStyle = getCombinedStyle(".flexLayout", {
@@ -97,8 +97,8 @@ const PgCustomerFilter_ = extend(Page)(
 			flexWrap: FlexLayout.FlexWrap.NOWRAP,
 			justifyContent: FlexLayout.JustifyContent.FLEX_START,
 			positionType: FlexLayout.PositionType.ABSOLUTE
-		});
-		var flButtons = new FlexLayout(flButtonsStyle);
+		});  
+		var flButtons = new FlexLayout(flButtonsStyle);  
 		flTab.addChild(flButtons);
 		this.flButtons = flButtons;
 
@@ -117,8 +117,8 @@ const PgCustomerFilter_ = extend(Page)(
 			flexWrap: FlexLayout.FlexWrap.NOWRAP,
 			justifyContent: FlexLayout.JustifyContent.FLEX_START,
 			positionType: FlexLayout.PositionType.RELATIVE
-		});
-		var flFirstLine = new FlexLayout(flFirstLineStyle);
+		});  
+		var flFirstLine = new FlexLayout(flFirstLineStyle);  
 		flInputs.addChild(flFirstLine);
 		this.flFirstLine = flFirstLine;
 
@@ -129,8 +129,8 @@ const PgCustomerFilter_ = extend(Page)(
 			backgroundColor: Color.create(255, 6, 190, 189),
 			borderRadius: 32.5,
 			font: Font.create("default", 18, Font.NORMAL)
-		});
-		var btnSearch = new Button(btnSearchStyle);
+		});  
+		var btnSearch = new Button(btnSearchStyle);  
 		flSearch.addChild(btnSearch);
 		this.btnSearch = btnSearch;
 
@@ -152,8 +152,8 @@ const PgCustomerFilter_ = extend(Page)(
 			flexWrap: FlexLayout.FlexWrap.NOWRAP,
 			justifyContent: FlexLayout.JustifyContent.FLEX_START,
 			positionType: FlexLayout.PositionType.ABSOLUTE
-		});
-		var flTabIndicator = new FlexLayout(flTabIndicatorStyle);
+		});  
+		var flTabIndicator = new FlexLayout(flTabIndicatorStyle);  
 		flTab.addChild(flTabIndicator);
 		this.flTabIndicator = flTabIndicator;
 
@@ -173,8 +173,8 @@ const PgCustomerFilter_ = extend(Page)(
 			justifyContent: FlexLayout.JustifyContent.FLEX_START,
 			positionType: FlexLayout.PositionType.RELATIVE,
 			flexGrow: null
-		});
-		var flPhoneInput = new FlexLayout(flPhoneInputStyle);
+		});  
+		var flPhoneInput = new FlexLayout(flPhoneInputStyle);  
 		flInputs.addChild(flPhoneInput);
 		this.flPhoneInput = flPhoneInput;
 
@@ -194,8 +194,8 @@ const PgCustomerFilter_ = extend(Page)(
 			justifyContent: FlexLayout.JustifyContent.FLEX_START,
 			positionType: FlexLayout.PositionType.RELATIVE,
 			flexGrow: null
-		});
-		var flEmailInput = new FlexLayout(flEmailInputStyle);
+		});  
+		var flEmailInput = new FlexLayout(flEmailInputStyle);  
 		flInputs.addChild(flEmailInput);
 		this.flEmailInput = flEmailInput;
 
@@ -215,8 +215,8 @@ const PgCustomerFilter_ = extend(Page)(
 			justifyContent: FlexLayout.JustifyContent.FLEX_START,
 			positionType: FlexLayout.PositionType.RELATIVE,
 			flexGrow: 1
-		});
-		var flNameInput = new FlexLayout(flNameInputStyle);
+		});  
+		var flNameInput = new FlexLayout(flNameInputStyle);  
 		flFirstLine.addChild(flNameInput);
 		this.flNameInput = flNameInput;
 
@@ -234,8 +234,8 @@ const PgCustomerFilter_ = extend(Page)(
 			flexWrap: FlexLayout.FlexWrap.NOWRAP,
 			justifyContent: FlexLayout.JustifyContent.CENTER,
 			positionType: FlexLayout.PositionType.RELATIVE
-		});
-		var flEmailIcon = new FlexLayout(flEmailIconStyle);
+		});  
+		var flEmailIcon = new FlexLayout(flEmailIconStyle);  
 		flEmailInput.addChild(flEmailIcon);
 		
 		const btnNameStyle = getCombinedStyle(".button", {
@@ -252,8 +252,8 @@ const PgCustomerFilter_ = extend(Page)(
 			positionType: FlexLayout.PositionType.RELATIVE,
 			flexGrow: 1,
 			font: Font.create("Lato", 16, Font.NORMAL)
-		});
-		var btnName = new Button(btnNameStyle);
+		});  
+		var btnName = new Button(btnNameStyle);  
 		flButtons.addChild(btnName);
 		this.btnName = btnName;
 
@@ -272,8 +272,8 @@ const PgCustomerFilter_ = extend(Page)(
 			justifyContent: FlexLayout.JustifyContent.FLEX_START,
 			positionType: FlexLayout.PositionType.RELATIVE,
 			flexGrow: 0
-		});
-		var placeHolderLeft = new FlexLayout(placeHolderLeftStyle);
+		});  
+		var placeHolderLeft = new FlexLayout(placeHolderLeftStyle);  
 		flTabIndicator.addChild(placeHolderLeft);
 		this.placeHolderLeft = placeHolderLeft;
 
@@ -291,8 +291,8 @@ const PgCustomerFilter_ = extend(Page)(
 			flexWrap: FlexLayout.FlexWrap.NOWRAP,
 			justifyContent: FlexLayout.JustifyContent.CENTER,
 			positionType: FlexLayout.PositionType.RELATIVE
-		});
-		var flPhoneIcon = new FlexLayout(flPhoneIconStyle);
+		});  
+		var flPhoneIcon = new FlexLayout(flPhoneIconStyle);  
 		flPhoneInput.addChild(flPhoneIcon);
 		
 		const flTabHighlightStyle = getCombinedStyle(".flexLayout", {
@@ -310,8 +310,8 @@ const PgCustomerFilter_ = extend(Page)(
 			justifyContent: FlexLayout.JustifyContent.FLEX_START,
 			positionType: FlexLayout.PositionType.RELATIVE,
 			flexGrow: 1
-		});
-		var flTabHighlight = new FlexLayout(flTabHighlightStyle);
+		});  
+		var flTabHighlight = new FlexLayout(flTabHighlightStyle);  
 		flTabIndicator.addChild(flTabHighlight);
 		this.flTabHighlight = flTabHighlight;
 
@@ -331,8 +331,8 @@ const PgCustomerFilter_ = extend(Page)(
 			justifyContent: FlexLayout.JustifyContent.FLEX_START,
 			positionType: FlexLayout.PositionType.RELATIVE,
 			flexGrow: 0
-		});
-		var flCardInput = new FlexLayout(flCardInputStyle);
+		});  
+		var flCardInput = new FlexLayout(flCardInputStyle);  
 		flFirstLine.addChild(flCardInput);
 		this.flCardInput = flCardInput;
 
@@ -350,8 +350,8 @@ const PgCustomerFilter_ = extend(Page)(
 			positionType: FlexLayout.PositionType.RELATIVE,
 			flexGrow: 1,
 			font: Font.create("Lato", 16, Font.NORMAL)
-		});
-		var btnCard = new Button(btnCardStyle);
+		});  
+		var btnCard = new Button(btnCardStyle);  
 		flButtons.addChild(btnCard);
 		this.btnCard = btnCard;
 
@@ -370,8 +370,8 @@ const PgCustomerFilter_ = extend(Page)(
 			justifyContent: FlexLayout.JustifyContent.FLEX_START,
 			positionType: FlexLayout.PositionType.RELATIVE,
 			flexGrow: 1
-		});
-		var flEmailInputArea = new FlexLayout(flEmailInputAreaStyle);
+		});  
+		var flEmailInputArea = new FlexLayout(flEmailInputAreaStyle);  
 		flEmailInput.addChild(flEmailInputArea);
 		this.flEmailInputArea = flEmailInputArea;
 
@@ -390,8 +390,8 @@ const PgCustomerFilter_ = extend(Page)(
 			justifyContent: FlexLayout.JustifyContent.FLEX_START,
 			positionType: FlexLayout.PositionType.RELATIVE,
 			flexGrow: 1
-		});
-		var flPhoneInputArea = new FlexLayout(flPhoneInputAreaStyle);
+		});  
+		var flPhoneInputArea = new FlexLayout(flPhoneInputAreaStyle);  
 		flPhoneInput.addChild(flPhoneInputArea);
 		this.flPhoneInputArea = flPhoneInputArea;
 
@@ -410,8 +410,8 @@ const PgCustomerFilter_ = extend(Page)(
 			justifyContent: FlexLayout.JustifyContent.FLEX_START,
 			positionType: FlexLayout.PositionType.RELATIVE,
 			flexGrow: 1
-		});
-		var placeHolderRight = new FlexLayout(placeHolderRightStyle);
+		});  
+		var placeHolderRight = new FlexLayout(placeHolderRightStyle);  
 		flTabIndicator.addChild(placeHolderRight);
 		this.placeHolderRight = placeHolderRight;
 
@@ -427,8 +427,8 @@ const PgCustomerFilter_ = extend(Page)(
 			width: null,
 			positionType: FlexLayout.PositionType.RELATIVE,
 			flexGrow: 1
-		});
-		var imgPhone = new ImageView(imgPhoneStyle);
+		});  
+		var imgPhone = new ImageView(imgPhoneStyle);  
 		flPhoneIcon.addChild(imgPhone);
 		this.imgPhone = imgPhone;
 
@@ -446,8 +446,8 @@ const PgCustomerFilter_ = extend(Page)(
 			flexWrap: FlexLayout.FlexWrap.NOWRAP,
 			justifyContent: FlexLayout.JustifyContent.CENTER,
 			positionType: FlexLayout.PositionType.RELATIVE
-		});
-		var flCardIcon = new FlexLayout(flCardIconStyle);
+		});  
+		var flCardIcon = new FlexLayout(flCardIconStyle);  
 		flCardInput.addChild(flCardIcon);
 		
 		const flNameIconStyle = getCombinedStyle(".flexLayout", {
@@ -464,8 +464,8 @@ const PgCustomerFilter_ = extend(Page)(
 			flexWrap: FlexLayout.FlexWrap.NOWRAP,
 			justifyContent: FlexLayout.JustifyContent.CENTER,
 			positionType: FlexLayout.PositionType.RELATIVE
-		});
-		var flNameIcon = new FlexLayout(flNameIconStyle);
+		});  
+		var flNameIcon = new FlexLayout(flNameIconStyle);  
 		flNameInput.addChild(flNameIcon);
 		
 		const imgEmailStyle = getCombinedStyle(".imageView", {
@@ -480,8 +480,8 @@ const PgCustomerFilter_ = extend(Page)(
 			width: null,
 			positionType: FlexLayout.PositionType.RELATIVE,
 			flexGrow: 1
-		});
-		var imgEmail = new ImageView(imgEmailStyle);
+		});  
+		var imgEmail = new ImageView(imgEmailStyle);  
 		flEmailIcon.addChild(imgEmail);
 		this.imgEmail = imgEmail;
 
@@ -500,8 +500,8 @@ const PgCustomerFilter_ = extend(Page)(
 			justifyContent: FlexLayout.JustifyContent.FLEX_START,
 			positionType: FlexLayout.PositionType.RELATIVE,
 			flexGrow: 1
-		});
-		var flCardInputArea = new FlexLayout(flCardInputAreaStyle);
+		});  
+		var flCardInputArea = new FlexLayout(flCardInputAreaStyle);  
 		flCardInput.addChild(flCardInputArea);
 		this.flCardInputArea = flCardInputArea;
 
@@ -520,8 +520,8 @@ const PgCustomerFilter_ = extend(Page)(
 			justifyContent: FlexLayout.JustifyContent.FLEX_START,
 			positionType: FlexLayout.PositionType.RELATIVE,
 			flexGrow: 1
-		});
-		var flNameInputArea = new FlexLayout(flNameInputAreaStyle);
+		});  
+		var flNameInputArea = new FlexLayout(flNameInputAreaStyle);  
 		flNameInput.addChild(flNameInputArea);
 		this.flNameInputArea = flNameInputArea;
 
@@ -537,8 +537,8 @@ const PgCustomerFilter_ = extend(Page)(
 			width: null,
 			positionType: FlexLayout.PositionType.RELATIVE,
 			flexGrow: 1
-		});
-		var imgCard = new ImageView(imgCardStyle);
+		});  
+		var imgCard = new ImageView(imgCardStyle);  
 		flCardIcon.addChild(imgCard);
 		this.imgCard = imgCard;
 
@@ -554,8 +554,8 @@ const PgCustomerFilter_ = extend(Page)(
 			width: null,
 			positionType: FlexLayout.PositionType.RELATIVE,
 			flexGrow: 1
-		});
-		var imgName = new ImageView(imgNameStyle);
+		});  
+		var imgName = new ImageView(imgNameStyle);  
 		flNameIcon.addChild(imgName);
 		this.imgName = imgName;
 

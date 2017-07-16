@@ -13,7 +13,7 @@
 				"defaults": {}
 			},
 			"className": ".page",
-			"version": "6.3.9",
+			"version": "6.4.1",
 			"props": {
 				"backgroundColor": "rgba( 255, 255, 255, 1 )",
 				"orientation": "PORTRAIT",
@@ -32,21 +32,11 @@
 				},
 				"parent": null,
 				"name": "pgNewCustomer",
-				"layout": {
-					"width": 93.75,
-					"height": 145.55
-				},
-				"flex": {
-					"alignContent": 4,
-					"alignItems": 4,
-					"flexDirection": 0,
-					"flexWrap": 0,
-					"justifyContent": 0
-				},
 				"font": {},
 				"width": 187.5,
 				"height": 301.5
-			}
+			},
+			"initialized": true
 		},
 		{
 			"type": "StatusBar",
@@ -70,10 +60,6 @@
 				"parent": "pgNewCustomer",
 				"isRemovable": false,
 				"name": "statusBar",
-				"layout": {
-					"height": 10
-				},
-				"flex": {},
 				"font": {},
 				"flexProps": {},
 				"height": 20
@@ -103,10 +89,6 @@
 				"parent": "pgNewCustomer",
 				"isRemovable": false,
 				"name": "headerBar",
-				"layout": {
-					"height": 22
-				},
-				"flex": {},
 				"font": {},
 				"flexProps": {},
 				"height": 44
@@ -168,23 +150,6 @@
 				},
 				"name": "flContent",
 				"parent": "pgNewCustomer",
-				"layout": {
-					"right": 7.5,
-					"bottom": 0,
-					"left": 10.5,
-					"top": 17,
-					"borderWidth": 0
-				},
-				"flex": {
-					"alignContent": 4,
-					"alignItems": 4,
-					"justifyContent": 0,
-					"flexWrap": 0,
-					"flexDirection": 0,
-					"positionType": 1,
-					"right": 15,
-					"bottom": 0
-				},
 				"font": {}
 			}
 		},
@@ -230,18 +195,6 @@
 				},
 				"name": "flNameSurnamePicture",
 				"parent": "flContent",
-				"layout": {
-					"height": 44.38,
-					"borderWidth": 0
-				},
-				"flex": {
-					"alignContent": 4,
-					"alignItems": 4,
-					"justifyContent": 0,
-					"flexWrap": 0,
-					"flexDirection": 2,
-					"positionType": 0
-				},
 				"font": {}
 			}
 		},
@@ -290,19 +243,6 @@
 				},
 				"name": "flNameSurname",
 				"parent": "flNameSurnamePicture",
-				"layout": {
-					"marginLeft": 9,
-					"borderWidth": 0
-				},
-				"flex": {
-					"alignContent": 4,
-					"alignItems": 4,
-					"justifyContent": 3,
-					"flexWrap": 0,
-					"flexDirection": 0,
-					"positionType": 0,
-					"flexGrow": 1
-				},
 				"font": {}
 			}
 		},
@@ -344,18 +284,6 @@
 				},
 				"name": "flName",
 				"parent": "flNameSurname",
-				"layout": {
-					"height": 16.5,
-					"borderWidth": 0
-				},
-				"flex": {
-					"alignContent": 4,
-					"alignItems": 4,
-					"justifyContent": 0,
-					"flexWrap": 0,
-					"flexDirection": 0,
-					"positionType": 0
-				},
 				"font": {}
 			}
 		},
@@ -397,18 +325,6 @@
 				},
 				"name": "flSurname",
 				"parent": "flNameSurname",
-				"layout": {
-					"height": 16.5,
-					"borderWidth": 0
-				},
-				"flex": {
-					"alignContent": 4,
-					"alignItems": 4,
-					"justifyContent": 0,
-					"flexWrap": 0,
-					"flexDirection": 0,
-					"positionType": 0
-				},
 				"font": {}
 			}
 		},
@@ -455,19 +371,6 @@
 				},
 				"name": "flEmailRow",
 				"parent": "flContent",
-				"layout": {
-					"marginTop": 21,
-					"height": 16.5,
-					"borderWidth": 0
-				},
-				"flex": {
-					"alignContent": 4,
-					"alignItems": 4,
-					"justifyContent": 0,
-					"flexWrap": 0,
-					"flexDirection": 2,
-					"positionType": 0
-				},
 				"font": {}
 			}
 		},
@@ -504,15 +407,8 @@
 				},
 				"name": "imgEmail",
 				"parent": "flEmailRow",
-				"layout": {
-					"width": 21.75,
-					"borderWidth": 0
-				},
-				"flex": {
-					"positionType": 0
-				},
 				"font": {},
-				"imageURL": "https://dispatcher.r0.smartface.io/smartface9/fieldservice2/ui-editor/img/new_customer_email.png?os=iOS&osVersion=10.2&density=326&densityRatio=0.5&zoomLevel=0.5&brandModel=iPhone%207?random=0.44842399448876225"
+				"imageURL": "https://dispatcher.r0.smartface.io/smartface9/fieldservice2/ui-editor/img/new_customer_email.png?os=iOS&osVersion=10.2&density=326&densityRatio=0.5&zoomLevel=0.5&brandModel=iPhone%207?random=0.5172713097613049"
 			}
 		},
 		{
@@ -556,18 +452,6 @@
 				},
 				"name": "flEmail",
 				"parent": "flEmailRow",
-				"layout": {
-					"borderWidth": 0
-				},
-				"flex": {
-					"alignContent": 4,
-					"alignItems": 4,
-					"justifyContent": 0,
-					"flexWrap": 0,
-					"flexDirection": 0,
-					"positionType": 0,
-					"flexGrow": 1
-				},
 				"font": {}
 			}
 		},
@@ -614,19 +498,6 @@
 				},
 				"name": "flPhoneRow",
 				"parent": "flContent",
-				"layout": {
-					"marginTop": 12,
-					"height": 16.5,
-					"borderWidth": 0
-				},
-				"flex": {
-					"alignContent": 4,
-					"alignItems": 4,
-					"justifyContent": 0,
-					"flexWrap": 0,
-					"flexDirection": 2,
-					"positionType": 0
-				},
 				"font": {}
 			}
 		},
@@ -663,15 +534,8 @@
 				},
 				"name": "imgPhone",
 				"parent": "flPhoneRow",
-				"layout": {
-					"width": 21.75,
-					"borderWidth": 0
-				},
-				"flex": {
-					"positionType": 0
-				},
 				"font": {},
-				"imageURL": "https://dispatcher.r0.smartface.io/smartface9/fieldservice2/ui-editor/img/new_customer_phone.png?os=iOS&osVersion=10.2&density=326&densityRatio=0.5&zoomLevel=0.5&brandModel=iPhone%207?random=0.8098614348084638"
+				"imageURL": "https://dispatcher.r0.smartface.io/smartface9/fieldservice2/ui-editor/img/new_customer_phone.png?os=iOS&osVersion=10.2&density=326&densityRatio=0.5&zoomLevel=0.5&brandModel=iPhone%207?random=0.5619668512415517"
 			}
 		},
 		{
@@ -715,18 +579,6 @@
 				},
 				"name": "flPhone",
 				"parent": "flPhoneRow",
-				"layout": {
-					"borderWidth": 0
-				},
-				"flex": {
-					"alignContent": 4,
-					"alignItems": 4,
-					"justifyContent": 0,
-					"flexWrap": 0,
-					"flexDirection": 0,
-					"positionType": 0,
-					"flexGrow": 1
-				},
 				"font": {}
 			}
 		},
@@ -773,19 +625,6 @@
 				},
 				"name": "flAddressRow",
 				"parent": "flContent",
-				"layout": {
-					"marginTop": 12,
-					"height": 16.5,
-					"borderWidth": 0
-				},
-				"flex": {
-					"alignContent": 4,
-					"alignItems": 4,
-					"justifyContent": 0,
-					"flexWrap": 0,
-					"flexDirection": 2,
-					"positionType": 0
-				},
 				"font": {}
 			}
 		},
@@ -822,15 +661,8 @@
 				},
 				"name": "imgAddress",
 				"parent": "flAddressRow",
-				"layout": {
-					"width": 21.75,
-					"borderWidth": 0
-				},
-				"flex": {
-					"positionType": 0
-				},
 				"font": {},
-				"imageURL": "https://dispatcher.r0.smartface.io/smartface9/fieldservice2/ui-editor/img/new_customer_location.png?os=iOS&osVersion=10.2&density=326&densityRatio=0.5&zoomLevel=0.5&brandModel=iPhone%207?random=0.8468047976465503"
+				"imageURL": "https://dispatcher.r0.smartface.io/smartface9/fieldservice2/ui-editor/img/new_customer_location.png?os=iOS&osVersion=10.2&density=326&densityRatio=0.5&zoomLevel=0.5&brandModel=iPhone%207?random=0.8672555464511549"
 			}
 		},
 		{
@@ -874,18 +706,6 @@
 				},
 				"name": "flAddress",
 				"parent": "flAddressRow",
-				"layout": {
-					"borderWidth": 0
-				},
-				"flex": {
-					"alignContent": 4,
-					"alignItems": 4,
-					"justifyContent": 0,
-					"flexWrap": 0,
-					"flexDirection": 0,
-					"positionType": 0,
-					"flexGrow": 1
-				},
 				"font": {}
 			}
 		},
@@ -929,19 +749,6 @@
 				},
 				"name": "flPicture",
 				"parent": "flNameSurnamePicture",
-				"layout": {
-					"width": 36.5,
-					"height": 36.5,
-					"borderWidth": 0
-				},
-				"flex": {
-					"alignContent": 4,
-					"alignItems": 4,
-					"justifyContent": 0,
-					"flexWrap": 0,
-					"flexDirection": 0,
-					"positionType": 0
-				},
 				"font": {}
 			}
 		},
@@ -999,18 +806,7 @@
 					"alignSelf": "AUTO"
 				},
 				"name": "btnPicture",
-				"parent": "flPicture",
-				"layout": {
-					"left": 0,
-					"top": 0,
-					"width": 36.5,
-					"height": 36.5,
-					"borderWidth": 0.25,
-					"borderRadius": 18.25
-				},
-				"flex": {
-					"positionType": 1
-				}
+				"parent": "flPicture"
 			}
 		},
 		{
@@ -1058,18 +854,8 @@
 				},
 				"name": "imgPicture",
 				"parent": "flPicture",
-				"layout": {
-					"top": 0,
-					"width": 36.5,
-					"height": 36.5,
-					"borderWidth": 0.25,
-					"borderRadius": 18.25
-				},
-				"flex": {
-					"positionType": 1
-				},
 				"font": {},
-				"imageURL": "https://dispatcher.r0.smartface.io/smartface9/fieldservice2/ui-editor/img/new_customer_picture.png?os=iOS&osVersion=10.2&density=326&densityRatio=0.5&zoomLevel=0.5&brandModel=iPhone%207?random=0.39121891129615816"
+				"imageURL": "https://dispatcher.r0.smartface.io/smartface9/fieldservice2/ui-editor/img/new_customer_picture.png?os=iOS&osVersion=10.2&density=326&densityRatio=0.5&zoomLevel=0.5&brandModel=iPhone%207?random=0.8891875987814055"
 			}
 		}
 	]

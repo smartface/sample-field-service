@@ -23,14 +23,14 @@ function applyDefaultBackAction(page, backAction, styleSelection) {
             imageName: "images://back_dark.png",
             textColor: Color.BLACK
         },
-        
+
         "LIGHT": {
             imageName: "images://back.png",
             textColor: Color.WHITE
         }
     };
     var selectedStyle = style[styleSelection || "LIGHT"];
-    
+
     //if (System.OS === "iOS") { //default android will do the trick;
     //    var leftItem = new HeaderBarItem({
     //        title: "",
@@ -44,6 +44,8 @@ function applyDefaultBackAction(page, backAction, styleSelection) {
     //    page.headerBar.setLeftItem(leftItem);
     //}
     page.headerBar.itemColor = selectedStyle.textColor;
+    if (page.headerBar.ios)
+        page.headerBar.ios.itemColor = selectedStyle.textColor;
     if (!page.android.onBackButtonPressed) {
         page.android.onBackButtonPressed = function() {
             backAction();
@@ -54,7 +56,8 @@ function applyDefaultBackAction(page, backAction, styleSelection) {
 function defaultGoBack(pageName) {
     if (!pageName) {
         Router.goBack();
-    } else {
+    }
+    else {
         Router.goBack(pageName);
     }
 }

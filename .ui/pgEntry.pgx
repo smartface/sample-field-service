@@ -30,7 +30,7 @@
 				"defaults": {}
 			},
 			"className": ".page",
-			"version": "6.3.9",
+			"version": "6.4.1",
 			"props": {
 				"backgroundColor": "#FFFFFF",
 				"orientation": "PORTRAIT",
@@ -49,20 +49,10 @@
 					"flexWrap": "NOWRAP",
 					"justifyContent": "CENTER"
 				},
-				"layout": {
-					"width": 93.75,
-					"height": 150.75
-				},
-				"flex": {
-					"alignContent": 4,
-					"alignItems": 2,
-					"flexDirection": 0,
-					"flexWrap": 0,
-					"justifyContent": 1
-				},
 				"name": "pgEntry",
 				"font": {}
-			}
+			},
+			"initialized": true
 		},
 		{
 			"type": "StatusBar",
@@ -88,12 +78,8 @@
 				"isRemovable": false,
 				"height": 20,
 				"children": [],
-				"layout": {
-					"height": 10
-				},
 				"parent": "pgEntry",
 				"name": "statusBar",
-				"flex": {},
 				"font": {},
 				"flexProps": {}
 			}
@@ -126,12 +112,8 @@
 				"isRemovable": false,
 				"height": 44,
 				"children": [],
-				"layout": {
-					"height": 22
-				},
 				"parent": "pgEntry",
 				"name": "headerBar",
-				"flex": {},
 				"font": {},
 				"flexProps": {}
 			}

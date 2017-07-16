@@ -46,8 +46,8 @@ const PgLogin_ = extend(Page)(
 			justifyContent: FlexLayout.JustifyContent.FLEX_START,
 			positionType: FlexLayout.PositionType.RELATIVE,
 			flexGrow: 1
-		});
-		var flLeft = new FlexLayout(flLeftStyle);
+		});  
+		var flLeft = new FlexLayout(flLeftStyle);  
 		this.layout.addChild(flLeft);
 		
 		const flMiddleStyle = getCombinedStyle(".flexLayout", {
@@ -69,8 +69,8 @@ const PgLogin_ = extend(Page)(
 			justifyContent: FlexLayout.JustifyContent.SPACE_AROUND,
 			positionType: FlexLayout.PositionType.RELATIVE,
 			flexGrow: 5
-		});
-		var flMiddle = new FlexLayout(flMiddleStyle);
+		});  
+		var flMiddle = new FlexLayout(flMiddleStyle);  
 		this.layout.addChild(flMiddle);
 		
 		const flRightStyle = getCombinedStyle(".flexLayout", {
@@ -88,8 +88,8 @@ const PgLogin_ = extend(Page)(
 			justifyContent: FlexLayout.JustifyContent.FLEX_START,
 			positionType: FlexLayout.PositionType.RELATIVE,
 			flexGrow: 1
-		});
-		var flRight = new FlexLayout(flRightStyle);
+		});  
+		var flRight = new FlexLayout(flRightStyle);  
 		this.layout.addChild(flRight);
 		
 		const imgLogoStyle = getCombinedStyle(".imageView", {
@@ -103,8 +103,8 @@ const PgLogin_ = extend(Page)(
 			visible: true,
 			width: null,
 			positionType: FlexLayout.PositionType.RELATIVE
-		});
-		var imgLogo = new ImageView(imgLogoStyle);
+		});  
+		var imgLogo = new ImageView(imgLogoStyle);  
 		flMiddle.addChild(imgLogo);
 		this.imgLogo = imgLogo;
 
@@ -122,8 +122,8 @@ const PgLogin_ = extend(Page)(
 			flexWrap: FlexLayout.FlexWrap.NOWRAP,
 			justifyContent: FlexLayout.JustifyContent.SPACE_BETWEEN,
 			positionType: FlexLayout.PositionType.RELATIVE
-		});
-		var flTexts = new FlexLayout(flTextsStyle);
+		});  
+		var flTexts = new FlexLayout(flTextsStyle);  
 		flMiddle.addChild(flTexts);
 		
 		const flInputsStyle = getCombinedStyle(".flexLayout", {
@@ -140,8 +140,8 @@ const PgLogin_ = extend(Page)(
 			flexWrap: FlexLayout.FlexWrap.NOWRAP,
 			justifyContent: FlexLayout.JustifyContent.SPACE_BETWEEN,
 			positionType: FlexLayout.PositionType.RELATIVE
-		});
-		var flInputs = new FlexLayout(flInputsStyle);
+		});  
+		var flInputs = new FlexLayout(flInputsStyle);  
 		flMiddle.addChild(flInputs);
 		this.flInputs = flInputs;
 
@@ -159,8 +159,8 @@ const PgLogin_ = extend(Page)(
 			flexWrap: FlexLayout.FlexWrap.NOWRAP,
 			justifyContent: FlexLayout.JustifyContent.FLEX_END,
 			positionType: FlexLayout.PositionType.RELATIVE
-		});
-		var flButton = new FlexLayout(flButtonStyle);
+		});  
+		var flButton = new FlexLayout(flButtonStyle);  
 		flMiddle.addChild(flButton);
 		
 		const lblTitleStyle = getCombinedStyle(".label", {
@@ -176,8 +176,10 @@ const PgLogin_ = extend(Page)(
 			width: null,
 			positionType: FlexLayout.PositionType.RELATIVE,
 			font: Font.create("Arial", 27.5, Font.NORMAL)
-		});
-		var lblTitle = new Label(lblTitleStyle);
+		});  
+		var lblTitle = new Label(lblTitleStyle);  
+		if(lblTitleStyle.scrollEnabled === false)
+			lblTitle.ios && (lblTitle.ios.scrollEnabled = false);
 		flTexts.addChild(lblTitle);
 		
 		const btnLoginStyle = getCombinedStyle(".button", {
@@ -198,8 +200,8 @@ const PgLogin_ = extend(Page)(
 			width: null,
 			positionType: FlexLayout.PositionType.ABSOLUTE,
 			font: Font.create("Lato", 18, Font.NORMAL)
-		});
-		var btnLogin = new Button(btnLoginStyle);
+		});  
+		var btnLogin = new Button(btnLoginStyle);  
 		flButton.addChild(btnLogin);
 		this.btnLogin = btnLogin;
 
@@ -217,8 +219,10 @@ const PgLogin_ = extend(Page)(
 			width: null,
 			positionType: FlexLayout.PositionType.RELATIVE,
 			font: Font.create("Arial", 15, Font.NORMAL)
-		});
-		var lblSubTitle = new Label(lblSubTitleStyle);
+		});  
+		var lblSubTitle = new Label(lblSubTitleStyle);  
+		if(lblSubTitleStyle.scrollEnabled === false)
+			lblSubTitle.ios && (lblSubTitle.ios.scrollEnabled = false);
 		flTexts.addChild(lblSubTitle);
 		
 		const aiLoginStyle = getCombinedStyle(".activityIndicator", {
@@ -237,8 +241,8 @@ const PgLogin_ = extend(Page)(
 			minWidth: 21,
 			marginLeft: 20,
 			positionType: FlexLayout.PositionType.RELATIVE
-		});
-		var aiLogin = new ActivityIndicator(aiLoginStyle);
+		});  
+		var aiLogin = new ActivityIndicator(aiLoginStyle);  
 		flButton.addChild(aiLogin);
 		this.aiLogin = aiLogin;
 

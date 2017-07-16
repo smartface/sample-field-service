@@ -40,8 +40,8 @@ const PgCustomerDetails_ = extend(Page)(
 			top: 30,
 			visible: false,
 			positionType: FlexLayout.PositionType.ABSOLUTE
-		});
-		var btnBack = new Button(btnBackStyle);
+		});  
+		var btnBack = new Button(btnBackStyle);  
 		this.layout.addChild(btnBack);
 		this.btnBack = btnBack;
 
@@ -57,8 +57,8 @@ const PgCustomerDetails_ = extend(Page)(
 			flexDirection: FlexLayout.FlexDirection.ROW,
 			justifyContent: FlexLayout.JustifyContent.SPACE_BETWEEN,
 			alignItems: FlexLayout.AlignItems.CENTER
-		});
-		var flCustomerTop = new FlexLayout(flCustomerTopStyle);
+		});  
+		var flCustomerTop = new FlexLayout(flCustomerTopStyle);  
 		this.layout.addChild(flCustomerTop);
 		
 		const lblNameStyle = getCombinedStyle(".label", {
@@ -70,8 +70,10 @@ const PgCustomerDetails_ = extend(Page)(
 			text: "Adam Stewart",
 			alignSelf: FlexLayout.AlignSelf.AUTO,
 			font: Font.create("Lato", 24, Font.NORMAL)
-		});
-		var lblName = new Label(lblNameStyle);
+		});  
+		var lblName = new Label(lblNameStyle);  
+		if(lblNameStyle.scrollEnabled === false)
+			lblName.ios && (lblName.ios.scrollEnabled = false);
 		this.layout.addChild(lblName);
 		this.lblName = lblName;
 
@@ -83,8 +85,10 @@ const PgCustomerDetails_ = extend(Page)(
 			text: " Lorem Ipsum",
 			alignSelf: FlexLayout.AlignSelf.AUTO,
 			font: Font.create("Lato", 18, Font.NORMAL)
-		});
-		var lblTitle = new Label(lblTitleStyle);
+		});  
+		var lblTitle = new Label(lblTitleStyle);  
+		if(lblTitleStyle.scrollEnabled === false)
+			lblTitle.ios && (lblTitle.ios.scrollEnabled = false);
 		this.layout.addChild(lblTitle);
 		
 		const flLineStyle = getCombinedStyle(".flexLayout", {
@@ -94,8 +98,8 @@ const PgCustomerDetails_ = extend(Page)(
 			marginRight: 25.39,
 			backgroundColor: Color.create(255, 91, 198, 149),
 			marginTop: 21.25
-		});
-		var flLine = new FlexLayout(flLineStyle);
+		});  
+		var flLine = new FlexLayout(flLineStyle);  
 		this.layout.addChild(flLine);
 		this.flLine = flLine;
 
@@ -109,8 +113,8 @@ const PgCustomerDetails_ = extend(Page)(
 			positionType: FlexLayout.PositionType.ABSOLUTE,
 			alignItems: FlexLayout.AlignItems.CENTER,
 			justifyContent: FlexLayout.JustifyContent.CENTER
-		});
-		var flWait = new FlexLayout(flWaitStyle);
+		});  
+		var flWait = new FlexLayout(flWaitStyle);  
 		this.layout.addChild(flWait);
 		this.flWait = flWait;
 
@@ -121,13 +125,16 @@ const PgCustomerDetails_ = extend(Page)(
 			width: 50,
 			marginTop: null,
 			text: null
-		});
-		var btnShare = new Button(btnShareStyle);
+		});  
+		var btnShare = new Button(btnShareStyle);  
 		flCustomerTop.addChild(btnShare);
 		this.btnShare = btnShare;
 
-		const aiWaitStyle = getCombinedStyle(".activityIndicator", {});
-		var aiWait = new ActivityIndicator(aiWaitStyle);
+		const aiWaitStyle = getCombinedStyle(".activityIndicator", {
+			minHeight: 21,
+			minWidth: 21
+		});  
+		var aiWait = new ActivityIndicator(aiWaitStyle);  
 		flWait.addChild(aiWait);
 		this.aiWait = aiWait;
 
@@ -141,8 +148,8 @@ const PgCustomerDetails_ = extend(Page)(
 			borderColor: Color.create(255, 91, 198, 149),
 			borderRadius: 44,
 			alignSelf: FlexLayout.AlignSelf.CENTER
-		});
-		var imgCustomerPicture = new ImageView(imgCustomerPictureStyle);
+		});  
+		var imgCustomerPicture = new ImageView(imgCustomerPictureStyle);  
 		flCustomerTop.addChild(imgCustomerPicture);
 		this.imgCustomerPicture = imgCustomerPicture;
 
@@ -153,8 +160,8 @@ const PgCustomerDetails_ = extend(Page)(
 			width: 50,
 			marginTop: null,
 			text: null
-		});
-		var btnAddToContacts = new Button(btnAddToContactsStyle);
+		});  
+		var btnAddToContacts = new Button(btnAddToContactsStyle);  
 		flCustomerTop.addChild(btnAddToContacts);
 		this.btnAddToContacts = btnAddToContacts;
 

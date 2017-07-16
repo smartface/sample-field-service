@@ -63,7 +63,6 @@ const pgCustomerDetails = extend(pgCustomerDetailsDesign)(
             page.imgCustomerPicture.borderColor = selectedTheme.mainColor;
             page.btnShare.backgroundImage = selectedTheme.share;
             page.btnAddToContacts.backgroundImage = selectedTheme.addToContacts;
-            page.aiWait.color = selectedTheme.topBarColor;
 
 
             page.headerBar.leftItemEnabled = true;
@@ -71,15 +70,9 @@ const pgCustomerDetails = extend(pgCustomerDetailsDesign)(
 
         page.onShow = function onShow(id) {
             baseOnShow && baseOnShow();
-
-            page.statusBar.ios.style = StatusBarStyle.DEFAULT;
+            applyTheme();
             sliderDrawer.enabled = false;
-            var selectedTheme = theme[theme.selected];
-            page.statusBar.android.color = selectedTheme.topBarColor;
-            if (System.OS === "Android") {
-                page.headerBar.titleColor = Color.WHITE;
-                page.headerBar.backgroundColor = selectedTheme.topBarColor;
-            }
+
             page.headerBar.title = lang.customerDetails;
             if (id) {
                 setTimeout(function() {
@@ -110,6 +103,7 @@ const pgCustomerDetails = extend(pgCustomerDetailsDesign)(
                                 name: "Notification flow",
                                 text: lang["Notification flow"]
                             }],
+                            id: customerData.id
                         };
                         var pictureAssigned = false;
 
@@ -149,20 +143,29 @@ const pgCustomerDetails = extend(pgCustomerDetailsDesign)(
             }
         };
 
+        function applyTheme() {
+            var selectedTheme = theme[theme.selected];
+            page.statusBar.ios.style = StatusBarStyle.LIGHTCONTENT;
+            page.statusBar.itemColor = Color.WHITE;
+
+            page.headerBar.titleColor = Color.WHITE;
+            page.headerBar.backgroundColor = selectedTheme.topBarColor;
+
+            page.statusBar.android && (page.statusBar.android.color = selectedTheme.topBarColor);
+            page.headerBar.backgroundColor = selectedTheme.topBarColor;
+            page.aiWait.color = selectedTheme.topBarColor;
+        }
+
         function loadData(customerDetails) {
             if (!svCustomerDetail)
                 return;
-            if (svCustomerDetail.layout) {
-                var oldLayout = svCustomerDetail.layout;
-                svCustomerDetail.removeChild(oldLayout);
-                delete svCustomerDetail.layout;
-            }
             var contactData = {};
 
             var layout = new FlexLayout({
                 left: 0,
                 top: 0,
                 right: 0,
+                bottom: 0,
                 positionType: FlexLayout.PositionType.ABSOLUTE,
                 backgroundColor: Color.TRANSPARENT,
                 alignItems: FlexLayout.AlignItems.STRETCH,
@@ -234,9 +237,8 @@ const pgCustomerDetails = extend(pgCustomerDetailsDesign)(
                 layout.addChild(shadow2);
                 layoutHeight += shadow.size;
             }
-            layout.height = layoutHeight;
-            svCustomerDetail.addChild(layout);
-            svCustomerDetail.layout = layout;
+            svCustomerDetail.layout.height = layoutHeight;
+            svCustomerDetail.layout.addChild(layout);
             page.imgCustomerPicture.image = customerDetails.picture ||
                 Image.createFromFile("images://customers_empty.png");
 
@@ -314,7 +316,9 @@ function goBack() {
 }
 
 function showNotes(customerData) {
-    alert("show notes");
+    Router.go("pgNotes", {
+        customerId: customerData.id
+    });
 }
 
 function showNotificationFlow(customerData) {

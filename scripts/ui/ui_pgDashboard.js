@@ -11,6 +11,7 @@ const Color = require('sf-core/ui/color');
 const Image = require('sf-core/ui/image');
 const ImageFillType = require('sf-core/ui/imagefilltype');
 const FlexLayout = require('sf-core/ui/flexlayout');
+const StatusBarStyle = require('sf-core/ui/statusbarstyle');
 
 
 
@@ -42,8 +43,8 @@ const PgDashboard_ = extend(Page)(
 			width: null,
 			positionType: FlexLayout.PositionType.RELATIVE,
 			flexGrow: 1
-		});
-		var imgReports = new ImageView(imgReportsStyle);
+		});  
+		var imgReports = new ImageView(imgReportsStyle);  
 		this.layout.addChild(imgReports);
 		this.imgReports = imgReports;
 
@@ -59,7 +60,8 @@ function onShow() {
   //StatusBar props
   const statusBarStyle = getCombinedStyle(".statusBar", {
 		visible: true,
-		color: Color.create(255, 44, 50, 57)
+		color: Color.create(255, 44, 50, 57),
+		style: StatusBarStyle.LIGHTCONTENT
 	});
 	
 	Object.assign(this.statusBar, statusBarStyle);

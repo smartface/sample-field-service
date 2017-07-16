@@ -24,7 +24,7 @@
 				"defaults": {}
 			},
 			"className": ".page",
-			"version": "6.3.9",
+			"version": "6.4.1",
 			"props": {
 				"backgroundColor": "#FFFFFF",
 				"orientation": "PORTRAIT",
@@ -47,19 +47,9 @@
 					"justifyContent": "FLEX_START"
 				},
 				"name": "pgCustomerFilter",
-				"layout": {
-					"width": 93.75,
-					"height": 150.75
-				},
-				"flex": {
-					"alignContent": 4,
-					"alignItems": 4,
-					"flexDirection": 0,
-					"flexWrap": 0,
-					"justifyContent": 0
-				},
 				"font": {}
-			}
+			},
+			"initialized": true
 		},
 		{
 			"type": "StatusBar",
@@ -89,12 +79,8 @@
 				"height": 20,
 				"style": "LIGHTCONTENT",
 				"children": [],
-				"layout": {
-					"height": 10
-				},
 				"parent": "pgCustomerFilter",
 				"name": "statusBar",
-				"flex": {},
 				"font": {},
 				"flexProps": {}
 			}
@@ -127,12 +113,8 @@
 				"isRemovable": false,
 				"height": 44,
 				"children": [],
-				"layout": {
-					"height": 22
-				},
 				"parent": "pgCustomerFilter",
 				"name": "headerBar",
-				"flex": {},
 				"font": {},
 				"flexProps": {}
 			}
@@ -194,18 +176,6 @@
 					"flexWrap": "NOWRAP",
 					"flexDirection": "ROW",
 					"positionType": "RELATIVE"
-				},
-				"layout": {
-					"height": 21.25,
-					"borderWidth": 0
-				},
-				"flex": {
-					"alignContent": 4,
-					"alignItems": 4,
-					"justifyContent": 0,
-					"flexWrap": 0,
-					"flexDirection": 2,
-					"positionType": 0
 				},
 				"parent": "pgCustomerFilter",
 				"name": "flTab",
@@ -282,21 +252,6 @@
 					"flexWrap": "NOWRAP",
 					"flexDirection": "ROW",
 					"positionType": "ABSOLUTE"
-				},
-				"layout": {
-					"right": 0,
-					"bottom": 0,
-					"left": 0,
-					"top": 0,
-					"borderWidth": 0
-				},
-				"flex": {
-					"alignContent": 4,
-					"alignItems": 4,
-					"justifyContent": 0,
-					"flexWrap": 0,
-					"flexDirection": 2,
-					"positionType": 1
 				},
 				"parent": "flTab",
 				"name": "flButtons",
@@ -375,21 +330,6 @@
 					"flexDirection": "ROW",
 					"positionType": "ABSOLUTE"
 				},
-				"layout": {
-					"right": 0,
-					"bottom": 0,
-					"left": 0,
-					"top": 0,
-					"borderWidth": 0
-				},
-				"flex": {
-					"alignContent": 4,
-					"alignItems": 3,
-					"justifyContent": 0,
-					"flexWrap": 0,
-					"flexDirection": 2,
-					"positionType": 1
-				},
 				"parent": "flTab",
 				"name": "flTabIndicator",
 				"font": {}
@@ -454,13 +394,6 @@
 				"flexProps": {
 					"positionType": "RELATIVE",
 					"alignSelf": "AUTO",
-					"flexGrow": 1
-				},
-				"layout": {
-					"borderWidth": 0
-				},
-				"flex": {
-					"positionType": 0,
 					"flexGrow": 1
 				},
 				"parent": "flButtons",
@@ -528,13 +461,6 @@
 					"alignSelf": "AUTO",
 					"flexGrow": 1
 				},
-				"layout": {
-					"borderWidth": 0
-				},
-				"flex": {
-					"positionType": 0,
-					"flexGrow": 1
-				},
 				"parent": "flButtons",
 				"name": "btnCard"
 			}
@@ -596,18 +522,6 @@
 					"flexWrap": "NOWRAP",
 					"flexDirection": "COLUMN",
 					"positionType": "RELATIVE",
-					"flexGrow": 0
-				},
-				"layout": {
-					"borderWidth": 0
-				},
-				"flex": {
-					"alignContent": 4,
-					"alignItems": 4,
-					"justifyContent": 0,
-					"flexWrap": 0,
-					"flexDirection": 0,
-					"positionType": 0,
 					"flexGrow": 0
 				},
 				"parent": "flTabIndicator",
@@ -675,19 +589,6 @@
 					"positionType": "RELATIVE",
 					"flexGrow": 1
 				},
-				"layout": {
-					"height": 2.5,
-					"borderWidth": 0
-				},
-				"flex": {
-					"alignContent": 4,
-					"alignItems": 4,
-					"justifyContent": 0,
-					"flexWrap": 0,
-					"flexDirection": 0,
-					"positionType": 0,
-					"flexGrow": 1
-				},
 				"parent": "flTabIndicator",
 				"name": "flTabHighlight",
 				"font": {}
@@ -752,18 +653,6 @@
 					"positionType": "RELATIVE",
 					"flexGrow": 1
 				},
-				"layout": {
-					"borderWidth": 0
-				},
-				"flex": {
-					"alignContent": 4,
-					"alignItems": 4,
-					"justifyContent": 0,
-					"flexWrap": 0,
-					"flexDirection": 0,
-					"positionType": 0,
-					"flexGrow": 1
-				},
 				"parent": "flTabIndicator",
 				"name": "placeHolderRight",
 				"font": {}
@@ -817,6 +706,7 @@
 				"borderColor": "rgba(0,0,0,1)",
 				"borderWidth": 0,
 				"paddingTop": null,
+				"paddingRight": 15,
 				"children": [
 					"flFirstLine",
 					"flPhoneInput",
@@ -833,23 +723,9 @@
 					"positionType": "RELATIVE",
 					"flexGrow": 1
 				},
-				"layout": {
-					"paddingRight": 7.5,
-					"borderWidth": 0
-				},
-				"flex": {
-					"alignContent": 4,
-					"alignItems": 4,
-					"justifyContent": 0,
-					"flexWrap": 0,
-					"flexDirection": 0,
-					"positionType": 0,
-					"flexGrow": 1
-				},
 				"parent": "pgCustomerFilter",
 				"name": "flInputs",
-				"font": {},
-				"paddingRight": 15
+				"font": {}
 			}
 		},
 		{
@@ -913,19 +789,6 @@
 					"flexWrap": "NOWRAP",
 					"flexDirection": "COLUMN",
 					"positionType": "RELATIVE"
-				},
-				"layout": {
-					"height": 30.5,
-					"paddingTop": 11.25,
-					"borderWidth": 0
-				},
-				"flex": {
-					"alignContent": 4,
-					"alignItems": 4,
-					"justifyContent": 0,
-					"flexWrap": 0,
-					"flexDirection": 0,
-					"positionType": 0
 				},
 				"parent": "flInputs",
 				"name": "flFirstLine",
@@ -998,18 +861,6 @@
 					"positionType": "RELATIVE",
 					"flexGrow": 1
 				},
-				"layout": {
-					"borderWidth": 0
-				},
-				"flex": {
-					"alignContent": 4,
-					"alignItems": 4,
-					"justifyContent": 0,
-					"flexWrap": 0,
-					"flexDirection": 2,
-					"positionType": 0,
-					"flexGrow": 1
-				},
 				"parent": "flFirstLine",
 				"name": "flNameInput",
 				"font": {}
@@ -1072,18 +923,6 @@
 					"flexDirection": "COLUMN",
 					"positionType": "RELATIVE"
 				},
-				"layout": {
-					"width": 32.5,
-					"borderWidth": 0
-				},
-				"flex": {
-					"alignContent": 4,
-					"alignItems": 4,
-					"justifyContent": 1,
-					"flexWrap": 0,
-					"flexDirection": 0,
-					"positionType": 0
-				},
 				"parent": "flNameInput",
 				"name": "flNameIcon",
 				"font": {}
@@ -1133,18 +972,11 @@
 				"borderWidth": 0,
 				"image": "filter_customer.png",
 				"usePageVariable": true,
-				"imageURL": "https://dispatcher.r0.smartface.io/smartface9/fieldservice2/ui-editor/img/filter_customer.png?os=iOS&osVersion=10.2&density=326&densityRatio=0.5&zoomLevel=0.5&brandModel=iPhone%207?random=0.6943295209504063",
+				"imageURL": "https://dispatcher.r0.smartface.io/smartface9/fieldservice2/ui-editor/img/filter_customer.png?os=iOS&osVersion=10.2&density=326&densityRatio=0.5&zoomLevel=0.5&brandModel=iPhone%207?random=0.49786655335359065",
 				"children": [],
 				"flexProps": {
 					"alignSelf": "AUTO",
 					"positionType": "RELATIVE",
-					"flexGrow": 1
-				},
-				"layout": {
-					"borderWidth": 0
-				},
-				"flex": {
-					"positionType": 0,
 					"flexGrow": 1
 				},
 				"parent": "flNameIcon",
@@ -1209,18 +1041,6 @@
 					"flexWrap": "NOWRAP",
 					"flexDirection": "COLUMN",
 					"positionType": "RELATIVE",
-					"flexGrow": 1
-				},
-				"layout": {
-					"borderWidth": 0
-				},
-				"flex": {
-					"alignContent": 4,
-					"alignItems": 3,
-					"justifyContent": 0,
-					"flexWrap": 0,
-					"flexDirection": 0,
-					"positionType": 0,
 					"flexGrow": 1
 				},
 				"parent": "flNameInput",
@@ -1293,18 +1113,6 @@
 					"positionType": "RELATIVE",
 					"flexGrow": 0
 				},
-				"layout": {
-					"borderWidth": 0
-				},
-				"flex": {
-					"alignContent": 4,
-					"alignItems": 4,
-					"justifyContent": 0,
-					"flexWrap": 0,
-					"flexDirection": 2,
-					"positionType": 0,
-					"flexGrow": 0
-				},
 				"parent": "flFirstLine",
 				"name": "flCardInput",
 				"font": {}
@@ -1367,18 +1175,6 @@
 					"flexDirection": "COLUMN",
 					"positionType": "RELATIVE"
 				},
-				"layout": {
-					"width": 32.5,
-					"borderWidth": 0
-				},
-				"flex": {
-					"alignContent": 4,
-					"alignItems": 2,
-					"justifyContent": 1,
-					"flexWrap": 0,
-					"flexDirection": 0,
-					"positionType": 0
-				},
 				"parent": "flCardInput",
 				"name": "flCardIcon",
 				"font": {}
@@ -1428,18 +1224,11 @@
 				"borderWidth": 0,
 				"image": "filter_card.png",
 				"usePageVariable": true,
-				"imageURL": "https://dispatcher.r0.smartface.io/smartface9/fieldservice2/ui-editor/img/filter_card.png?os=iOS&osVersion=10.2&density=326&densityRatio=0.5&zoomLevel=0.5&brandModel=iPhone%207?random=0.6970901990815583",
+				"imageURL": "https://dispatcher.r0.smartface.io/smartface9/fieldservice2/ui-editor/img/filter_card.png?os=iOS&osVersion=10.2&density=326&densityRatio=0.5&zoomLevel=0.5&brandModel=iPhone%207?random=0.851447567144066",
 				"children": [],
 				"flexProps": {
 					"alignSelf": "AUTO",
 					"positionType": "RELATIVE",
-					"flexGrow": 1
-				},
-				"layout": {
-					"borderWidth": 0
-				},
-				"flex": {
-					"positionType": 0,
 					"flexGrow": 1
 				},
 				"parent": "flCardIcon",
@@ -1504,18 +1293,6 @@
 					"flexWrap": "NOWRAP",
 					"flexDirection": "COLUMN",
 					"positionType": "RELATIVE",
-					"flexGrow": 1
-				},
-				"layout": {
-					"borderWidth": 0
-				},
-				"flex": {
-					"alignContent": 4,
-					"alignItems": 3,
-					"justifyContent": 0,
-					"flexWrap": 0,
-					"flexDirection": 0,
-					"positionType": 0,
 					"flexGrow": 1
 				},
 				"parent": "flCardInput",
@@ -1589,20 +1366,6 @@
 					"positionType": "RELATIVE",
 					"flexGrow": null
 				},
-				"layout": {
-					"height": 30.5,
-					"paddingTop": 11.25,
-					"borderWidth": 0
-				},
-				"flex": {
-					"alignContent": 4,
-					"alignItems": 4,
-					"justifyContent": 0,
-					"flexWrap": 0,
-					"flexDirection": 2,
-					"positionType": 0,
-					"flexGrow": null
-				},
 				"parent": "flInputs",
 				"name": "flPhoneInput",
 				"font": {}
@@ -1665,18 +1428,6 @@
 					"flexDirection": "COLUMN",
 					"positionType": "RELATIVE"
 				},
-				"layout": {
-					"width": 32.5,
-					"borderWidth": 0
-				},
-				"flex": {
-					"alignContent": 4,
-					"alignItems": 4,
-					"justifyContent": 1,
-					"flexWrap": 0,
-					"flexDirection": 0,
-					"positionType": 0
-				},
 				"parent": "flPhoneInput",
 				"name": "flPhoneIcon",
 				"font": {}
@@ -1726,18 +1477,11 @@
 				"borderWidth": 0,
 				"image": "filter_phone.png",
 				"usePageVariable": true,
-				"imageURL": "https://dispatcher.r0.smartface.io/smartface9/fieldservice2/ui-editor/img/filter_phone.png?os=iOS&osVersion=10.2&density=326&densityRatio=0.5&zoomLevel=0.5&brandModel=iPhone%207?random=0.3731147201242453",
+				"imageURL": "https://dispatcher.r0.smartface.io/smartface9/fieldservice2/ui-editor/img/filter_phone.png?os=iOS&osVersion=10.2&density=326&densityRatio=0.5&zoomLevel=0.5&brandModel=iPhone%207?random=0.9368264067458143",
 				"children": [],
 				"flexProps": {
 					"alignSelf": "AUTO",
 					"positionType": "RELATIVE",
-					"flexGrow": 1
-				},
-				"layout": {
-					"borderWidth": 0
-				},
-				"flex": {
-					"positionType": 0,
 					"flexGrow": 1
 				},
 				"parent": "flPhoneIcon",
@@ -1802,18 +1546,6 @@
 					"flexWrap": "NOWRAP",
 					"flexDirection": "COLUMN",
 					"positionType": "RELATIVE",
-					"flexGrow": 1
-				},
-				"layout": {
-					"borderWidth": 0
-				},
-				"flex": {
-					"alignContent": 4,
-					"alignItems": 3,
-					"justifyContent": 0,
-					"flexWrap": 0,
-					"flexDirection": 0,
-					"positionType": 0,
 					"flexGrow": 1
 				},
 				"parent": "flPhoneInput",
@@ -1887,20 +1619,6 @@
 					"positionType": "RELATIVE",
 					"flexGrow": null
 				},
-				"layout": {
-					"height": 30.5,
-					"paddingTop": 11.25,
-					"borderWidth": 0
-				},
-				"flex": {
-					"alignContent": 4,
-					"alignItems": 4,
-					"justifyContent": 0,
-					"flexWrap": 0,
-					"flexDirection": 2,
-					"positionType": 0,
-					"flexGrow": null
-				},
 				"parent": "flInputs",
 				"name": "flEmailInput",
 				"font": {}
@@ -1963,18 +1681,6 @@
 					"flexDirection": "COLUMN",
 					"positionType": "RELATIVE"
 				},
-				"layout": {
-					"width": 32.5,
-					"borderWidth": 0
-				},
-				"flex": {
-					"alignContent": 4,
-					"alignItems": 4,
-					"justifyContent": 1,
-					"flexWrap": 0,
-					"flexDirection": 0,
-					"positionType": 0
-				},
 				"parent": "flEmailInput",
 				"name": "flEmailIcon",
 				"font": {}
@@ -2024,18 +1730,11 @@
 				"borderWidth": 0,
 				"image": "filter_email.png",
 				"usePageVariable": true,
-				"imageURL": "https://dispatcher.r0.smartface.io/smartface9/fieldservice2/ui-editor/img/filter_email.png?os=iOS&osVersion=10.2&density=326&densityRatio=0.5&zoomLevel=0.5&brandModel=iPhone%207?random=0.9672138022137053",
+				"imageURL": "https://dispatcher.r0.smartface.io/smartface9/fieldservice2/ui-editor/img/filter_email.png?os=iOS&osVersion=10.2&density=326&densityRatio=0.5&zoomLevel=0.5&brandModel=iPhone%207?random=0.445086648971605",
 				"children": [],
 				"flexProps": {
 					"alignSelf": "AUTO",
 					"positionType": "RELATIVE",
-					"flexGrow": 1
-				},
-				"layout": {
-					"borderWidth": 0
-				},
-				"flex": {
-					"positionType": 0,
 					"flexGrow": 1
 				},
 				"parent": "flEmailIcon",
@@ -2102,18 +1801,6 @@
 					"positionType": "RELATIVE",
 					"flexGrow": 1
 				},
-				"layout": {
-					"borderWidth": 0
-				},
-				"flex": {
-					"alignContent": 4,
-					"alignItems": 3,
-					"justifyContent": 0,
-					"flexWrap": 0,
-					"flexDirection": 0,
-					"positionType": 0,
-					"flexGrow": 1
-				},
 				"parent": "flEmailInput",
 				"name": "flEmailInputArea",
 				"font": {}
@@ -2161,18 +1848,6 @@
 				},
 				"name": "flSearch",
 				"parent": "pgCustomerFilter",
-				"layout": {
-					"height": 47.5,
-					"borderWidth": 0
-				},
-				"flex": {
-					"alignContent": 4,
-					"alignItems": 2,
-					"justifyContent": 0,
-					"flexWrap": 0,
-					"flexDirection": 0,
-					"positionType": 0
-				},
 				"font": {}
 			}
 		},
@@ -2223,16 +1898,7 @@
 					"alignSelf": "AUTO"
 				},
 				"name": "btnSearch",
-				"parent": "flSearch",
-				"layout": {
-					"width": 91.25,
-					"height": 32.5,
-					"borderWidth": 0,
-					"borderRadius": 16.25
-				},
-				"flex": {
-					"positionType": 0
-				}
+				"parent": "flSearch"
 			}
 		}
 	]

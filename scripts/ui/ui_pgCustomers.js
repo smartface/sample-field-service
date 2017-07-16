@@ -29,8 +29,11 @@ const PgCustomers_ = extend(Page)(
 			onLoad: onLoad.bind(this)
 		}, props || {}));
 
-		const aiWaitStyle = getCombinedStyle(".activityIndicator", {});
-		var aiWait = new ActivityIndicator(aiWaitStyle);
+		const aiWaitStyle = getCombinedStyle(".activityIndicator", {
+			minHeight: 21,
+			minWidth: 21
+		});  
+		var aiWait = new ActivityIndicator(aiWaitStyle);  
 		this.layout.addChild(aiWait);
 		this.aiWait = aiWait;
 
@@ -46,8 +49,8 @@ const PgCustomers_ = extend(Page)(
 			rowHeight: 106.43,
 			visible: false,
 			positionType: FlexLayout.PositionType.ABSOLUTE
-		});
-		var lvCustomers = new ListView(lvCustomersStyle);
+		});  
+		var lvCustomers = new ListView(lvCustomersStyle);  
 		lvCustomers.onRowCreate = function(){ return new ListViewItem(); };
 		this.layout.addChild(lvCustomers);
 		this.lvCustomers = lvCustomers;
@@ -63,8 +66,8 @@ const PgCustomers_ = extend(Page)(
 			bottom: 10,
 			visible: false,
 			positionType: FlexLayout.PositionType.ABSOLUTE
-		});
-		var btnAddCustomer = new Button(btnAddCustomerStyle);
+		});  
+		var btnAddCustomer = new Button(btnAddCustomerStyle);  
 		this.layout.addChild(btnAddCustomer);
 		this.btnAddCustomer = btnAddCustomer;
 
@@ -76,8 +79,8 @@ const PgCustomers_ = extend(Page)(
 			image: Image.createFromFile("images://add_customer.png"),
 			visible: false,
 			positionType: FlexLayout.PositionType.ABSOLUTE
-		});
-		var imgAddCustomer = new ImageView(imgAddCustomerStyle);
+		});  
+		var imgAddCustomer = new ImageView(imgAddCustomerStyle);  
 		this.layout.addChild(imgAddCustomer);
 		this.imgAddCustomer = imgAddCustomer;
 

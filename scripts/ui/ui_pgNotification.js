@@ -33,9 +33,11 @@ const PgNotification_ = extend(Page)(
 			bottom: null,
 			width: 42,
 			height: 42,
-			positionType: FlexLayout.PositionType.RELATIVE
-		});
-		var aiWait = new ActivityIndicator(aiWaitStyle);
+			positionType: FlexLayout.PositionType.RELATIVE,
+			minHeight: 21,
+			minWidth: 21
+		});  
+		var aiWait = new ActivityIndicator(aiWaitStyle);  
 		this.layout.addChild(aiWait);
 		this.aiWait = aiWait;
 
