@@ -29,7 +29,7 @@
 				"defaults": {}
 			},
 			"className": ".page",
-			"version": "6.3.9",
+			"version": "6.4.1",
 			"props": {
 				"backgroundColor": "#FFFFFF",
 				"orientation": "PORTRAIT",
@@ -51,20 +51,10 @@
 					"flexWrap": "NOWRAP",
 					"justifyContent": "FLEX_START"
 				},
-				"layout": {
-					"width": 93.75,
-					"height": 166.75
-				},
-				"flex": {
-					"alignContent": 4,
-					"alignItems": 4,
-					"flexDirection": 2,
-					"flexWrap": 0,
-					"justifyContent": 0
-				},
 				"name": "pgLogin",
 				"font": {}
-			}
+			},
+			"initialized": true
 		},
 		{
 			"type": "StatusBar",
@@ -90,12 +80,8 @@
 				"isRemovable": false,
 				"height": 20,
 				"children": [],
-				"layout": {
-					"height": 10
-				},
 				"parent": "pgLogin",
 				"name": "statusBar",
-				"flex": {},
 				"font": {},
 				"flexProps": {}
 			}
@@ -128,12 +114,8 @@
 				"isRemovable": false,
 				"height": 44,
 				"children": [],
-				"layout": {
-					"height": 22
-				},
 				"parent": "pgLogin",
 				"name": "headerBar",
-				"flex": {},
 				"font": {},
 				"flexProps": {}
 			}
@@ -193,18 +175,6 @@
 					"flexWrap": "NOWRAP",
 					"flexDirection": "COLUMN",
 					"positionType": "RELATIVE",
-					"flexGrow": 1
-				},
-				"layout": {
-					"borderWidth": 0
-				},
-				"flex": {
-					"alignContent": 4,
-					"alignItems": 4,
-					"justifyContent": 0,
-					"flexWrap": 0,
-					"flexDirection": 0,
-					"positionType": 0,
 					"flexGrow": 1
 				},
 				"parent": "pgLogin",
@@ -284,20 +254,6 @@
 					"positionType": "RELATIVE",
 					"flexGrow": 5
 				},
-				"layout": {
-					"marginBottom": 66.905,
-					"marginTop": 29.655,
-					"borderWidth": 0
-				},
-				"flex": {
-					"alignContent": 4,
-					"alignItems": 4,
-					"justifyContent": 4,
-					"flexWrap": 0,
-					"flexDirection": 0,
-					"positionType": 0,
-					"flexGrow": 5
-				},
 				"parent": "pgLogin",
 				"name": "flMiddle",
 				"font": {}
@@ -360,18 +316,6 @@
 					"positionType": "RELATIVE",
 					"flexGrow": 1
 				},
-				"layout": {
-					"borderWidth": 0
-				},
-				"flex": {
-					"alignContent": 4,
-					"alignItems": 4,
-					"justifyContent": 0,
-					"flexWrap": 0,
-					"flexDirection": 0,
-					"positionType": 0,
-					"flexGrow": 1
-				},
 				"parent": "pgLogin",
 				"name": "flRight",
 				"font": {}
@@ -419,18 +363,11 @@
 				"borderWidth": 0,
 				"image": "logo.png",
 				"usePageVariable": true,
-				"imageURL": "https://dispatcher.r0.smartface.io/smartface9/fieldservice2/ui-editor/img/logo.png?os=iOS&osVersion=10.2&density=326&densityRatio=0.5&zoomLevel=0.5&brandModel=iPhone%207?random=0.32535322323912874",
+				"imageURL": "https://dispatcher.r0.smartface.io/smartface9/fieldservice2/ui-editor/img/logo.png?os=iOS&osVersion=10.2&density=326&densityRatio=0.5&zoomLevel=0.5&brandModel=iPhone%207?random=0.7442945522154245",
 				"children": [],
 				"flexProps": {
 					"alignSelf": "AUTO",
 					"positionType": "RELATIVE"
-				},
-				"layout": {
-					"height": 33.5,
-					"borderWidth": 0
-				},
-				"flex": {
-					"positionType": 0
 				},
 				"parent": "flMiddle",
 				"name": "imgLogo",
@@ -493,18 +430,6 @@
 					"flexWrap": "NOWRAP",
 					"flexDirection": "COLUMN",
 					"positionType": "RELATIVE"
-				},
-				"layout": {
-					"height": 47.5,
-					"borderWidth": 0
-				},
-				"flex": {
-					"alignContent": 4,
-					"alignItems": 4,
-					"justifyContent": 3,
-					"flexWrap": 0,
-					"flexDirection": 0,
-					"positionType": 0
 				},
 				"parent": "flMiddle",
 				"name": "flInputs",
@@ -569,18 +494,6 @@
 					"flexDirection": "ROW_REVERSE",
 					"positionType": "RELATIVE"
 				},
-				"layout": {
-					"height": 31.5,
-					"borderWidth": 0
-				},
-				"flex": {
-					"alignContent": 4,
-					"alignItems": 2,
-					"justifyContent": 2,
-					"flexWrap": 0,
-					"flexDirection": 3,
-					"positionType": 0
-				},
 				"parent": "flMiddle",
 				"name": "flButton",
 				"font": {}
@@ -644,18 +557,6 @@
 					"flexDirection": "COLUMN",
 					"positionType": "RELATIVE"
 				},
-				"layout": {
-					"height": 45,
-					"borderWidth": 0
-				},
-				"flex": {
-					"alignContent": 4,
-					"alignItems": 4,
-					"justifyContent": 3,
-					"flexWrap": 0,
-					"flexDirection": 0,
-					"positionType": 0
-				},
 				"parent": "flMiddle",
 				"name": "flTexts",
 				"font": {}
@@ -718,13 +619,6 @@
 					"alignSelf": "AUTO",
 					"positionType": "RELATIVE"
 				},
-				"layout": {
-					"height": 18.5,
-					"borderWidth": 0
-				},
-				"flex": {
-					"positionType": 0
-				},
 				"parent": "flTexts",
 				"name": "lblTitle"
 			}
@@ -786,13 +680,6 @@
 				"flexProps": {
 					"alignSelf": "AUTO",
 					"positionType": "RELATIVE"
-				},
-				"layout": {
-					"height": 22,
-					"borderWidth": 0
-				},
-				"flex": {
-					"positionType": 0
 				},
 				"parent": "flTexts",
 				"name": "lblSubTitle"
@@ -875,19 +762,6 @@
 					"right": 0,
 					"bottom": 0
 				},
-				"layout": {
-					"right": 0,
-					"bottom": 0,
-					"left": 0,
-					"top": 0,
-					"borderWidth": 0,
-					"borderRadius": 16.25
-				},
-				"flex": {
-					"positionType": 1,
-					"right": 0,
-					"bottom": 0
-				},
 				"parent": "flButton",
 				"name": "btnLogin"
 			}
@@ -953,17 +827,6 @@
 				"flexProps": {
 					"positionType": "RELATIVE",
 					"alignSelf": "AUTO"
-				},
-				"layout": {
-					"marginLeft": 10,
-					"width": 21,
-					"height": 21,
-					"minWidth": 10.5,
-					"minHeight": 10.5,
-					"borderWidth": 0
-				},
-				"flex": {
-					"positionType": 0
 				},
 				"input": {
 					"height": 21,
