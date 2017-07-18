@@ -57,7 +57,7 @@ const pgCustomerFilter = extend(pgCustomerFilterDesign)(
             tiName = Object.assign(new TextInput(), textInputDefaults, {
                 hint: lang.nameSurname,
                 onActionButtonPress: function() {
-                    tiPhone.focus();
+                    tiPhone.requestFocus();
                 },
                 actionKeyType: ActionKeyType.NEXT
             });
@@ -67,7 +67,7 @@ const pgCustomerFilter = extend(pgCustomerFilterDesign)(
                 hint: lang.cardNumber,
                 keyboardType: KeyboardType.NUMBER,
                 onActionButtonPress: function() {
-                    tiPhone.focus();
+                    tiPhone.requestFocus();
                 },
                 actionKeyType: ActionKeyType.NEXT
             });
@@ -77,7 +77,7 @@ const pgCustomerFilter = extend(pgCustomerFilterDesign)(
                 hint: lang.phone,
                 keyboardType: KeyboardType.PHONE,
                 onActionButtonPress: function() {
-                    tiEmail.focus();
+                    tiEmail.requestFocus();
                 },
                 actionKeyType: ActionKeyType.NEXT
             });
