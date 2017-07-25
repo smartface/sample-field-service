@@ -2,8 +2,6 @@
 const http = require("sf-core/net/http");
 const mcs = require("../lib/mcs");
 const Network = require('sf-core/device/network');
-const Base64_Helper = require("../lib/base64");
-const Base64 = new Base64_Helper();
 
 exports.getNotes = getNotes;
 exports.getNoteContent = getNoteContent;
@@ -67,7 +65,7 @@ function addNote(noteContent, callback) {
         collectionId: "notes",
         itemName: fileName,
         contentType: "text/plain",
-        base64EncodeData: Base64.encode(noteContent)
+        base64EncodeData: noteContent
     }, function(err, response) {
         callback && callback(err, response);
     });

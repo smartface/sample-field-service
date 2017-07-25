@@ -12,7 +12,8 @@ const userData = require("../model/user");
 const rau = require("../lib/rau");
 const theme = require("../lib/theme");
 const KeyboardType = require('sf-core/ui/keyboardtype');
-// const Application = require("sf-core/application");
+const Data = require('sf-core/data');
+const FingerPrintLib = require("sf-extension-utils/fingerprint");
 
 const pgLogin = extend(pgLoginDesign)(
     function(_super) {
@@ -40,7 +41,7 @@ const pgLogin = extend(pgLoginDesign)(
                 isPassword: true,
                 actionKeyType: ActionKeyType.GO,
                 onActionButtonPress: function(e) {
-                    doLogin();
+                    startLogin();
                 }
             });
             if (System.OS === "Android") {
@@ -49,7 +50,7 @@ const pgLogin = extend(pgLoginDesign)(
 
             page.flInputs.addChild(tiUserName);
             page.flInputs.addChild(tiPassword);
-            page.btnLogin.onPress = doLogin;
+            page.btnLogin.onPress = startLogin;
             page.btnLogin.text = lang.login;
 
             page.android.onBackButtonPressed = function(e) {
@@ -94,7 +95,7 @@ const pgLogin = extend(pgLoginDesign)(
         };
 
 
-        function doLogin() {
+        function startLogin() {
             if (!tiPassword || !tiUserName)
                 return;
             var isValid = true;
@@ -102,7 +103,7 @@ const pgLogin = extend(pgLoginDesign)(
                 tiUserName.invalidate();
                 isValid = false;
             }
-            if (tiPassword.text.length === 0) {
+            if (tiPassword.text.length === 0 && !Data.getBooleanVariable('isNotFirstLogin')) {
                 tiPassword.invalidate();
                 isValid = false;
             }
@@ -113,11 +114,74 @@ const pgLogin = extend(pgLoginDesign)(
             if (!isValid)
                 return;
             page.setState(false);
+            var storedPassword = Data.getStringVariable("password");
 
+            if (FingerPrintLib.isUserVerifiedFingerprint) {
+                // Second+ logging. No need to register fingerprint user already do it before.
+                if (tiPassword.text.length !== 0) {
+                    // Validate fingerPrint
+                    performLogin();
+                    return;
+                }
+                else {
+                    FingerPrintLib.validateFingerPrint(function() {
+                        performLogin(storedPassword);
+                    }, function() {
+                        if (tiPassword.text.length === 0) {
+                            // Validate fingerPrint
+                            tiPassword.invalidate();
+                            return;
+                        }
+                        performLogin();
+                    });
+                    return;
+                }
+            }
+            else if (FingerPrintLib.isFingerprintAvailable) {
+                if (FingerPrintLib.isUserAllowedFingerprint) {
+                    // Second+ logging. But user not registered fingerprint. But password supplied skip fingerprint
+                    if (tiPassword.text.length !== 0) {
+                        // Validate fingerPrint
+                        performLogin();
+                        return;
+                    }
+                    else {
+                        FingerPrintLib.validateFingerPrint(function() {
+                            performLogin(storedPassword);
+                        }, function() {
+                            if (tiPassword.text.length === 0) {
+                                // Validate fingerPrint
+                                tiPassword.invalidate();
+                                return;
+                            }
+                            performLogin();
+                        });
+                        return;
+                    }
+                }
+                // first logging and ask user to register fingerprint
+                else if (!FingerPrintLib.isUserRejectedFingerprint) {
+                    FingerPrintLib.registerFingerPrint(function() {
+                        performLogin();
+                    }, function() {
+                        if (tiPassword.text.length === 0) {
+                            // Validate fingerPrint
+                            tiPassword.invalidate();
+                            return;
+                        }
+                        performLogin();
+                    });
+                    return;
+                }
 
+            }
+        }
+
+        function performLogin(password) {
+            password = password || tiPassword.text.trim();
             mcs.login({
                 username: tiUserName.text.toLowerCase().trim(),
-                password: tiPassword.text.trim()
+                password: password
             }, function(err, result) {
                 page.setState(true);
                 if (err) {
@@ -132,30 +196,16 @@ const pgLogin = extend(pgLoginDesign)(
                 userData.currentUser = result;
                 sliderDrawer.setUserData();
 
-                // console.log(JSON.stringify(result));
 
-                // alert("success");
-                // proceedNotifications();
                 showDashboard();
             });
 
             function showDashboard() {
-                //TODO: set sliderDrawerValues
+                Data.setBooleanVariable('isNotFirstLogin', true);
+                Data.setStringVariable("password", password);
                 sliderDrawer.enabled = true;
                 Router.go("pgDashboard");
             }
-
-            // function proceedNotifications() {
-            //     console.log("before getting notifications");
-            //     notifications.getNotifications(function(err, notificationsData) {
-            //         console.log("after getting notifications. Is there error? " + !!err);
-            //         if (err) {
-            //             return alert(JSON.stringify(err), "Notifications Service Error");
-            //         }
-
-            //         //Router.go("pgNotification", notificationsData);
-            //     });
-            // }
         }
 
         if (Application.currentReleaseChannel === "test") {
@@ -164,9 +214,6 @@ const pgLogin = extend(pgLoginDesign)(
                 tiUserName.text = "fieldservice";
             };
         }
-
-
-
     });
 
 

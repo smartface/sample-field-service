@@ -33,6 +33,18 @@ const CustomerActionRow = extend(CustomerActionRowDesign)(
 					return customerActionRow.lblActionName.text = value;
 				}
 			},
+			count: {
+				enumerable: true,
+				configurable: true,
+				get: function() {
+					return customerActionRow.lblCount.text;
+				},
+				set: function(value) {
+					if (!value)
+						value = "";
+					return customerActionRow.lblCount.text = value;
+				}
+			},
 			onPress: {
 				enumerable: true,
 				configurable: true,

@@ -8,9 +8,9 @@ const extend = require('js-base/core/extend');
 const Page = require('sf-core/ui/page');
 const FlexLayout = require('sf-core/ui/flexlayout');
 const Color = require('sf-core/ui/color');
-const Switch = require('sf-core/ui/switch');
 const Label = require('sf-core/ui/label');
 const Font = require('sf-core/ui/font');
+const Switch = require('sf-core/ui/switch');
 const TextAlignment = require('sf-core/ui/textalignment');
 const StatusBarStyle = require('sf-core/ui/statusbarstyle');
 
@@ -52,6 +52,19 @@ const PgSettings_ = extend(Page)(
 		var flNotifications = new FlexLayout(flNotificationsStyle);  
 		this.layout.addChild(flNotifications);
 		
+		const flFingerPrintStyle = getCombinedStyle(".flexLayout", {
+			backgroundColor: Color.create(0, 255, 255, 255),
+			width: null,
+			height: 48.5,
+			marginLeft: 20,
+			marginRight: 15,
+			marginTop: 20,
+			flexDirection: FlexLayout.FlexDirection.ROW_REVERSE,
+			alignItems: FlexLayout.AlignItems.CENTER
+		});  
+		var flFingerPrint = new FlexLayout(flFingerPrintStyle);  
+		this.layout.addChild(flFingerPrint);
+		
 		const flTextsStyle = getCombinedStyle(".flexLayout", {
 			backgroundColor: Color.create(0, 255, 255, 255),
 			width: null,
@@ -65,19 +78,6 @@ const PgSettings_ = extend(Page)(
 		var flTexts = new FlexLayout(flTextsStyle);  
 		this.layout.addChild(flTexts);
 		
-		const swNotificationsStyle = getCombinedStyle(".switch", {
-			minWidth: 51,
-			minHeight: 31,
-			width: null,
-			thumbOnColor: Color.create(255, 80, 210, 194),
-			toggleOnColor: Color.create(128, 131, 108, 179)
-		});  
-		var swNotifications = new Switch(swNotificationsStyle);  
-		if(swNotificationsStyle.toggleOffColor)
-			swNotifications.android && (swNotifications.android.toggleOffColor = swNotificationsStyle.toggleOffColor);
-		flNotifications.addChild(swNotifications);
-		this.swNotifications = swNotifications;
-
 		const lblThemeStyle = getCombinedStyle(".label", {
 			text: "Theme",
 			width: null,
@@ -93,6 +93,32 @@ const PgSettings_ = extend(Page)(
 		flTheme.addChild(lblTheme);
 		this.lblTheme = lblTheme;
 
+		const swFingerprintStyle = getCombinedStyle(".switch", {
+			minWidth: 51,
+			minHeight: 31,
+			width: null,
+			thumbOnColor: Color.create(255, 80, 210, 194),
+			toggleOnColor: Color.create(128, 131, 108, 179)
+		});  
+		var swFingerprint = new Switch(swFingerprintStyle);  
+		if(swFingerprintStyle.toggleOffColor)
+			swFingerprint.android && (swFingerprint.android.toggleOffColor = swFingerprintStyle.toggleOffColor);
+		flFingerPrint.addChild(swFingerprint);
+		this.swFingerprint = swFingerprint;
+
+		const swNotificationsStyle = getCombinedStyle(".switch", {
+			minWidth: 51,
+			minHeight: 31,
+			width: null,
+			thumbOnColor: Color.create(255, 80, 210, 194),
+			toggleOnColor: Color.create(128, 131, 108, 179)
+		});  
+		var swNotifications = new Switch(swNotificationsStyle);  
+		if(swNotificationsStyle.toggleOffColor)
+			swNotifications.android && (swNotifications.android.toggleOffColor = swNotificationsStyle.toggleOffColor);
+		flNotifications.addChild(swNotifications);
+		this.swNotifications = swNotifications;
+
 		const lblAboutStyle = getCombinedStyle(".label", {
 			width: null,
 			text: "About v1.0.0",
@@ -106,6 +132,22 @@ const PgSettings_ = extend(Page)(
 			lblAbout.ios && (lblAbout.ios.scrollEnabled = false);
 		flTexts.addChild(lblAbout);
 		this.lblAbout = lblAbout;
+
+		const lblNotificationsStyle = getCombinedStyle(".label", {
+			text: "Notification",
+			width: null,
+			height: null,
+			textColor: Color.create(255, 29, 29, 38),
+			backgroundColor: Color.create(0, 255, 255, 255),
+			flexGrow: 1,
+			alignSelf: FlexLayout.AlignSelf.STRETCH,
+			font: Font.create("Lato", 14, Font.NORMAL)
+		});  
+		var lblNotifications = new Label(lblNotificationsStyle);  
+		if(lblNotificationsStyle.scrollEnabled === false)
+			lblNotifications.ios && (lblNotifications.ios.scrollEnabled = false);
+		flNotifications.addChild(lblNotifications);
+		this.lblNotifications = lblNotifications;
 
 		const lblTextStyle = getCombinedStyle(".label", {
 			width: null,
@@ -125,22 +167,6 @@ const PgSettings_ = extend(Page)(
 		flTexts.addChild(lblText);
 		this.lblText = lblText;
 
-		const lblNotificationsStyle = getCombinedStyle(".label", {
-			text: "Notification",
-			width: null,
-			height: null,
-			textColor: Color.create(255, 29, 29, 38),
-			backgroundColor: Color.create(0, 255, 255, 255),
-			flexGrow: 1,
-			alignSelf: FlexLayout.AlignSelf.STRETCH,
-			font: Font.create("Lato", 14, Font.NORMAL)
-		});  
-		var lblNotifications = new Label(lblNotificationsStyle);  
-		if(lblNotificationsStyle.scrollEnabled === false)
-			lblNotifications.ios && (lblNotifications.ios.scrollEnabled = false);
-		flNotifications.addChild(lblNotifications);
-		this.lblNotifications = lblNotifications;
-
 		const flThemeSelectionsStyle = getCombinedStyle(".flexLayout", {
 			backgroundColor: Color.create(0, 255, 255, 255),
 			width: 68,
@@ -153,6 +179,36 @@ const PgSettings_ = extend(Page)(
 		var flThemeSelections = new FlexLayout(flThemeSelectionsStyle);  
 		flTheme.addChild(flThemeSelections);
 		
+		const lblFingerPrintStyle = getCombinedStyle(".label", {
+			text: "Use FingerPrint",
+			width: null,
+			height: null,
+			textColor: Color.create(255, 29, 29, 38),
+			backgroundColor: Color.create(0, 255, 255, 255),
+			flexGrow: 1,
+			alignSelf: FlexLayout.AlignSelf.STRETCH,
+			font: Font.create("Lato", 14, Font.NORMAL)
+		});  
+		var lblFingerPrint = new Label(lblFingerPrintStyle);  
+		if(lblFingerPrintStyle.scrollEnabled === false)
+			lblFingerPrint.ios && (lblFingerPrint.ios.scrollEnabled = false);
+		flFingerPrint.addChild(lblFingerPrint);
+		this.lblFingerPrint = lblFingerPrint;
+
+		const flLineFingerPrintStyle = getCombinedStyle(".flexLayout", {
+			width: null,
+			height: 0.5,
+			left: 12,
+			right: 0,
+			bottom: 0,
+			backgroundColor: Color.create(255, 80, 210, 194),
+			top: null,
+			positionType: FlexLayout.PositionType.ABSOLUTE
+		});  
+		var flLineFingerPrint = new FlexLayout(flLineFingerPrintStyle);  
+		flFingerPrint.addChild(flLineFingerPrint);
+		this.flLineFingerPrint = flLineFingerPrint;
+
 		const flLineThemeStyle = getCombinedStyle(".flexLayout", {
 			width: null,
 			height: 0.5,
@@ -207,17 +263,6 @@ const PgSettings_ = extend(Page)(
 		flThemeSelections.addChild(flNavySelection);
 		this.flNavySelection = flNavySelection;
 
-		const flNavyStyle = getCombinedStyle(".flexLayout", {
-			width: 20,
-			height: 20.28,
-			borderRadius: 3,
-			backgroundColor: Color.create(255, 44, 50, 57),
-			borderWidth: 0.5,
-			borderColor: Color.create(255, 44, 50, 57)
-		});  
-		var flNavy = new FlexLayout(flNavyStyle);  
-		flNavySelection.addChild(flNavy);
-		
 		const flPurpleStyle = getCombinedStyle(".flexLayout", {
 			width: 20,
 			height: 20.28,
@@ -229,10 +274,22 @@ const PgSettings_ = extend(Page)(
 		var flPurple = new FlexLayout(flPurpleStyle);  
 		flPurpleSelection.addChild(flPurple);
 		
+		const flNavyStyle = getCombinedStyle(".flexLayout", {
+			width: 20,
+			height: 20.28,
+			borderRadius: 3,
+			backgroundColor: Color.create(255, 44, 50, 57),
+			borderWidth: 0.5,
+			borderColor: Color.create(255, 44, 50, 57)
+		});  
+		var flNavy = new FlexLayout(flNavyStyle);  
+		flNavySelection.addChild(flNavy);
+		
 		//assign the children to page 
 		this.children = Object.assign({}, {
 			flTheme: flTheme,
 			flNotifications: flNotifications,
+			flFingerPrint: flFingerPrint,
 			flTexts: flTexts
 		});
 		
@@ -248,6 +305,13 @@ const PgSettings_ = extend(Page)(
 			swNotifications: swNotifications,
 			lblNotifications: lblNotifications,
 			flLineNotifications: flLineNotifications
+		});
+		
+		//assign the children of flFingerPrint
+		flFingerPrint.children = Object.assign({}, {
+			swFingerprint: swFingerprint,
+			lblFingerPrint: lblFingerPrint,
+			flLineFingerPrint: flLineFingerPrint
 		});
 		
 		//assign the children of flTexts

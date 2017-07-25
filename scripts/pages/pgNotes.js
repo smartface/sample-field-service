@@ -12,6 +12,11 @@ const theme = require("../lib/theme");
 const Font = require('sf-core/ui/font');
 const Router = require("sf-core/ui/router");
 const backAction = require("../lib/ui").backAction;
+const relativeTime = require("../lib/relative-time");
+const Image = require('sf-core/ui/image');
+const ImageView = require('sf-core/ui/imageview');
+var nextImage = Image.createFromFile("images://next_page.png");
+const FloatingMenu = require('sf-core/ui/floatingmenu');
 
 const pgNotes = extend(pgNotesDesign)(
 	// Constructor
@@ -29,47 +34,62 @@ const pgNotes = extend(pgNotesDesign)(
 function onShow(superOnShow, data) {
 	const page = this;
 	superOnShow();
-	const lvNotes = page.lvNotes;
-	const aiNotes = page.aiNotes;
-
+	// const lvNotes = page.lvNotes;
+	// const aiNotes = page.aiNotes;
 	if (data && data.customerId) {
-		setTimeout(function() {
-			notes.getNotes(function(err, notes) {
-				if (err) {
-					if (typeof err === "object") {
-						if (typeof err.body === "object")
-							err.body = err.body.toString();
-						err = JSON.stringify(err, null, "\t");
-					}
-					alert(err, "Notes Error");
-					return;
-				}
-				page.data = notes;
-				notes.forEach(function(note) {
-					var splittedName = note.name.split(".");
-					note.displayName = splittedName ? splittedName[0] : note.name;
-					var date = new Date(note.modifiedOn);
-					note.modifiedOnDisplayValue = date.getFullYear() + "-" + (date.getMonth() + 1) + "-" + date.getDate();
-				});
-
-				lvNotes.itemCount = notes.length;
-				aiNotes.visible = false;
-				lvNotes.refreshData();
-				lvNotes.visible = true;
-			});
-		}, initTime);
+		page.putToWaitMode();
+		page.customerId = data.customerId;
+		page.refreshData();
 	}
 
 	backAction(page);
 	applyTheme.call(page);
-	
+
 	page.headerBar.title = lang.Notes;
+}
+
+function putToWaitMode() {
+	const page = this;
+	const lvNotes = page.lvNotes;
+	const aiNotes = page.aiNotes;
+	aiNotes.visible = true;
+	lvNotes.visible = false;
+}
+
+function refreshData() {
+	const page = this;
+	const lvNotes = page.lvNotes;
+	const aiNotes = page.aiNotes;
+	setTimeout(function() {
+		notes.getNotes(function(err, notes) {
+			if (err) {
+				if (typeof err === "object") {
+					if (typeof err.body === "object")
+						err.body = err.body.toString();
+					err = JSON.stringify(err, null, "\t");
+				}
+				alert(err, "Notes Error");
+				return;
+			}
+			page.data = notes;
+			notes.forEach(function(note) {
+				var splittedName = note.name.split(".");
+				note.displayName = splittedName ? splittedName[0] : note.name;
+				var date = new Date(note.modifiedOn);
+				note.modifiedOnDisplayValue = relativeTime(date);
+			});
+
+			lvNotes.itemCount = notes.length;
+			aiNotes.visible = false;
+			lvNotes.refreshData();
+			lvNotes.visible = true;
+		});
+	}, initTime);
 }
 
 function applyTheme() {
 	const page = this;
 	var selectedTheme = theme[theme.selected];
-	page.btnNew.textColor = selectedTheme.topBarColor;
 	page.headerBar.backgroundColor = selectedTheme.topBarColor;
 	page.aiNotes.color = selectedTheme.topBarColor;
 }
@@ -84,7 +104,7 @@ function onLoad(superOnLoad) {
 	const flNoteRowId = 4845;
 	const lblNoteNameId = 4846;
 	const lblDateId = 4847;
-	
+
 
 	lvNotes.onRowCreate = function() {
 		var lvNotesItem = new ListViewItem();
@@ -121,13 +141,23 @@ function onLoad(superOnLoad) {
 		});
 		flListRow.addChild(lblDate);
 
+
+		var myImageView = new ImageView({
+			image: nextImage,
+			right: 17,
+			bottom: 0,
+			top: 0,
+			positionType: FlexLayout.PositionType.ABSOLUTE,
+		});
+		flListRow.addChild(myImageView);
+
 		var line = new View({
 			backgroundColor: selectedTheme.lineSeparator,
 			positionType: FlexLayout.PositionType.ABSOLUTE,
-			height: 1,
+			height: 0.5,
 			bottom: 0,
 			left: 0,
-			right: 0
+			right: 20
 		});
 		flListRow.addChild(line);
 
@@ -148,28 +178,53 @@ function onLoad(superOnLoad) {
 		lblDate.text = itemData.modifiedOnDisplayValue;
 	};
 
-	lvNotes.ios.swipeItem(lang.delete, Color.RED, 0, function() {
-		alert(JSON.stringify(arguments, null, "\t"), "Swipe callback");
-	});
-
 	lvNotes.ios.rightToLeftSwipeEnabled = true;
-
 	lvNotes.ios.onRowSwiped = function() {
-		// alert(JSON.stringify(arguments, null, "\t"), "Swipe event");
+		return [lvNotes.ios.swipeItem(lang.delete, Color.RED, 50, function(e) {
+			var rowIndex = e.index;
+			var noteData = page.data[rowIndex];
+			page.putToWaitMode();
+			notes.deleteNote(noteData, function(err) {
+				if (err) {
+					if (typeof err === "object") {
+						if (typeof err.body === "object")
+							err.body = err.body.toString();
+						err = JSON.stringify(err, null, "\t");
+					}
+					alert(err, "Notes Error");
+				}
+				page.refreshData();
+			});
+		})];
 	};
 
 	lvNotes.onRowSelected = function(listViewItem, index) {
-		var data = page.data[index];
-		Router.go("pgNoteContent", data);
+		Router.go("pgNoteContent", {
+			noteData: page.data[index],
+			pgNotes: page
+		});
 	};
 
 	lvNotes.refreshEnabled = false;
 
-	page.btnNew.onPress = function() {
-		Router.go("pgNoteContent");
-	};
+	page.refreshData = refreshData.bind(page);
+	page.putToWaitMode = putToWaitMode.bind(page);
 
-
+	var floatingMenu = new FloatingMenu({
+		width: 56,
+		height: 56,
+		bottom: 10,
+		right: 8.5,
+		positionType: FlexLayout.PositionType.ABSOLUTE,
+		icon: selectedTheme.addCustomer,
+		color: Color.TRANSPARENT,
+		onClick: function() {
+			Router.go("pgNoteContent", {
+				pgNotes: page
+			});
+		},
+	});
+	page.layout.addChild(floatingMenu);
 
 }
 

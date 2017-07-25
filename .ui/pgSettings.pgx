@@ -3,6 +3,7 @@
 		{
 			"type": "Page",
 			"id": "c821d7f2",
+			"initialized": true,
 			"themeProps": {
 				"Highlights": "Default"
 			},
@@ -15,7 +16,7 @@
 				"defaults": {}
 			},
 			"className": ".page",
-			"version": "6.4.1",
+			"version": "6.4.3",
 			"props": {
 				"backgroundColor": "rgba( 255, 255, 255, 1 )",
 				"orientation": "PORTRAIT",
@@ -32,14 +33,14 @@
 					"headerBar",
 					"flTheme",
 					"flNotifications",
+					"flFingerPrint",
 					"flTexts"
 				],
 				"parent": null,
 				"name": "pgSettings",
 				"width": 187.5,
 				"height": 301.5
-			},
-			"initialized": true
+			}
 		},
 		{
 			"type": "StatusBar",
@@ -896,6 +897,223 @@
 				"children": [],
 				"name": "flLineNotifications",
 				"parent": "flNotifications"
+			}
+		},
+		{
+			"type": "FlexLayout",
+			"id": "69b48837",
+			"themeProps": {
+				"Sizes": "Default",
+				"Highlights": "Default"
+			},
+			"userProps": {
+				"backgroundColor": "rgba( 255, 255, 255, 0 )",
+				"width": null,
+				"height": 48.5,
+				"marginLeft": 20,
+				"marginRight": 15,
+				"marginTop": 20,
+				"flexProps": {
+					"flexDirection": "ROW_REVERSE",
+					"alignItems": "CENTER"
+				},
+				"layout": {},
+				"flex": {},
+				"font": {},
+				"defaults": {}
+			},
+			"className": ".flexLayout",
+			"props": {
+				"height": 48.5,
+				"width": null,
+				"touchEnabled": true,
+				"visible": true,
+				"backgroundColor": "rgba( 255, 255, 255, 0 )",
+				"alpha": 1,
+				"borderColor": "rgba(0,0,0,1)",
+				"borderWidth": 0,
+				"marginLeft": 20,
+				"marginRight": 15,
+				"marginTop": 20,
+				"flexProps": {
+					"alignSelf": "AUTO",
+					"direction": "INHERIT",
+					"alignContent": "STRETCH",
+					"alignItems": "CENTER",
+					"justifyContent": "FLEX_START",
+					"flexWrap": "NOWRAP",
+					"flexDirection": "ROW_REVERSE",
+					"positionType": "RELATIVE"
+				},
+				"children": [
+					"swFingerprint",
+					"lblFingerPrint",
+					"flLineFingerPrint"
+				],
+				"name": "flFingerPrint",
+				"parent": "pgSettings"
+			}
+		},
+		{
+			"type": "Switch",
+			"id": "615d91fc",
+			"themeProps": {
+				"Sizes": "Default",
+				"Highlights": "Default"
+			},
+			"userProps": {
+				"minWidth": 51,
+				"minHeight": 31,
+				"width": null,
+				"usePageVariable": true,
+				"thumbOnColor": "rgba( 80, 210, 194, 1 )",
+				"toggleOnColor": "rgba( 131, 108, 179, 0.5 )",
+				"layout": {},
+				"flex": {},
+				"font": {},
+				"flexProps": {},
+				"defaults": {},
+				"input": {
+					"height": 31,
+					"width": 51
+				}
+			},
+			"className": ".switch",
+			"props": {
+				"width": null,
+				"touchEnabled": true,
+				"toggle": false,
+				"thumbOnColor": "rgba( 80, 210, 194, 1 )",
+				"thumbOffColor": "#CCCCCC",
+				"toggleOffColor": "#010101",
+				"toggleOnColor": "rgba( 131, 108, 179, 0.5 )",
+				"visible": true,
+				"alpha": 1,
+				"borderColor": "rgba(0,0,0,1)",
+				"borderWidth": 0,
+				"minHeight": 31,
+				"minWidth": 51,
+				"usePageVariable": true,
+				"flexProps": {
+					"alignSelf": "AUTO",
+					"positionType": "RELATIVE"
+				},
+				"input": {
+					"height": 31,
+					"width": 51
+				},
+				"children": [],
+				"name": "swFingerprint",
+				"parent": "flFingerPrint"
+			}
+		},
+		{
+			"type": "Label",
+			"id": "02256c8f",
+			"hiddenComponent": false,
+			"themeProps": {
+				"Sizes": "Default",
+				"Highlights": "Default"
+			},
+			"userProps": {
+				"text": "Use FingerPrint",
+				"width": null,
+				"height": null,
+				"textColor": "rgba( 29, 29, 38, 1 )",
+				"backgroundColor": "rgba( 255, 255, 255, 0 )",
+				"usePageVariable": true,
+				"flexProps": {
+					"flexGrow": 1,
+					"alignSelf": "STRETCH"
+				},
+				"font": {
+					"family": "Lato",
+					"size": 14
+				}
+			},
+			"className": ".label",
+			"props": {
+				"width": null,
+				"height": null,
+				"touchEnabled": true,
+				"text": "Use FingerPrint",
+				"visible": true,
+				"multiline": false,
+				"backgroundColor": "rgba( 255, 255, 255, 0 )",
+				"alpha": 1,
+				"borderColor": "rgba(0,0,0,1)",
+				"borderWidth": 0,
+				"textColor": "rgba( 29, 29, 38, 1 )",
+				"textAlignment": "MIDLEFT",
+				"usePageVariable": true,
+				"font": {
+					"size": 14,
+					"bold": false,
+					"italic": false,
+					"family": "Lato"
+				},
+				"flexProps": {
+					"alignSelf": "STRETCH",
+					"positionType": "RELATIVE",
+					"flexGrow": 1
+				},
+				"children": [],
+				"name": "lblFingerPrint",
+				"parent": "flFingerPrint"
+			}
+		},
+		{
+			"type": "FlexLayout",
+			"id": "302a948b",
+			"themeProps": {
+				"Sizes": "Default",
+				"Highlights": "Default"
+			},
+			"userProps": {
+				"usePageVariable": true,
+				"width": null,
+				"height": 0.5,
+				"left": 12,
+				"right": 0,
+				"bottom": 0,
+				"backgroundColor": "rgba( 80, 210, 194, 1 )",
+				"top": null,
+				"flexProps": {
+					"positionType": "ABSOLUTE",
+					"right": 0,
+					"bottom": 0
+				}
+			},
+			"className": ".flexLayout",
+			"props": {
+				"height": 0.5,
+				"width": null,
+				"touchEnabled": true,
+				"visible": true,
+				"backgroundColor": "rgba( 80, 210, 194, 1 )",
+				"alpha": 1,
+				"borderColor": "rgba(0,0,0,1)",
+				"borderWidth": 0,
+				"usePageVariable": true,
+				"left": 12,
+				"right": 0,
+				"bottom": 0,
+				"flexProps": {
+					"alignSelf": "AUTO",
+					"direction": "INHERIT",
+					"alignContent": "STRETCH",
+					"alignItems": "STRETCH",
+					"justifyContent": "FLEX_START",
+					"flexWrap": "NOWRAP",
+					"flexDirection": "COLUMN",
+					"positionType": "ABSOLUTE",
+					"right": 0,
+					"bottom": 0
+				},
+				"children": [],
+				"name": "flLineFingerPrint",
+				"parent": "flFingerPrint",
+				"top": null
 			}
 		}
 	]

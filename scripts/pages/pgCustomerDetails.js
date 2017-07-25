@@ -31,6 +31,7 @@ const backAction = require("../lib/ui").backAction;
 const File = require('sf-core/io/file');
 const Path = require('sf-core/io/path');
 const FileStream = require('sf-core/io/filestream');
+const notes = require("../model/notes");
 
 const pgCustomerDetails = extend(pgCustomerDetailsDesign)(
     function(_super) {
@@ -76,69 +77,72 @@ const pgCustomerDetails = extend(pgCustomerDetailsDesign)(
             page.headerBar.title = lang.customerDetails;
             if (id) {
                 setTimeout(function() {
-                    getSingleCustomer(id, function(err, customerData) {
-                        page.flWait.visible = true;
-                        console.log("after getting single. Is there error? " + !!err);
+                    notes.getNotes(function(err, notes) {
                         if (err) {
                             return alert(JSON.stringify(err), "Customer Service Error");
                         }
-                        var customerDetails = {
-                            fields: [{
-                                name: lang["Customer Number"],
-                                value: customerData.customFields.CO.CardNo || ""
-                            }, {
-                                name: lang["Mobile Phone"],
-                                value: customerData.customFields.CO.Phone || ""
-                            }, {
-                                name: lang["Cutomer Type"],
-                                value: lang[customerData.customFields.CO.CustType] || ""
-                            }, {
-                                name: lang.Adress,
-                                value: customerData.address.street || ""
-                            }, ],
-                            actions: [{
-                                name: "Notes",
-                                text: lang["Notes"]
-                            }, {
-                                name: "Notification flow",
-                                text: lang["Notification flow"]
-                            }],
-                            id: customerData.id
-                        };
-                        var pictureAssigned = false;
-
-                        if (customerData.customFields.CO.Picture) {
-                            try {
-                                customerDetails.picture = Image.createFromBlob(Blob.createFromBase64(customerData.customFields.CO.Picture));
-                                pictureAssigned = true;
+                        getSingleCustomer(id, function(err, customerData) {
+                            page.flWait.visible = true;
+                            console.log("after getting single. Is there error? " + !!err);
+                            if (err) {
+                                return alert(JSON.stringify(err), "Customer Service Error");
                             }
-                            finally {}
-                        } /**/
-                        if (!pictureAssigned)
-                            customerDetails.picture = Image.createFromFile("images://customers_empty.png");
+                            var customerDetails = {
+                                fields: [{
+                                    name: lang["Customer Number"],
+                                    value: customerData.customFields.CO.CardNo || ""
+                                }, {
+                                    name: lang["Mobile Phone"],
+                                    value: customerData.customFields.CO.Phone || ""
+                                }, {
+                                    name: lang["Cutomer Type"],
+                                    value: lang[customerData.customFields.CO.CustType] || ""
+                                }, {
+                                    name: lang.Adress,
+                                    value: customerData.address.street || ""
+                                }, ],
+                                actions: [{
+                                    name: "Notes",
+                                    text: lang["Notes"],
+                                    count: notes.length
+                                }, {
+                                    name: "Notification flow",
+                                    text: lang["Notification flow"]
+                                }],
+                                id: customerData.id
+                            };
+                            var pictureAssigned = false;
 
-                        //TODO due to the bug of missing blob
-                        //customerDetails.picture = Image.createFromFile("images://customers_1.png");
-                        page.lblName.text = customerData.lookupName;
-                        page.lblTitle.text = customerData.customFields.CO.Title;
-                        customerInfo = {
-                            displayName: customerData.lookupName || "",
-                            phoneNumber: customerData.customFields.CO.Phone || "",
-                            email: customerData.customFields.CO.Email || "",
-                            address: customerData.address.street || "",
-                            picture: customerDetails.picture,
-                            notes: String(customerData.customFields.CO.CardNo || ""),
-                            firstName: customerData.name.first || "",
-                            lastName: customerData.name.last || ""
-                        };
-                        loadData(customerDetails);
-                        page.flWait.visible = false;
-                        svCustomerDetail.visible = true;
-                        page.layout.applyLayout();
+                            if (customerData.customFields.CO.Picture) {
+                                try {
+                                    customerDetails.picture = Image.createFromBlob(Blob.createFromBase64(customerData.customFields.CO.Picture));
+                                    pictureAssigned = true;
+                                }
+                                finally {}
+                            } /**/
+                            if (!pictureAssigned)
+                                customerDetails.picture = Image.createFromFile("images://customers_empty.png");
+
+                            //TODO due to the bug of missing blob
+                            //customerDetails.picture = Image.createFromFile("images://customers_1.png");
+                            page.lblName.text = customerData.lookupName;
+                            page.lblTitle.text = customerData.customFields.CO.Title;
+                            customerInfo = {
+                                displayName: customerData.lookupName || "",
+                                phoneNumber: customerData.customFields.CO.Phone || "",
+                                email: customerData.customFields.CO.Email || "",
+                                address: customerData.address.street || "",
+                                picture: customerDetails.picture,
+                                notes: String(customerData.customFields.CO.CardNo || ""),
+                                firstName: customerData.name.first || "",
+                                lastName: customerData.name.last || ""
+                            };
+                            loadData(customerDetails);
+                            page.flWait.visible = false;
+                            svCustomerDetail.visible = true;
+                            page.layout.applyLayout();
+                        });
                     });
-
-
-
                 }, initTime);
                 backAction(page, goBack);
             }
@@ -221,7 +225,8 @@ const pgCustomerDetails = extend(pgCustomerDetailsDesign)(
                         paddingRight: fieldMargin,
                         showLine: index !== (customerDetails.actions.length - 1),
                         fieldName: action.text || action.name,
-                        onPress: actions[action.name].bind(page, customerDetails)
+                        onPress: actions[action.name].bind(page, customerDetails),
+                        count: action.count
                     });
 
                     Object.assign(customerActionRow.children.flCustomerActionLine, {

@@ -3,6 +3,7 @@
 		{
 			"type": "Page",
 			"id": "56dad56b",
+			"initialized": true,
 			"themeProps": {
 				"Highlights": "Default"
 			},
@@ -15,7 +16,7 @@
 				"defaults": {}
 			},
 			"className": ".page",
-			"version": "6.4.1",
+			"version": "6.4.3",
 			"props": {
 				"backgroundColor": "rgba( 255, 255, 255, 1 )",
 				"orientation": "PORTRAIT",
@@ -41,8 +42,7 @@
 				"name": "pgCustomerDetails",
 				"width": 187.5,
 				"height": 301.5
-			},
-			"initialized": true
+			}
 		},
 		{
 			"type": "StatusBar",
@@ -470,7 +470,7 @@
 				"children": [],
 				"name": "imgCustomerPicture",
 				"parent": "flCustomerTop",
-				"imageURL": "https://dispatcher.r0.smartface.io/smartface9/fieldservice2/ui-editor/img/customer_detail_picture.png?os=iOS&osVersion=10.2&density=326&densityRatio=0.5&zoomLevel=0.5&brandModel=iPhone%207?random=0.15829715087303065"
+				"imageURL": "https://dispatcher.r0.smartface.io/smartface9/fieldservice2/ui-editor/img/customer_detail_picture.png?os=iOS&osVersion=10.2&density=326&densityRatio=0.5&zoomLevel=0.5&brandModel=iPhone%207?random=0.43107311225688116"
 			}
 		},
 		{

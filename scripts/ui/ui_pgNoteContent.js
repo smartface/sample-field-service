@@ -8,8 +8,6 @@ const extend = require('js-base/core/extend');
 const Page = require('sf-core/ui/page');
 const FlexLayout = require('sf-core/ui/flexlayout');
 const Color = require('sf-core/ui/color');
-const Button = require('sf-core/ui/button');
-const Font = require('sf-core/ui/font');
 const ActivityIndicator = require('sf-core/ui/activityindicator');
 const StatusBarStyle = require('sf-core/ui/statusbarstyle');
 
@@ -29,28 +27,15 @@ const PgNoteContent_ = extend(Page)(
 		const textAreaHolderStyle = getCombinedStyle(".flexLayout", {
 			width: null,
 			height: null,
+			paddingLeft: 10,
+			paddingRight: 10,
+			paddingTop: 10,
+			paddingBottom: 10,
 			flexGrow: 1
 		});  
 		var textAreaHolder = new FlexLayout(textAreaHolderStyle);  
 		this.layout.addChild(textAreaHolder);
 		this.textAreaHolder = textAreaHolder;
-
-		const flButtonsStyle = getCombinedStyle(".flexLayout", {
-			bottom: null,
-			left: null,
-			right: null,
-			width: null,
-			height: 48,
-			backgroundColor: Color.create(0, 189, 16, 224),
-			top: null,
-			positionType: FlexLayout.PositionType.RELATIVE,
-			justifyContent: FlexLayout.JustifyContent.SPACE_BETWEEN,
-			alignItems: FlexLayout.AlignItems.FLEX_END,
-			flexDirection: FlexLayout.FlexDirection.ROW_REVERSE
-		});  
-		var flButtons = new FlexLayout(flButtonsStyle);  
-		this.layout.addChild(flButtons);
-		this.flButtons = flButtons;
 
 		const flWaitStyle = getCombinedStyle(".flexLayout", {
 			width: null,
@@ -68,19 +53,6 @@ const PgNoteContent_ = extend(Page)(
 		this.layout.addChild(flWait);
 		this.flWait = flWait;
 
-		const btnNewStyle = getCombinedStyle(".button", {
-			text: "",
-			backgroundColor: Color.create(0, 0, 161, 241),
-			width: 48,
-			height: 48,
-			textColor: Color.create(255, 44, 50, 57),
-			marginRight: null,
-			font: Font.create("FontAwesome", 24, Font.NORMAL)
-		});  
-		var btnNew = new Button(btnNewStyle);  
-		flButtons.addChild(btnNew);
-		this.btnNew = btnNew;
-
 		const aiWaitStyle = getCombinedStyle(".activityIndicator", {
 			minHeight: 21,
 			minWidth: 21
@@ -89,44 +61,10 @@ const PgNoteContent_ = extend(Page)(
 		flWait.addChild(aiWait);
 		this.aiWait = aiWait;
 
-		const btnSpeechStyle = getCombinedStyle(".button", {
-			text: "",
-			backgroundColor: Color.create(0, 0, 161, 241),
-			width: 48,
-			height: 48,
-			textColor: Color.create(255, 44, 50, 57),
-			marginRight: null,
-			font: Font.create("FontAwesome", 24, Font.NORMAL)
-		});  
-		var btnSpeech = new Button(btnSpeechStyle);  
-		flButtons.addChild(btnSpeech);
-		this.btnSpeech = btnSpeech;
-
-		const btnDeleteStyle = getCombinedStyle(".button", {
-			text: "",
-			backgroundColor: Color.create(0, 0, 161, 241),
-			width: 48,
-			height: 48,
-			textColor: Color.create(255, 44, 50, 57),
-			marginRight: null,
-			font: Font.create("FontAwesome", 24, Font.NORMAL)
-		});  
-		var btnDelete = new Button(btnDeleteStyle);  
-		flButtons.addChild(btnDelete);
-		this.btnDelete = btnDelete;
-
 		//assign the children to page 
 		this.children = Object.assign({}, {
 			textAreaHolder: textAreaHolder,
-			flButtons: flButtons,
 			flWait: flWait
-		});
-		
-		//assign the children of flButtons
-		flButtons.children = Object.assign({}, {
-			btnNew: btnNew,
-			btnSpeech: btnSpeech,
-			btnDelete: btnDelete
 		});
 		
 		//assign the children of flWait

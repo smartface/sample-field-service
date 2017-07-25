@@ -10,9 +10,6 @@ const ListView = require('sf-core/ui/listview');
 const ListViewItem = require('sf-core/ui/listviewitem');
 const FlexLayout = require('sf-core/ui/flexlayout');
 const ActivityIndicator = require('sf-core/ui/activityindicator');
-const Color = require('sf-core/ui/color');
-const Button = require('sf-core/ui/button');
-const Font = require('sf-core/ui/font');
 const StatusBarStyle = require('sf-core/ui/statusbarstyle');
 
 
@@ -33,7 +30,7 @@ const PgNotes_ = extend(Page)(
 			height: null,
 			left: 0,
 			top: 0,
-			bottom: 48,
+			bottom: 0,
 			right: 0,
 			visible: false,
 			itemCount: null,
@@ -54,45 +51,10 @@ const PgNotes_ = extend(Page)(
 		this.layout.addChild(aiNotes);
 		this.aiNotes = aiNotes;
 
-		const flButtonsStyle = getCombinedStyle(".flexLayout", {
-			bottom: 0,
-			left: 0,
-			right: 0,
-			width: null,
-			height: 48,
-			backgroundColor: Color.create(0, 189, 16, 224),
-			top: null,
-			positionType: FlexLayout.PositionType.ABSOLUTE,
-			justifyContent: FlexLayout.JustifyContent.FLEX_START,
-			alignItems: FlexLayout.AlignItems.FLEX_END
-		});  
-		var flButtons = new FlexLayout(flButtonsStyle);  
-		this.layout.addChild(flButtons);
-		this.flButtons = flButtons;
-
-		const btnNewStyle = getCombinedStyle(".button", {
-			text: "",
-			backgroundColor: Color.create(0, 0, 161, 241),
-			width: 48,
-			height: 48,
-			textColor: Color.create(255, 44, 50, 57),
-			marginRight: null,
-			font: Font.create("FontAwesome", 24, Font.NORMAL)
-		});  
-		var btnNew = new Button(btnNewStyle);  
-		flButtons.addChild(btnNew);
-		this.btnNew = btnNew;
-
 		//assign the children to page 
 		this.children = Object.assign({}, {
 			lvNotes: lvNotes,
-			aiNotes: aiNotes,
-			flButtons: flButtons
-		});
-		
-		//assign the children of flButtons
-		flButtons.children = Object.assign({}, {
-			btnNew: btnNew
+			aiNotes: aiNotes
 		});
 		
 	});

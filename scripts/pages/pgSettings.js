@@ -6,6 +6,7 @@ const pgSettingsDesign = require("../ui/ui_pgSettings");
 const sliderDrawer = require("../sliderDrawer");
 const StatusBarStyle = require('sf-core/ui/statusbarstyle');
 const theme = require("../lib/theme");
+const FingerPrintLib = require("sf-extension-utils/fingerprint");
 const Data = require('sf-core/data');
 
 const pgSettings = extend(pgSettingsDesign)(
@@ -47,6 +48,11 @@ const pgSettings = extend(pgSettingsDesign)(
 
             page.lblTheme.text = lang.theme;
             page.lblNotifications.text = lang.notification;
+
+            page.swFingerprint.toggle = ((FingerPrintLib.isUserRejectedFingerprint === false) && (FingerPrintLib.isUserVerifiedFingerprint === true));
+            page.swFingerprint.onToggleChanged = function() {
+                FingerPrintLib.isUserRejectedFingerprint = !page.swFingerprint.toggle;
+            }.bind(page);
         };
 
         page.onShow = function onShow(data) {
@@ -77,8 +83,8 @@ const pgSettings = extend(pgSettingsDesign)(
             page.statusBar.android && (page.statusBar.android.color = selectedTheme.topBarColor);
             page.headerBar.backgroundColor = selectedTheme.topBarColor;
 
-            page.swNotifications.thumbOnColor = selectedTheme.thumbOnColor;
-            page.swNotifications.toggleOnColor = selectedTheme.toggleOnColor;
+            page.swFingerprint.thumbOnColor = page.swNotifications.thumbOnColor = selectedTheme.thumbOnColor;
+            page.swFingerprint.toggleOnColor = page.swNotifications.toggleOnColor = selectedTheme.toggleOnColor;
             page.flLineTheme.backgroundColor = selectedTheme.lineSeparator;
             page.flLineNotifications.backgroundColor = selectedTheme.lineSeparator;
         }

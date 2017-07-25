@@ -77,4 +77,6 @@ SMF.i18n.defineLanguage('en', {
 	"newCustomer": "New Customer",
 	"savingCustomer": "Saving New Customer",
 	"aboutContent": "With the Field Service application, you manage field operations and deliver the best customer service on-the-go",
+	"speech": "Speech",
+	"stop": "Stop",
 });

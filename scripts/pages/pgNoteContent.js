@@ -1,3 +1,4 @@
+/*globals lang*/
 const TextArea = require('sf-core/ui/textarea');
 const extend = require('js-base/core/extend');
 const pgNoteContentDesign = require('ui/ui_pgNoteContent');
@@ -6,13 +7,16 @@ const notes = require("../model/notes");
 const theme = require("../lib/theme");
 const Font = require('sf-core/ui/font');
 const Router = require("sf-core/ui/router");
-const moveToScrollView = require("../lib/mote-to-scrollview");
+// const moveToScrollView = require("../lib/mote-to-scrollview");
 const Color = require('sf-core/ui/color');
 const SpeechRecognizer = require("sf-core/speechrecognizer");
 const permission = require("../lib/permission");
 const Application = require('sf-core/application');
 const System = require('sf-core/device/system');
 const backAction = require("../lib/ui").backAction;
+// const Speech2TextUtil = require('sf-extension-utils/speech2text');
+const HeaderBarItem = require('sf-core/ui/headerbaritem');
+
 
 const pgNoteContent = extend(pgNoteContentDesign)(
 	// Constructor
@@ -25,12 +29,15 @@ const pgNoteContent = extend(pgNoteContentDesign)(
 	});
 
 // Page.onShow -> This event is called when a page appears on the screen (everytime).
-function onShow(superOnShow, noteData) {
+function onShow(superOnShow, data) {
 	const page = this;
-	// moveToScrollView(page);
-
 	superOnShow();
 	var taNote = page.taNote;
+	var noteData;
+	if (data) {
+		noteData = data.noteData;
+		page.pgNotes = data.pgNotes;
+	}
 	if (noteData) { //load
 		notes.getNoteContent(noteData, function(err, text) {
 			if (err) {
@@ -50,7 +57,7 @@ function onShow(superOnShow, noteData) {
 	else { //new
 		newNote(page);
 	}
-	
+
 	backAction(page);
 	applyTheme.call(page);
 }
@@ -58,9 +65,10 @@ function onShow(superOnShow, noteData) {
 function applyTheme() {
 	const page = this;
 	var selectedTheme = theme[theme.selected];
-	page.btnNew.textColor = page.btnDelete.textColor = page.btnSpeech.textColor = selectedTheme.topBarColor;
 	page.headerBar.backgroundColor = selectedTheme.topBarColor;
 	page.aiWait.color = selectedTheme.topBarColor;
+	const hbiSpeech = page.headerBar.items[0];
+	hbiSpeech.color = selectedTheme.secondaryColor;
 }
 
 function onLoad(superOnLoad) {
@@ -76,9 +84,19 @@ function onLoad(superOnLoad) {
 	page.textAreaHolder.addChild(taNote);
 	page.taNote = taNote;
 
-	page.btnNew.onPress = newNote.bind(page);
-	page.btnDelete.onPress = deleteNote.bind(page);
-	page.btnSpeech.onPress = speech.bind(page);
+	page.addNote = addNote.bind(page);
+
+	page.taNote.font = Font.create("Lato", 14, Font.NORMAL);
+
+	var hbiSpeech = new HeaderBarItem({
+		title: lang.speech,
+		onPress: function() {
+			speech.call(page);
+		}
+	});
+	this.headerBar.items = [hbiSpeech];
+	this.headerBar.setItems(this.headerBar.items);
+
 }
 
 function onHide() {
@@ -88,6 +106,7 @@ function onHide() {
 
 	if (page.originalText !== taNote.text) { //changed then save
 		if (page.originalNoteData) {
+			page.pgNotes.putToWaitMode();
 			notes.deleteNote(page.originalNoteData, function(err) {
 				if (err) {
 					if (typeof err === "object") {
@@ -97,18 +116,23 @@ function onHide() {
 					}
 					return alert(err, "note delete error");
 				}
-				addNote(taNote.text);
+				page.addNote(taNote.text);
 			});
 		}
 		else {
-			addNote(taNote.text);
+			page.addNote(taNote.text);
 		}
 
 	}
 }
 
 function addNote(text) {
-	notes.addNote(text);
+	const page = this;
+	notes.addNote(text, function(err) {
+		if (err)
+			return;
+		page.pgNotes.refreshData();
+	});
 }
 
 function newNote(page) {
@@ -122,7 +146,6 @@ function newNote(page) {
 
 function deleteNote(page) {
 	page = page || this;
-
 	if (page.originalNoteData) {
 		notes.deleteNote(page.originalNoteData, function(err) {
 			if (err) {
@@ -144,10 +167,9 @@ function deleteNote(page) {
 
 function speech() {
 	const page = this;
-	const btnSpeech = page.btnSpeech;
-	var selectedTheme = theme[theme.selected];
+	const hbiSpeech = page.headerBar.items[0];
 	if (!SpeechRecognizer.isRunning()) {
-		btnSpeech.textColor = selectedTheme.secondaryColor;
+		hbiSpeech.title = lang.stop;
 		if (System.OS === "iOS") {
 			startSpeechRecognizer.call(page);
 		}
@@ -158,26 +180,25 @@ function speech() {
 		}
 	}
 	else {
-		btnSpeech.textColor = selectedTheme.topBarColor;
+		hbiSpeech.title = lang.speech;
 		SpeechRecognizer.stop();
 	}
 }
 
 
 function startSpeechRecognizer() {
-	var selectedTheme = theme[theme.selected];
 	const page = this;
-	const btnSpeech = page.btnSpeech;
+	const hbiSpeech = page.headerBar.items[0];
 	const taNote = page.taNote;
 	SpeechRecognizer.start({
 		onResult: function(result) {
 			taNote.text = result;
 		},
 		onFinish: function(result) {
-			btnSpeech.textColor = selectedTheme.topBarColor;
+			hbiSpeech.title = lang.speech;
 		},
 		onError: function(error) {
-			btnSpeech.textColor = selectedTheme.topBarColor;
+			hbiSpeech.title = lang.speech;
 		}
 	});
 }

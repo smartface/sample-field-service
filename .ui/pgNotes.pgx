@@ -3,6 +3,7 @@
 		{
 			"type": "Page",
 			"id": "b832e6f1",
+			"initialized": true,
 			"themeProps": {
 				"Highlights": "Default"
 			},
@@ -13,7 +14,7 @@
 				}
 			},
 			"className": ".page",
-			"version": "6.4.1",
+			"version": "6.4.3",
 			"props": {
 				"backgroundColor": "#FFFFFF",
 				"orientation": "PORTRAIT",
@@ -30,14 +31,12 @@
 					"statusBar",
 					"headerBar",
 					"lvNotes",
-					"aiNotes",
-					"flButtons"
+					"aiNotes"
 				],
 				"name": "pgNotes",
 				"width": 187.5,
 				"height": 301.5
-			},
-			"initialized": true
+			}
 		},
 		{
 			"type": "StatusBar",
@@ -95,7 +94,7 @@
 				"height": null,
 				"left": 0,
 				"top": 0,
-				"bottom": 48,
+				"bottom": 0,
 				"right": 0,
 				"visible": false,
 				"itemCount": null,
@@ -123,7 +122,7 @@
 				"usePageVariable": true,
 				"left": 0,
 				"top": 0,
-				"bottom": 48,
+				"bottom": 0,
 				"right": 0,
 				"flexProps": {
 					"alignSelf": "AUTO",
@@ -178,114 +177,6 @@
 				},
 				"name": "aiNotes",
 				"parent": "pgNotes",
-				"children": []
-			}
-		},
-		{
-			"type": "FlexLayout",
-			"id": "fc6258d6",
-			"themeProps": {
-				"Sizes": "Default",
-				"Highlights": "Default"
-			},
-			"userProps": {
-				"bottom": 0,
-				"left": 0,
-				"right": 0,
-				"width": null,
-				"height": 48,
-				"usePageVariable": true,
-				"backgroundColor": "rgba( 189, 16, 224, 0 )",
-				"top": null,
-				"flexProps": {
-					"positionType": "ABSOLUTE",
-					"right": 0,
-					"bottom": 0,
-					"justifyContent": "FLEX_START",
-					"alignItems": "FLEX_END"
-				}
-			},
-			"className": ".flexLayout",
-			"props": {
-				"height": 48,
-				"width": null,
-				"touchEnabled": true,
-				"visible": true,
-				"backgroundColor": "rgba( 189, 16, 224, 0 )",
-				"alpha": 1,
-				"borderColor": "rgba(0,0,0,1)",
-				"borderWidth": 0,
-				"bottom": 0,
-				"left": 0,
-				"right": 0,
-				"usePageVariable": true,
-				"top": null,
-				"flexProps": {
-					"alignSelf": "AUTO",
-					"direction": "INHERIT",
-					"alignContent": "STRETCH",
-					"alignItems": "FLEX_END",
-					"justifyContent": "FLEX_START",
-					"flexWrap": "NOWRAP",
-					"flexDirection": "COLUMN",
-					"positionType": "ABSOLUTE",
-					"right": 0,
-					"bottom": 0
-				},
-				"name": "flButtons",
-				"parent": "pgNotes",
-				"children": [
-					"btnNew"
-				]
-			}
-		},
-		{
-			"type": "Button",
-			"id": "703b1586",
-			"themeProps": {
-				"Sizes": "Default",
-				"Highlights": "Default"
-			},
-			"userProps": {
-				"text": "",
-				"backgroundColor": "rgba( 0, 161, 241, 0 )",
-				"width": 48,
-				"height": 48,
-				"usePageVariable": true,
-				"textColor": "rgba( 44, 50, 57, 1 )",
-				"marginRight": null,
-				"font": {
-					"family": "FontAwesome",
-					"size": 24
-				}
-			},
-			"className": ".button",
-			"props": {
-				"width": 48,
-				"height": 48,
-				"touchEnabled": true,
-				"text": "",
-				"visible": true,
-				"backgroundColor": "rgba( 0, 161, 241, 0 )",
-				"alpha": 1,
-				"borderColor": "rgba(0,0,0,1)",
-				"borderWidth": 0,
-				"textColor": "rgba( 44, 50, 57, 1 )",
-				"textAlignment": "MIDCENTER",
-				"usePageVariable": true,
-				"marginRight": null,
-				"font": {
-					"size": 24,
-					"bold": false,
-					"italic": false,
-					"family": "FontAwesome"
-				},
-				"flexProps": {
-					"positionType": "RELATIVE",
-					"alignSelf": "AUTO"
-				},
-				"name": "btnNew",
-				"parent": "flButtons",
 				"children": []
 			}
 		}

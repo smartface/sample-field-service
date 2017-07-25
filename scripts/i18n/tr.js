@@ -77,4 +77,6 @@ SMF.i18n.defineLanguage('tr', {
 	"newCustomer": "Yeni Müşteri",
 	"savingCustomer": "Yeni müşteri kaydediliyor",
 	"aboutContent": " Saha operayonlarınızı saha uygulaması ile yöneterek en iyi mobil müşteri hizmetini sunabilirsiniz",
+	"speech": "Konuş",
+	"stop": "Dur",
 });
