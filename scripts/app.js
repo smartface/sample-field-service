@@ -16,9 +16,7 @@ const stylerBuilder = require("library/styler-builder");
 const settings = require("./settings.json");
 stylerBuilder.registerThemes(settings.config.theme.themes || "Defaults");
 stylerBuilder.setActiveTheme(settings.config.theme.currentTheme);
-
-require("sf-extension-alert");
-require("timers-smf");
+require("sf-extension-utils");
 require("./lib/mcs");
 
 var sliderDrawer;
@@ -40,7 +38,9 @@ Router.add("pgSettings", require("./pages/pgSettings"));
 Router.add("pgNotes", require("./pages/pgNotes"));
 Router.add("pgNoteContent", require("./pages/pgNoteContent"));
 
-
+// Router.add("jet1", require("./samplePage"));
+// Router.add("jet2", require("./samplePageWithOfficalCharts"));
+// Router.go("jet2");
 
 Router.go("pgLogin", {
     checkUpdate: true

@@ -10,7 +10,7 @@ const Router = require("sf-core/ui/router");
 // const moveToScrollView = require("../lib/mote-to-scrollview");
 const Color = require('sf-core/ui/color');
 const SpeechRecognizer = require("sf-core/speechrecognizer");
-const permission = require("../lib/permission");
+const permission = require("sf-extension-utils").permission;
 const Application = require('sf-core/application');
 const System = require('sf-core/device/system');
 const backAction = require("../lib/ui").backAction;
@@ -79,7 +79,7 @@ function onLoad(superOnLoad) {
 		positionType: FlexLayout.PositionType.RELATIVE,
 		font: Font.create("Lato", 14, Font.NORMAL),
 		visible: false,
-		backgroundColor: Color.TRANSPARENT
+		backgroundColor: Color.TRANSPARENT,
 	});
 	page.textAreaHolder.addChild(taNote);
 	page.taNote = taNote;
@@ -174,7 +174,7 @@ function speech() {
 			startSpeechRecognizer.call(page);
 		}
 		else if (System.OS === "Android") {
-			permission.checkPermission(Application.android.Permissions.RECORD_AUDIO, function() {
+			permission.getPermission(Application.android.Permissions.RECORD_AUDIO, function() {
 				startSpeechRecognizer.call(page);
 			});
 		}

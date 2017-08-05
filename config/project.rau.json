@@ -5,7 +5,7 @@
             "hashType": "md5",
             "profileKey": "VVZTfVJaXcIcmAmh7UHcOhdeNgmNsXvn",
             "revision": 1,
-            "channels": ["production", "test"],
+            "channels": ["test"],
             "meta": {
                 "isMandatory": false
             },

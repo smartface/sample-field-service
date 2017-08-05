@@ -17,6 +17,7 @@ const Image = require('sf-core/ui/image');
 const ImageView = require('sf-core/ui/imageview');
 var nextImage = Image.createFromFile("images://next_page.png");
 const FloatingMenu = require('sf-core/ui/floatingmenu');
+const System = require('sf-core/device/system');
 
 const pgNotes = extend(pgNotesDesign)(
 	// Constructor
@@ -217,7 +218,7 @@ function onLoad(superOnLoad) {
 		right: 8.5,
 		positionType: FlexLayout.PositionType.ABSOLUTE,
 		icon: selectedTheme.addCustomer,
-		color: Color.TRANSPARENT,
+		color: System.OS === "iOS"? Color.TRANSPARENT: Color.WHITE,
 		onClick: function() {
 			Router.go("pgNoteContent", {
 				pgNotes: page

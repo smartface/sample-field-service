@@ -9,11 +9,10 @@ const ActionKeyType = require('sf-core/ui/actionkeytype');
 const Network = require('sf-core/device/network');
 const sliderDrawer = require("../sliderDrawer");
 const userData = require("../model/user");
-const rau = require("../lib/rau");
+const rau = require("sf-extension-utils").rau;
 const theme = require("../lib/theme");
 const KeyboardType = require('sf-core/ui/keyboardtype');
-const Data = require('sf-core/data');
-const FingerPrintLib = require("sf-extension-utils/fingerprint");
+const fingerprint = require("sf-extension-utils").fingerprint;
 
 const pgLogin = extend(pgLoginDesign)(
     function(_super) {
@@ -56,6 +55,11 @@ const pgLogin = extend(pgLoginDesign)(
             page.android.onBackButtonPressed = function(e) {
                 Application.exit();
             };
+
+            fingerprint.init({
+                userNameTextBox: tiUserName,
+                passwordTextBox: tiPassword
+            });
 
         };
 
@@ -103,81 +107,40 @@ const pgLogin = extend(pgLoginDesign)(
                 tiUserName.invalidate();
                 isValid = false;
             }
-            if (tiPassword.text.length === 0 && !Data.getBooleanVariable('isNotFirstLogin')) {
-                tiPassword.invalidate();
-                isValid = false;
-            }
             if (Network.connectionType === Network.ConnectionType.None) {
                 isValid = false;
                 alert(lang.noInternetMessage, lang.noInternetTitle);
             }
             if (!isValid)
                 return;
-            page.setState(false);
-            var storedPassword = Data.getStringVariable("password");
 
-            if (FingerPrintLib.isUserVerifiedFingerprint) {
-                // Second+ logging. No need to register fingerprint user already do it before.
-                if (tiPassword.text.length !== 0) {
-                    // Validate fingerPrint
-                    performLogin();
-                    return;
+            fingerprint.loginWithFingerprint(function(err, fingerprintResult) {
+                var password = "",
+                    success = fingerprintResult && fingerprintResult.success;
+                if (err) {
+                    password = tiPassword.text;
                 }
                 else {
-                    FingerPrintLib.validateFingerPrint(function() {
-                        performLogin(storedPassword);
-                    }, function() {
-                        if (tiPassword.text.length === 0) {
-                            // Validate fingerPrint
-                            tiPassword.invalidate();
-                            return;
-                        }
-                        performLogin();
-                    });
-                    return;
+                    password = fingerprintResult.password;
                 }
-            }
-            else if (FingerPrintLib.isFingerprintAvailable) {
-                if (FingerPrintLib.isUserAllowedFingerprint) {
-                    // Second+ logging. But user not registered fingerprint. But password supplied skip fingerprint
-                    if (tiPassword.text.length !== 0) {
-                        // Validate fingerPrint
-                        performLogin();
-                        return;
-                    }
-                    else {
-                        FingerPrintLib.validateFingerPrint(function() {
-                            performLogin(storedPassword);
-                        }, function() {
-                            if (tiPassword.text.length === 0) {
-                                // Validate fingerPrint
-                                tiPassword.invalidate();
-                                return;
-                            }
-                            performLogin();
-                        });
-                        return;
-                    }
-                }
-                // first logging and ask user to register fingerprint
-                else if (!FingerPrintLib.isUserRejectedFingerprint) {
-                    FingerPrintLib.registerFingerPrint(function() {
-                        performLogin();
-                    }, function() {
-                        if (tiPassword.text.length === 0) {
-                            // Validate fingerPrint
-                            tiPassword.invalidate();
-                            return;
-                        }
-                        performLogin();
-                    });
-                    return;
+                if (password.length === 0) {
+                    tiPassword.invalidate();
+                    isValid = false;
                 }
 
-            }
+                if (!isValid)
+                    return;
+                page.setState(false);
+
+                performLogin(password, success);
+            });
+
+
+
+
         }
 
-        function performLogin(password) {
+        function performLogin(password, success) {
             password = password || tiPassword.text.trim();
             mcs.login({
                 username: tiUserName.text.toLowerCase().trim(),
@@ -195,14 +158,11 @@ const pgLogin = extend(pgLoginDesign)(
                 }
                 userData.currentUser = result;
                 sliderDrawer.setUserData();
-
-
+                success && success();
                 showDashboard();
             });
 
             function showDashboard() {
-                Data.setBooleanVariable('isNotFirstLogin', true);
-                Data.setStringVariable("password", password);
                 sliderDrawer.enabled = true;
                 Router.go("pgDashboard");
             }

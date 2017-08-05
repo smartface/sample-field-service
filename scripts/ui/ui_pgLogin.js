@@ -214,7 +214,7 @@ const PgLogin_ = extend(Page)(
 			textColor: Color.create(255, 105, 109, 111),
 			height: 44,
 			multiline: true,
-			text: null,
+			text: "",
 			visible: true,
 			width: null,
 			positionType: FlexLayout.PositionType.RELATIVE,
@@ -240,7 +240,8 @@ const PgLogin_ = extend(Page)(
 			minHeight: 21,
 			minWidth: 21,
 			marginLeft: 20,
-			positionType: FlexLayout.PositionType.RELATIVE
+			positionType: FlexLayout.PositionType.RELATIVE,
+			alignSelf: FlexLayout.AlignSelf.AUTO
 		});  
 		var aiLogin = new ActivityIndicator(aiLoginStyle);  
 		flButton.addChild(aiLogin);

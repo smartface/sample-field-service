@@ -6,7 +6,7 @@ const pgSettingsDesign = require("../ui/ui_pgSettings");
 const sliderDrawer = require("../sliderDrawer");
 const StatusBarStyle = require('sf-core/ui/statusbarstyle');
 const theme = require("../lib/theme");
-const FingerPrintLib = require("sf-extension-utils/fingerprint");
+const fingerprint = require("sf-extension-utils").fingerprint;
 const Data = require('sf-core/data');
 
 const pgSettings = extend(pgSettingsDesign)(
@@ -49,9 +49,9 @@ const pgSettings = extend(pgSettingsDesign)(
             page.lblTheme.text = lang.theme;
             page.lblNotifications.text = lang.notification;
 
-            page.swFingerprint.toggle = ((FingerPrintLib.isUserRejectedFingerprint === false) && (FingerPrintLib.isUserVerifiedFingerprint === true));
+            page.swFingerprint.toggle = fingerprint.useFingerprintLogin;
             page.swFingerprint.onToggleChanged = function() {
-                FingerPrintLib.isUserRejectedFingerprint = !page.swFingerprint.toggle;
+                fingerprint.useFingerprintLogin = page.swFingerprint.toggle;
             }.bind(page);
         };
 

@@ -3,6 +3,7 @@
 		{
 			"type": "Page",
 			"id": "6501ebdd",
+			"initialized": true,
 			"themeProps": {
 				"Highlights": "Default"
 			},
@@ -31,7 +32,7 @@
 				"defaults": {}
 			},
 			"className": ".page",
-			"version": "6.4.1",
+			"version": "6.4.3",
 			"props": {
 				"backgroundColor": "#FFFFFF",
 				"orientation": "PORTRAIT",
@@ -54,8 +55,7 @@
 					"flRight"
 				],
 				"name": "pgLogin"
-			},
-			"initialized": true
+			}
 		},
 		{
 			"type": "StatusBar",
@@ -373,7 +373,7 @@
 				"borderWidth": 0,
 				"image": "logo.png",
 				"usePageVariable": true,
-				"imageURL": "https://dispatcher.r0.smartface.io/smartface9/fieldservice2/ui-editor/img/logo.png?os=iOS&osVersion=10.2&density=326&densityRatio=0.5&zoomLevel=0.5&brandModel=iPhone%207?random=0.627595139531739",
+				"imageURL": "https://dispatcher.r0.smartface.io/smartface9/fieldservice2/ui-editor/img/logo.png?os=iOS&osVersion=10.2&density=326&densityRatio=0.5&zoomLevel=0.5&brandModel=iPhone%207?random=0.35328542949506003",
 				"flexProps": {
 					"alignSelf": "AUTO",
 					"positionType": "RELATIVE"
@@ -656,7 +656,7 @@
 				"textColor": "rgba( 105, 109, 111, 1 )",
 				"height": 44,
 				"multiline": true,
-				"text": null,
+				"text": "",
 				"visible": true,
 				"width": null,
 				"flexProps": {
@@ -680,7 +680,7 @@
 				"width": null,
 				"height": 44,
 				"touchEnabled": true,
-				"text": null,
+				"text": "",
 				"visible": true,
 				"multiline": true,
 				"backgroundColor": "#FFFFFF",
@@ -812,7 +812,8 @@
 				"minWidth": 21,
 				"marginLeft": 20,
 				"flexProps": {
-					"positionType": "RELATIVE"
+					"positionType": "RELATIVE",
+					"alignSelf": "AUTO"
 				},
 				"layout": {
 					"marginRight": 10,
@@ -826,9 +827,7 @@
 				"input": {
 					"height": 21,
 					"width": 21
-				},
-				"font": {},
-				"defaults": {}
+				}
 			},
 			"className": ".activityIndicator",
 			"props": {

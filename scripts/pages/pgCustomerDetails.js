@@ -22,7 +22,7 @@ const shadow = require("../lib/ui").shadow;
 const Application = require("sf-core/application");
 const Contacts = require("sf-core/device/contacts");
 const System = require('sf-core/device/system');
-const permission = require("../lib/permission");
+const permission = require("sf-extension-utils").permission;
 //const HeaderBarItem = require('sf-core/ui/headerbaritem');
 const initTime = require("../lib/init-time");
 const getSingleCustomer = require("../model/customers").getSingleCustomer;
@@ -251,7 +251,7 @@ const pgCustomerDetails = extend(pgCustomerDetailsDesign)(
 
             page.btnAddToContacts.onPress = function() {
                 //if (System.OS === "Android") {
-                permission.checkPermission(Application.android.Permissions.WRITE_CONTACTS, function(err) {
+                permission.getPermission(Application.android.Permissions.WRITE_CONTACTS, function(err) {
                     if (err) return;
                     addToContacts();
                 });
@@ -279,7 +279,7 @@ const pgCustomerDetails = extend(pgCustomerDetailsDesign)(
                 //Share.shareText(contactDataString, page, []);
 
 
-                permission.checkPermission(Application.android.Permissions.WRITE_EXTERNAL_STORAGE, function(err) {
+                permission.getPermission(Application.android.Permissions.WRITE_EXTERNAL_STORAGE, function(err) {
                     if (err) return;
                     var fileName = customerInfo.firstName.toLocaleLowerCase() + "_" + customerInfo.lastName.toLowerCase() + ".vcf";
                     var path;

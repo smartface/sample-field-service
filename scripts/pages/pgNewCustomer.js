@@ -12,12 +12,12 @@ const FlexLayout = require('sf-core/ui/flexlayout');
 const ActionKeyType = require('sf-core/ui/actionkeytype');
 const KeyboardType = require('sf-core/ui/keyboardtype');
 const TextAlignment = require('sf-core/ui/textalignment');
-const permission = require("../lib/permission");
+const permission = require("sf-extension-utils").permission;
 const Application = require('sf-core/application');
 const System = require('sf-core/device/system');
 const Menu = require('sf-core/ui/menu');
 const MenuItem = require('sf-core/ui/menuitem');
-const location = require("../lib/location");
+const location = require("sf-extension-utils").location;
 const Http = require("sf-core/net/http");
 const textInputDefaults = {
     positionType: FlexLayout.PositionType.ABSOLUTE,
@@ -267,7 +267,7 @@ const pgNewCustomer = extend(pgNewCustomerDesign)(
 
             function pickImage() {
                 if (System.OS === "Android") {
-                    permission.checkPermission(Application.android.Permissions.READ_EXTERNAL_STORAGE, function() {
+                    permission.getPermission(Application.android.Permissions.READ_EXTERNAL_STORAGE, function() {
                         pickImageAction();
                     });
                 }
@@ -285,10 +285,10 @@ const pgNewCustomer = extend(pgNewCustomerDesign)(
             }
 
             function startCamera() {
-                permission.checkPermission(Application.android.Permissions.CAMERA, function(err) {
+                permission.getPermission(Application.android.Permissions.CAMERA, function(err) {
                     if (err)
                         return;
-                    permission.checkPermission(Application.android.Permissions.WRITE_EXTERNAL_STORAGE, function(err) {
+                    permission.getPermission(Application.android.Permissions.WRITE_EXTERNAL_STORAGE, function(err) {
                         if (err)
                             return;
                         startCameraAction();
