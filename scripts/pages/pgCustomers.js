@@ -99,8 +99,9 @@ const pgCustomers = extend(pgCustomersDesign)(
                 });
                 loadingLayout.addChild(loadingIndicator);
                 lviCustomerRow.addChild(loadingLayout);
-
-
+                
+                var flCustomerRowPhone = lviCustomerRow.findChildById(customerRowID).findChildById(flInteriorID).findChildById(flCustomerDataID).findChildById(flCustomerRowPhoneID); 
+                var lblCustomerRowPhone = flCustomerRowPhone.findChildById(lblCustomerRowPhoneID);
 
                 return lviCustomerRow;
             };
@@ -116,7 +117,7 @@ const pgCustomers = extend(pgCustomersDesign)(
                 var lblCustomerRowEmail = flCustomerRowEmail.findChildById(lblCustomerRowEmailID);
                 var lblCustomerRowName = flCustomerData.findChildById(lblCustomerRowNameID);
                 var imgCustomerPicture = flInterior.findChildById(imgCustomerPictureID);
-
+                
                 var loadingLayout = listViewItem.findChildById(loadingLayoutID);
                 if (item === loadingRowData) {
                     loadingLayout.visible = true;
