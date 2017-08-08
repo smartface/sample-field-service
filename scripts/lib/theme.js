@@ -6,7 +6,7 @@ exports.themes = {
     PURPLE: "PURPLE"
 };
 
-exports.selected =  Data.getStringVariable("theme") ||  exports.themes.PURPLE;
+exports.selected = Data.getStringVariable("theme") || exports.themes.PURPLE;
 
 
 exports.PURPLE = {
@@ -31,6 +31,14 @@ exports.PURPLE = {
     share: Image.createFromFile("images://share_purple.png"),
     addToContacts: Image.createFromFile("images://add_to_contacts_purple.png"),
     checkImage: Image.createFromFile("images://check_purple.png"),
+    chartColors: [
+        "#836CB3",
+        "#F6A623",
+        "#382B53",
+        "#4E4168",
+        "#B395F0",
+        "#979797"
+    ]
 };
 
 exports.NAVY = {
@@ -63,4 +71,12 @@ exports.NAVY = {
     share: Image.createFromFile("images://share.png"),
     addToContacts: Image.createFromFile("images://add_to_contacts.png"),
     checkImage: Image.createFromFile("images://check.png"),
+    chartColors: [
+        "#2C3239",
+        "#50D2C2",
+        "#7CC981",
+        "#06BEBD",
+        "#C6C6C6",
+        "#5FC690"
+    ]
 };

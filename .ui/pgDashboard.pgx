@@ -3,6 +3,7 @@
 		{
 			"type": "Page",
 			"id": "311d38b2",
+			"initialized": true,
 			"themeProps": {
 				"Highlights": "Default"
 			},
@@ -29,7 +30,7 @@
 				"defaults": {}
 			},
 			"className": ".page",
-			"version": "6.4.1",
+			"version": "6.4.3",
 			"props": {
 				"backgroundColor": "rgba( 36, 42, 52, 1 )",
 				"orientation": "PORTRAIT",
@@ -47,11 +48,11 @@
 				"children": [
 					"statusBar",
 					"headerBar",
-					"imgReports"
+					"svChart",
+					"flexLayout1"
 				],
 				"name": "pgDashboard"
-			},
-			"initialized": true
+			}
 		},
 		{
 			"type": "StatusBar",
@@ -77,10 +78,10 @@
 				"isRemovable": false,
 				"_style": "LIGHTCONTENT",
 				"height": 20,
+				"style": "LIGHTCONTENT",
 				"children": [],
 				"parent": "pgDashboard",
-				"name": "statusBar",
-				"style": "LIGHTCONTENT"
+				"name": "statusBar"
 			}
 		},
 		{
@@ -118,72 +119,95 @@
 			}
 		},
 		{
-			"type": "ImageView",
-			"id": "a5c19250",
+			"type": "ScrollView",
+			"id": "6a0c39ed",
+			"themeProps": {
+				"Sizes": "Default"
+			},
+			"userProps": {
+				"backgroundColor": "rgba( 255, 255, 255, 1 )",
+				"width": null,
+				"height": null,
+				"paddingLeft": 20,
+				"paddingRight": 20,
+				"paddingTop": 10,
+				"paddingBottom": 10,
+				"usePageVariable": true,
+				"flexProps": {
+					"flexGrow": 1,
+					"flexDirection": "COLUMN_REVERSE"
+				}
+			},
+			"className": ".scrollView",
+			"props": {
+				"height": null,
+				"width": null,
+				"touchEnabled": true,
+				"visible": true,
+				"backgroundColor": "rgba( 255, 255, 255, 1 )",
+				"alpha": 1,
+				"borderColor": "rgba(0,0,0,1)",
+				"borderWidth": 0,
+				"align": "VERTICAL",
+				"scrollBarEnabled": true,
+				"paddingLeft": 20,
+				"paddingRight": 20,
+				"paddingTop": 10,
+				"paddingBottom": 10,
+				"usePageVariable": true,
+				"flexProps": {
+					"alignSelf": "AUTO",
+					"direction": "INHERIT",
+					"alignContent": "STRETCH",
+					"alignItems": "STRETCH",
+					"justifyContent": "FLEX_START",
+					"flexWrap": "NOWRAP",
+					"flexDirection": "COLUMN_REVERSE",
+					"positionType": "RELATIVE",
+					"flexGrow": 1
+				},
+				"name": "svChart",
+				"parent": "pgDashboard",
+				"children": []
+			}
+		},
+		{
+			"type": "FlexLayout",
+			"id": "a19e8b3a",
 			"themeProps": {
 				"Sizes": "Default",
 				"Highlights": "Default"
 			},
 			"userProps": {
-				"backgroundColor": "rgba( 255, 255, 255, 0 )",
-				"alpha": 1,
-				"borderColor": "rgba(0,0,0,1)",
-				"borderWidth": 0,
-				"marginBottom": 20,
-				"marginLeft": 20,
-				"marginRight": 20,
-				"marginTop": 20,
-				"height": null,
-				"image": "reports.png",
-				"imageFillType": "ASPECTFIT",
-				"visible": true,
 				"width": null,
-				"imageURL": "https://dispatcher.r0.smartface.io/smartface9/fieldservice2/ui-editor/img/reports.png?os=iOS&osVersion=10.2&density=326&densityRatio=0.5&zoomLevel=0.5&brandModel=iPhone%207?random=0.085541011017225",
-				"usePageVariable": true,
+				"height": null,
 				"flexProps": {
-					"positionType": "RELATIVE",
-					"flexGrow": 1
-				},
-				"layout": {
-					"marginBottom": 10,
-					"marginLeft": 10,
-					"marginTop": 10,
-					"marginRight": 10,
-					"borderWidth": 0
-				},
-				"flex": {
-					"positionType": 0,
-					"flexGrow": 1
-				},
-				"font": {},
-				"defaults": {}
+					"positionType": "ABSOLUTE"
+				}
 			},
-			"className": ".imageView",
+			"className": ".flexLayout",
 			"props": {
-				"width": null,
 				"height": null,
+				"width": null,
 				"touchEnabled": true,
 				"visible": true,
-				"imageFillType": "ASPECTFIT",
-				"backgroundColor": "rgba( 255, 255, 255, 0 )",
+				"backgroundColor": "#FFFFFF",
 				"alpha": 1,
 				"borderColor": "rgba(0,0,0,1)",
 				"borderWidth": 0,
-				"marginBottom": 20,
-				"marginLeft": 20,
-				"marginRight": 20,
-				"marginTop": 20,
-				"image": "reports.png",
-				"imageURL": "https://dispatcher.r0.smartface.io/smartface9/fieldservice2/ui-editor/img/reports.png?os=iOS&osVersion=10.2&density=326&densityRatio=0.5&zoomLevel=0.5&brandModel=iPhone%207?random=0.8999013851935451",
-				"usePageVariable": true,
 				"flexProps": {
 					"alignSelf": "AUTO",
-					"positionType": "RELATIVE",
-					"flexGrow": 1
+					"direction": "INHERIT",
+					"alignContent": "STRETCH",
+					"alignItems": "STRETCH",
+					"justifyContent": "FLEX_START",
+					"flexWrap": "NOWRAP",
+					"flexDirection": "COLUMN",
+					"positionType": "ABSOLUTE"
 				},
-				"children": [],
+				"name": "flexLayout1",
 				"parent": "pgDashboard",
-				"name": "imgReports"
+				"children": []
 			}
 		}
 	]

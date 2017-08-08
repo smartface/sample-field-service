@@ -81,11 +81,17 @@ function onLoad(superOnLoad) {
 		visible: false,
 		backgroundColor: Color.TRANSPARENT,
 	});
+	var placeHolder = new FlexLayout({
+		flexGrow: 1,
+		onTouch: function() {
+			taNote.requestFocus();
+		}
+	});
 	page.textAreaHolder.addChild(taNote);
+	page.textAreaHolder.addChild(placeHolder);
+
 	page.taNote = taNote;
-
 	page.addNote = addNote.bind(page);
-
 	page.taNote.font = Font.create("Lato", 14, Font.NORMAL);
 
 	var hbiSpeech = new HeaderBarItem({

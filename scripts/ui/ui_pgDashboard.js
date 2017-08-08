@@ -6,16 +6,15 @@
 
 const extend = require('js-base/core/extend');
 const Page = require('sf-core/ui/page');
-const ImageView = require('sf-core/ui/imageview');
+const ScrollView = require('sf-core/ui/scrollview');
 const Color = require('sf-core/ui/color');
-const Image = require('sf-core/ui/image');
-const ImageFillType = require('sf-core/ui/imagefilltype');
 const FlexLayout = require('sf-core/ui/flexlayout');
 const StatusBarStyle = require('sf-core/ui/statusbarstyle');
 
 
 
 const getCombinedStyle = require("library/styler-builder").getCombinedStyle;
+const getCombinedLayoutStyle = require("library/styler-builder").getCombinedLayoutStyle;
 
 const PgDashboard_ = extend(Page)(
 	//constructor
@@ -27,30 +26,37 @@ const PgDashboard_ = extend(Page)(
 			orientation: Page.Orientation.PORTRAIT
 		}, props || {}));
 
-		const imgReportsStyle = getCombinedStyle(".imageView", {
-			backgroundColor: Color.create(0, 255, 255, 255),
-			alpha: 1,
-			borderColor: Color.create(255, 0, 0, 0),
-			borderWidth: 0,
-			marginBottom: 20,
-			marginLeft: 20,
-			marginRight: 20,
-			marginTop: 20,
-			height: null,
-			image: Image.createFromFile("images://reports.png"),
-			imageFillType: ImageFillType.ASPECTFIT,
-			visible: true,
+		const svChartStyle = getCombinedStyle(".scrollView", {
+			backgroundColor: Color.create(255, 255, 255, 255),
 			width: null,
-			positionType: FlexLayout.PositionType.RELATIVE,
+			height: null,
 			flexGrow: 1
+		}); 
+		const svChartLayoutStyle = getCombinedLayoutStyle(".scrollView", {
+			paddingLeft: 20,
+			paddingRight: 20,
+			paddingTop: 10,
+			paddingBottom: 10,
+			flexDirection: FlexLayout.FlexDirection.COLUMN_REVERSE
 		});  
-		var imgReports = new ImageView(imgReportsStyle);  
-		this.layout.addChild(imgReports);
-		this.imgReports = imgReports;
+		var svChart = new ScrollView(svChartStyle); 
+		Object.assign(svChart.layout, svChartLayoutStyle);
+ 
+		this.layout.addChild(svChart);
+		this.svChart = svChart;
 
+		const flexLayout1Style = getCombinedStyle(".flexLayout", {
+			width: null,
+			height: null,
+			positionType: FlexLayout.PositionType.ABSOLUTE
+		});  
+		var flexLayout1 = new FlexLayout(flexLayout1Style);  
+		this.layout.addChild(flexLayout1);
+		
 		//assign the children to page 
 		this.children = Object.assign({}, {
-			imgReports: imgReports
+			svChart: svChart,
+			flexLayout1: flexLayout1
 		});
 		
 	});

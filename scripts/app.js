@@ -38,9 +38,9 @@ Router.add("pgSettings", require("./pages/pgSettings"));
 Router.add("pgNotes", require("./pages/pgNotes"));
 Router.add("pgNoteContent", require("./pages/pgNoteContent"));
 
-// Router.add("jet1", require("./samplePage"));
-// Router.add("jet2", require("./samplePageWithOfficalCharts"));
-// Router.go("jet2");
+// Router.add("jet1", require("sf-extension-oracle-jet/samples/samplePage"));
+// Router.add("jet2", require("sf-extension-oracle-jet/samples/samplePageWithOfficalCharts"));
+// Router.go("jet1");
 
 Router.go("pgLogin", {
     checkUpdate: true
