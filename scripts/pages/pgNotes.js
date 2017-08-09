@@ -1,4 +1,4 @@
-/*globals lang*/
+/*globals lang, requireClass*/
 const extend = require('js-base/core/extend');
 const pgNotesDesign = require('ui/ui_pgNotes');
 const ListViewItem = require('sf-core/ui/listviewitem');
@@ -17,6 +17,13 @@ const Image = require('sf-core/ui/image');
 const ImageView = require('sf-core/ui/imageview');
 var nextImage = Image.createFromFile("images://next_page.png");
 const FloatingMenu = require('sf-core/ui/floatingmenu');
+const System = require('sf-core/device/system');
+var NativeView = null;
+if (System.OS === "Android") {
+	NativeView = requireClass("android.view.View");
+}
+const Menu = require('sf-core/ui/menu');
+const MenuItem = require('sf-core/ui/menuitem');
 
 const pgNotes = extend(pgNotesDesign)(
 	// Constructor
@@ -176,27 +183,57 @@ function onLoad(superOnLoad) {
 		var itemData = page.data[index];
 		lblNoteName.text = itemData.displayName;
 		lblDate.text = itemData.modifiedOnDisplayValue;
+		if (System.OS === "Android") {
+			lvNotesItem.nativeObject.setOnLongClickListener(NativeView.OnLongClickListener.implement({
+				onLongClick: function(view) {
+					var menu = new Menu();
+					menu.headerTitle = lang.sureToDelete;
+					var menuItemDelete = new MenuItem({
+						title: lang.delete,
+					});
+					menuItemDelete.android.titleColor = Color.RED;
+					var menuItemCancel = new MenuItem({
+						title: lang.cancel
+					});
+					menuItemDelete.onSelected = function() {
+						deleteNote(index);
+					};
+
+					menuItemCancel.onSelected = function() {
+
+					};
+
+					menu.items = [menuItemDelete, menuItemCancel];
+					menu.show(page);
+					return true;
+				}
+			}));
+		}
 	};
 
 	lvNotes.ios.rightToLeftSwipeEnabled = true;
 	lvNotes.ios.onRowSwiped = function() {
 		return [lvNotes.ios.swipeItem(lang.delete, Color.RED, 50, function(e) {
 			var rowIndex = e.index;
-			var noteData = page.data[rowIndex];
-			page.putToWaitMode();
-			notes.deleteNote(noteData, function(err) {
-				if (err) {
-					if (typeof err === "object") {
-						if (typeof err.body === "object")
-							err.body = err.body.toString();
-						err = JSON.stringify(err, null, "\t");
-					}
-					alert(err, "Notes Error");
-				}
-				page.refreshData();
-			});
+			deleteNote(rowIndex);
 		})];
 	};
+
+	function deleteNote(rowIndex) {
+		var noteData = page.data[rowIndex];
+		page.putToWaitMode();
+		notes.deleteNote(noteData, function(err) {
+			if (err) {
+				if (typeof err === "object") {
+					if (typeof err.body === "object")
+						err.body = err.body.toString();
+					err = JSON.stringify(err, null, "\t");
+				}
+				alert(err, "Notes Error");
+			}
+			page.refreshData();
+		});
+	}
 
 	lvNotes.onRowSelected = function(listViewItem, index) {
 		Router.go("pgNoteContent", {

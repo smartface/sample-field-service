@@ -67,7 +67,7 @@ const pgLogin = extend(pgLoginDesign)(
             baseOnShow && baseOnShow(data);
             page.headerBar.visible = false;
             sliderDrawer.enabled = false;
-            tiUserName.text = tiPassword.text = "";
+            tiPassword.text = "";
             page.setState(true);
             userData.currentUser = null;
             if (data && data.checkUpdate) {

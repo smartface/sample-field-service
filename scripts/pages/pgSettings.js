@@ -48,6 +48,7 @@ const pgSettings = extend(pgSettingsDesign)(
 
             page.lblTheme.text = lang.theme;
             page.lblNotifications.text = lang.notification;
+            page.lblFingerPrint.text = lang.useFingerprintTitle;
 
             page.swFingerprint.toggle = fingerprint.useFingerprintLogin;
             page.swFingerprint.onToggleChanged = function() {

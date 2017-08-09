@@ -7,16 +7,10 @@ const notes = require("../model/notes");
 const theme = require("../lib/theme");
 const Font = require('sf-core/ui/font');
 const Router = require("sf-core/ui/router");
-// const moveToScrollView = require("../lib/mote-to-scrollview");
 const Color = require('sf-core/ui/color');
-const SpeechRecognizer = require("sf-core/speechrecognizer");
-const permission = require("sf-extension-utils").permission;
-const Application = require('sf-core/application');
-const System = require('sf-core/device/system');
 const backAction = require("../lib/ui").backAction;
-// const Speech2TextUtil = require('sf-extension-utils/speech2text');
 const HeaderBarItem = require('sf-core/ui/headerbaritem');
-
+const speechToText = require("sf-extension-utils").speechToText;
 
 const pgNoteContent = extend(pgNoteContentDesign)(
 	// Constructor
@@ -174,40 +168,16 @@ function deleteNote(page) {
 function speech() {
 	const page = this;
 	const hbiSpeech = page.headerBar.items[0];
-	if (!SpeechRecognizer.isRunning()) {
+	if (!speechToText.isRunning) {
 		hbiSpeech.title = lang.stop;
-		if (System.OS === "iOS") {
-			startSpeechRecognizer.call(page);
-		}
-		else if (System.OS === "Android") {
-			permission.getPermission(Application.android.Permissions.RECORD_AUDIO, function() {
-				startSpeechRecognizer.call(page);
-			});
-		}
+		speechToText.startType(page.taNote, function() {
+			hbiSpeech.title = lang.speech;
+		});
 	}
 	else {
 		hbiSpeech.title = lang.speech;
-		SpeechRecognizer.stop();
+		speechToText.stop();
 	}
 }
-
-
-function startSpeechRecognizer() {
-	const page = this;
-	const hbiSpeech = page.headerBar.items[0];
-	const taNote = page.taNote;
-	SpeechRecognizer.start({
-		onResult: function(result) {
-			taNote.text = result;
-		},
-		onFinish: function(result) {
-			hbiSpeech.title = lang.speech;
-		},
-		onError: function(error) {
-			hbiSpeech.title = lang.speech;
-		}
-	});
-}
-
 
 module && (module.exports = pgNoteContent);

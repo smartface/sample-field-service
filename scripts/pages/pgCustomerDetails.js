@@ -75,8 +75,10 @@ const pgCustomerDetails = extend(pgCustomerDetailsDesign)(
             sliderDrawer.enabled = false;
 
             page.headerBar.title = lang.customerDetails;
-            if (id) {
+            if (page.dataID || id) {
                 setTimeout(function() {
+                    if(!page.dataID)
+                        page.dataID = id;
                     notes.getNotes(function(err, notes) {
                         if (err) {
                             return alert(JSON.stringify(err), "Customer Service Error");
@@ -144,8 +146,8 @@ const pgCustomerDetails = extend(pgCustomerDetailsDesign)(
                         });
                     });
                 }, initTime);
-                backAction(page, goBack);
             }
+            backAction(page, goBack);
         };
 
         function applyTheme() {
