@@ -52,14 +52,15 @@ const pgDashboard = extend(pgDashboardDesign)(
                         items: [6],
                         color: selectedTheme.chartColors[2]
                     }],
+                    styleDefaults: {
+                        pieInnerRadius: 0.5,
+                    },
                     type: JET.Type.PIE,
                     orientation: JET.Orientation.VERTICAL,
                     stack: JET.Stack.OFF,
-                    innerRadius: 0.5,
                     animationOnDisplay: JET.AnimationOnDisplay.AUTO,
                     animationOnDataChange: JET.AnimationOnDataChange.AUTO
                 },
-                innerRadius: 0.5,
             }, {
                 title: lang.historyByStatus,
                 jetData: {
@@ -180,8 +181,6 @@ function generateChartTemplate(jetData, labelText, chartUrl) {
 
 
     Object.assign(jet, jetData);
-    if (jetData.innerRadius)
-        jet.jetData.observables.innerRadius = jetData.innerRadius;
     layout.addChild(labelArea);
     layout.addChild(webView);
     return layout;
