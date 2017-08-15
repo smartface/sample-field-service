@@ -44,7 +44,7 @@ const PgDashboard_ = extend(Page)(
  
 		this.layout.addChild(svChart);
 		this.svChart = svChart;
-
+	
 		const flexLayout1Style = getCombinedStyle(".flexLayout", {
 			width: null,
 			height: null,
@@ -52,7 +52,7 @@ const PgDashboard_ = extend(Page)(
 		});  
 		var flexLayout1 = new FlexLayout(flexLayout1Style);  
 		this.layout.addChild(flexLayout1);
-		
+			
 		//assign the children to page 
 		this.children = Object.assign({}, {
 			svChart: svChart,

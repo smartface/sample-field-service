@@ -2,7 +2,7 @@
 	"components": [
 		{
 			"type": "Page",
-			"id": "ccd66de5",
+			"id": "79c3-af4f-89a3-2747",
 			"initialized": true,
 			"themeProps": {
 				"Highlights": "Default"
@@ -27,7 +27,7 @@
 				"defaults": {}
 			},
 			"className": ".page",
-			"version": "6.4.3",
+			"version": "6.4.5",
 			"props": {
 				"backgroundColor": "#FFFFFF",
 				"orientation": "PORTRAIT",
@@ -43,20 +43,21 @@
 					"justifyContent": "FLEX_START"
 				},
 				"children": [
-					"statusBar",
-					"headerBar",
-					"sliderDrawer",
-					"dialogWait",
-					"customerRow",
-					"customerDetailRow",
-					"customerActionRow"
+					"c900-1124-6d45-db52",
+					"7ed2-2361-164f-8bfd",
+					"c86f-82a6-7a6e-25d1",
+					"53c0-50b5-1f65-7a15",
+					"0aae-948b-b2ff-66bd",
+					"c71f-765a-6776-5d0c",
+					"dc03-0d8a-594e-86b6"
 				],
-				"name": "__library__"
+				"name": "__library__",
+				"parent": null
 			}
 		},
 		{
 			"type": "StatusBar",
-			"id": "f99e0c33",
+			"id": "c900-1124-6d45-db52",
 			"themeProps": {
 				"Highlights": "Default"
 			},
@@ -80,13 +81,13 @@
 				"isRemovable": false,
 				"height": 20,
 				"children": [],
-				"parent": "__library__",
+				"parent": "79c3-af4f-89a3-2747",
 				"name": "statusBar"
 			}
 		},
 		{
 			"type": "HeaderBar",
-			"id": "91a9b16a",
+			"id": "7ed2-2361-164f-8bfd",
 			"themeProps": {
 				"Highlights": "Default"
 			},
@@ -114,13 +115,13 @@
 				"isRemovable": false,
 				"height": 44,
 				"children": [],
-				"parent": "__library__",
+				"parent": "79c3-af4f-89a3-2747",
 				"name": "headerBar"
 			}
 		},
 		{
 			"type": "FlexLayout",
-			"id": "7a63fdd6",
+			"id": "c86f-82a6-7a6e-25d1",
 			"hiddenComponent": true,
 			"source": {
 				"page": "__library__"
@@ -195,17 +196,17 @@
 					"bottom": 0
 				},
 				"children": [
-					"flUserInfo",
-					"flActions",
-					"flBottom"
+					"bcaa-e8e3-8725-a23a",
+					"424e-ae46-4238-1549",
+					"dcd8-ddf9-3af8-1864"
 				],
-				"parent": "__library__",
+				"parent": "79c3-af4f-89a3-2747",
 				"name": "sliderDrawer"
 			}
 		},
 		{
 			"type": "FlexLayout",
-			"id": "94902827",
+			"id": "bcaa-e8e3-8725-a23a",
 			"source": {
 				"page": "__library__"
 			},
@@ -267,18 +268,18 @@
 					"positionType": "RELATIVE"
 				},
 				"children": [
-					"line",
-					"placeholder1",
-					"flUserImage",
-					"flUserTexts"
+					"601c-5217-17d2-af44",
+					"9397-23dd-d478-445f",
+					"656f-539e-3e06-00af",
+					"8409-0b71-4502-ff0f"
 				],
-				"parent": "sliderDrawer",
+				"parent": "c86f-82a6-7a6e-25d1",
 				"name": "flUserInfo"
 			}
 		},
 		{
 			"type": "FlexLayout",
-			"id": "9dbb41cc",
+			"id": "601c-5217-17d2-af44",
 			"source": {
 				"page": "__library__"
 			},
@@ -350,13 +351,13 @@
 					"bottom": 0
 				},
 				"children": [],
-				"parent": "flUserInfo",
+				"parent": "bcaa-e8e3-8725-a23a",
 				"name": "line"
 			}
 		},
 		{
 			"type": "FlexLayout",
-			"id": "79400bf0",
+			"id": "9397-23dd-d478-445f",
 			"source": {
 				"page": "__library__"
 			},
@@ -417,13 +418,13 @@
 					"flexGrow": 2
 				},
 				"children": [],
-				"parent": "flUserInfo",
+				"parent": "bcaa-e8e3-8725-a23a",
 				"name": "placeholder1"
 			}
 		},
 		{
 			"type": "FlexLayout",
-			"id": "66b5dcf0",
+			"id": "656f-539e-3e06-00af",
 			"source": {
 				"page": "__library__"
 			},
@@ -487,15 +488,15 @@
 					"flexGrow": 3
 				},
 				"children": [
-					"imgUserPicture"
+					"6590-88ae-a7da-4c3f"
 				],
-				"parent": "flUserInfo",
+				"parent": "bcaa-e8e3-8725-a23a",
 				"name": "flUserImage"
 			}
 		},
 		{
 			"type": "FlexLayout",
-			"id": "eda498a7",
+			"id": "8409-0b71-4502-ff0f",
 			"source": {
 				"page": "__library__"
 			},
@@ -562,16 +563,16 @@
 					"flexGrow": 2
 				},
 				"children": [
-					"lblUserName",
-					"lblTitle"
+					"81b5-990d-f429-97fc",
+					"6ba9-eb51-a0e6-7248"
 				],
-				"parent": "flUserInfo",
+				"parent": "bcaa-e8e3-8725-a23a",
 				"name": "flUserTexts"
 			}
 		},
 		{
 			"type": "ImageView",
-			"id": "82cc461d",
+			"id": "6590-88ae-a7da-4c3f",
 			"source": {
 				"page": "__library__"
 			},
@@ -627,13 +628,13 @@
 					"positionType": "RELATIVE"
 				},
 				"children": [],
-				"parent": "flUserImage",
+				"parent": "656f-539e-3e06-00af",
 				"name": "imgUserPicture"
 			}
 		},
 		{
 			"type": "Label",
-			"id": "76983ef4",
+			"id": "81b5-990d-f429-97fc",
 			"source": {
 				"page": "__library__"
 			},
@@ -697,13 +698,13 @@
 					"positionType": "RELATIVE"
 				},
 				"children": [],
-				"parent": "flUserTexts",
+				"parent": "8409-0b71-4502-ff0f",
 				"name": "lblUserName"
 			}
 		},
 		{
 			"type": "Label",
-			"id": "bd0db679",
+			"id": "6ba9-eb51-a0e6-7248",
 			"source": {
 				"page": "__library__"
 			},
@@ -767,13 +768,13 @@
 					"positionType": "RELATIVE"
 				},
 				"children": [],
-				"parent": "flUserTexts",
+				"parent": "8409-0b71-4502-ff0f",
 				"name": "lblTitle"
 			}
 		},
 		{
 			"type": "FlexLayout",
-			"id": "346df56e",
+			"id": "424e-ae46-4238-1549",
 			"source": {
 				"page": "__library__"
 			},
@@ -840,19 +841,19 @@
 					"flexGrow": 1
 				},
 				"children": [
-					"flHighlight",
-					"flDashboard",
-					"flCustomers",
-					"flNotifications",
-					"flSettings"
+					"7292-a9da-a59a-c65b",
+					"7b72-fcaf-dfae-a82f",
+					"57c8-7331-d1c1-36d7",
+					"f93b-918f-0cfa-44a6",
+					"773f-94ea-9b46-df03"
 				],
-				"parent": "sliderDrawer",
+				"parent": "c86f-82a6-7a6e-25d1",
 				"name": "flActions"
 			}
 		},
 		{
 			"type": "FlexLayout",
-			"id": "684cac6c",
+			"id": "7b72-fcaf-dfae-a82f",
 			"source": {
 				"page": "__library__"
 			},
@@ -919,16 +920,16 @@
 					"positionType": "RELATIVE"
 				},
 				"children": [
-					"imgDashboard",
-					"lblDashboard"
+					"e366-d2e5-d300-4c7f",
+					"e55d-9cc7-e379-82ed"
 				],
-				"parent": "flActions",
+				"parent": "424e-ae46-4238-1549",
 				"name": "flDashboard"
 			}
 		},
 		{
 			"type": "ImageView",
-			"id": "3e07449e",
+			"id": "e366-d2e5-d300-4c7f",
 			"source": {
 				"page": "__library__"
 			},
@@ -981,13 +982,13 @@
 					"positionType": "RELATIVE"
 				},
 				"children": [],
-				"parent": "flDashboard",
+				"parent": "7b72-fcaf-dfae-a82f",
 				"name": "imgDashboard"
 			}
 		},
 		{
 			"type": "Label",
-			"id": "3db401dd",
+			"id": "e55d-9cc7-e379-82ed",
 			"source": {
 				"page": "__library__"
 			},
@@ -1056,13 +1057,13 @@
 					"flexGrow": 1
 				},
 				"children": [],
-				"parent": "flDashboard",
+				"parent": "7b72-fcaf-dfae-a82f",
 				"name": "lblDashboard"
 			}
 		},
 		{
 			"type": "FlexLayout",
-			"id": "42ded96e",
+			"id": "57c8-7331-d1c1-36d7",
 			"source": {
 				"page": "__library__"
 			},
@@ -1129,16 +1130,16 @@
 					"positionType": "RELATIVE"
 				},
 				"children": [
-					"imgCustomers",
-					"lblCustomers"
+					"f3a4-cee3-b7af-b543",
+					"9cf7-a121-62d8-77d5"
 				],
-				"parent": "flActions",
+				"parent": "424e-ae46-4238-1549",
 				"name": "flCustomers"
 			}
 		},
 		{
 			"type": "ImageView",
-			"id": "4255c2d8",
+			"id": "f3a4-cee3-b7af-b543",
 			"source": {
 				"page": "__library__"
 			},
@@ -1191,13 +1192,13 @@
 					"positionType": "RELATIVE"
 				},
 				"children": [],
-				"parent": "flCustomers",
+				"parent": "57c8-7331-d1c1-36d7",
 				"name": "imgCustomers"
 			}
 		},
 		{
 			"type": "Label",
-			"id": "87475ba9",
+			"id": "9cf7-a121-62d8-77d5",
 			"source": {
 				"page": "__library__"
 			},
@@ -1266,13 +1267,13 @@
 					"flexGrow": 1
 				},
 				"children": [],
-				"parent": "flCustomers",
+				"parent": "57c8-7331-d1c1-36d7",
 				"name": "lblCustomers"
 			}
 		},
 		{
 			"type": "FlexLayout",
-			"id": "425ee05e",
+			"id": "f93b-918f-0cfa-44a6",
 			"source": {
 				"page": "__library__"
 			},
@@ -1339,16 +1340,16 @@
 					"positionType": "RELATIVE"
 				},
 				"children": [
-					"imgNotifications",
-					"lblNotifications"
+					"0df5-9c39-b85e-3a29",
+					"ed21-aeb4-c2d9-64e7"
 				],
-				"parent": "flActions",
+				"parent": "424e-ae46-4238-1549",
 				"name": "flNotifications"
 			}
 		},
 		{
 			"type": "ImageView",
-			"id": "a8148d13",
+			"id": "0df5-9c39-b85e-3a29",
 			"source": {
 				"page": "__library__"
 			},
@@ -1401,13 +1402,13 @@
 					"positionType": "RELATIVE"
 				},
 				"children": [],
-				"parent": "flNotifications",
+				"parent": "f93b-918f-0cfa-44a6",
 				"name": "imgNotifications"
 			}
 		},
 		{
 			"type": "Label",
-			"id": "213bb747",
+			"id": "ed21-aeb4-c2d9-64e7",
 			"source": {
 				"page": "__library__"
 			},
@@ -1476,13 +1477,13 @@
 					"flexGrow": 1
 				},
 				"children": [],
-				"parent": "flNotifications",
+				"parent": "f93b-918f-0cfa-44a6",
 				"name": "lblNotifications"
 			}
 		},
 		{
 			"type": "FlexLayout",
-			"id": "2d5eebde",
+			"id": "773f-94ea-9b46-df03",
 			"source": {
 				"page": "__library__"
 			},
@@ -1549,16 +1550,16 @@
 					"positionType": "RELATIVE"
 				},
 				"children": [
-					"imgSettings",
-					"lblSettings"
+					"6653-2396-432d-6bbc",
+					"7131-e2ac-4426-0e05"
 				],
-				"parent": "flActions",
+				"parent": "424e-ae46-4238-1549",
 				"name": "flSettings"
 			}
 		},
 		{
 			"type": "ImageView",
-			"id": "00e899b8",
+			"id": "6653-2396-432d-6bbc",
 			"source": {
 				"page": "__library__"
 			},
@@ -1611,13 +1612,13 @@
 					"positionType": "RELATIVE"
 				},
 				"children": [],
-				"parent": "flSettings",
+				"parent": "773f-94ea-9b46-df03",
 				"name": "imgSettings"
 			}
 		},
 		{
 			"type": "Label",
-			"id": "0cc556b1",
+			"id": "7131-e2ac-4426-0e05",
 			"source": {
 				"page": "__library__"
 			},
@@ -1686,13 +1687,13 @@
 					"flexGrow": 1
 				},
 				"children": [],
-				"parent": "flSettings",
+				"parent": "773f-94ea-9b46-df03",
 				"name": "lblSettings"
 			}
 		},
 		{
 			"type": "FlexLayout",
-			"id": "ca2cae1e",
+			"id": "53c0-50b5-1f65-7a15",
 			"hiddenComponent": true,
 			"source": {
 				"page": "__library__"
@@ -1765,15 +1766,15 @@
 					"bottom": 0
 				},
 				"children": [
-					"flWaitWhite"
+					"cceb-c9b9-6b06-9b6c"
 				],
-				"parent": "__library__",
+				"parent": "79c3-af4f-89a3-2747",
 				"name": "dialogWait"
 			}
 		},
 		{
 			"type": "FlexLayout",
-			"id": "b73001ff",
+			"id": "cceb-c9b9-6b06-9b6c",
 			"hiddenComponent": false,
 			"source": {
 				"page": "__library__"
@@ -1844,17 +1845,17 @@
 					"positionType": "RELATIVE"
 				},
 				"children": [
-					"lblSaving",
-					"aiWait",
-					"flCheck"
+					"cc92-0a49-32e2-40d4",
+					"774a-7890-4c6b-c9b9",
+					"9b20-8ec9-667c-74bf"
 				],
-				"parent": "dialogWait",
+				"parent": "53c0-50b5-1f65-7a15",
 				"name": "flWaitWhite"
 			}
 		},
 		{
 			"type": "ActivityIndicator",
-			"id": "5a455961",
+			"id": "774a-7890-4c6b-c9b9",
 			"hiddenComponent": false,
 			"source": {
 				"page": "__library__"
@@ -1920,13 +1921,13 @@
 					"width": 21
 				},
 				"children": [],
-				"parent": "flWaitWhite",
+				"parent": "cceb-c9b9-6b06-9b6c",
 				"name": "aiWait"
 			}
 		},
 		{
 			"type": "FlexLayout",
-			"id": "46b4fea2",
+			"id": "0aae-948b-b2ff-66bd",
 			"hiddenComponent": false,
 			"source": {
 				"page": "__library__"
@@ -1971,15 +1972,15 @@
 					"right": 0
 				},
 				"children": [
-					"flInterior"
+					"017f-b3c8-4769-bc3d"
 				],
 				"name": "customerRow",
-				"parent": "__library__"
+				"parent": "79c3-af4f-89a3-2747"
 			}
 		},
 		{
 			"type": "FlexLayout",
-			"id": "3b3d9492",
+			"id": "017f-b3c8-4769-bc3d",
 			"source": {
 				"page": "__library__"
 			},
@@ -2033,17 +2034,17 @@
 					"bottom": 0
 				},
 				"children": [
-					"customerRowLine",
-					"imgCustomerPicture",
-					"flCustomerData"
+					"ba6d-ff0d-5916-b231",
+					"e5be-2f30-d780-8b9a",
+					"513d-3361-5fa7-6660"
 				],
 				"name": "flInterior",
-				"parent": "customerRow"
+				"parent": "0aae-948b-b2ff-66bd"
 			}
 		},
 		{
 			"type": "FlexLayout",
-			"id": "b3f7abcc",
+			"id": "ba6d-ff0d-5916-b231",
 			"source": {
 				"page": "__library__"
 			},
@@ -2094,13 +2095,13 @@
 				},
 				"children": [],
 				"name": "customerRowLine",
-				"parent": "flInterior",
+				"parent": "017f-b3c8-4769-bc3d",
 				"id": 160
 			}
 		},
 		{
 			"type": "ImageView",
-			"id": "27953744",
+			"id": "e5be-2f30-d780-8b9a",
 			"source": {
 				"page": "__library__"
 			},
@@ -2151,13 +2152,13 @@
 				},
 				"children": [],
 				"name": "imgCustomerPicture",
-				"parent": "flInterior",
+				"parent": "017f-b3c8-4769-bc3d",
 				"imageURL": "https://dispatcher.r0.smartface.io/smartface9/fieldservice2/ui-editor/img/customers_1.png?os=iOS&osVersion=10.2&density=326&densityRatio=0.5&zoomLevel=0.5&brandModel=iPhone%207"
 			}
 		},
 		{
 			"type": "FlexLayout",
-			"id": "64c56fd0",
+			"id": "513d-3361-5fa7-6660",
 			"source": {
 				"page": "__library__"
 			},
@@ -2212,17 +2213,17 @@
 					"bottom": 0
 				},
 				"children": [
-					"lblCustomerRowName",
-					"flCustomerRowEmail",
-					"flCustomerRowPhone"
+					"b5be-d94f-575b-76f5",
+					"242d-9560-bc68-9988",
+					"456a-073c-8752-3b1b"
 				],
 				"name": "flCustomerData",
-				"parent": "flInterior"
+				"parent": "017f-b3c8-4769-bc3d"
 			}
 		},
 		{
 			"type": "Label",
-			"id": "7af700dc",
+			"id": "b5be-d94f-575b-76f5",
 			"source": {
 				"page": "__library__"
 			},
@@ -2280,12 +2281,12 @@
 				},
 				"children": [],
 				"name": "lblCustomerRowName",
-				"parent": "flCustomerData"
+				"parent": "513d-3361-5fa7-6660"
 			}
 		},
 		{
 			"type": "FlexLayout",
-			"id": "2e4c7afc",
+			"id": "242d-9560-bc68-9988",
 			"source": {
 				"page": "__library__"
 			},
@@ -2329,16 +2330,16 @@
 					"positionType": "RELATIVE"
 				},
 				"children": [
-					"imgCustomerRowEmail",
-					"lblCustomerRowEmail"
+					"1749-b6aa-d6a1-0a1e",
+					"9835-af9d-f20d-20bd"
 				],
 				"name": "flCustomerRowEmail",
-				"parent": "flCustomerData"
+				"parent": "513d-3361-5fa7-6660"
 			}
 		},
 		{
 			"type": "ImageView",
-			"id": "cd3c8c7c",
+			"id": "1749-b6aa-d6a1-0a1e",
 			"source": {
 				"page": "__library__"
 			},
@@ -2370,14 +2371,14 @@
 				},
 				"children": [],
 				"name": "imgCustomerRowEmail",
-				"parent": "flCustomerRowEmail",
+				"parent": "242d-9560-bc68-9988",
 				"imageURL": "https://dispatcher.r0.smartface.io/smartface9/fieldservice2/ui-editor/img/customers_email.png?os=iOS&osVersion=10.2&density=326&densityRatio=0.5&zoomLevel=0.5&brandModel=iPhone%207",
 				"id": 162
 			}
 		},
 		{
 			"type": "Label",
-			"id": "00ac6c11",
+			"id": "9835-af9d-f20d-20bd",
 			"source": {
 				"page": "__library__"
 			},
@@ -2435,12 +2436,12 @@
 				},
 				"children": [],
 				"name": "lblCustomerRowEmail",
-				"parent": "flCustomerRowEmail"
+				"parent": "242d-9560-bc68-9988"
 			}
 		},
 		{
 			"type": "FlexLayout",
-			"id": "0ae465c0",
+			"id": "456a-073c-8752-3b1b",
 			"source": {
 				"page": "__library__"
 			},
@@ -2484,16 +2485,16 @@
 					"positionType": "RELATIVE"
 				},
 				"children": [
-					"imgCustomerRowPhone",
-					"lblCustomerRowPhone"
+					"a4d3-78e5-3f1c-9ba0",
+					"99ba-dd8d-b564-d108"
 				],
 				"name": "flCustomerRowPhone",
-				"parent": "flCustomerData"
+				"parent": "513d-3361-5fa7-6660"
 			}
 		},
 		{
 			"type": "ImageView",
-			"id": "e96b12c8",
+			"id": "a4d3-78e5-3f1c-9ba0",
 			"source": {
 				"page": "__library__"
 			},
@@ -2525,14 +2526,14 @@
 				},
 				"children": [],
 				"name": "imgCustomerRowPhone",
-				"parent": "flCustomerRowPhone",
+				"parent": "456a-073c-8752-3b1b",
 				"imageURL": "https://dispatcher.r0.smartface.io/smartface9/fieldservice2/ui-editor/img/customers_phone.png?os=iOS&osVersion=10.2&density=326&densityRatio=0.5&zoomLevel=0.5&brandModel=iPhone%207",
 				"id": 161
 			}
 		},
 		{
 			"type": "Label",
-			"id": "956aed8e",
+			"id": "99ba-dd8d-b564-d108",
 			"source": {
 				"page": "__library__"
 			},
@@ -2589,12 +2590,12 @@
 				},
 				"children": [],
 				"name": "lblCustomerRowPhone",
-				"parent": "flCustomerRowPhone"
+				"parent": "456a-073c-8752-3b1b"
 			}
 		},
 		{
 			"type": "FlexLayout",
-			"id": "3906eb88",
+			"id": "c71f-765a-6776-5d0c",
 			"hiddenComponent": true,
 			"source": {
 				"page": "__library__"
@@ -2645,17 +2646,17 @@
 					"bottom": 0
 				},
 				"children": [
-					"flCustomerDetailLine",
-					"lblFieldName",
-					"lblFieldValue"
+					"bb1e-85eb-8cca-598d",
+					"87f6-6622-d20c-9e20",
+					"73fa-089d-debc-0efb"
 				],
 				"name": "customerDetailRow",
-				"parent": "__library__"
+				"parent": "79c3-af4f-89a3-2747"
 			}
 		},
 		{
 			"type": "FlexLayout",
-			"id": "b7de25e9",
+			"id": "bb1e-85eb-8cca-598d",
 			"source": {
 				"page": "__library__"
 			},
@@ -2709,12 +2710,12 @@
 				},
 				"children": [],
 				"name": "flCustomerDetailLine",
-				"parent": "customerDetailRow"
+				"parent": "c71f-765a-6776-5d0c"
 			}
 		},
 		{
 			"type": "Label",
-			"id": "5b281019",
+			"id": "87f6-6622-d20c-9e20",
 			"source": {
 				"page": "__library__"
 			},
@@ -2768,12 +2769,12 @@
 				},
 				"children": [],
 				"name": "lblFieldName",
-				"parent": "customerDetailRow"
+				"parent": "c71f-765a-6776-5d0c"
 			}
 		},
 		{
 			"type": "Label",
-			"id": "add758bd",
+			"id": "73fa-089d-debc-0efb",
 			"source": {
 				"page": "__library__"
 			},
@@ -2827,12 +2828,12 @@
 				},
 				"children": [],
 				"name": "lblFieldValue",
-				"parent": "customerDetailRow"
+				"parent": "c71f-765a-6776-5d0c"
 			}
 		},
 		{
 			"type": "FlexLayout",
-			"id": "c6cacd19",
+			"id": "dc03-0d8a-594e-86b6",
 			"hiddenComponent": true,
 			"source": {
 				"page": "__library__"
@@ -2882,19 +2883,19 @@
 					"bottom": 0
 				},
 				"children": [
-					"lblActionName",
-					"lblCount",
-					"flActionNext",
-					"flCustomerActionLine",
-					"btnAction"
+					"2541-7aa2-d40c-06ab",
+					"7cbd-7800-9107-ffc5",
+					"ce32-883b-9b63-af4f",
+					"335d-a4ff-8712-0a69",
+					"bd06-1c58-bdc4-d271"
 				],
 				"name": "customerActionRow",
-				"parent": "__library__"
+				"parent": "79c3-af4f-89a3-2747"
 			}
 		},
 		{
 			"type": "Label",
-			"id": "3836335a",
+			"id": "2541-7aa2-d40c-06ab",
 			"hiddenComponent": false,
 			"source": {
 				"page": "__library__"
@@ -2949,12 +2950,12 @@
 				},
 				"children": [],
 				"name": "lblActionName",
-				"parent": "customerActionRow"
+				"parent": "dc03-0d8a-594e-86b6"
 			}
 		},
 		{
 			"type": "FlexLayout",
-			"id": "4e3f5ff5",
+			"id": "335d-a4ff-8712-0a69",
 			"hiddenComponent": false,
 			"source": {
 				"page": "__library__"
@@ -3005,12 +3006,12 @@
 				},
 				"children": [],
 				"name": "flCustomerActionLine",
-				"parent": "customerActionRow"
+				"parent": "dc03-0d8a-594e-86b6"
 			}
 		},
 		{
 			"type": "FlexLayout",
-			"id": "eb1ca0fc",
+			"id": "ce32-883b-9b63-af4f",
 			"hiddenComponent": false,
 			"source": {
 				"page": "__library__"
@@ -3061,15 +3062,15 @@
 					"right": 8.5
 				},
 				"children": [
-					"imgActionNext"
+					"4d81-80bf-4eed-d653"
 				],
 				"name": "flActionNext",
-				"parent": "customerActionRow"
+				"parent": "dc03-0d8a-594e-86b6"
 			}
 		},
 		{
 			"type": "ImageView",
-			"id": "55979ca5",
+			"id": "4d81-80bf-4eed-d653",
 			"source": {
 				"page": "__library__"
 			},
@@ -3105,13 +3106,13 @@
 				},
 				"children": [],
 				"name": "imgActionNext",
-				"parent": "flActionNext",
+				"parent": "ce32-883b-9b63-af4f",
 				"imageURL": "https://dispatcher.r0.smartface.io/smartface9/fieldservice2/ui-editor/img/next_page.png?os=iOS&osVersion=10.2&density=326&densityRatio=0.5&zoomLevel=0.5&brandModel=iPhone%207"
 			}
 		},
 		{
 			"type": "Button",
-			"id": "f4ead6f2",
+			"id": "bd06-1c58-bdc4-d271",
 			"hiddenComponent": true,
 			"source": {
 				"page": "__library__"
@@ -3168,12 +3169,12 @@
 				},
 				"children": [],
 				"name": "btnAction",
-				"parent": "customerActionRow"
+				"parent": "dc03-0d8a-594e-86b6"
 			}
 		},
 		{
 			"type": "FlexLayout",
-			"id": "c49a14fb",
+			"id": "dcd8-ddf9-3af8-1864",
 			"source": {
 				"page": "__library__"
 			},
@@ -3218,17 +3219,17 @@
 					"positionType": "RELATIVE"
 				},
 				"children": [
-					"flSliderDrawerBottomLine",
-					"flSignout",
-					"flVersion"
+					"1716-2878-c9e4-b69b",
+					"7ac5-bff9-6f8e-da16",
+					"572b-8b1d-aa09-8de4"
 				],
 				"name": "flBottom",
-				"parent": "sliderDrawer"
+				"parent": "c86f-82a6-7a6e-25d1"
 			}
 		},
 		{
 			"type": "FlexLayout",
-			"id": "c09467d9",
+			"id": "1716-2878-c9e4-b69b",
 			"source": {
 				"page": "__library__"
 			},
@@ -3302,13 +3303,13 @@
 					"bottom": 0
 				},
 				"children": [],
-				"parent": "flBottom",
+				"parent": "dcd8-ddf9-3af8-1864",
 				"name": "flSliderDrawerBottomLine"
 			}
 		},
 		{
 			"type": "FlexLayout",
-			"id": "09dbfcc7",
+			"id": "7ac5-bff9-6f8e-da16",
 			"source": {
 				"page": "__library__"
 			},
@@ -3355,16 +3356,16 @@
 					"flexGrow": 1
 				},
 				"children": [
-					"imgSignout",
-					"lblSignout"
+					"d77d-88b6-3cd0-82f6",
+					"92a7-fa72-f3d8-8985"
 				],
 				"name": "flSignout",
-				"parent": "flBottom"
+				"parent": "dcd8-ddf9-3af8-1864"
 			}
 		},
 		{
 			"type": "FlexLayout",
-			"id": "91db6ea2",
+			"id": "572b-8b1d-aa09-8de4",
 			"source": {
 				"page": "__library__"
 			},
@@ -3409,15 +3410,15 @@
 					"flexGrow": 1
 				},
 				"children": [
-					"lblVersion"
+					"653b-b107-f77e-59e3"
 				],
 				"name": "flVersion",
-				"parent": "flBottom"
+				"parent": "dcd8-ddf9-3af8-1864"
 			}
 		},
 		{
 			"type": "ImageView",
-			"id": "89eff279",
+			"id": "d77d-88b6-3cd0-82f6",
 			"source": {
 				"page": "__library__"
 			},
@@ -3453,13 +3454,13 @@
 				},
 				"children": [],
 				"name": "imgSignout",
-				"parent": "flSignout",
+				"parent": "7ac5-bff9-6f8e-da16",
 				"imageURL": "https://dispatcher.r0.smartface.io/smartface9/fieldservice2/ui-editor/img/logout.png?os=iOS&osVersion=10.2&density=326&densityRatio=0.5&zoomLevel=0.5&brandModel=iPhone%207"
 			}
 		},
 		{
 			"type": "Label",
-			"id": "54ca05f5",
+			"id": "92a7-fa72-f3d8-8985",
 			"source": {
 				"page": "__library__"
 			},
@@ -3512,12 +3513,12 @@
 				},
 				"children": [],
 				"name": "lblSignout",
-				"parent": "flSignout"
+				"parent": "7ac5-bff9-6f8e-da16"
 			}
 		},
 		{
 			"type": "Label",
-			"id": "aee10a7f",
+			"id": "653b-b107-f77e-59e3",
 			"source": {
 				"page": "__library__"
 			},
@@ -3571,12 +3572,12 @@
 				},
 				"children": [],
 				"name": "lblVersion",
-				"parent": "flVersion"
+				"parent": "572b-8b1d-aa09-8de4"
 			}
 		},
 		{
 			"type": "FlexLayout",
-			"id": "5994f375",
+			"id": "7292-a9da-a59a-c65b",
 			"source": {
 				"page": "__library__"
 			},
@@ -3628,12 +3629,12 @@
 				},
 				"children": [],
 				"name": "flHighlight",
-				"parent": "flActions"
+				"parent": "424e-ae46-4238-1549"
 			}
 		},
 		{
 			"type": "FlexLayout",
-			"id": "a003119f",
+			"id": "9b20-8ec9-667c-74bf",
 			"source": {
 				"page": "__library__"
 			},
@@ -3691,15 +3692,15 @@
 					"bottom": 0
 				},
 				"children": [
-					"imgCheck"
+					"cb36-89e3-68ee-8119"
 				],
 				"name": "flCheck",
-				"parent": "flWaitWhite"
+				"parent": "cceb-c9b9-6b06-9b6c"
 			}
 		},
 		{
 			"type": "ImageView",
-			"id": "133a9038",
+			"id": "cb36-89e3-68ee-8119",
 			"source": {
 				"page": "__library__"
 			},
@@ -3737,13 +3738,13 @@
 				},
 				"children": [],
 				"name": "imgCheck",
-				"parent": "flCheck",
+				"parent": "9b20-8ec9-667c-74bf",
 				"imageURL": "https://dispatcher.r0.smartface.io/smartface9/fieldservice2/ui-editor/img/check.png?os=iOS&osVersion=10.2&density=326&densityRatio=0.5&zoomLevel=0.5&brandModel=iPhone%207"
 			}
 		},
 		{
 			"type": "Label",
-			"id": "96c54b87",
+			"id": "cc92-0a49-32e2-40d4",
 			"source": {
 				"page": "__library__"
 			},
@@ -3799,12 +3800,12 @@
 				},
 				"children": [],
 				"name": "lblSaving",
-				"parent": "flWaitWhite"
+				"parent": "cceb-c9b9-6b06-9b6c"
 			}
 		},
 		{
 			"type": "Label",
-			"id": "0cff812a",
+			"id": "7cbd-7800-9107-ffc5",
 			"source": {
 				"page": "__library__"
 			},
@@ -3852,7 +3853,7 @@
 					"positionType": "RELATIVE"
 				},
 				"name": "lblCount",
-				"parent": "customerActionRow",
+				"parent": "dc03-0d8a-594e-86b6",
 				"children": []
 			}
 		}

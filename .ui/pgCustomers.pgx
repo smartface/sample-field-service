@@ -2,7 +2,7 @@
 	"components": [
 		{
 			"type": "Page",
-			"id": "56dad56b",
+			"id": "0678-cf6d-cce0-97f1",
 			"initialized": true,
 			"themeProps": {
 				"Highlights": "Default"
@@ -19,7 +19,7 @@
 				"defaults": {}
 			},
 			"className": ".page",
-			"version": "6.4.3",
+			"version": "6.4.5",
 			"props": {
 				"backgroundColor": "rgba( 255, 255, 255, 1 )",
 				"orientation": "PORTRAIT",
@@ -32,10 +32,10 @@
 					"justifyContent": "CENTER"
 				},
 				"children": [
-					"statusBar",
-					"headerBar",
-					"aiWait",
-					"lvCustomers"
+					"0196-71c2-0ef6-1ab7",
+					"5845-b092-d3d9-014b",
+					"6d16-8447-b88d-7345",
+					"0374-43e7-8ab8-9ae7"
 				],
 				"parent": null,
 				"name": "pgCustomers",
@@ -45,7 +45,7 @@
 		},
 		{
 			"type": "StatusBar",
-			"id": "d88ee3ce",
+			"id": "0196-71c2-0ef6-1ab7",
 			"themeProps": {
 				"Highlights": "Default"
 			},
@@ -64,7 +64,7 @@
 				"visible": true,
 				"style": "LIGHTCONTENT",
 				"children": [],
-				"parent": "pgCustomers",
+				"parent": "0678-cf6d-cce0-97f1",
 				"isRemovable": false,
 				"name": "statusBar",
 				"height": 20
@@ -72,7 +72,7 @@
 		},
 		{
 			"type": "HeaderBar",
-			"id": "bca0846a",
+			"id": "5845-b092-d3d9-014b",
 			"themeProps": {
 				"Highlights": "Default"
 			},
@@ -93,7 +93,7 @@
 				"visible": true,
 				"backgroundColor": "rgba( 44, 50, 57, 1 )",
 				"children": [],
-				"parent": "pgCustomers",
+				"parent": "0678-cf6d-cce0-97f1",
 				"isRemovable": false,
 				"name": "headerBar",
 				"height": 44
@@ -101,7 +101,7 @@
 		},
 		{
 			"type": "ListView",
-			"id": "dfc49879",
+			"id": "0374-43e7-8ab8-9ae7",
 			"themeProps": {
 				"Sizes": "Default",
 				"Highlights": "Default"
@@ -154,12 +154,12 @@
 				},
 				"children": [],
 				"name": "lvCustomers",
-				"parent": "pgCustomers"
+				"parent": "0678-cf6d-cce0-97f1"
 			}
 		},
 		{
 			"type": "ActivityIndicator",
-			"id": "f9c1dfb3",
+			"id": "6d16-8447-b88d-7345",
 			"themeProps": {
 				"Sizes": "Default",
 				"Highlights": "Default"
@@ -202,7 +202,7 @@
 				},
 				"children": [],
 				"name": "aiWait",
-				"parent": "pgCustomers"
+				"parent": "0678-cf6d-cce0-97f1"
 			}
 		}
 	]

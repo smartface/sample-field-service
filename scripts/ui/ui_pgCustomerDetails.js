@@ -44,7 +44,7 @@ const PgCustomerDetails_ = extend(Page)(
 		var btnBack = new Button(btnBackStyle);  
 		this.layout.addChild(btnBack);
 		this.btnBack = btnBack;
-
+	
 		const flCustomerTopStyle = getCombinedStyle(".flexLayout", {
 			height: 90,
 			width: 249,
@@ -60,7 +60,7 @@ const PgCustomerDetails_ = extend(Page)(
 		});  
 		var flCustomerTop = new FlexLayout(flCustomerTopStyle);  
 		this.layout.addChild(flCustomerTop);
-		
+			
 		const lblNameStyle = getCombinedStyle(".label", {
 			textAlignment: TextAlignment.MIDCENTER,
 			textColor: Color.create(255, 36, 42, 52),
@@ -76,7 +76,7 @@ const PgCustomerDetails_ = extend(Page)(
 			lblName.ios && (lblName.ios.scrollEnabled = false);
 		this.layout.addChild(lblName);
 		this.lblName = lblName;
-
+	
 		const lblTitleStyle = getCombinedStyle(".label", {
 			textAlignment: TextAlignment.MIDCENTER,
 			textColor: Color.create(255, 47, 55, 68),
@@ -91,7 +91,7 @@ const PgCustomerDetails_ = extend(Page)(
 			lblTitle.ios && (lblTitle.ios.scrollEnabled = false);
 		this.layout.addChild(lblTitle);
 		this.lblTitle = lblTitle;
-
+	
 		const flLineStyle = getCombinedStyle(".flexLayout", {
 			height: 0.5,
 			width: null,
@@ -103,7 +103,7 @@ const PgCustomerDetails_ = extend(Page)(
 		var flLine = new FlexLayout(flLineStyle);  
 		this.layout.addChild(flLine);
 		this.flLine = flLine;
-
+	
 		const flWaitStyle = getCombinedStyle(".flexLayout", {
 			width: null,
 			height: null,
@@ -118,7 +118,7 @@ const PgCustomerDetails_ = extend(Page)(
 		var flWait = new FlexLayout(flWaitStyle);  
 		this.layout.addChild(flWait);
 		this.flWait = flWait;
-
+	
 		const btnShareStyle = getCombinedStyle(".button", {
 			backgroundColor: Color.create(255, 244, 244, 244),
 			borderRadius: 25,
@@ -130,7 +130,7 @@ const PgCustomerDetails_ = extend(Page)(
 		var btnShare = new Button(btnShareStyle);  
 		flCustomerTop.addChild(btnShare);
 		this.btnShare = btnShare;
-
+	
 		const aiWaitStyle = getCombinedStyle(".activityIndicator", {
 			minHeight: 21,
 			minWidth: 21
@@ -138,7 +138,7 @@ const PgCustomerDetails_ = extend(Page)(
 		var aiWait = new ActivityIndicator(aiWaitStyle);  
 		flWait.addChild(aiWait);
 		this.aiWait = aiWait;
-
+	
 		const imgCustomerPictureStyle = getCombinedStyle(".imageView", {
 			width: 88,
 			height: 88,
@@ -153,7 +153,7 @@ const PgCustomerDetails_ = extend(Page)(
 		var imgCustomerPicture = new ImageView(imgCustomerPictureStyle);  
 		flCustomerTop.addChild(imgCustomerPicture);
 		this.imgCustomerPicture = imgCustomerPicture;
-
+	
 		const btnAddToContactsStyle = getCombinedStyle(".button", {
 			backgroundColor: Color.create(255, 244, 244, 244),
 			borderRadius: 25,
@@ -165,7 +165,7 @@ const PgCustomerDetails_ = extend(Page)(
 		var btnAddToContacts = new Button(btnAddToContactsStyle);  
 		flCustomerTop.addChild(btnAddToContacts);
 		this.btnAddToContacts = btnAddToContacts;
-
+	
 		//assign the children to page 
 		this.children = Object.assign({}, {
 			btnBack: btnBack,

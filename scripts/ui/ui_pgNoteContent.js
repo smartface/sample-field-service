@@ -36,7 +36,7 @@ const PgNoteContent_ = extend(Page)(
 		var textAreaHolder = new FlexLayout(textAreaHolderStyle);  
 		this.layout.addChild(textAreaHolder);
 		this.textAreaHolder = textAreaHolder;
-
+	
 		const flWaitStyle = getCombinedStyle(".flexLayout", {
 			width: null,
 			height: null,
@@ -52,7 +52,7 @@ const PgNoteContent_ = extend(Page)(
 		var flWait = new FlexLayout(flWaitStyle);  
 		this.layout.addChild(flWait);
 		this.flWait = flWait;
-
+	
 		const aiWaitStyle = getCombinedStyle(".activityIndicator", {
 			minHeight: 21,
 			minWidth: 21
@@ -60,7 +60,7 @@ const PgNoteContent_ = extend(Page)(
 		var aiWait = new ActivityIndicator(aiWaitStyle);  
 		flWait.addChild(aiWait);
 		this.aiWait = aiWait;
-
+	
 		//assign the children to page 
 		this.children = Object.assign({}, {
 			textAreaHolder: textAreaHolder,

@@ -23,7 +23,7 @@ exports.PURPLE = {
         startColor: Color.create("#382B53"),
         endColor: Color.create("#4E4168")
     }),
-    addCustomer: Image.createFromFile("images://add_customer_purple.png"),
+    addCustomer: Image.createFromFile("images://add_white.png"),
     lineSeparator: Color.create("#979797"),
     secondaryColor: Color.create("#F6A623"),
     inactiveColor: Color.create("#B395F0"),
@@ -59,7 +59,7 @@ exports.NAVY = {
         startColor: Color.create("#06BEBD"),
         endColor: Color.create("#7CC981")
     }),
-    addCustomer: Image.createFromFile("images://add_customer.png"),
+    addCustomer: Image.createFromFile("images://add_white.png"),
     lineSeparator: Color.createGradient({
         direction: Color.GradientDirection.HORIZONTAL,
         startColor: Color.create("#06BEBD"),

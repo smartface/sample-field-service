@@ -42,7 +42,7 @@ const PgNotes_ = extend(Page)(
 		lvNotes.onRowCreate = function(){ return new ListViewItem(); };
 		this.layout.addChild(lvNotes);
 		this.lvNotes = lvNotes;
-
+	
 		const aiNotesStyle = getCombinedStyle(".activityIndicator", {
 			minHeight: 21,
 			minWidth: 21
@@ -50,7 +50,7 @@ const PgNotes_ = extend(Page)(
 		var aiNotes = new ActivityIndicator(aiNotesStyle);  
 		this.layout.addChild(aiNotes);
 		this.aiNotes = aiNotes;
-
+	
 		//assign the children to page 
 		this.children = Object.assign({}, {
 			lvNotes: lvNotes,

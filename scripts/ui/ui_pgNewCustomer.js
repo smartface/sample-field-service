@@ -38,7 +38,7 @@ const PgNewCustomer_ = extend(Page)(
 		});  
 		var flContent = new FlexLayout(flContentStyle);  
 		this.layout.addChild(flContent);
-		
+			
 		const flNameSurnamePictureStyle = getCombinedStyle(".flexLayout", {
 			backgroundColor: Color.create(0, 255, 255, 255),
 			width: null,
@@ -47,7 +47,7 @@ const PgNewCustomer_ = extend(Page)(
 		});  
 		var flNameSurnamePicture = new FlexLayout(flNameSurnamePictureStyle);  
 		flContent.addChild(flNameSurnamePicture);
-		
+			
 		const flEmailRowStyle = getCombinedStyle(".flexLayout", {
 			width: null,
 			height: 33,
@@ -56,7 +56,7 @@ const PgNewCustomer_ = extend(Page)(
 		});  
 		var flEmailRow = new FlexLayout(flEmailRowStyle);  
 		flContent.addChild(flEmailRow);
-		
+			
 		const flPhoneRowStyle = getCombinedStyle(".flexLayout", {
 			width: null,
 			height: 33,
@@ -65,7 +65,7 @@ const PgNewCustomer_ = extend(Page)(
 		});  
 		var flPhoneRow = new FlexLayout(flPhoneRowStyle);  
 		flContent.addChild(flPhoneRow);
-		
+			
 		const flAddressRowStyle = getCombinedStyle(".flexLayout", {
 			width: null,
 			height: 33,
@@ -74,7 +74,7 @@ const PgNewCustomer_ = extend(Page)(
 		});  
 		var flAddressRow = new FlexLayout(flAddressRowStyle);  
 		flContent.addChild(flAddressRow);
-		
+			
 		const flPictureStyle = getCombinedStyle(".flexLayout", {
 			width: 73,
 			height: 73,
@@ -82,7 +82,7 @@ const PgNewCustomer_ = extend(Page)(
 		});  
 		var flPicture = new FlexLayout(flPictureStyle);  
 		flNameSurnamePicture.addChild(flPicture);
-		
+			
 		const imgPhoneStyle = getCombinedStyle(".imageView", {
 			width: 43.5,
 			height: null,
@@ -90,7 +90,7 @@ const PgNewCustomer_ = extend(Page)(
 		});  
 		var imgPhone = new ImageView(imgPhoneStyle);  
 		flPhoneRow.addChild(imgPhone);
-		
+			
 		const imgAddressStyle = getCombinedStyle(".imageView", {
 			width: 43.5,
 			height: null,
@@ -98,7 +98,7 @@ const PgNewCustomer_ = extend(Page)(
 		});  
 		var imgAddress = new ImageView(imgAddressStyle);  
 		flAddressRow.addChild(imgAddress);
-		
+			
 		const imgEmailStyle = getCombinedStyle(".imageView", {
 			width: 43.5,
 			height: null,
@@ -106,7 +106,7 @@ const PgNewCustomer_ = extend(Page)(
 		});  
 		var imgEmail = new ImageView(imgEmailStyle);  
 		flEmailRow.addChild(imgEmail);
-		
+			
 		const flEmailStyle = getCombinedStyle(".flexLayout", {
 			width: null,
 			height: null,
@@ -115,7 +115,7 @@ const PgNewCustomer_ = extend(Page)(
 		var flEmail = new FlexLayout(flEmailStyle);  
 		flEmailRow.addChild(flEmail);
 		this.flEmail = flEmail;
-
+	
 		const flPhoneStyle = getCombinedStyle(".flexLayout", {
 			width: null,
 			height: null,
@@ -124,7 +124,7 @@ const PgNewCustomer_ = extend(Page)(
 		var flPhone = new FlexLayout(flPhoneStyle);  
 		flPhoneRow.addChild(flPhone);
 		this.flPhone = flPhone;
-
+	
 		const flAddressStyle = getCombinedStyle(".flexLayout", {
 			width: null,
 			height: null,
@@ -133,7 +133,7 @@ const PgNewCustomer_ = extend(Page)(
 		var flAddress = new FlexLayout(flAddressStyle);  
 		flAddressRow.addChild(flAddress);
 		this.flAddress = flAddress;
-
+	
 		const flNameSurnameStyle = getCombinedStyle(".flexLayout", {
 			width: null,
 			height: null,
@@ -143,7 +143,7 @@ const PgNewCustomer_ = extend(Page)(
 		});  
 		var flNameSurname = new FlexLayout(flNameSurnameStyle);  
 		flNameSurnamePicture.addChild(flNameSurname);
-		
+			
 		const flNameStyle = getCombinedStyle(".flexLayout", {
 			width: null,
 			height: 33
@@ -151,7 +151,7 @@ const PgNewCustomer_ = extend(Page)(
 		var flName = new FlexLayout(flNameStyle);  
 		flNameSurname.addChild(flName);
 		this.flName = flName;
-
+	
 		const btnPictureStyle = getCombinedStyle(".button", {
 			height: 73,
 			width: 73,
@@ -168,7 +168,7 @@ const PgNewCustomer_ = extend(Page)(
 		var btnPicture = new Button(btnPictureStyle);  
 		flPicture.addChild(btnPicture);
 		this.btnPicture = btnPicture;
-
+	
 		const flSurnameStyle = getCombinedStyle(".flexLayout", {
 			width: null,
 			height: 33
@@ -176,7 +176,7 @@ const PgNewCustomer_ = extend(Page)(
 		var flSurname = new FlexLayout(flSurnameStyle);  
 		flNameSurname.addChild(flSurname);
 		this.flSurname = flSurname;
-
+	
 		const imgPictureStyle = getCombinedStyle(".imageView", {
 			width: 73,
 			height: 73,
@@ -191,7 +191,7 @@ const PgNewCustomer_ = extend(Page)(
 		var imgPicture = new ImageView(imgPictureStyle);  
 		flPicture.addChild(imgPicture);
 		this.imgPicture = imgPicture;
-
+	
 		//assign the children to page 
 		this.children = Object.assign({}, {
 			flContent: flContent

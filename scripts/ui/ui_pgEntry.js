@@ -7,6 +7,7 @@
 const extend = require('js-base/core/extend');
 const Page = require('sf-core/ui/page');
 const Color = require('sf-core/ui/color');
+const FlexLayout = require('sf-core/ui/flexlayout');
 
 
 

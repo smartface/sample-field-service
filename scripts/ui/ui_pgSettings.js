@@ -38,7 +38,7 @@ const PgSettings_ = extend(Page)(
 		});  
 		var flTheme = new FlexLayout(flThemeStyle);  
 		this.layout.addChild(flTheme);
-		
+			
 		const flNotificationsStyle = getCombinedStyle(".flexLayout", {
 			backgroundColor: Color.create(0, 255, 255, 255),
 			width: null,
@@ -51,7 +51,7 @@ const PgSettings_ = extend(Page)(
 		});  
 		var flNotifications = new FlexLayout(flNotificationsStyle);  
 		this.layout.addChild(flNotifications);
-		
+			
 		const flFingerPrintStyle = getCombinedStyle(".flexLayout", {
 			backgroundColor: Color.create(0, 255, 255, 255),
 			width: null,
@@ -64,7 +64,7 @@ const PgSettings_ = extend(Page)(
 		});  
 		var flFingerPrint = new FlexLayout(flFingerPrintStyle);  
 		this.layout.addChild(flFingerPrint);
-		
+			
 		const flTextsStyle = getCombinedStyle(".flexLayout", {
 			backgroundColor: Color.create(0, 255, 255, 255),
 			width: null,
@@ -77,7 +77,7 @@ const PgSettings_ = extend(Page)(
 		});  
 		var flTexts = new FlexLayout(flTextsStyle);  
 		this.layout.addChild(flTexts);
-		
+			
 		const lblThemeStyle = getCombinedStyle(".label", {
 			text: "Theme",
 			width: null,
@@ -92,7 +92,7 @@ const PgSettings_ = extend(Page)(
 			lblTheme.ios && (lblTheme.ios.scrollEnabled = false);
 		flTheme.addChild(lblTheme);
 		this.lblTheme = lblTheme;
-
+	
 		const swFingerprintStyle = getCombinedStyle(".switch", {
 			minWidth: 51,
 			minHeight: 31,
@@ -105,7 +105,7 @@ const PgSettings_ = extend(Page)(
 			swFingerprint.android && (swFingerprint.android.toggleOffColor = swFingerprintStyle.toggleOffColor);
 		flFingerPrint.addChild(swFingerprint);
 		this.swFingerprint = swFingerprint;
-
+	
 		const swNotificationsStyle = getCombinedStyle(".switch", {
 			minWidth: 51,
 			minHeight: 31,
@@ -118,7 +118,7 @@ const PgSettings_ = extend(Page)(
 			swNotifications.android && (swNotifications.android.toggleOffColor = swNotificationsStyle.toggleOffColor);
 		flNotifications.addChild(swNotifications);
 		this.swNotifications = swNotifications;
-
+	
 		const lblAboutStyle = getCombinedStyle(".label", {
 			width: null,
 			text: "About v1.0.0",
@@ -132,7 +132,7 @@ const PgSettings_ = extend(Page)(
 			lblAbout.ios && (lblAbout.ios.scrollEnabled = false);
 		flTexts.addChild(lblAbout);
 		this.lblAbout = lblAbout;
-
+	
 		const lblNotificationsStyle = getCombinedStyle(".label", {
 			text: "Notification",
 			width: null,
@@ -148,7 +148,7 @@ const PgSettings_ = extend(Page)(
 			lblNotifications.ios && (lblNotifications.ios.scrollEnabled = false);
 		flNotifications.addChild(lblNotifications);
 		this.lblNotifications = lblNotifications;
-
+	
 		const lblTextStyle = getCombinedStyle(".label", {
 			width: null,
 			text: "With the Field Service application, you manage field operations and deliver the best customer service on-the-go",
@@ -166,7 +166,7 @@ const PgSettings_ = extend(Page)(
 			lblText.ios && (lblText.ios.scrollEnabled = false);
 		flTexts.addChild(lblText);
 		this.lblText = lblText;
-
+	
 		const flThemeSelectionsStyle = getCombinedStyle(".flexLayout", {
 			backgroundColor: Color.create(0, 255, 255, 255),
 			width: 68,
@@ -178,7 +178,7 @@ const PgSettings_ = extend(Page)(
 		});  
 		var flThemeSelections = new FlexLayout(flThemeSelectionsStyle);  
 		flTheme.addChild(flThemeSelections);
-		
+			
 		const lblFingerPrintStyle = getCombinedStyle(".label", {
 			text: "Use FingerPrint",
 			width: null,
@@ -194,7 +194,7 @@ const PgSettings_ = extend(Page)(
 			lblFingerPrint.ios && (lblFingerPrint.ios.scrollEnabled = false);
 		flFingerPrint.addChild(lblFingerPrint);
 		this.lblFingerPrint = lblFingerPrint;
-
+	
 		const flLineFingerPrintStyle = getCombinedStyle(".flexLayout", {
 			width: null,
 			height: 0.5,
@@ -208,7 +208,7 @@ const PgSettings_ = extend(Page)(
 		var flLineFingerPrint = new FlexLayout(flLineFingerPrintStyle);  
 		flFingerPrint.addChild(flLineFingerPrint);
 		this.flLineFingerPrint = flLineFingerPrint;
-
+	
 		const flLineThemeStyle = getCombinedStyle(".flexLayout", {
 			width: null,
 			height: 0.5,
@@ -221,7 +221,7 @@ const PgSettings_ = extend(Page)(
 		var flLineTheme = new FlexLayout(flLineThemeStyle);  
 		flTheme.addChild(flLineTheme);
 		this.flLineTheme = flLineTheme;
-
+	
 		const flLineNotificationsStyle = getCombinedStyle(".flexLayout", {
 			width: null,
 			height: 0.5,
@@ -234,7 +234,7 @@ const PgSettings_ = extend(Page)(
 		var flLineNotifications = new FlexLayout(flLineNotificationsStyle);  
 		flNotifications.addChild(flLineNotifications);
 		this.flLineNotifications = flLineNotifications;
-
+	
 		const flPurpleSelectionStyle = getCombinedStyle(".flexLayout", {
 			backgroundColor: Color.create(0, 255, 255, 255),
 			width: 30,
@@ -248,7 +248,7 @@ const PgSettings_ = extend(Page)(
 		var flPurpleSelection = new FlexLayout(flPurpleSelectionStyle);  
 		flThemeSelections.addChild(flPurpleSelection);
 		this.flPurpleSelection = flPurpleSelection;
-
+	
 		const flNavySelectionStyle = getCombinedStyle(".flexLayout", {
 			backgroundColor: Color.create(0, 255, 255, 255),
 			width: 30,
@@ -262,7 +262,7 @@ const PgSettings_ = extend(Page)(
 		var flNavySelection = new FlexLayout(flNavySelectionStyle);  
 		flThemeSelections.addChild(flNavySelection);
 		this.flNavySelection = flNavySelection;
-
+	
 		const flPurpleStyle = getCombinedStyle(".flexLayout", {
 			width: 20,
 			height: 20.28,
@@ -273,7 +273,7 @@ const PgSettings_ = extend(Page)(
 		});  
 		var flPurple = new FlexLayout(flPurpleStyle);  
 		flPurpleSelection.addChild(flPurple);
-		
+			
 		const flNavyStyle = getCombinedStyle(".flexLayout", {
 			width: 20,
 			height: 20.28,
@@ -284,7 +284,7 @@ const PgSettings_ = extend(Page)(
 		});  
 		var flNavy = new FlexLayout(flNavyStyle);  
 		flNavySelection.addChild(flNavy);
-		
+			
 		//assign the children to page 
 		this.children = Object.assign({}, {
 			flTheme: flTheme,

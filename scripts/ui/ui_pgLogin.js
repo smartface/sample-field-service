@@ -49,7 +49,7 @@ const PgLogin_ = extend(Page)(
 		});  
 		var flLeft = new FlexLayout(flLeftStyle);  
 		this.layout.addChild(flLeft);
-		
+			
 		const flMiddleStyle = getCombinedStyle(".flexLayout", {
 			backgroundColor: Color.create(0, 255, 255, 255),
 			alpha: 1,
@@ -72,7 +72,7 @@ const PgLogin_ = extend(Page)(
 		});  
 		var flMiddle = new FlexLayout(flMiddleStyle);  
 		this.layout.addChild(flMiddle);
-		
+			
 		const flRightStyle = getCombinedStyle(".flexLayout", {
 			backgroundColor: Color.create(0, 208, 2, 27),
 			alpha: 1,
@@ -91,7 +91,7 @@ const PgLogin_ = extend(Page)(
 		});  
 		var flRight = new FlexLayout(flRightStyle);  
 		this.layout.addChild(flRight);
-		
+			
 		const imgLogoStyle = getCombinedStyle(".imageView", {
 			backgroundColor: Color.create(0, 255, 255, 255),
 			alpha: 1,
@@ -107,7 +107,7 @@ const PgLogin_ = extend(Page)(
 		var imgLogo = new ImageView(imgLogoStyle);  
 		flMiddle.addChild(imgLogo);
 		this.imgLogo = imgLogo;
-
+	
 		const flTextsStyle = getCombinedStyle(".flexLayout", {
 			backgroundColor: Color.create("#FFFFFF"),
 			alpha: 1,
@@ -125,7 +125,7 @@ const PgLogin_ = extend(Page)(
 		});  
 		var flTexts = new FlexLayout(flTextsStyle);  
 		flMiddle.addChild(flTexts);
-		
+			
 		const flInputsStyle = getCombinedStyle(".flexLayout", {
 			backgroundColor: Color.create("#FFFFFF"),
 			alpha: 1,
@@ -144,7 +144,7 @@ const PgLogin_ = extend(Page)(
 		var flInputs = new FlexLayout(flInputsStyle);  
 		flMiddle.addChild(flInputs);
 		this.flInputs = flInputs;
-
+	
 		const flButtonStyle = getCombinedStyle(".flexLayout", {
 			backgroundColor: Color.create("#FFFFFF"),
 			alpha: 1,
@@ -162,7 +162,7 @@ const PgLogin_ = extend(Page)(
 		});  
 		var flButton = new FlexLayout(flButtonStyle);  
 		flMiddle.addChild(flButton);
-		
+			
 		const lblTitleStyle = getCombinedStyle(".label", {
 			backgroundColor: Color.create("#FFFFFF"),
 			alpha: 1,
@@ -181,7 +181,7 @@ const PgLogin_ = extend(Page)(
 		if(lblTitleStyle.scrollEnabled === false)
 			lblTitle.ios && (lblTitle.ios.scrollEnabled = false);
 		flTexts.addChild(lblTitle);
-		
+			
 		const btnLoginStyle = getCombinedStyle(".button", {
 			backgroundColor: Color.create(255, 6, 190, 189),
 			alpha: 1,
@@ -204,7 +204,7 @@ const PgLogin_ = extend(Page)(
 		var btnLogin = new Button(btnLoginStyle);  
 		flButton.addChild(btnLogin);
 		this.btnLogin = btnLogin;
-
+	
 		const lblSubTitleStyle = getCombinedStyle(".label", {
 			backgroundColor: Color.create("#FFFFFF"),
 			alpha: 1,
@@ -224,7 +224,7 @@ const PgLogin_ = extend(Page)(
 		if(lblSubTitleStyle.scrollEnabled === false)
 			lblSubTitle.ios && (lblSubTitle.ios.scrollEnabled = false);
 		flTexts.addChild(lblSubTitle);
-		
+			
 		const aiLoginStyle = getCombinedStyle(".activityIndicator", {
 			backgroundColor: Color.create(0, 255, 255, 255),
 			alpha: 1,
@@ -246,7 +246,7 @@ const PgLogin_ = extend(Page)(
 		var aiLogin = new ActivityIndicator(aiLoginStyle);  
 		flButton.addChild(aiLogin);
 		this.aiLogin = aiLogin;
-
+	
 		//assign the children to page 
 		this.children = Object.assign({}, {
 			flLeft: flLeft,

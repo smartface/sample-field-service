@@ -2,14 +2,14 @@
 	"components": [
 		{
 			"type": "Page",
-			"id": "9663d515",
+			"id": "0bd1-d6df-a9cc-62ce",
 			"initialized": true,
 			"themeProps": {
 				"Highlights": "Default"
 			},
 			"userProps": {},
 			"className": ".page",
-			"version": "6.4.3",
+			"version": "6.4.5",
 			"props": {
 				"backgroundColor": "#FFFFFF",
 				"orientation": "PORTRAIT",
@@ -23,10 +23,10 @@
 				},
 				"parent": null,
 				"children": [
-					"statusBar",
-					"headerBar",
-					"textAreaHolder",
-					"flWait"
+					"b1b3-9a1a-1cb3-86fc",
+					"7691-2ad5-34ca-4fce",
+					"a822-6012-5715-1699",
+					"39c5-8493-f015-f92e"
 				],
 				"name": "pgNoteContent",
 				"width": 187.5,
@@ -35,7 +35,7 @@
 		},
 		{
 			"type": "StatusBar",
-			"id": "78b5716c",
+			"id": "b1b3-9a1a-1cb3-86fc",
 			"themeProps": {
 				"Highlights": "Default"
 			},
@@ -47,7 +47,7 @@
 				"color": "#2C3239",
 				"visible": true,
 				"style": "LIGHTCONTENT",
-				"parent": "pgNoteContent",
+				"parent": "0bd1-d6df-a9cc-62ce",
 				"children": [],
 				"isRemovable": false,
 				"name": "statusBar",
@@ -56,7 +56,7 @@
 		},
 		{
 			"type": "HeaderBar",
-			"id": "6049182f",
+			"id": "7691-2ad5-34ca-4fce",
 			"themeProps": {
 				"Highlights": "Default"
 			},
@@ -69,7 +69,7 @@
 				"titleColor": "#FFFFFF",
 				"visible": true,
 				"backgroundColor": "#2C3239",
-				"parent": "pgNoteContent",
+				"parent": "0bd1-d6df-a9cc-62ce",
 				"children": [],
 				"isRemovable": false,
 				"name": "headerBar",
@@ -78,7 +78,7 @@
 		},
 		{
 			"type": "FlexLayout",
-			"id": "2f6ef706",
+			"id": "a822-6012-5715-1699",
 			"hiddenComponent": false,
 			"themeProps": {
 				"Sizes": "Default",
@@ -123,13 +123,13 @@
 					"flexGrow": 1
 				},
 				"name": "textAreaHolder",
-				"parent": "pgNoteContent",
+				"parent": "0bd1-d6df-a9cc-62ce",
 				"children": []
 			}
 		},
 		{
 			"type": "FlexLayout",
-			"id": "b7a6d536",
+			"id": "39c5-8493-f015-f92e",
 			"hiddenComponent": true,
 			"themeProps": {
 				"Sizes": "Default",
@@ -180,15 +180,15 @@
 					"bottom": 0
 				},
 				"name": "flWait",
-				"parent": "pgNoteContent",
+				"parent": "0bd1-d6df-a9cc-62ce",
 				"children": [
-					"aiWait"
+					"d350-d6bc-7070-d32c"
 				]
 			}
 		},
 		{
 			"type": "ActivityIndicator",
-			"id": "3dedbf99",
+			"id": "d350-d6bc-7070-d32c",
 			"themeProps": {
 				"Sizes": "Default",
 				"Highlights": "Default"
@@ -225,7 +225,7 @@
 					"width": 21
 				},
 				"name": "aiWait",
-				"parent": "flWait",
+				"parent": "39c5-8493-f015-f92e",
 				"children": []
 			}
 		}

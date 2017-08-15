@@ -2,7 +2,7 @@
 	"components": [
 		{
 			"type": "Page",
-			"id": "56dad56b",
+			"id": "5522-9546-0c15-ae75",
 			"initialized": true,
 			"themeProps": {
 				"Highlights": "Default"
@@ -16,7 +16,7 @@
 				"defaults": {}
 			},
 			"className": ".page",
-			"version": "6.4.3",
+			"version": "6.4.5",
 			"props": {
 				"backgroundColor": "rgba( 255, 255, 255, 1 )",
 				"orientation": "PORTRAIT",
@@ -29,14 +29,14 @@
 					"justifyContent": "FLEX_START"
 				},
 				"children": [
-					"statusBar",
-					"headerBar",
-					"btnBack",
-					"flCustomerTop",
-					"lblName",
-					"lblTitle",
-					"flLine",
-					"flWait"
+					"ee09-8ab5-829b-2afe",
+					"4083-1d74-3688-c7cc",
+					"5b2d-99d6-b6da-1307",
+					"7076-c0b3-24a6-a508",
+					"94da-a808-b8b6-cad0",
+					"bae0-62a8-9c1d-4966",
+					"8319-c0df-c933-2a7c",
+					"92b5-1518-433e-8687"
 				],
 				"parent": null,
 				"name": "pgCustomerDetails",
@@ -46,7 +46,7 @@
 		},
 		{
 			"type": "StatusBar",
-			"id": "d88ee3ce",
+			"id": "ee09-8ab5-829b-2afe",
 			"themeProps": {
 				"Highlights": "Default"
 			},
@@ -63,7 +63,7 @@
 				"color": "rgba( 44, 50, 57, 1 )",
 				"visible": true,
 				"children": [],
-				"parent": "pgCustomerDetails",
+				"parent": "5522-9546-0c15-ae75",
 				"isRemovable": false,
 				"name": "statusBar",
 				"height": 20
@@ -71,7 +71,7 @@
 		},
 		{
 			"type": "HeaderBar",
-			"id": "bca0846a",
+			"id": "4083-1d74-3688-c7cc",
 			"themeProps": {
 				"Highlights": "Default"
 			},
@@ -91,7 +91,7 @@
 				"visible": true,
 				"backgroundColor": "#2C3239",
 				"children": [],
-				"parent": "pgCustomerDetails",
+				"parent": "5522-9546-0c15-ae75",
 				"isRemovable": false,
 				"name": "headerBar",
 				"height": 44
@@ -99,7 +99,7 @@
 		},
 		{
 			"type": "Button",
-			"id": "bfaedb9e",
+			"id": "5b2d-99d6-b6da-1307",
 			"themeProps": {
 				"Sizes": "Default",
 				"Highlights": "Default"
@@ -150,12 +150,12 @@
 				},
 				"children": [],
 				"name": "btnBack",
-				"parent": "pgCustomerDetails"
+				"parent": "5522-9546-0c15-ae75"
 			}
 		},
 		{
 			"type": "Label",
-			"id": "fb79431e",
+			"id": "94da-a808-b8b6-cad0",
 			"themeProps": {
 				"Sizes": "Default",
 				"Highlights": "Default"
@@ -207,12 +207,12 @@
 				},
 				"children": [],
 				"name": "lblName",
-				"parent": "pgCustomerDetails"
+				"parent": "5522-9546-0c15-ae75"
 			}
 		},
 		{
 			"type": "Label",
-			"id": "ced01b82",
+			"id": "bae0-62a8-9c1d-4966",
 			"themeProps": {
 				"Sizes": "Default",
 				"Highlights": "Default"
@@ -258,13 +258,13 @@
 				},
 				"children": [],
 				"name": "lblTitle",
-				"parent": "pgCustomerDetails",
+				"parent": "5522-9546-0c15-ae75",
 				"usePageVariable": true
 			}
 		},
 		{
 			"type": "FlexLayout",
-			"id": "79409d05",
+			"id": "8319-c0df-c933-2a7c",
 			"themeProps": {
 				"Sizes": "Default",
 				"Highlights": "Default"
@@ -309,12 +309,12 @@
 				},
 				"children": [],
 				"name": "flLine",
-				"parent": "pgCustomerDetails"
+				"parent": "5522-9546-0c15-ae75"
 			}
 		},
 		{
 			"type": "FlexLayout",
-			"id": "d18b63ca",
+			"id": "7076-c0b3-24a6-a508",
 			"themeProps": {
 				"Sizes": "Default",
 				"Highlights": "Default"
@@ -363,17 +363,17 @@
 					"positionType": "RELATIVE"
 				},
 				"children": [
-					"btnShare",
-					"imgCustomerPicture",
-					"btnAddToContacts"
+					"4aa5-b911-f992-c991",
+					"3a96-3225-679f-9051",
+					"1638-21fe-478e-187e"
 				],
 				"name": "flCustomerTop",
-				"parent": "pgCustomerDetails"
+				"parent": "5522-9546-0c15-ae75"
 			}
 		},
 		{
 			"type": "Button",
-			"id": "96d01729",
+			"id": "4aa5-b911-f992-c991",
 			"themeProps": {
 				"Sizes": "Default",
 				"Highlights": "Default"
@@ -420,12 +420,12 @@
 				},
 				"children": [],
 				"name": "btnShare",
-				"parent": "flCustomerTop"
+				"parent": "7076-c0b3-24a6-a508"
 			}
 		},
 		{
 			"type": "ImageView",
-			"id": "cfa286f7",
+			"id": "3a96-3225-679f-9051",
 			"themeProps": {
 				"Sizes": "Default",
 				"Highlights": "Default"
@@ -469,13 +469,13 @@
 				},
 				"children": [],
 				"name": "imgCustomerPicture",
-				"parent": "flCustomerTop",
+				"parent": "7076-c0b3-24a6-a508",
 				"imageURL": "https://dispatcher.r0.smartface.io/smartface9/fieldservice2/ui-editor/img/customer_detail_picture.png?os=iOS&osVersion=10.2&density=326&densityRatio=0.5&zoomLevel=0.5&brandModel=iPhone%207?random=0.43107311225688116"
 			}
 		},
 		{
 			"type": "Button",
-			"id": "a64965e1",
+			"id": "1638-21fe-478e-187e",
 			"themeProps": {
 				"Sizes": "Default",
 				"Highlights": "Default"
@@ -522,12 +522,12 @@
 				},
 				"children": [],
 				"name": "btnAddToContacts",
-				"parent": "flCustomerTop"
+				"parent": "7076-c0b3-24a6-a508"
 			}
 		},
 		{
 			"type": "FlexLayout",
-			"id": "06e4485a",
+			"id": "92b5-1518-433e-8687",
 			"hiddenComponent": true,
 			"themeProps": {
 				"Sizes": "Default",
@@ -581,15 +581,15 @@
 					"bottom": 0
 				},
 				"children": [
-					"aiWait"
+					"140f-ff33-ea91-fb96"
 				],
 				"name": "flWait",
-				"parent": "pgCustomerDetails"
+				"parent": "5522-9546-0c15-ae75"
 			}
 		},
 		{
 			"type": "ActivityIndicator",
-			"id": "68b6e082",
+			"id": "140f-ff33-ea91-fb96",
 			"themeProps": {
 				"Sizes": "Default",
 				"Highlights": "Default"
@@ -632,7 +632,7 @@
 				},
 				"children": [],
 				"name": "aiWait",
-				"parent": "flWait"
+				"parent": "92b5-1518-433e-8687"
 			}
 		}
 	]

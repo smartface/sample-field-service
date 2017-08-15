@@ -40,7 +40,7 @@ const PgNotification_ = extend(Page)(
 		var aiWait = new ActivityIndicator(aiWaitStyle);  
 		this.layout.addChild(aiWait);
 		this.aiWait = aiWait;
-
+	
 		//assign the children to page 
 		this.children = Object.assign({}, {
 			aiWait: aiWait

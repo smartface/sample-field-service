@@ -33,7 +33,7 @@ const PgCustomers_ = extend(Page)(
 		var aiWait = new ActivityIndicator(aiWaitStyle);  
 		this.layout.addChild(aiWait);
 		this.aiWait = aiWait;
-
+	
 		const lvCustomersStyle = getCombinedStyle(".listView", {
 			width: null,
 			height: null,
@@ -51,7 +51,7 @@ const PgCustomers_ = extend(Page)(
 		lvCustomers.onRowCreate = function(){ return new ListViewItem(); };
 		this.layout.addChild(lvCustomers);
 		this.lvCustomers = lvCustomers;
-
+	
 		//assign the children to page 
 		this.children = Object.assign({}, {
 			aiWait: aiWait,

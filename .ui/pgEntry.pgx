@@ -2,7 +2,7 @@
 	"components": [
 		{
 			"type": "Page",
-			"id": "f3ac7554",
+			"id": "63b5-cbad-e858-f352",
 			"themeProps": {},
 			"userProps": {
 				"isRemovable": true,
@@ -30,7 +30,7 @@
 				"defaults": {}
 			},
 			"className": ".page",
-			"version": "6.4.1",
+			"version": "6.4.5",
 			"props": {
 				"backgroundColor": "#FFFFFF",
 				"orientation": "PORTRAIT",
@@ -38,8 +38,8 @@
 				"height": 301.5,
 				"width": 187.5,
 				"children": [
-					"statusBar",
-					"headerBar"
+					"0ccd-e7f4-8d4b-865a",
+					"5b3d-a333-2e54-9457"
 				],
 				"flexProps": {
 					"alignContent": "STRETCH",
@@ -50,13 +50,14 @@
 					"justifyContent": "CENTER"
 				},
 				"name": "pgEntry",
-				"font": {}
+				"font": {},
+				"parent": null
 			},
 			"initialized": true
 		},
 		{
 			"type": "StatusBar",
-			"id": "f70cd5db",
+			"id": "0ccd-e7f4-8d4b-865a",
 			"themeProps": {},
 			"userProps": {
 				"isRemovable": false,
@@ -78,7 +79,7 @@
 				"isRemovable": false,
 				"height": 20,
 				"children": [],
-				"parent": "pgEntry",
+				"parent": "63b5-cbad-e858-f352",
 				"name": "statusBar",
 				"font": {},
 				"flexProps": {}
@@ -86,7 +87,7 @@
 		},
 		{
 			"type": "HeaderBar",
-			"id": "53bf9db0",
+			"id": "5b3d-a333-2e54-9457",
 			"themeProps": {},
 			"userProps": {
 				"isRemovable": false,
@@ -112,7 +113,7 @@
 				"isRemovable": false,
 				"height": 44,
 				"children": [],
-				"parent": "pgEntry",
+				"parent": "63b5-cbad-e858-f352",
 				"name": "headerBar",
 				"font": {},
 				"flexProps": {}

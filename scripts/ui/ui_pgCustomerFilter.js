@@ -47,7 +47,7 @@ const PgCustomerFilter_ = extend(Page)(
 		});  
 		var flTab = new FlexLayout(flTabStyle);  
 		this.layout.addChild(flTab);
-		
+			
 		const flInputsStyle = getCombinedStyle(".flexLayout", {
 			backgroundColor: Color.create("#FFFFFF"),
 			alpha: 1,
@@ -68,7 +68,7 @@ const PgCustomerFilter_ = extend(Page)(
 		});  
 		var flInputs = new FlexLayout(flInputsStyle);  
 		this.layout.addChild(flInputs);
-		
+			
 		const flSearchStyle = getCombinedStyle(".flexLayout", {
 			width: null,
 			height: 95,
@@ -78,7 +78,7 @@ const PgCustomerFilter_ = extend(Page)(
 		});  
 		var flSearch = new FlexLayout(flSearchStyle);  
 		this.layout.addChild(flSearch);
-		
+			
 		const flButtonsStyle = getCombinedStyle(".flexLayout", {
 			backgroundColor: Color.create(0, 255, 255, 255),
 			alpha: 1,
@@ -101,7 +101,7 @@ const PgCustomerFilter_ = extend(Page)(
 		var flButtons = new FlexLayout(flButtonsStyle);  
 		flTab.addChild(flButtons);
 		this.flButtons = flButtons;
-
+	
 		const flFirstLineStyle = getCombinedStyle(".flexLayout", {
 			backgroundColor: Color.create(0, 126, 211, 33),
 			alpha: 1,
@@ -121,7 +121,7 @@ const PgCustomerFilter_ = extend(Page)(
 		var flFirstLine = new FlexLayout(flFirstLineStyle);  
 		flInputs.addChild(flFirstLine);
 		this.flFirstLine = flFirstLine;
-
+	
 		const btnSearchStyle = getCombinedStyle(".button", {
 			text: "Search",
 			height: 65,
@@ -133,7 +133,7 @@ const PgCustomerFilter_ = extend(Page)(
 		var btnSearch = new Button(btnSearchStyle);  
 		flSearch.addChild(btnSearch);
 		this.btnSearch = btnSearch;
-
+	
 		const flTabIndicatorStyle = getCombinedStyle(".flexLayout", {
 			backgroundColor: Color.create(0, 255, 255, 255),
 			alpha: 1,
@@ -156,7 +156,7 @@ const PgCustomerFilter_ = extend(Page)(
 		var flTabIndicator = new FlexLayout(flTabIndicatorStyle);  
 		flTab.addChild(flTabIndicator);
 		this.flTabIndicator = flTabIndicator;
-
+	
 		const flPhoneInputStyle = getCombinedStyle(".flexLayout", {
 			backgroundColor: Color.create(0, 208, 2, 27),
 			alpha: 1,
@@ -177,7 +177,7 @@ const PgCustomerFilter_ = extend(Page)(
 		var flPhoneInput = new FlexLayout(flPhoneInputStyle);  
 		flInputs.addChild(flPhoneInput);
 		this.flPhoneInput = flPhoneInput;
-
+	
 		const flEmailInputStyle = getCombinedStyle(".flexLayout", {
 			backgroundColor: Color.create(0, 208, 2, 27),
 			alpha: 1,
@@ -198,7 +198,7 @@ const PgCustomerFilter_ = extend(Page)(
 		var flEmailInput = new FlexLayout(flEmailInputStyle);  
 		flInputs.addChild(flEmailInput);
 		this.flEmailInput = flEmailInput;
-
+	
 		const flNameInputStyle = getCombinedStyle(".flexLayout", {
 			backgroundColor: Color.create(0, 208, 2, 27),
 			alpha: 1,
@@ -219,7 +219,7 @@ const PgCustomerFilter_ = extend(Page)(
 		var flNameInput = new FlexLayout(flNameInputStyle);  
 		flFirstLine.addChild(flNameInput);
 		this.flNameInput = flNameInput;
-
+	
 		const flEmailIconStyle = getCombinedStyle(".flexLayout", {
 			backgroundColor: Color.create("#FFFFFF"),
 			alpha: 1,
@@ -237,7 +237,7 @@ const PgCustomerFilter_ = extend(Page)(
 		});  
 		var flEmailIcon = new FlexLayout(flEmailIconStyle);  
 		flEmailInput.addChild(flEmailIcon);
-		
+			
 		const btnNameStyle = getCombinedStyle(".button", {
 			backgroundColor: Color.create(0, 0, 161, 241),
 			alpha: 1,
@@ -256,7 +256,7 @@ const PgCustomerFilter_ = extend(Page)(
 		var btnName = new Button(btnNameStyle);  
 		flButtons.addChild(btnName);
 		this.btnName = btnName;
-
+	
 		const placeHolderLeftStyle = getCombinedStyle(".flexLayout", {
 			backgroundColor: Color.create(0, 255, 255, 255),
 			alpha: 1,
@@ -276,7 +276,7 @@ const PgCustomerFilter_ = extend(Page)(
 		var placeHolderLeft = new FlexLayout(placeHolderLeftStyle);  
 		flTabIndicator.addChild(placeHolderLeft);
 		this.placeHolderLeft = placeHolderLeft;
-
+	
 		const flPhoneIconStyle = getCombinedStyle(".flexLayout", {
 			backgroundColor: Color.create("#FFFFFF"),
 			alpha: 1,
@@ -294,7 +294,7 @@ const PgCustomerFilter_ = extend(Page)(
 		});  
 		var flPhoneIcon = new FlexLayout(flPhoneIconStyle);  
 		flPhoneInput.addChild(flPhoneIcon);
-		
+			
 		const flTabHighlightStyle = getCombinedStyle(".flexLayout", {
 			backgroundColor: Color.create(255, 80, 210, 194),
 			alpha: 1,
@@ -314,7 +314,7 @@ const PgCustomerFilter_ = extend(Page)(
 		var flTabHighlight = new FlexLayout(flTabHighlightStyle);  
 		flTabIndicator.addChild(flTabHighlight);
 		this.flTabHighlight = flTabHighlight;
-
+	
 		const flCardInputStyle = getCombinedStyle(".flexLayout", {
 			backgroundColor: Color.create(0, 255, 255, 255),
 			alpha: 1,
@@ -335,7 +335,7 @@ const PgCustomerFilter_ = extend(Page)(
 		var flCardInput = new FlexLayout(flCardInputStyle);  
 		flFirstLine.addChild(flCardInput);
 		this.flCardInput = flCardInput;
-
+	
 		const btnCardStyle = getCombinedStyle(".button", {
 			backgroundColor: Color.create(0, 0, 161, 241),
 			alpha: 1,
@@ -354,7 +354,7 @@ const PgCustomerFilter_ = extend(Page)(
 		var btnCard = new Button(btnCardStyle);  
 		flButtons.addChild(btnCard);
 		this.btnCard = btnCard;
-
+	
 		const flEmailInputAreaStyle = getCombinedStyle(".flexLayout", {
 			backgroundColor: Color.create(0, 207, 175, 179),
 			alpha: 1,
@@ -374,7 +374,7 @@ const PgCustomerFilter_ = extend(Page)(
 		var flEmailInputArea = new FlexLayout(flEmailInputAreaStyle);  
 		flEmailInput.addChild(flEmailInputArea);
 		this.flEmailInputArea = flEmailInputArea;
-
+	
 		const flPhoneInputAreaStyle = getCombinedStyle(".flexLayout", {
 			backgroundColor: Color.create(0, 207, 175, 179),
 			alpha: 1,
@@ -394,7 +394,7 @@ const PgCustomerFilter_ = extend(Page)(
 		var flPhoneInputArea = new FlexLayout(flPhoneInputAreaStyle);  
 		flPhoneInput.addChild(flPhoneInputArea);
 		this.flPhoneInputArea = flPhoneInputArea;
-
+	
 		const placeHolderRightStyle = getCombinedStyle(".flexLayout", {
 			backgroundColor: Color.create(0, 255, 255, 255),
 			alpha: 1,
@@ -414,7 +414,7 @@ const PgCustomerFilter_ = extend(Page)(
 		var placeHolderRight = new FlexLayout(placeHolderRightStyle);  
 		flTabIndicator.addChild(placeHolderRight);
 		this.placeHolderRight = placeHolderRight;
-
+	
 		const imgPhoneStyle = getCombinedStyle(".imageView", {
 			backgroundColor: Color.create("#FFFFFF"),
 			alpha: 1,
@@ -431,7 +431,7 @@ const PgCustomerFilter_ = extend(Page)(
 		var imgPhone = new ImageView(imgPhoneStyle);  
 		flPhoneIcon.addChild(imgPhone);
 		this.imgPhone = imgPhone;
-
+	
 		const flCardIconStyle = getCombinedStyle(".flexLayout", {
 			backgroundColor: Color.create("#FFFFFF"),
 			alpha: 1,
@@ -449,7 +449,7 @@ const PgCustomerFilter_ = extend(Page)(
 		});  
 		var flCardIcon = new FlexLayout(flCardIconStyle);  
 		flCardInput.addChild(flCardIcon);
-		
+			
 		const flNameIconStyle = getCombinedStyle(".flexLayout", {
 			backgroundColor: Color.create("#FFFFFF"),
 			alpha: 1,
@@ -467,7 +467,7 @@ const PgCustomerFilter_ = extend(Page)(
 		});  
 		var flNameIcon = new FlexLayout(flNameIconStyle);  
 		flNameInput.addChild(flNameIcon);
-		
+			
 		const imgEmailStyle = getCombinedStyle(".imageView", {
 			backgroundColor: Color.create("#FFFFFF"),
 			alpha: 1,
@@ -484,7 +484,7 @@ const PgCustomerFilter_ = extend(Page)(
 		var imgEmail = new ImageView(imgEmailStyle);  
 		flEmailIcon.addChild(imgEmail);
 		this.imgEmail = imgEmail;
-
+	
 		const flCardInputAreaStyle = getCombinedStyle(".flexLayout", {
 			backgroundColor: Color.create(0, 207, 175, 179),
 			alpha: 1,
@@ -504,7 +504,7 @@ const PgCustomerFilter_ = extend(Page)(
 		var flCardInputArea = new FlexLayout(flCardInputAreaStyle);  
 		flCardInput.addChild(flCardInputArea);
 		this.flCardInputArea = flCardInputArea;
-
+	
 		const flNameInputAreaStyle = getCombinedStyle(".flexLayout", {
 			backgroundColor: Color.create(0, 207, 175, 179),
 			alpha: 1,
@@ -524,7 +524,7 @@ const PgCustomerFilter_ = extend(Page)(
 		var flNameInputArea = new FlexLayout(flNameInputAreaStyle);  
 		flNameInput.addChild(flNameInputArea);
 		this.flNameInputArea = flNameInputArea;
-
+	
 		const imgCardStyle = getCombinedStyle(".imageView", {
 			backgroundColor: Color.create("#FFFFFF"),
 			alpha: 1,
@@ -541,7 +541,7 @@ const PgCustomerFilter_ = extend(Page)(
 		var imgCard = new ImageView(imgCardStyle);  
 		flCardIcon.addChild(imgCard);
 		this.imgCard = imgCard;
-
+	
 		const imgNameStyle = getCombinedStyle(".imageView", {
 			backgroundColor: Color.create("#FFFFFF"),
 			alpha: 1,
@@ -558,7 +558,7 @@ const PgCustomerFilter_ = extend(Page)(
 		var imgName = new ImageView(imgNameStyle);  
 		flNameIcon.addChild(imgName);
 		this.imgName = imgName;
-
+	
 		//assign the children to page 
 		this.children = Object.assign({}, {
 			flTab: flTab,

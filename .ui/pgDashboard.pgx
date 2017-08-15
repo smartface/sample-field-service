@@ -2,7 +2,7 @@
 	"components": [
 		{
 			"type": "Page",
-			"id": "311d38b2",
+			"id": "4b8f-4603-1200-4f16",
 			"initialized": true,
 			"themeProps": {
 				"Highlights": "Default"
@@ -30,7 +30,7 @@
 				"defaults": {}
 			},
 			"className": ".page",
-			"version": "6.4.3",
+			"version": "6.4.5",
 			"props": {
 				"backgroundColor": "rgba( 36, 42, 52, 1 )",
 				"orientation": "PORTRAIT",
@@ -46,17 +46,18 @@
 					"justifyContent": "FLEX_START"
 				},
 				"children": [
-					"statusBar",
-					"headerBar",
-					"svChart",
-					"flexLayout1"
+					"1df1-f78b-fb72-bf9a",
+					"f3eb-0036-c5ba-bb44",
+					"34ec-fb5e-f361-f64b",
+					"dc05-73a6-6a31-69b8"
 				],
-				"name": "pgDashboard"
+				"name": "pgDashboard",
+				"parent": null
 			}
 		},
 		{
 			"type": "StatusBar",
-			"id": "58a9e235",
+			"id": "1df1-f78b-fb72-bf9a",
 			"themeProps": {
 				"Highlights": "Default"
 			},
@@ -80,13 +81,13 @@
 				"height": 20,
 				"style": "LIGHTCONTENT",
 				"children": [],
-				"parent": "pgDashboard",
+				"parent": "4b8f-4603-1200-4f16",
 				"name": "statusBar"
 			}
 		},
 		{
 			"type": "HeaderBar",
-			"id": "d3af0270",
+			"id": "f3eb-0036-c5ba-bb44",
 			"themeProps": {
 				"Highlights": "Default"
 			},
@@ -114,13 +115,13 @@
 				"isRemovable": false,
 				"height": 44,
 				"children": [],
-				"parent": "pgDashboard",
+				"parent": "4b8f-4603-1200-4f16",
 				"name": "headerBar"
 			}
 		},
 		{
 			"type": "ScrollView",
-			"id": "6a0c39ed",
+			"id": "34ec-fb5e-f361-f64b",
 			"themeProps": {
 				"Sizes": "Default"
 			},
@@ -167,13 +168,13 @@
 					"flexGrow": 1
 				},
 				"name": "svChart",
-				"parent": "pgDashboard",
+				"parent": "4b8f-4603-1200-4f16",
 				"children": []
 			}
 		},
 		{
 			"type": "FlexLayout",
-			"id": "a19e8b3a",
+			"id": "dc05-73a6-6a31-69b8",
 			"themeProps": {
 				"Sizes": "Default",
 				"Highlights": "Default"
@@ -206,7 +207,7 @@
 					"positionType": "ABSOLUTE"
 				},
 				"name": "flexLayout1",
-				"parent": "pgDashboard",
+				"parent": "4b8f-4603-1200-4f16",
 				"children": []
 			}
 		}

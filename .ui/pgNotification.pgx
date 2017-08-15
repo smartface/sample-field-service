@@ -2,7 +2,7 @@
 	"components": [
 		{
 			"type": "Page",
-			"id": "b2b995f4",
+			"id": "8c7a-e6fd-87b3-af10",
 			"themeProps": {},
 			"userProps": {
 				"isRemovable": true,
@@ -24,7 +24,7 @@
 				"defaults": {}
 			},
 			"className": ".page",
-			"version": "6.4.1",
+			"version": "6.4.5",
 			"props": {
 				"backgroundColor": "rgba( 255, 255, 255, 1 )",
 				"orientation": "PORTRAIT",
@@ -32,9 +32,9 @@
 				"height": 301.5,
 				"width": 187.5,
 				"children": [
-					"statusBar",
-					"headerBar",
-					"aiWait"
+					"b868-1977-6f95-b072",
+					"7b6e-5371-9dd0-044f",
+					"0c6d-68de-4250-616c"
 				],
 				"flexProps": {
 					"alignContent": "STRETCH",
@@ -45,13 +45,14 @@
 					"justifyContent": "CENTER"
 				},
 				"name": "pgNotification",
-				"font": {}
+				"font": {},
+				"parent": null
 			},
 			"initialized": true
 		},
 		{
 			"type": "StatusBar",
-			"id": "8b798ab9",
+			"id": "b868-1977-6f95-b072",
 			"themeProps": {},
 			"userProps": {
 				"isRemovable": false,
@@ -77,7 +78,7 @@
 				"height": 20,
 				"style": "LIGHTCONTENT",
 				"children": [],
-				"parent": "pgNotification",
+				"parent": "8c7a-e6fd-87b3-af10",
 				"name": "statusBar",
 				"font": {},
 				"flexProps": {}
@@ -85,7 +86,7 @@
 		},
 		{
 			"type": "HeaderBar",
-			"id": "524b1de8",
+			"id": "7b6e-5371-9dd0-044f",
 			"themeProps": {},
 			"userProps": {
 				"isRemovable": false,
@@ -111,7 +112,7 @@
 				"isRemovable": false,
 				"height": 44,
 				"children": [],
-				"parent": "pgNotification",
+				"parent": "8c7a-e6fd-87b3-af10",
 				"name": "headerBar",
 				"font": {},
 				"flexProps": {}
@@ -119,7 +120,7 @@
 		},
 		{
 			"type": "ActivityIndicator",
-			"id": "84c7fa3e",
+			"id": "0c6d-68de-4250-616c",
 			"themeProps": {},
 			"userProps": {
 				"usePageVariable": true,
@@ -172,7 +173,7 @@
 					"bottom": 0
 				},
 				"name": "aiWait",
-				"parent": "pgNotification",
+				"parent": "8c7a-e6fd-87b3-af10",
 				"font": {},
 				"input": {
 					"height": 21,

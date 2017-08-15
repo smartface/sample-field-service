@@ -2,7 +2,7 @@
 	"components": [
 		{
 			"type": "Page",
-			"id": "b832e6f1",
+			"id": "0b3a-38df-bc63-6c2b",
 			"initialized": true,
 			"themeProps": {
 				"Highlights": "Default"
@@ -14,7 +14,7 @@
 				}
 			},
 			"className": ".page",
-			"version": "6.4.3",
+			"version": "6.4.5",
 			"props": {
 				"backgroundColor": "#FFFFFF",
 				"orientation": "PORTRAIT",
@@ -28,10 +28,10 @@
 				},
 				"parent": null,
 				"children": [
-					"statusBar",
-					"headerBar",
-					"lvNotes",
-					"aiNotes"
+					"b75e-b915-62cf-4cc6",
+					"7fea-721f-ab47-b59c",
+					"f9fe-ee0b-1677-9492",
+					"1f21-5c15-ef35-6608"
 				],
 				"name": "pgNotes",
 				"width": 187.5,
@@ -40,7 +40,7 @@
 		},
 		{
 			"type": "StatusBar",
-			"id": "cbb8ad71",
+			"id": "b75e-b915-62cf-4cc6",
 			"themeProps": {
 				"Highlights": "Default"
 			},
@@ -52,7 +52,7 @@
 				"color": "#2C3239",
 				"visible": true,
 				"style": "LIGHTCONTENT",
-				"parent": "pgNotes",
+				"parent": "0b3a-38df-bc63-6c2b",
 				"children": [],
 				"isRemovable": false,
 				"name": "statusBar",
@@ -61,7 +61,7 @@
 		},
 		{
 			"type": "HeaderBar",
-			"id": "78a5d61f",
+			"id": "7fea-721f-ab47-b59c",
 			"themeProps": {
 				"Highlights": "Default"
 			},
@@ -74,7 +74,7 @@
 				"titleColor": "#FFFFFF",
 				"visible": true,
 				"backgroundColor": "#2C3239",
-				"parent": "pgNotes",
+				"parent": "0b3a-38df-bc63-6c2b",
 				"children": [],
 				"isRemovable": false,
 				"name": "headerBar",
@@ -83,7 +83,7 @@
 		},
 		{
 			"type": "ListView",
-			"id": "6d9d77ac",
+			"id": "f9fe-ee0b-1677-9492",
 			"themeProps": {
 				"Sizes": "Default",
 				"Highlights": "Default"
@@ -132,13 +132,13 @@
 					"bottom": 48
 				},
 				"name": "lvNotes",
-				"parent": "pgNotes",
+				"parent": "0b3a-38df-bc63-6c2b",
 				"children": []
 			}
 		},
 		{
 			"type": "ActivityIndicator",
-			"id": "62f2d1a8",
+			"id": "1f21-5c15-ef35-6608",
 			"hiddenComponent": true,
 			"themeProps": {
 				"Sizes": "Default",
@@ -176,7 +176,7 @@
 					"width": 21
 				},
 				"name": "aiNotes",
-				"parent": "pgNotes",
+				"parent": "0b3a-38df-bc63-6c2b",
 				"children": []
 			}
 		}
