@@ -247,21 +247,21 @@ function onLoad(superOnLoad) {
 	page.refreshData = refreshData.bind(page);
 	page.putToWaitMode = putToWaitMode.bind(page);
 
-	var floatingMenu = new FloatingMenu({
+	var fmNewNote = new FloatingMenu({
 		width: 56,
 		height: 56,
 		bottom: 10,
 		right: 8.5,
 		positionType: FlexLayout.PositionType.ABSOLUTE,
 		icon: selectedTheme.addCustomer,
-		color: Color.WHITE,
+		color: selectedTheme.topBarColor,
 		onClick: function() {
 			Router.go("pgNoteContent", {
 				pgNotes: page
 			});
 		},
 	});
-	page.layout.addChild(floatingMenu);
+	page.layout.addChild(fmNewNote);
 
 }
 

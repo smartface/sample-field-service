@@ -41,19 +41,19 @@ const pgCustomers = extend(pgCustomersDesign)(
             baseOnLoad && baseOnLoad();
 
             var selectedTheme = theme[theme.selected];
-            var floatingMenu = new FloatingMenu({
+            var fmNewCustomer = new FloatingMenu({
                 width: 56,
                 height: 56,
                 bottom: 10,
                 right: 8.5,
                 positionType: FlexLayout.PositionType.ABSOLUTE,
                 icon: selectedTheme.addCustomer,
-                color: Color.WHITE,
+                color: selectedTheme.topBarColor,
                 onClick: function() {
                     Router.go("pgNewCustomer");
                 },
             });
-            page.layout.addChild(floatingMenu);
+            page.layout.addChild(fmNewCustomer);
 
             var lvCustomers = page.lvCustomers;
             lvCustomers.itemCount = 0;
