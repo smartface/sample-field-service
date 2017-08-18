@@ -10,13 +10,13 @@
 		<key>UIRequiresFullScreen</key>
 		<true/>
 		<key>NSContactsUsageDescription</key>
-		<string>Your NSContactsUsageDescription</string>
+		<string>$(PRODUCT_NAME) saves to contacts</string>
 		<key>NSPhotoLibraryUsageDescription</key>
-		<string>Your NSPhotoLibraryUsageDescription</string>
+		<string>$(PRODUCT_NAME) gets contact picture from photos</string>
 		<key>NSBluetoothPeripheralUsageDescription</key>
 		<string>Your NSBluetoothPeripheralUsageDescription</string>
 		<key>NSCameraUsageDescription</key>
-		<string>Your NSCameraUsageDescription</string>
+		<string>$(PRODUCT_NAME) shoots contact picture</string>
 		<key>NSAppleMusicUsageDescription</key>
 		<string>Your NSAppleMusicUsageDescription</string>
 		<key>NSMotionUsageDescription</key>
@@ -136,8 +136,8 @@
 			</dict>
 		</array>
 		<key>NSSpeechRecognitionUsageDescription</key>
-		<string>$(PRODUCT_NAME) Speech Recognition access for development</string>
+		<string>$(PRODUCT_NAME) uses microfone for speech to text feature</string>
 		<key>NSMicrophoneUsageDescription</key>
-		<string>$(PRODUCT_NAME) Microphone access for development</string>
+		<string>$(PRODUCT_NAME) uses microfone for speech to text feature</string>
 	</dict>
 </plist>
