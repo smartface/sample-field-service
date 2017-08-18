@@ -148,6 +148,17 @@ const pgLogin = extend(pgLoginDesign)(
             }, function(err, result) {
                 page.setState(true);
                 if (err) {
+                    if (typeof err === "object") {
+                        if (typeof err.body === "object") {
+                            try {
+                                err.body = JSON.parse(err.body.toString());
+                            }
+                            catch (ex) {
+                                err.body = err.body.size !== 0 ? err.body.toString() : "";
+                            }
+                        }
+                        err = JSON.stringify(err);
+                    }
                     return alert("LOGIN FAILED.  " + err, "MCS Login Error");
                 }
                 if (typeof result === "string") {
