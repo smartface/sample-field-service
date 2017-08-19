@@ -125,8 +125,6 @@ const pgCustomerDetails = extend(pgCustomerDetailsDesign)(
                             if (!pictureAssigned)
                                 customerDetails.picture = Image.createFromFile("images://customers_empty.png");
 
-                            //TODO due to the bug of missing blob
-                            //customerDetails.picture = Image.createFromFile("images://customers_1.png");
                             page.lblName.text = customerData.lookupName;
                             page.lblTitle.text = customerData.customFields.CO.Title;
                             customerInfo = {
