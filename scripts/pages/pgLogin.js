@@ -56,10 +56,7 @@ const pgLogin = extend(pgLoginDesign)(
                 Application.exit();
             };
 
-            fingerprint.init({
-                userNameTextBox: tiUserName,
-                passwordTextBox: tiPassword
-            });
+
 
         };
 
@@ -72,12 +69,34 @@ const pgLogin = extend(pgLoginDesign)(
             userData.currentUser = null;
             if (data && data.checkUpdate) {
                 setTimeout(function() {
-                    rau.checkUpdate();
+                    rau.checkUpdate({
+                        url: "https://smf.to/fieldservice" //if the update is incompatible will redirect to this url
+                    });
                 }, 10);
             }
             applyTheme();
 
-            //TODO: delete
+            fingerprint.init({
+                userNameTextBox: tiUserName,
+                passwordTextBox: tiPassword,
+                autoLogin: true,
+                callback: function(err, fingerprintResult) {
+                    var password = "",
+                        success = fingerprintResult && fingerprintResult.success;
+                    if (err) {
+                        password = tiPassword.text;
+                    }
+                    else {
+                        password = fingerprintResult.password;
+                    }
+                    if (!password) {
+                        return tiPassword.invalidate();
+                    }
+
+                    page.setState(false);
+                    performLogin(password, success);
+                }
+            });
         };
 
         function applyTheme() {
@@ -114,30 +133,7 @@ const pgLogin = extend(pgLoginDesign)(
             if (!isValid)
                 return;
 
-            fingerprint.loginWithFingerprint(function(err, fingerprintResult) {
-                var password = "",
-                    success = fingerprintResult && fingerprintResult.success;
-                if (err) {
-                    password = tiPassword.text;
-                }
-                else {
-                    password = fingerprintResult.password;
-                }
-                if (password.length === 0) {
-                    tiPassword.invalidate();
-                    isValid = false;
-                }
-
-                if (!isValid)
-                    return;
-                page.setState(false);
-
-                performLogin(password, success);
-            });
-
-
-
-
+            fingerprint.loginWithFingerprint();
         }
 
         function performLogin(password, success) {
