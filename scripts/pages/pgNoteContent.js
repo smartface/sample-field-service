@@ -9,6 +9,8 @@ const Font = require('sf-core/ui/font');
 const Router = require("sf-core/ui/router");
 const Color = require('sf-core/ui/color');
 const backAction = require("../lib/ui").backAction;
+const HeaderBarItem = require('sf-core/ui/headerbaritem');
+const speechToText = require("sf-extension-utils").speechToText;
 
 const pgNoteContent = extend(pgNoteContentDesign)(
 	// Constructor
@@ -59,6 +61,8 @@ function applyTheme() {
 	var selectedTheme = theme[theme.selected];
 	page.headerBar.backgroundColor = selectedTheme.topBarColor;
 	page.aiWait.color = selectedTheme.topBarColor;
+	const hbiSpeech = page.headerBar.items[0];
+	hbiSpeech.color = selectedTheme.secondaryColor;
 }
 
 function onLoad(superOnLoad) {
@@ -83,6 +87,16 @@ function onLoad(superOnLoad) {
 	page.taNote = taNote;
 	page.addNote = addNote.bind(page);
 	page.taNote.font = Font.create("Lato", 14, Font.NORMAL);
+
+	var hbiSpeech = new HeaderBarItem({
+		title: lang.speech,
+		onPress: function() {
+			speech.call(page);
+		}
+	});
+	this.headerBar.items = [hbiSpeech];
+	this.headerBar.setItems(this.headerBar.items);
+
 }
 
 function onHide() {
@@ -128,6 +142,42 @@ function newNote(page) {
 	page.flWait.visible = false;
 	page.taNote.visible = true;
 	page.originalNoteData = null;
+}
+
+function deleteNote(page) {
+	page = page || this;
+	if (page.originalNoteData) {
+		notes.deleteNote(page.originalNoteData, function(err) {
+			if (err) {
+				if (typeof err === "object") {
+					if (err.body)
+						err.body = err.body.toString();
+					err = JSON.stringify(err, null, "\t");
+				}
+				return alert(err, "note delete error");
+			}
+			Router.goBack("pgNotes");
+		});
+	}
+	else {
+		Router.goBack("pgNotes");
+	}
+}
+
+
+function speech() {
+	const page = this;
+	const hbiSpeech = page.headerBar.items[0];
+	if (!speechToText.isRunning) {
+		hbiSpeech.title = lang.stop;
+		speechToText.startType(page.taNote, function() {
+			hbiSpeech.title = lang.speech;
+		});
+	}
+	else {
+		hbiSpeech.title = lang.speech;
+		speechToText.stop();
+	}
 }
 
 module && (module.exports = pgNoteContent);
