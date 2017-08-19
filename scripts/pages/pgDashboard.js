@@ -9,12 +9,9 @@ const JET = require('sf-extension-oracle-jet');
 const FlexLayout = require('sf-core/ui/flexlayout');
 const Font = require('sf-core/ui/font');
 const Label = require('sf-core/ui/label');
-const Button = require("sf-core/ui/button");
 const WebView = require('sf-core/ui/webview');
-const Color = require('sf-core/ui/color');
 
 var labelFont = Font.create(Font.DEFAULT, 16, Font.BOLD);
-var buttonFont = Font.create(Font.DEFAULT, 14, Font.BOLD);
 var webViewHeight = 375;
 var webViewMargin = 5;
 var labelHeigth = 50;
@@ -59,7 +56,7 @@ const pgDashboard = extend(pgDashboardDesign)(
                     orientation: JET.Orientation.VERTICAL,
                     stack: JET.Stack.OFF,
                     animationOnDisplay: JET.AnimationOnDisplay.AUTO,
-                    animationOnDataChange: JET.AnimationOnDataChange.AUTO
+                    animationOnDataChange: JET.AnimationOnDataChange.AUTO,
                 },
             }, {
                 title: lang.historyByStatus,
@@ -177,7 +174,9 @@ function generateChartTemplate(jetData, labelText, chartUrl) {
         jetPath: "assets://jet/",
         webView: webView
     });
-    jet.plotArea.backgroundColor = "#FFFFFF";
+    // jet.plotArea.backgroundColor = "#FF0000";
+    // jet.legend.backgroundColor = "#FFFFFF";
+    jet.jetData.backgroundColor = "#FFFFFF";
 
 
     Object.assign(jet, jetData);
@@ -185,8 +184,5 @@ function generateChartTemplate(jetData, labelText, chartUrl) {
     layout.addChild(webView);
     return layout;
 }
-
-
-
 
 module && (module.exports = pgDashboard);

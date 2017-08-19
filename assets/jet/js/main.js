@@ -55,23 +55,23 @@ var drawChart;
                 function ChartModel(items) {
                     var self = this;
                     /* toggle button variables */
-                    Object.keys(items.observables).forEach(function(key){
+                    Object.keys(items.observables).forEach(function(key) {
                         self[key] = ko.observable(items.observables[key]);
                     });
-                    
-                    
+
+
                     /* chart data */
-                    Object.keys(items.observableArrays).forEach(function(key){
+                    Object.keys(items.observableArrays).forEach(function(key) {
                         self[key] = ko.observableArray(items.observableArrays[key]);
                     });
-                    
-                    self.ojDestroy = function (event, data) {
-                          window.console.log("ojdestroy");
+
+                    self.ojDestroy = function(event, data) {
+                        window.console.log("ojdestroy");
                     };
-                    self.ojDrill = function(event, data){
-                        window.console.log("ojdrill"); 
+                    self.ojDrill = function(event, data) {
+                        window.console.log("ojdrill");
                     };
-                    self.ojOptionChange = function (event, ui) {
+                    self.ojOptionChange = function(event, ui) {
                         window.console.log("ojoptionchange");
                         var queryString = encodeURIComponent(JSON.stringify({
                             event: "ojOptionChange",
@@ -80,24 +80,23 @@ var drawChart;
                         window.console.log("jet://" + queryString);
                         window.location = "jet://" + queryString;
                     };
-                    self.ojSelectInput = function(event, data){
+                    self.ojSelectInput = function(event, data) {
                         window.console.log("ojselectinput");
                     };
-                    self.ojViewportChange = function(event, data){
+                    self.ojViewportChange = function(event, data) {
                         window.console.log("ojviewportchange");
                     };
-                    self.ojViewportChangeInput = function(event, data){
+                    self.ojViewportChangeInput = function(event, data) {
                         window.console.log("ojviewportchangeinput");
                     };
                 }
+                var items = JSON.parse(itemsString);
+                var chartModel = new ChartModel(items);
 
-                var chartModel = new ChartModel(JSON.parse(itemsString));
-
-                $(
-                    function() {
-                        ko.applyBindings(chartModel, document.getElementById('chart-container'));
-                    }
-                );
+                $(function() {
+                    ko.applyBindings(chartModel, document.getElementById('chart-container'));
+                    items.backgroundColor && $("#chart-container > div").css("backgroundColor", items.backgroundColor);
+                });
             });
     };
 }());
