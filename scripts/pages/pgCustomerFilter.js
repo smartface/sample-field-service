@@ -17,6 +17,7 @@ const theme = require("../lib/theme");
 const sliderDrawer = require("../sliderDrawer");
 const pageLength = 20;
 const animationDuration = 200;
+const closeKeyboard = require("../lib/ui").closeKeyboard;
 
 const textInputDefaults = {
     textAlignment: TextAlignment.MIDLEFT,
@@ -150,6 +151,10 @@ const pgCustomerFilter = extend(pgCustomerFilterDesign)(
             sliderDrawer.enabled = true;
             applyTheme();
             page.headerBar.title = lang.search;
+        };
+
+        page.onHide = function() {
+            tiPhone.removeFocus();
         };
 
         function doSearch() {

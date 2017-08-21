@@ -99,6 +99,10 @@ const pgLogin = extend(pgLoginDesign)(
             });
         };
 
+        page.onHide = function() {
+            tiPassword.removeFocus();
+        };
+
         function applyTheme() {
             var selectedTheme = theme[theme.selected];
             page.statusBar.android && (page.statusBar.android.color = selectedTheme.topBarColor);

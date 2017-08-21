@@ -167,6 +167,10 @@ const pgNewCustomer = extend(pgNewCustomerDesign)(
             page.headerBar.title = lang.newCustomer;
         };
 
+        page.onHide = function() {
+            tiName.removeFocus();
+        };
+
         function applyTheme() {
             var selectedTheme = theme[theme.selected];
             page.statusBar.android && (page.statusBar.android.color = selectedTheme.topBarColor);

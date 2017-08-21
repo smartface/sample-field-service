@@ -46,6 +46,7 @@ function onShow(superOnShow, data) {
 			page.originalNoteData = noteData;
 			page.flWait.visible = false;
 			page.taNote.visible = true;
+			page.taNote.requestFocus();
 		});
 	}
 	else { //new
@@ -124,6 +125,9 @@ function onHide() {
 		}
 
 	}
+
+	taNote.removeFocus();
+
 }
 
 function addNote(text) {
@@ -142,6 +146,7 @@ function newNote(page) {
 	page.flWait.visible = false;
 	page.taNote.visible = true;
 	page.originalNoteData = null;
+	page.taNote.requestFocus();
 }
 
 function deleteNote(page) {
