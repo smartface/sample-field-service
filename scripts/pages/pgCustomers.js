@@ -243,6 +243,7 @@ const pgCustomers = extend(pgCustomersDesign)(
             svFilter.android.hintTextColor = Color.create("#CCCCCC");
             svFilter.androidfont = Font.create("Lato", 18, Font.NORMAL);
             svFilter.ios.showsCancelButton = true;
+            svFilter.ios.cursorColor = Color.create(0, 122, 255); //iOS blue --> https://developer.apple.com/ios/human-interface-guidelines/visual-design/color/
             svFilter.ios.onCancelButtonClicked = function() {
                 hideFilter();
             };
