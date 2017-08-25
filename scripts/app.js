@@ -51,6 +51,3 @@ if (System.OS === "Android") {
     sliderDrawer = require("./sliderDrawer");
     Router.sliderDrawer = sliderDrawer;
 }
-
-// Router.add("test", require("./ui/ui_newPage001"));
-// Router.go("test");

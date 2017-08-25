@@ -32,8 +32,8 @@
 				"backgroundColor": "#FFFFFF",
 				"orientation": "PORTRAIT",
 				"isRemovable": false,
-				"height": 311.5,
-				"width": 187.5,
+				"height": 230.51,
+				"width": 138.75,
 				"flexProps": {
 					"alignContent": "STRETCH",
 					"alignItems": "STRETCH",
@@ -122,7 +122,7 @@
 		{
 			"type": "FlexLayout",
 			"id": "c86f-82a6-7a6e-25d1",
-			"hiddenComponent": true,
+			"hiddenComponent": false,
 			"source": {
 				"page": "__library__"
 			},
@@ -622,7 +622,7 @@
 				"borderRadius": 48,
 				"image": "user_picture_test.png",
 				"usePageVariable": true,
-				"imageURL": "https://dispatcher.r0.smartface.io/smartface9/fieldservice2/ui-editor/img/user_picture_test.png?os=iOS&osVersion=10.2&density=326&densityRatio=0.5&zoomLevel=0.5&brandModel=iPhone%207",
+				"imageURL": "https://dispatcher.r0.smartface.io/smartface9/fieldservice2/ui-editor/img/user_picture_test.png?os=iOS&osVersion=10.2&density=326&densityRatio=0.5&zoomLevel=0.37&brandModel=iPhone%207",
 				"flexProps": {
 					"alignSelf": "AUTO",
 					"positionType": "RELATIVE"
@@ -976,7 +976,7 @@
 				"borderWidth": 0,
 				"image": "sliderdrawer_dashboard.png",
 				"usePageVariable": true,
-				"imageURL": "https://dispatcher.r0.smartface.io/smartface9/fieldservice2/ui-editor/img/sliderdrawer_dashboard.png?os=iOS&osVersion=10.2&density=326&densityRatio=0.5&zoomLevel=0.5&brandModel=iPhone%207",
+				"imageURL": "https://dispatcher.r0.smartface.io/smartface9/fieldservice2/ui-editor/img/sliderdrawer_dashboard.png?os=iOS&osVersion=10.2&density=326&densityRatio=0.5&zoomLevel=0.37&brandModel=iPhone%207",
 				"flexProps": {
 					"alignSelf": "AUTO",
 					"positionType": "RELATIVE"
@@ -1186,7 +1186,7 @@
 				"borderWidth": 0,
 				"image": "sliderdrawer_customer.png",
 				"usePageVariable": true,
-				"imageURL": "https://dispatcher.r0.smartface.io/smartface9/fieldservice2/ui-editor/img/sliderdrawer_customer.png?os=iOS&osVersion=10.2&density=326&densityRatio=0.5&zoomLevel=0.5&brandModel=iPhone%207",
+				"imageURL": "https://dispatcher.r0.smartface.io/smartface9/fieldservice2/ui-editor/img/sliderdrawer_customer.png?os=iOS&osVersion=10.2&density=326&densityRatio=0.5&zoomLevel=0.37&brandModel=iPhone%207",
 				"flexProps": {
 					"alignSelf": "AUTO",
 					"positionType": "RELATIVE"
@@ -1396,7 +1396,7 @@
 				"borderWidth": 0,
 				"image": "sliderdrawer_notifications_big.png",
 				"usePageVariable": false,
-				"imageURL": "https://dispatcher.r0.smartface.io/smartface9/fieldservice2/ui-editor/img/sliderdrawer_notifications_big.png?os=iOS&osVersion=10.2&density=326&densityRatio=0.5&zoomLevel=0.5&brandModel=iPhone%207",
+				"imageURL": "https://dispatcher.r0.smartface.io/smartface9/fieldservice2/ui-editor/img/sliderdrawer_notifications_big.png?os=iOS&osVersion=10.2&density=326&densityRatio=0.5&zoomLevel=0.37&brandModel=iPhone%207",
 				"flexProps": {
 					"alignSelf": "AUTO",
 					"positionType": "RELATIVE"
@@ -1606,7 +1606,7 @@
 				"borderWidth": 0,
 				"image": "sliderdrawer_settings.png",
 				"usePageVariable": true,
-				"imageURL": "https://dispatcher.r0.smartface.io/smartface9/fieldservice2/ui-editor/img/sliderdrawer_settings.png?os=iOS&osVersion=10.2&density=326&densityRatio=0.5&zoomLevel=0.5&brandModel=iPhone%207",
+				"imageURL": "https://dispatcher.r0.smartface.io/smartface9/fieldservice2/ui-editor/img/sliderdrawer_settings.png?os=iOS&osVersion=10.2&density=326&densityRatio=0.5&zoomLevel=0.37&brandModel=iPhone%207",
 				"flexProps": {
 					"alignSelf": "AUTO",
 					"positionType": "RELATIVE"
@@ -1928,7 +1928,7 @@
 		{
 			"type": "FlexLayout",
 			"id": "0aae-948b-b2ff-66bd",
-			"hiddenComponent": false,
+			"hiddenComponent": true,
 			"source": {
 				"page": "__library__"
 			},
@@ -2081,6 +2081,7 @@
 				"left": 1.37,
 				"bottom": 1.82,
 				"right": 0.46,
+				"id": 160,
 				"flexProps": {
 					"alignSelf": "AUTO",
 					"direction": "INHERIT",
@@ -2095,8 +2096,7 @@
 				},
 				"children": [],
 				"name": "customerRowLine",
-				"parent": "017f-b3c8-4769-bc3d",
-				"id": 160
+				"parent": "017f-b3c8-4769-bc3d"
 			}
 		},
 		{
@@ -2153,7 +2153,7 @@
 				"children": [],
 				"name": "imgCustomerPicture",
 				"parent": "017f-b3c8-4769-bc3d",
-				"imageURL": "https://dispatcher.r0.smartface.io/smartface9/fieldservice2/ui-editor/img/customers_1.png?os=iOS&osVersion=10.2&density=326&densityRatio=0.5&zoomLevel=0.5&brandModel=iPhone%207"
+				"imageURL": "https://dispatcher.r0.smartface.io/smartface9/fieldservice2/ui-editor/img/customers_1.png?os=iOS&osVersion=10.2&density=326&densityRatio=0.5&zoomLevel=0.37&brandModel=iPhone%207"
 			}
 		},
 		{
@@ -2365,6 +2365,7 @@
 				"borderColor": "rgba(0,0,0,1)",
 				"borderWidth": 0,
 				"image": "customers_email.png",
+				"id": 162,
 				"flexProps": {
 					"alignSelf": "AUTO",
 					"positionType": "RELATIVE"
@@ -2372,8 +2373,7 @@
 				"children": [],
 				"name": "imgCustomerRowEmail",
 				"parent": "242d-9560-bc68-9988",
-				"imageURL": "https://dispatcher.r0.smartface.io/smartface9/fieldservice2/ui-editor/img/customers_email.png?os=iOS&osVersion=10.2&density=326&densityRatio=0.5&zoomLevel=0.5&brandModel=iPhone%207",
-				"id": 162
+				"imageURL": "https://dispatcher.r0.smartface.io/smartface9/fieldservice2/ui-editor/img/customers_email.png?os=iOS&osVersion=10.2&density=326&densityRatio=0.5&zoomLevel=0.37&brandModel=iPhone%207"
 			}
 		},
 		{
@@ -2520,6 +2520,7 @@
 				"borderColor": "rgba(0,0,0,1)",
 				"borderWidth": 0,
 				"image": "customers_phone.png",
+				"id": 161,
 				"flexProps": {
 					"alignSelf": "AUTO",
 					"positionType": "RELATIVE"
@@ -2527,8 +2528,7 @@
 				"children": [],
 				"name": "imgCustomerRowPhone",
 				"parent": "456a-073c-8752-3b1b",
-				"imageURL": "https://dispatcher.r0.smartface.io/smartface9/fieldservice2/ui-editor/img/customers_phone.png?os=iOS&osVersion=10.2&density=326&densityRatio=0.5&zoomLevel=0.5&brandModel=iPhone%207",
-				"id": 161
+				"imageURL": "https://dispatcher.r0.smartface.io/smartface9/fieldservice2/ui-editor/img/customers_phone.png?os=iOS&osVersion=10.2&density=326&densityRatio=0.5&zoomLevel=0.37&brandModel=iPhone%207"
 			}
 		},
 		{
@@ -3107,7 +3107,7 @@
 				"children": [],
 				"name": "imgActionNext",
 				"parent": "ce32-883b-9b63-af4f",
-				"imageURL": "https://dispatcher.r0.smartface.io/smartface9/fieldservice2/ui-editor/img/next_page.png?os=iOS&osVersion=10.2&density=326&densityRatio=0.5&zoomLevel=0.5&brandModel=iPhone%207"
+				"imageURL": "https://dispatcher.r0.smartface.io/smartface9/fieldservice2/ui-editor/img/next_page.png?os=iOS&osVersion=10.2&density=326&densityRatio=0.5&zoomLevel=0.37&brandModel=iPhone%207"
 			}
 		},
 		{
@@ -3324,13 +3324,9 @@
 				"usePageVariable": true,
 				"marginLeft": 26,
 				"flexProps": {
-					"flexGrow": 1,
+					"flexGrow": 3,
 					"flexDirection": "ROW"
-				},
-				"layout": {},
-				"flex": {},
-				"font": {},
-				"defaults": {}
+				}
 			},
 			"className": ".flexLayout",
 			"props": {
@@ -3353,7 +3349,7 @@
 					"flexWrap": "NOWRAP",
 					"flexDirection": "ROW",
 					"positionType": "RELATIVE",
-					"flexGrow": 1
+					"flexGrow": 3
 				},
 				"children": [
 					"d77d-88b6-3cd0-82f6",
@@ -3455,7 +3451,7 @@
 				"children": [],
 				"name": "imgSignout",
 				"parent": "7ac5-bff9-6f8e-da16",
-				"imageURL": "https://dispatcher.r0.smartface.io/smartface9/fieldservice2/ui-editor/img/logout.png?os=iOS&osVersion=10.2&density=326&densityRatio=0.5&zoomLevel=0.5&brandModel=iPhone%207"
+				"imageURL": "https://dispatcher.r0.smartface.io/smartface9/fieldservice2/ui-editor/img/logout.png?os=iOS&osVersion=10.2&density=326&densityRatio=0.5&zoomLevel=0.37&brandModel=iPhone%207"
 			}
 		},
 		{
@@ -3739,7 +3735,7 @@
 				"children": [],
 				"name": "imgCheck",
 				"parent": "9b20-8ec9-667c-74bf",
-				"imageURL": "https://dispatcher.r0.smartface.io/smartface9/fieldservice2/ui-editor/img/check.png?os=iOS&osVersion=10.2&density=326&densityRatio=0.5&zoomLevel=0.5&brandModel=iPhone%207"
+				"imageURL": "https://dispatcher.r0.smartface.io/smartface9/fieldservice2/ui-editor/img/check.png?os=iOS&osVersion=10.2&density=326&densityRatio=0.5&zoomLevel=0.37&brandModel=iPhone%207"
 			}
 		},
 		{

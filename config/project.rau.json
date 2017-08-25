@@ -3,15 +3,15 @@
         "rau": {
             "formatVersion": "1.0.0",
             "hashType": "md5",
-            "profileKey": "VVZTfVJaXcIcmAmh7UHcOhdeNgmNsXvn",
+            "profileKey": "9eCyMQKfzYvz92RKFVb8JcyWT18dBbtx",
             "revision": 1,
-            "channels": ["test"],
+            "channels": ["demo"],
             "meta": {
                 "isMandatory": false,
                 "url": "https://smf.to/fieldservice"
             },
             "minimumSupportedVersion": "1.0.0",
-            "currentReleaseChannel": "test"
+            "currentReleaseChannel": "demo"
         }
     }
 }
