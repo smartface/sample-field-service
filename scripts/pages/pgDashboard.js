@@ -168,6 +168,7 @@ function generateChartTemplate(jetData, labelText, chartUrl) {
         height: webViewHeight,
         margin: webViewMargin,
         alignSelf: FlexLayout.AlignSelf.STRETCH,
+        touchEnabled: false
     });
 
     var jet = new JET({
