@@ -9,20 +9,17 @@
 			},
 			"userProps": {
 				"backgroundColor": "rgba( 255, 255, 255, 1 )",
+				"orientation": "AUTO",
 				"flexProps": {
 					"alignItems": "CENTER",
 					"justifyContent": "CENTER"
-				},
-				"layout": {},
-				"flex": {},
-				"font": {},
-				"defaults": {}
+				}
 			},
 			"className": ".page",
 			"version": "6.4.6",
 			"props": {
 				"backgroundColor": "rgba( 255, 255, 255, 1 )",
-				"orientation": "PORTRAIT",
+				"orientation": "AUTO",
 				"flexProps": {
 					"alignContent": "STRETCH",
 					"alignItems": "CENTER",
@@ -39,8 +36,8 @@
 				],
 				"parent": null,
 				"name": "pgCustomers",
-				"width": 187.5,
-				"height": 301.5
+				"width": 138.75,
+				"height": 223.10999999999999
 			}
 		},
 		{
@@ -66,8 +63,7 @@
 				"children": [],
 				"parent": "0678-cf6d-cce0-97f1",
 				"isRemovable": false,
-				"name": "statusBar",
-				"height": 20
+				"name": "statusBar"
 			}
 		},
 		{
@@ -95,8 +91,7 @@
 				"children": [],
 				"parent": "0678-cf6d-cce0-97f1",
 				"isRemovable": false,
-				"name": "headerBar",
-				"height": 44
+				"name": "headerBar"
 			}
 		},
 		{

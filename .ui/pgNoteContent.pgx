@@ -7,12 +7,14 @@
 			"themeProps": {
 				"Highlights": "Default"
 			},
-			"userProps": {},
+			"userProps": {
+				"orientation": "AUTOPORTRAIT"
+			},
 			"className": ".page",
 			"version": "6.4.6",
 			"props": {
 				"backgroundColor": "#FFFFFF",
-				"orientation": "PORTRAIT",
+				"orientation": "AUTOPORTRAIT",
 				"flexProps": {
 					"alignContent": "STRETCH",
 					"alignItems": "STRETCH",
@@ -29,8 +31,8 @@
 					"39c5-8493-f015-f92e"
 				],
 				"name": "pgNoteContent",
-				"width": 187.5,
-				"height": 301.5
+				"width": 153.75,
+				"height": 247.23
 			}
 		},
 		{
@@ -50,8 +52,7 @@
 				"parent": "0bd1-d6df-a9cc-62ce",
 				"children": [],
 				"isRemovable": false,
-				"name": "statusBar",
-				"height": 20
+				"name": "statusBar"
 			}
 		},
 		{
@@ -72,8 +73,7 @@
 				"parent": "0bd1-d6df-a9cc-62ce",
 				"children": [],
 				"isRemovable": false,
-				"name": "headerBar",
-				"height": 44
+				"name": "headerBar"
 			}
 		},
 		{

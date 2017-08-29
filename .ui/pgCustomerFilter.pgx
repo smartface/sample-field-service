@@ -3,12 +3,15 @@
 		{
 			"type": "Page",
 			"id": "181f-0f15-9ec2-7c4b",
-			"themeProps": {},
+			"initialized": true,
+			"themeProps": {
+				"Highlights": "Default"
+			},
 			"userProps": {
 				"isRemovable": true,
 				"backgroundColor": "#FFFFFF",
 				"height": 301.5,
-				"orientation": "PORTRAIT",
+				"orientation": "AUTO",
 				"width": 187.5,
 				"flexProps": {
 					"alignContent": "STRETCH",
@@ -17,20 +20,24 @@
 					"flexDirection": "COLUMN",
 					"flexWrap": "NOWRAP",
 					"justifyContent": "FLEX_START"
-				},
-				"layout": {},
-				"flex": {},
-				"font": {},
-				"defaults": {}
+				}
 			},
 			"className": ".page",
 			"version": "6.4.6",
 			"props": {
 				"backgroundColor": "#FFFFFF",
-				"orientation": "PORTRAIT",
+				"orientation": "AUTO",
 				"isRemovable": true,
-				"height": 301.5,
-				"width": 187.5,
+				"height": 247.23,
+				"width": 153.75,
+				"flexProps": {
+					"alignContent": "STRETCH",
+					"alignItems": "STRETCH",
+					"direction": "INHERIT",
+					"flexDirection": "COLUMN",
+					"flexWrap": "NOWRAP",
+					"justifyContent": "FLEX_START"
+				},
 				"children": [
 					"2d83-c184-1e06-2b6a",
 					"3b9d-b4eb-d6a4-6dca",
@@ -38,24 +45,16 @@
 					"97c7-e855-29d5-70d4",
 					"9710-5893-7066-e47d"
 				],
-				"flexProps": {
-					"alignContent": "STRETCH",
-					"alignItems": "STRETCH",
-					"direction": "INHERIT",
-					"flexDirection": "COLUMN",
-					"flexWrap": "NOWRAP",
-					"justifyContent": "FLEX_START"
-				},
 				"name": "pgCustomerFilter",
-				"font": {},
 				"parent": null
-			},
-			"initialized": true
+			}
 		},
 		{
 			"type": "StatusBar",
 			"id": "2d83-c184-1e06-2b6a",
-			"themeProps": {},
+			"themeProps": {
+				"Highlights": "Default"
+			},
 			"userProps": {
 				"isRemovable": false,
 				"_style": "LIGHTCONTENT",
@@ -81,15 +80,15 @@
 				"style": "LIGHTCONTENT",
 				"children": [],
 				"parent": "181f-0f15-9ec2-7c4b",
-				"name": "statusBar",
-				"font": {},
-				"flexProps": {}
+				"name": "statusBar"
 			}
 		},
 		{
 			"type": "HeaderBar",
 			"id": "3b9d-b4eb-d6a4-6dca",
-			"themeProps": {},
+			"themeProps": {
+				"Highlights": "Default"
+			},
 			"userProps": {
 				"isRemovable": false,
 				"backgroundColor": "rgba( 44, 50, 57, 1 )",
@@ -115,15 +114,16 @@
 				"height": 44,
 				"children": [],
 				"parent": "181f-0f15-9ec2-7c4b",
-				"name": "headerBar",
-				"font": {},
-				"flexProps": {}
+				"name": "headerBar"
 			}
 		},
 		{
 			"type": "FlexLayout",
 			"id": "1c95-3076-96e6-1de7",
-			"themeProps": {},
+			"themeProps": {
+				"Sizes": "Default",
+				"Highlights": "Default"
+			},
 			"userProps": {
 				"backgroundColor": "rgba( 44, 50, 57, 1 )",
 				"alpha": 1,
@@ -164,10 +164,6 @@
 				"alpha": 1,
 				"borderColor": "rgba(0,0,0,1)",
 				"borderWidth": 0,
-				"children": [
-					"f7fd-3361-eb07-c8fa",
-					"4524-4335-e2db-14bb"
-				],
 				"flexProps": {
 					"alignSelf": "AUTO",
 					"direction": "INHERIT",
@@ -178,15 +174,21 @@
 					"flexDirection": "ROW",
 					"positionType": "RELATIVE"
 				},
+				"children": [
+					"f7fd-3361-eb07-c8fa",
+					"4524-4335-e2db-14bb"
+				],
 				"parent": "181f-0f15-9ec2-7c4b",
-				"name": "flTab",
-				"font": {}
+				"name": "flTab"
 			}
 		},
 		{
 			"type": "FlexLayout",
 			"id": "f7fd-3361-eb07-c8fa",
-			"themeProps": {},
+			"themeProps": {
+				"Sizes": "Default",
+				"Highlights": "Default"
+			},
 			"userProps": {
 				"backgroundColor": "rgba( 255, 255, 255, 0 )",
 				"alpha": 1,
@@ -240,10 +242,6 @@
 				"left": 0,
 				"top": 0,
 				"usePageVariable": true,
-				"children": [
-					"411b-6465-be12-03be",
-					"a124-7b7b-5750-a1b5"
-				],
 				"flexProps": {
 					"alignSelf": "AUTO",
 					"direction": "INHERIT",
@@ -254,15 +252,21 @@
 					"flexDirection": "ROW",
 					"positionType": "ABSOLUTE"
 				},
+				"children": [
+					"411b-6465-be12-03be",
+					"a124-7b7b-5750-a1b5"
+				],
 				"parent": "1c95-3076-96e6-1de7",
-				"name": "flButtons",
-				"font": {}
+				"name": "flButtons"
 			}
 		},
 		{
 			"type": "FlexLayout",
 			"id": "4524-4335-e2db-14bb",
-			"themeProps": {},
+			"themeProps": {
+				"Sizes": "Default",
+				"Highlights": "Default"
+			},
 			"userProps": {
 				"backgroundColor": "rgba( 255, 255, 255, 0 )",
 				"alpha": 1,
@@ -316,11 +320,6 @@
 				"left": 0,
 				"top": 0,
 				"usePageVariable": true,
-				"children": [
-					"0959-5012-6b5e-08e1",
-					"f54a-adb2-b216-1772",
-					"816e-f5c3-bc08-f449"
-				],
 				"flexProps": {
 					"alignSelf": "AUTO",
 					"direction": "INHERIT",
@@ -331,15 +330,22 @@
 					"flexDirection": "ROW",
 					"positionType": "ABSOLUTE"
 				},
+				"children": [
+					"0959-5012-6b5e-08e1",
+					"f54a-adb2-b216-1772",
+					"816e-f5c3-bc08-f449"
+				],
 				"parent": "1c95-3076-96e6-1de7",
-				"name": "flTabIndicator",
-				"font": {}
+				"name": "flTabIndicator"
 			}
 		},
 		{
 			"type": "Button",
 			"id": "411b-6465-be12-03be",
-			"themeProps": {},
+			"themeProps": {
+				"Sizes": "Default",
+				"Highlights": "Default"
+			},
 			"userProps": {
 				"backgroundColor": "rgba( 0, 161, 241, 0 )",
 				"alpha": 1,
@@ -385,7 +391,6 @@
 				"textColor": "rgba( 80, 210, 194, 1 )",
 				"textAlignment": "MIDCENTER",
 				"usePageVariable": true,
-				"children": [],
 				"font": {
 					"size": 16,
 					"bold": false,
@@ -397,6 +402,7 @@
 					"alignSelf": "AUTO",
 					"flexGrow": 1
 				},
+				"children": [],
 				"parent": "f7fd-3361-eb07-c8fa",
 				"name": "btnName"
 			}
@@ -404,7 +410,10 @@
 		{
 			"type": "Button",
 			"id": "a124-7b7b-5750-a1b5",
-			"themeProps": {},
+			"themeProps": {
+				"Sizes": "Default",
+				"Highlights": "Default"
+			},
 			"userProps": {
 				"backgroundColor": "rgba( 0, 161, 241, 0 )",
 				"alpha": 1,
@@ -450,7 +459,6 @@
 				"textColor": "rgba( 198, 198, 198, 1 )",
 				"textAlignment": "MIDCENTER",
 				"usePageVariable": true,
-				"children": [],
 				"font": {
 					"size": 16,
 					"bold": false,
@@ -462,6 +470,7 @@
 					"alignSelf": "AUTO",
 					"flexGrow": 1
 				},
+				"children": [],
 				"parent": "f7fd-3361-eb07-c8fa",
 				"name": "btnCard"
 			}
@@ -469,7 +478,10 @@
 		{
 			"type": "FlexLayout",
 			"id": "0959-5012-6b5e-08e1",
-			"themeProps": {},
+			"themeProps": {
+				"Sizes": "Default",
+				"Highlights": "Default"
+			},
 			"userProps": {
 				"backgroundColor": "rgba( 255, 255, 255, 0 )",
 				"alpha": 1,
@@ -513,7 +525,6 @@
 				"borderColor": "rgba(0,0,0,1)",
 				"borderWidth": 0,
 				"usePageVariable": true,
-				"children": [],
 				"flexProps": {
 					"alignSelf": "AUTO",
 					"direction": "INHERIT",
@@ -525,15 +536,18 @@
 					"positionType": "RELATIVE",
 					"flexGrow": 0
 				},
+				"children": [],
 				"parent": "4524-4335-e2db-14bb",
-				"name": "placeHolderLeft",
-				"font": {}
+				"name": "placeHolderLeft"
 			}
 		},
 		{
 			"type": "FlexLayout",
 			"id": "f54a-adb2-b216-1772",
-			"themeProps": {},
+			"themeProps": {
+				"Sizes": "Default",
+				"Highlights": "Default"
+			},
 			"userProps": {
 				"backgroundColor": "rgba( 80, 210, 194, 1 )",
 				"alpha": 1,
@@ -578,7 +592,6 @@
 				"borderColor": "rgba(0,0,0,1)",
 				"borderWidth": 0,
 				"usePageVariable": true,
-				"children": [],
 				"flexProps": {
 					"alignSelf": "AUTO",
 					"direction": "INHERIT",
@@ -590,15 +603,18 @@
 					"positionType": "RELATIVE",
 					"flexGrow": 1
 				},
+				"children": [],
 				"parent": "4524-4335-e2db-14bb",
-				"name": "flTabHighlight",
-				"font": {}
+				"name": "flTabHighlight"
 			}
 		},
 		{
 			"type": "FlexLayout",
 			"id": "816e-f5c3-bc08-f449",
-			"themeProps": {},
+			"themeProps": {
+				"Sizes": "Default",
+				"Highlights": "Default"
+			},
 			"userProps": {
 				"backgroundColor": "rgba( 255, 255, 255, 0 )",
 				"alpha": 1,
@@ -642,7 +658,6 @@
 				"borderColor": "rgba(0,0,0,1)",
 				"borderWidth": 0,
 				"usePageVariable": true,
-				"children": [],
 				"flexProps": {
 					"alignSelf": "AUTO",
 					"direction": "INHERIT",
@@ -654,15 +669,18 @@
 					"positionType": "RELATIVE",
 					"flexGrow": 1
 				},
+				"children": [],
 				"parent": "4524-4335-e2db-14bb",
-				"name": "placeHolderRight",
-				"font": {}
+				"name": "placeHolderRight"
 			}
 		},
 		{
 			"type": "FlexLayout",
 			"id": "97c7-e855-29d5-70d4",
-			"themeProps": {},
+			"themeProps": {
+				"Sizes": "Default",
+				"Highlights": "Default"
+			},
 			"userProps": {
 				"backgroundColor": "#FFFFFF",
 				"alpha": 1,
@@ -708,11 +726,6 @@
 				"borderWidth": 0,
 				"paddingTop": null,
 				"paddingRight": 15,
-				"children": [
-					"6424-b0e9-bf1e-2d62",
-					"8510-b95d-dcc3-9a96",
-					"4ebe-a326-2d2b-fa3c"
-				],
 				"flexProps": {
 					"alignSelf": "AUTO",
 					"direction": "INHERIT",
@@ -724,15 +737,22 @@
 					"positionType": "RELATIVE",
 					"flexGrow": 1
 				},
+				"children": [
+					"6424-b0e9-bf1e-2d62",
+					"8510-b95d-dcc3-9a96",
+					"4ebe-a326-2d2b-fa3c"
+				],
 				"parent": "181f-0f15-9ec2-7c4b",
-				"name": "flInputs",
-				"font": {}
+				"name": "flInputs"
 			}
 		},
 		{
 			"type": "FlexLayout",
 			"id": "6424-b0e9-bf1e-2d62",
-			"themeProps": {},
+			"themeProps": {
+				"Sizes": "Default",
+				"Highlights": "Default"
+			},
 			"userProps": {
 				"backgroundColor": "rgba( 126, 211, 33, 0 )",
 				"alpha": 1,
@@ -777,10 +797,6 @@
 				"borderWidth": 0,
 				"usePageVariable": true,
 				"paddingTop": 22.5,
-				"children": [
-					"328f-e81f-22ee-4b9e",
-					"e9bb-c1a0-06a5-41b3"
-				],
 				"flexProps": {
 					"alignSelf": "AUTO",
 					"direction": "INHERIT",
@@ -791,16 +807,22 @@
 					"flexDirection": "COLUMN",
 					"positionType": "RELATIVE"
 				},
+				"children": [
+					"328f-e81f-22ee-4b9e",
+					"e9bb-c1a0-06a5-41b3"
+				],
 				"parent": "97c7-e855-29d5-70d4",
-				"name": "flFirstLine",
-				"font": {}
+				"name": "flFirstLine"
 			}
 		},
 		{
 			"type": "FlexLayout",
 			"id": "328f-e81f-22ee-4b9e",
 			"hiddenComponent": false,
-			"themeProps": {},
+			"themeProps": {
+				"Sizes": "Default",
+				"Highlights": "Default"
+			},
 			"userProps": {
 				"backgroundColor": "rgba( 208, 2, 27, 0 )",
 				"alpha": 1,
@@ -847,10 +869,6 @@
 				"borderWidth": 0,
 				"paddingTop": null,
 				"usePageVariable": true,
-				"children": [
-					"967c-bce9-248c-fc91",
-					"e3b0-caf1-29a0-211d"
-				],
 				"flexProps": {
 					"alignSelf": "AUTO",
 					"direction": "INHERIT",
@@ -862,15 +880,21 @@
 					"positionType": "RELATIVE",
 					"flexGrow": 1
 				},
+				"children": [
+					"967c-bce9-248c-fc91",
+					"e3b0-caf1-29a0-211d"
+				],
 				"parent": "6424-b0e9-bf1e-2d62",
-				"name": "flNameInput",
-				"font": {}
+				"name": "flNameInput"
 			}
 		},
 		{
 			"type": "FlexLayout",
 			"id": "967c-bce9-248c-fc91",
-			"themeProps": {},
+			"themeProps": {
+				"Sizes": "Default",
+				"Highlights": "Default"
+			},
 			"userProps": {
 				"backgroundColor": "#FFFFFF",
 				"alpha": 1,
@@ -911,9 +935,6 @@
 				"alpha": 1,
 				"borderColor": "rgba(0,0,0,1)",
 				"borderWidth": 0,
-				"children": [
-					"3ae5-ca8c-eb10-7dd8"
-				],
 				"flexProps": {
 					"alignSelf": "AUTO",
 					"direction": "INHERIT",
@@ -924,15 +945,20 @@
 					"flexDirection": "COLUMN",
 					"positionType": "RELATIVE"
 				},
+				"children": [
+					"3ae5-ca8c-eb10-7dd8"
+				],
 				"parent": "328f-e81f-22ee-4b9e",
-				"name": "flNameIcon",
-				"font": {}
+				"name": "flNameIcon"
 			}
 		},
 		{
 			"type": "ImageView",
 			"id": "3ae5-ca8c-eb10-7dd8",
-			"themeProps": {},
+			"themeProps": {
+				"Sizes": "Default",
+				"Highlights": "Default"
+			},
 			"userProps": {
 				"backgroundColor": "#FFFFFF",
 				"alpha": 1,
@@ -973,22 +999,24 @@
 				"borderWidth": 0,
 				"image": "filter_customer.png",
 				"usePageVariable": true,
-				"imageURL": "https://dispatcher.r0.smartface.io/smartface9/fieldservice2/ui-editor/img/filter_customer.png?os=iOS&osVersion=10.2&density=326&densityRatio=0.5&zoomLevel=0.5&brandModel=iPhone%207?random=0.49786655335359065",
-				"children": [],
+				"imageURL": "https://dispatcher.r0.smartface.io/smartface9/fieldservice2/ui-editor/img/filter_customer.png?os=iOS&osVersion=10.2&density=326&densityRatio=0.5&zoomLevel=0.41&brandModel=iPhone%207?random=0.03199891984357306",
 				"flexProps": {
 					"alignSelf": "AUTO",
 					"positionType": "RELATIVE",
 					"flexGrow": 1
 				},
+				"children": [],
 				"parent": "967c-bce9-248c-fc91",
-				"name": "imgName",
-				"font": {}
+				"name": "imgName"
 			}
 		},
 		{
 			"type": "FlexLayout",
 			"id": "e3b0-caf1-29a0-211d",
-			"themeProps": {},
+			"themeProps": {
+				"Sizes": "Default",
+				"Highlights": "Default"
+			},
 			"userProps": {
 				"backgroundColor": "rgba( 207, 175, 179, 0 )",
 				"alpha": 1,
@@ -1032,7 +1060,6 @@
 				"borderColor": "rgba(0,0,0,1)",
 				"borderWidth": 0,
 				"usePageVariable": true,
-				"children": [],
 				"flexProps": {
 					"alignSelf": "AUTO",
 					"direction": "INHERIT",
@@ -1044,15 +1071,18 @@
 					"positionType": "RELATIVE",
 					"flexGrow": 1
 				},
+				"children": [],
 				"parent": "328f-e81f-22ee-4b9e",
-				"name": "flNameInputArea",
-				"font": {}
+				"name": "flNameInputArea"
 			}
 		},
 		{
 			"type": "FlexLayout",
 			"id": "e9bb-c1a0-06a5-41b3",
-			"themeProps": {},
+			"themeProps": {
+				"Sizes": "Default",
+				"Highlights": "Default"
+			},
 			"userProps": {
 				"backgroundColor": "rgba( 255, 255, 255, 0 )",
 				"alpha": 1,
@@ -1099,10 +1129,6 @@
 				"borderWidth": 0,
 				"paddingTop": null,
 				"usePageVariable": true,
-				"children": [
-					"80d4-6a4b-0fd5-b20e",
-					"7546-0d1d-eb49-3461"
-				],
 				"flexProps": {
 					"alignSelf": "AUTO",
 					"direction": "INHERIT",
@@ -1114,15 +1140,21 @@
 					"positionType": "RELATIVE",
 					"flexGrow": 0
 				},
+				"children": [
+					"80d4-6a4b-0fd5-b20e",
+					"7546-0d1d-eb49-3461"
+				],
 				"parent": "6424-b0e9-bf1e-2d62",
-				"name": "flCardInput",
-				"font": {}
+				"name": "flCardInput"
 			}
 		},
 		{
 			"type": "FlexLayout",
 			"id": "80d4-6a4b-0fd5-b20e",
-			"themeProps": {},
+			"themeProps": {
+				"Sizes": "Default",
+				"Highlights": "Default"
+			},
 			"userProps": {
 				"backgroundColor": "#FFFFFF",
 				"alpha": 1,
@@ -1163,9 +1195,6 @@
 				"alpha": 1,
 				"borderColor": "rgba(0,0,0,1)",
 				"borderWidth": 0,
-				"children": [
-					"35e0-8ad7-0586-f3bb"
-				],
 				"flexProps": {
 					"alignSelf": "AUTO",
 					"direction": "INHERIT",
@@ -1176,15 +1205,20 @@
 					"flexDirection": "COLUMN",
 					"positionType": "RELATIVE"
 				},
+				"children": [
+					"35e0-8ad7-0586-f3bb"
+				],
 				"parent": "e9bb-c1a0-06a5-41b3",
-				"name": "flCardIcon",
-				"font": {}
+				"name": "flCardIcon"
 			}
 		},
 		{
 			"type": "ImageView",
 			"id": "35e0-8ad7-0586-f3bb",
-			"themeProps": {},
+			"themeProps": {
+				"Sizes": "Default",
+				"Highlights": "Default"
+			},
 			"userProps": {
 				"backgroundColor": "#FFFFFF",
 				"alpha": 1,
@@ -1225,22 +1259,24 @@
 				"borderWidth": 0,
 				"image": "filter_card.png",
 				"usePageVariable": true,
-				"imageURL": "https://dispatcher.r0.smartface.io/smartface9/fieldservice2/ui-editor/img/filter_card.png?os=iOS&osVersion=10.2&density=326&densityRatio=0.5&zoomLevel=0.5&brandModel=iPhone%207?random=0.851447567144066",
-				"children": [],
+				"imageURL": "https://dispatcher.r0.smartface.io/smartface9/fieldservice2/ui-editor/img/filter_card.png?os=iOS&osVersion=10.2&density=326&densityRatio=0.5&zoomLevel=0.41&brandModel=iPhone%207?random=0.8838383700973063",
 				"flexProps": {
 					"alignSelf": "AUTO",
 					"positionType": "RELATIVE",
 					"flexGrow": 1
 				},
+				"children": [],
 				"parent": "80d4-6a4b-0fd5-b20e",
-				"name": "imgCard",
-				"font": {}
+				"name": "imgCard"
 			}
 		},
 		{
 			"type": "FlexLayout",
 			"id": "7546-0d1d-eb49-3461",
-			"themeProps": {},
+			"themeProps": {
+				"Sizes": "Default",
+				"Highlights": "Default"
+			},
 			"userProps": {
 				"backgroundColor": "rgba( 207, 175, 179, 0 )",
 				"alpha": 1,
@@ -1284,7 +1320,6 @@
 				"borderColor": "rgba(0,0,0,1)",
 				"borderWidth": 0,
 				"usePageVariable": true,
-				"children": [],
 				"flexProps": {
 					"alignSelf": "AUTO",
 					"direction": "INHERIT",
@@ -1296,16 +1331,19 @@
 					"positionType": "RELATIVE",
 					"flexGrow": 1
 				},
+				"children": [],
 				"parent": "e9bb-c1a0-06a5-41b3",
-				"name": "flCardInputArea",
-				"font": {}
+				"name": "flCardInputArea"
 			}
 		},
 		{
 			"type": "FlexLayout",
 			"id": "8510-b95d-dcc3-9a96",
 			"hiddenComponent": false,
-			"themeProps": {},
+			"themeProps": {
+				"Sizes": "Default",
+				"Highlights": "Default"
+			},
 			"userProps": {
 				"backgroundColor": "rgba( 208, 2, 27, 0 )",
 				"alpha": 1,
@@ -1352,10 +1390,6 @@
 				"borderWidth": 0,
 				"paddingTop": 22.5,
 				"usePageVariable": true,
-				"children": [
-					"06d8-544a-241a-b803",
-					"7479-be61-f9e6-652d"
-				],
 				"flexProps": {
 					"alignSelf": "AUTO",
 					"direction": "INHERIT",
@@ -1367,15 +1401,21 @@
 					"positionType": "RELATIVE",
 					"flexGrow": null
 				},
+				"children": [
+					"06d8-544a-241a-b803",
+					"7479-be61-f9e6-652d"
+				],
 				"parent": "97c7-e855-29d5-70d4",
-				"name": "flPhoneInput",
-				"font": {}
+				"name": "flPhoneInput"
 			}
 		},
 		{
 			"type": "FlexLayout",
 			"id": "06d8-544a-241a-b803",
-			"themeProps": {},
+			"themeProps": {
+				"Sizes": "Default",
+				"Highlights": "Default"
+			},
 			"userProps": {
 				"backgroundColor": "#FFFFFF",
 				"alpha": 1,
@@ -1416,9 +1456,6 @@
 				"alpha": 1,
 				"borderColor": "rgba(0,0,0,1)",
 				"borderWidth": 0,
-				"children": [
-					"bf5f-275c-1a44-4576"
-				],
 				"flexProps": {
 					"alignSelf": "AUTO",
 					"direction": "INHERIT",
@@ -1429,15 +1466,20 @@
 					"flexDirection": "COLUMN",
 					"positionType": "RELATIVE"
 				},
+				"children": [
+					"bf5f-275c-1a44-4576"
+				],
 				"parent": "8510-b95d-dcc3-9a96",
-				"name": "flPhoneIcon",
-				"font": {}
+				"name": "flPhoneIcon"
 			}
 		},
 		{
 			"type": "ImageView",
 			"id": "bf5f-275c-1a44-4576",
-			"themeProps": {},
+			"themeProps": {
+				"Sizes": "Default",
+				"Highlights": "Default"
+			},
 			"userProps": {
 				"backgroundColor": "#FFFFFF",
 				"alpha": 1,
@@ -1478,22 +1520,24 @@
 				"borderWidth": 0,
 				"image": "filter_phone.png",
 				"usePageVariable": true,
-				"imageURL": "https://dispatcher.r0.smartface.io/smartface9/fieldservice2/ui-editor/img/filter_phone.png?os=iOS&osVersion=10.2&density=326&densityRatio=0.5&zoomLevel=0.5&brandModel=iPhone%207?random=0.9368264067458143",
-				"children": [],
+				"imageURL": "https://dispatcher.r0.smartface.io/smartface9/fieldservice2/ui-editor/img/filter_phone.png?os=iOS&osVersion=10.2&density=326&densityRatio=0.5&zoomLevel=0.41&brandModel=iPhone%207?random=0.6263854471909431",
 				"flexProps": {
 					"alignSelf": "AUTO",
 					"positionType": "RELATIVE",
 					"flexGrow": 1
 				},
+				"children": [],
 				"parent": "06d8-544a-241a-b803",
-				"name": "imgPhone",
-				"font": {}
+				"name": "imgPhone"
 			}
 		},
 		{
 			"type": "FlexLayout",
 			"id": "7479-be61-f9e6-652d",
-			"themeProps": {},
+			"themeProps": {
+				"Sizes": "Default",
+				"Highlights": "Default"
+			},
 			"userProps": {
 				"backgroundColor": "rgba( 207, 175, 179, 0 )",
 				"alpha": 1,
@@ -1537,7 +1581,6 @@
 				"borderColor": "rgba(0,0,0,1)",
 				"borderWidth": 0,
 				"usePageVariable": true,
-				"children": [],
 				"flexProps": {
 					"alignSelf": "AUTO",
 					"direction": "INHERIT",
@@ -1549,16 +1592,19 @@
 					"positionType": "RELATIVE",
 					"flexGrow": 1
 				},
+				"children": [],
 				"parent": "8510-b95d-dcc3-9a96",
-				"name": "flPhoneInputArea",
-				"font": {}
+				"name": "flPhoneInputArea"
 			}
 		},
 		{
 			"type": "FlexLayout",
 			"id": "4ebe-a326-2d2b-fa3c",
 			"hiddenComponent": false,
-			"themeProps": {},
+			"themeProps": {
+				"Sizes": "Default",
+				"Highlights": "Default"
+			},
 			"userProps": {
 				"backgroundColor": "rgba( 208, 2, 27, 0 )",
 				"alpha": 1,
@@ -1605,10 +1651,6 @@
 				"borderWidth": 0,
 				"paddingTop": 22.5,
 				"usePageVariable": true,
-				"children": [
-					"f217-e5fb-9da6-c64f",
-					"8aa6-9109-bb62-7d43"
-				],
 				"flexProps": {
 					"alignSelf": "AUTO",
 					"direction": "INHERIT",
@@ -1620,15 +1662,21 @@
 					"positionType": "RELATIVE",
 					"flexGrow": null
 				},
+				"children": [
+					"f217-e5fb-9da6-c64f",
+					"8aa6-9109-bb62-7d43"
+				],
 				"parent": "97c7-e855-29d5-70d4",
-				"name": "flEmailInput",
-				"font": {}
+				"name": "flEmailInput"
 			}
 		},
 		{
 			"type": "FlexLayout",
 			"id": "f217-e5fb-9da6-c64f",
-			"themeProps": {},
+			"themeProps": {
+				"Sizes": "Default",
+				"Highlights": "Default"
+			},
 			"userProps": {
 				"backgroundColor": "#FFFFFF",
 				"alpha": 1,
@@ -1669,9 +1717,6 @@
 				"alpha": 1,
 				"borderColor": "rgba(0,0,0,1)",
 				"borderWidth": 0,
-				"children": [
-					"e9e0-a19f-0b58-c764"
-				],
 				"flexProps": {
 					"alignSelf": "AUTO",
 					"direction": "INHERIT",
@@ -1682,15 +1727,20 @@
 					"flexDirection": "COLUMN",
 					"positionType": "RELATIVE"
 				},
+				"children": [
+					"e9e0-a19f-0b58-c764"
+				],
 				"parent": "4ebe-a326-2d2b-fa3c",
-				"name": "flEmailIcon",
-				"font": {}
+				"name": "flEmailIcon"
 			}
 		},
 		{
 			"type": "ImageView",
 			"id": "e9e0-a19f-0b58-c764",
-			"themeProps": {},
+			"themeProps": {
+				"Sizes": "Default",
+				"Highlights": "Default"
+			},
 			"userProps": {
 				"backgroundColor": "#FFFFFF",
 				"alpha": 1,
@@ -1731,22 +1781,24 @@
 				"borderWidth": 0,
 				"image": "filter_email.png",
 				"usePageVariable": true,
-				"imageURL": "https://dispatcher.r0.smartface.io/smartface9/fieldservice2/ui-editor/img/filter_email.png?os=iOS&osVersion=10.2&density=326&densityRatio=0.5&zoomLevel=0.5&brandModel=iPhone%207?random=0.445086648971605",
-				"children": [],
+				"imageURL": "https://dispatcher.r0.smartface.io/smartface9/fieldservice2/ui-editor/img/filter_email.png?os=iOS&osVersion=10.2&density=326&densityRatio=0.5&zoomLevel=0.41&brandModel=iPhone%207?random=0.5995901100397105",
 				"flexProps": {
 					"alignSelf": "AUTO",
 					"positionType": "RELATIVE",
 					"flexGrow": 1
 				},
+				"children": [],
 				"parent": "f217-e5fb-9da6-c64f",
-				"name": "imgEmail",
-				"font": {}
+				"name": "imgEmail"
 			}
 		},
 		{
 			"type": "FlexLayout",
 			"id": "8aa6-9109-bb62-7d43",
-			"themeProps": {},
+			"themeProps": {
+				"Sizes": "Default",
+				"Highlights": "Default"
+			},
 			"userProps": {
 				"backgroundColor": "rgba( 207, 175, 179, 0 )",
 				"alpha": 1,
@@ -1790,7 +1842,6 @@
 				"borderColor": "rgba(0,0,0,1)",
 				"borderWidth": 0,
 				"usePageVariable": true,
-				"children": [],
 				"flexProps": {
 					"alignSelf": "AUTO",
 					"direction": "INHERIT",
@@ -1802,15 +1853,18 @@
 					"positionType": "RELATIVE",
 					"flexGrow": 1
 				},
+				"children": [],
 				"parent": "4ebe-a326-2d2b-fa3c",
-				"name": "flEmailInputArea",
-				"font": {}
+				"name": "flEmailInputArea"
 			}
 		},
 		{
 			"type": "FlexLayout",
 			"id": "9710-5893-7066-e47d",
-			"themeProps": {},
+			"themeProps": {
+				"Sizes": "Default",
+				"Highlights": "Default"
+			},
 			"userProps": {
 				"width": null,
 				"height": 95,
@@ -1834,9 +1888,6 @@
 				"alpha": 1,
 				"borderColor": "rgba(0,0,0,1)",
 				"borderWidth": 0,
-				"children": [
-					"3ab2-7ebd-e95f-4eb1"
-				],
 				"flexProps": {
 					"alignSelf": "AUTO",
 					"direction": "INHERIT",
@@ -1847,15 +1898,20 @@
 					"flexDirection": "COLUMN",
 					"positionType": "RELATIVE"
 				},
+				"children": [
+					"3ab2-7ebd-e95f-4eb1"
+				],
 				"name": "flSearch",
-				"parent": "181f-0f15-9ec2-7c4b",
-				"font": {}
+				"parent": "181f-0f15-9ec2-7c4b"
 			}
 		},
 		{
 			"type": "Button",
 			"id": "3ab2-7ebd-e95f-4eb1",
-			"themeProps": {},
+			"themeProps": {
+				"Sizes": "Default",
+				"Highlights": "Default"
+			},
 			"userProps": {
 				"usePageVariable": true,
 				"text": "Search",
@@ -1887,7 +1943,6 @@
 				"textAlignment": "MIDCENTER",
 				"usePageVariable": true,
 				"borderRadius": 32.5,
-				"children": [],
 				"font": {
 					"size": 18,
 					"bold": false,
@@ -1898,6 +1953,7 @@
 					"positionType": "RELATIVE",
 					"alignSelf": "AUTO"
 				},
+				"children": [],
 				"name": "btnSearch",
 				"parent": "9710-5893-7066-e47d"
 			}

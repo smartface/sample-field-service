@@ -27,9 +27,7 @@
 				},
 				"flex": {
 					"flexDirection": 2
-				},
-				"font": {},
-				"defaults": {}
+				}
 			},
 			"className": ".page",
 			"version": "6.4.6",
@@ -37,8 +35,8 @@
 				"backgroundColor": "#FFFFFF",
 				"orientation": "PORTRAIT",
 				"isRemovable": true,
-				"height": 333.5,
-				"width": 187.5,
+				"height": 273.46999999999997,
+				"width": 153.75,
 				"flexProps": {
 					"alignContent": "STRETCH",
 					"alignItems": "STRETCH",
@@ -374,7 +372,7 @@
 				"borderWidth": 0,
 				"image": "logo.png",
 				"usePageVariable": true,
-				"imageURL": "https://dispatcher.r0.smartface.io/smartface9/fieldservice2/ui-editor/img/logo.png?os=iOS&osVersion=10.2&density=326&densityRatio=0.5&zoomLevel=0.5&brandModel=iPhone%207?random=0.35328542949506003",
+				"imageURL": "https://dispatcher.r0.smartface.io/smartface9/fieldservice2/ui-editor/img/logo.png?os=iOS&osVersion=10.2&density=326&densityRatio=0.5&zoomLevel=0.41&brandModel=iPhone%207?random=0.7815742965963002",
 				"flexProps": {
 					"alignSelf": "AUTO",
 					"positionType": "RELATIVE"
