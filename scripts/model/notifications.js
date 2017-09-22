@@ -1,5 +1,6 @@
 /*globals lang*/
-const http = require("sf-core/net/http");
+const Http = require("sf-core/net/http");
+const http = new Http();
 const mcs = require("../lib/mcs");
 const Network = require('sf-core/device/network');
 exports.getNotifications = getNotifications;
@@ -15,13 +16,15 @@ function getNotifications(callback) {
         "endpointName": "notifications",
     };
     var requestOptions = Object.assign({
-        method: "GET"
+        method: "GET",
+        onLoad: function(response) {
+            var res = JSON.parse(response.body.toString());
+            callback && callback(null, res);
+        },
+        onError: function(error) {
+            callback && callback(error);
+        }
     }, mcs.createRequestOptions(options));
 
-    http.request(requestOptions, function(response) {
-        var res = JSON.parse(response.body.toString());
-        callback && callback(null, res);
-    }, function(error) {
-        callback && callback(error);
-    });
+    http.request(requestOptions);
 }

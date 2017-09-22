@@ -1,5 +1,6 @@
 /*globals lang*/
-const http = require("sf-core/net/http");
+const Http = require("sf-core/net/http");
+const http = new Http();
 const mcs = require("../lib/mcs");
 const Network = require('sf-core/device/network');
 
@@ -16,7 +17,14 @@ function getCustomers(filter, callback) {
         "endpointName": "contacts",
     };
     var requestOptions = Object.assign({
-        method: "GET"
+        method: "GET",
+        onLoad: function(response) {
+            var res = JSON.parse(response.body.toString());
+            callback && callback(null, res);
+        },
+        onError: function(error) {
+            callback && callback(error);
+        }
     }, mcs.createRequestOptions(options));
 
     var query = [];
@@ -25,12 +33,7 @@ function getCustomers(filter, callback) {
     }
     requestOptions.url += query.join("&");
 
-    http.request(requestOptions, function(response) {
-        var res = JSON.parse(response.body.toString());
-        callback && callback(null, res);
-    }, function(error) {
-        callback && callback(error);
-    });
+    http.request(requestOptions);
 }
 
 function addCustomer(customerData, callback) {
@@ -42,18 +45,20 @@ function addCustomer(customerData, callback) {
         "endpointName": "contacts",
     };
     var requestOptions = Object.assign({
-        method: "POST"
+        method: "POST",
+        onLoad: function(response) {
+            var res = JSON.parse(response.body.toString());
+            callback && callback(null, res);
+        },
+        onError: function(error) {
+            callback && callback(error);
+        }
     }, mcs.createRequestOptions(options));
     if (typeof customerData !== "string")
         customerData = JSON.stringify(customerData);
     requestOptions.body = customerData;
 
-    http.request(requestOptions, function(response) {
-        var res = JSON.parse(response.body.toString());
-        callback && callback(null, res);
-    }, function(error) {
-        callback && callback(error);
-    });
+    http.request(requestOptions);
 }
 
 function getSingleCustomer(id, callback) {
@@ -65,15 +70,17 @@ function getSingleCustomer(id, callback) {
         "endpointName": "contactById",
     };
     var requestOptions = Object.assign({
-        method: "GET"
+        method: "GET",
+        onLoad: function(response) {
+            var res = JSON.parse(response.body.toString());
+            callback && callback(null, res);
+        },
+        onError: function(error) {
+            callback && callback(error);
+        }
     }, mcs.createRequestOptions(options));
 
     requestOptions.url += "id=" + id;
 
-    http.request(requestOptions, function(response) {
-        var res = JSON.parse(response.body.toString());
-        callback && callback(null, res);
-    }, function(error) {
-        callback && callback(error);
-    });
+    http.request(requestOptions);
 }

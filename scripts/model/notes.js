@@ -1,5 +1,6 @@
 /*globals lang*/
-const http = require("sf-core/net/http");
+const Http = require("sf-core/net/http");
+const http = new Http();
 const mcs = require("../lib/mcs");
 const Network = require('sf-core/device/network');
 
