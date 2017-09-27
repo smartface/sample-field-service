@@ -25,12 +25,10 @@
 					"width": 93.75,
 					"height": 150.75
 				},
-				"flex": {},
-				"font": {},
-				"defaults": {}
+				"flex": {}
 			},
 			"className": ".page",
-			"version": "6.4.6",
+			"version": "6.4.10",
 			"props": {
 				"backgroundColor": "rgba( 36, 42, 52, 1 )",
 				"orientation": "PORTRAIT",
@@ -102,9 +100,7 @@
 					"height": 22
 				},
 				"flex": {},
-				"font": {},
-				"flexProps": {},
-				"defaults": {}
+				"flexProps": {}
 			},
 			"className": ".headerBar",
 			"props": {
