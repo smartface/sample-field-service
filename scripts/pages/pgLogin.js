@@ -64,6 +64,8 @@ const pgLogin = extend(pgLoginDesign)(
             baseOnShow && baseOnShow(data);
             page.headerBar.visible = false;
             sliderDrawer.enabled = false;
+            const ImageView = require('sf-core/ui/imageview');
+            page.imgLogo.imageFillType = ImageView.FillType.ASPECTFIT;
             tiPassword.text = "";
             page.setState(true);
             userData.currentUser = null;

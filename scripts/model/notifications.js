@@ -13,7 +13,7 @@ function getNotifications(callback) {
     }
     var options = {
         "apiName": "Endpoints",
-        "endpointName": "notifications",
+        "endpointPath": "notifications",
     };
     var requestOptions = Object.assign({
         method: "GET",

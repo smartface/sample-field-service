@@ -125,8 +125,13 @@ const pgNotification = extend(pgNotificationDesign)(
                     title: items[i].primaryContact.name,
                     text: items[i].category.lookupName
                 });
+
                 flNotifications.addChild(notificationRow);
-                height += notificationRow.height;
+                //EBTEMPORARY
+                //NotificationRow Height comes as 0
+                //height += notificationRow.height;
+                height += 250;
+
             }
             flNotifications.height = height;
             flNotifications.applyLayout();

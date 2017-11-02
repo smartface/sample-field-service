@@ -14,7 +14,7 @@ function getCustomers(filter, callback) {
     }
     var options = {
         "apiName": "Endpoints",
-        "endpointName": "contacts",
+        "endpointPath": "contacts",
     };
     var requestOptions = Object.assign({
         method: "GET",
@@ -31,7 +31,7 @@ function getCustomers(filter, callback) {
     for (var key in filter) {
         query.push(key + "=" + filter[key]);
     }
-    requestOptions.url += query.join("&");
+    requestOptions.url += "?" + query.join("&");
 
     http.request(requestOptions);
 }
@@ -42,7 +42,7 @@ function addCustomer(customerData, callback) {
     }
     var options = {
         "apiName": "Endpoints",
-        "endpointName": "contacts",
+        "endpointPath": "contacts",
     };
     var requestOptions = Object.assign({
         method: "POST",
@@ -67,7 +67,7 @@ function getSingleCustomer(id, callback) {
     }
     var options = {
         "apiName": "Endpoints",
-        "endpointName": "contactById",
+        "endpointPath": "contactById",
     };
     var requestOptions = Object.assign({
         method: "GET",
@@ -80,7 +80,7 @@ function getSingleCustomer(id, callback) {
         }
     }, mcs.createRequestOptions(options));
 
-    requestOptions.url += "id=" + id;
+    requestOptions.url += "?id=" + id;
 
     http.request(requestOptions);
 }

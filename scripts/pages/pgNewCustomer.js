@@ -139,31 +139,33 @@ const pgNewCustomer = extend(pgNewCustomerDesign)(
             baseOnShow && baseOnShow(data);
             page.statusBar.ios.style = StatusBarStyle.LIGHTCONTENT;
             applyTheme();
-            location.getLocation(function(err, location) {
-                if (err) {
-                    console.log("location err");
-                    return;
-                }
-                var requestOptions = {
-                    'url': 'http://maps.googleapis.com/maps/api/geocode/json?latlng=' + location.latitude + ',' + location.longitude + '&sensor=true',
-                    'method': 'GET'
-                };
-                Http.request(requestOptions,
-                    function(response) {
-                        if (response.headers["Content-Type"] && response.headers["Content-Type"].indexOf("application/json") > -1 && tiAddress) {
-                            var locationResponse = JSON.parse(response.body.toString());
-                            if (locationResponse.status === "OK" && locationResponse.results &&
-                                locationResponse.results[0] && locationResponse.results[0].formatted_address
-                            ) {
-                                tiAddress.text = locationResponse.results[0].formatted_address;
-                            }
-                        }
-                    },
-                    function() {
-                        console.log("failure http");
-                    }
-                );
-            });
+            //EBTEMPORARY
+            // location.getLocation(function(err, location) {
+            //     if (err) {
+            //         console.log("location err");
+            //         return;
+            //     }
+            //     var requestOptions = {
+            //         'url': 'http://maps.googleapis.com/maps/api/geocode/json?latlng=' + location.latitude + ',' + location.longitude + '&sensor=true',
+            //         'method': 'GET'
+            //     };
+            //     var http = new Http();
+            //     http.request(requestOptions,
+            //         function(response) {
+            //             if (response.headers["Content-Type"] && response.headers["Content-Type"].indexOf("application/json") > -1 && tiAddress) {
+            //                 var locationResponse = JSON.parse(response.body.toString());
+            //                 if (locationResponse.status === "OK" && locationResponse.results &&
+            //                     locationResponse.results[0] && locationResponse.results[0].formatted_address
+            //                 ) {
+            //                     tiAddress.text = locationResponse.results[0].formatted_address;
+            //                 }
+            //             }
+            //         },
+            //         function() {
+            //             console.log("failure http");
+            //         }
+            //     );
+            // });
             page.headerBar.title = lang.newCustomer;
         };
 

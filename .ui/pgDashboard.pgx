@@ -28,7 +28,7 @@
 				"flex": {}
 			},
 			"className": ".page",
-			"version": "6.4.10",
+			"version": "6.5.2",
 			"props": {
 				"backgroundColor": "rgba( 36, 42, 52, 1 )",
 				"orientation": "PORTRAIT",
