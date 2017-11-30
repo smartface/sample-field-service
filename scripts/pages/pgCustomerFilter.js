@@ -99,6 +99,7 @@ const pgCustomerFilter = extend(pgCustomerFilterDesign)(
                 tiCard.hideKeyboard();
                 Animator.animate(page.layout, animationDuration, function() {
                     page.placeHolderLeft.flexGrow = 0;
+                    page.placeHolderLeft.flexBasis = 0;
                     page.placeHolderRight.flexGrow = 1;
                     page.btnName.textColor = tabActiveTextColor;
                     page.btnCard.textColor = tabInactiveTextColor;
@@ -115,6 +116,7 @@ const pgCustomerFilter = extend(pgCustomerFilterDesign)(
                 Animator.animate(page.layout, animationDuration, function() {
                     page.placeHolderLeft.flexGrow = 1;
                     page.placeHolderRight.flexGrow = 0;
+                    page.placeHolderRight.flexBasis = 0;
                     page.btnName.textColor = tabInactiveTextColor;
                     page.btnCard.textColor = tabActiveTextColor;
                 }).complete(function() {

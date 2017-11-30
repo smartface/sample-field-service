@@ -3,8 +3,8 @@
     "@smartface/styler": "*",
     "js-base": "*",
     "mixin-deep": "*",
-    "sf-core": "*",
-    "sf-extension-mcs": "^4.0.4",
+    "sf-core": "2.0.4-beta.3",
+    "sf-extension-mcs": "*",
     "sf-extension-oracle-jet": "*",
     "sf-extension-utils": "*"
   }
