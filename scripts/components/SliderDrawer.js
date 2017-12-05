@@ -5,6 +5,7 @@ const Router = require("sf-core/ui/router");
 const SliderDrawer = require('library/SliderDrawer');
 const user = require("../lib/user");
 const mimicPressed = require("../lib/ui/mimicPressed");
+const componentContextPatch = require("@smartface/contx/lib/smartface/componentContextPatch");
 
 const SliderDrawer_ = extend(SliderDrawer)(
 	//constructor
@@ -86,17 +87,13 @@ const SliderDrawer_ = extend(SliderDrawer)(
 		this.lblNotifications.text = lang.notifications;
 		this.lblVersion.text = "v" + Application.version;
 
+		componentContextPatch(this, "sliderDrawer");
 	}
-
 );
-
-
-
 
 function hide() {
 	var sliderDrawer = require("../sliderDrawer");
 	sliderDrawer.hide();
 }
-
 
 module && (module.exports = SliderDrawer_);
