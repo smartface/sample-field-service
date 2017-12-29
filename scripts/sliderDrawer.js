@@ -13,14 +13,18 @@ var sliderDrawer = new SliderDrawer({
     width: sliderDrawerWidth,
     enabled: false,
     onLoad: function() {
-        var uiSliderDrawer = new UISliderDrawer({
-            width: sliderDrawerWidth,
-            top: 0,
-            bottom: 0,
-            left: 0,
-            backgroundColor: Color.TRANSPARENT,
-            visible: true,
-            positionType: FlexLayout.PositionType.ABSOLUTE
+        var uiSliderDrawer = new UISliderDrawer();
+        uiSliderDrawer.dispatch({
+            type: "updateUserStyle",
+            userStyle: {
+                top: 0,
+                bottom: 0,
+                left: 0,
+                right: 0,
+                backgroundColor: "rgba(0,0,0,0)",
+                visible: true,
+                positionType: "ABSOLUTE"
+            }
         });
         this.moveHighlight = uiSliderDrawer.moveHighlight;
         sliderDrawer.layout.addChild(uiSliderDrawer);
