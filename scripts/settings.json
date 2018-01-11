@@ -1,11 +1,13 @@
 {
 	"config": {
 		"theme": {
-			"currentTheme": "Defaults",
+			"currentTheme": "project123Theme",
 			"themes": [
-				"Defaults"
-			]
+				"defaultTheme",
+				"project123Theme"
+			],
+			"baseTheme": "project123Theme"
 		},
-		"version": "6.5.2"
+		"version": "6.6.0"
 	}
 }

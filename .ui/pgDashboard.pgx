@@ -4,15 +4,9 @@
 			"type": "Page",
 			"id": "4b8f-4603-1200-4f16",
 			"initialized": true,
-			"themeProps": {
-				"Highlights": "Default"
-			},
 			"userProps": {
-				"isRemovable": true,
 				"backgroundColor": "rgba( 36, 42, 52, 1 )",
-				"height": 301.5,
 				"orientation": "PORTRAIT",
-				"width": 187.5,
 				"flexProps": {
 					"alignContent": "STRETCH",
 					"alignItems": "STRETCH",
@@ -20,29 +14,13 @@
 					"flexDirection": "COLUMN",
 					"flexWrap": "NOWRAP",
 					"justifyContent": "FLEX_START"
-				},
-				"layout": {
-					"width": 93.75,
-					"height": 150.75
-				},
-				"flex": {}
+				}
 			},
 			"className": ".page",
-			"version": "6.5.2",
+			"version": "6.6.0",
 			"props": {
-				"backgroundColor": "rgba( 36, 42, 52, 1 )",
 				"orientation": "PORTRAIT",
 				"isRemovable": true,
-				"height": 301.5,
-				"width": 187.5,
-				"flexProps": {
-					"alignContent": "STRETCH",
-					"alignItems": "STRETCH",
-					"direction": "INHERIT",
-					"flexDirection": "COLUMN",
-					"flexWrap": "NOWRAP",
-					"justifyContent": "FLEX_START"
-				},
 				"children": [
 					"1df1-f78b-fb72-bf9a",
 					"f3eb-0036-c5ba-bb44",
@@ -56,28 +34,12 @@
 		{
 			"type": "StatusBar",
 			"id": "1df1-f78b-fb72-bf9a",
-			"themeProps": {
-				"Highlights": "Default"
-			},
 			"userProps": {
-				"isRemovable": false,
-				"_style": "LIGHTCONTENT",
-				"height": 20,
-				"visible": true,
-				"color": "rgba( 44, 50, 57, 1 )",
-				"style": "LIGHTCONTENT",
-				"layout": {
-					"height": 10
-				}
+				"visible": true
 			},
 			"className": ".statusBar",
 			"props": {
-				"color": "rgba( 44, 50, 57, 1 )",
-				"visible": true,
 				"isRemovable": false,
-				"_style": "LIGHTCONTENT",
-				"height": 20,
-				"style": "LIGHTCONTENT",
 				"children": [],
 				"parent": "4b8f-4603-1200-4f16",
 				"name": "statusBar"
@@ -86,30 +48,16 @@
 		{
 			"type": "HeaderBar",
 			"id": "f3eb-0036-c5ba-bb44",
-			"themeProps": {
-				"Highlights": "Default"
-			},
 			"userProps": {
-				"isRemovable": false,
 				"backgroundColor": "rgba( 44, 50, 57, 1 )",
-				"height": 44,
 				"visible": true,
 				"title": "Dashboard",
-				"titleColor": "rgba( 255, 255, 255, 1 )",
-				"layout": {
-					"height": 22
-				},
-				"flex": {},
-				"flexProps": {}
+				"titleColor": "rgba( 255, 255, 255, 1 )"
 			},
 			"className": ".headerBar",
 			"props": {
 				"title": "Dashboard",
-				"titleColor": "rgba( 255, 255, 255, 1 )",
-				"visible": true,
-				"backgroundColor": "rgba( 44, 50, 57, 1 )",
 				"isRemovable": false,
-				"height": 44,
 				"children": [],
 				"parent": "4b8f-4603-1200-4f16",
 				"name": "headerBar"
@@ -118,9 +66,6 @@
 		{
 			"type": "ScrollView",
 			"id": "34ec-fb5e-f361-f64b",
-			"themeProps": {
-				"Sizes": "Default"
-			},
 			"userProps": {
 				"backgroundColor": "rgba( 255, 255, 255, 1 )",
 				"width": null,
@@ -137,32 +82,7 @@
 			},
 			"className": ".scrollView",
 			"props": {
-				"height": null,
-				"width": null,
-				"touchEnabled": true,
-				"visible": true,
-				"backgroundColor": "rgba( 255, 255, 255, 1 )",
-				"alpha": 1,
-				"borderColor": "rgba(0,0,0,1)",
-				"borderWidth": 0,
-				"align": "VERTICAL",
-				"scrollBarEnabled": true,
-				"paddingLeft": 20,
-				"paddingRight": 20,
-				"paddingTop": 10,
-				"paddingBottom": 10,
 				"usePageVariable": true,
-				"flexProps": {
-					"alignSelf": "AUTO",
-					"direction": "INHERIT",
-					"alignContent": "STRETCH",
-					"alignItems": "STRETCH",
-					"justifyContent": "FLEX_START",
-					"flexWrap": "NOWRAP",
-					"flexDirection": "COLUMN_REVERSE",
-					"positionType": "RELATIVE",
-					"flexGrow": 1
-				},
 				"name": "svChart",
 				"parent": "4b8f-4603-1200-4f16",
 				"children": []
@@ -171,10 +91,6 @@
 		{
 			"type": "FlexLayout",
 			"id": "dc05-73a6-6a31-69b8",
-			"themeProps": {
-				"Sizes": "Default",
-				"Highlights": "Default"
-			},
 			"userProps": {
 				"width": null,
 				"height": null,
@@ -184,24 +100,6 @@
 			},
 			"className": ".flexLayout",
 			"props": {
-				"height": null,
-				"width": null,
-				"touchEnabled": true,
-				"visible": true,
-				"backgroundColor": "#FFFFFF",
-				"alpha": 1,
-				"borderColor": "rgba(0,0,0,1)",
-				"borderWidth": 0,
-				"flexProps": {
-					"alignSelf": "AUTO",
-					"direction": "INHERIT",
-					"alignContent": "STRETCH",
-					"alignItems": "STRETCH",
-					"justifyContent": "FLEX_START",
-					"flexWrap": "NOWRAP",
-					"flexDirection": "COLUMN",
-					"positionType": "ABSOLUTE"
-				},
 				"name": "flexLayout1",
 				"parent": "4b8f-4603-1200-4f16",
 				"children": []

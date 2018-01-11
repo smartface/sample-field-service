@@ -4,9 +4,6 @@
 			"type": "Page",
 			"id": "0b3a-38df-bc63-6c2b",
 			"initialized": true,
-			"themeProps": {
-				"Highlights": "Default"
-			},
 			"userProps": {
 				"orientation": "AUTO",
 				"flexProps": {
@@ -15,18 +12,9 @@
 				}
 			},
 			"className": ".page",
-			"version": "6.5.2",
+			"version": "6.6.0",
 			"props": {
-				"backgroundColor": "#FFFFFF",
 				"orientation": "AUTO",
-				"flexProps": {
-					"alignContent": "STRETCH",
-					"alignItems": "CENTER",
-					"direction": "INHERIT",
-					"flexDirection": "COLUMN",
-					"flexWrap": "NOWRAP",
-					"justifyContent": "CENTER"
-				},
 				"parent": null,
 				"children": [
 					"b75e-b915-62cf-4cc6",
@@ -34,25 +22,15 @@
 					"f9fe-ee0b-1677-9492",
 					"1f21-5c15-ef35-6608"
 				],
-				"name": "pgNotes",
-				"width": 138.75,
-				"height": 223.10999999999999
+				"name": "pgNotes"
 			}
 		},
 		{
 			"type": "StatusBar",
 			"id": "b75e-b915-62cf-4cc6",
-			"themeProps": {
-				"Highlights": "Default"
-			},
-			"userProps": {
-				"style": "LIGHTCONTENT"
-			},
+			"userProps": {},
 			"className": ".statusBar",
 			"props": {
-				"color": "#2C3239",
-				"visible": true,
-				"style": "LIGHTCONTENT",
 				"parent": "0b3a-38df-bc63-6c2b",
 				"children": [],
 				"isRemovable": false,
@@ -62,18 +40,12 @@
 		{
 			"type": "HeaderBar",
 			"id": "7fea-721f-ab47-b59c",
-			"themeProps": {
-				"Highlights": "Default"
-			},
 			"userProps": {
 				"title": "Notes"
 			},
 			"className": ".headerBar",
 			"props": {
 				"title": "Notes",
-				"titleColor": "#FFFFFF",
-				"visible": true,
-				"backgroundColor": "#2C3239",
 				"parent": "0b3a-38df-bc63-6c2b",
 				"children": [],
 				"isRemovable": false,
@@ -83,10 +55,6 @@
 		{
 			"type": "ListView",
 			"id": "f9fe-ee0b-1677-9492",
-			"themeProps": {
-				"Sizes": "Default",
-				"Highlights": "Default"
-			},
 			"userProps": {
 				"usePageVariable": true,
 				"width": null,
@@ -107,29 +75,9 @@
 			},
 			"className": ".listView",
 			"props": {
-				"height": null,
-				"width": null,
-				"touchEnabled": true,
-				"multiline": false,
-				"rowHeight": 64,
-				"itemCount": null,
-				"visible": false,
-				"backgroundColor": "#FFFFFF",
-				"alpha": 1,
-				"borderColor": "rgba(0,0,0,1)",
-				"borderWidth": 0,
 				"usePageVariable": true,
-				"left": 0,
-				"top": 0,
-				"bottom": 0,
-				"right": 0,
-				"flexProps": {
-					"alignSelf": "AUTO",
-					"positionType": "ABSOLUTE",
-					"flexGrow": null,
-					"right": 0,
-					"bottom": 48
-				},
+				"itemCount": null,
+				"rowHeight": 64,
 				"name": "lvNotes",
 				"parent": "0b3a-38df-bc63-6c2b",
 				"children": []
@@ -139,41 +87,14 @@
 			"type": "ActivityIndicator",
 			"id": "1f21-5c15-ef35-6608",
 			"hiddenComponent": true,
-			"themeProps": {
-				"Sizes": "Default",
-				"Highlights": "Default"
-			},
 			"userProps": {
 				"usePageVariable": true,
-				"input": {
-					"height": 21,
-					"width": 21
-				},
 				"minHeight": 21,
 				"minWidth": 21
 			},
 			"className": ".activityIndicator",
 			"props": {
-				"touchEnabled": true,
-				"width": 42,
-				"height": 42,
-				"color": "#2C3239",
-				"visible": true,
-				"backgroundColor": "rgba(0,0,0,0)",
-				"alpha": 1,
-				"borderColor": "rgba(0,0,0,1)",
-				"borderWidth": 0,
-				"minHeight": 21,
-				"minWidth": 21,
 				"usePageVariable": true,
-				"flexProps": {
-					"positionType": "RELATIVE",
-					"alignSelf": "AUTO"
-				},
-				"input": {
-					"height": 21,
-					"width": 21
-				},
 				"name": "aiNotes",
 				"parent": "0b3a-38df-bc63-6c2b",
 				"children": []

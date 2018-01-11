@@ -4,9 +4,6 @@
 			"type": "Page",
 			"id": "0678-cf6d-cce0-97f1",
 			"initialized": true,
-			"themeProps": {
-				"Highlights": "Default"
-			},
 			"userProps": {
 				"backgroundColor": "rgba( 255, 255, 255, 1 )",
 				"orientation": "AUTO",
@@ -16,18 +13,9 @@
 				}
 			},
 			"className": ".page",
-			"version": "6.5.2",
+			"version": "6.6.0",
 			"props": {
-				"backgroundColor": "rgba( 255, 255, 255, 1 )",
 				"orientation": "AUTO",
-				"flexProps": {
-					"alignContent": "STRETCH",
-					"alignItems": "CENTER",
-					"direction": "INHERIT",
-					"flexDirection": "COLUMN",
-					"flexWrap": "NOWRAP",
-					"justifyContent": "CENTER"
-				},
 				"children": [
 					"0196-71c2-0ef6-1ab7",
 					"5845-b092-d3d9-014b",
@@ -35,31 +23,15 @@
 					"0374-43e7-8ab8-9ae7"
 				],
 				"parent": null,
-				"name": "pgCustomers",
-				"width": 138.75,
-				"height": 223.10999999999999
+				"name": "pgCustomers"
 			}
 		},
 		{
 			"type": "StatusBar",
 			"id": "0196-71c2-0ef6-1ab7",
-			"themeProps": {
-				"Highlights": "Default"
-			},
-			"userProps": {
-				"color": "rgba( 44, 50, 57, 1 )",
-				"style": "LIGHTCONTENT",
-				"layout": {},
-				"flex": {},
-				"font": {},
-				"flexProps": {},
-				"defaults": {}
-			},
+			"userProps": {},
 			"className": ".statusBar",
 			"props": {
-				"color": "rgba( 44, 50, 57, 1 )",
-				"visible": true,
-				"style": "LIGHTCONTENT",
 				"children": [],
 				"parent": "0678-cf6d-cce0-97f1",
 				"isRemovable": false,
@@ -69,25 +41,14 @@
 		{
 			"type": "HeaderBar",
 			"id": "5845-b092-d3d9-014b",
-			"themeProps": {
-				"Highlights": "Default"
-			},
 			"userProps": {
 				"title": "Customers",
 				"backgroundColor": "rgba( 44, 50, 57, 1 )",
-				"titleColor": "rgba( 255, 255, 255, 1 )",
-				"layout": {},
-				"flex": {},
-				"font": {},
-				"flexProps": {},
-				"defaults": {}
+				"titleColor": "rgba( 255, 255, 255, 1 )"
 			},
 			"className": ".headerBar",
 			"props": {
 				"title": "Customers",
-				"titleColor": "rgba( 255, 255, 255, 1 )",
-				"visible": true,
-				"backgroundColor": "rgba( 44, 50, 57, 1 )",
 				"children": [],
 				"parent": "0678-cf6d-cce0-97f1",
 				"isRemovable": false,
@@ -97,10 +58,6 @@
 		{
 			"type": "ListView",
 			"id": "0374-43e7-8ab8-9ae7",
-			"themeProps": {
-				"Sizes": "Default",
-				"Highlights": "Default"
-			},
 			"userProps": {
 				"width": null,
 				"height": null,
@@ -117,36 +74,13 @@
 					"positionType": "ABSOLUTE",
 					"right": 0,
 					"bottom": 0
-				},
-				"layout": {},
-				"flex": {},
-				"font": {},
-				"defaults": {}
+				}
 			},
 			"className": ".listView",
 			"props": {
-				"height": null,
-				"width": null,
-				"touchEnabled": true,
-				"multiline": false,
-				"rowHeight": 106.43,
-				"itemCount": 4,
-				"visible": false,
-				"backgroundColor": "rgba( 255, 255, 255, 0 )",
-				"alpha": 1,
-				"borderColor": "rgba(0,0,0,1)",
-				"borderWidth": 0,
-				"left": 0,
-				"top": 7.43,
-				"right": 0,
-				"bottom": 0,
 				"usePageVariable": true,
-				"flexProps": {
-					"alignSelf": "AUTO",
-					"positionType": "ABSOLUTE",
-					"right": 0,
-					"bottom": 0
-				},
+				"itemCount": 4,
+				"rowHeight": 106.43,
 				"children": [],
 				"name": "lvCustomers",
 				"parent": "0678-cf6d-cce0-97f1"
@@ -155,46 +89,15 @@
 		{
 			"type": "ActivityIndicator",
 			"id": "6d16-8447-b88d-7345",
-			"themeProps": {
-				"Sizes": "Default",
-				"Highlights": "Default"
-			},
 			"userProps": {
 				"usePageVariable": true,
-				"layout": {},
-				"flex": {},
-				"font": {},
-				"flexProps": {},
-				"defaults": {},
-				"input": {
-					"height": 21,
-					"width": 21
-				},
 				"minHeight": 21,
-				"minWidth": 21
+				"minWidth": 21,
+				"flexProps": {}
 			},
 			"className": ".activityIndicator",
 			"props": {
-				"touchEnabled": true,
-				"width": 42,
-				"height": 42,
-				"color": "#2C3239",
-				"visible": true,
-				"backgroundColor": "rgba(0,0,0,0)",
-				"alpha": 1,
-				"borderColor": "rgba(0,0,0,1)",
-				"borderWidth": 0,
-				"minHeight": 21,
-				"minWidth": 21,
 				"usePageVariable": true,
-				"flexProps": {
-					"positionType": "RELATIVE",
-					"alignSelf": "AUTO"
-				},
-				"input": {
-					"height": 21,
-					"width": 21
-				},
 				"children": [],
 				"name": "aiWait",
 				"parent": "0678-cf6d-cce0-97f1"

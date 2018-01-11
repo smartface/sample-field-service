@@ -4,25 +4,13 @@
 			"type": "Page",
 			"id": "0bd1-d6df-a9cc-62ce",
 			"initialized": true,
-			"themeProps": {
-				"Highlights": "Default"
-			},
 			"userProps": {
 				"orientation": "AUTOPORTRAIT"
 			},
 			"className": ".page",
-			"version": "6.5.2",
+			"version": "6.6.0",
 			"props": {
-				"backgroundColor": "#FFFFFF",
 				"orientation": "AUTOPORTRAIT",
-				"flexProps": {
-					"alignContent": "STRETCH",
-					"alignItems": "STRETCH",
-					"direction": "INHERIT",
-					"flexDirection": "COLUMN",
-					"flexWrap": "NOWRAP",
-					"justifyContent": "FLEX_START"
-				},
 				"parent": null,
 				"children": [
 					"b1b3-9a1a-1cb3-86fc",
@@ -30,25 +18,15 @@
 					"a822-6012-5715-1699",
 					"39c5-8493-f015-f92e"
 				],
-				"name": "pgNoteContent",
-				"width": 153.75,
-				"height": 247.23
+				"name": "pgNoteContent"
 			}
 		},
 		{
 			"type": "StatusBar",
 			"id": "b1b3-9a1a-1cb3-86fc",
-			"themeProps": {
-				"Highlights": "Default"
-			},
-			"userProps": {
-				"style": "LIGHTCONTENT"
-			},
+			"userProps": {},
 			"className": ".statusBar",
 			"props": {
-				"color": "#2C3239",
-				"visible": true,
-				"style": "LIGHTCONTENT",
 				"parent": "0bd1-d6df-a9cc-62ce",
 				"children": [],
 				"isRemovable": false,
@@ -58,18 +36,12 @@
 		{
 			"type": "HeaderBar",
 			"id": "7691-2ad5-34ca-4fce",
-			"themeProps": {
-				"Highlights": "Default"
-			},
 			"userProps": {
 				"title": null
 			},
 			"className": ".headerBar",
 			"props": {
 				"title": null,
-				"titleColor": "#FFFFFF",
-				"visible": true,
-				"backgroundColor": "#2C3239",
 				"parent": "0bd1-d6df-a9cc-62ce",
 				"children": [],
 				"isRemovable": false,
@@ -80,10 +52,6 @@
 			"type": "FlexLayout",
 			"id": "a822-6012-5715-1699",
 			"hiddenComponent": false,
-			"themeProps": {
-				"Sizes": "Default",
-				"Highlights": "Default"
-			},
 			"userProps": {
 				"usePageVariable": true,
 				"width": null,
@@ -98,30 +66,7 @@
 			},
 			"className": ".flexLayout",
 			"props": {
-				"height": null,
-				"width": null,
-				"touchEnabled": true,
-				"visible": true,
-				"backgroundColor": "#FFFFFF",
-				"alpha": 1,
-				"borderColor": "rgba(0,0,0,1)",
-				"borderWidth": 0,
 				"usePageVariable": true,
-				"paddingLeft": 10,
-				"paddingRight": 10,
-				"paddingTop": 10,
-				"paddingBottom": 10,
-				"flexProps": {
-					"alignSelf": "AUTO",
-					"direction": "INHERIT",
-					"alignContent": "STRETCH",
-					"alignItems": "STRETCH",
-					"justifyContent": "FLEX_START",
-					"flexWrap": "NOWRAP",
-					"flexDirection": "COLUMN",
-					"positionType": "RELATIVE",
-					"flexGrow": 1
-				},
 				"name": "textAreaHolder",
 				"parent": "0bd1-d6df-a9cc-62ce",
 				"children": []
@@ -131,10 +76,6 @@
 			"type": "FlexLayout",
 			"id": "39c5-8493-f015-f92e",
 			"hiddenComponent": true,
-			"themeProps": {
-				"Sizes": "Default",
-				"Highlights": "Default"
-			},
 			"userProps": {
 				"usePageVariable": true,
 				"width": null,
@@ -154,31 +95,7 @@
 			},
 			"className": ".flexLayout",
 			"props": {
-				"height": null,
-				"width": null,
-				"touchEnabled": true,
-				"visible": true,
-				"backgroundColor": "rgba( 255, 255, 255, 0 )",
-				"alpha": 1,
-				"borderColor": "rgba(0,0,0,1)",
-				"borderWidth": 0,
 				"usePageVariable": true,
-				"left": 0,
-				"right": 0,
-				"bottom": 0,
-				"top": 0,
-				"flexProps": {
-					"alignSelf": "AUTO",
-					"direction": "INHERIT",
-					"alignContent": "STRETCH",
-					"alignItems": "CENTER",
-					"justifyContent": "CENTER",
-					"flexWrap": "NOWRAP",
-					"flexDirection": "COLUMN",
-					"positionType": "ABSOLUTE",
-					"right": 0,
-					"bottom": 0
-				},
 				"name": "flWait",
 				"parent": "0bd1-d6df-a9cc-62ce",
 				"children": [
@@ -189,41 +106,14 @@
 		{
 			"type": "ActivityIndicator",
 			"id": "d350-d6bc-7070-d32c",
-			"themeProps": {
-				"Sizes": "Default",
-				"Highlights": "Default"
-			},
 			"userProps": {
 				"usePageVariable": true,
-				"input": {
-					"height": 21,
-					"width": 21
-				},
 				"minHeight": 21,
 				"minWidth": 21
 			},
 			"className": ".activityIndicator",
 			"props": {
-				"touchEnabled": true,
-				"width": 42,
-				"height": 42,
-				"color": "#2C3239",
-				"visible": true,
-				"backgroundColor": "rgba(0,0,0,0)",
-				"alpha": 1,
-				"borderColor": "rgba(0,0,0,1)",
-				"borderWidth": 0,
-				"minHeight": 21,
-				"minWidth": 21,
 				"usePageVariable": true,
-				"flexProps": {
-					"positionType": "RELATIVE",
-					"alignSelf": "AUTO"
-				},
-				"input": {
-					"height": 21,
-					"width": 21
-				},
 				"name": "aiWait",
 				"parent": "39c5-8493-f015-f92e",
 				"children": []
