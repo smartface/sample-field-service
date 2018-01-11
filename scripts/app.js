@@ -1,3 +1,5 @@
+require("./theme");
+
 /* globals lang */
 require("i18n/i18n.js"); //generates global lang object
 const Application = require("sf-core/application");
@@ -14,7 +16,7 @@ const System = require("sf-core/device/system");
 
 const stylerBuilder = require("library/styler-builder");
 const settings = require("./settings.json");
-stylerBuilder.registerThemes(settings.config.theme.themes || "Defaults");
+stylerBuilder.registerThemes(settings.config.theme.themes || "defaultTheme");
 stylerBuilder.setActiveTheme(settings.config.theme.currentTheme);
 require("sf-extension-utils");
 require("./lib/mcs");

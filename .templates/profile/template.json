@@ -5,7 +5,7 @@
   "tags": [],
   "resources": {
     "fonts": [],
-    "images": ["right_arrow"]
+    "images": ["right_arrow", "user_profile"]
   },
   "version": "1.0.0"
 }

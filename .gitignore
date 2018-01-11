@@ -21,3 +21,4 @@ config/Other\ Fonts
 scripts/ui
 output/players/
 assets/jet
+.templates

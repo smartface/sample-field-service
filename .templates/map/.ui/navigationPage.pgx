@@ -2,7 +2,8 @@
 	"components": [
 		{
 			"type": "Page",
-			"id": "9e906df0",
+			"id": "4624-9e74-1714-a33b",
+			"initialized": false,
 			"themeProps": {},
 			"userProps": {
 				"flexProps": {
@@ -15,10 +16,9 @@
 				"defaults": {}
 			},
 			"className": ".page",
-			"version": "6.3.21",
+			"version": "6.4.5-rc.1",
 			"props": {
 				"backgroundColor": "#EEEEEE",
-				"orientation": "PORTRAIT",
 				"flexProps": {
 					"alignContent": "STRETCH",
 					"alignItems": "STRETCH",
@@ -28,20 +28,21 @@
 					"justifyContent": "FLEX_START"
 				},
 				"children": [
-					"statusBar",
-					"headerBar",
-					"mapContainer",
-					"locationIcon"
+					"0dcf-ce64-20a9-6d23",
+					"7258-e168-3f59-8f88",
+					"88fe-27c6-bba0-650c",
+					"95b1-bbfe-a4d3-d3dd"
 				],
 				"parent": null,
+				"height": 301.5,
 				"name": "navigationPage",
-				"width": 187.5,
-				"height": 301.5
+				"orientation": "PORTRAIT",
+				"width": 187.5
 			}
 		},
 		{
 			"type": "StatusBar",
-			"id": "a80b2b6a",
+			"id": "0dcf-ce64-20a9-6d23",
 			"hiddenComponent": false,
 			"themeProps": {},
 			"userProps": {
@@ -54,18 +55,18 @@
 			},
 			"className": ".statusBar",
 			"props": {
-				"color": "rgba( 55, 134, 255, 1 )",
 				"visible": true,
 				"children": [],
-				"parent": "navigationPage",
+				"parent": "4624-9e74-1714-a33b",
 				"isRemovable": false,
+				"height": 20,
 				"name": "statusBar",
-				"height": 20
+				"color": "rgba( 55, 134, 255, 1 )"
 			}
 		},
 		{
 			"type": "HeaderBar",
-			"id": "191ebe9e",
+			"id": "7258-e168-3f59-8f88",
 			"hiddenComponent": false,
 			"themeProps": {},
 			"userProps": {
@@ -80,20 +81,20 @@
 			},
 			"className": ".headerBar",
 			"props": {
-				"title": "Map",
-				"titleColor": "rgba( 255, 255, 255, 1 )",
 				"visible": true,
 				"backgroundColor": "rgba( 55, 134, 255, 1 )",
 				"children": [],
-				"parent": "navigationPage",
+				"parent": "4624-9e74-1714-a33b",
 				"isRemovable": false,
+				"height": 44,
 				"name": "headerBar",
-				"height": 44
+				"title": "Map",
+				"titleColor": "rgba( 255, 255, 255, 1 )"
 			}
 		},
 		{
 			"type": "FlexLayout",
-			"id": "c97dd73b",
+			"id": "88fe-27c6-bba0-650c",
 			"hiddenComponent": false,
 			"themeProps": {},
 			"userProps": {
@@ -112,41 +113,39 @@
 			},
 			"className": ".flexLayout",
 			"props": {
-				"height": null,
-				"width": null,
 				"touchEnabled": true,
 				"visible": true,
 				"backgroundColor": "#FFFFFF",
 				"alpha": 1,
 				"borderColor": "rgba(0,0,0,1)",
 				"borderWidth": 0,
-				"left": 0,
 				"right": 0,
-				"top": 0,
 				"bottom": 0,
 				"flexProps": {
 					"alignSelf": "AUTO",
-					"direction": "INHERIT",
 					"alignContent": "STRETCH",
 					"alignItems": "STRETCH",
-					"justifyContent": "FLEX_START",
-					"flexWrap": "NOWRAP",
+					"direction": "INHERIT",
 					"flexDirection": "COLUMN",
-					"positionType": "ABSOLUTE",
-					"right": 0,
-					"bottom": 0
+					"flexWrap": "NOWRAP",
+					"justifyContent": "FLEX_START",
+					"positionType": "ABSOLUTE"
 				},
 				"children": [
-					"searchBar",
-					"mapview"
+					"0a6e-e0aa-a1e8-8009",
+					"7ade-d31a-1eba-fe78"
 				],
+				"parent": "4624-9e74-1714-a33b",
+				"height": null,
+				"left": 0,
 				"name": "mapContainer",
-				"parent": "navigationPage"
+				"top": 0,
+				"width": null
 			}
 		},
 		{
 			"type": "MapView",
-			"id": "63545b87",
+			"id": "7ade-d31a-1eba-fe78",
 			"themeProps": {},
 			"userProps": {
 				"left": 0,
@@ -169,22 +168,12 @@
 			},
 			"className": ".mapView",
 			"props": {
-				"height": null,
-				"width": null,
 				"touchEnabled": true,
-				"rotateEnabled": true,
-				"compassEnabled": true,
-				"scrollEnabled": true,
-				"type": "NORMAL",
 				"visible": true,
 				"backgroundColor": "#FFFFFF",
 				"alpha": 1,
 				"borderColor": "rgba(0,0,0,1)",
 				"borderWidth": 0,
-				"left": 0,
-				"right": 0,
-				"top": 0,
-				"bottom": 0,
 				"centerLocation": {
 					"latitude": 40.7828647,
 					"longitude": -73.9675491
@@ -192,18 +181,22 @@
 				"flexProps": {
 					"alignSelf": "STRETCH",
 					"positionType": "RELATIVE",
-					"right": 0,
-					"bottom": 0,
 					"flexGrow": 13
 				},
 				"children": [],
+				"parent": "88fe-27c6-bba0-650c",
+				"height": null,
 				"name": "mapview",
-				"parent": "mapContainer"
+				"width": null,
+				"compassEnabled": true,
+				"rotateEnabled": true,
+				"scrollEnabled": true,
+				"type": "NORMAL"
 			}
 		},
 		{
 			"type": "FlexLayout",
-			"id": "06d97085",
+			"id": "0a6e-e0aa-a1e8-8009",
 			"themeProps": {},
 			"userProps": {
 				"width": null,
@@ -219,36 +212,36 @@
 			},
 			"className": ".flexLayout",
 			"props": {
-				"height": null,
-				"width": null,
 				"touchEnabled": true,
 				"visible": true,
 				"backgroundColor": "#FFFFFF",
 				"alpha": 1,
 				"borderColor": "rgba(0,0,0,1)",
 				"borderWidth": 0,
-				"minHeight": null,
 				"flexProps": {
 					"alignSelf": "AUTO",
-					"direction": "INHERIT",
 					"alignContent": "STRETCH",
 					"alignItems": "STRETCH",
-					"justifyContent": "FLEX_START",
-					"flexWrap": "NOWRAP",
+					"direction": "INHERIT",
 					"flexDirection": "COLUMN",
+					"flexWrap": "NOWRAP",
+					"justifyContent": "FLEX_START",
 					"positionType": "RELATIVE",
 					"flexGrow": 1
 				},
 				"children": [
-					"searchview"
+					"f5c4-a3ff-fc9f-3661"
 				],
+				"parent": "88fe-27c6-bba0-650c",
+				"height": null,
+				"minHeight": null,
 				"name": "searchBar",
-				"parent": "mapContainer"
+				"width": null
 			}
 		},
 		{
 			"type": "SearchView",
-			"id": "f6bdd7a0",
+			"id": "f5c4-a3ff-fc9f-3661",
 			"themeProps": {},
 			"userProps": {
 				"backgroundColor": "rgba( 0, 0, 0, 0 )",
@@ -268,16 +261,12 @@
 			},
 			"className": ".searchView",
 			"props": {
-				"text": "",
 				"touchEnabled": true,
-				"width": null,
-				"height": null,
 				"visible": true,
 				"alpha": 1,
 				"borderColor": "rgba( 0, 0, 0, 0 )",
 				"borderWidth": 0,
 				"textAlignment": "MIDLEFT",
-				"minHeight": 30,
 				"backgroundColor": "rgba( 0, 0, 0, 0 )",
 				"flexProps": {
 					"alignSelf": "AUTO",
@@ -288,14 +277,18 @@
 					"height": 28
 				},
 				"children": [],
+				"parent": "0a6e-e0aa-a1e8-8009",
+				"height": null,
+				"minHeight": 30,
 				"name": "searchview",
-				"parent": "searchBar",
+				"text": "",
+				"width": null,
 				"hint": "Enter Location"
 			}
 		},
 		{
 			"type": "ImageView",
-			"id": "db23fcba",
+			"id": "95b1-bbfe-a4d3-d3dd",
 			"hiddenComponent": false,
 			"themeProps": {},
 			"userProps": {
@@ -319,33 +312,31 @@
 			},
 			"className": ".imageView",
 			"props": {
-				"width": 80,
-				"height": 80,
 				"touchEnabled": true,
 				"visible": true,
-				"imageFillType": "ASPECTFIT",
 				"backgroundColor": "rgba(0,0,0,0)",
 				"alpha": 1,
 				"borderColor": "rgba(0,0,0,1)",
 				"borderWidth": 0,
-				"image": "current_location.png",
 				"right": 30,
 				"bottom": 30,
-				"left": null,
-				"top": null,
 				"marginRight": 0,
 				"marginBottom": 0,
 				"flexProps": {
 					"alignSelf": "FLEX_END",
 					"positionType": "ABSOLUTE",
-					"right": 30,
-					"bottom": 30,
 					"flexGrow": null
 				},
 				"children": [],
+				"parent": "4624-9e74-1714-a33b",
+				"imageURL": "https://ali-ide-alitugrul.c9users.io:8081/ui-editor/img/current_location.png?os=iOS&osVersion=10.2&density=326&densityRatio=0.5&zoomLevel=0.5&brandModel=iPhone%207?random=0.21246745980020942",
+				"height": 80,
+				"image": "current_location.png",
+				"imageFillType": "ASPECTFIT",
+				"left": null,
 				"name": "locationIcon",
-				"parent": "navigationPage",
-				"imageURL": "https://ali-ide-alitugrul.c9users.io:8081/ui-editor/img/current_location.png?os=iOS&osVersion=10.2&density=326&densityRatio=0.5&zoomLevel=0.5&brandModel=iPhone%207?random=0.21246745980020942"
+				"top": null,
+				"width": 80
 			}
 		}
 	]

@@ -4,7 +4,8 @@
   "description": "Login Page with FB",
   "tags": [],
   "resources": {
-    "fonts": ["Nunito"]
+    "fonts": ["Nunito"],
+    "images": ["user_profile"]
   },
   "version": "1.0.0"
 }

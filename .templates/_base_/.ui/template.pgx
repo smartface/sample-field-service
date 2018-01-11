@@ -3,6 +3,7 @@
 		{
 			"type": "Page",
 			"id": "9e906df0",
+			"initialized": false,
 			"themeProps": {},
 			"userProps": {
 				"flexProps": {

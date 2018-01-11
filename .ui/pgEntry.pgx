@@ -3,13 +3,9 @@
 		{
 			"type": "Page",
 			"id": "63b5-cbad-e858-f352",
-			"themeProps": {},
 			"userProps": {
-				"isRemovable": true,
 				"backgroundColor": "#FFFFFF",
-				"height": 301.5,
 				"orientation": "PORTRAIT",
-				"width": 187.5,
 				"flexProps": {
 					"alignContent": "STRETCH",
 					"alignItems": "CENTER",
@@ -17,40 +13,18 @@
 					"flexDirection": "COLUMN",
 					"flexWrap": "NOWRAP",
 					"justifyContent": "CENTER"
-				},
-				"layout": {
-					"width": 93.75,
-					"height": 150.75
-				},
-				"flex": {
-					"justifyContent": 1,
-					"alignItems": 2
-				},
-				"font": {},
-				"defaults": {}
+				}
 			},
 			"className": ".page",
-			"version": "6.5.2",
+			"version": "6.6.0",
 			"props": {
-				"backgroundColor": "#FFFFFF",
 				"orientation": "PORTRAIT",
 				"isRemovable": true,
-				"height": 301.5,
-				"width": 187.5,
 				"children": [
 					"0ccd-e7f4-8d4b-865a",
 					"5b3d-a333-2e54-9457"
 				],
-				"flexProps": {
-					"alignContent": "STRETCH",
-					"alignItems": "CENTER",
-					"direction": "INHERIT",
-					"flexDirection": "COLUMN",
-					"flexWrap": "NOWRAP",
-					"justifyContent": "CENTER"
-				},
 				"name": "pgEntry",
-				"font": {},
 				"parent": null
 			},
 			"initialized": true
@@ -58,65 +32,33 @@
 		{
 			"type": "StatusBar",
 			"id": "0ccd-e7f4-8d4b-865a",
-			"themeProps": {},
 			"userProps": {
-				"isRemovable": false,
-				"height": 20,
-				"visible": true,
-				"color": "#00A1F1",
-				"layout": {
-					"height": 10
-				},
-				"flex": {},
-				"font": {},
-				"flexProps": {},
-				"defaults": {}
+				"visible": true
 			},
 			"className": ".statusBar",
 			"props": {
-				"color": "#00A1F1",
-				"visible": true,
 				"isRemovable": false,
-				"height": 20,
 				"children": [],
 				"parent": "63b5-cbad-e858-f352",
-				"name": "statusBar",
-				"font": {},
-				"flexProps": {}
+				"name": "statusBar"
 			}
 		},
 		{
 			"type": "HeaderBar",
 			"id": "5b3d-a333-2e54-9457",
-			"themeProps": {},
 			"userProps": {
-				"isRemovable": false,
 				"backgroundColor": "#FFFFFF",
-				"height": 44,
 				"visible": true,
 				"title": "Field Service",
-				"titleColor": "#000000",
-				"layout": {
-					"height": 22
-				},
-				"flex": {},
-				"font": {},
-				"flexProps": {},
-				"defaults": {}
+				"titleColor": "#000000"
 			},
 			"className": ".headerBar",
 			"props": {
 				"title": "Field Service",
-				"titleColor": "#000000",
-				"visible": true,
-				"backgroundColor": "#FFFFFF",
 				"isRemovable": false,
-				"height": 44,
 				"children": [],
 				"parent": "63b5-cbad-e858-f352",
-				"name": "headerBar",
-				"font": {},
-				"flexProps": {}
+				"name": "headerBar"
 			}
 		}
 	]

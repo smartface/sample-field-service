@@ -4,15 +4,9 @@
 			"type": "Page",
 			"id": "8c7a-e6fd-87b3-af10",
 			"initialized": true,
-			"themeProps": {
-				"Highlights": "Default"
-			},
 			"userProps": {
-				"isRemovable": true,
 				"backgroundColor": "rgba( 255, 255, 255, 1 )",
-				"height": 301.5,
 				"orientation": "AUTO",
-				"width": 187.5,
 				"flexProps": {
 					"alignContent": "STRETCH",
 					"alignItems": "CENTER",
@@ -23,21 +17,10 @@
 				}
 			},
 			"className": ".page",
-			"version": "6.5.2",
+			"version": "6.6.0",
 			"props": {
-				"backgroundColor": "rgba( 255, 255, 255, 1 )",
 				"orientation": "AUTO",
 				"isRemovable": true,
-				"height": 247.23,
-				"width": 153.75,
-				"flexProps": {
-					"alignContent": "STRETCH",
-					"alignItems": "CENTER",
-					"direction": "INHERIT",
-					"flexDirection": "COLUMN",
-					"flexWrap": "NOWRAP",
-					"justifyContent": "CENTER"
-				},
 				"children": [
 					"b868-1977-6f95-b072",
 					"7b6e-5371-9dd0-044f",
@@ -50,32 +33,12 @@
 		{
 			"type": "StatusBar",
 			"id": "b868-1977-6f95-b072",
-			"themeProps": {
-				"Highlights": "Default"
-			},
 			"userProps": {
-				"isRemovable": false,
-				"_style": "LIGHTCONTENT",
-				"height": 20,
-				"visible": true,
-				"color": "rgba( 44, 50, 57, 1 )",
-				"style": "LIGHTCONTENT",
-				"layout": {
-					"height": 10
-				},
-				"flex": {},
-				"font": {},
-				"flexProps": {},
-				"defaults": {}
+				"visible": true
 			},
 			"className": ".statusBar",
 			"props": {
-				"color": "rgba( 44, 50, 57, 1 )",
-				"visible": true,
 				"isRemovable": false,
-				"_style": "LIGHTCONTENT",
-				"height": 20,
-				"style": "LIGHTCONTENT",
 				"children": [],
 				"parent": "8c7a-e6fd-87b3-af10",
 				"name": "statusBar"
@@ -84,32 +47,16 @@
 		{
 			"type": "HeaderBar",
 			"id": "7b6e-5371-9dd0-044f",
-			"themeProps": {
-				"Highlights": "Default"
-			},
 			"userProps": {
-				"isRemovable": false,
 				"backgroundColor": "rgba( 44, 50, 57, 1 )",
-				"height": 44,
 				"visible": true,
 				"title": "Notification History",
-				"titleColor": "rgba( 255, 255, 255, 1 )",
-				"layout": {
-					"height": 22
-				},
-				"flex": {},
-				"font": {},
-				"flexProps": {},
-				"defaults": {}
+				"titleColor": "rgba( 255, 255, 255, 1 )"
 			},
 			"className": ".headerBar",
 			"props": {
 				"title": "Notification History",
-				"titleColor": "rgba( 255, 255, 255, 1 )",
-				"visible": true,
-				"backgroundColor": "rgba( 44, 50, 57, 1 )",
 				"isRemovable": false,
-				"height": 44,
 				"children": [],
 				"parent": "8c7a-e6fd-87b3-af10",
 				"name": "headerBar"
@@ -118,10 +65,6 @@
 		{
 			"type": "ActivityIndicator",
 			"id": "0c6d-68de-4250-616c",
-			"themeProps": {
-				"Sizes": "Default",
-				"Highlights": "Default"
-			},
 			"userProps": {
 				"usePageVariable": true,
 				"backgroundColor": "rgba( 255, 255, 255, 0 )",
@@ -131,50 +74,17 @@
 				"bottom": null,
 				"width": 42,
 				"height": 42,
+				"minHeight": 21,
+				"minWidth": 21,
 				"flexProps": {
 					"positionType": "RELATIVE",
 					"right": 0,
 					"bottom": 0
-				},
-				"layout": {},
-				"flex": {},
-				"font": {},
-				"defaults": {},
-				"input": {
-					"height": 21,
-					"width": 21
-				},
-				"minHeight": 21,
-				"minWidth": 21
+				}
 			},
 			"className": ".activityIndicator",
 			"props": {
-				"touchEnabled": true,
-				"width": 42,
-				"height": 42,
-				"color": "#2C3239",
-				"visible": true,
-				"backgroundColor": "rgba( 255, 255, 255, 0 )",
-				"alpha": 1,
-				"borderColor": "rgba(0,0,0,1)",
-				"borderWidth": 0,
-				"minHeight": 21,
-				"minWidth": 21,
 				"usePageVariable": true,
-				"left": null,
-				"top": null,
-				"right": null,
-				"bottom": null,
-				"flexProps": {
-					"positionType": "RELATIVE",
-					"alignSelf": "AUTO",
-					"right": 0,
-					"bottom": 0
-				},
-				"input": {
-					"height": 21,
-					"width": 21
-				},
 				"children": [],
 				"name": "aiWait",
 				"parent": "8c7a-e6fd-87b3-af10"
