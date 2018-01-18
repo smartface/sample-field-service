@@ -3,8 +3,8 @@
 		"theme": {
 			"currentTheme": "baseTheme",
 			"themes": [
-				"defaultTheme",
-				"baseTheme"
+				"baseTheme",
+				"defaultTheme"
 			],
 			"baseTheme": "baseTheme"
 		},

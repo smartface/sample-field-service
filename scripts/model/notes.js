@@ -13,10 +13,10 @@ function getNotes(callback) {
     if (Network.connectionType === Network.ConnectionType.None) {
         return alert(lang.noInternetMessage, lang.noInternetTitle);
     }
-
-    mcs.getItemListInCollection("notes", function(err, result) {
-        callback && callback(err, result);
-    });
+    callback && callback(null, []);
+    // mcs.getItemListInCollection("notes", function(err, result) {
+    //     callback && callback(err, result);
+    // });
 }
 
 function getNoteContent(noteFileObject, callback) {

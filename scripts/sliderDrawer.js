@@ -41,8 +41,11 @@ var sliderDrawer = new SliderDrawer({
         mapProperties(sliderDrawer, uiSliderDrawer, ["lblUserName", "lblTitle", "imgUserPicture"]);
 
         sliderDrawer.setUserData = function sliderDrawerSetUserData() {
+            console.log( userData.currentUser + "  is our data ");
             if (userData.currentUser) {
+                console.log("in set user data" + userData.currentUser.firstName);
                 var userFullName = userData.currentUser.firstName + " " + userData.currentUser.lastName;
+                console.log("User full name  " + userFullName);
                 sliderDrawer.lblUserName.text = userFullName;
                 //TODO: use title instead of email
                 sliderDrawer.lblTitle.text = userData.currentUser.email;

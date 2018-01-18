@@ -10,6 +10,7 @@ const backAction = require("../lib/ui").backAction;
 const theme = require("../lib/theme");
 const pageLength = 20;
 const getCustomers = require("../model/customers").getCustomers;
+const getImage = require("../lib/getImage");
 const loadingRowData = {
     loading: true
 };
@@ -24,6 +25,8 @@ const SearchView = require('sf-core/ui/searchview');
 const System = require('sf-core/device/system');
 const Font = require('sf-core/ui/font');
 const FloatingMenu = require('sf-core/ui/floatingmenu');
+
+const addChild = require("@smartface/contx/lib/smartface/action/addChild");
 
 const pgCustomers = extend(pgCustomersDesign)(
     function(_super) {
@@ -68,15 +71,22 @@ const pgCustomers = extend(pgCustomersDesign)(
                 flCustomerRowEmailID = 156,
                 lblCustomerRowEmailID = 157,
                 lblCustomerRowNameID = 158,
-                imgCustomerPictureID = 159;
+                imgCustomerPictureID = 159,
+                itemIndex = 0;
 
             lvCustomers.onRowCreate = function() {
                 var selectedTheme = theme[theme.selected];
                 var lviCustomerRow = new ListViewItem();
-                var customerRow = Object.assign(new CustomerRow(), {
-                    id: customerRowID,
+                var customerRow = Object.assign( new CustomerRow(), {
+                    id: customerRowID
+                })
+      	        this.dispatch(addChild(`item${++itemIndex}`, lviCustomerRow));
+                lviCustomerRow.addChild(customerRow, "child", "", function(style) {
+                    style.flexProps = {
+                        flexDirection: "ROW"
+                    };
+                    return style;
                 });
-                lviCustomerRow.addChild(customerRow);
 
 
                 var loadingLayout = new FlexLayout({
@@ -100,7 +110,7 @@ const pgCustomers = extend(pgCustomersDesign)(
                     visible: true,
                     color: selectedTheme.topBarColor,
                 });
-                loadingLayout.addChild(loadingIndicator);
+                loadingLayout.addChild(loadingIndicator );
                 lviCustomerRow.addChild(loadingLayout);
 
                 var flCustomerRowPhone = lviCustomerRow.findChildById(customerRowID).findChildById(flInteriorID).findChildById(flCustomerDataID).findChildById(flCustomerRowPhoneID);
@@ -135,7 +145,8 @@ const pgCustomers = extend(pgCustomersDesign)(
                         var pictureAssigned = false;
                         if (item.customFields.CO.Picture) {
                             try {
-                                imgCustomerPicture.image = Image.createFromBlob(Blob.createFromBase64(item.customFields.CO.Picture));
+                                //console.log("base 64 code is   " + item.customFields.CO.Picture.length)
+                                imgCustomerPicture.image = getImage(item.customFields.CO.Picture);
                                 pictureAssigned = true;
                             }
                             finally {}

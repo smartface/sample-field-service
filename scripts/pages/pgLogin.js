@@ -13,6 +13,7 @@ const rau = require("sf-extension-utils").rau;
 const theme = require("../lib/theme");
 const KeyboardType = require('sf-core/ui/keyboardtype');
 const fingerprint = require("sf-extension-utils").fingerprint;
+const login = require("../model/getAuthUser");
 
 const pgLogin = extend(pgLoginDesign)(
     function(_super) {
@@ -143,52 +144,31 @@ const pgLogin = extend(pgLoginDesign)(
         }
 
         function performLogin(password, success) {
-            password = password || tiPassword.text.trim();
-            mcs.login({
-                username: tiUserName.text.toLowerCase().trim(),
+            login.userAuth.confirmUser({
+                username: tiUserName.text,
                 password: password
-            }, function(err, result) {
+            }, function(err, userData) {
                 page.setState(true);
                 if (err) {
-                    if (typeof err === "object") {
-                        if (typeof err.body === "object") {
-                            try {
-                                err.body = JSON.parse(err.body.toString());
-                            }
-                            catch (ex) {
-                                err.body = err.body.size !== 0 ? err.body.toString() : "";
-                            }
-                        }
-                        err = JSON.stringify(err);
-                    }
-                    return alert("LOGIN FAILED.  " + err, "MCS Login Error");
+                    return alert("Invalid credential");
                 }
-                if (typeof result === "string") {
-                    try {
-                        result = JSON.parse(result);
-                    }
-                    finally {}
-                }
-                userData.currentUser = result;
                 sliderDrawer.setUserData();
                 success && success();
                 showDashboard();
             });
+        }
 
-            function showDashboard() {
-                sliderDrawer.enabled = true;
-                Router.go("pgDashboard");
-            }
+        function showDashboard() {
+            sliderDrawer.enabled = true;
+            Router.go("pgDashboard");
         }
 
         if (Application.currentReleaseChannel === "demo") {
             page.imgLogo.onTouch = function() {
                 tiPassword.text = "123qweASD";
-                tiUserName.text = "fieldservice";
+                tiUserName.text = "selfservice";
             };
         }
     });
-
-
 
 module && (module.exports = pgLogin);
