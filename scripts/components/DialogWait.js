@@ -8,6 +8,7 @@ const Page = require('sf-core/ui/page');
 const Animator = require('sf-core/ui/animator');
 const System = require('sf-core/device/system');
 const ActivityIndicator = require('sf-core/ui/activityindicator');
+const addChild = require("@smartface/contx/lib/smartface/action/addChild");
 
 const DialogWait = extend(DialogWaitDesign)(
 	//constructor
@@ -25,6 +26,7 @@ const DialogWait = extend(DialogWaitDesign)(
 		dialogWait.aiWait.ios.type = ActivityIndicator.iOS.Type.WHITELARGE;
 
 		dialogWait.showOK = function(callback) {
+			console.log("in show ok")
 			dialogWait.aiWait.visible = false;
 			dialogWait.lblSaving.visible = false;
 			dialogWait.flCheck.visible = true;
@@ -32,12 +34,17 @@ const DialogWait = extend(DialogWaitDesign)(
 
 			var dialogObject = (dialogWait.dialogObject && dialogWait.dialogObject.layout) || dialogWait.getParent();
 			var animationParent = System.OS === "Android" ? dialogWait.flWaitWhite : dialogObject;
-
-			Animator.animate(animationParent, 1000, function() {
+            console.log("in show 36");
+            setTimeout(()=>{
+            	Animator.animate(animationParent, 1000, function() {
+				console.log("in animate 39");
 				dialogWait.imgCheck.alpha = 0.05;
 			}).complete(function() {
+				console.log("in complete 42");
 				callback && callback();
 			});
+            },200)
+			
 		};
 	}
 );
@@ -94,7 +101,7 @@ DialogWait.show = function showWaitdialog(page) {
 			backButtonPressed = page.android.onBackButtonPressed;
 			page.android.onBackButtonPressed = empty;
 		}
-		waitDialog.layout.addChild(dialogWait);
+		waitDialog.layout.addChild(dialogWait, "dialogWait");
 		waitDialog.show();
 		waitDialog.layout.applyLayout();
 	}

@@ -35,8 +35,7 @@ const notes = require("../model/notes");
 const getImage = require("../lib/getImage");
 const addChild = require("@smartface/contx/lib/smartface/action/addChild");
 
-var svCustomerDetail;
-var customerInfo = null;
+
 const pgCustomerDetails = extend(pgCustomerDetailsDesign)(
     function(_super) {
         const page = this;
@@ -44,6 +43,8 @@ const pgCustomerDetails = extend(pgCustomerDetailsDesign)(
         var baseOnLoad = page.onLoad;
         var baseOnShow = page.onShow;
 
+        var svCustomerDetail;
+        var customerInfo = null;
         page.onLoad = function onLoad() {
             baseOnLoad && baseOnLoad();
             // svCustomerDetail = new ScrollView({
@@ -52,13 +53,12 @@ const pgCustomerDetails = extend(pgCustomerDetailsDesign)(
             //     backgroundColor: emptyColor,
             //     visible: false
             // });
-            var svCustomerDetail =  new ScrollView();
-            page.layout.addChild(svCustomerDetail, "svCustomerDetail","", function(userProps) {
+            svCustomerDetail = new ScrollView();
+            page.layout.addChild(svCustomerDetail, "svCustomerDetail", "", function(userProps) {
                 userProps.flexGrow = 1;
-                userProps.align = ScrollView.Align.VERTICAL;
-                userProps.backgroundColor = emptyColor;
+                userProps.align = "VERTICAL";
+                userProps.backgroundColor = "rgba(255, 255, 255,1)";
                 userProps.visible = false;
-                
                 return userProps;
             });
             Object.assign(page.btnBack, {
@@ -87,11 +87,12 @@ const pgCustomerDetails = extend(pgCustomerDetailsDesign)(
         page.onShow = function onShow(id) {
             baseOnShow && baseOnShow();
             applyTheme();
+            console.log("this is on show function");
             sliderDrawer.enabled = false;
 
             page.headerBar.title = lang.customerDetails;
             if (page.dataID || id) {
-                setTimeout(function() {
+                setTimeout(() => {
                     if (!page.dataID)
                         page.dataID = id;
                     notes.getNotes(function(err, notes) {
@@ -116,7 +117,7 @@ const pgCustomerDetails = extend(pgCustomerDetailsDesign)(
                                     value: customerData.customFields.CO.Phone || ""
                                 }, {
                                     name: lang["Cutomer Type"],
-                                    value: lang[customerData.customFields.CO.CustType] || ""
+                                    value: customerData.customFields.CO.CustType || ""
                                 }, {
                                     name: lang.Adress,
                                     value: customerData.address.street || ""
@@ -157,7 +158,7 @@ const pgCustomerDetails = extend(pgCustomerDetailsDesign)(
                                 lastName: customerData.name.last || ""
                             };
                             console.log("before");
-                            loadData.call(this,customerDetails);
+                            loadData.call(this, customerDetails);
                             console.log("after");
                             page.flWait.visible = false;
                             svCustomerDetail.visible = true;
@@ -182,184 +183,191 @@ const pgCustomerDetails = extend(pgCustomerDetailsDesign)(
             page.aiWait.color = selectedTheme.topBarColor;
         }
 
-        // function loadData(customerDetails) {
-        //     console.log("173")
-        //     if (!svCustomerDetail)
-        //         // console.log("in load data condition");
-        //         return;
-        //     var contactData = {};
+        function loadData(customerDetails) {
+            console.log("173")
+            if (!svCustomerDetail)
+                // console.log("in load data condition");
+                return;
+            var contactData = {};
 
-        //     console.log("in load data after condition");
-        //     var layout = new FlexLayout({
-        //         left: 0,
-        //         top: 0,
-        //         right: 0,
-        //         bottom: 0,
-        //         positionType: FlexLayout.PositionType.ABSOLUTE,
-        //         backgroundColor: Color.TRANSPARENT,
-        //         alignItems: FlexLayout.AlignItems.STRETCH,
-        //         flexDirection: FlexLayout.FlexDirection.COLUMN,
-        //         justifyContent: FlexLayout.JustifyContent.FLEX_START
-        //     });
-        //     var detailRowHeight = 61.75,
-        //         actionRowHeight = 60,
-        //         placeholderHeight = 16,
-        //         layoutHeight = 0;
-        //     if (customerDetails.fields) {
-        //         customerDetails.fields.forEach(function(field, index) {
-        //             layoutHeight += detailRowHeight;
-        //             var customerDetailRow = Object.assign(new CustomerDetailRow(), {
-        //                 paddingLeft: fieldMargin,
-        //                 paddingRight: fieldMargin,
-        //                 showLine: index !== (customerDetails.fields.length - 1),
-        //                 fieldName: field.name,
-        //                 fieldValue: field.value
-        //             });
-        //             Object.assign(customerDetailRow.children["flCustomerDetailLine"], {
-        //                 marginLeft: fieldMargin,
-        //                 marginRight: fieldMargin,
-        //             });
+            console.log("in load data after condition");
+            // var layout = new FlexLayout();
+            var layout = new FlexLayout({
+                left: 0,
+                top: 0,
+                right: 0,
+                bottom: 0,
+                positionType: FlexLayout.PositionType.ABSOLUTE,
+                backgroundColor: Color.TRANSPARENT,
+                alignItems: FlexLayout.AlignItems.STRETCH,
+                flexDirection: FlexLayout.FlexDirection.COLUMN,
+                justifyContent: FlexLayout.JustifyContent.FLEX_START
+            });
+            svCustomerDetail.layout.addChild(layout, "layout");
+            var detailRowHeight = 61.75,
+                actionRowHeight = 60,
+                placeholderHeight = 16,
+                layoutHeight = 0;
+            if (customerDetails.fields) {
+                customerDetails.fields.forEach(function(field, index) {
+                    layoutHeight += detailRowHeight;
+                    var customerDetailRow = new CustomerDetailRow();
+                    layout.addChild(customerDetailRow, `customerDetailRow${index}`, "", function(userProps) {
+                        userProps.color = "rgba(0,0,0,0,0)";
+                        userProps.paddingLeft = fieldMargin;
+                        userProps.paddingRight = fieldMargin;
+                        userProps.fieldName = field.name;
+                        userProps.fieldValue = field.value
+                        return userProps;
+                    });
+                    customerDetailRow.children["flCustomerDetailLine"].dispatch({
+                        type: "updateUserStyle",
+                        userStyle: {
+                            marginLeft: fieldMargin,
+                            marginRight: fieldMargin,
+                            visible: index !== (customerDetails.fields.length - 1)
+                        }
+                    });
+                    customerDetailRow.children["flCustomerDetailLine"].applyLayout();
+                    contactData[field.name] = field.value;
+                });
+                if (customerDetails.actions) {
+                    var flPlaceholder = new FlexLayout();
+                    var shadow1 = shadow.createVShadowDown({
+                        left: 0,
+                        top: 0,
+                        right: 0,
+                        positionType: FlexLayout.PositionType.ABSOLUTE,
+                    });
+                    flPlaceholder.addChild(shadow1, "shadow");
 
-        //             layout.addChild(customerDetailRow, "customerDetailRow", function(userProps) {
-        //                 return userProps;
-        //             });
-        //             contactData[field.name] = field.value;
-        //         });
-        //         if (customerDetails.actions) {
-        //             var flPlaceholder = new FlexLayout({
-        //                 backgroundColor: Color.create(61, 216, 216, 216),
-        //                 height: placeholderHeight
-        //             });
-        //             var shadow1 = shadow.createVShadowDown({
-        //                 left: 0,
-        //                 top: 0,
-        //                 right: 0,
-        //                 positionType: FlexLayout.PositionType.ABSOLUTE,
-        //             });
-        //             flPlaceholder.addChild(shadow1, "shadow");
-        //             flPlaceholder.children = Object.assign(flPlaceholder.children || {}, {
-        //                 shadow1: shadow1
-        //             });
-        //             layoutHeight += placeholderHeight;
-        //         }
-        //         layout.addChild(flPlaceholder, "shadow", function(userProps) {
-        //             return userProps;
-        //         });
-        //     }
-        //     if (customerDetails.actions) {
-        //         customerDetails.actions.forEach(function(action, index) {
-        //             layoutHeight += actionRowHeight;
-        //             // var customerActionRow = Object.assign(new CustomerActionRow(), {
-        //             //     paddingLeft: fieldMargin,
-        //             //     paddingRight: fieldMargin,
-        //             //     showLine: index !== (customerDetails.actions.length - 1),
-        //             //     fieldName: action.text || action.name,
-        //             //     onPress: actions[action.name].bind(page, customerDetails),
-        //             //     count: action.count
-        //             // });
+                    flPlaceholder.children = Object.assign(flPlaceholder.children || {}, {
+                        shadow1: shadow1
+                    });
+                    layoutHeight += placeholderHeight;
+                }
+                layout.addChild(flPlaceholder, "shadow", "", function(userProps) {
+                    userProps.backgroundColor = "rgba(216, 216, 216, 0.24)";
+                    userProps.height = placeholderHeight
+                    return userProps;
+                });
+            }
+            if (customerDetails.actions) {
+                customerDetails.actions.forEach(function(action, index) {
+                    layoutHeight += actionRowHeight;
+                    // var customerActionRow = Object.assign(new CustomerActionRow(), {
+                    //     paddingLeft: fieldMargin,
+                    //     paddingRight: fieldMargin,
+                    //     showLine: index !== (customerDetails.actions.length - 1),
+                    //     fieldName: action.text || action.name,
+                    //     onPress: actions[action.name].bind(page, customerDetails),
+                    //     count: action.count
+                    // });
+                    var customerActionRow = new CustomerActionRow();
+                    // Object.assign(customerActionRow.children["flCustomerActionLine"], {
+                    //     marginLeft: fieldMargin,
+                    //     marginRight: fieldMargin
+                    // });
+                    layout.addChild(customerActionRow, `customerActionRow${index}`, "", function(userProps) {
+                        userProps.paddingLeft = fieldMargin;
+                        userProps.paddingRight = fieldMargin;
+                        userProps.showLine = index !== (customerDetails.actions.length - 1);
+                        userProps.fieldName = action.text || action.name;
+                        userProps.onPress = actions[action.name].bind(page, customerDetails);
+                        userProps.count = action.count;
 
-        //              var customerActionRow = new CustomerActionRow();
-        //             // Object.assign(customerActionRow.children["flCustomerActionLine"], {
-        //             //     marginLeft: fieldMargin,
-        //             //     marginRight: fieldMargin
-        //             // });
-        //             customerActionRow.children["flCustomerActionLine"].dispatch({
-        //                 type: "updateUserStyle",
-        //                 userStyle: {
-        //                     marginLeft: fieldMargin,
-        //                     marginRight: fieldMargin
-        //                 }
-        //             });
-        //             layout.addChild(customerActionRow, "customerActionRow", function(userProps) {
-        //                 userProps.paddingLeft = fieldMargin;
-        //                 userProps.paddingRight = fieldMargin;
-        //                 userProps.showLine = index !== (customerDetails.actions.length - 1);
-        //                 userProps.fieldName = action.text || action.name;
-        //                 userProps.onPress = actions[action.name].bind(page, customerDetails);
-        //                 userProps.count = action.count;
-        //                 return userProps;
-        //             });
-        //         });
-        //     }
-        //     if (customerDetails.fields || customerDetails.actions) {
-        //         var shadow2 = shadow.createVShadowDown({
-        //             positionType: FlexLayout.PositionType.RELATIVE
-        //         });
-        //         layout.addChild(shadow2, "shadow2");
-        //         layoutHeight += shadow.size;
-        //     }
-        //     svCustomerDetail.layout.height = layoutHeight;
-        //     svCustomerDetail.layout.addChild(layout, "layout");
-        //     page.imgCustomerPicture.image = customerDetails.picture ||
-        //         Image.createFromFile("images://customers_empty.png");
+                        return userProps;
+                    });
 
+                    customerActionRow.children["flCustomerActionLine"].dispatch({
+                        type: "updateUserStyle",
+                        userStyle: {
+                            marginLeft: fieldMargin,
+                            marginRight: fieldMargin,
+                            visible: index !== (customerDetails.actions.length - 1)
+                        }
+                    });
+                });
+            }
+            if (customerDetails.fields || customerDetails.actions) {
+                var shadow2 = shadow.createVShadowDown({
+                    positionType: FlexLayout.PositionType.RELATIVE
+                });
+                layout.addChild(shadow2, "shadow2", "", {
+                    positionType: "RELATIVE"
+                });
+                layoutHeight += shadow.size;
+            }
+            svCustomerDetail.layout.height = layoutHeight;
+            page.imgCustomerPicture.image = customerDetails.picture ||
+                Image.createFromFile("images://customers_empty.png");
 
-        //     page.btnAddToContacts.onPress = function() {
-        //         //if (System.OS === "Android") {
-        //         permission.getPermission(Application.android.Permissions.WRITE_CONTACTS, function(err) {
-        //             if (err) return;
-        //             addToContacts();
-        //         });
-        //         //}
-        //         //else {
-        //         //    addToContacts();
-        //         //}
+            page.btnAddToContacts.onPress = function() {
+                //if (System.OS === "Android") {
+                permission.getPermission(Application.android.Permissions.WRITE_CONTACTS, function(err) {
+                    if (err) return;
+                    addToContacts();
+                });
+                //}
+                //else {
+                //    addToContacts();
+                //}
 
-        //         function addToContacts() {
-        //             Contacts.add({
-        //                 contact: customerInfo,
-        //                 onSuccess: function() {
-        //                     alert(lang.contactAddSuccess);
-        //                 },
-        //                 onFailure: function() {
-        //                     alert(lang.contactAddFailure);
-        //                 },
-        //                 page
-        //             });
-        //         }
-        //     };
+                function addToContacts() {
+                    Contacts.add({
+                        contact: customerInfo,
+                        onSuccess: function() {
+                            alert(lang.contactAddSuccess);
+                        },
+                        onFailure: function() {
+                            alert(lang.contactAddFailure);
+                        },
+                        page
+                    });
+                }
+            };
 
-        //     page.btnShare.onPress = function() {
-        //         //var contactDataString = JSON.stringify(contactData, null, "\t");
-        //         //Share.shareText(contactDataString, page, []);
+            page.btnShare.onPress = function() {
+                //var contactDataString = JSON.stringify(contactData, null, "\t");
+                //Share.shareText(contactDataString, page, []);
 
 
-        //         permission.getPermission(Application.android.Permissions.WRITE_EXTERNAL_STORAGE, function(err) {
-        //             if (err) return;
-        //             var fileName = customerInfo.firstName.toLocaleLowerCase() + "_" + customerInfo.lastName.toLowerCase() + ".vcf";
-        //             var path;
-        //             if (System.OS === "Android") {
-        //                 path = Path.android.storages.internal + Path.Separator + fileName;
-        //             }
-        //             else {
-        //                 path = Path.DataDirectory + Path.Separator + fileName;
-        //             }
-        //             createAndSendVCF(path);
-        //         });
+                permission.getPermission(Application.android.Permissions.WRITE_EXTERNAL_STORAGE, function(err) {
+                    if (err) return;
+                    var fileName = customerInfo.firstName.toLocaleLowerCase() + "_" + customerInfo.lastName.toLowerCase() + ".vcf";
+                    var path;
+                    if (System.OS === "Android") {
+                        path = Path.android.storages.internal + Path.Separator + fileName;
+                    }
+                    else {
+                        path = Path.DataDirectory + Path.Separator + fileName;
+                    }
+                    createAndSendVCF(path);
+                });
 
-        //     };
+            };
 
-        //     function createAndSendVCF(destinationPath, contact) {
-        //         var vcfFile = new File({
-        //             path: destinationPath
-        //         });
-        //         vcfFile.createFile();
-        //         var fileStream = vcfFile.openStream(FileStream.StreamType.WRITE);
-        //         var fileContent =
-        //             "BEGIN:VCARD\r\n" +
-        //             "VERSION:3.0\r\n" +
-        //             "N:" + customerInfo.lastName + ";" + customerInfo.firstName + "\r\n" +
-        //             "FN:" + customerInfo.displayName + "\r\n" +
-        //             "NOTE:" + customerInfo.notes + "\r\n" +
-        //             "TEL;TYPE=PREF,CELL:" + customerInfo.phoneNumber + "\r\n" +
-        //             "EMAIL;TYPE=PREF,INTERNET:" + customerInfo.email + "\r\n" +
-        //             "END:VCARD\r\n";
-        //         fileStream.write(fileContent);
-        //         fileStream.close();
+            function createAndSendVCF(destinationPath, contact) {
+                var vcfFile = new File({
+                    path: destinationPath
+                });
+                vcfFile.createFile();
+                var fileStream = vcfFile.openStream(FileStream.StreamType.WRITE);
+                var fileContent =
+                    "BEGIN:VCARD\r\n" +
+                    "VERSION:3.0\r\n" +
+                    "N:" + customerInfo.lastName + ";" + customerInfo.firstName + "\r\n" +
+                    "FN:" + customerInfo.displayName + "\r\n" +
+                    "NOTE:" + customerInfo.notes + "\r\n" +
+                    "TEL;TYPE=PREF,CELL:" + customerInfo.phoneNumber + "\r\n" +
+                    "EMAIL;TYPE=PREF,INTERNET:" + customerInfo.email + "\r\n" +
+                    "END:VCARD\r\n";
+                fileStream.write(fileContent);
+                fileStream.close();
 
-        //         Share.shareFile(vcfFile, page);
-        //     }
-        // }
+                Share.shareFile(vcfFile, page);
+            }
+        }
     });
 
 function goBack() {
@@ -374,186 +382,6 @@ function showNotes(customerData) {
 
 function showNotificationFlow(customerData) {
     alert("show notification flow");
-}
-
-function loadData(customerDetails) {
-    const page = this;
-    console.log("173")
-    if (!svCustomerDetail)
-        // console.log("in load data condition");
-        return;
-    var contactData = {};
-
-    console.log("in load data after condition");
-    var layout = new FlexLayout({
-        left: 0,
-        top: 0,
-        right: 0,
-        bottom: 0,
-        positionType: FlexLayout.PositionType.ABSOLUTE,
-        backgroundColor: Color.TRANSPARENT,
-        alignItems: FlexLayout.AlignItems.STRETCH,
-        flexDirection: FlexLayout.FlexDirection.COLUMN,
-        justifyContent: FlexLayout.JustifyContent.FLEX_START
-    });
-    var detailRowHeight = 61.75,
-        actionRowHeight = 60,
-        placeholderHeight = 16,
-        layoutHeight = 0;
-    if (customerDetails.fields) {
-        customerDetails.fields.forEach(function(field, index) {
-            layoutHeight += detailRowHeight;
-            var customerDetailRow = Object.assign(new CustomerDetailRow(), {
-                paddingLeft: fieldMargin,
-                paddingRight: fieldMargin,
-                showLine: index !== (customerDetails.fields.length - 1),
-                fieldName: field.name,
-                fieldValue: field.value
-            });
-            Object.assign(customerDetailRow.children["flCustomerDetailLine"], {
-                marginLeft: fieldMargin,
-                marginRight: fieldMargin,
-            });
-
-            layout.addChild(customerDetailRow, "customerDetailRow", function(userProps) {
-                return userProps;
-            });
-            contactData[field.name] = field.value;
-        });
-        if (customerDetails.actions) {
-            var flPlaceholder = new FlexLayout({
-                backgroundColor: Color.create(61, 216, 216, 216),
-                height: placeholderHeight
-            });
-            var shadow1 = shadow.createVShadowDown({
-                left: 0,
-                top: 0,
-                right: 0,
-                positionType: FlexLayout.PositionType.ABSOLUTE,
-            });
-            flPlaceholder.addChild(shadow1, "shadow");
-            flPlaceholder.children = Object.assign(flPlaceholder.children || {}, {
-                shadow1: shadow1
-            });
-            layoutHeight += placeholderHeight;
-        }
-        layout.addChild(flPlaceholder, "shadow", function(userProps) {
-            return userProps;
-        });
-    }
-    if (customerDetails.actions) {
-        customerDetails.actions.forEach(function(action, index) {
-            layoutHeight += actionRowHeight;
-            // var customerActionRow = Object.assign(new CustomerActionRow(), {
-            //     paddingLeft: fieldMargin,
-            //     paddingRight: fieldMargin,
-            //     showLine: index !== (customerDetails.actions.length - 1),
-            //     fieldName: action.text || action.name,
-            //     onPress: actions[action.name].bind(page, customerDetails),
-            //     count: action.count
-            // });
-
-            var customerActionRow = new CustomerActionRow();
-            // Object.assign(customerActionRow.children["flCustomerActionLine"], {
-            //     marginLeft: fieldMargin,
-            //     marginRight: fieldMargin
-            // });
-            customerActionRow.children["flCustomerActionLine"].dispatch({
-                type: "updateUserStyle",
-                userStyle: {
-                    marginLeft: fieldMargin,
-                    marginRight: fieldMargin
-                }
-            });
-            layout.addChild(customerActionRow, "customerActionRow", function(userProps) {
-                userProps.paddingLeft = fieldMargin;
-                userProps.paddingRight = fieldMargin;
-                userProps.showLine = index !== (customerDetails.actions.length - 1);
-                userProps.fieldName = action.text || action.name;
-                userProps.onPress = actions[action.name].bind(page, customerDetails);
-                userProps.count = action.count;
-                return userProps;
-            });
-        });
-    }
-    if (customerDetails.fields || customerDetails.actions) {
-        var shadow2 = shadow.createVShadowDown({
-            positionType: FlexLayout.PositionType.RELATIVE
-        });
-        layout.addChild(shadow2, "shadow2");
-        layoutHeight += shadow.size;
-    }
-    svCustomerDetail.layout.height = layoutHeight;
-    svCustomerDetail.layout.addChild(layout, "layout");
-    page.imgCustomerPicture.image = customerDetails.picture ||
-        Image.createFromFile("images://customers_empty.png");
-
-
-    page.btnAddToContacts.onPress = function() {
-        //if (System.OS === "Android") {
-        permission.getPermission(Application.android.Permissions.WRITE_CONTACTS, function(err) {
-            if (err) return;
-            addToContacts();
-        });
-        //}
-        //else {
-        //    addToContacts();
-        //}
-
-        function addToContacts() {
-            Contacts.add({
-                contact: customerInfo,
-                onSuccess: function() {
-                    alert(lang.contactAddSuccess);
-                },
-                onFailure: function() {
-                    alert(lang.contactAddFailure);
-                },
-                page
-            });
-        }
-    };
-
-    page.btnShare.onPress = function() {
-        //var contactDataString = JSON.stringify(contactData, null, "\t");
-        //Share.shareText(contactDataString, page, []);
-
-
-        permission.getPermission(Application.android.Permissions.WRITE_EXTERNAL_STORAGE, function(err) {
-            if (err) return;
-            var fileName = customerInfo.firstName.toLocaleLowerCase() + "_" + customerInfo.lastName.toLowerCase() + ".vcf";
-            var path;
-            if (System.OS === "Android") {
-                path = Path.android.storages.internal + Path.Separator + fileName;
-            }
-            else {
-                path = Path.DataDirectory + Path.Separator + fileName;
-            }
-            createAndSendVCF(path);
-        });
-
-    };
-
-    function createAndSendVCF(destinationPath, contact) {
-        var vcfFile = new File({
-            path: destinationPath
-        });
-        vcfFile.createFile();
-        var fileStream = vcfFile.openStream(FileStream.StreamType.WRITE);
-        var fileContent =
-            "BEGIN:VCARD\r\n" +
-            "VERSION:3.0\r\n" +
-            "N:" + customerInfo.lastName + ";" + customerInfo.firstName + "\r\n" +
-            "FN:" + customerInfo.displayName + "\r\n" +
-            "NOTE:" + customerInfo.notes + "\r\n" +
-            "TEL;TYPE=PREF,CELL:" + customerInfo.phoneNumber + "\r\n" +
-            "EMAIL;TYPE=PREF,INTERNET:" + customerInfo.email + "\r\n" +
-            "END:VCARD\r\n";
-        fileStream.write(fileContent);
-        fileStream.close();
-
-        Share.shareFile(vcfFile, page);
-    }
 }
 
 module && (module.exports = pgCustomerDetails);

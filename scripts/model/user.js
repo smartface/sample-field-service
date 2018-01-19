@@ -1,5 +1,6 @@
 const userData = {
-    currentUser: null
+    currentUser: null,
+    userCustomers: null
 };
 
 module.exports = exports = userData;

@@ -207,7 +207,8 @@ const pgNewCustomer = extend(pgNewCustomerDesign)(
             if (!isValid) {
                 return;
             }
-            var dialogWait = DialogWait.show();
+
+            var dialogWait= DialogWait.show();
 
             var customerData = {
                 lookupName: tiName.text + " " + tiSurname,
@@ -217,7 +218,6 @@ const pgNewCustomer = extend(pgNewCustomerDesign)(
                 CO: {
                     Email: tiEmail.text,
                     Phone: tiPhone.text,
-
                 }
             };
             if (pictureSet) {
@@ -232,11 +232,12 @@ const pgNewCustomer = extend(pgNewCustomerDesign)(
                     dialogWait.hide();
                     return alert(JSON.stringify(err), "Customer Service Error");
                 }
+
                 dialogWait.showOK(function() {
+                    console.log("in show iok 235")
                     dialogWait.hide();
                     Router.goBack();
                 });
-
             });
         }
 

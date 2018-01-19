@@ -4,6 +4,7 @@ const http = new Http();
 const mcs = require("../lib/mcs");
 const Network = require('sf-core/device/network');
 
+
 exports.getCustomers = getCustomers;
 exports.addCustomer = addCustomer;
 exports.getSingleCustomer = getSingleCustomer;
@@ -15,14 +16,12 @@ function getCustomers(filter, callback) {
     }
 
     var customerJson = require("../mock/customer.json");
-    var resingnify = JSON.stringify(customerJson);
-    var reparseCustomer = JSON.parse(resingnify);
 
     if (customerJson) {
-        callback && callback(null, reparseCustomer);
+        callback && callback(null, customerJson);
     }
     else {
-        callback(reparseCustomer);
+        callback(customerJson);
     }
     // var options = {
     //     "apiName": "Endpoints",
@@ -52,25 +51,27 @@ function addCustomer(customerData, callback) {
     if (Network.connectionType === Network.ConnectionType.None) {
         return alert(lang.noInternetMessage, lang.noInternetTitle);
     }
-    var options = {
-        "apiName": "Endpoints",
-        "endpointPath": "contacts",
-    };
-    var requestOptions = Object.assign({
-        method: "POST",
-        onLoad: function(response) {
-            var res = JSON.parse(response.body.toString());
-            callback && callback(null, res);
-        },
-        onError: function(error) {
-            callback && callback(error);
-        }
-    }, mcs.createRequestOptions(options));
-    if (typeof customerData !== "string")
-        customerData = JSON.stringify(customerData);
-    requestOptions.body = customerData;
+    
+    callback && callback(null, customerData);
+    // var options = {
+    //     "apiName": "Endpoints",
+    //     "endpointPath": "contacts",
+    // };
+    // var requestOptions = Object.assign({
+    //     method: "POST",
+    //     onLoad: function(response) {
+    //         var res = JSON.parse(response.body.toString());
+    //         callback && callback(null, res);
+    //     },
+    //     onError: function(error) {
+    //         callback && callback(error);
+    //     }
+    // }, mcs.createRequestOptions(options));
+    // if (typeof customerData !== "string")
+    //     customerData = JSON.stringify(customerData);
+    // requestOptions.body = customerData;
 
-    http.request(requestOptions);
+    // http.request(requestOptions);
 }
 
 function getSingleCustomer(id, callback) {
