@@ -25,12 +25,14 @@ const SearchView = require('sf-core/ui/searchview');
 const System = require('sf-core/device/system');
 const Font = require('sf-core/ui/font');
 const FloatingMenu = require('sf-core/ui/floatingmenu');
+const ListView = require('sf-core/ui/listview');
 
 const addChild = require("@smartface/contx/lib/smartface/action/addChild");
 
+var page;
 const pgCustomers = extend(pgCustomersDesign)(
     function(_super) {
-        const page = this;
+        page = this;
         _super(this);
         var baseOnLoad = page.onLoad;
         var baseOnShow = page.onShow;
@@ -77,10 +79,10 @@ const pgCustomers = extend(pgCustomersDesign)(
             lvCustomers.onRowCreate = function() {
                 var selectedTheme = theme[theme.selected];
                 var lviCustomerRow = new ListViewItem();
-                var customerRow = Object.assign( new CustomerRow(), {
+                var customerRow = Object.assign(new CustomerRow(), {
                     id: customerRowID
                 })
-      	        this.dispatch(addChild(`item${++itemIndex}`, lviCustomerRow));
+                this.dispatch(addChild(`item${++itemIndex}`, lviCustomerRow));
                 lviCustomerRow.addChild(customerRow, "child", "", function(style) {
                     style.flexProps = {
                         flexDirection: "ROW"
@@ -110,7 +112,7 @@ const pgCustomers = extend(pgCustomersDesign)(
                     visible: true,
                     color: selectedTheme.topBarColor,
                 });
-                loadingLayout.addChild(loadingIndicator );
+                loadingLayout.addChild(loadingIndicator);
                 lviCustomerRow.addChild(loadingLayout);
 
                 var flCustomerRowPhone = lviCustomerRow.findChildById(customerRowID).findChildById(flInteriorID).findChildById(flCustomerDataID).findChildById(flCustomerRowPhoneID);
@@ -192,8 +194,8 @@ const pgCustomers = extend(pgCustomersDesign)(
 
         page.onShow = function onShow(data) {
             baseOnShow && baseOnShow(data);
-            if (data && data.filter) {
-                filter = data.filter;
+            
+               // filter = data.filter;
                 setTimeout(function() {
                     getCustomers(filter, function(err, customers) {
                         console.log("after getting customers. Is there error? " + !!err);
@@ -207,7 +209,9 @@ const pgCustomers = extend(pgCustomersDesign)(
                     });
                 }, initTime);
 
-            }
+                // ListView.constructor.prototype.refreshCustomers = function(customerData) {
+                //     bindData(customerData);
+                // }
 
             page.statusBar.ios.style = StatusBarStyle.LIGHTCONTENT;
             backAction(page);
@@ -318,8 +322,8 @@ const pgCustomers = extend(pgCustomersDesign)(
             }
             filterActive = false;
         }
-    });
 
+    });
 
 
 module && (module.exports = pgCustomers);

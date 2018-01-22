@@ -19,6 +19,7 @@ const Menu = require('sf-core/ui/menu');
 const MenuItem = require('sf-core/ui/menuitem');
 const location = require("sf-extension-utils").location;
 const Http = require("sf-core/net/http");
+const pgCustomers = require("../pages/pgCustomers");
 const textInputDefaults = {
     positionType: FlexLayout.PositionType.ABSOLUTE,
     top: 0,
@@ -208,16 +209,22 @@ const pgNewCustomer = extend(pgNewCustomerDesign)(
                 return;
             }
 
-            var dialogWait= DialogWait.show();
+            var dialogWait = DialogWait.show();
 
             var customerData = {
-                lookupName: tiName.text + " " + tiSurname,
+                name: {
+                    first: tiName.text,
+                    last: tiSurname.text
+                },
+                lookupName: tiName.text + " " + tiSurname.text,
                 address: {
                     street: tiAddress.text
                 },
-                CO: {
-                    Email: tiEmail.text,
-                    Phone: tiPhone.text,
+                customFields: {
+                    CO: {
+                        Email: tiEmail.text,
+                        Phone: tiPhone.text,
+                    }
                 }
             };
             if (pictureSet) {
@@ -232,7 +239,6 @@ const pgNewCustomer = extend(pgNewCustomerDesign)(
                     dialogWait.hide();
                     return alert(JSON.stringify(err), "Customer Service Error");
                 }
-
                 dialogWait.showOK(function() {
                     console.log("in show iok 235")
                     dialogWait.hide();

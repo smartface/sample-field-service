@@ -13,7 +13,15 @@ function getNotes(callback) {
     if (Network.connectionType === Network.ConnectionType.None) {
         return alert(lang.noInternetMessage, lang.noInternetTitle);
     }
-    callback && callback(null, []);
+
+    var path = "../mock/notes.json";
+    var notesJson = require(path);
+
+    if (notesJson) {
+
+        callback && callback(null, notesJson);
+    }
+    else callback(notesJson);
     // mcs.getItemListInCollection("notes", function(err, result) {
     //     callback && callback(err, result);
     // });

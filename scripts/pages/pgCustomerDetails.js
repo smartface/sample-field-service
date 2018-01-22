@@ -268,12 +268,12 @@ const pgCustomerDetails = extend(pgCustomerDetailsDesign)(
                     //     marginLeft: fieldMargin,
                     //     marginRight: fieldMargin
                     // });
+                    customerActionRow.onPress = actions[action.name].bind(page, customerDetails);
                     layout.addChild(customerActionRow, `customerActionRow${index}`, "", function(userProps) {
                         userProps.paddingLeft = fieldMargin;
                         userProps.paddingRight = fieldMargin;
                         userProps.showLine = index !== (customerDetails.actions.length - 1);
                         userProps.fieldName = action.text || action.name;
-                        userProps.onPress = actions[action.name].bind(page, customerDetails);
                         userProps.count = action.count;
 
                         return userProps;

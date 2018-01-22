@@ -3,7 +3,9 @@ const Http = require("sf-core/net/http");
 const http = new Http();
 const mcs = require("../lib/mcs");
 const Network = require('sf-core/device/network');
-
+const File = require('sf-core/io/file');
+const Path = require('sf-core/io/path');
+const FileStream = require('sf-core/io/filestream');
 
 exports.getCustomers = getCustomers;
 exports.addCustomer = addCustomer;
@@ -51,8 +53,41 @@ function addCustomer(customerData, callback) {
     if (Network.connectionType === Network.ConnectionType.None) {
         return alert(lang.noInternetMessage, lang.noInternetTitle);
     }
-    
-    callback && callback(null, customerData);
+
+    var path = "../mock/customer.json";
+    var customerJson = require(path);
+
+    var lastItemLength = Object.keys(customerJson.items).length;
+
+    customerJson.items[lastItemLength] = customerData;
+
+    Object.assign(customerData, {
+        id: lastItemLength
+    })
+
+    var file = new File({
+        path: path
+    });
+    console.log("length  " + lastItemLength);
+    console.log(JSON.stringify(customerData));
+    console.log(JSON.stringify(customerJson));
+    try {
+        var fileStream = file.openStream(FileStream.StreamType.WRITE, FileStream.ContentMode.BINARY);
+        fileStream.write(JSON.stringify(customerJson));
+        fileStream.close();
+    }
+    catch (err) {
+        console.log(err.message);
+    }
+
+    // jsonfile.writeFile(path, modifiedCustomerJson, function(err) {
+    //     if (err) {
+    //         console.log("while writing json file error occured");
+    //     }
+    //     console.log("writing to file is successfull");
+    // })
+
+    callback && callback(null, customerJson);
     // var options = {
     //     "apiName": "Endpoints",
     //     "endpointPath": "contacts",
@@ -84,11 +119,11 @@ function getSingleCustomer(id, callback) {
         if (err) {
             return alert("Customers Service Error");
         }
-        console.log("befor for loop");
+
         for (let i in customerData.items) {
-            console.log("i is " + i );
+
             if (customerData.items[i].id == id) {
-                console.log("found id  is " + i );
+
                 var detectedCustomer = customerData.items[i];
                 callback && callback(null, detectedCustomer);
             }
