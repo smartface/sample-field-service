@@ -223,14 +223,16 @@ const pgNewCustomer = extend(pgNewCustomerDesign)(
                 customFields: {
                     CO: {
                         Email: tiEmail.text,
-                        Phone: tiPhone.text,
+                        Phone: tiPhone.text
                     }
                 }
             };
             if (pictureSet) {
                 var picture = pictureSet;
                 //TODO: increase quality
-                customerData.CO.Picture = picture.compress(Image.Format.JPEG, 1).toBase64();
+                //console.log("Picture is " + customerData.customFields.CO.Picture);
+                customerData.customFields.CO.Picture = picture.compress(Image.Format.JPEG, 1).toBase64();
+                console.log("" + customerData.customFields.CO.Picture);
             }
 
             addCustomer(customerData, function(err, newCustomerData) {
