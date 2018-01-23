@@ -166,7 +166,7 @@ const pgLogin = extend(pgLoginDesign)(
         if (Application.currentReleaseChannel === "demo") {
             page.imgLogo.onTouch = function() {
                 tiPassword.text = "123qweASD";
-                tiUserName.text = "selfservice";
+                tiUserName.text = "fieldservice";
             };
         }
     });

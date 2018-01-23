@@ -26,6 +26,7 @@ exports.PURPLE = {
     addCustomer: Image.createFromFile("images://add_white.png"),
     lineSeparator: Color.create("#979797"),
     secondaryColor: Color.create("#F6A623"),
+    flTabBackgroundColor: Color.create("#836CB3"),
     inactiveColor: Color.create("#B395F0"),
     highlight: Color.create(135, 175, 92, 238),
     share: Image.createFromFile("images://share_purple.png"),
@@ -66,6 +67,7 @@ exports.NAVY = {
         endColor: Color.create("#B7CE63")
     }),
     secondaryColor: Color.create("#50D2C2"),
+    flTabBackgroundColor: Color.create("#2C3239"),
     inactiveColor: Color.create("#C6C6C6"),
     highlight: Color.create(135, 153, 236, 105),
     share: Image.createFromFile("images://share.png"),

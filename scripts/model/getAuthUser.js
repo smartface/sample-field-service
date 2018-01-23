@@ -15,7 +15,7 @@ userAuth.getAuthUser = (function() {
         var username = options.username;
         var password = options.password;
 
-        var url = "https://commonsmartface.blob.core.windows.net/assetmanagement/authentication.json";
+        var url = "https://commonsmartface.blob.core.windows.net/fieldservice/fieldservice.json";
         var sessionManager = new Http();
 
         sessionManager.requestJSON({

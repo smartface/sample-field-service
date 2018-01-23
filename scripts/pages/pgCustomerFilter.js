@@ -183,7 +183,7 @@ const pgCustomerFilter = extend(pgCustomerFilterDesign)(
             var selectedTheme = theme[theme.selected];
             page.statusBar.android && (page.statusBar.android.color = selectedTheme.topBarColor);
             page.headerBar.backgroundColor = selectedTheme.topBarColor;
-
+            page.flTab.backgroundColor = selectedTheme.flTabBackgroundColor;
             page.flTabHighlight.backgroundColor = selectedTheme.secondaryColor;
         }
 
