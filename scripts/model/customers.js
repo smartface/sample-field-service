@@ -6,6 +6,8 @@ const Network = require('sf-core/device/network');
 const File = require('sf-core/io/file');
 const Path = require('sf-core/io/path');
 const FileStream = require('sf-core/io/filestream');
+const System = require('sf-core/device/system');
+//const AndroidConfig = require("sf-core/util/Android/androidconfig.js");
 
 exports.getCustomers = getCustomers;
 exports.addCustomer = addCustomer;
@@ -63,21 +65,47 @@ function addCustomer(customerData, callback) {
 
     Object.assign(customerData, {
         id: lastItemLength
-    })
-
-    var file = new File({
-        path: path
     });
+
+    console.log("  " + System.OS);
+    var file;
+    if (System.OS === "Android") {
+        file = new File({
+            path: "/storage/emulated/0/Android/data/io.smartface.SmartfaceApp/system/rau/assets/mock/customer.json"
+        });
+        if (!file.exists) {
+            file = new File({
+                path: "/storage/emulated/0/Android/data/io.smartface.SmartfaceApp/cache/assets/mock/customer.json"
+            });
+            if (!file.exists) {
+                file = new File({
+                    path: "/storage/emulated/0/Android/data/io.smartface.SmartfaceApp/assets/mock/customer.json"
+                });
+            }
+        }
+    }
+    else {
+        file = new File({
+            path: Path.DataDirectory + '/scripts/mock/customer.json'
+        });
+    }
+
+    console.log("path is" + path);
+    console.log("new note is " + JSON.stringify(customerJson));
+
     try {
-        var fileStream = file.openStream(FileStream.StreamType.WRITE, FileStream.ContentMode.BINARY);
-        fileStream.write(JSON.stringify(customerJson));
-        fileStream.close();
+        if (System.OS === "Android") {
+            var fileStream = file.openStream(FileStream.StreamType.WRITE, FileStream.ContentMode.TEXT);
+            var isIt = fileStream.write(JSON.stringify(customerJson));
+            console.log("write is succeed ?  " + isIt)
+            fileStream.close();
+        }
     }
     catch (err) {
-        console.log("customer error message is "+ err.message);
-      // return callback(customerJson);
+        console.log("customer error message is " + err.message);
+        // return callback(customerJson);
     }
-     return callback && callback(null, customerJson);
+    return callback && callback(null, customerJson);
 
     // jsonfile.writeFile(path, modifiedCustomerJson, function(err) {
     //     if (err) {

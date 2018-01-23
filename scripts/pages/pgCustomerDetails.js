@@ -190,7 +190,7 @@ const pgCustomerDetails = extend(pgCustomerDetailsDesign)(
                 right: 0,
                 bottom: 0,
                 positionType: FlexLayout.PositionType.ABSOLUTE,
-                backgroundColor: Color.TRANSPARENT,
+                backgroundColor: Color.create(24,216,216,216),
                 alignItems: FlexLayout.AlignItems.STRETCH,
                 flexDirection: FlexLayout.FlexDirection.COLUMN,
                 justifyContent: FlexLayout.JustifyContent.FLEX_START
@@ -290,7 +290,7 @@ const pgCustomerDetails = extend(pgCustomerDetailsDesign)(
                 });
                 layoutHeight += shadow.size;
             }
-            svCustomerDetail.layout.height = layoutHeight;
+            svCustomerDetail.layout.height = layoutHeight + 20;
             page.imgCustomerPicture.image = customerDetails.picture ||
                 Image.createFromFile("images://customers_empty.png");
 

@@ -8,6 +8,6 @@ function getImage(base64String) {
     if(base64String.startsWith(prefix))
         base64String = base64String.substr(prefix.length);
     var blob = Blob.createFromBase64(base64String);
-    var img = Image.createFromBlob(blob).resize(59,59);
+    var img = Image.createFromBlob(blob);
     return img;
 }

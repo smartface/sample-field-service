@@ -194,24 +194,26 @@ const pgCustomers = extend(pgCustomersDesign)(
 
         page.onShow = function onShow(data) {
             baseOnShow && baseOnShow(data);
-            
-               // filter = data.filter;
-                setTimeout(function() {
-                    getCustomers(filter, function(err, customers) {
-                        console.log("after getting customers. Is there error? " + !!err);
-                        if (err) {
-                            return alert(JSON.stringify(err), "Customers Service Error");
-                        }
-                        bindData(customers);
+
+            // filter = data.filter;
+            setTimeout(function() {
+                getCustomers(filter, function(err, customers) {
+                    console.log("after getting customers. Is there error? " + !!err);
+                    if (err) {
+                        return alert(JSON.stringify(err), "Customers Service Error");
+                    }
+                    bindData(customers);
+                    if (data && data.filter) {
                         page.aiWait.visible = false;
                         page.lvCustomers.visible = true;
                         initSearchView();
-                    });
-                }, initTime);
+                    }
+                });
+            }, initTime);
 
-                // ListView.constructor.prototype.refreshCustomers = function(customerData) {
-                //     bindData(customerData);
-                // }
+            // ListView.constructor.prototype.refreshCustomers = function(customerData) {
+            //     bindData(customerData);
+            // }
 
             page.statusBar.ios.style = StatusBarStyle.LIGHTCONTENT;
             backAction(page);

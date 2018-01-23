@@ -177,7 +177,7 @@ function speech() {
 	const hbiSpeech = page.headerBar.items[0];
 	if (!speechToText.isRunning) {
 		hbiSpeech.title = lang.stop;
-		speechToText.startType(page.taNote, function() {
+		speechToText.startType(page.taNote,4000, function() {
 			hbiSpeech.title = lang.speech;
 		});
 	}

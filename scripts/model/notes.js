@@ -2,6 +2,8 @@
 const Network = require('sf-core/device/network');
 const File = require('sf-core/io/file');
 const FileStream = require('sf-core/io/filestream');
+const System = require('sf-core/device/system');
+const Path = require('sf-core/io/path');
 
 
 exports.getNotes = getNotes;
@@ -118,16 +120,36 @@ function addNote(noteContent, currentNoteData, selectedIndex, callback) {
             notes[lastItemLength] = newNote
         };
 
-        var path = "../mock/notes.json";
+        var file;
+        if (System.OS === "Android") {
+            file = new File({
+                path: "/storage/emulated/0/Android/data/io.smartface.SmartfaceApp/system/rau/assets/mock/notes.json"
+            });
+            if (!file.exists) {
+                file = new File({
+                    path: "/storage/emulated/0/Android/data/io.smartface.SmartfaceApp/cache/assets/mock/notes.json"
+                });
+                if (!file.exists) {
+                    file = new File({
+                        path: "/storage/emulated/0/Android/data/io.smartface.SmartfaceApp/assets/mock/notes.json"
+                    });
+                }
+            }
+        }
+        else {
+            file = new File({
+                path: Path.DataDirectory + '/scripts/mock/notes.json'
+            });
+        }
 
-        var file = new File({
-            path: path
-        });
+        // var path = "/storage/emulated/0/Android/data/io.smartface.SmartfaceApp/cache/assets/mock/notes.json";
 
         try {
-            var fileStream = file.openStream(FileStream.StreamType.WRITE, FileStream.ContentMode.BINARY);
-            fileStream.write(JSON.stringify(notes));
-            fileStream.close();
+            if (System.OS === "Android") {
+                var fileStream = file.openStream(FileStream.StreamType.WRITE, FileStream.ContentMode.TEXT);
+                fileStream.write(JSON.stringify(notes));
+                fileStream.close();
+            }
             // return callback && callback(null, notes);
         }
         catch (err) {
