@@ -68,17 +68,16 @@ function addCustomer(customerData, callback) {
     var file = new File({
         path: path
     });
-    console.log("length  " + lastItemLength);
-    console.log(JSON.stringify(customerData));
-    console.log(JSON.stringify(customerJson));
     try {
         var fileStream = file.openStream(FileStream.StreamType.WRITE, FileStream.ContentMode.BINARY);
         fileStream.write(JSON.stringify(customerJson));
         fileStream.close();
     }
     catch (err) {
-        console.log(err.message);
+        console.log("customer error message is "+ err.message);
+      // return callback(customerJson);
     }
+     return callback && callback(null, customerJson);
 
     // jsonfile.writeFile(path, modifiedCustomerJson, function(err) {
     //     if (err) {
@@ -86,8 +85,6 @@ function addCustomer(customerData, callback) {
     //     }
     //     console.log("writing to file is successfull");
     // })
-
-    callback && callback(null, customerJson);
     // var options = {
     //     "apiName": "Endpoints",
     //     "endpointPath": "contacts",

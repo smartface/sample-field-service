@@ -87,7 +87,6 @@ const pgCustomerDetails = extend(pgCustomerDetailsDesign)(
         page.onShow = function onShow(id) {
             baseOnShow && baseOnShow();
             applyTheme();
-            console.log("this is on show function");
             sliderDrawer.enabled = false;
 
             page.headerBar.title = lang.customerDetails;
@@ -96,18 +95,16 @@ const pgCustomerDetails = extend(pgCustomerDetailsDesign)(
                     if (!page.dataID)
                         page.dataID = id;
                     notes.getNotes(function(err, notes) {
-                        console.log("satir 84");
                         if (err) {
                             return alert(JSON.stringify(err), "Customer Service Error");
                         }
-                        console.log("satir 87");
+                        
                         getSingleCustomer(id, function(err, customerData) {
                             page.flWait.visible = true;
                             console.log("after getting single. Is there error? " + !!err);
                             if (err) {
                                 return alert(JSON.stringify(err), "Customer Service Error");
                             }
-                            console.log("custom data is " + JSON.stringify(customerData));
                             var customerDetails = {
                                 fields: [{
                                     name: lang["Customer Number"],
@@ -146,7 +143,7 @@ const pgCustomerDetails = extend(pgCustomerDetailsDesign)(
 
                             page.lblName.text = customerData.lookupName;
                             page.lblTitle.text = customerData.customFields.CO.Title;
-                            console.log("satir 131");
+                         
                             customerInfo = {
                                 displayName: customerData.lookupName || "",
                                 phoneNumber: customerData.customFields.CO.Phone || "",
@@ -157,9 +154,7 @@ const pgCustomerDetails = extend(pgCustomerDetailsDesign)(
                                 firstName: customerData.name.first || "",
                                 lastName: customerData.name.last || ""
                             };
-                            console.log("before");
                             loadData.call(this, customerDetails);
-                            console.log("after");
                             page.flWait.visible = false;
                             svCustomerDetail.visible = true;
                             page.layout.applyLayout();
@@ -184,13 +179,10 @@ const pgCustomerDetails = extend(pgCustomerDetailsDesign)(
         }
 
         function loadData(customerDetails) {
-            console.log("173")
             if (!svCustomerDetail)
-                // console.log("in load data condition");
                 return;
             var contactData = {};
 
-            console.log("in load data after condition");
             // var layout = new FlexLayout();
             var layout = new FlexLayout({
                 left: 0,

@@ -46,8 +46,8 @@ function onShow(superOnShow, data) {
 	if (data && data.customerId) {
 		page.putToWaitMode();
 		page.customerId = data.customerId;
-		page.refreshData();
 	}
+	page.refreshData();
 
 	backAction(page);
 	applyTheme.call(page);
@@ -150,6 +150,7 @@ function onLoad(superOnLoad) {
 
 
 		var myImageView = new ImageView({
+			id: 4848,
 			image: nextImage,
 			right: 17,
 			bottom: 0,
@@ -159,6 +160,7 @@ function onLoad(superOnLoad) {
 		flListRow.addChild(myImageView);
 
 		var line = new View({
+			id: 4849,
 			backgroundColor: selectedTheme.lineSeparator,
 			positionType: FlexLayout.PositionType.ABSOLUTE,
 			height: 0.5,
@@ -167,7 +169,6 @@ function onLoad(superOnLoad) {
 			right: 20
 		});
 		flListRow.addChild(line);
-
 
 
 		return lvNotesItem;
@@ -180,9 +181,12 @@ function onLoad(superOnLoad) {
 		var flListRow = lvNotesItem.findChildById(flNoteRowId);
 		var lblNoteName = flListRow.findChildById(lblNoteNameId);
 		var lblDate = flListRow.findChildById(lblDateId);
+
 		var itemData = page.data[index];
+
 		lblNoteName.text = itemData.displayName;
 		lblDate.text = itemData.modifiedOnDisplayValue;
+
 		if (System.OS === "Android") {
 			lvNotesItem.nativeObject.setOnLongClickListener(NativeView.OnLongClickListener.implement({
 				onLongClick: function(view) {
@@ -238,7 +242,8 @@ function onLoad(superOnLoad) {
 	lvNotes.onRowSelected = function(listViewItem, index) {
 		Router.go("pgNoteContent", {
 			noteData: page.data[index],
-			pgNotes: page
+			pgNotes: page,
+			index : index
 		});
 	};
 

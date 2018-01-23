@@ -26,6 +26,8 @@ const pgNoteContent = extend(pgNoteContentDesign)(
 function onShow(superOnShow, data) {
 	const page = this;
 	superOnShow();
+	page.selectedIndex = data.index;
+    console.log("in show seleceted index" + page.selectedIndex);
 	var taNote = page.taNote;
 	var noteData;
 	if (data) {
@@ -132,7 +134,7 @@ function onHide() {
 
 function addNote(text) {
 	const page = this;
-	notes.addNote(text, function(err) {
+	notes.addNote(text,page.originalNoteData,page.selectedIndex,function(err) {
 		if (err)
 			return;
 		page.pgNotes.refreshData();
@@ -159,7 +161,7 @@ function deleteNote(page) {
 						err.body = err.body.toString();
 					err = JSON.stringify(err, null, "\t");
 				}
-				return alert(err, "note delete error");
+				return alert(err, "note delete error 22");
 			}
 			Router.goBack("pgNotes");
 		});

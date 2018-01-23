@@ -1,18 +1,41 @@
-[
-  {
-    "name": "Field note 1",
-    "modifiedOn": "January 19, 2018 12:13:00"
-  },
-  {
-    "name": "Field note 2",
-    "modifiedOn": "January 19, 2018 12:13:00"
-  },
-  {
-    "name": "Field note 3",
-    "modifiedOn": "January 19, 2018 12:13:00"
-  },
-  {
-    "name": "Field note 4",
-    "modifiedOn": "January 19, 2018 12:13:00"
-  }
+[{
+        "id": "1",
+        "name": "Field note 1",
+        "displayName": "Field note 1",
+        "modifiedOnDisplayValue": "January 19, 2018 12:13:00",
+        "modifiedOn": "January 19, 2018 12:13:00",
+        "content": {
+            "text": "Smartface isolates you from complexities of the mobile world and facilitates enterprise mobility transformation"
+        }
+    },
+    {
+        "id": "2",
+        "name": "Field note 2",
+        "displayName": "Field note 2",
+        "modifiedOnDisplayValue": "January 19, 2018 12:13:00",
+        "modifiedOn": "January 19, 2018 12:13:00",
+        "content": {
+            "text": "Smartface isolates you from complexities of the mobile world and facilitates enterprise mobility transformation"
+        }
+    },
+    {
+        "id": "3",
+        "name": "Field note 3",
+        "displayName": "Field note 3",
+        "modifiedOnDisplayValue": "January 19, 2018 12:13:00",
+        "modifiedOn": "January 19, 2018 12:13:00",
+        "content": {
+            "text": "Smartface isolates you from complexities of the mobile world and facilitates enterprise mobility transformation"
+        }
+    },
+    {
+        "id": "4",
+        "name": "Field note 4",
+        "displayName": "Field note 4",
+        "modifiedOnDisplayValue": "January 19, 2018 12:13:00",
+        "modifiedOn": "January 19, 2018 12:13:00",
+        "content": {
+            "text": "Smartface isolates you from complexities of the mobile world and facilitates enterprise mobility transformation"
+        }
+    }
 ]
