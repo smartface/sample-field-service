@@ -67,7 +67,6 @@ function addCustomer(customerData, callback) {
         id: lastItemLength
     });
 
-    console.log("  " + System.OS);
     var file;
     if (System.OS === "Android") {
         file = new File({
@@ -75,11 +74,11 @@ function addCustomer(customerData, callback) {
         });
         if (!file.exists) {
             file = new File({
-                path: "/storage/emulated/0/Android/data/io.smartface.SmartfaceApp/cache/assets/mock/customer.json"
+                path: "assets://mock/customer.json"
             });
             if (!file.exists) {
                 file = new File({
-                    path: "/storage/emulated/0/Android/data/io.smartface.SmartfaceApp/assets/mock/customer.json"
+                    path: "/storage/emulated/0/Android/data/io.smartface.fieldservice/assets/mock/customer.json"
                 });
             }
         }
@@ -89,10 +88,7 @@ function addCustomer(customerData, callback) {
             path: Path.DataDirectory + '/scripts/mock/customer.json'
         });
     }
-
-    console.log("path is" + path);
-    console.log("new note is " + JSON.stringify(customerJson));
-
+    
     try {
         if (System.OS === "Android") {
             var fileStream = file.openStream(FileStream.StreamType.WRITE, FileStream.ContentMode.TEXT);

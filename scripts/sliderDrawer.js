@@ -31,9 +31,19 @@ var sliderDrawer = new SliderDrawer({
         sliderDrawer.onHide = function sliderDrawer_onHide() {
             uiSliderDrawer.whenHide();
             sliderDrawer.shown = false;
+            // sliderDrawer.backgroundColor = Color.createGradient({
+            //     direction: Color.GradientDirection.HORIZONTAL,
+            //     startColor: Color.create("#06BEBD"),
+            //     endColor: Color.create("#7CC981")
+            // });
         };
         sliderDrawer.onShow = function sliderDrawer_onShow() {
             sliderDrawer.shown = true;
+            // sliderDrawer.backgroundColor = Color.createGradient({
+            //     direction: Color.GradientDirection.HORIZONTAL,
+            //     startColor: Color.create("#382B53"),
+            //     endColor: Color.create("#4E4168")
+            // });
         };
         sliderDrawer.shown = false;
         sliderDrawer.children = sliderDrawer.children || {};
@@ -41,7 +51,7 @@ var sliderDrawer = new SliderDrawer({
         mapProperties(sliderDrawer, uiSliderDrawer, ["lblUserName", "lblTitle", "imgUserPicture"]);
 
         sliderDrawer.setUserData = function sliderDrawerSetUserData() {
-            console.log( userData.currentUser + "  is our data ");
+            console.log(userData.currentUser + "  is our data ");
             if (userData.currentUser) {
                 console.log("in set user data" + userData.currentUser.firstName);
                 var userFullName = userData.currentUser.firstName + " " + userData.currentUser.lastName;
@@ -67,12 +77,10 @@ sliderDrawer.setUserData = function() {};
 
 sliderDrawer.applyTheme = function sliderDrawer_applyTheme() {
     var selectedTheme = theme[theme.selected];
+    //console.log("theme is " + selectedTheme.sliderDrawer.nativeObject);
     sliderDrawer.layout.backgroundColor = selectedTheme.sliderDrawer;
     sliderDrawer.children.content.flHighlight.backgroundColor = selectedTheme.highlight;
 };
-
-
-
 
 
 sliderDrawer.setLeftItem = function setLeftItem(headerBar, force) {

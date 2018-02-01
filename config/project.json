@@ -3,7 +3,7 @@
 		"name": "Field Service",
 		"company": "Smartface, Inc.",
 		"webSite": "https://www.smartface.io",
-		"version": "1.4.3",
+		"version": "2.0.3",
 		"runtimeVersion": "1100",
 		"description": "Smartface Field Services App powered by Oracle MCS"
 	},
@@ -63,7 +63,7 @@
 						"active": false
 					}
 				},
-				"playerPath": ""
+				"playerPath": "/iosPlayer.zip"
 			},
 			"android": {
 				"scripts": "scripts",
@@ -84,7 +84,7 @@
 						"active": false
 					}
 				},
-				"playerPath": ""
+				"playerPath": null
 			},
 			"keys": {
 				"project3DesKey": "OGZX+aN+KdKD2JNKHBJguikZrYnuahOt",
@@ -94,11 +94,11 @@
 		"output": {
 			"ios": {
 				"outputFolder": "output/iOS",
-				"bundleIdentifier": "io.smartface.fieldservice"
+				"bundleIdentifier": "io.smartface.smartapp.fieldservice"
 			},
 			"android": {
 				"outputFolder": "output/Android",
-				"packageName": "io.smartface.fieldservice"
+				"packageName": "io.smartface.smartapp.fieldservice"
 			}
 		},
 		"tempFolder": "output/.tmp"

@@ -3,11 +3,11 @@
         <CompanyName>Smartface, Inc.</CompanyName>
         <LicenseName>Field Service</LicenseName>
         <SASVersion>v5.0.0</SASVersion>
-        <CreateDate>02.00.2018 12:21:04</CreateDate>
-        <ExpireDate>00.00.2028 12:21:04</ExpireDate>
+        <CreateDate>03.00.2018 14:24:05</CreateDate>
+        <ExpireDate>01.00.2028 14:24:05</ExpireDate>
         <LicenseType>Professional</LicenseType>
         <PackageType>iOS</PackageType>
-        <PackageName>io.smartface.fieldservice</PackageName>
+        <PackageName>io.smartface.smartapp.fieldservice</PackageName>
         <PackageFeatures>
             <PackageFeature>
                 <FeatureName>Feature</FeatureName>
@@ -21,11 +21,11 @@
         <CompanyName>Smartface, Inc.</CompanyName>
         <LicenseName>Field Service</LicenseName>
         <SASVersion>v5.0.0</SASVersion>
-        <CreateDate>02.00.2018 12:21:04</CreateDate>
-        <ExpireDate>00.00.2028 12:21:04</ExpireDate>
+        <CreateDate>03.00.2018 14:24:05</CreateDate>
+        <ExpireDate>01.00.2028 14:24:05</ExpireDate>
         <LicenseType>Professional</LicenseType>
         <PackageType>Android</PackageType>
-        <PackageName>io.smartface.fieldservice</PackageName>
+        <PackageName>io.smartface.smartapp.fieldservice</PackageName>
         <PackageFeatures>
             <PackageFeature>
                 <FeatureName>Feature</FeatureName>

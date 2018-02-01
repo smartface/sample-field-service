@@ -8,6 +8,7 @@ const StatusBarStyle = require('sf-core/ui/statusbarstyle');
 const theme = require("../lib/theme");
 const fingerprint = require("sf-extension-utils").fingerprint;
 const Data = require('sf-core/data');
+const Color = require("sf-core/ui/color");
 
 const pgSettings = extend(pgSettingsDesign)(
     function(_super) {
@@ -21,7 +22,6 @@ const pgSettings = extend(pgSettingsDesign)(
             page.android.onBackButtonPressed = function(e) {
                 Router.goBack("pgDashboard");
             };
-
             page.lblAbout.text = lang.about + " v" + Application.version;
             page.swNotifications.toggle = true;
             page.lblText.text = lang.aboutContent;

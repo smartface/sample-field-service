@@ -50,8 +50,6 @@ const pgNotification = extend(pgNotificationDesign)(
             page.android.onBackButtonPressed = function(e) {
                 Router.goBack("pgDashboard");
             };
-
-
         };
 
         page.onShow = function onShow(data) {
@@ -119,7 +117,6 @@ const pgNotification = extend(pgNotificationDesign)(
                 Object.assign(notificationRow, {
                     left: 0,
                     right: 0,
-                    // height: 200,
                     // backgroundColor: colors[i],
                     date: items[i].createdTime,
                     title: items[i].primaryContact.name,
@@ -136,8 +133,6 @@ const pgNotification = extend(pgNotificationDesign)(
             flNotifications.height = height;
             flNotifications.applyLayout();
         }
-
-
     });
 
 

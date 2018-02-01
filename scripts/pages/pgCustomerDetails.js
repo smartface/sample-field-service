@@ -142,7 +142,7 @@ const pgCustomerDetails = extend(pgCustomerDetailsDesign)(
                                 customerDetails.picture = Image.createFromFile("images://customers_empty.png");
 
                             page.lblName.text = customerData.lookupName;
-                            page.lblTitle.text = customerData.customFields.CO.Title;
+                            page.lblTitle.text = customerData.customFields.CO.Title || "";
                          
                             customerInfo = {
                                 displayName: customerData.lookupName || "",
