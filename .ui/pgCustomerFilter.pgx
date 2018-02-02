@@ -19,8 +19,7 @@
 			"className": ".page",
 			"version": "6.6.0",
 			"props": {
-				"orientation": "AUTO",
-				"isRemovable": true,
+				"name": "pgCustomerFilter",
 				"children": [
 					"2d83-c184-1e06-2b6a",
 					"3b9d-b4eb-d6a4-6dca",
@@ -28,8 +27,9 @@
 					"97c7-e855-29d5-70d4",
 					"9710-5893-7066-e47d"
 				],
-				"name": "pgCustomerFilter",
-				"parent": null
+				"parent": null,
+				"orientation": "AUTO",
+				"isRemovable": true
 			}
 		},
 		{
@@ -40,10 +40,10 @@
 			},
 			"className": ".statusBar",
 			"props": {
-				"isRemovable": false,
+				"name": "statusBar",
 				"children": [],
 				"parent": "181f-0f15-9ec2-7c4b",
-				"name": "statusBar"
+				"isRemovable": false
 			}
 		},
 		{
@@ -57,11 +57,11 @@
 			},
 			"className": ".headerBar",
 			"props": {
+				"name": "headerBar",
 				"title": "Search",
-				"isRemovable": false,
 				"children": [],
 				"parent": "181f-0f15-9ec2-7c4b",
-				"name": "headerBar"
+				"isRemovable": false
 			}
 		},
 		{
@@ -75,6 +75,7 @@
 				"height": 42.5,
 				"visible": true,
 				"width": null,
+				"usePageVariable": true,
 				"flexProps": {
 					"alignContent": "STRETCH",
 					"alignItems": "STRETCH",
@@ -86,12 +87,13 @@
 			},
 			"className": ".flexLayout",
 			"props": {
+				"name": "flTab",
+				"usePageVariable": true,
 				"children": [
 					"f7fd-3361-eb07-c8fa",
 					"4524-4335-e2db-14bb"
 				],
-				"parent": "181f-0f15-9ec2-7c4b",
-				"name": "flTab"
+				"parent": "181f-0f15-9ec2-7c4b"
 			}
 		},
 		{
@@ -121,13 +123,13 @@
 			},
 			"className": ".flexLayout",
 			"props": {
+				"name": "flButtons",
 				"usePageVariable": true,
 				"children": [
 					"411b-6465-be12-03be",
 					"a124-7b7b-5750-a1b5"
 				],
-				"parent": "1c95-3076-96e6-1de7",
-				"name": "flButtons"
+				"parent": "1c95-3076-96e6-1de7"
 			}
 		},
 		{
@@ -157,14 +159,14 @@
 			},
 			"className": ".flexLayout",
 			"props": {
+				"name": "flTabIndicator",
 				"usePageVariable": true,
 				"children": [
 					"0959-5012-6b5e-08e1",
 					"f54a-adb2-b216-1772",
 					"816e-f5c3-bc08-f449"
 				],
-				"parent": "1c95-3076-96e6-1de7",
-				"name": "flTabIndicator"
+				"parent": "1c95-3076-96e6-1de7"
 			}
 		},
 		{
@@ -195,11 +197,11 @@
 			},
 			"className": ".button",
 			"props": {
+				"name": "btnName",
 				"text": "Name Surname",
 				"usePageVariable": true,
 				"children": [],
-				"parent": "f7fd-3361-eb07-c8fa",
-				"name": "btnName"
+				"parent": "f7fd-3361-eb07-c8fa"
 			}
 		},
 		{
@@ -230,11 +232,11 @@
 			},
 			"className": ".button",
 			"props": {
+				"name": "btnCard",
 				"text": "Card Number",
 				"usePageVariable": true,
 				"children": [],
-				"parent": "f7fd-3361-eb07-c8fa",
-				"name": "btnCard"
+				"parent": "f7fd-3361-eb07-c8fa"
 			}
 		},
 		{
@@ -261,10 +263,10 @@
 			},
 			"className": ".flexLayout",
 			"props": {
+				"name": "placeHolderLeft",
 				"usePageVariable": true,
 				"children": [],
-				"parent": "4524-4335-e2db-14bb",
-				"name": "placeHolderLeft"
+				"parent": "4524-4335-e2db-14bb"
 			}
 		},
 		{
@@ -291,10 +293,10 @@
 			},
 			"className": ".flexLayout",
 			"props": {
+				"name": "flTabHighlight",
 				"usePageVariable": true,
 				"children": [],
-				"parent": "4524-4335-e2db-14bb",
-				"name": "flTabHighlight"
+				"parent": "4524-4335-e2db-14bb"
 			}
 		},
 		{
@@ -321,10 +323,10 @@
 			},
 			"className": ".flexLayout",
 			"props": {
+				"name": "placeHolderRight",
 				"usePageVariable": true,
 				"children": [],
-				"parent": "4524-4335-e2db-14bb",
-				"name": "placeHolderRight"
+				"parent": "4524-4335-e2db-14bb"
 			}
 		},
 		{
@@ -352,13 +354,13 @@
 			},
 			"className": ".flexLayout",
 			"props": {
+				"name": "flInputs",
 				"children": [
 					"6424-b0e9-bf1e-2d62",
 					"8510-b95d-dcc3-9a96",
 					"4ebe-a326-2d2b-fa3c"
 				],
-				"parent": "181f-0f15-9ec2-7c4b",
-				"name": "flInputs"
+				"parent": "181f-0f15-9ec2-7c4b"
 			}
 		},
 		{
@@ -385,13 +387,13 @@
 			},
 			"className": ".flexLayout",
 			"props": {
+				"name": "flFirstLine",
 				"usePageVariable": true,
 				"children": [
 					"328f-e81f-22ee-4b9e",
 					"e9bb-c1a0-06a5-41b3"
 				],
-				"parent": "97c7-e855-29d5-70d4",
-				"name": "flFirstLine"
+				"parent": "97c7-e855-29d5-70d4"
 			}
 		},
 		{
@@ -420,13 +422,13 @@
 			},
 			"className": ".flexLayout",
 			"props": {
+				"name": "flNameInput",
 				"usePageVariable": true,
 				"children": [
 					"967c-bce9-248c-fc91",
 					"e3b0-caf1-29a0-211d"
 				],
-				"parent": "6424-b0e9-bf1e-2d62",
-				"name": "flNameInput"
+				"parent": "6424-b0e9-bf1e-2d62"
 			}
 		},
 		{
@@ -451,11 +453,11 @@
 			},
 			"className": ".flexLayout",
 			"props": {
+				"name": "flNameIcon",
 				"children": [
 					"3ae5-ca8c-eb10-7dd8"
 				],
-				"parent": "328f-e81f-22ee-4b9e",
-				"name": "flNameIcon"
+				"parent": "328f-e81f-22ee-4b9e"
 			}
 		},
 		{
@@ -479,10 +481,10 @@
 			},
 			"className": ".imageView",
 			"props": {
+				"name": "imgName",
 				"usePageVariable": true,
 				"children": [],
-				"parent": "967c-bce9-248c-fc91",
-				"name": "imgName"
+				"parent": "967c-bce9-248c-fc91"
 			}
 		},
 		{
@@ -509,10 +511,10 @@
 			},
 			"className": ".flexLayout",
 			"props": {
+				"name": "flNameInputArea",
 				"usePageVariable": true,
 				"children": [],
-				"parent": "328f-e81f-22ee-4b9e",
-				"name": "flNameInputArea"
+				"parent": "328f-e81f-22ee-4b9e"
 			}
 		},
 		{
@@ -540,13 +542,13 @@
 			},
 			"className": ".flexLayout",
 			"props": {
+				"name": "flCardInput",
 				"usePageVariable": true,
 				"children": [
 					"80d4-6a4b-0fd5-b20e",
 					"7546-0d1d-eb49-3461"
 				],
-				"parent": "6424-b0e9-bf1e-2d62",
-				"name": "flCardInput"
+				"parent": "6424-b0e9-bf1e-2d62"
 			}
 		},
 		{
@@ -571,11 +573,11 @@
 			},
 			"className": ".flexLayout",
 			"props": {
+				"name": "flCardIcon",
 				"children": [
 					"35e0-8ad7-0586-f3bb"
 				],
-				"parent": "e9bb-c1a0-06a5-41b3",
-				"name": "flCardIcon"
+				"parent": "e9bb-c1a0-06a5-41b3"
 			}
 		},
 		{
@@ -599,10 +601,10 @@
 			},
 			"className": ".imageView",
 			"props": {
+				"name": "imgCard",
 				"usePageVariable": true,
 				"children": [],
-				"parent": "80d4-6a4b-0fd5-b20e",
-				"name": "imgCard"
+				"parent": "80d4-6a4b-0fd5-b20e"
 			}
 		},
 		{
@@ -629,10 +631,10 @@
 			},
 			"className": ".flexLayout",
 			"props": {
+				"name": "flCardInputArea",
 				"usePageVariable": true,
 				"children": [],
-				"parent": "e9bb-c1a0-06a5-41b3",
-				"name": "flCardInputArea"
+				"parent": "e9bb-c1a0-06a5-41b3"
 			}
 		},
 		{
@@ -661,13 +663,13 @@
 			},
 			"className": ".flexLayout",
 			"props": {
+				"name": "flPhoneInput",
 				"usePageVariable": true,
 				"children": [
 					"06d8-544a-241a-b803",
 					"7479-be61-f9e6-652d"
 				],
-				"parent": "97c7-e855-29d5-70d4",
-				"name": "flPhoneInput"
+				"parent": "97c7-e855-29d5-70d4"
 			}
 		},
 		{
@@ -692,11 +694,11 @@
 			},
 			"className": ".flexLayout",
 			"props": {
+				"name": "flPhoneIcon",
 				"children": [
 					"bf5f-275c-1a44-4576"
 				],
-				"parent": "8510-b95d-dcc3-9a96",
-				"name": "flPhoneIcon"
+				"parent": "8510-b95d-dcc3-9a96"
 			}
 		},
 		{
@@ -720,10 +722,10 @@
 			},
 			"className": ".imageView",
 			"props": {
+				"name": "imgPhone",
 				"usePageVariable": true,
 				"children": [],
-				"parent": "06d8-544a-241a-b803",
-				"name": "imgPhone"
+				"parent": "06d8-544a-241a-b803"
 			}
 		},
 		{
@@ -750,10 +752,10 @@
 			},
 			"className": ".flexLayout",
 			"props": {
+				"name": "flPhoneInputArea",
 				"usePageVariable": true,
 				"children": [],
-				"parent": "8510-b95d-dcc3-9a96",
-				"name": "flPhoneInputArea"
+				"parent": "8510-b95d-dcc3-9a96"
 			}
 		},
 		{
@@ -782,13 +784,13 @@
 			},
 			"className": ".flexLayout",
 			"props": {
+				"name": "flEmailInput",
 				"usePageVariable": true,
 				"children": [
 					"f217-e5fb-9da6-c64f",
 					"8aa6-9109-bb62-7d43"
 				],
-				"parent": "97c7-e855-29d5-70d4",
-				"name": "flEmailInput"
+				"parent": "97c7-e855-29d5-70d4"
 			}
 		},
 		{
@@ -813,11 +815,11 @@
 			},
 			"className": ".flexLayout",
 			"props": {
+				"name": "flEmailIcon",
 				"children": [
 					"e9e0-a19f-0b58-c764"
 				],
-				"parent": "4ebe-a326-2d2b-fa3c",
-				"name": "flEmailIcon"
+				"parent": "4ebe-a326-2d2b-fa3c"
 			}
 		},
 		{
@@ -841,10 +843,10 @@
 			},
 			"className": ".imageView",
 			"props": {
+				"name": "imgEmail",
 				"usePageVariable": true,
 				"children": [],
-				"parent": "f217-e5fb-9da6-c64f",
-				"name": "imgEmail"
+				"parent": "f217-e5fb-9da6-c64f"
 			}
 		},
 		{
@@ -871,10 +873,10 @@
 			},
 			"className": ".flexLayout",
 			"props": {
+				"name": "flEmailInputArea",
 				"usePageVariable": true,
 				"children": [],
-				"parent": "4ebe-a326-2d2b-fa3c",
-				"name": "flEmailInputArea"
+				"parent": "4ebe-a326-2d2b-fa3c"
 			}
 		},
 		{
@@ -891,10 +893,10 @@
 			},
 			"className": ".flexLayout",
 			"props": {
+				"name": "flSearch",
 				"children": [
 					"3ab2-7ebd-e95f-4eb1"
 				],
-				"name": "flSearch",
 				"parent": "181f-0f15-9ec2-7c4b"
 			}
 		},
@@ -916,10 +918,10 @@
 			},
 			"className": ".button",
 			"props": {
-				"usePageVariable": true,
-				"text": "Search",
-				"children": [],
 				"name": "btnSearch",
+				"text": "Search",
+				"usePageVariable": true,
+				"children": [],
 				"parent": "9710-5893-7066-e47d"
 			}
 		}

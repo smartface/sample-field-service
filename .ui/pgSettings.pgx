@@ -11,7 +11,7 @@
 			"className": ".page",
 			"version": "6.6.0",
 			"props": {
-				"orientation": "PORTRAIT",
+				"name": "pgSettings",
 				"children": [
 					"83cf-5982-de98-2de3",
 					"15df-3234-062d-f7b4",
@@ -21,7 +21,7 @@
 					"4965-e69d-9585-e295"
 				],
 				"parent": null,
-				"name": "pgSettings"
+				"orientation": "PORTRAIT"
 			}
 		},
 		{
@@ -30,10 +30,10 @@
 			"userProps": {},
 			"className": ".statusBar",
 			"props": {
+				"name": "statusBar",
 				"children": [],
 				"parent": "bb6d-395c-8785-ff3a",
-				"isRemovable": false,
-				"name": "statusBar"
+				"isRemovable": false
 			}
 		},
 		{
@@ -46,11 +46,11 @@
 			},
 			"className": ".headerBar",
 			"props": {
+				"name": "headerBar",
 				"title": "Settings",
 				"children": [],
 				"parent": "bb6d-395c-8785-ff3a",
-				"isRemovable": false,
-				"name": "headerBar"
+				"isRemovable": false
 			}
 		},
 		{
@@ -69,12 +69,12 @@
 			},
 			"className": ".flexLayout",
 			"props": {
+				"name": "flTheme",
 				"children": [
 					"ae3b-b98c-4b2d-a1a7",
 					"01a3-a347-933f-dcb5",
 					"4523-9f99-5149-4c8b"
 				],
-				"name": "flTheme",
 				"parent": "bb6d-395c-8785-ff3a"
 			}
 		},
@@ -95,12 +95,12 @@
 			},
 			"className": ".flexLayout",
 			"props": {
+				"name": "flNotifications",
 				"children": [
 					"137f-4fcd-4838-72fa",
 					"fb5c-22f9-4abe-99d0",
 					"841d-96ed-bd1a-ac46"
 				],
-				"name": "flNotifications",
 				"parent": "bb6d-395c-8785-ff3a"
 			}
 		},
@@ -114,6 +114,7 @@
 				"marginLeft": 20,
 				"marginRight": 15,
 				"marginTop": 61.3,
+				"usePageVariable": true,
 				"flexProps": {
 					"flexGrow": 1,
 					"flexDirection": "COLUMN"
@@ -121,11 +122,12 @@
 			},
 			"className": ".flexLayout",
 			"props": {
+				"name": "flTexts",
+				"usePageVariable": true,
 				"children": [
 					"c0b5-0ef5-3266-bc1f",
 					"30e8-84bc-9abb-b05f"
 				],
-				"name": "flTexts",
 				"parent": "bb6d-395c-8785-ff3a"
 			}
 		},
@@ -150,10 +152,10 @@
 			},
 			"className": ".label",
 			"props": {
+				"name": "lblTheme",
 				"text": "Theme",
 				"usePageVariable": true,
 				"children": [],
-				"name": "lblTheme",
 				"parent": "e7fc-24f5-be19-d204"
 			}
 		},
@@ -173,11 +175,11 @@
 			},
 			"className": ".flexLayout",
 			"props": {
+				"name": "flThemeSelections",
 				"children": [
 					"ad9f-0f32-7382-5c6e",
 					"7bda-dde1-acfc-f8ba"
 				],
-				"name": "flThemeSelections",
 				"parent": "e7fc-24f5-be19-d204"
 			}
 		},
@@ -199,11 +201,11 @@
 			},
 			"className": ".flexLayout",
 			"props": {
+				"name": "flPurpleSelection",
 				"usePageVariable": true,
 				"children": [
 					"1001-fcdc-17d9-a78a"
 				],
-				"name": "flPurpleSelection",
 				"parent": "01a3-a347-933f-dcb5"
 			}
 		},
@@ -221,8 +223,8 @@
 			},
 			"className": ".flexLayout",
 			"props": {
-				"children": [],
 				"name": "flPurple",
+				"children": [],
 				"parent": "ad9f-0f32-7382-5c6e"
 			}
 		},
@@ -244,11 +246,11 @@
 			},
 			"className": ".flexLayout",
 			"props": {
+				"name": "flNavySelection",
 				"usePageVariable": true,
 				"children": [
 					"b58a-701e-3bf4-0028"
 				],
-				"name": "flNavySelection",
 				"parent": "01a3-a347-933f-dcb5"
 			}
 		},
@@ -266,8 +268,8 @@
 			},
 			"className": ".flexLayout",
 			"props": {
-				"children": [],
 				"name": "flNavy",
+				"children": [],
 				"parent": "7bda-dde1-acfc-f8ba"
 			}
 		},
@@ -293,10 +295,10 @@
 			},
 			"className": ".label",
 			"props": {
+				"name": "lblNotifications",
 				"text": "Notification",
 				"usePageVariable": true,
 				"children": [],
-				"name": "lblNotifications",
 				"parent": "7fd8-cec3-6138-8507"
 			}
 		},
@@ -313,10 +315,10 @@
 			},
 			"className": ".switch",
 			"props": {
+				"name": "swNotifications",
 				"usePageVariable": true,
 				"toggle": false,
 				"children": [],
-				"name": "swNotifications",
 				"parent": "7fd8-cec3-6138-8507"
 			}
 		},
@@ -337,16 +339,17 @@
 			},
 			"className": ".label",
 			"props": {
+				"name": "lblAbout",
 				"text": "About v1.0.0",
 				"usePageVariable": true,
 				"children": [],
-				"name": "lblAbout",
 				"parent": "4965-e69d-9585-e295"
 			}
 		},
 		{
 			"type": "Label",
 			"id": "30e8-84bc-9abb-b05f",
+			"hiddenComponent": true,
 			"userProps": {
 				"width": null,
 				"text": "With the Field Service application, you manage field operations and deliver the best customer service on-the-go",
@@ -366,10 +369,10 @@
 			},
 			"className": ".label",
 			"props": {
+				"name": "lblText",
 				"text": "With the Field Service application, you manage field operations and deliver the best customer service on-the-go",
 				"usePageVariable": true,
 				"children": [],
-				"name": "lblText",
 				"parent": "4965-e69d-9585-e295"
 			}
 		},
@@ -392,9 +395,9 @@
 			},
 			"className": ".flexLayout",
 			"props": {
+				"name": "flLineTheme",
 				"usePageVariable": true,
 				"children": [],
-				"name": "flLineTheme",
 				"parent": "e7fc-24f5-be19-d204"
 			}
 		},
@@ -417,9 +420,9 @@
 			},
 			"className": ".flexLayout",
 			"props": {
+				"name": "flLineNotifications",
 				"usePageVariable": true,
 				"children": [],
-				"name": "flLineNotifications",
 				"parent": "7fd8-cec3-6138-8507"
 			}
 		},
@@ -440,12 +443,12 @@
 			},
 			"className": ".flexLayout",
 			"props": {
+				"name": "flFingerPrint",
 				"children": [
 					"9d6e-5fad-7c41-479f",
 					"21f9-5702-951d-753e",
 					"2d3a-b9ea-329c-54c4"
 				],
-				"name": "flFingerPrint",
 				"parent": "bb6d-395c-8785-ff3a"
 			}
 		},
@@ -462,10 +465,10 @@
 			},
 			"className": ".switch",
 			"props": {
+				"name": "swFingerprint",
 				"usePageVariable": true,
 				"toggle": false,
 				"children": [],
-				"name": "swFingerprint",
 				"parent": "8970-d8b3-b6d2-33b0"
 			}
 		},
@@ -491,10 +494,10 @@
 			},
 			"className": ".label",
 			"props": {
+				"name": "lblFingerPrint",
 				"text": "Use FingerPrint",
 				"usePageVariable": true,
 				"children": [],
-				"name": "lblFingerPrint",
 				"parent": "8970-d8b3-b6d2-33b0"
 			}
 		},
@@ -518,9 +521,9 @@
 			},
 			"className": ".flexLayout",
 			"props": {
+				"name": "flLineFingerPrint",
 				"usePageVariable": true,
 				"children": [],
-				"name": "flLineFingerPrint",
 				"parent": "8970-d8b3-b6d2-33b0"
 			}
 		}
