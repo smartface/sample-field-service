@@ -18,6 +18,9 @@ const pgSettings = extend(pgSettingsDesign)(
         var baseOnShow = page.onShow;
         page.onLoad = function onLoad() {
             baseOnLoad && baseOnLoad();
+
+            page.ios.safeAreaLayoutMode = true;
+            
             sliderDrawer.setLeftItem(page.headerBar);
             page.android.onBackButtonPressed = function(e) {
                 Router.goBack("pgDashboard");

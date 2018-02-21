@@ -1,11 +1,22 @@
 {
 	"components": [
 		{
-			"type": "Page",
+			"className": ".page",
 			"id": "63b5-cbad-e858-f352",
+			"initialized": true,
+			"props": {
+				"children": [
+					"0ccd-e7f4-8d4b-865a",
+					"5b3d-a333-2e54-9457"
+				],
+				"isRemovable": true,
+				"name": "pgEntry",
+				"orientation": "PORTRAIT",
+				"parent": null
+			},
+			"type": "Page",
 			"userProps": {
 				"backgroundColor": "#FFFFFF",
-				"orientation": "PORTRAIT",
 				"flexProps": {
 					"alignContent": "STRETCH",
 					"alignItems": "CENTER",
@@ -13,52 +24,41 @@
 					"flexDirection": "COLUMN",
 					"flexWrap": "NOWRAP",
 					"justifyContent": "CENTER"
-				}
+				},
+				"orientation": "PORTRAIT"
 			},
-			"className": ".page",
-			"version": "6.6.0",
-			"props": {
-				"orientation": "PORTRAIT",
-				"isRemovable": true,
-				"children": [
-					"0ccd-e7f4-8d4b-865a",
-					"5b3d-a333-2e54-9457"
-				],
-				"name": "pgEntry",
-				"parent": null
-			},
-			"initialized": true
+			"version": "6.6.1"
 		},
 		{
-			"type": "StatusBar",
+			"className": ".statusBar",
 			"id": "0ccd-e7f4-8d4b-865a",
+			"props": {
+				"children": [],
+				"isRemovable": false,
+				"name": "statusBar",
+				"parent": "63b5-cbad-e858-f352"
+			},
+			"type": "StatusBar",
 			"userProps": {
 				"visible": true
-			},
-			"className": ".statusBar",
-			"props": {
-				"isRemovable": false,
-				"children": [],
-				"parent": "63b5-cbad-e858-f352",
-				"name": "statusBar"
 			}
 		},
 		{
-			"type": "HeaderBar",
+			"className": ".headerBar",
 			"id": "5b3d-a333-2e54-9457",
+			"props": {
+				"children": [],
+				"isRemovable": false,
+				"name": "headerBar",
+				"parent": "63b5-cbad-e858-f352",
+				"title": "Field Service"
+			},
+			"type": "HeaderBar",
 			"userProps": {
 				"backgroundColor": "#FFFFFF",
-				"visible": true,
 				"title": "Field Service",
-				"titleColor": "#000000"
-			},
-			"className": ".headerBar",
-			"props": {
-				"title": "Field Service",
-				"isRemovable": false,
-				"children": [],
-				"parent": "63b5-cbad-e858-f352",
-				"name": "headerBar"
+				"titleColor": "#000000",
+				"visible": true
 			}
 		}
 	]

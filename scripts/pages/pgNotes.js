@@ -105,6 +105,9 @@ function applyTheme() {
 function onLoad(superOnLoad) {
 	const page = this;
 	superOnLoad();
+
+	page.ios.safeAreaLayoutMode = true;
+	
 	var selectedTheme = theme[theme.selected];
 	const lvNotes = page.lvNotes;
 	// const aiNotes = page.aiNotes;
@@ -243,7 +246,7 @@ function onLoad(superOnLoad) {
 		Router.go("pgNoteContent", {
 			noteData: page.data[index],
 			pgNotes: page,
-			index : index
+			index: index
 		});
 	};
 

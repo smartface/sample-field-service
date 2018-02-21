@@ -207,13 +207,16 @@ const NotificationRow = extend(FlexLayout)(
 					var areaWidth = Screen.width - contentStartLeft;
 					var numberOfCharactersPerLine = areaWidth / 8;
 					var extraLines = (text.match(/\n/g) || []).length;
+					console.log("extralines = " + extraLines);
 					var numberOfLines = Math.floor(1 + (text.length / numberOfCharactersPerLine) + extraLines);
+					console.log("numberOfLines = " + numberOfLines);
 					var lblHeight = numberOfLines * 21;
+					console.log("lblHeight = " + lblHeight);
 					lblContent.height = lblHeight;
 					lblContent.text = text;
 
 					var rowHeight = topShift + lblHeight + lblTitle.height;
-					row.height = rowHeight +20;
+					row.height = rowHeight + 50;
 
 					return value;
 				}

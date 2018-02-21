@@ -45,6 +45,8 @@ const pgCustomers = extend(pgCustomersDesign)(
         page.onLoad = function onLoad() {
             baseOnLoad && baseOnLoad();
 
+            page.ios.safeAreaLayoutMode = true;
+
             var selectedTheme = theme[theme.selected];
             var fmNewCustomer = new FloatingMenu({
                 width: 56,

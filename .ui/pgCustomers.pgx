@@ -1,106 +1,106 @@
 {
 	"components": [
 		{
-			"type": "Page",
+			"className": ".page",
 			"id": "0678-cf6d-cce0-97f1",
 			"initialized": true,
-			"userProps": {
-				"backgroundColor": "rgba( 255, 255, 255, 1 )",
-				"orientation": "AUTO",
-				"flexProps": {
-					"alignItems": "CENTER",
-					"justifyContent": "CENTER"
-				}
-			},
-			"className": ".page",
-			"version": "6.6.0",
 			"props": {
-				"orientation": "AUTO",
 				"children": [
 					"0196-71c2-0ef6-1ab7",
 					"5845-b092-d3d9-014b",
 					"6d16-8447-b88d-7345",
 					"0374-43e7-8ab8-9ae7"
 				],
-				"parent": null,
-				"name": "pgCustomers"
-			}
-		},
-		{
-			"type": "StatusBar",
-			"id": "0196-71c2-0ef6-1ab7",
-			"userProps": {},
-			"className": ".statusBar",
-			"props": {
-				"children": [],
-				"parent": "0678-cf6d-cce0-97f1",
-				"isRemovable": false,
-				"name": "statusBar"
-			}
-		},
-		{
-			"type": "HeaderBar",
-			"id": "5845-b092-d3d9-014b",
-			"userProps": {
-				"title": "Customers",
-				"backgroundColor": "rgba( 44, 50, 57, 1 )",
-				"titleColor": "rgba( 255, 255, 255, 1 )"
+				"name": "pgCustomers",
+				"orientation": "AUTO",
+				"parent": null
 			},
-			"className": ".headerBar",
+			"type": "Page",
+			"userProps": {
+				"backgroundColor": "rgba( 255, 255, 255, 1 )",
+				"flexProps": {
+					"alignItems": "CENTER",
+					"justifyContent": "CENTER"
+				},
+				"orientation": "AUTO"
+			},
+			"version": "6.6.1"
+		},
+		{
+			"className": ".statusBar",
+			"id": "0196-71c2-0ef6-1ab7",
 			"props": {
-				"title": "Customers",
 				"children": [],
-				"parent": "0678-cf6d-cce0-97f1",
 				"isRemovable": false,
-				"name": "headerBar"
+				"name": "statusBar",
+				"parent": "0678-cf6d-cce0-97f1"
+			},
+			"type": "StatusBar",
+			"userProps": {}
+		},
+		{
+			"className": ".headerBar",
+			"id": "5845-b092-d3d9-014b",
+			"props": {
+				"children": [],
+				"isRemovable": false,
+				"name": "headerBar",
+				"parent": "0678-cf6d-cce0-97f1",
+				"title": "Customers"
+			},
+			"type": "HeaderBar",
+			"userProps": {
+				"backgroundColor": "rgba( 44, 50, 57, 1 )",
+				"title": "Customers",
+				"titleColor": "rgba( 255, 255, 255, 1 )"
 			}
 		},
 		{
-			"type": "ListView",
+			"className": ".listView",
 			"id": "0374-43e7-8ab8-9ae7",
-			"userProps": {
-				"width": null,
-				"height": null,
-				"left": 0,
-				"top": 7.43,
-				"right": 0,
-				"bottom": 0,
-				"usePageVariable": true,
-				"backgroundColor": "rgba( 255, 255, 255, 0 )",
+			"props": {
+				"children": [],
 				"itemCount": 4,
+				"name": "lvCustomers",
+				"parent": "0678-cf6d-cce0-97f1",
 				"rowHeight": 106.43,
-				"visible": false,
+				"usePageVariable": true
+			},
+			"type": "ListView",
+			"userProps": {
+				"backgroundColor": "rgba( 255, 255, 255, 0 )",
+				"bottom": 0,
 				"flexProps": {
 					"positionType": "ABSOLUTE",
 					"right": 0,
 					"bottom": 0
-				}
-			},
-			"className": ".listView",
-			"props": {
-				"usePageVariable": true,
+				},
+				"height": null,
 				"itemCount": 4,
+				"left": 0,
+				"right": 0,
 				"rowHeight": 106.43,
-				"children": [],
-				"name": "lvCustomers",
-				"parent": "0678-cf6d-cce0-97f1"
+				"top": 7.43,
+				"usePageVariable": true,
+				"visible": false,
+				"width": null
 			}
 		},
 		{
-			"type": "ActivityIndicator",
-			"id": "6d16-8447-b88d-7345",
-			"userProps": {
-				"usePageVariable": true,
-				"minHeight": 21,
-				"minWidth": 21,
-				"flexProps": {}
-			},
 			"className": ".activityIndicator",
+			"id": "6d16-8447-b88d-7345",
 			"props": {
-				"usePageVariable": true,
 				"children": [],
 				"name": "aiWait",
-				"parent": "0678-cf6d-cce0-97f1"
+				"parent": "0678-cf6d-cce0-97f1",
+				"usePageVariable": true
+			},
+			"type": "ActivityIndicator",
+			"userProps": {
+				"flexProps": {},
+				"minHeight": 21,
+				"minWidth": 21,
+				"usePageVariable": true
 			}
 		}
 	]

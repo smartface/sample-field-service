@@ -45,6 +45,8 @@ const pgNewCustomer = extend(pgNewCustomerDesign)(
         page.onLoad = function onLoad() {
             baseOnLoad && baseOnLoad();
 
+            page.ios.safeAreaLayoutMode = true;
+
             page.android.onBackButtonPressed = function(e) {
                 back();
             };

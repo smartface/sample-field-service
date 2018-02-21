@@ -47,6 +47,9 @@ const pgCustomerFilter = extend(pgCustomerFilterDesign)(
 
         page.onLoad = function onLoad() {
             baseOnLoad && baseOnLoad();
+
+            page.ios.safeAreaLayoutMode = true;
+            
             sliderDrawer.setLeftItem(page.headerBar);
 
             page.android.onBackButtonPressed = function(e) {

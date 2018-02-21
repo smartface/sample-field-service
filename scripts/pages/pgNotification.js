@@ -23,6 +23,8 @@ const pgNotification = extend(pgNotificationDesign)(
 
         page.onLoad = function onLoad() {
             baseOnLoad && baseOnLoad();
+
+            page.ios.safeAreaLayoutMode = true;
             sliderDrawer.setLeftItem(page.headerBar);
             var svNotifications = new ScrollView({
                 left: 0,
