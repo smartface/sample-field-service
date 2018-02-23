@@ -8,12 +8,7 @@
 				"children": [
 					"ee09-8ab5-829b-2afe",
 					"4083-1d74-3688-c7cc",
-					"5b2d-99d6-b6da-1307",
-					"7076-c0b3-24a6-a508",
-					"94da-a808-b8b6-cad0",
-					"bae0-62a8-9c1d-4966",
-					"8319-c0df-c933-2a7c",
-					"92b5-1518-433e-8687"
+					"b55d-a705-8051-d252"
 				],
 				"name": "pgCustomerDetails",
 				"orientation": "AUTO",
@@ -55,12 +50,36 @@
 			}
 		},
 		{
+			"className": ".flexLayout",
+			"id": "b55d-a705-8051-d252",
+			"props": {
+				"children": [
+					"1f0f-3990-d5db-6fd2",
+					"8b00-e664-c981-7c46",
+					"5ad5-38f1-f9e0-f763",
+					"3b3e-5f16-f5cb-0ce8",
+					"d6ac-55b5-50d9-a4de",
+					"9d44-623d-7420-2aa0"
+				],
+				"name": "customerfl",
+				"parent": "5522-9546-0c15-ae75"
+			},
+			"type": "FlexLayout",
+			"userProps": {
+				"flexProps": {
+					"flexGrow": 1
+				},
+				"height": null,
+				"width": null
+			}
+		},
+		{
 			"className": ".button",
-			"id": "5b2d-99d6-b6da-1307",
+			"id": "1f0f-3990-d5db-6fd2",
 			"props": {
 				"children": [],
 				"name": "btnBack",
-				"parent": "5522-9546-0c15-ae75",
+				"parent": "b55d-a705-8051-d252",
 				"text": "<",
 				"usePageVariable": true
 			},
@@ -75,99 +94,23 @@
 				"left": 12,
 				"text": "<",
 				"textColor": "rgba( 0, 0, 0, 1 )",
-				"top": 30,
+				"top": 33,
 				"usePageVariable": true,
 				"visible": false,
 				"width": 10.5
 			}
 		},
 		{
-			"className": ".label",
-			"id": "94da-a808-b8b6-cad0",
-			"props": {
-				"children": [],
-				"name": "lblName",
-				"parent": "5522-9546-0c15-ae75",
-				"text": "Adam Stewart",
-				"usePageVariable": true
-			},
-			"type": "Label",
-			"userProps": {
-				"flexProps": {
-					"alignSelf": "AUTO"
-				},
-				"font": {
-					"family": "Lato",
-					"size": 24
-				},
-				"height": 32,
-				"marginTop": 14.64,
-				"text": "Adam Stewart",
-				"textAlignment": "MIDCENTER",
-				"textColor": "rgba( 36, 42, 52, 1 )",
-				"usePageVariable": true,
-				"width": null
-			}
-		},
-		{
-			"className": ".label",
-			"id": "bae0-62a8-9c1d-4966",
-			"props": {
-				"children": [],
-				"name": "lblTitle",
-				"parent": "5522-9546-0c15-ae75",
-				"text": " Lorem Ipsum",
-				"usePageVariable": true
-			},
-			"type": "Label",
-			"userProps": {
-				"flexProps": {
-					"alignSelf": "AUTO"
-				},
-				"font": {
-					"family": "Lato",
-					"size": 18
-				},
-				"height": 25,
-				"text": " Lorem Ipsum",
-				"textAlignment": "MIDCENTER",
-				"textColor": "rgba( 47, 55, 68, 1 )",
-				"usePageVariable": true,
-				"width": null
-			}
-		},
-		{
 			"className": ".flexLayout",
-			"id": "8319-c0df-c933-2a7c",
-			"props": {
-				"children": [],
-				"name": "flLine",
-				"parent": "5522-9546-0c15-ae75",
-				"usePageVariable": true
-			},
-			"type": "FlexLayout",
-			"userProps": {
-				"backgroundColor": "rgba( 91, 198, 149, 1 )",
-				"flexProps": {},
-				"height": 0.5,
-				"marginLeft": 24.5,
-				"marginRight": 25.39,
-				"marginTop": 21.25,
-				"usePageVariable": true,
-				"width": null
-			}
-		},
-		{
-			"className": ".flexLayout",
-			"id": "7076-c0b3-24a6-a508",
+			"id": "8b00-e664-c981-7c46",
 			"props": {
 				"children": [
-					"4aa5-b911-f992-c991",
-					"3a96-3225-679f-9051",
-					"1638-21fe-478e-187e"
+					"1d4d-a624-1dc8-0889",
+					"f752-548f-12ef-f97a",
+					"58ac-2a03-0867-fdee"
 				],
 				"name": "flCustomerTop",
-				"parent": "5522-9546-0c15-ae75"
+				"parent": "b55d-a705-8051-d252"
 			},
 			"type": "FlexLayout",
 			"userProps": {
@@ -179,20 +122,22 @@
 					"alignItems": "CENTER"
 				},
 				"height": 90,
+				"left": 0,
 				"marginLeft": null,
 				"marginTop": 5,
 				"paddingLeft": 1,
 				"paddingRight": 1,
+				"top": 0,
 				"width": 249
 			}
 		},
 		{
 			"className": ".button",
-			"id": "4aa5-b911-f992-c991",
+			"id": "1d4d-a624-1dc8-0889",
 			"props": {
 				"children": [],
 				"name": "btnShare",
-				"parent": "7076-c0b3-24a6-a508",
+				"parent": "8b00-e664-c981-7c46",
 				"text": null,
 				"usePageVariable": true
 			},
@@ -211,11 +156,11 @@
 		},
 		{
 			"className": ".imageView",
-			"id": "3a96-3225-679f-9051",
+			"id": "f752-548f-12ef-f97a",
 			"props": {
 				"children": [],
 				"name": "imgCustomerPicture",
-				"parent": "7076-c0b3-24a6-a508",
+				"parent": "8b00-e664-c981-7c46",
 				"usePageVariable": true
 			},
 			"type": "ImageView",
@@ -236,11 +181,11 @@
 		},
 		{
 			"className": ".button",
-			"id": "1638-21fe-478e-187e",
+			"id": "58ac-2a03-0867-fdee",
 			"props": {
 				"children": [],
 				"name": "btnAddToContacts",
-				"parent": "7076-c0b3-24a6-a508",
+				"parent": "8b00-e664-c981-7c46",
 				"text": null,
 				"usePageVariable": true
 			},
@@ -258,15 +203,97 @@
 			}
 		},
 		{
+			"className": ".label",
+			"id": "5ad5-38f1-f9e0-f763",
+			"props": {
+				"children": [],
+				"name": "lblName",
+				"parent": "b55d-a705-8051-d252",
+				"text": "Adam Stewart",
+				"usePageVariable": true
+			},
+			"type": "Label",
+			"userProps": {
+				"flexProps": {
+					"alignSelf": "AUTO"
+				},
+				"font": {
+					"family": "Lato",
+					"size": 24
+				},
+				"height": 32,
+				"left": 0,
+				"marginTop": 14.64,
+				"text": "Adam Stewart",
+				"textAlignment": "MIDCENTER",
+				"textColor": "rgba( 36, 42, 52, 1 )",
+				"top": 0,
+				"usePageVariable": true,
+				"width": null
+			}
+		},
+		{
+			"className": ".label",
+			"id": "3b3e-5f16-f5cb-0ce8",
+			"props": {
+				"children": [],
+				"name": "lblTitle",
+				"parent": "b55d-a705-8051-d252",
+				"text": " Lorem Ipsum",
+				"usePageVariable": true
+			},
+			"type": "Label",
+			"userProps": {
+				"flexProps": {
+					"alignSelf": "AUTO"
+				},
+				"font": {
+					"family": "Lato",
+					"size": 18
+				},
+				"height": 25,
+				"left": 0,
+				"text": " Lorem Ipsum",
+				"textAlignment": "MIDCENTER",
+				"textColor": "rgba( 47, 55, 68, 1 )",
+				"top": 0,
+				"usePageVariable": true,
+				"width": null
+			}
+		},
+		{
+			"className": ".flexLayout",
+			"id": "d6ac-55b5-50d9-a4de",
+			"props": {
+				"children": [],
+				"name": "flLine",
+				"parent": "b55d-a705-8051-d252",
+				"usePageVariable": true
+			},
+			"type": "FlexLayout",
+			"userProps": {
+				"backgroundColor": "rgba( 91, 198, 149, 1 )",
+				"flexProps": {},
+				"height": 0.5,
+				"left": 0,
+				"marginLeft": 24.5,
+				"marginRight": 25.39,
+				"marginTop": 21.25,
+				"top": 0,
+				"usePageVariable": true,
+				"width": null
+			}
+		},
+		{
 			"className": ".flexLayout",
 			"hiddenComponent": true,
-			"id": "92b5-1518-433e-8687",
+			"id": "9d44-623d-7420-2aa0",
 			"props": {
 				"children": [
-					"140f-ff33-ea91-fb96"
+					"f0f8-bf82-fc49-0263"
 				],
 				"name": "flWait",
-				"parent": "5522-9546-0c15-ae75",
+				"parent": "b55d-a705-8051-d252",
 				"usePageVariable": true
 			},
 			"type": "FlexLayout",
@@ -282,18 +309,18 @@
 				"height": null,
 				"left": 0,
 				"right": 0,
-				"top": 2,
+				"top": 0,
 				"usePageVariable": true,
 				"width": null
 			}
 		},
 		{
 			"className": ".activityIndicator",
-			"id": "140f-ff33-ea91-fb96",
+			"id": "f0f8-bf82-fc49-0263",
 			"props": {
 				"children": [],
 				"name": "aiWait",
-				"parent": "92b5-1518-433e-8687",
+				"parent": "9d44-623d-7420-2aa0",
 				"usePageVariable": true
 			},
 			"type": "ActivityIndicator",

@@ -8,9 +8,7 @@
 				"children": [
 					"2d83-c184-1e06-2b6a",
 					"3b9d-b4eb-d6a4-6dca",
-					"1c95-3076-96e6-1de7",
-					"97c7-e855-29d5-70d4",
-					"9710-5893-7066-e47d"
+					"b3e9-8221-82cb-d2d0"
 				],
 				"isRemovable": true,
 				"name": "pgCustomerFilter",
@@ -66,14 +64,35 @@
 		},
 		{
 			"className": ".flexLayout",
-			"id": "1c95-3076-96e6-1de7",
+			"id": "b3e9-8221-82cb-d2d0",
 			"props": {
 				"children": [
-					"f7fd-3361-eb07-c8fa",
-					"4524-4335-e2db-14bb"
+					"fb75-0018-59c2-7a0f",
+					"2499-a890-1078-bc0f",
+					"a317-aa76-e19a-0276"
+				],
+				"name": "filterfl",
+				"parent": "181f-0f15-9ec2-7c4b"
+			},
+			"type": "FlexLayout",
+			"userProps": {
+				"flexProps": {
+					"flexGrow": 1
+				},
+				"height": null,
+				"width": null
+			}
+		},
+		{
+			"className": ".flexLayout",
+			"id": "fb75-0018-59c2-7a0f",
+			"props": {
+				"children": [
+					"9b3f-fe28-0cd1-f9fa",
+					"7323-22e1-ce83-f98f"
 				],
 				"name": "flTab",
-				"parent": "181f-0f15-9ec2-7c4b",
+				"parent": "b3e9-8221-82cb-d2d0",
 				"usePageVariable": true
 			},
 			"type": "FlexLayout",
@@ -91,6 +110,8 @@
 					"positionType": "RELATIVE"
 				},
 				"height": 42.5,
+				"left": 0,
+				"top": 0,
 				"usePageVariable": true,
 				"visible": true,
 				"width": null
@@ -98,14 +119,14 @@
 		},
 		{
 			"className": ".flexLayout",
-			"id": "f7fd-3361-eb07-c8fa",
+			"id": "9b3f-fe28-0cd1-f9fa",
 			"props": {
 				"children": [
-					"411b-6465-be12-03be",
-					"a124-7b7b-5750-a1b5"
+					"53d6-ecdd-d4eb-50c8",
+					"8536-9ccb-a20c-ec2c"
 				],
 				"name": "flButtons",
-				"parent": "1c95-3076-96e6-1de7",
+				"parent": "fb75-0018-59c2-7a0f",
 				"usePageVariable": true
 			},
 			"type": "FlexLayout",
@@ -133,49 +154,12 @@
 			}
 		},
 		{
-			"className": ".flexLayout",
-			"id": "4524-4335-e2db-14bb",
-			"props": {
-				"children": [
-					"0959-5012-6b5e-08e1",
-					"f54a-adb2-b216-1772",
-					"816e-f5c3-bc08-f449"
-				],
-				"name": "flTabIndicator",
-				"parent": "1c95-3076-96e6-1de7",
-				"usePageVariable": true
-			},
-			"type": "FlexLayout",
-			"userProps": {
-				"alpha": 1,
-				"backgroundColor": "rgba( 255, 255, 255, 0 )",
-				"borderColor": "rgba(0,0,0,1)",
-				"borderWidth": 0,
-				"bottom": 0,
-				"flexProps": {
-					"alignContent": "STRETCH",
-					"alignItems": "FLEX_END",
-					"flexDirection": "ROW",
-					"flexWrap": "NOWRAP",
-					"justifyContent": "FLEX_START",
-					"positionType": "ABSOLUTE"
-				},
-				"height": null,
-				"left": 0,
-				"right": 0,
-				"top": 0,
-				"usePageVariable": true,
-				"visible": true,
-				"width": null
-			}
-		},
-		{
 			"className": ".button",
-			"id": "411b-6465-be12-03be",
+			"id": "53d6-ecdd-d4eb-50c8",
 			"props": {
 				"children": [],
 				"name": "btnName",
-				"parent": "f7fd-3361-eb07-c8fa",
+				"parent": "9b3f-fe28-0cd1-f9fa",
 				"text": "Name Surname",
 				"usePageVariable": true
 			},
@@ -206,11 +190,11 @@
 		},
 		{
 			"className": ".button",
-			"id": "a124-7b7b-5750-a1b5",
+			"id": "8536-9ccb-a20c-ec2c",
 			"props": {
 				"children": [],
 				"name": "btnCard",
-				"parent": "f7fd-3361-eb07-c8fa",
+				"parent": "9b3f-fe28-0cd1-f9fa",
 				"text": "Card Number",
 				"usePageVariable": true
 			},
@@ -241,11 +225,48 @@
 		},
 		{
 			"className": ".flexLayout",
-			"id": "0959-5012-6b5e-08e1",
+			"id": "7323-22e1-ce83-f98f",
+			"props": {
+				"children": [
+					"c2ea-6266-6902-bcb2",
+					"1ec9-ecdf-cbdc-1977",
+					"266b-65be-7c54-2d10"
+				],
+				"name": "flTabIndicator",
+				"parent": "fb75-0018-59c2-7a0f",
+				"usePageVariable": true
+			},
+			"type": "FlexLayout",
+			"userProps": {
+				"alpha": 1,
+				"backgroundColor": "rgba( 255, 255, 255, 0 )",
+				"borderColor": "rgba(0,0,0,1)",
+				"borderWidth": 0,
+				"bottom": 0,
+				"flexProps": {
+					"alignContent": "STRETCH",
+					"alignItems": "FLEX_END",
+					"flexDirection": "ROW",
+					"flexWrap": "NOWRAP",
+					"justifyContent": "FLEX_START",
+					"positionType": "ABSOLUTE"
+				},
+				"height": null,
+				"left": 0,
+				"right": 0,
+				"top": 0,
+				"usePageVariable": true,
+				"visible": true,
+				"width": null
+			}
+		},
+		{
+			"className": ".flexLayout",
+			"id": "c2ea-6266-6902-bcb2",
 			"props": {
 				"children": [],
 				"name": "placeHolderLeft",
-				"parent": "4524-4335-e2db-14bb",
+				"parent": "7323-22e1-ce83-f98f",
 				"usePageVariable": true
 			},
 			"type": "FlexLayout",
@@ -271,11 +292,11 @@
 		},
 		{
 			"className": ".flexLayout",
-			"id": "f54a-adb2-b216-1772",
+			"id": "1ec9-ecdf-cbdc-1977",
 			"props": {
 				"children": [],
 				"name": "flTabHighlight",
-				"parent": "4524-4335-e2db-14bb",
+				"parent": "7323-22e1-ce83-f98f",
 				"usePageVariable": true
 			},
 			"type": "FlexLayout",
@@ -301,11 +322,11 @@
 		},
 		{
 			"className": ".flexLayout",
-			"id": "816e-f5c3-bc08-f449",
+			"id": "266b-65be-7c54-2d10",
 			"props": {
 				"children": [],
 				"name": "placeHolderRight",
-				"parent": "4524-4335-e2db-14bb",
+				"parent": "7323-22e1-ce83-f98f",
 				"usePageVariable": true
 			},
 			"type": "FlexLayout",
@@ -331,15 +352,15 @@
 		},
 		{
 			"className": ".flexLayout",
-			"id": "97c7-e855-29d5-70d4",
+			"id": "2499-a890-1078-bc0f",
 			"props": {
 				"children": [
-					"6424-b0e9-bf1e-2d62",
-					"8510-b95d-dcc3-9a96",
-					"4ebe-a326-2d2b-fa3c"
+					"4c6a-55aa-6c18-65fe",
+					"bd49-7f32-7c68-4b99",
+					"0020-cdfb-aeed-5cca"
 				],
 				"name": "flInputs",
-				"parent": "181f-0f15-9ec2-7c4b"
+				"parent": "b3e9-8221-82cb-d2d0"
 			},
 			"type": "FlexLayout",
 			"userProps": {
@@ -357,22 +378,24 @@
 					"flexGrow": 1
 				},
 				"height": null,
+				"left": 0,
 				"paddingRight": 15,
 				"paddingTop": null,
+				"top": 0,
 				"visible": true,
 				"width": null
 			}
 		},
 		{
 			"className": ".flexLayout",
-			"id": "6424-b0e9-bf1e-2d62",
+			"id": "4c6a-55aa-6c18-65fe",
 			"props": {
 				"children": [
-					"328f-e81f-22ee-4b9e",
-					"e9bb-c1a0-06a5-41b3"
+					"2d22-0bd0-714d-37f0",
+					"ce14-9acc-1a48-e519"
 				],
 				"name": "flFirstLine",
-				"parent": "97c7-e855-29d5-70d4",
+				"parent": "2499-a890-1078-bc0f",
 				"usePageVariable": true
 			},
 			"type": "FlexLayout",
@@ -399,14 +422,14 @@
 		{
 			"className": ".flexLayout",
 			"hiddenComponent": false,
-			"id": "328f-e81f-22ee-4b9e",
+			"id": "2d22-0bd0-714d-37f0",
 			"props": {
 				"children": [
-					"967c-bce9-248c-fc91",
-					"e3b0-caf1-29a0-211d"
+					"0986-da4e-384f-c5d4",
+					"b55e-83cd-9bb2-e1f9"
 				],
 				"name": "flNameInput",
-				"parent": "6424-b0e9-bf1e-2d62",
+				"parent": "4c6a-55aa-6c18-65fe",
 				"usePageVariable": true
 			},
 			"type": "FlexLayout",
@@ -433,13 +456,13 @@
 		},
 		{
 			"className": ".flexLayout",
-			"id": "967c-bce9-248c-fc91",
+			"id": "0986-da4e-384f-c5d4",
 			"props": {
 				"children": [
-					"3ae5-ca8c-eb10-7dd8"
+					"5804-145a-5bed-649c"
 				],
 				"name": "flNameIcon",
-				"parent": "328f-e81f-22ee-4b9e"
+				"parent": "2d22-0bd0-714d-37f0"
 			},
 			"type": "FlexLayout",
 			"userProps": {
@@ -462,11 +485,11 @@
 		},
 		{
 			"className": ".imageView",
-			"id": "3ae5-ca8c-eb10-7dd8",
+			"id": "5804-145a-5bed-649c",
 			"props": {
 				"children": [],
 				"name": "imgName",
-				"parent": "967c-bce9-248c-fc91",
+				"parent": "0986-da4e-384f-c5d4",
 				"usePageVariable": true
 			},
 			"type": "ImageView",
@@ -489,11 +512,11 @@
 		},
 		{
 			"className": ".flexLayout",
-			"id": "e3b0-caf1-29a0-211d",
+			"id": "b55e-83cd-9bb2-e1f9",
 			"props": {
 				"children": [],
 				"name": "flNameInputArea",
-				"parent": "328f-e81f-22ee-4b9e",
+				"parent": "2d22-0bd0-714d-37f0",
 				"usePageVariable": true
 			},
 			"type": "FlexLayout",
@@ -519,14 +542,14 @@
 		},
 		{
 			"className": ".flexLayout",
-			"id": "e9bb-c1a0-06a5-41b3",
+			"id": "ce14-9acc-1a48-e519",
 			"props": {
 				"children": [
-					"80d4-6a4b-0fd5-b20e",
-					"7546-0d1d-eb49-3461"
+					"263e-2a11-98f1-3a58",
+					"c1c5-7925-1205-1de6"
 				],
 				"name": "flCardInput",
-				"parent": "6424-b0e9-bf1e-2d62",
+				"parent": "4c6a-55aa-6c18-65fe",
 				"usePageVariable": true
 			},
 			"type": "FlexLayout",
@@ -553,13 +576,13 @@
 		},
 		{
 			"className": ".flexLayout",
-			"id": "80d4-6a4b-0fd5-b20e",
+			"id": "263e-2a11-98f1-3a58",
 			"props": {
 				"children": [
-					"35e0-8ad7-0586-f3bb"
+					"a2e6-3762-86f2-674c"
 				],
 				"name": "flCardIcon",
-				"parent": "e9bb-c1a0-06a5-41b3"
+				"parent": "ce14-9acc-1a48-e519"
 			},
 			"type": "FlexLayout",
 			"userProps": {
@@ -582,11 +605,11 @@
 		},
 		{
 			"className": ".imageView",
-			"id": "35e0-8ad7-0586-f3bb",
+			"id": "a2e6-3762-86f2-674c",
 			"props": {
 				"children": [],
 				"name": "imgCard",
-				"parent": "80d4-6a4b-0fd5-b20e",
+				"parent": "263e-2a11-98f1-3a58",
 				"usePageVariable": true
 			},
 			"type": "ImageView",
@@ -609,11 +632,11 @@
 		},
 		{
 			"className": ".flexLayout",
-			"id": "7546-0d1d-eb49-3461",
+			"id": "c1c5-7925-1205-1de6",
 			"props": {
 				"children": [],
 				"name": "flCardInputArea",
-				"parent": "e9bb-c1a0-06a5-41b3",
+				"parent": "ce14-9acc-1a48-e519",
 				"usePageVariable": true
 			},
 			"type": "FlexLayout",
@@ -640,14 +663,14 @@
 		{
 			"className": ".flexLayout",
 			"hiddenComponent": false,
-			"id": "8510-b95d-dcc3-9a96",
+			"id": "bd49-7f32-7c68-4b99",
 			"props": {
 				"children": [
-					"06d8-544a-241a-b803",
-					"7479-be61-f9e6-652d"
+					"7be7-9465-fd3a-31c5",
+					"e31d-61cb-0e7e-3311"
 				],
 				"name": "flPhoneInput",
-				"parent": "97c7-e855-29d5-70d4",
+				"parent": "2499-a890-1078-bc0f",
 				"usePageVariable": true
 			},
 			"type": "FlexLayout",
@@ -674,13 +697,13 @@
 		},
 		{
 			"className": ".flexLayout",
-			"id": "06d8-544a-241a-b803",
+			"id": "7be7-9465-fd3a-31c5",
 			"props": {
 				"children": [
-					"bf5f-275c-1a44-4576"
+					"6c63-e4fa-bfdc-60d7"
 				],
 				"name": "flPhoneIcon",
-				"parent": "8510-b95d-dcc3-9a96"
+				"parent": "bd49-7f32-7c68-4b99"
 			},
 			"type": "FlexLayout",
 			"userProps": {
@@ -703,11 +726,11 @@
 		},
 		{
 			"className": ".imageView",
-			"id": "bf5f-275c-1a44-4576",
+			"id": "6c63-e4fa-bfdc-60d7",
 			"props": {
 				"children": [],
 				"name": "imgPhone",
-				"parent": "06d8-544a-241a-b803",
+				"parent": "7be7-9465-fd3a-31c5",
 				"usePageVariable": true
 			},
 			"type": "ImageView",
@@ -730,11 +753,11 @@
 		},
 		{
 			"className": ".flexLayout",
-			"id": "7479-be61-f9e6-652d",
+			"id": "e31d-61cb-0e7e-3311",
 			"props": {
 				"children": [],
 				"name": "flPhoneInputArea",
-				"parent": "8510-b95d-dcc3-9a96",
+				"parent": "bd49-7f32-7c68-4b99",
 				"usePageVariable": true
 			},
 			"type": "FlexLayout",
@@ -761,14 +784,14 @@
 		{
 			"className": ".flexLayout",
 			"hiddenComponent": false,
-			"id": "4ebe-a326-2d2b-fa3c",
+			"id": "0020-cdfb-aeed-5cca",
 			"props": {
 				"children": [
-					"f217-e5fb-9da6-c64f",
-					"8aa6-9109-bb62-7d43"
+					"92e8-1c6b-61fc-1795",
+					"84ec-fb67-b48c-9b77"
 				],
 				"name": "flEmailInput",
-				"parent": "97c7-e855-29d5-70d4",
+				"parent": "2499-a890-1078-bc0f",
 				"usePageVariable": true
 			},
 			"type": "FlexLayout",
@@ -795,13 +818,13 @@
 		},
 		{
 			"className": ".flexLayout",
-			"id": "f217-e5fb-9da6-c64f",
+			"id": "92e8-1c6b-61fc-1795",
 			"props": {
 				"children": [
-					"e9e0-a19f-0b58-c764"
+					"57d2-e62e-f611-28fa"
 				],
 				"name": "flEmailIcon",
-				"parent": "4ebe-a326-2d2b-fa3c"
+				"parent": "0020-cdfb-aeed-5cca"
 			},
 			"type": "FlexLayout",
 			"userProps": {
@@ -824,11 +847,11 @@
 		},
 		{
 			"className": ".imageView",
-			"id": "e9e0-a19f-0b58-c764",
+			"id": "57d2-e62e-f611-28fa",
 			"props": {
 				"children": [],
 				"name": "imgEmail",
-				"parent": "f217-e5fb-9da6-c64f",
+				"parent": "92e8-1c6b-61fc-1795",
 				"usePageVariable": true
 			},
 			"type": "ImageView",
@@ -851,11 +874,11 @@
 		},
 		{
 			"className": ".flexLayout",
-			"id": "8aa6-9109-bb62-7d43",
+			"id": "84ec-fb67-b48c-9b77",
 			"props": {
 				"children": [],
 				"name": "flEmailInputArea",
-				"parent": "4ebe-a326-2d2b-fa3c",
+				"parent": "0020-cdfb-aeed-5cca",
 				"usePageVariable": true
 			},
 			"type": "FlexLayout",
@@ -881,13 +904,13 @@
 		},
 		{
 			"className": ".flexLayout",
-			"id": "9710-5893-7066-e47d",
+			"id": "a317-aa76-e19a-0276",
 			"props": {
 				"children": [
-					"3ab2-7ebd-e95f-4eb1"
+					"fc88-e142-2cb7-3931"
 				],
 				"name": "flSearch",
-				"parent": "181f-0f15-9ec2-7c4b"
+				"parent": "b3e9-8221-82cb-d2d0"
 			},
 			"type": "FlexLayout",
 			"userProps": {
@@ -896,17 +919,19 @@
 					"alignItems": "CENTER"
 				},
 				"height": 95,
+				"left": 0,
+				"top": 0,
 				"visible": false,
 				"width": null
 			}
 		},
 		{
 			"className": ".button",
-			"id": "3ab2-7ebd-e95f-4eb1",
+			"id": "fc88-e142-2cb7-3931",
 			"props": {
 				"children": [],
 				"name": "btnSearch",
-				"parent": "9710-5893-7066-e47d",
+				"parent": "a317-aa76-e19a-0276",
 				"text": "Search",
 				"usePageVariable": true
 			},

@@ -8,8 +8,7 @@
 				"children": [
 					"b75e-b915-62cf-4cc6",
 					"7fea-721f-ab47-b59c",
-					"f9fe-ee0b-1677-9492",
-					"1f21-5c15-ef35-6608"
+					"0c7b-8e59-591d-fb70"
 				],
 				"name": "pgNotes",
 				"orientation": "AUTO",
@@ -58,13 +57,36 @@
 			}
 		},
 		{
+			"className": ".flexLayout",
+			"hiddenComponent": false,
+			"id": "0c7b-8e59-591d-fb70",
+			"props": {
+				"children": [
+					"3dfe-981d-a543-2418",
+					"cdf2-5ba6-8542-61c0"
+				],
+				"name": "notesfl",
+				"parent": "0b3a-38df-bc63-6c2b"
+			},
+			"type": "FlexLayout",
+			"userProps": {
+				"flexProps": {
+					"justifyContent": "CENTER",
+					"alignItems": "CENTER",
+					"flexGrow": 1
+				},
+				"height": null,
+				"width": null
+			}
+		},
+		{
 			"className": ".listView",
-			"id": "f9fe-ee0b-1677-9492",
+			"id": "3dfe-981d-a543-2418",
 			"props": {
 				"children": [],
 				"itemCount": null,
 				"name": "lvNotes",
-				"parent": "0b3a-38df-bc63-6c2b",
+				"parent": "0c7b-8e59-591d-fb70",
 				"rowHeight": 64,
 				"usePageVariable": true
 			},
@@ -90,18 +112,15 @@
 		},
 		{
 			"className": ".activityIndicator",
-			"hiddenComponent": true,
-			"id": "1f21-5c15-ef35-6608",
+			"id": "cdf2-5ba6-8542-61c0",
 			"props": {
 				"children": [],
 				"name": "aiNotes",
-				"parent": "0b3a-38df-bc63-6c2b",
+				"parent": "0c7b-8e59-591d-fb70",
 				"usePageVariable": true
 			},
 			"type": "ActivityIndicator",
 			"userProps": {
-				"minHeight": 21,
-				"minWidth": 21,
 				"usePageVariable": true
 			}
 		}

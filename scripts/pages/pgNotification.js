@@ -19,12 +19,23 @@ const pgNotification = extend(pgNotificationDesign)(
         _super(this);
         const baseOnLoad = page.onLoad;
         const baseOnShow = page.onShow;
+        
         var flNotifications;
 
         page.onLoad = function onLoad() {
             baseOnLoad && baseOnLoad();
 
             page.ios.safeAreaLayoutMode = true;
+            console.log("page.ios.safeAreaLayoutMode  " + page.ios.safeAreaLayoutMode );
+
+            // page.ios.onSafeAreaPaddingChange = function(paddingObject) {
+                
+            //     paddingObject.bottom = 50;
+            //     console.log("padding is  " + paddingObject.left);
+                
+            //     return paddingObject;
+            // };
+
             sliderDrawer.setLeftItem(page.headerBar);
             var svNotifications = new ScrollView({
                 left: 0,

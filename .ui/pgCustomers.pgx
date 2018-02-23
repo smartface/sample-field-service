@@ -8,8 +8,7 @@
 				"children": [
 					"0196-71c2-0ef6-1ab7",
 					"5845-b092-d3d9-014b",
-					"6d16-8447-b88d-7345",
-					"0374-43e7-8ab8-9ae7"
+					"abd8-e2e5-05a5-a8cf"
 				],
 				"name": "pgCustomers",
 				"orientation": "AUTO",
@@ -56,13 +55,39 @@
 			}
 		},
 		{
+			"className": ".flexLayout",
+			"id": "abd8-e2e5-05a5-a8cf",
+			"props": {
+				"children": [
+					"b27e-53a1-d2fe-24bd",
+					"ed74-7eb7-2606-1443"
+				],
+				"name": "customerfl",
+				"parent": "0678-cf6d-cce0-97f1"
+			},
+			"type": "FlexLayout",
+			"userProps": {
+				"bottom": 0,
+				"flexProps": {
+					"justifyContent": "CENTER",
+					"alignItems": "CENTER",
+					"positionType": "ABSOLUTE"
+				},
+				"height": null,
+				"left": 0,
+				"right": 0,
+				"top": 0,
+				"width": null
+			}
+		},
+		{
 			"className": ".listView",
-			"id": "0374-43e7-8ab8-9ae7",
+			"id": "b27e-53a1-d2fe-24bd",
 			"props": {
 				"children": [],
 				"itemCount": 4,
 				"name": "lvCustomers",
-				"parent": "0678-cf6d-cce0-97f1",
+				"parent": "abd8-e2e5-05a5-a8cf",
 				"rowHeight": 106.43,
 				"usePageVariable": true
 			},
@@ -80,7 +105,7 @@
 				"left": 0,
 				"right": 0,
 				"rowHeight": 106.43,
-				"top": 7.43,
+				"top": 0,
 				"usePageVariable": true,
 				"visible": false,
 				"width": null
@@ -88,18 +113,15 @@
 		},
 		{
 			"className": ".activityIndicator",
-			"id": "6d16-8447-b88d-7345",
+			"id": "ed74-7eb7-2606-1443",
 			"props": {
 				"children": [],
 				"name": "aiWait",
-				"parent": "0678-cf6d-cce0-97f1",
+				"parent": "abd8-e2e5-05a5-a8cf",
 				"usePageVariable": true
 			},
 			"type": "ActivityIndicator",
 			"userProps": {
-				"flexProps": {},
-				"minHeight": 21,
-				"minWidth": 21,
 				"usePageVariable": true
 			}
 		}

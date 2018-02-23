@@ -8,7 +8,6 @@
 				"children": [
 					"1df1-f78b-fb72-bf9a",
 					"f3eb-0036-c5ba-bb44",
-					"34ec-fb5e-f361-f64b",
 					"dc05-73a6-6a31-69b8"
 				],
 				"isRemovable": true,
@@ -64,12 +63,32 @@
 			}
 		},
 		{
+			"className": ".flexLayout",
+			"id": "dc05-73a6-6a31-69b8",
+			"props": {
+				"children": [
+					"83ac-b3f7-29f2-441c"
+				],
+				"name": "dashfl",
+				"parent": "4b8f-4603-1200-4f16"
+			},
+			"type": "FlexLayout",
+			"userProps": {
+				"flexProps": {
+					"positionType": "RELATIVE",
+					"flexGrow": 1
+				},
+				"height": null,
+				"width": null
+			}
+		},
+		{
 			"className": ".scrollView",
-			"id": "34ec-fb5e-f361-f64b",
+			"id": "83ac-b3f7-29f2-441c",
 			"props": {
 				"children": [],
 				"name": "svChart",
-				"parent": "4b8f-4603-1200-4f16",
+				"parent": "dc05-73a6-6a31-69b8",
 				"usePageVariable": true
 			},
 			"type": "ScrollView",
@@ -85,23 +104,6 @@
 				"paddingRight": 20,
 				"paddingTop": 10,
 				"usePageVariable": true,
-				"width": null
-			}
-		},
-		{
-			"className": ".flexLayout",
-			"id": "dc05-73a6-6a31-69b8",
-			"props": {
-				"children": [],
-				"name": "flexLayout1",
-				"parent": "4b8f-4603-1200-4f16"
-			},
-			"type": "FlexLayout",
-			"userProps": {
-				"flexProps": {
-					"positionType": "ABSOLUTE"
-				},
-				"height": null,
 				"width": null
 			}
 		}

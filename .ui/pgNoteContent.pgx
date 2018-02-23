@@ -8,8 +8,7 @@
 				"children": [
 					"b1b3-9a1a-1cb3-86fc",
 					"7691-2ad5-34ca-4fce",
-					"a822-6012-5715-1699",
-					"39c5-8493-f015-f92e"
+					"e19f-7d41-cfef-6217"
 				],
 				"name": "pgNoteContent",
 				"orientation": "AUTOPORTRAIT",
@@ -55,13 +54,14 @@
 		},
 		{
 			"className": ".flexLayout",
-			"hiddenComponent": false,
-			"id": "a822-6012-5715-1699",
+			"id": "e19f-7d41-cfef-6217",
 			"props": {
-				"children": [],
-				"name": "textAreaHolder",
-				"parent": "0bd1-d6df-a9cc-62ce",
-				"usePageVariable": true
+				"children": [
+					"9d06-9212-be37-760c",
+					"6cd9-8ae9-58ce-fd01"
+				],
+				"name": "noteContentfl",
+				"parent": "0bd1-d6df-a9cc-62ce"
 			},
 			"type": "FlexLayout",
 			"userProps": {
@@ -69,24 +69,19 @@
 					"flexGrow": 1
 				},
 				"height": null,
-				"paddingBottom": 10,
-				"paddingLeft": 10,
-				"paddingRight": 10,
-				"paddingTop": 10,
-				"usePageVariable": true,
 				"width": null
 			}
 		},
 		{
 			"className": ".flexLayout",
 			"hiddenComponent": true,
-			"id": "39c5-8493-f015-f92e",
+			"id": "6cd9-8ae9-58ce-fd01",
 			"props": {
 				"children": [
-					"d350-d6bc-7070-d32c"
+					"2416-1774-a046-b131"
 				],
 				"name": "flWait",
-				"parent": "0bd1-d6df-a9cc-62ce",
+				"parent": "e19f-7d41-cfef-6217",
 				"usePageVariable": true
 			},
 			"type": "FlexLayout",
@@ -110,11 +105,11 @@
 		},
 		{
 			"className": ".activityIndicator",
-			"id": "d350-d6bc-7070-d32c",
+			"id": "2416-1774-a046-b131",
 			"props": {
 				"children": [],
 				"name": "aiWait",
-				"parent": "39c5-8493-f015-f92e",
+				"parent": "6cd9-8ae9-58ce-fd01",
 				"usePageVariable": true
 			},
 			"type": "ActivityIndicator",
@@ -122,6 +117,30 @@
 				"minHeight": 21,
 				"minWidth": 21,
 				"usePageVariable": true
+			}
+		},
+		{
+			"className": ".flexLayout",
+			"hiddenComponent": false,
+			"id": "9d06-9212-be37-760c",
+			"props": {
+				"children": [],
+				"name": "textAreaHolder",
+				"parent": "e19f-7d41-cfef-6217",
+				"usePageVariable": true
+			},
+			"type": "FlexLayout",
+			"userProps": {
+				"flexProps": {
+					"flexGrow": 1
+				},
+				"height": null,
+				"paddingBottom": 10,
+				"paddingLeft": 10,
+				"paddingRight": 10,
+				"paddingTop": 10,
+				"usePageVariable": true,
+				"width": null
 			}
 		}
 	]
