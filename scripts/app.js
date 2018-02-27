@@ -35,10 +35,11 @@ Router.add("pgDashboard", require("./pages/pgDashboard"));
 Router.add("pgCustomerFilter", require("./pages/pgCustomerFilter"));
 Router.add("pgCustomers", require("./pages/pgCustomers"));
 Router.add("pgCustomerDetails", require("./pages/pgCustomerDetails"));
-Router.add("pgNewCustomer", require("./pages/pgNewCustomer"));
+Router.add("pgNewCustomer", require("./pages/pgNewCustomer"), true);
 Router.add("pgSettings", require("./pages/pgSettings"));
 Router.add("pgNotes", require("./pages/pgNotes"));
 Router.add("pgNoteContent", require("./pages/pgNoteContent"));
+Router.add("pgSelectMap", require("./pages/pgSelectMap"));
 
 // Router.add("jet1", require("sf-extension-oracle-jet/samples/samplePage"));
 // Router.add("jet2", require("sf-extension-oracle-jet/samples/samplePageWithOfficalCharts"));

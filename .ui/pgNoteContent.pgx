@@ -1,122 +1,146 @@
 {
 	"components": [
 		{
-			"type": "Page",
+			"className": ".page",
 			"id": "0bd1-d6df-a9cc-62ce",
 			"initialized": true,
-			"userProps": {
-				"orientation": "AUTOPORTRAIT"
-			},
-			"className": ".page",
-			"version": "6.6.0",
 			"props": {
-				"orientation": "AUTOPORTRAIT",
-				"parent": null,
 				"children": [
 					"b1b3-9a1a-1cb3-86fc",
 					"7691-2ad5-34ca-4fce",
-					"a822-6012-5715-1699",
-					"39c5-8493-f015-f92e"
+					"e19f-7d41-cfef-6217"
 				],
-				"name": "pgNoteContent"
-			}
+				"name": "pgNoteContent",
+				"orientation": "AUTOPORTRAIT",
+				"parent": null
+			},
+			"type": "Page",
+			"userProps": {
+				"orientation": "AUTOPORTRAIT"
+			},
+			"version": "6.6.1"
 		},
 		{
-			"type": "StatusBar",
-			"id": "b1b3-9a1a-1cb3-86fc",
-			"userProps": {},
 			"className": ".statusBar",
+			"id": "b1b3-9a1a-1cb3-86fc",
 			"props": {
-				"parent": "0bd1-d6df-a9cc-62ce",
 				"children": [],
 				"isRemovable": false,
-				"name": "statusBar"
+				"name": "statusBar",
+				"parent": "0bd1-d6df-a9cc-62ce"
+			},
+			"type": "StatusBar",
+			"userProps": {
+				"flex": {},
+				"ios": {
+					"style": "LIGHTCONTENT"
+				}
 			}
 		},
 		{
-			"type": "HeaderBar",
+			"className": ".headerBar",
 			"id": "7691-2ad5-34ca-4fce",
-			"userProps": {
+			"props": {
+				"children": [],
+				"isRemovable": false,
+				"name": "headerBar",
+				"parent": "0bd1-d6df-a9cc-62ce",
 				"title": null
 			},
-			"className": ".headerBar",
-			"props": {
-				"title": null,
-				"parent": "0bd1-d6df-a9cc-62ce",
-				"children": [],
-				"isRemovable": false,
-				"name": "headerBar"
+			"type": "HeaderBar",
+			"userProps": {
+				"title": null
 			}
 		},
 		{
+			"className": ".flexLayout",
+			"id": "e19f-7d41-cfef-6217",
+			"props": {
+				"children": [
+					"9d06-9212-be37-760c",
+					"6cd9-8ae9-58ce-fd01"
+				],
+				"name": "noteContentfl",
+				"parent": "0bd1-d6df-a9cc-62ce"
+			},
 			"type": "FlexLayout",
-			"id": "a822-6012-5715-1699",
-			"hiddenComponent": false,
 			"userProps": {
-				"usePageVariable": true,
-				"width": null,
-				"height": null,
-				"paddingLeft": 10,
-				"paddingRight": 10,
-				"paddingTop": 10,
-				"paddingBottom": 10,
 				"flexProps": {
 					"flexGrow": 1
-				}
-			},
-			"className": ".flexLayout",
-			"props": {
-				"usePageVariable": true,
-				"name": "textAreaHolder",
-				"parent": "0bd1-d6df-a9cc-62ce",
-				"children": []
+				},
+				"height": null,
+				"width": null
 			}
 		},
 		{
-			"type": "FlexLayout",
-			"id": "39c5-8493-f015-f92e",
+			"className": ".flexLayout",
 			"hiddenComponent": true,
+			"id": "6cd9-8ae9-58ce-fd01",
+			"props": {
+				"children": [
+					"2416-1774-a046-b131"
+				],
+				"name": "flWait",
+				"parent": "e19f-7d41-cfef-6217",
+				"usePageVariable": true
+			},
+			"type": "FlexLayout",
 			"userProps": {
-				"usePageVariable": true,
-				"width": null,
-				"height": null,
-				"left": 0,
-				"right": 0,
-				"bottom": 0,
-				"top": 0,
 				"backgroundColor": "rgba( 255, 255, 255, 0 )",
+				"bottom": 0,
 				"flexProps": {
 					"positionType": "ABSOLUTE",
 					"right": 0,
 					"bottom": 0,
 					"alignItems": "CENTER",
 					"justifyContent": "CENTER"
-				}
-			},
-			"className": ".flexLayout",
-			"props": {
+				},
+				"height": null,
+				"left": 0,
+				"right": 0,
+				"top": 0,
 				"usePageVariable": true,
-				"name": "flWait",
-				"parent": "0bd1-d6df-a9cc-62ce",
-				"children": [
-					"d350-d6bc-7070-d32c"
-				]
+				"width": null
 			}
 		},
 		{
-			"type": "ActivityIndicator",
-			"id": "d350-d6bc-7070-d32c",
-			"userProps": {
-				"usePageVariable": true,
-				"minHeight": 21,
-				"minWidth": 21
-			},
 			"className": ".activityIndicator",
+			"id": "2416-1774-a046-b131",
 			"props": {
-				"usePageVariable": true,
+				"children": [],
 				"name": "aiWait",
-				"parent": "39c5-8493-f015-f92e",
-				"children": []
+				"parent": "6cd9-8ae9-58ce-fd01",
+				"usePageVariable": true
+			},
+			"type": "ActivityIndicator",
+			"userProps": {
+				"minHeight": 21,
+				"minWidth": 21,
+				"usePageVariable": true
+			}
+		},
+		{
+			"className": ".flexLayout",
+			"hiddenComponent": false,
+			"id": "9d06-9212-be37-760c",
+			"props": {
+				"children": [],
+				"name": "textAreaHolder",
+				"parent": "e19f-7d41-cfef-6217",
+				"usePageVariable": true
+			},
+			"type": "FlexLayout",
+			"userProps": {
+				"flexProps": {
+					"flexGrow": 1
+				},
+				"height": null,
+				"paddingBottom": 10,
+				"paddingLeft": 10,
+				"paddingRight": 10,
+				"paddingTop": 10,
+				"usePageVariable": true,
+				"width": null
 			}
 		}
 	]

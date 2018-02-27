@@ -1,103 +1,128 @@
 {
 	"components": [
 		{
-			"type": "Page",
+			"className": ".page",
 			"id": "0b3a-38df-bc63-6c2b",
 			"initialized": true,
-			"userProps": {
-				"orientation": "AUTO",
-				"flexProps": {
-					"alignItems": "CENTER",
-					"justifyContent": "CENTER"
-				}
-			},
-			"className": ".page",
-			"version": "6.6.0",
 			"props": {
-				"orientation": "AUTO",
-				"parent": null,
 				"children": [
 					"b75e-b915-62cf-4cc6",
 					"7fea-721f-ab47-b59c",
-					"f9fe-ee0b-1677-9492",
-					"1f21-5c15-ef35-6608"
+					"0c7b-8e59-591d-fb70"
 				],
-				"name": "pgNotes"
-			}
+				"name": "pgNotes",
+				"orientation": "AUTO",
+				"parent": null
+			},
+			"type": "Page",
+			"userProps": {
+				"flexProps": {
+					"alignItems": "CENTER",
+					"justifyContent": "CENTER"
+				},
+				"orientation": "AUTO"
+			},
+			"version": "6.6.1"
 		},
 		{
-			"type": "StatusBar",
-			"id": "b75e-b915-62cf-4cc6",
-			"userProps": {},
 			"className": ".statusBar",
+			"id": "b75e-b915-62cf-4cc6",
 			"props": {
-				"parent": "0b3a-38df-bc63-6c2b",
 				"children": [],
 				"isRemovable": false,
-				"name": "statusBar"
+				"name": "statusBar",
+				"parent": "0b3a-38df-bc63-6c2b"
+			},
+			"type": "StatusBar",
+			"userProps": {
+				"flex": {},
+				"ios": {
+					"style": "LIGHTCONTENT"
+				}
 			}
 		},
 		{
-			"type": "HeaderBar",
+			"className": ".headerBar",
 			"id": "7fea-721f-ab47-b59c",
-			"userProps": {
+			"props": {
+				"children": [],
+				"isRemovable": false,
+				"name": "headerBar",
+				"parent": "0b3a-38df-bc63-6c2b",
 				"title": "Notes"
 			},
-			"className": ".headerBar",
-			"props": {
-				"title": "Notes",
-				"parent": "0b3a-38df-bc63-6c2b",
-				"children": [],
-				"isRemovable": false,
-				"name": "headerBar"
+			"type": "HeaderBar",
+			"userProps": {
+				"title": "Notes"
 			}
 		},
 		{
-			"type": "ListView",
-			"id": "f9fe-ee0b-1677-9492",
+			"className": ".flexLayout",
+			"hiddenComponent": false,
+			"id": "0c7b-8e59-591d-fb70",
+			"props": {
+				"children": [
+					"3dfe-981d-a543-2418",
+					"cdf2-5ba6-8542-61c0"
+				],
+				"name": "notesfl",
+				"parent": "0b3a-38df-bc63-6c2b"
+			},
+			"type": "FlexLayout",
 			"userProps": {
-				"usePageVariable": true,
-				"width": null,
+				"flexProps": {
+					"justifyContent": "CENTER",
+					"alignItems": "CENTER",
+					"flexGrow": 1,
+					"alignSelf": "STRETCH"
+				},
 				"height": null,
-				"left": 0,
-				"top": 0,
-				"bottom": 0,
-				"right": 0,
-				"visible": false,
+				"width": null
+			}
+		},
+		{
+			"className": ".listView",
+			"id": "3dfe-981d-a543-2418",
+			"props": {
+				"children": [],
 				"itemCount": null,
+				"name": "lvNotes",
+				"parent": "0c7b-8e59-591d-fb70",
 				"rowHeight": 64,
+				"usePageVariable": true
+			},
+			"type": "ListView",
+			"userProps": {
+				"bottom": 0,
 				"flexProps": {
 					"flexGrow": null,
 					"positionType": "ABSOLUTE",
 					"right": 0,
 					"bottom": 48
-				}
-			},
-			"className": ".listView",
-			"props": {
-				"usePageVariable": true,
+				},
+				"height": null,
 				"itemCount": null,
+				"left": 0,
+				"right": 0,
 				"rowHeight": 64,
-				"name": "lvNotes",
-				"parent": "0b3a-38df-bc63-6c2b",
-				"children": []
+				"top": 0,
+				"usePageVariable": true,
+				"visible": false,
+				"width": null
 			}
 		},
 		{
-			"type": "ActivityIndicator",
-			"id": "1f21-5c15-ef35-6608",
-			"hiddenComponent": true,
-			"userProps": {
-				"usePageVariable": true,
-				"minHeight": 21,
-				"minWidth": 21
-			},
 			"className": ".activityIndicator",
+			"id": "cdf2-5ba6-8542-61c0",
 			"props": {
-				"usePageVariable": true,
+				"children": [],
 				"name": "aiNotes",
-				"parent": "0b3a-38df-bc63-6c2b",
-				"children": []
+				"parent": "0c7b-8e59-591d-fb70",
+				"usePageVariable": true
+			},
+			"type": "ActivityIndicator",
+			"userProps": {
+				"usePageVariable": true
 			}
 		}
 	]

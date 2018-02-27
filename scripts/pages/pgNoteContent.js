@@ -27,7 +27,6 @@ function onShow(superOnShow, data) {
 	const page = this;
 	superOnShow();
 	page.selectedIndex = data.index;
-    console.log("in show seleceted index" + page.selectedIndex);
 	var taNote = page.taNote;
 	var noteData;
 	if (data) {
@@ -69,8 +68,12 @@ function applyTheme() {
 }
 
 function onLoad(superOnLoad) {
-	const page = this;
 	superOnLoad();
+
+	const page = this;
+
+	page.ios.safeAreaLayoutMode = true;
+
 	var taNote = new TextArea({
 		flexGrow: 1,
 		positionType: FlexLayout.PositionType.RELATIVE,
@@ -134,7 +137,7 @@ function onHide() {
 
 function addNote(text) {
 	const page = this;
-	notes.addNote(text,page.originalNoteData,page.selectedIndex,function(err) {
+	notes.addNote(text, page.originalNoteData, page.selectedIndex, function(err) {
 		if (err)
 			return;
 		page.pgNotes.refreshData();
@@ -177,7 +180,7 @@ function speech() {
 	const hbiSpeech = page.headerBar.items[0];
 	if (!speechToText.isRunning) {
 		hbiSpeech.title = lang.stop;
-		speechToText.startType(page.taNote,4000, function() {
+		speechToText.startType(page.taNote, 4000, function() {
 			hbiSpeech.title = lang.speech;
 		});
 	}

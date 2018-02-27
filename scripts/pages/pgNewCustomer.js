@@ -32,6 +32,7 @@ const theme = require("../lib/theme");
 const DialogWait = require("../components/DialogWait");
 const addCustomer = require("../model/customers").addCustomer;
 const mimicPressed = require("../lib/ui").mimicPressed;
+const VMasker = require('vanilla-masker/lib/vanilla-masker');
 
 const pgNewCustomer = extend(pgNewCustomerDesign)(
     function(_super) {
@@ -44,6 +45,8 @@ const pgNewCustomer = extend(pgNewCustomerDesign)(
         var touchControl = {};
         page.onLoad = function onLoad() {
             baseOnLoad && baseOnLoad();
+
+            page.ios.safeAreaLayoutMode = true;
 
             page.android.onBackButtonPressed = function(e) {
                 back();
@@ -77,7 +80,7 @@ const pgNewCustomer = extend(pgNewCustomerDesign)(
             }, touchControl);
 
 
-            tiName = Object.assign(new TextInput, textInputDefaults, {
+            tiName = Object.assign(new TextInput(), textInputDefaults, {
                 hint: lang.name,
                 actionKeyType: ActionKeyType.NEXT,
                 onActionButtonPress: function(e) {
@@ -87,7 +90,7 @@ const pgNewCustomer = extend(pgNewCustomerDesign)(
             page.flName.addChild(tiName);
 
 
-            tiSurname = Object.assign(new TextInput, textInputDefaults, {
+            tiSurname = Object.assign(new TextInput(), textInputDefaults, {
                 hint: lang.surname,
                 actionKeyType: ActionKeyType.NEXT,
                 onActionButtonPress: function(e) {
@@ -96,7 +99,7 @@ const pgNewCustomer = extend(pgNewCustomerDesign)(
             });
             page.flSurname.addChild(tiSurname);
 
-            tiEmail = Object.assign(new TextInput, textInputDefaults, {
+            tiEmail = Object.assign(new TextInput(), textInputDefaults, {
                 hint: lang.eMail,
                 actionKeyType: ActionKeyType.NEXT,
                 onActionButtonPress: function(e) {
@@ -106,24 +109,33 @@ const pgNewCustomer = extend(pgNewCustomerDesign)(
             });
             page.flEmail.addChild(tiEmail);
 
-            tiPhone = Object.assign(new TextInput, textInputDefaults, {
+            tiPhone = Object.assign(new TextInput(), textInputDefaults, {
                 hint: lang.phone,
                 actionKeyType: ActionKeyType.NEXT,
                 onActionButtonPress: function(e) {
                     tiAddress.requestFocus();
                 },
+                onTextChanged: function(e) {
+                    var maskedText = VMasker.toPattern(this.text, "+(9)-999-999-9999");
+                    this.text = maskedText;
+                },
                 keyboardType: KeyboardType.PHONE
             });
             page.flPhone.addChild(tiPhone);
 
-            tiAddress = Object.assign(new TextInput, textInputDefaults, {
+            tiAddress = Object.assign(new TextInput(), textInputDefaults, {
                 hint: lang.Adress,
                 actionKeyType: ActionKeyType.SEND,
                 onActionButtonPress: function(e) {
                     save();
-                }
+                },
             });
             page.flAddress.addChild(tiAddress);
+
+            page.selectMapButton.text = lang.selectOnMap;
+            page.selectMapButton.onPress = function(){
+                 Router.go("pgSelectMap");
+            };
 
             if (System.OS === "iOS") {
                 page.btnPicture.visible = true;
@@ -168,6 +180,10 @@ const pgNewCustomer = extend(pgNewCustomerDesign)(
             //     );
             // });
             page.headerBar.title = lang.newCustomer;
+            
+            if(data !== undefined){
+                tiAddress.text = data.adress;
+            }
         };
 
         page.onHide = function() {
@@ -242,7 +258,7 @@ const pgNewCustomer = extend(pgNewCustomerDesign)(
                     return alert(JSON.stringify(err), "Customer Service Error");
                 }
                 dialogWait.showOK(function() {
-                    console.log("in show iok 235")
+                    console.log("in show iok 235");
                     dialogWait.hide();
                     Router.goBack();
                 });

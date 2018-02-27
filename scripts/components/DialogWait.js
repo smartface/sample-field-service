@@ -9,6 +9,7 @@ const Animator = require('sf-core/ui/animator');
 const System = require('sf-core/device/system');
 const ActivityIndicator = require('sf-core/ui/activityindicator');
 const addChild = require("@smartface/contx/lib/smartface/action/addChild");
+const Screen = require('sf-core/device/screen');
 
 const DialogWait = extend(DialogWaitDesign)(
 	//constructor
@@ -26,7 +27,7 @@ const DialogWait = extend(DialogWaitDesign)(
 		dialogWait.aiWait.ios.type = ActivityIndicator.iOS.Type.WHITELARGE;
 
 		dialogWait.showOK = function(callback) {
-			console.log("in show ok")
+			console.log("in show ok");
 			dialogWait.aiWait.visible = false;
 			dialogWait.lblSaving.visible = false;
 			dialogWait.flCheck.visible = true;
@@ -35,15 +36,15 @@ const DialogWait = extend(DialogWaitDesign)(
 			var dialogObject = (dialogWait.dialogObject && dialogWait.dialogObject.layout) || dialogWait.getParent();
 			var animationParent = System.OS === "Android" ? dialogWait.flWaitWhite : dialogObject;
             console.log("in show 36");
-            setTimeout(()=>{
-            	Animator.animate(animationParent, 1000, function() {
-				console.log("in animate 39");
-				dialogWait.imgCheck.alpha = 0.05;
-			}).complete(function() {
-				console.log("in complete 42");
-				callback && callback();
-			});
-            },200)
+   //         setTimeout(()=>{
+   //         	Animator.animate(animationParent, 1000, function() {
+			// 	console.log("in animate 39");
+			// 	dialogWait.imgCheck.alpha = 0.05;
+			// }).complete(function() {
+			// 	console.log("in complete 42");
+			// 	callback && callback();
+			// });
+   //         },200);
 			
 		};
 	}
@@ -58,7 +59,7 @@ DialogWait.show = function showWaitdialog(page) {
 	var headerBarItemsChanged = [];
 	var headerBar;
 	var backButtonPressed = null;
-
+	
 	var dialogWait = Object.assign(new DialogWait(), {
 		visible: true,
 		left: 0,
@@ -66,6 +67,8 @@ DialogWait.show = function showWaitdialog(page) {
 		top: 0,
 		bottom: 0
 	});
+	dialogWait.top = (Screen.height/2) - 100;
+	
 
 	var waitDialog = new Dialog();
 	dialogWait.dialogObject = waitDialog;

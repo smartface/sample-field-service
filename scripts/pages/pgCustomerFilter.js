@@ -18,6 +18,7 @@ const sliderDrawer = require("../sliderDrawer");
 const pageLength = 20;
 const animationDuration = 200;
 const closeKeyboard = require("../lib/ui").closeKeyboard;
+const VMasker = require('vanilla-masker/lib/vanilla-masker');
 
 const textInputDefaults = {
     textAlignment: TextAlignment.MIDLEFT,
@@ -47,6 +48,9 @@ const pgCustomerFilter = extend(pgCustomerFilterDesign)(
 
         page.onLoad = function onLoad() {
             baseOnLoad && baseOnLoad();
+
+            page.ios.safeAreaLayoutMode = true;
+            
             sliderDrawer.setLeftItem(page.headerBar);
 
             page.android.onBackButtonPressed = function(e) {
@@ -79,6 +83,10 @@ const pgCustomerFilter = extend(pgCustomerFilterDesign)(
                 keyboardType: KeyboardType.PHONE,
                 onActionButtonPress: function() {
                     tiEmail.requestFocus();
+                },
+                onTextChanged: function(e) {
+                    var maskedText = VMasker.toPattern(this.text, "+(9)-999-999-9999");
+                    this.text = maskedText;
                 },
                 actionKeyType: ActionKeyType.NEXT
             });

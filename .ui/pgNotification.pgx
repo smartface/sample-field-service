@@ -1,12 +1,23 @@
 {
 	"components": [
 		{
-			"type": "Page",
+			"className": ".page",
 			"id": "8c7a-e6fd-87b3-af10",
 			"initialized": true,
+			"props": {
+				"children": [
+					"b868-1977-6f95-b072",
+					"7b6e-5371-9dd0-044f",
+					"0c6d-68de-4250-616c"
+				],
+				"isRemovable": true,
+				"name": "pgNotification",
+				"orientation": "AUTO",
+				"parent": null
+			},
+			"type": "Page",
 			"userProps": {
 				"backgroundColor": "rgba( 255, 255, 255, 1 )",
-				"orientation": "AUTO",
 				"flexProps": {
 					"alignContent": "STRETCH",
 					"alignItems": "CENTER",
@@ -14,80 +25,69 @@
 					"flexDirection": "COLUMN",
 					"flexWrap": "NOWRAP",
 					"justifyContent": "CENTER"
-				}
+				},
+				"orientation": "AUTO"
 			},
-			"className": ".page",
-			"version": "6.6.0",
-			"props": {
-				"orientation": "AUTO",
-				"isRemovable": true,
-				"children": [
-					"b868-1977-6f95-b072",
-					"7b6e-5371-9dd0-044f",
-					"0c6d-68de-4250-616c"
-				],
-				"name": "pgNotification",
-				"parent": null
-			}
+			"version": "6.6.1"
 		},
 		{
-			"type": "StatusBar",
+			"className": ".statusBar",
 			"id": "b868-1977-6f95-b072",
+			"props": {
+				"children": [],
+				"isRemovable": false,
+				"name": "statusBar",
+				"parent": "8c7a-e6fd-87b3-af10"
+			},
+			"type": "StatusBar",
 			"userProps": {
 				"visible": true
-			},
-			"className": ".statusBar",
-			"props": {
-				"isRemovable": false,
-				"children": [],
-				"parent": "8c7a-e6fd-87b3-af10",
-				"name": "statusBar"
 			}
 		},
 		{
-			"type": "HeaderBar",
+			"className": ".headerBar",
 			"id": "7b6e-5371-9dd0-044f",
+			"props": {
+				"children": [],
+				"isRemovable": false,
+				"name": "headerBar",
+				"parent": "8c7a-e6fd-87b3-af10",
+				"title": "Notification History"
+			},
+			"type": "HeaderBar",
 			"userProps": {
 				"backgroundColor": "rgba( 44, 50, 57, 1 )",
-				"visible": true,
 				"title": "Notification History",
-				"titleColor": "rgba( 255, 255, 255, 1 )"
-			},
-			"className": ".headerBar",
-			"props": {
-				"title": "Notification History",
-				"isRemovable": false,
-				"children": [],
-				"parent": "8c7a-e6fd-87b3-af10",
-				"name": "headerBar"
+				"titleColor": "rgba( 255, 255, 255, 1 )",
+				"visible": true
 			}
 		},
 		{
-			"type": "ActivityIndicator",
+			"className": ".activityIndicator",
 			"id": "0c6d-68de-4250-616c",
+			"props": {
+				"children": [],
+				"name": "aiWait",
+				"parent": "8c7a-e6fd-87b3-af10",
+				"usePageVariable": true
+			},
+			"type": "ActivityIndicator",
 			"userProps": {
-				"usePageVariable": true,
 				"backgroundColor": "rgba( 255, 255, 255, 0 )",
-				"left": null,
-				"top": null,
-				"right": null,
 				"bottom": null,
-				"width": 42,
-				"height": 42,
-				"minHeight": 21,
-				"minWidth": 21,
 				"flexProps": {
 					"positionType": "RELATIVE",
 					"right": 0,
 					"bottom": 0
-				}
-			},
-			"className": ".activityIndicator",
-			"props": {
+				},
+				"height": 42,
+				"left": null,
+				"minHeight": 21,
+				"minWidth": 21,
+				"right": null,
+				"top": null,
 				"usePageVariable": true,
-				"children": [],
-				"name": "aiWait",
-				"parent": "8c7a-e6fd-87b3-af10"
+				"width": 42
 			}
 		}
 	]

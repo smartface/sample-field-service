@@ -1,12 +1,23 @@
 {
 	"components": [
 		{
-			"type": "Page",
+			"className": ".page",
 			"id": "4b8f-4603-1200-4f16",
 			"initialized": true,
+			"props": {
+				"children": [
+					"1df1-f78b-fb72-bf9a",
+					"f3eb-0036-c5ba-bb44",
+					"dc05-73a6-6a31-69b8"
+				],
+				"isRemovable": true,
+				"name": "pgDashboard",
+				"orientation": "PORTRAIT",
+				"parent": null
+			},
+			"type": "Page",
 			"userProps": {
 				"backgroundColor": "rgba( 36, 42, 52, 1 )",
-				"orientation": "PORTRAIT",
 				"flexProps": {
 					"alignContent": "STRETCH",
 					"alignItems": "STRETCH",
@@ -14,95 +25,86 @@
 					"flexDirection": "COLUMN",
 					"flexWrap": "NOWRAP",
 					"justifyContent": "FLEX_START"
-				}
+				},
+				"orientation": "PORTRAIT"
 			},
-			"className": ".page",
-			"version": "6.6.0",
-			"props": {
-				"orientation": "PORTRAIT",
-				"isRemovable": true,
-				"children": [
-					"1df1-f78b-fb72-bf9a",
-					"f3eb-0036-c5ba-bb44",
-					"34ec-fb5e-f361-f64b",
-					"dc05-73a6-6a31-69b8"
-				],
-				"name": "pgDashboard",
-				"parent": null
-			}
+			"version": "6.6.1"
 		},
 		{
-			"type": "StatusBar",
+			"className": ".statusBar",
 			"id": "1df1-f78b-fb72-bf9a",
+			"props": {
+				"children": [],
+				"isRemovable": false,
+				"name": "statusBar",
+				"parent": "4b8f-4603-1200-4f16"
+			},
+			"type": "StatusBar",
 			"userProps": {
 				"visible": true
-			},
-			"className": ".statusBar",
-			"props": {
-				"isRemovable": false,
-				"children": [],
-				"parent": "4b8f-4603-1200-4f16",
-				"name": "statusBar"
 			}
 		},
 		{
-			"type": "HeaderBar",
+			"className": ".headerBar",
 			"id": "f3eb-0036-c5ba-bb44",
+			"props": {
+				"children": [],
+				"isRemovable": false,
+				"name": "headerBar",
+				"parent": "4b8f-4603-1200-4f16",
+				"title": "Dashboard"
+			},
+			"type": "HeaderBar",
 			"userProps": {
 				"backgroundColor": "rgba( 44, 50, 57, 1 )",
-				"visible": true,
 				"title": "Dashboard",
-				"titleColor": "rgba( 255, 255, 255, 1 )"
-			},
-			"className": ".headerBar",
-			"props": {
-				"title": "Dashboard",
-				"isRemovable": false,
-				"children": [],
-				"parent": "4b8f-4603-1200-4f16",
-				"name": "headerBar"
+				"titleColor": "rgba( 255, 255, 255, 1 )",
+				"visible": true
 			}
 		},
 		{
+			"className": ".flexLayout",
+			"id": "dc05-73a6-6a31-69b8",
+			"props": {
+				"children": [
+					"83ac-b3f7-29f2-441c"
+				],
+				"name": "dashfl",
+				"parent": "4b8f-4603-1200-4f16"
+			},
+			"type": "FlexLayout",
+			"userProps": {
+				"flexProps": {
+					"positionType": "RELATIVE",
+					"flexGrow": 1
+				},
+				"height": null,
+				"width": null
+			}
+		},
+		{
+			"className": ".scrollView",
+			"id": "83ac-b3f7-29f2-441c",
+			"props": {
+				"children": [],
+				"name": "svChart",
+				"parent": "dc05-73a6-6a31-69b8",
+				"usePageVariable": true
+			},
 			"type": "ScrollView",
-			"id": "34ec-fb5e-f361-f64b",
 			"userProps": {
 				"backgroundColor": "rgba( 255, 255, 255, 1 )",
-				"width": null,
-				"height": null,
-				"paddingLeft": 20,
-				"paddingRight": 20,
-				"paddingTop": 10,
-				"paddingBottom": 10,
-				"usePageVariable": true,
 				"flexProps": {
 					"flexGrow": 1,
 					"flexDirection": "COLUMN_REVERSE"
-				}
-			},
-			"className": ".scrollView",
-			"props": {
-				"usePageVariable": true,
-				"name": "svChart",
-				"parent": "4b8f-4603-1200-4f16",
-				"children": []
-			}
-		},
-		{
-			"type": "FlexLayout",
-			"id": "dc05-73a6-6a31-69b8",
-			"userProps": {
-				"width": null,
+				},
 				"height": null,
-				"flexProps": {
-					"positionType": "ABSOLUTE"
-				}
-			},
-			"className": ".flexLayout",
-			"props": {
-				"name": "flexLayout1",
-				"parent": "4b8f-4603-1200-4f16",
-				"children": []
+				"paddingBottom": 10,
+				"paddingLeft": 20,
+				"paddingRight": 20,
+				"paddingTop": 10,
+				"usePageVariable": true,
+				"width": null
 			}
 		}
 	]

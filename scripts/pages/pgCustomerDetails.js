@@ -47,12 +47,16 @@ const pgCustomerDetails = extend(pgCustomerDetailsDesign)(
         var customerInfo = null;
         page.onLoad = function onLoad() {
             baseOnLoad && baseOnLoad();
+
+            page.ios.safeAreaLayoutMode = true;
+
             // svCustomerDetail = new ScrollView({
             //     flexGrow: 1,
             //     align: ScrollView.Align.VERTICAL,
             //     backgroundColor: emptyColor,
             //     visible: false
             // });
+
             svCustomerDetail = new ScrollView();
             page.layout.addChild(svCustomerDetail, "svCustomerDetail", "", function(userProps) {
                 userProps.flexGrow = 1;
@@ -98,7 +102,7 @@ const pgCustomerDetails = extend(pgCustomerDetailsDesign)(
                         if (err) {
                             return alert(JSON.stringify(err), "Customer Service Error");
                         }
-                        
+
                         getSingleCustomer(id, function(err, customerData) {
                             page.flWait.visible = true;
                             console.log("after getting single. Is there error? " + !!err);
@@ -143,7 +147,7 @@ const pgCustomerDetails = extend(pgCustomerDetailsDesign)(
 
                             page.lblName.text = customerData.lookupName;
                             page.lblTitle.text = customerData.customFields.CO.Title || "";
-                         
+
                             customerInfo = {
                                 displayName: customerData.lookupName || "",
                                 phoneNumber: customerData.customFields.CO.Phone || "",
@@ -190,7 +194,7 @@ const pgCustomerDetails = extend(pgCustomerDetailsDesign)(
                 right: 0,
                 bottom: 0,
                 positionType: FlexLayout.PositionType.ABSOLUTE,
-                backgroundColor: Color.create(24,216,216,216),
+                backgroundColor: Color.create("#FFFFFF"),
                 alignItems: FlexLayout.AlignItems.STRETCH,
                 flexDirection: FlexLayout.FlexDirection.COLUMN,
                 justifyContent: FlexLayout.JustifyContent.FLEX_START

@@ -1,0 +1,16 @@
+ 
+ <ApplicationPackageLicense> 
+ <CompanyName>Smartface User</CompanyName> 
+ <LicenseName>Smartface Empty Workspace</LicenseName> 
+ <SASVersion>v5.0.0</SASVersion> 
+ <CreateDate>04.03.2016 16:15:19</CreateDate> 
+ <ExpireDate>02.03.2026 16:15:19</ExpireDate> 
+ <LicenseType>Professional</LicenseType> 
+ <PackageType>iOS</PackageType> 
+ <PackageName>io.smartface.demo</PackageName> 
+ <PackageFeatures> 
+ <PackageFeature> 
+ <FeatureName>Feature</FeatureName> 
+ <FeatureValue>Feature</FeatureValue></PackageFeature></PackageFeatures> 
+ <TripleDESKey>3i7d+wHjDJVAYzbQPyoubLx4POMxk9OSovlEv4WFHj4d81JwPpPk4It6OOOZw1sjFtYa2ZN/7pVfMGrsBKXp1kYdgnfQSwvgFeWTfTFKrnA939xaYFlrXK7kDuqfwiTCM5fZpGQlp7ZZa37SEKKZ4RPCiJNGiDgrafmhx1KPLXg=</TripleDESKey> 
+ <SignData></SignData></ApplicationPackageLicense>

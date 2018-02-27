@@ -25,6 +25,8 @@ const pgLogin = extend(pgLoginDesign)(
         page.onLoad = function onLoad() {
             baseOnLoad && baseOnLoad();
 
+            page.ios.safeAreaLayoutMode = true;
+
             tiUserName = new TextInput();
             Object.assign(tiUserName, {
                 height: 30,
@@ -56,8 +58,6 @@ const pgLogin = extend(pgLoginDesign)(
             page.android.onBackButtonPressed = function(e) {
                 Application.exit();
             };
-
-
 
         };
 
