@@ -70,7 +70,7 @@ const TextInput = extend(FlexLayout)(
 			line: line
 		});
 
-		mapProperties(textInput, textbox, ["text", "hint", "onActionButtonPress",
+		mapProperties(textInput, textbox, ["text", "hint", "onActionButtonPress", "onTextChanged", "onTouchEnded",
 			"hideKeyboard", "showKeyboard", "keyboardType", "textAlignment",
 			"isPassword", "actionKeyType", "requestFocus", "removeFocus"
 		]);

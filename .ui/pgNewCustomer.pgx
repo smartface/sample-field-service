@@ -58,7 +58,8 @@
 					"ca3a-ac50-a1c0-b32d",
 					"6534-b690-9768-850e",
 					"101e-8317-ccc6-5037",
-					"8430-d0b9-cbce-3547"
+					"8430-d0b9-cbce-3547",
+					"889f-c462-81d4-5a86"
 				],
 				"name": "flContent",
 				"parent": "4cc2-b35d-3573-541e"
@@ -397,6 +398,57 @@
 				"usePageVariable": true,
 				"visible": false,
 				"width": 73
+			}
+		},
+		{
+			"className": ".flexLayout",
+			"id": "889f-c462-81d4-5a86",
+			"props": {
+				"children": [
+					"5fbb-4d7e-4ce8-a603"
+				],
+				"name": "flSelectMap",
+				"parent": "02c1-528e-6ce5-7b6f"
+			},
+			"type": "FlexLayout",
+			"userProps": {
+				"flexProps": {
+					"flexDirection": "ROW"
+				},
+				"height": 18,
+				"width": null
+			}
+		},
+		{
+			"className": ".button",
+			"id": "5fbb-4d7e-4ce8-a603",
+			"props": {
+				"children": [],
+				"name": "selectMapButton",
+				"parent": "889f-c462-81d4-5a86",
+				"text": "Select On Map",
+				"usePageVariable": true
+			},
+			"type": "Button",
+			"userProps": {
+				"backgroundColor": "rgba( 0, 161, 241, 0 )",
+				"flexProps": {
+					"flexGrow": 1,
+					"alignSelf": "STRETCH"
+				},
+				"font": {
+					"size": 12,
+					"bold": false,
+					"italic": false,
+					"family": "Arial",
+					"style": "n"
+				},
+				"height": null,
+				"text": "Select On Map",
+				"textAlignment": "MIDRIGHT",
+				"textColor": "rgba( 0, 0, 0, 1 )",
+				"usePageVariable": true,
+				"width": null
 			}
 		}
 	]

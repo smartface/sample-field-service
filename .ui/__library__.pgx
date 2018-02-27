@@ -844,7 +844,7 @@
 		},
 		{
 			"className": ".flexLayout",
-			"hiddenComponent": true,
+			"hiddenComponent": false,
 			"id": "53c0-50b5-1f65-7a15",
 			"props": {
 				"children": [
@@ -865,13 +865,15 @@
 				"bottom": 0,
 				"flexProps": {
 					"alignContent": "STRETCH",
-					"alignItems": "STRETCH",
+					"alignItems": "CENTER",
 					"flexDirection": "COLUMN",
 					"flexWrap": "NOWRAP",
 					"justifyContent": "CENTER",
-					"positionType": "ABSOLUTE",
+					"positionType": "RELATIVE",
 					"right": 0,
-					"bottom": 0
+					"bottom": 0,
+					"flexGrow": 1,
+					"alignSelf": "STRETCH"
 				},
 				"height": null,
 				"left": 0,
@@ -911,7 +913,8 @@
 					"flexDirection": "COLUMN",
 					"flexWrap": "NOWRAP",
 					"justifyContent": "CENTER",
-					"positionType": "RELATIVE"
+					"positionType": "RELATIVE",
+					"alignSelf": "STRETCH"
 				},
 				"height": 150,
 				"marginLeft": 60,
@@ -1863,6 +1866,7 @@
 				"flexProps": {},
 				"height": 112.5,
 				"image": "check.png",
+				"imageFillType": "ASPECTFIT",
 				"usePageVariable": true,
 				"width": 112.5
 			}

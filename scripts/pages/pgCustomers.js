@@ -245,15 +245,19 @@ const pgCustomers = extend(pgCustomersDesign)(
                 hint: lang.search,
                 onSearchBegin: function() {
                     filterActive = true;
+                    unfilteredDataset = dataset;
                 },
                 onTextChanged: function(searchText) {
                     console.log("searched text : " + searchText);
                     var text = searchText.toLowerCase();
+                    
                     var datasetFitered = unfilteredDataset.filter(function(item) {
                         return item.customFields.CO.Phone.toLowerCase().indexOf(text) > -1 ||
                             item.customFields.CO.Email.toLowerCase().indexOf(text) > -1 ||
                             item.lookupName.toLowerCase().indexOf(text) > -1;
                     });
+                    
+                    
                     bindData({
                         items: datasetFitered
                     }, false);

@@ -59,8 +59,6 @@ const pgLogin = extend(pgLoginDesign)(
                 Application.exit();
             };
 
-
-
         };
 
         page.onShow = function onShow(data) {

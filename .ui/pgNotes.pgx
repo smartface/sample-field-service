@@ -73,7 +73,8 @@
 				"flexProps": {
 					"justifyContent": "CENTER",
 					"alignItems": "CENTER",
-					"flexGrow": 1
+					"flexGrow": 1,
+					"alignSelf": "STRETCH"
 				},
 				"height": null,
 				"width": null
