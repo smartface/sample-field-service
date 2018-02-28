@@ -163,12 +163,10 @@ const pgLogin = extend(pgLoginDesign)(
             Router.go("pgDashboard");
         }
 
-        if (Application.currentReleaseChannel === "demo") {
-            page.imgLogo.onTouch = function() {
-                tiPassword.text = "123qweASD";
-                tiUserName.text = "fieldservice";
-            };
-        }
+        page.imgLogo.onTouch = function() {
+            tiPassword.text = "123qweASD";
+            tiUserName.text = "fieldservice";
+        };
     });
 
 module && (module.exports = pgLogin);
