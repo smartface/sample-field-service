@@ -5,13 +5,13 @@
             "hashType": "md5",
             "profileKey": "9eCyMQKfzYvz92RKFVb8JcyWT18dBbtx",
             "revision": 1,
-            "channels": ["demo"],
+            "channels": ["test","prod"],
             "meta": {
                 "isMandatory": false,
                 "url": "https://smf.to/fieldservice"
             },
             "minimumSupportedVersion": "1.0.0",
-            "currentReleaseChannel": "demo"
+            "currentReleaseChannel": "prod"
         }
     }
 }
