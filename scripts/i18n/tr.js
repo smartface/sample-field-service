@@ -92,7 +92,7 @@ SMF.i18n.defineLanguage('tr', {
 	"apr": "Nis",
 	"jun": "Haz",
 	"aug": "Ağu",
-	"agingReport": "Yaşlanma Rapru",
+	"agingReport": "Yaşlanma Raporu",
 	"historyByStatus": "Duruma göre tarih",
 	"historyByProduct": "Ürüne göre tarih",
 
