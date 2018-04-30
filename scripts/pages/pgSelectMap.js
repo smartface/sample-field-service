@@ -10,6 +10,7 @@ const System = require('sf-core/device/system');
 const StatusBarStyle = require('sf-core/ui/statusbarstyle');
 const Location = require('sf-core/device/location');
 const Router = require('sf-core/router');
+const AlertView = require('sf-core/ui/alertview');
 const Http = require("sf-core/net/http");
 var http = new Http();
 
@@ -47,6 +48,17 @@ function onShow(superOnShow) {
     onPress: function() {
       if (selectedLocation) {
         Router.goBack("pgNewCustomer", { adress: page.adressLabel.text });
+        selectedLocation = null;
+      }
+      else {
+        var myAlertView = new AlertView({
+          message: lang.selectLocation
+        });
+        myAlertView.addButton({
+          type: AlertView.Android.ButtonType.POSITIVE,
+          text: lang.ok
+        });
+        myAlertView.show();
       }
     }
   });
@@ -68,7 +80,7 @@ function onShow(superOnShow) {
   // -------------------
 
   page.mapview.onPress = function(location) {
-
+    console.log("In Trigger !!");
     selectedLocation = location;
     if (myPin) {
       page.mapview.removePin(myPin);
@@ -81,7 +93,7 @@ function onShow(superOnShow) {
     });
 
     page.mapview.addPin(myPin);
-    
+
     getAdress(selectedLocation);
 
   };

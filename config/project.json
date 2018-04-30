@@ -3,8 +3,8 @@
 		"name": "Field Service",
 		"company": "Smartface, Inc.",
 		"webSite": "https://www.smartface.io",
-		"version": "2.1.1",
-		"runtimeVersion": "1200",
+		"version": "2.2.5",
+		"runtimeVersion": "1100",
 		"description": "Smartface Field Services App powered by Oracle MCS"
 	},
 	"config": {
@@ -61,9 +61,23 @@
 						"url": "https://az793023.vo.msecnd.net/smartface-bin/plugins/CodeReader/iOS/2.0.0/codereaderios.zip",
 						"path": "plugins/iOS/codereaderios.zip",
 						"active": false
+					},
+					"fabricios": {
+						"url": "",
+						"path": "plugins/iOS/fabricios.zip",
+						"active": true,
+						"fabric": {
+							"API_KEY": "6c83c9c1986d62695522c4bc4f0274deda6a7934",
+							"BUILD_SECRET": "4bacabfc329a797da51b8953dd2034b0ecd60c8848bf8f4300447e455e4129d4"
+						}
+					},
+					"instabugios": {
+						"url": "",
+						"path": "plugins/iOS/instabugios.zip",
+						"active": true
 					}
 				},
-				"playerPath": "players/ios-6.6.2-beta.324.zip"
+				"playerPath": null
 			},
 			"android": {
 				"scripts": "scripts",
@@ -82,9 +96,14 @@
 						"url": "https://az793023.vo.msecnd.net/smartface-bin/plugins/CodeReader/Android/2.0.0/CodeReaderAndroid.zip",
 						"path": "plugins/Android/CodeReaderAndroid.zip",
 						"active": false
+					},
+					"fabricplugin": {
+						"url": "",
+						"path": "plugins/Android/fabricandroid.zip",
+						"active": true
 					}
 				},
-				"playerPath": "players/android-6.6.1-beta.8.zip"
+				"playerPath": null
 			},
 			"keys": {
 				"project3DesKey": "OGZX+aN+KdKD2JNKHBJguikZrYnuahOt",

@@ -4,6 +4,16 @@ require("./theme");
 require("i18n/i18n.js"); //generates global lang object
 const Application = require("sf-core/application");
 
+const Fabric = require("sf-plugin-fabric");   
+const Crashlytics = require("sf-plugin-fabric/crashlytics");
+const Answers = require("sf-plugin-fabric/answers");
+
+Fabric.with([new Crashlytics(),new Answers()]);
+
+const InstaBug = require("sf-plugin-instabug");
+InstaBug.build("cf6c0304e43235fd5b5b1d6d97a7b7e5",InstaBug.InvocationEvent.SHAKE);
+InstaBug.showIntroMessage();
+
 Application.onUnhandledError = function(e) {
     alert({
         title: lang.applicationError,
@@ -49,8 +59,8 @@ Router.go("pgLogin", {
     checkUpdate: true
 });
 
-
 if (System.OS === "Android") {
     sliderDrawer = require("./sliderDrawer");
     Router.sliderDrawer = sliderDrawer;
 }
+

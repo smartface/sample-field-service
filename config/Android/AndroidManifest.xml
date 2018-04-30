@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
 		package="${PackageName}"
-		android:versionCode="1"
+		android:versionCode="6"
 		android:versionName="${Version}"
 		android:installLocation="auto" >
 	<uses-sdk android:minSdkVersion="17" android:targetSdkVersion="24" />
@@ -153,6 +153,9 @@
 			 
 			<receiver android:name="io.smartface.android.notifications.LocalNotificationReceiver"/>
 			
+			<meta-data android:name="io.fabric.ApiKey" 
+			android:value="6c83c9c1986d62695522c4bc4f0274deda6a7934"/>
+			
 			<provider
 				android:name="android.support.v4.content.FileProvider"
 				android:authorities="${PackageName}.provider"
@@ -162,5 +165,6 @@
 					android:name="android.support.FILE_PROVIDER_PATHS"
 					android:resource="@xml/provider_paths"/>
 			</provider>
+			
 	</application>
 </manifest>

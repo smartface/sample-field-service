@@ -19,7 +19,7 @@
 				"backgroundColor": "rgba( 255, 255, 255, 1 )",
 				"orientation": "AUTO"
 			},
-			"version": "6.6.1"
+			"version": "6.6.4"
 		},
 		{
 			"className": ".statusBar",
@@ -66,10 +66,8 @@
 			},
 			"type": "FlexLayout",
 			"userProps": {
-				"flexProps": {
-					"flexGrow": 1
-				},
-				"height": null,
+				"backgroundColor": "rgba( 255, 255, 255, 1 )",
+				"height": 200,
 				"width": null
 			}
 		},

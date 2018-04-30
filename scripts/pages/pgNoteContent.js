@@ -179,6 +179,7 @@ function speech() {
 	const page = this;
 	const hbiSpeech = page.headerBar.items[0];
 	if (!speechToText.isRunning) {
+	//	console.log("isLocaleSupported  " + speechToText.isLocaleSupported());
 		hbiSpeech.title = lang.stop;
 		speechToText.startType(page.taNote, 4000, function() {
 			hbiSpeech.title = lang.speech;

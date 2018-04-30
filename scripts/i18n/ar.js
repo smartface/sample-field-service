@@ -13,6 +13,7 @@ SMF.i18n.defineLanguage('ar', {
 	"untitled": "بدون عنوان",
 	"yes": "نعم",
 	"selectOnMap": "حدد على الخريطة",
+	"selectLocation": "الرجاء تحديد موقع",
 	"sureToDelete": "تأكيد الحذف",
 	"networkError": "خطأ بالشبكة",
 	"applicationError": "خطأ بالتطبيق",

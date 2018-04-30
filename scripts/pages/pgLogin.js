@@ -63,6 +63,7 @@ const pgLogin = extend(pgLoginDesign)(
 
         page.onShow = function onShow(data) {
             baseOnShow && baseOnShow(data);
+            
             page.headerBar.visible = false;
             sliderDrawer.enabled = false;
             const ImageView = require('sf-core/ui/imageview');

@@ -32,7 +32,7 @@
 				},
 				"orientation": "PORTRAIT"
 			},
-			"version": "6.6.1"
+			"version": "6.6.4"
 		},
 		{
 			"className": ".statusBar",
