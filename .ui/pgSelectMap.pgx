@@ -27,7 +27,7 @@
 				"font": {},
 				"layout": {}
 			},
-			"version": "6.6.4"
+			"version": "6.7.0"
 		},
 		{
 			"className": ".statusBar",
@@ -173,7 +173,7 @@
 				"text": "Adress",
 				"usePageVariable": true
 			},
-			"type": "Label",
+			"type": "TextView",
 			"userProps": {
 				"backgroundColor": "rgba( 255, 255, 255, 0.5 )",
 				"borderColor": "rgba( 255, 255, 255, 1 )",

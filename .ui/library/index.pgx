@@ -1,0 +1,65 @@
+{
+	"components": [
+		{
+			"className": ".page",
+			"id": "79c3-af4f-89a3-2747",
+			"initialized": true,
+			"props": {
+				"children": [
+					"c900-1124-6d45-db52",
+					"7ed2-2361-164f-8bfd"
+				],
+				"isRemovable": false,
+				"name": "__library__",
+				"orientation": "PORTRAIT",
+				"parent": null
+			},
+			"type": "Page",
+			"userProps": {
+				"backgroundColor": "#FFFFFF",
+				"flexProps": {
+					"alignContent": "STRETCH",
+					"alignItems": "STRETCH",
+					"direction": "INHERIT",
+					"flexDirection": "COLUMN",
+					"flexWrap": "NOWRAP",
+					"justifyContent": "FLEX_START"
+				},
+				"orientation": "PORTRAIT"
+			},
+			"version": "6.7.0"
+		},
+		{
+			"className": ".statusBar",
+			"id": "c900-1124-6d45-db52",
+			"props": {
+				"children": [],
+				"isRemovable": false,
+				"name": "statusBar",
+				"parent": "79c3-af4f-89a3-2747"
+			},
+			"type": "StatusBar",
+			"userProps": {
+				"visible": false
+			}
+		},
+		{
+			"className": ".headerBar",
+			"id": "7ed2-2361-164f-8bfd",
+			"props": {
+				"children": [],
+				"isRemovable": false,
+				"name": "headerBar",
+				"parent": "79c3-af4f-89a3-2747",
+				"title": "__library__"
+			},
+			"type": "HeaderBar",
+			"userProps": {
+				"backgroundColor": "#FFFFFF",
+				"title": "__library__",
+				"titleColor": "#000000",
+				"visible": true
+			}
+		}
+	]
+}

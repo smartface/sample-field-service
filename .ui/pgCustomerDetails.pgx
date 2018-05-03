@@ -19,7 +19,7 @@
 				"backgroundColor": "rgba( 255, 255, 255, 1 )",
 				"orientation": "AUTO"
 			},
-			"version": "6.6.4"
+			"version": "6.7.0"
 		},
 		{
 			"className": ".statusBar",
@@ -210,7 +210,7 @@
 				"text": "Adam Stewart",
 				"usePageVariable": true
 			},
-			"type": "Label",
+			"type": "TextView",
 			"userProps": {
 				"flexProps": {
 					"alignSelf": "AUTO"
@@ -240,7 +240,7 @@
 				"text": " Lorem Ipsum",
 				"usePageVariable": true
 			},
-			"type": "Label",
+			"type": "TextView",
 			"userProps": {
 				"flexProps": {
 					"alignSelf": "AUTO"

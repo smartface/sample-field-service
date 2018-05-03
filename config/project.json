@@ -3,7 +3,7 @@
 		"name": "Field Service",
 		"company": "Smartface, Inc.",
 		"webSite": "https://www.smartface.io",
-		"version": "2.2.5",
+		"version": "2.2.7",
 		"runtimeVersion": "1100",
 		"description": "Smartface Field Services App powered by Oracle MCS"
 	},
@@ -77,7 +77,7 @@
 						"active": true
 					}
 				},
-				"playerPath": null
+				"playerPath": "player-6.6.6-beta.393.zip"
 			},
 			"android": {
 				"scripts": "scripts",

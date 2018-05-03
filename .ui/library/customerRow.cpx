@@ -1,0 +1,346 @@
+{
+	"components": [
+		{
+			"className": ".flexLayout",
+			"hiddenComponent": true,
+			"id": "0aae-948b-b2ff-66bd",
+			"props": {
+				"children": [
+					"017f-b3c8-4769-bc3d"
+				],
+				"name": "customerRow",
+				"parent": "79c3-af4f-89a3-2747"
+			},
+			"source": {
+				"page": "__library__"
+			},
+			"type": "FlexLayout",
+			"userProps": {
+				"flexProps": {
+					"right": 0,
+					"flexDirection": "ROW"
+				},
+				"height": 106.43000000000002,
+				"left": 0,
+				"right": 0,
+				"top": 0,
+				"width": null
+			}
+		},
+		{
+			"className": ".flexLayout",
+			"id": "017f-b3c8-4769-bc3d",
+			"props": {
+				"children": [
+					"ba6d-ff0d-5916-b231",
+					"e5be-2f30-d780-8b9a",
+					"513d-3361-5fa7-6660"
+				],
+				"id": 152,
+				"name": "flInterior",
+				"parent": "0aae-948b-b2ff-66bd"
+			},
+			"source": {
+				"page": "__library__"
+			},
+			"type": "FlexLayout",
+			"userProps": {
+				"bottom": 0,
+				"flexProps": {
+					"positionType": "ABSOLUTE",
+					"right": 24.5,
+					"bottom": 0
+				},
+				"height": null,
+				"id": 152,
+				"left": 24.5,
+				"right": 24.5,
+				"top": 14.57,
+				"width": null
+			}
+		},
+		{
+			"className": ".flexLayout",
+			"id": "ba6d-ff0d-5916-b231",
+			"props": {
+				"children": [],
+				"id": 160,
+				"name": "customerRowLine",
+				"parent": "017f-b3c8-4769-bc3d",
+				"usePageVariable": true
+			},
+			"source": {
+				"page": "__library__"
+			},
+			"type": "FlexLayout",
+			"userProps": {
+				"backgroundColor": "rgba( 95, 198, 144, 1 )",
+				"bottom": 1.82,
+				"flexProps": {
+					"positionType": "ABSOLUTE",
+					"right": 0.46,
+					"bottom": 1.82
+				},
+				"height": 1,
+				"id": 160,
+				"left": 1.37,
+				"right": 0.46,
+				"usePageVariable": true,
+				"width": null
+			}
+		},
+		{
+			"className": ".imageView",
+			"id": "e5be-2f30-d780-8b9a",
+			"props": {
+				"children": [],
+				"id": 159,
+				"name": "imgCustomerPicture",
+				"parent": "017f-b3c8-4769-bc3d",
+				"usePageVariable": true
+			},
+			"source": {
+				"page": "__library__"
+			},
+			"type": "ImageView",
+			"userProps": {
+				"borderColor": "rgba( 91, 198, 149, 1 )",
+				"borderRadius": 29.5,
+				"borderWidth": 0.5,
+				"flexProps": {
+					"positionType": "ABSOLUTE"
+				},
+				"height": 59,
+				"id": 159,
+				"image": "customers_1.png",
+				"imageFillType": "ASPECTFIT",
+				"left": 0,
+				"top": 3.93,
+				"usePageVariable": true,
+				"width": 59
+			}
+		},
+		{
+			"className": ".flexLayout",
+			"id": "513d-3361-5fa7-6660",
+			"props": {
+				"children": [
+					"b5be-d94f-575b-76f5",
+					"242d-9560-bc68-9988",
+					"456a-073c-8752-3b1b"
+				],
+				"id": 153,
+				"name": "flCustomerData",
+				"parent": "017f-b3c8-4769-bc3d"
+			},
+			"source": {
+				"page": "__library__"
+			},
+			"type": "FlexLayout",
+			"userProps": {
+				"backgroundColor": "rgba( 255, 255, 255, 0 )",
+				"bottom": 0,
+				"flexProps": {
+					"positionType": "ABSOLUTE",
+					"right": 0,
+					"bottom": 0
+				},
+				"height": null,
+				"id": 153,
+				"left": 72,
+				"right": 0,
+				"top": 0,
+				"width": null
+			}
+		},
+		{
+			"className": ".label",
+			"id": "b5be-d94f-575b-76f5",
+			"props": {
+				"children": [],
+				"id": 158,
+				"name": "lblCustomerRowName",
+				"parent": "513d-3361-5fa7-6660",
+				"text": "Adam Stewart",
+				"usePageVariable": true
+			},
+			"source": {
+				"page": "__library__"
+			},
+			"type": "TextView",
+			"userProps": {
+				"flexProps": {
+					"right": 0
+				},
+				"font": {
+					"size": 20
+				},
+				"height": 24,
+				"id": 158,
+				"left": 0,
+				"right": 0,
+				"text": "Adam Stewart",
+				"textColor": "rgba( 74, 74, 74, 1 )",
+				"usePageVariable": true,
+				"width": null
+			}
+		},
+		{
+			"className": ".flexLayout",
+			"id": "242d-9560-bc68-9988",
+			"props": {
+				"children": [
+					"1749-b6aa-d6a1-0a1e",
+					"9835-af9d-f20d-20bd"
+				],
+				"id": 156,
+				"name": "flCustomerRowEmail",
+				"parent": "513d-3361-5fa7-6660"
+			},
+			"source": {
+				"page": "__library__"
+			},
+			"type": "FlexLayout",
+			"userProps": {
+				"flexProps": {
+					"flexDirection": "ROW"
+				},
+				"height": 20,
+				"id": 156,
+				"marginTop": 10,
+				"width": null
+			}
+		},
+		{
+			"className": ".imageView",
+			"id": "1749-b6aa-d6a1-0a1e",
+			"props": {
+				"children": [],
+				"id": 162,
+				"name": "imgCustomerRowEmail",
+				"parent": "242d-9560-bc68-9988"
+			},
+			"source": {
+				"page": "__library__"
+			},
+			"type": "ImageView",
+			"userProps": {
+				"height": null,
+				"id": 162,
+				"image": "customers_email.png",
+				"width": 20
+			}
+		},
+		{
+			"className": ".label",
+			"id": "9835-af9d-f20d-20bd",
+			"props": {
+				"children": [],
+				"id": 157,
+				"name": "lblCustomerRowEmail",
+				"parent": "242d-9560-bc68-9988",
+				"text": "adam.stewart@customerservices.com",
+				"usePageVariable": true
+			},
+			"source": {
+				"page": "__library__"
+			},
+			"type": "TextView",
+			"userProps": {
+				"alpha": 0.54,
+				"flexProps": {
+					"flexGrow": 1
+				},
+				"font": {
+					"family": "Lato",
+					"size": 13
+				},
+				"height": null,
+				"id": 157,
+				"left": 8,
+				"text": "adam.stewart@customerservices.com",
+				"textColor": "rgba( 74, 74, 74, 1 )",
+				"usePageVariable": true,
+				"width": null
+			}
+		},
+		{
+			"className": ".flexLayout",
+			"id": "456a-073c-8752-3b1b",
+			"props": {
+				"children": [
+					"a4d3-78e5-3f1c-9ba0",
+					"99ba-dd8d-b564-d108"
+				],
+				"id": 154,
+				"name": "flCustomerRowPhone",
+				"parent": "513d-3361-5fa7-6660"
+			},
+			"source": {
+				"page": "__library__"
+			},
+			"type": "FlexLayout",
+			"userProps": {
+				"flexProps": {
+					"flexDirection": "ROW"
+				},
+				"height": 20,
+				"id": 154,
+				"marginTop": 10,
+				"width": null
+			}
+		},
+		{
+			"className": ".imageView",
+			"id": "a4d3-78e5-3f1c-9ba0",
+			"props": {
+				"children": [],
+				"id": 161,
+				"name": "imgCustomerRowPhone",
+				"parent": "456a-073c-8752-3b1b"
+			},
+			"source": {
+				"page": "__library__"
+			},
+			"type": "ImageView",
+			"userProps": {
+				"height": null,
+				"id": 161,
+				"image": "customers_phone.png",
+				"width": 20
+			}
+		},
+		{
+			"className": ".label",
+			"id": "99ba-dd8d-b564-d108",
+			"props": {
+				"children": [],
+				"id": 155,
+				"name": "lblCustomerRowPhone",
+				"parent": "456a-073c-8752-3b1b",
+				"text": "90 533 634 2312",
+				"usePageVariable": true
+			},
+			"source": {
+				"page": "__library__"
+			},
+			"type": "TextView",
+			"userProps": {
+				"flexProps": {
+					"flexGrow": 1
+				},
+				"font": {
+					"family": "Lato",
+					"size": 13
+				},
+				"height": null,
+				"id": 155,
+				"left": 8,
+				"text": "90 533 634 2312",
+				"textColor": "rgba( 74, 74, 74, 1 )",
+				"usePageVariable": true,
+				"width": null
+			}
+		}
+	]
+}

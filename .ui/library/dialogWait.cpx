@@ -1,0 +1,206 @@
+{
+	"components": [
+		{
+			"className": ".flexLayout",
+			"hiddenComponent": false,
+			"id": "53c0-50b5-1f65-7a15",
+			"props": {
+				"children": [
+					"cceb-c9b9-6b06-9b6c"
+				],
+				"name": "dialogWait",
+				"parent": "79c3-af4f-89a3-2747"
+			},
+			"source": {
+				"page": "__library__"
+			},
+			"type": "FlexLayout",
+			"userProps": {
+				"alpha": 1,
+				"backgroundColor": "rgba( 0, 0, 0, 0.8 )",
+				"borderColor": "rgba(0,0,0,1)",
+				"borderWidth": 0,
+				"bottom": 0,
+				"flexProps": {
+					"alignContent": "STRETCH",
+					"alignItems": "CENTER",
+					"flexDirection": "COLUMN",
+					"flexWrap": "NOWRAP",
+					"justifyContent": "CENTER",
+					"positionType": "RELATIVE",
+					"right": 0,
+					"bottom": 0,
+					"flexGrow": 1,
+					"alignSelf": "STRETCH"
+				},
+				"height": null,
+				"left": 0,
+				"right": 0,
+				"top": 0,
+				"visible": true,
+				"width": null
+			}
+		},
+		{
+			"className": ".flexLayout",
+			"hiddenComponent": false,
+			"id": "cceb-c9b9-6b06-9b6c",
+			"props": {
+				"children": [
+					"cc92-0a49-32e2-40d4",
+					"774a-7890-4c6b-c9b9",
+					"9b20-8ec9-667c-74bf"
+				],
+				"name": "flWaitWhite",
+				"parent": "53c0-50b5-1f65-7a15",
+				"usePageVariable": true
+			},
+			"source": {
+				"page": "__library__"
+			},
+			"type": "FlexLayout",
+			"userProps": {
+				"alpha": 1,
+				"backgroundColor": "#FFFFFF",
+				"borderColor": "rgba( 255, 255, 255, 1 )",
+				"borderRadius": 15,
+				"borderWidth": 1,
+				"flexProps": {
+					"alignContent": "STRETCH",
+					"alignItems": "CENTER",
+					"flexDirection": "COLUMN",
+					"flexWrap": "NOWRAP",
+					"justifyContent": "CENTER",
+					"positionType": "RELATIVE",
+					"alignSelf": "STRETCH"
+				},
+				"height": 150,
+				"marginLeft": 60,
+				"marginRight": 60,
+				"usePageVariable": true,
+				"visible": true,
+				"width": null
+			}
+		},
+		{
+			"className": ".label",
+			"id": "cc92-0a49-32e2-40d4",
+			"props": {
+				"children": [],
+				"name": "lblSaving",
+				"parent": "cceb-c9b9-6b06-9b6c",
+				"text": "Saving New Customer",
+				"usePageVariable": true
+			},
+			"source": {
+				"page": "__library__"
+			},
+			"type": "TextView",
+			"userProps": {
+				"flexProps": {
+					"flexGrow": null
+				},
+				"font": {
+					"family": "Lato",
+					"size": 22
+				},
+				"height": 54,
+				"marginBottom": null,
+				"multiline": true,
+				"text": "Saving New Customer",
+				"textAlignment": "TOPCENTER",
+				"usePageVariable": true,
+				"width": 245
+			}
+		},
+		{
+			"className": ".activityIndicator",
+			"hiddenComponent": false,
+			"id": "774a-7890-4c6b-c9b9",
+			"props": {
+				"children": [],
+				"name": "aiWait",
+				"parent": "cceb-c9b9-6b06-9b6c",
+				"usePageVariable": true
+			},
+			"source": {
+				"page": "__library__"
+			},
+			"type": "ActivityIndicator",
+			"userProps": {
+				"alpha": 1,
+				"backgroundColor": "rgba( 255, 255, 255, 0 )",
+				"borderColor": "rgba(0,0,0,1)",
+				"borderWidth": 0,
+				"color": "rgba( 44, 50, 57, 1 )",
+				"flexProps": {
+					"positionType": "RELATIVE"
+				},
+				"height": 42,
+				"marginBottom": 40,
+				"marginTop": null,
+				"minHeight": 21,
+				"minWidth": 21,
+				"usePageVariable": true,
+				"visible": true,
+				"width": 42
+			}
+		},
+		{
+			"className": ".flexLayout",
+			"id": "9b20-8ec9-667c-74bf",
+			"props": {
+				"children": [
+					"cb36-89e3-68ee-8119"
+				],
+				"name": "flCheck",
+				"parent": "cceb-c9b9-6b06-9b6c",
+				"usePageVariable": true
+			},
+			"source": {
+				"page": "__library__"
+			},
+			"type": "FlexLayout",
+			"userProps": {
+				"backgroundColor": "rgba( 255, 255, 255, 0 )",
+				"bottom": 0,
+				"flexProps": {
+					"positionType": "ABSOLUTE",
+					"right": 0,
+					"bottom": 0,
+					"alignItems": "CENTER",
+					"justifyContent": "CENTER"
+				},
+				"height": null,
+				"left": 0,
+				"right": 0,
+				"top": 0,
+				"usePageVariable": true,
+				"visible": false,
+				"width": null
+			}
+		},
+		{
+			"className": ".imageView",
+			"id": "cb36-89e3-68ee-8119",
+			"props": {
+				"children": [],
+				"name": "imgCheck",
+				"parent": "9b20-8ec9-667c-74bf",
+				"usePageVariable": true
+			},
+			"source": {
+				"page": "__library__"
+			},
+			"type": "ImageView",
+			"userProps": {
+				"flexProps": {},
+				"height": 112.5,
+				"image": "check.png",
+				"imageFillType": "ASPECTFIT",
+				"usePageVariable": true,
+				"width": 112.5
+			}
+		}
+	]
+}

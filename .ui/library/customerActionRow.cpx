@@ -1,0 +1,208 @@
+{
+	"components": [
+		{
+			"className": ".flexLayout",
+			"hiddenComponent": true,
+			"id": "dc03-0d8a-594e-86b6",
+			"props": {
+				"children": [
+					"2541-7aa2-d40c-06ab",
+					"7cbd-7800-9107-ffc5",
+					"ce32-883b-9b63-af4f",
+					"335d-a4ff-8712-0a69",
+					"bd06-1c58-bdc4-d271"
+				],
+				"name": "customerActionRow",
+				"parent": "79c3-af4f-89a3-2747"
+			},
+			"source": {
+				"page": "__library__"
+			},
+			"type": "FlexLayout",
+			"userProps": {
+				"backgroundColor": "rgba( 255, 255, 255, 1 )",
+				"bottom": 0,
+				"flexProps": {
+					"right": 0,
+					"bottom": 0,
+					"flexDirection": "ROW"
+				},
+				"height": 60,
+				"left": 0,
+				"right": 0,
+				"top": 0,
+				"width": null
+			}
+		},
+		{
+			"className": ".label",
+			"hiddenComponent": false,
+			"id": "2541-7aa2-d40c-06ab",
+			"props": {
+				"children": [],
+				"name": "lblActionName",
+				"parent": "dc03-0d8a-594e-86b6",
+				"text": "Notes",
+				"usePageVariable": true
+			},
+			"source": {
+				"page": "__library__"
+			},
+			"type": "TextView",
+			"userProps": {
+				"backgroundColor": "rgba( 208, 2, 27, 0 )",
+				"flexProps": {
+					"flexGrow": 1
+				},
+				"font": {
+					"size": 14,
+					"family": "Lato"
+				},
+				"height": null,
+				"text": "Notes",
+				"textColor": "rgba( 29, 29, 38, 1 )",
+				"usePageVariable": true,
+				"width": null
+			}
+		},
+		{
+			"className": ".label",
+			"id": "7cbd-7800-9107-ffc5",
+			"props": {
+				"children": [],
+				"name": "lblCount",
+				"parent": "dc03-0d8a-594e-86b6",
+				"text": null,
+				"usePageVariable": true
+			},
+			"source": {
+				"page": "__library__"
+			},
+			"type": "TextView",
+			"userProps": {
+				"font": {
+					"family": "Lato",
+					"size": 14
+				},
+				"height": null,
+				"marginRight": 11,
+				"text": null,
+				"textAlignment": "MIDCENTER",
+				"textColor": "rgba( 29, 29, 38, 0.8 )",
+				"usePageVariable": true,
+				"width": 30
+			}
+		},
+		{
+			"className": ".flexLayout",
+			"hiddenComponent": false,
+			"id": "ce32-883b-9b63-af4f",
+			"props": {
+				"children": [
+					"4d81-80bf-4eed-d653"
+				],
+				"name": "flActionNext",
+				"parent": "dc03-0d8a-594e-86b6"
+			},
+			"source": {
+				"page": "__library__"
+			},
+			"type": "FlexLayout",
+			"userProps": {
+				"backgroundColor": "rgba( 144, 19, 254, 0 )",
+				"bottom": 0,
+				"flexProps": {
+					"bottom": 0,
+					"alignItems": "CENTER",
+					"justifyContent": "CENTER",
+					"right": 8.5
+				},
+				"height": null,
+				"left": null,
+				"right": 8.5,
+				"top": 0,
+				"width": 8.5
+			}
+		},
+		{
+			"className": ".imageView",
+			"id": "4d81-80bf-4eed-d653",
+			"props": {
+				"children": [],
+				"name": "imgActionNext",
+				"parent": "ce32-883b-9b63-af4f"
+			},
+			"source": {
+				"page": "__library__"
+			},
+			"type": "ImageView",
+			"userProps": {
+				"flexProps": {},
+				"height": 13.91,
+				"image": "next_page.png",
+				"width": 8.5
+			}
+		},
+		{
+			"className": ".flexLayout",
+			"hiddenComponent": false,
+			"id": "335d-a4ff-8712-0a69",
+			"props": {
+				"children": [],
+				"name": "flCustomerActionLine",
+				"parent": "dc03-0d8a-594e-86b6",
+				"usePageVariable": true
+			},
+			"source": {
+				"page": "__library__"
+			},
+			"type": "FlexLayout",
+			"userProps": {
+				"backgroundColor": "rgba( 95, 198, 144, 1 )",
+				"bottom": 0,
+				"flexProps": {
+					"positionType": "ABSOLUTE",
+					"right": 0,
+					"bottom": 0
+				},
+				"height": 0.5,
+				"left": 0,
+				"right": 0,
+				"usePageVariable": true,
+				"width": null
+			}
+		},
+		{
+			"className": ".button",
+			"hiddenComponent": true,
+			"id": "bd06-1c58-bdc4-d271",
+			"props": {
+				"children": [],
+				"name": "btnAction",
+				"parent": "dc03-0d8a-594e-86b6",
+				"text": null,
+				"usePageVariable": true
+			},
+			"source": {
+				"page": "__library__"
+			},
+			"type": "Button",
+			"userProps": {
+				"backgroundColor": "rgba( 0, 161, 241, 0 )",
+				"bottom": 0,
+				"flexProps": {
+					"positionType": "ABSOLUTE",
+					"right": 0,
+					"bottom": 0
+				},
+				"height": null,
+				"left": 0,
+				"right": 0,
+				"text": null,
+				"top": 0,
+				"usePageVariable": true,
+				"width": null
+			}
+		}
+	]
+}

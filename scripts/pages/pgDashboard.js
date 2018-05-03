@@ -8,8 +8,11 @@ const user = require("../lib/user");
 const JET = require('sf-extension-oracle-jet');
 const FlexLayout = require('sf-core/ui/flexlayout');
 const Font = require('sf-core/ui/font');
-const Label = require('sf-core/ui/label');
+const TextView = require('sf-core/ui/textview');
 const WebView = require('sf-core/ui/webview');
+const UI = require('sf-core/ui');
+const Image = require('sf-core/ui/image');
+const Color = require('sf-core/ui/color');
 
 var labelFont = Font.create(Font.DEFAULT, 16, Font.BOLD);
 var webViewHeight = 375;
@@ -30,7 +33,7 @@ const pgDashboard = extend(pgDashboardDesign)(
             baseOnLoad && baseOnLoad();
 
             page.ios.safeAreaLayoutMode = true;
-            
+
             sliderDrawer.setLeftItem(page.headerBar);
             page.android.onBackButtonPressed = function(e) {
                 user.logOut();
@@ -136,6 +139,21 @@ const pgDashboard = extend(pgDashboardDesign)(
             applyTheme();
             sliderDrawer.moveHighlight(0);
             page.headerBar.title = lang.dashboard;
+
+            var myItem = new UI.HeaderBarItem({
+                image: Image.createFromFile("images://notify.png"),
+                color: Color.WHITE,
+                onPress: function() {
+                    alert("Announcements!");
+                    myItem.badge.setVisible(false);
+                }
+            });
+            myItem.badge.setText(1);
+            myItem.badge.font = Font.create("Arial", 10);
+            myItem.badge.setVisible(true);
+            
+            this.headerBar.setItems([myItem]);
+
         };
 
         function applyTheme() {
@@ -146,14 +164,7 @@ const pgDashboard = extend(pgDashboardDesign)(
             page.layout.backgroundColor = selectedTheme.dashboardColor;
         }
 
-
-
-
-
     });
-
-
-
 
 function generateChartTemplate(jetData, labelText, chartUrl) {
     var layout = new FlexLayout({
@@ -161,7 +172,7 @@ function generateChartTemplate(jetData, labelText, chartUrl) {
         height: webViewHeight + (2 * webViewMargin) + labelHeigth
     });
 
-    var labelArea = new Label({
+    var labelArea = new TextView({
         height: labelHeigth,
         width: labelWidth,
         font: labelFont,

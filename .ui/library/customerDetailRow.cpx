@@ -1,0 +1,123 @@
+{
+	"components": [
+		{
+			"className": ".flexLayout",
+			"hiddenComponent": true,
+			"id": "c71f-765a-6776-5d0c",
+			"props": {
+				"children": [
+					"bb1e-85eb-8cca-598d",
+					"87f6-6622-d20c-9e20",
+					"73fa-089d-debc-0efb"
+				],
+				"name": "customerDetailRow",
+				"parent": "79c3-af4f-89a3-2747"
+			},
+			"source": {
+				"page": "__library__"
+			},
+			"type": "FlexLayout",
+			"userProps": {
+				"alpha": 1,
+				"bottom": 0,
+				"flexProps": {
+					"right": 0,
+					"bottom": 0
+				},
+				"height": 61.75,
+				"left": 0,
+				"paddingTop": 12.75,
+				"right": 0,
+				"top": 0,
+				"width": null
+			}
+		},
+		{
+			"className": ".flexLayout",
+			"id": "bb1e-85eb-8cca-598d",
+			"props": {
+				"children": [],
+				"name": "flCustomerDetailLine",
+				"parent": "c71f-765a-6776-5d0c",
+				"usePageVariable": true
+			},
+			"source": {
+				"page": "__library__"
+			},
+			"type": "FlexLayout",
+			"userProps": {
+				"backgroundColor": "rgba( 95, 198, 144, 1 )",
+				"bottom": 0,
+				"flexProps": {
+					"positionType": "ABSOLUTE",
+					"right": 0,
+					"bottom": 0
+				},
+				"height": 0.5,
+				"left": 0,
+				"right": 0,
+				"usePageVariable": true,
+				"width": null
+			}
+		},
+		{
+			"className": ".label",
+			"id": "87f6-6622-d20c-9e20",
+			"props": {
+				"children": [],
+				"name": "lblFieldName",
+				"parent": "c71f-765a-6776-5d0c",
+				"text": "Customer Number",
+				"usePageVariable": true
+			},
+			"source": {
+				"page": "__library__"
+			},
+			"type": "TextView",
+			"userProps": {
+				"alpha": 0.51,
+				"backgroundColor": "rgba( 255, 255, 255, 0 )",
+				"flexProps": {},
+				"font": {
+					"family": "Lato",
+					"size": 12
+				},
+				"height": 14,
+				"marginLeft": 0.5,
+				"text": "Customer Number",
+				"textColor": "rgba( 29, 29, 38, 1 )",
+				"usePageVariable": true,
+				"width": null
+			}
+		},
+		{
+			"className": ".label",
+			"id": "73fa-089d-debc-0efb",
+			"props": {
+				"children": [],
+				"name": "lblFieldValue",
+				"parent": "c71f-765a-6776-5d0c",
+				"text": "7645980",
+				"usePageVariable": true
+			},
+			"source": {
+				"page": "__library__"
+			},
+			"type": "TextView",
+			"userProps": {
+				"flexProps": {},
+				"font": {
+					"family": "Lato",
+					"size": 14
+				},
+				"height": 16,
+				"marginLeft": 0.5,
+				"marginTop": 7,
+				"text": "7645980",
+				"textColor": "rgba( 29, 29, 38, 1 )",
+				"usePageVariable": true,
+				"width": null
+			}
+		}
+	]
+}

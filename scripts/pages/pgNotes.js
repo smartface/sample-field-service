@@ -3,7 +3,7 @@ const extend = require('js-base/core/extend');
 const pgNotesDesign = require('ui/ui_pgNotes');
 const ListViewItem = require('sf-core/ui/listviewitem');
 const FlexLayout = require('sf-core/ui/flexlayout');
-const Label = require('sf-core/ui/label');
+const TextView = require('sf-core/ui/textview');
 const initTime = require("../lib/init-time");
 const notes = require("../model/notes");
 const Color = require('sf-core/ui/color');
@@ -129,7 +129,7 @@ function onLoad(superOnLoad) {
 		});
 		lvNotesItem.addChild(flListRow);
 
-		var lblNoteName = new Label({
+		var lblNoteName = new TextView({
 			id: lblNoteNameId,
 			positionType: FlexLayout.PositionType.RELATIVE,
 			flexGrow: 1,
@@ -140,7 +140,7 @@ function onLoad(superOnLoad) {
 		});
 		flListRow.addChild(lblNoteName);
 
-		var lblDate = new Label({
+		var lblDate = new TextView({
 			id: lblDateId,
 			positionType: FlexLayout.PositionType.RELATIVE,
 			flexGrow: 1,

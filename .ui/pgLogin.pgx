@@ -30,7 +30,7 @@
 				},
 				"orientation": "PORTRAIT"
 			},
-			"version": "6.6.4"
+			"version": "6.7.0"
 		},
 		{
 			"className": ".statusBar",
@@ -281,7 +281,7 @@
 				"parent": "0d61-70a0-0abb-5588",
 				"text": "Field Service"
 			},
-			"type": "Label",
+			"type": "TextView",
 			"userProps": {
 				"alpha": 1,
 				"backgroundColor": "#FFFFFF",
@@ -312,7 +312,7 @@
 				"parent": "0d61-70a0-0abb-5588",
 				"text": ""
 			},
-			"type": "Label",
+			"type": "TextView",
 			"userProps": {
 				"alpha": 1,
 				"backgroundColor": "#FFFFFF",

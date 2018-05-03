@@ -1,7 +1,7 @@
 const extend = require('js-base/core/extend');
 const FlexLayout = require('sf-core/ui/flexlayout');
 const Color = require('sf-core/ui/color');
-const Label = require('sf-core/ui/label');
+const TextView = require('sf-core/ui/textview');
 const TextAlignment = require('sf-core/ui/textalignment');
 const Font = require('sf-core/ui/font');
 const View = require('sf-core/ui/view');
@@ -99,7 +99,7 @@ const NotificationRow = extend(FlexLayout)(
 		});
 		this.addChild(vBall);
 
-		var lblDate = new Label({
+		var lblDate = new TextView({
 			height: 31,
 			positionType: FlexLayout.PositionType.RELATIVE,
 			marginTop: topShift,
@@ -116,7 +116,7 @@ const NotificationRow = extend(FlexLayout)(
 		lblDate.font = Font.create("Lato", 15, Font.NORMAL);
 		flLeft.addChild(lblDate);
 
-		var lblTitle = new Label({
+		var lblTitle = new TextView({
 			height: lblTitleMinHeight,
 			positionType: FlexLayout.PositionType.RELATIVE,
 			backgroundColor: Color.TRANSPARENT,
@@ -132,7 +132,7 @@ const NotificationRow = extend(FlexLayout)(
 		lblTitle.font = Font.create("Lato", 17, Font.NORMAL);
 		flContent.addChild(lblTitle);
 
-		var lblContent = new Label({
+		var lblContent = new TextView({
 			positionType: FlexLayout.PositionType.RELATIVE,
 			backgroundColor: Color.TRANSPARENT,
 			alpha: 1,
