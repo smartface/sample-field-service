@@ -152,6 +152,8 @@ const pgNewCustomer = extend(pgNewCustomerDesign)(
             baseOnShow && baseOnShow(data);
             page.statusBar.ios.style = StatusBarStyle.LIGHTCONTENT;
             applyTheme();
+            
+            //alert("size " + page.selectMapButton.font );
             //EBTEMPORARY
             // location.getLocation(function(err, location) {
             //     if (err) {

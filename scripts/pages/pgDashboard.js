@@ -149,6 +149,7 @@ const pgDashboard = extend(pgDashboardDesign)(
                 }
             });
             myItem.badge.setText(1);
+            myItem.badge.move(0,5);
             myItem.badge.font = Font.create("Arial", 10);
             myItem.badge.setVisible(true);
             
