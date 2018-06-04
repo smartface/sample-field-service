@@ -26,6 +26,9 @@ const System = require('sf-core/device/system');
 const Font = require('sf-core/ui/font');
 const FloatingMenu = require('sf-core/ui/floatingmenu');
 const ListView = require('sf-core/ui/listview');
+const ImageView = require('sf-core/ui/imageview');
+const MapView = require('sf-core/ui/mapview');
+
 
 const addChild = require("@smartface/contx/lib/smartface/action/addChild");
 
@@ -44,6 +47,9 @@ const pgCustomers = extend(pgCustomersDesign)(
         var svFilter = null;
         page.onLoad = function onLoad() {
             baseOnLoad && baseOnLoad();
+
+            page.customerMapview.clusterEnabled = true;
+            page.customerMapview.zoomLevel = 10;
 
             page.ios.safeAreaLayoutMode = true;
 
@@ -148,12 +154,12 @@ const pgCustomers = extend(pgCustomersDesign)(
                         lblCustomerRowEmail.text = item.customFields.CO.Email || "";
                         var pictureAssigned = false;
                         if (item.customFields.CO.Picture) {
-                            try {
-                                //console.log("base 64 code is   " + item.customFields.CO.Picture.length)
-                                imgCustomerPicture.image = getImage(item.customFields.CO.Picture);
-                                pictureAssigned = true;
-                            }
-                            finally {}
+
+                            imgCustomerPicture.imageFillType = ImageView.FillType.STRETCH;
+                            imgCustomerPicture.image = getImage(item.customFields.CO.Picture);
+                            pictureAssigned = true;
+
+
                         } /**/
                         if (!pictureAssigned)
                             imgCustomerPicture.image = Image.createFromFile("images://customers_empty.png");
@@ -174,7 +180,6 @@ const pgCustomers = extend(pgCustomersDesign)(
                         filter.length = pageLength;
                         filter.start = dataset.length + pageLength - 1;
                         getCustomers(filter, function(err, customers) {
-                            console.log("after getting customers. Is there error? " + !!err);
                             if (err) {
                                 return alert(JSON.stringify(err), "Customers Service Error");
                             }
@@ -197,10 +202,10 @@ const pgCustomers = extend(pgCustomersDesign)(
         page.onShow = function onShow(data) {
             baseOnShow && baseOnShow(data);
 
+
             // filter = data.filter;
             setTimeout(function() {
                 getCustomers(filter, function(err, customers) {
-                    console.log("after getting customers. Is there error? " + !!err);
                     if (err) {
                         return alert(JSON.stringify(err), "Customers Service Error");
                     }
@@ -208,7 +213,7 @@ const pgCustomers = extend(pgCustomersDesign)(
                     if (data && data.filter) {
                         page.aiWait.visible = false;
                         page.lvCustomers.visible = true;
-                        initSearchView();
+                        initSearchViewAndMapView();
                     }
                 });
             }, initTime);
@@ -223,7 +228,10 @@ const pgCustomers = extend(pgCustomersDesign)(
             page.headerBar.title = lang.customers;
         };
 
-        function initSearchView() {
+        function initSearchViewAndMapView() {
+
+            var items = [];
+
             if (System.OS === "iOS") {
                 var filterItem = new HeaderBarItem({
                     onPress: function() {
@@ -237,9 +245,23 @@ const pgCustomers = extend(pgCustomersDesign)(
                     image: Image.createFromFile("images://filter.png"),
                     color: Color.WHITE
                 });
-                page.headerBar.setItems([filterItem]);
-                page.headerBar.items = [filterItem];
+
+                items.push(filterItem);
+                page.headerBar.items = items;
             }
+
+            var customerMapItem = new HeaderBarItem({
+                onPress: function() {
+                    changeVisibleCustomerfl.call(page);
+                    changeVisiblecustomerMapview.call(page);
+                },
+                image: Image.createFromFile("images://mapicon.png"),
+                color: Color.WHITE
+            });
+
+            items.push(customerMapItem);
+            page.headerBar.setItems(items);
+
             svFilter = new SearchView({
                 textColor: System.OS === "Android" ? Color.WHITE : Color.BLACK,
                 hint: lang.search,
@@ -248,16 +270,15 @@ const pgCustomers = extend(pgCustomersDesign)(
                     unfilteredDataset = dataset;
                 },
                 onTextChanged: function(searchText) {
-                    console.log("searched text : " + searchText);
                     var text = searchText.toLowerCase();
-                    
+
                     var datasetFitered = unfilteredDataset.filter(function(item) {
                         return item.customFields.CO.Phone.toLowerCase().indexOf(text) > -1 ||
                             item.customFields.CO.Email.toLowerCase().indexOf(text) > -1 ||
                             item.lookupName.toLowerCase().indexOf(text) > -1;
                     });
-                    
-                    
+
+
                     bindData({
                         items: datasetFitered
                     }, false);
@@ -301,6 +322,8 @@ const pgCustomers = extend(pgCustomersDesign)(
             if (dataset.length % pageLength === 0 && dataset.length !== previousDatasetLength && !filterActive)
                 dataset.push(loadingRowData); // add loading row
 
+            initCustomersPin();
+
             page.lvCustomers.itemCount = dataset.length;
             page.lvCustomers.refreshData();
         }
@@ -311,16 +334,13 @@ const pgCustomers = extend(pgCustomersDesign)(
             //if (!svFilter) return;
             svFilter.addToHeaderBar(page);
             svFilter.requestFocus();
-            console.log("added to header bar");
             page.headerBar.setItems([]);
-
         }
 
         function hideFilter() {
             filterActive = false;
             //if (!svFilter) return;
             svFilter.removeFromHeaderBar(page);
-            console.log("removed from header bar");
             page.headerBar.setItems(page.headerBar.items);
             if (dataset !== unfilteredDataset) {
                 bindData({
@@ -330,6 +350,67 @@ const pgCustomers = extend(pgCustomersDesign)(
             }
             filterActive = false;
         }
+
+        var doNotProduceAgain = false;
+
+        function initCustomersPin() {
+
+            if (!doNotProduceAgain) {
+                dataset.forEach((person) => {
+                    var customerPin = new MapView.Pin({
+                        location: {
+                            latitude: person.address.latitude,
+                            longitude: person.address.longitude
+                        },
+                        title: person.lookupName
+                    });
+
+                    page.customerMapview.addPin(customerPin);
+                });
+
+                doNotProduceAgain = true;
+            }
+            else {
+                var latestCustomer = dataset[(dataset.length - 1)];
+                if (latestCustomer.address.latitude !== "" && latestCustomer.address.longitude !== "") {
+                    var customerPin = new MapView.Pin({
+                        location: {
+                            latitude: latestCustomer.address.latitude,
+                            longitude: latestCustomer.address.longitude
+                        },
+                        title: latestCustomer.lookupName
+                    });
+
+                    page.customerMapview.addPin(customerPin);
+                }
+            }
+
+        }
+
+        function changeVisibleCustomerfl() {
+            const page = this;
+
+            if (page.customerfl.visible) {
+                page.customerfl.visible = false;
+            }
+            else {
+                page.customerfl.visible = true;
+            }
+
+        }
+
+
+        function changeVisiblecustomerMapview() {
+            const page = this;
+
+            if (page.customerMapview.visible) {
+                page.customerMapview.visible = false;
+            }
+            else {
+                page.customerMapview.visible = true;
+            }
+        }
+
 
     });
 

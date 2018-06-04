@@ -47,7 +47,7 @@ function onShow(superOnShow) {
     color: Color.WHITE,
     onPress: function() {
       if (selectedLocation) {
-        Router.goBack("pgNewCustomer", { adress: page.adressLabel.text });
+        Router.goBack("pgNewCustomer", { adress: page.adressLabel.text , location: selectedLocation});
         selectedLocation = null;
       }
       else {
@@ -80,7 +80,6 @@ function onShow(superOnShow) {
   // -------------------
 
   page.mapview.onPress = function(location) {
-    console.log("In Trigger !!");
     selectedLocation = location;
     if (myPin) {
       page.mapview.removePin(myPin);
@@ -99,7 +98,7 @@ function onShow(superOnShow) {
   };
   // -------------------
 
-  Location.start(Location.Android.Provider.AUTO);
+  Location.start([Location.Android.Provider.GPS,Location.Android.Provider.NETWORK]);
   Location.onLocationChanged = function(event) {
     page.mapview.centerLocation = event;
     Location.stop();

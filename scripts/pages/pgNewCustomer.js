@@ -133,8 +133,8 @@ const pgNewCustomer = extend(pgNewCustomerDesign)(
             page.flAddress.addChild(tiAddress);
 
             page.selectMapButton.text = lang.selectOnMap;
-            page.selectMapButton.onPress = function(){
-                 Router.go("pgSelectMap");
+            page.selectMapButton.onPress = function() {
+                Router.go("pgSelectMap");
             };
 
             if (System.OS === "iOS") {
@@ -148,11 +148,12 @@ const pgNewCustomer = extend(pgNewCustomerDesign)(
 
         };
 
+        var location;
         page.onShow = function onShow(data) {
             baseOnShow && baseOnShow(data);
             page.statusBar.ios.style = StatusBarStyle.LIGHTCONTENT;
             applyTheme();
-            
+
             //alert("size " + page.selectMapButton.font );
             //EBTEMPORARY
             // location.getLocation(function(err, location) {
@@ -182,10 +183,16 @@ const pgNewCustomer = extend(pgNewCustomerDesign)(
             //     );
             // });
             page.headerBar.title = lang.newCustomer;
-            
-            if(data !== undefined){
+
+            if (data !== undefined) {
                 tiAddress.text = data.adress;
+
+                if (data.location) {
+                    location = data.location;
+                }
             }
+
+
         };
 
         page.onHide = function() {
@@ -217,11 +224,7 @@ const pgNewCustomer = extend(pgNewCustomerDesign)(
                 tiSurname.invalidate();
             }
 
-            tiAddress.hideKeyboard();
-            tiEmail.hideKeyboard();
-            tiName.hideKeyboard();
-            tiPhone.hideKeyboard();
-            tiSurname.hideKeyboard();
+            Application.hideKeyboard();
 
             if (!isValid) {
                 return;
@@ -236,7 +239,9 @@ const pgNewCustomer = extend(pgNewCustomerDesign)(
                 },
                 lookupName: tiName.text + " " + tiSurname.text,
                 address: {
-                    street: tiAddress.text
+                    street: tiAddress.text,
+                    latitude: (location !== undefined) ? location.latitude : "",
+                    longitude: (location !== undefined) ? location.longitude : ""
                 },
                 customFields: {
                     CO: {
@@ -249,8 +254,7 @@ const pgNewCustomer = extend(pgNewCustomerDesign)(
                 var picture = pictureSet;
                 //TODO: increase quality
                 //console.log("Picture is " + customerData.customFields.CO.Picture);
-                customerData.customFields.CO.Picture = picture.compress(Image.Format.JPEG, 1).toBase64();
-                console.log("" + customerData.customFields.CO.Picture);
+                customerData.customFields.CO.Picture = picture.compress(Image.Format.JPEG, 100).toBase64();
             }
 
             addCustomer(customerData, function(err, newCustomerData) {
@@ -311,6 +315,7 @@ const pgNewCustomer = extend(pgNewCustomerDesign)(
 
             function pickImageAction() {
                 Multimedia.pickFromGallery({
+                    allowsEditing: true,
                     type: Multimedia.Type.IMAGE,
                     onSuccess: onSuccess,
                     page: page
@@ -331,6 +336,7 @@ const pgNewCustomer = extend(pgNewCustomerDesign)(
 
             function startCameraAction() {
                 Multimedia.startCamera({
+                    allowsEditing: true,
                     onSuccess: onSuccess,
                     action: Multimedia.ActionType.IMAGE_CAPTURE,
                     page: page
@@ -339,7 +345,7 @@ const pgNewCustomer = extend(pgNewCustomerDesign)(
 
             function onSuccess(picked) {
                 var image = picked.image;
-                pictureSet = image;
+                pictureSet = (System.OS === "iOS") ? image : image.android.round(36.5);
                 if (System.OS === "iOS")
                     page.btnPicture.backgroundImage = pictureSet;
                 else

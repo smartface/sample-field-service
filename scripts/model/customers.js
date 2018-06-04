@@ -93,7 +93,6 @@ function addCustomer(customerData, callback) {
         if (System.OS === "Android") {
             var fileStream = file.openStream(FileStream.StreamType.WRITE, FileStream.ContentMode.TEXT);
             var isIt = fileStream.write(JSON.stringify(customerJson));
-            console.log("write is succeed ?  " + isIt)
             fileStream.close();
         }
     }
