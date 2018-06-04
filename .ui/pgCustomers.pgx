@@ -8,7 +8,8 @@
 				"children": [
 					"0196-71c2-0ef6-1ab7",
 					"5845-b092-d3d9-014b",
-					"abd8-e2e5-05a5-a8cf"
+					"abd8-e2e5-05a5-a8cf",
+					"bb69-5261-bf00-14d4"
 				],
 				"name": "pgCustomers",
 				"orientation": "AUTO",
@@ -23,7 +24,7 @@
 				},
 				"orientation": "AUTO"
 			},
-			"version": "6.7.0"
+			"version": "6.7.1"
 		},
 		{
 			"className": ".statusBar",
@@ -56,6 +57,7 @@
 		},
 		{
 			"className": ".flexLayout",
+			"hiddenComponent": false,
 			"id": "abd8-e2e5-05a5-a8cf",
 			"props": {
 				"children": [
@@ -63,7 +65,8 @@
 					"ed74-7eb7-2606-1443"
 				],
 				"name": "customerfl",
-				"parent": "0678-cf6d-cce0-97f1"
+				"parent": "0678-cf6d-cce0-97f1",
+				"usePageVariable": true
 			},
 			"type": "FlexLayout",
 			"userProps": {
@@ -71,12 +74,14 @@
 				"flexProps": {
 					"justifyContent": "CENTER",
 					"alignItems": "CENTER",
-					"positionType": "ABSOLUTE"
+					"positionType": "ABSOLUTE",
+					"alignSelf": "STRETCH"
 				},
 				"height": null,
 				"left": 0,
 				"right": 0,
 				"top": 0,
+				"usePageVariable": true,
 				"width": null
 			}
 		},
@@ -123,6 +128,31 @@
 			"type": "ActivityIndicator",
 			"userProps": {
 				"usePageVariable": true
+			}
+		},
+		{
+			"className": ".mapView",
+			"id": "bb69-5261-bf00-14d4",
+			"props": {
+				"children": [],
+				"name": "customerMapview",
+				"parent": "0678-cf6d-cce0-97f1",
+				"usePageVariable": true
+			},
+			"type": "MapView",
+			"userProps": {
+				"bottom": 0,
+				"flexProps": {
+					"alignSelf": "STRETCH",
+					"positionType": "ABSOLUTE"
+				},
+				"height": null,
+				"left": 0,
+				"right": 0,
+				"top": 0,
+				"usePageVariable": true,
+				"visible": false,
+				"width": null
 			}
 		}
 	]

@@ -19,7 +19,7 @@
 				"backgroundColor": "rgba( 255, 255, 255, 1 )",
 				"orientation": "AUTO"
 			},
-			"version": "6.7.0"
+			"version": "6.7.1"
 		},
 		{
 			"className": ".statusBar",
