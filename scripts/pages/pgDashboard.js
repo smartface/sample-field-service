@@ -154,6 +154,16 @@ const pgDashboard = extend(pgDashboardDesign)(
             myItem.badge.setVisible(true);
 
             this.headerBar.setItems([myItem]);
+            
+
+            sliderDrawer.onShow = function() {
+                page.svChart.touchEnabled = false;
+            }
+
+            sliderDrawer.onHide = function() {
+                page.svChart.touchEnabled = true;
+            }
+
 
         };
 

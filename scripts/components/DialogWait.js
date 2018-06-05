@@ -27,7 +27,6 @@ const DialogWait = extend(DialogWaitDesign)(
 		dialogWait.aiWait.ios.type = ActivityIndicator.iOS.Type.WHITELARGE;
 
 		dialogWait.showOK = function(callback) {
-			console.log("in show ok");
 			dialogWait.aiWait.visible = false;
 			dialogWait.lblSaving.visible = false;
 			dialogWait.flCheck.visible = true;
@@ -35,13 +34,11 @@ const DialogWait = extend(DialogWaitDesign)(
 
 			var dialogObject = (dialogWait.dialogObject && dialogWait.dialogObject.layout) || dialogWait.getParent();
 			var animationParent = System.OS === "Android" ? dialogWait.flWaitWhite : dialogObject;
-            console.log("in show 36");
+			
             setTimeout(()=>{
             	Animator.animate(animationParent, 1000, function() {
-				console.log("in animate 39");
 				dialogWait.imgCheck.alpha = 0.05;
 			}).complete(function() {
-				console.log("in complete 42");
 				callback && callback();
 			});
             },200);

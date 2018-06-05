@@ -264,11 +264,27 @@ const pgNewCustomer = extend(pgNewCustomerDesign)(
                     return alert(JSON.stringify(err), "Customer Service Error");
                 }
                 dialogWait.showOK(function() {
-                    console.log("in show iok 235");
+                    clearDataOnSave.call(page);
                     dialogWait.hide();
                     Router.goBack();
                 });
             });
+        }
+
+        function clearDataOnSave() {
+            const page = this;
+
+            page.tiName.text = "";
+            page.tiSurname.text = "";
+            page.tiAddress.text = "";
+            page.tiEmail.text = "";
+            page.tiPhone.text = "";
+
+            var emptyPicture = Image.createFromFile("images://customers_empty.png");
+            if (System.OS === "iOS")
+                page.btnPicture.backgroundImage = emptyPicture;
+            else
+                page.imgPicture.image = emptyPicture;
         }
 
         function pickPicture() {

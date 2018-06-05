@@ -51,6 +51,12 @@ const pgCustomers = extend(pgCustomersDesign)(
             page.customerMapview.clusterEnabled = true;
             page.customerMapview.zoomLevel = 10;
 
+            page.customerMapview.onCreate = function() {
+                page.customerMapview.centerLocation = {
+                    latitude: 40.6409884,
+                    longitude: -73.9452045
+                };
+            };
             page.ios.safeAreaLayoutMode = true;
 
             var selectedTheme = theme[theme.selected];
@@ -202,6 +208,9 @@ const pgCustomers = extend(pgCustomersDesign)(
         page.onShow = function onShow(data) {
             baseOnShow && baseOnShow(data);
 
+            page.customerMapview.userLocationEnabled = true;
+            console.log(" page.customerMapview.userLocationEnabled " + page.customerMapview.userLocationEnabled);
+
 
             // filter = data.filter;
             setTimeout(function() {
@@ -329,26 +338,30 @@ const pgCustomers = extend(pgCustomersDesign)(
         }
 
         function showFilter() {
-            filterActive = true;
-            unfilteredDataset = dataset;
-            //if (!svFilter) return;
-            svFilter.addToHeaderBar(page);
-            svFilter.requestFocus();
-            page.headerBar.setItems([]);
+            if (!page.customerMapview.visible) {
+                filterActive = true;
+                unfilteredDataset = dataset;
+                //if (!svFilter) return;
+                svFilter.addToHeaderBar(page);
+                svFilter.requestFocus();
+                page.headerBar.setItems([]);
+            }
         }
 
         function hideFilter() {
-            filterActive = false;
-            //if (!svFilter) return;
-            svFilter.removeFromHeaderBar(page);
-            page.headerBar.setItems(page.headerBar.items);
-            if (dataset !== unfilteredDataset) {
-                bindData({
-                    items: unfilteredDataset
-                }, false);
+            if (!page.customerMapview.visible) {
+                filterActive = false;
+                //if (!svFilter) return;
+                svFilter.removeFromHeaderBar(page);
+                page.headerBar.setItems(page.headerBar.items);
+                if (dataset !== unfilteredDataset) {
+                    bindData({
+                        items: unfilteredDataset
+                    }, false);
 
+                }
+                filterActive = false;
             }
-            filterActive = false;
         }
 
         var doNotProduceAgain = false;
@@ -357,15 +370,17 @@ const pgCustomers = extend(pgCustomersDesign)(
 
             if (!doNotProduceAgain) {
                 dataset.forEach((person) => {
-                    var customerPin = new MapView.Pin({
-                        location: {
-                            latitude: person.address.latitude,
-                            longitude: person.address.longitude
-                        },
-                        title: person.lookupName
-                    });
+                    if (person.address.latitude !== "" && person.address.longitudem !== "") {
+                        var customerPin = new MapView.Pin({
+                            location: {
+                                latitude: person.address.latitude,
+                                longitude: person.address.longitude
+                            },
+                            title: person.lookupName
+                        });
 
-                    page.customerMapview.addPin(customerPin);
+                        page.customerMapview.addPin(customerPin);
+                    }
                 });
 
                 doNotProduceAgain = true;
@@ -399,18 +414,18 @@ const pgCustomers = extend(pgCustomersDesign)(
 
         }
 
-
         function changeVisiblecustomerMapview() {
             const page = this;
 
             if (page.customerMapview.visible) {
                 page.customerMapview.visible = false;
+                svFilter.visible = true;
             }
             else {
                 page.customerMapview.visible = true;
+                svFilter.visible = false;
             }
         }
-
 
     });
 
