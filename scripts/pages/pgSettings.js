@@ -20,7 +20,7 @@ const pgSettings = extend(pgSettingsDesign)(
             baseOnLoad && baseOnLoad();
 
             page.ios.safeAreaLayoutMode = true;
-            
+
             sliderDrawer.setLeftItem(page.headerBar);
             page.android.onBackButtonPressed = function(e) {
                 Router.goBack("pgDashboard");
@@ -88,7 +88,7 @@ const pgSettings = extend(pgSettingsDesign)(
             page.headerBar.backgroundColor = selectedTheme.topBarColor;
 
             page.swFingerprint.thumbOnColor = page.swNotifications.thumbOnColor = selectedTheme.thumbOnColor;
-            page.swFingerprint.toggleOnColor = page.swNotifications.toggleOnColor = selectedTheme.toggleOnColor;
+            page.swFingerprint.toggleOnColor = page.swNotifications.toggleOnColor = Color.create("#dfd8d8");
             page.flLineTheme.backgroundColor = selectedTheme.lineSeparator;
             page.flLineNotifications.backgroundColor = selectedTheme.lineSeparator;
         }

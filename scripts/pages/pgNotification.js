@@ -36,7 +36,7 @@ const pgNotification = extend(pgNotificationDesign)(
             // };
 
             sliderDrawer.setLeftItem(page.headerBar);
-            var svNotifications = new ScrollView({
+            page.svNotifications = new ScrollView({
                 left: 0,
                 right: 0,
                 top: 0,
@@ -45,10 +45,10 @@ const pgNotification = extend(pgNotificationDesign)(
                 backgroundColor: Color.TRANSPARENT,
                 positionType: FlexLayout.PositionType.ABSOLUTE
             });
-            page.layout.addChild(svNotifications);
+            page.layout.addChild(page.svNotifications);
 
-            if (svNotifications.layout)
-                flNotifications = svNotifications.layout;
+            if (page.svNotifications.layout)
+                flNotifications = page.svNotifications.layout;
             else {
                 flNotifications = new FlexLayout({
                     left: 0,
@@ -57,7 +57,7 @@ const pgNotification = extend(pgNotificationDesign)(
                     align: ScrollView.Align.VERTICAL,
                     backgroundColor: Color.TRANSPARENT,
                 });
-                svNotifications.addChild(flNotifications);
+                page.svNotifications.addChild(flNotifications);
             }
             page.android.onBackButtonPressed = function(e) {
                 Router.goBack("pgDashboard");
@@ -90,13 +90,12 @@ const pgNotification = extend(pgNotificationDesign)(
             page.headerBar.title = lang.notificationHistory;
 
             sliderDrawer.onShow = function() {
-                page.svChart.touchEnabled = false;
+                page.svNotifications.touchEnabled = false;
             }
 
             sliderDrawer.onHide = function() {
-                page.svChart.touchEnabled = true;
+                page.svNotifications.touchEnabled = true;
             }
-
         };
 
         function applyTheme() {
@@ -138,7 +137,7 @@ const pgNotification = extend(pgNotificationDesign)(
                 Object.assign(notificationRow, {
                     left: 0,
                     right: 0,
-                    // backgroundColor: colors[i],
+                    flexLayout: FlexLayout.PositionType.RELATIVE,
                     date: items[i].createdTime,
                     title: items[i].primaryContact.name,
                     text: items[i].category.lookupName
@@ -147,8 +146,8 @@ const pgNotification = extend(pgNotificationDesign)(
                 flNotifications.addChild(notificationRow);
                 //EBTEMPORARY
                 //NotificationRow Height comes as 0
-                //height += notificationRow.height;
-                height += 250;
+                height += 200;
+                //height += 250;
 
             }
             flNotifications.height = height;

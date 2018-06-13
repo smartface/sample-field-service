@@ -109,4 +109,11 @@ SMF.i18n.defineLanguage('tr', {
 	"useFingerprintMessage": "Gelecekteki oturum açmalarında parmak izi kullanmak ister misin?",
 	"scanFingerprintTitle": "Parmak izi ile oturum aç",
 	"scanFingerprintMessage": "Parmağını tarat",
+	"deleteConfirmation.title": "Bu müşteri bilgilerini silmek istiyor musun ? ",
+	"useFaceIDTitle": "FaceID kullan",
+	"useFaceIDMessage ": "Gelecekteki oturum açmalarında yüz taramasını kullanmak ister misin?",
+	"scanFaceIDTitle ": "FaceID ile oturum aç",
+	"scanFaceIDMessage": "Yüzünü tarat",
+	"locationTitle": "Şuanki Lokasyon",
+	"locationMessage": "Şuanki lokasyonu almak istiyor musunuz ? Aksi takdirde lokasyonunuzu seçebilirsiniz. ."
 });

@@ -34,6 +34,21 @@ const pgDashboard = extend(pgDashboardDesign)(
 
             page.ios.safeAreaLayoutMode = true;
 
+            var myItem = new UI.HeaderBarItem({
+                image: Image.createFromFile("images://notify.png"),
+                color: Color.WHITE,
+                onPress: function() {
+                    alert("Announcements!");
+                    myItem.badge.setVisible(false);
+                }
+            });
+            myItem.badge.setText(1);
+            myItem.badge.move(0, 5);
+            myItem.badge.font = Font.create("Arial", 10);
+            myItem.badge.setVisible(true);
+
+            this.headerBar.setItems([myItem]);
+
             sliderDrawer.setLeftItem(page.headerBar);
             page.android.onBackButtonPressed = function(e) {
                 user.logOut();
@@ -140,21 +155,6 @@ const pgDashboard = extend(pgDashboardDesign)(
             sliderDrawer.moveHighlight(0);
             page.headerBar.title = lang.dashboard;
 
-            var myItem = new UI.HeaderBarItem({
-                image: Image.createFromFile("images://notify.png"),
-                color: Color.WHITE,
-                onPress: function() {
-                    alert("Announcements!");
-                    myItem.badge.setVisible(false);
-                }
-            });
-            myItem.badge.setText(1);
-            myItem.badge.move(0, 5);
-            myItem.badge.font = Font.create("Arial", 10);
-            myItem.badge.setVisible(true);
-
-            this.headerBar.setItems([myItem]);
-            
 
             sliderDrawer.onShow = function() {
                 page.svChart.touchEnabled = false;

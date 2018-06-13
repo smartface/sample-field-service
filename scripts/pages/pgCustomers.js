@@ -28,6 +28,7 @@ const FloatingMenu = require('sf-core/ui/floatingmenu');
 const ListView = require('sf-core/ui/listview');
 const ImageView = require('sf-core/ui/imageview');
 const MapView = require('sf-core/ui/mapview');
+const AlertView = require('sf-core/ui/alertview');
 
 
 const addChild = require("@smartface/contx/lib/smartface/action/addChild");
@@ -203,14 +204,34 @@ const pgCustomers = extend(pgCustomersDesign)(
                 Router.go("pgCustomerDetails", item.id);
             };
 
+            lvCustomers.ios.rightToLeftSwipeEnabled = true;
+
+            lvCustomers.ios.onRowSwiped = function(direction, expansionSettings) {
+
+                if (direction == ListView.iOS.SwipeDirection.RIGHTTOLEFT) {
+                    //Expansion button index. Default value 0
+                    expansionSettings.buttonIndex = 0;
+                    expansionSettings.fillOnTrigger = true;
+                    expansionSettings.threshold = 1;
+                    var archiveSwipeItem = ListView.iOS.createSwipeItem("Cancel", Color.RED, 50, function(e) {
+
+                        confirmDelete(e.index);
+
+                    });
+                    return [archiveSwipeItem];
+                }
+            };
+
+            lvCustomers.android.onRowLongSelected = function(listViewItem, index) {
+                confirmDelete(index);
+            };
+
         };
 
         page.onShow = function onShow(data) {
             baseOnShow && baseOnShow(data);
 
             page.customerMapview.userLocationEnabled = true;
-            console.log(" page.customerMapview.userLocationEnabled " + page.customerMapview.userLocationEnabled);
-
 
             // filter = data.filter;
             setTimeout(function() {
@@ -261,8 +282,8 @@ const pgCustomers = extend(pgCustomersDesign)(
 
             var customerMapItem = new HeaderBarItem({
                 onPress: function() {
-                    changeVisibleCustomerfl.call(page);
-                    changeVisiblecustomerMapview.call(page);
+                    changeVisibleCustomerfl.call(page, customerMapItem);
+                    changeVisiblecustomerMapview.call(page, customerMapItem);
                 },
                 image: Image.createFromFile("images://mapicon.png"),
                 color: Color.WHITE
@@ -366,6 +387,8 @@ const pgCustomers = extend(pgCustomersDesign)(
 
         var doNotProduceAgain = false;
 
+        var pins = [];
+
         function initCustomersPin() {
 
             if (!doNotProduceAgain) {
@@ -380,6 +403,8 @@ const pgCustomers = extend(pgCustomersDesign)(
                         });
 
                         page.customerMapview.addPin(customerPin);
+
+                        pins.push(customerPin);
                     }
                 });
 
@@ -402,7 +427,7 @@ const pgCustomers = extend(pgCustomersDesign)(
 
         }
 
-        function changeVisibleCustomerfl() {
+        function changeVisibleCustomerfl(mapViewItem) {
             const page = this;
 
             if (page.customerfl.visible) {
@@ -414,16 +439,55 @@ const pgCustomers = extend(pgCustomersDesign)(
 
         }
 
-        function changeVisiblecustomerMapview() {
+        function changeVisiblecustomerMapview(mapViewItem) {
             const page = this;
 
             if (page.customerMapview.visible) {
                 page.customerMapview.visible = false;
                 svFilter.visible = true;
+                mapViewItem.image= Image.createFromFile("images://mapicon.png");
             }
             else {
                 page.customerMapview.visible = true;
                 svFilter.visible = false;
+                mapViewItem.image = Image.createFromFile("images://listicon.png");
+            }
+        }
+
+        function confirmDelete(index) {
+            var confirmAlertView = new AlertView({
+                title: lang["deleteConfirmation.title"],
+                message: ""
+            });
+            confirmAlertView.addButton({
+                index: AlertView.ButtonType.NEGATIVE,
+                text: lang["no"]
+            });
+            confirmAlertView.addButton({
+                index: AlertView.ButtonType.POSITIVE,
+                text: lang["yes"],
+                onClick: function() {
+                    deleteItem(index);
+                }
+            });
+
+            confirmAlertView.show();
+
+        }
+
+        function deleteItem(index) {
+            var foundIndex;
+            if (typeof index === 'number') {
+                pins.forEach(function(pin) {
+                    if (dataset[index].lookupName === pin.title) {
+                        foundIndex = index;
+                        page.customerMapview.removePin(pin);
+                    }
+                })
+                pins.splice(foundIndex, 1);
+                dataset.splice(index, 1);
+                page.lvCustomers.itemCount = dataset.length;
+                page.lvCustomers.refreshData();
             }
         }
 

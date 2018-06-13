@@ -30,7 +30,7 @@
 		<key>UIRequiresFullScreen</key>
 		<true/>
 		<key>NSFaceIDUsageDescription</key>
-		<string>Your NSFaceIDUsageDescription</string>
+		<string>Needs your FaceID verification </string>
 		<key>NSContactsUsageDescription</key>
 		<string>$(PRODUCT_NAME) saves to contacts</string>
 		<key>NSPhotoLibraryUsageDescription</key>

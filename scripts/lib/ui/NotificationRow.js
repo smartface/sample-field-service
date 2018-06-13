@@ -14,13 +14,15 @@ const NotificationRow = extend(FlexLayout)(
 	function(_super, props) {
 		var row = this;
 		_super(this, props);
-		
+
 		var selectedTheme = theme[theme.selected];
-		
+
 		var lblTitleMinHeight = 2;
 		var lblTitleMaxHeight = 30.5;
 		var topShift = 35 * 1.5;
 		var contentStartLeft = 126;
+
+		var totalHeight;
 
 		var flLeft = new FlexLayout({
 			left: 0,
@@ -39,6 +41,7 @@ const NotificationRow = extend(FlexLayout)(
 			borderWidth: 0,
 			visible: true
 		});
+		totalHeight += flLeft.height;
 		this.addChild(flLeft);
 
 		var flLine = new View({
@@ -58,6 +61,7 @@ const NotificationRow = extend(FlexLayout)(
 			borderWidth: 0,
 			visible: true
 		});
+		totalHeight += flLeft.height;
 		this.addChild(flLine);
 
 		var flContent = new FlexLayout({
@@ -77,6 +81,7 @@ const NotificationRow = extend(FlexLayout)(
 			borderWidth: 0,
 			visible: true
 		});
+		totalHeight += flContent.height;
 		this.addChild(flContent);
 
 		var vBall = new View({
@@ -97,6 +102,7 @@ const NotificationRow = extend(FlexLayout)(
 			borderRadius: 5.25,
 			visible: true
 		});
+		totalHeight += vBall.height;
 		this.addChild(vBall);
 
 		var lblDate = new TextView({
@@ -114,6 +120,7 @@ const NotificationRow = extend(FlexLayout)(
 			multiline: false
 		});
 		lblDate.font = Font.create("Lato", 15, Font.NORMAL);
+		totalHeight += lblDate.height;
 		flLeft.addChild(lblDate);
 
 		var lblTitle = new TextView({
@@ -130,6 +137,7 @@ const NotificationRow = extend(FlexLayout)(
 			multiline: false
 		});
 		lblTitle.font = Font.create("Lato", 17, Font.NORMAL);
+		totalHeight += lblTitle.height;
 		flContent.addChild(lblTitle);
 
 		var lblContent = new TextView({
@@ -145,6 +153,7 @@ const NotificationRow = extend(FlexLayout)(
 			multiline: true
 		});
 		lblContent.font = Font.create("Lato", 15, Font.NORMAL);
+		totalHeight += lblContent.height;
 		flContent.addChild(lblContent);
 
 
@@ -207,11 +216,8 @@ const NotificationRow = extend(FlexLayout)(
 					var areaWidth = Screen.width - contentStartLeft;
 					var numberOfCharactersPerLine = areaWidth / 8;
 					var extraLines = (text.match(/\n/g) || []).length;
-					console.log("extralines = " + extraLines);
 					var numberOfLines = Math.floor(1 + (text.length / numberOfCharactersPerLine) + extraLines);
-					console.log("numberOfLines = " + numberOfLines);
 					var lblHeight = numberOfLines * 21;
-					console.log("lblHeight = " + lblHeight);
 					lblContent.height = lblHeight;
 					lblContent.text = text;
 
@@ -219,6 +225,14 @@ const NotificationRow = extend(FlexLayout)(
 					row.height = rowHeight + 50;
 
 					return value;
+				}
+			},
+			'heightOfCustomRow': {
+				enumerable: true,
+				configurable: true,
+				get: function() {
+					console.log('totalHeight ' + totalHeight);
+					return totalHeight;
 				}
 			}
 		});

@@ -274,11 +274,11 @@ const pgNewCustomer = extend(pgNewCustomerDesign)(
         function clearDataOnSave() {
             const page = this;
 
-            page.tiName.text = "";
-            page.tiSurname.text = "";
-            page.tiAddress.text = "";
-            page.tiEmail.text = "";
-            page.tiPhone.text = "";
+            tiName.text = "";
+            tiSurname.text = "";
+            tiAddress.text = "";
+            tiEmail.text = "";
+            tiPhone.text = "";
 
             var emptyPicture = Image.createFromFile("images://customers_empty.png");
             if (System.OS === "iOS")

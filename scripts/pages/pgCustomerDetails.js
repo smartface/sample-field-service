@@ -50,13 +50,6 @@ const pgCustomerDetails = extend(pgCustomerDetailsDesign)(
 
             page.ios.safeAreaLayoutMode = true;
 
-            // svCustomerDetail = new ScrollView({
-            //     flexGrow: 1,
-            //     align: ScrollView.Align.VERTICAL,
-            //     backgroundColor: emptyColor,
-            //     visible: false
-            // });
-
             svCustomerDetail = new ScrollView();
             page.layout.addChild(svCustomerDetail, "svCustomerDetail", "", function(userProps) {
                 userProps.flexGrow = 1;
@@ -70,14 +63,7 @@ const pgCustomerDetails = extend(pgCustomerDetailsDesign)(
                 text: "",
                 backgroundImage: Image.createFromFile("images://back_dark.png"),
             });
-            // page.btnBack.dispatch({
-            //     type: "updateUserStyle",
-            //     userStyle: {
-            //         onPress: goBack,
-            //         text: "",
-            //         backgroundImage: Image.createFromFile("images://back_dark.png")
-            //     }
-            // })
+
             var selectedTheme = theme[theme.selected];
             page.flLine.backgroundColor = selectedTheme.lineSeparator;
             page.imgCustomerPicture.borderColor = selectedTheme.mainColor;
@@ -284,6 +270,8 @@ const pgCustomerDetails = extend(pgCustomerDetailsDesign)(
                         }
                     });
                 });
+
+
             }
             if (customerDetails.fields || customerDetails.actions) {
                 var shadow2 = shadow.createVShadowDown({
@@ -294,7 +282,19 @@ const pgCustomerDetails = extend(pgCustomerDetailsDesign)(
                 });
                 layoutHeight += shadow.size;
             }
-            svCustomerDetail.layout.height = layoutHeight + 20;
+            var flPlaceholderBottom = new FlexLayout({
+                flexGrow: 1,
+                positionType: FlexLayout.PositionType.RELATIVE,
+            });
+
+            layout.addChild(flPlaceholderBottom, "shadow2", "", function(userProps) {
+                userProps.flexGrow = 1;
+                userProps.backgroundColor = "rgba(216, 216, 216, 0.24)";
+                return userProps;
+            });
+            
+            svCustomerDetail.layout.height = layoutHeight + 20 ;
+
             page.imgCustomerPicture.image = customerDetails.picture ||
                 Image.createFromFile("images://customers_empty.png");
 

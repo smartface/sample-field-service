@@ -109,4 +109,11 @@ SMF.i18n.defineLanguage('en', {
 	"useFingerprintMessage": "Would you like to use fingerprint login on your future logins?",
 	"scanFingerprintTitle": "Login with fingerprint",
 	"scanFingerprintMessage": "Scan your finger",
+	"deleteConfirmation.title" : "Do you want to delete this customer info ? ",
+	"useFaceIDTitle" : "Use FaceID",
+	"useFaceIDMessage ": "Would you like to use FaceID login on your future logins ?",
+	"scanFaceIDTitle ":  "Login with FaceID",
+	"scanFaceIDMessage" : "Scan your Face",
+	"locationTitle"  : "Current Location",
+	"locationMessage": "Do you wish to apply current location ? Otherwise you can select location."
 });

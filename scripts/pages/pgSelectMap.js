@@ -47,18 +47,12 @@ function onShow(superOnShow) {
     color: Color.WHITE,
     onPress: function() {
       if (selectedLocation) {
-        Router.goBack("pgNewCustomer", { adress: page.adressLabel.text , location: selectedLocation});
+        Router.goBack("pgNewCustomer", { adress: page.adressLabel.text, location: selectedLocation });
         selectedLocation = null;
       }
       else {
-        var myAlertView = new AlertView({
-          message: lang.selectLocation
-        });
-        myAlertView.addButton({
-          type: AlertView.Android.ButtonType.POSITIVE,
-          text: lang.ok
-        });
-        myAlertView.show();
+        var centerLocation = page.mapview.centerLocation;
+        locationConfirmation(centerLocation);
       }
     }
   });
@@ -93,18 +87,41 @@ function onShow(superOnShow) {
 
     page.mapview.addPin(myPin);
 
-    getAdress(selectedLocation);
-
   };
-  // -------------------
 
-  Location.start([Location.Android.Provider.GPS,Location.Android.Provider.NETWORK]);
+  Location.start([Location.Android.Provider.GPS, Location.Android.Provider.NETWORK]);
   Location.onLocationChanged = function(event) {
     page.mapview.centerLocation = event;
+    getAdress(event);
+    // locationConfirmation(event);
     Location.stop();
   };
 
 }
+
+function locationConfirmation(currentLocation) {
+
+  var locationAlertView = new AlertView({
+    title: lang.locationTitle || "Current Location",
+    message: lang.locationMessage || "Do you wish to apply current location ? Otherwise you can select location."
+  });
+  locationAlertView.addButton({
+    index: AlertView.ButtonType.NEGATIVE,
+    text: lang.cancel
+  });
+  locationAlertView.addButton({
+    index: AlertView.ButtonType.POSITIVE,
+    text: lang.ok,
+    onClick: function() {
+      Router.goBack("pgNewCustomer", { adress: page.adressLabel.text, location: currentLocation });
+      selectedLocation = null;
+    }
+  });
+
+  locationAlertView.show();
+
+}
+
 
 function getAdress(location) {
   http.request({

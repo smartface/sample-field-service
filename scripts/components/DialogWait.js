@@ -10,6 +10,8 @@ const System = require('sf-core/device/system');
 const ActivityIndicator = require('sf-core/ui/activityindicator');
 const addChild = require("@smartface/contx/lib/smartface/action/addChild");
 const Screen = require('sf-core/device/screen');
+const Color = require('sf-core/ui/color');
+
 
 const DialogWait = extend(DialogWaitDesign)(
 	//constructor
@@ -23,7 +25,7 @@ const DialogWait = extend(DialogWaitDesign)(
 		dialogWait.imgCheck.alpha = 1;
 		dialogWait.lblSaving.text = lang.savingCustomer;
 		dialogWait.lblSaving.textColor = selectedTheme.topBarColor;
-		
+
 		dialogWait.aiWait.ios.type = ActivityIndicator.iOS.Type.WHITELARGE;
 
 		dialogWait.showOK = function(callback) {
@@ -34,15 +36,15 @@ const DialogWait = extend(DialogWaitDesign)(
 
 			var dialogObject = (dialogWait.dialogObject && dialogWait.dialogObject.layout) || dialogWait.getParent();
 			var animationParent = System.OS === "Android" ? dialogWait.flWaitWhite : dialogObject;
-			
-            setTimeout(()=>{
-            	Animator.animate(animationParent, 1000, function() {
-				dialogWait.imgCheck.alpha = 0.05;
-			}).complete(function() {
-				callback && callback();
-			});
-            },200);
-			
+
+			setTimeout(() => {
+				Animator.animate(animationParent, 1000, function() {
+					dialogWait.imgCheck.alpha = 0.05;
+				}).complete(function() {
+					callback && callback();
+				});
+			}, 200);
+
 		};
 	}
 );
@@ -56,7 +58,7 @@ DialogWait.show = function showWaitdialog(page) {
 	var headerBarItemsChanged = [];
 	var headerBar;
 	var backButtonPressed = null;
-	
+
 	var dialogWait = Object.assign(new DialogWait(), {
 		visible: true,
 		left: 0,
@@ -64,8 +66,8 @@ DialogWait.show = function showWaitdialog(page) {
 		top: 0,
 		bottom: 0
 	});
-	dialogWait.top = (Screen.height/2) - 100;
-	
+	dialogWait.top = (Screen.height / 2) - 100;
+
 
 	var waitDialog = new Dialog();
 	dialogWait.dialogObject = waitDialog;
@@ -101,6 +103,7 @@ DialogWait.show = function showWaitdialog(page) {
 			backButtonPressed = page.android.onBackButtonPressed;
 			page.android.onBackButtonPressed = empty;
 		}
+		waitDialog.layout.backgroundColor = Color.create(0, 0, 0, 255);
 		waitDialog.layout.addChild(dialogWait, "dialogWait");
 		waitDialog.show();
 		waitDialog.layout.applyLayout();
@@ -118,7 +121,7 @@ DialogWait.show = function showWaitdialog(page) {
 		page.onBackButtonPressed = backButtonPressed;
 		waitDialog.hide();
 	}
-	
+
 	return {
 		show: showDialog,
 		hide: hideDialog,
