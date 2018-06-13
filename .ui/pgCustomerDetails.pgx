@@ -19,7 +19,7 @@
 				"backgroundColor": "rgba( 255, 255, 255, 1 )",
 				"orientation": "AUTO"
 			},
-			"version": "6.7.1"
+			"version": "6.8.2"
 		},
 		{
 			"className": ".statusBar",
@@ -279,6 +279,7 @@
 				"marginTop": 21.25,
 				"top": 0,
 				"usePageVariable": true,
+				"visible": false,
 				"width": null
 			}
 		},

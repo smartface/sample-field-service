@@ -12,7 +12,7 @@
 					"bb69-5261-bf00-14d4"
 				],
 				"name": "pgCustomers",
-				"orientation": "AUTO",
+				"orientation": "PORTRAIT",
 				"parent": null
 			},
 			"type": "Page",
@@ -22,9 +22,9 @@
 					"alignItems": "CENTER",
 					"justifyContent": "CENTER"
 				},
-				"orientation": "AUTO"
+				"orientation": "PORTRAIT"
 			},
-			"version": "6.7.1"
+			"version": "6.8.2"
 		},
 		{
 			"className": ".statusBar",

@@ -28,7 +28,7 @@
 				},
 				"orientation": "AUTO"
 			},
-			"version": "6.7.1"
+			"version": "6.8.2"
 		},
 		{
 			"className": ".statusBar",
@@ -64,6 +64,7 @@
 		},
 		{
 			"className": ".activityIndicator",
+			"hiddenComponent": false,
 			"id": "0c6d-68de-4250-616c",
 			"props": {
 				"children": [],
