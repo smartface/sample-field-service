@@ -2,6 +2,7 @@
 .smf
 .npm
 .tmp
+.pm2
 output/Android/*
 output/iOS/*
 output/.tmp
