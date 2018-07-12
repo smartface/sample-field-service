@@ -295,6 +295,7 @@ const pgCustomers = extend(pgCustomersDesign)(
             svFilter = new SearchView({
                 textColor: System.OS === "Android" ? Color.WHITE : Color.BLACK,
                 hint: lang.search,
+                textFieldBackgroundColor: Color.create("#e3ddee"),
                 onSearchBegin: function() {
                     filterActive = true;
                     unfilteredDataset = dataset;
