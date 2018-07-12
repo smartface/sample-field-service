@@ -412,7 +412,7 @@ const pgCustomers = extend(pgCustomersDesign)(
             }
             else {
                 var latestCustomer = dataset[(dataset.length - 1)];
-                if (latestCustomer.address.latitude !== "" && latestCustomer.address.longitude !== "") {
+                if (latestCustomer && latestCustomer.address.latitude !== "" && latestCustomer.address.longitude !== "") {
                     var customerPin = new MapView.Pin({
                         location: {
                             latitude: latestCustomer.address.latitude,
