@@ -12,7 +12,7 @@ plugin/iOS/*
 !scripts/node_modules/
 scripts/node_modules/*
 !scripts/node_modules/library/package.json
-!scripts/themes
+scripts/themes
 !scripts/node_modules/library/styler-builder.js
 !output/Android/README.md
 !output/iOS/README.md
