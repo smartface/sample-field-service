@@ -38,18 +38,18 @@ if (System.OS === "iOS") {
     Router.sliderDrawer = sliderDrawer;
 }
 
-Router.add("pgEntry", require("./pages/pgEntry"));
-Router.add("pgNotification", require("./pages/pgNotification"));
-Router.add("pgLogin", require("./pages/pgLogin"));
-Router.add("pgDashboard", require("./pages/pgDashboard"));
-Router.add("pgCustomerFilter", require("./pages/pgCustomerFilter"));
-Router.add("pgCustomers", require("./pages/pgCustomers"));
-Router.add("pgCustomerDetails", require("./pages/pgCustomerDetails"));
-Router.add("pgNewCustomer", require("./pages/pgNewCustomer"), true);
-Router.add("pgSettings", require("./pages/pgSettings"));
-Router.add("pgNotes", require("./pages/pgNotes"));
-Router.add("pgNoteContent", require("./pages/pgNoteContent"));
-Router.add("pgSelectMap", require("./pages/pgSelectMap"));
+Router.add("pgEntry", "pages/pgEntry");
+Router.add("pgNotification", "pages/pgNotification");
+Router.add("pgLogin", "pages/pgLogin");
+Router.add("pgDashboard", "pages/pgDashboard");
+Router.add("pgCustomerFilter", "pages/pgCustomerFilter");
+Router.add("pgCustomers", "pages/pgCustomers");
+Router.add("pgCustomerDetails", "pages/pgCustomerDetails");
+Router.add("pgNewCustomer", "pages/pgNewCustomer", true);
+Router.add("pgSettings", "pages/pgSettings");
+Router.add("pgNotes", "pages/pgNotes");
+Router.add("pgNoteContent", "pages/pgNoteContent");
+Router.add("pgSelectMap", "pages/pgSelectMap");
 
 // Router.add("jet1", require("sf-extension-oracle-jet/samples/samplePage"));
 // Router.add("jet2", require("sf-extension-oracle-jet/samples/samplePageWithOfficalCharts"));

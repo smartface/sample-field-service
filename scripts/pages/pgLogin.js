@@ -9,10 +9,10 @@ const ActionKeyType = require('sf-core/ui/actionkeytype');
 const Network = require('sf-core/device/network');
 const sliderDrawer = require("../sliderDrawer");
 const userData = require("../model/user");
-const rau = require("sf-extension-utils").rau;
+const rau = require("sf-extension-utils/lib/rau");
 const theme = require("../lib/theme");
 const KeyboardType = require('sf-core/ui/keyboardtype');
-const fingerprint = require("sf-extension-utils").fingerprint;
+const fingerprint = require("sf-extension-utils/lib/fingerprint");
 const login = require("../model/getAuthUser");
 
 const pgLogin = extend(pgLoginDesign)(

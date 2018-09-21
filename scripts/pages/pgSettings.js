@@ -6,7 +6,7 @@ const pgSettingsDesign = require("../ui/ui_pgSettings");
 const sliderDrawer = require("../sliderDrawer");
 const StatusBarStyle = require('sf-core/ui/statusbarstyle');
 const theme = require("../lib/theme");
-const fingerprint = require("sf-extension-utils").fingerprint;
+const fingerprint = require("sf-extension-utils/lib/fingerprint");
 const Data = require('sf-core/data');
 const Color = require("sf-core/ui/color");
 

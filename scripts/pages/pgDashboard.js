@@ -39,13 +39,13 @@ const pgDashboard = extend(pgDashboardDesign)(
                 color: Color.WHITE,
                 onPress: function() {
                     alert("Announcements!");
-                    myItem.badge.setVisible(false);
+                    myItem.badge.setVisible = false;
                 }
             });
-            myItem.badge.setText(1);
-            myItem.badge.move(0, 5);
+            myItem.badge.text = 1;
+            myItem.badge.move = 0, 5;
             myItem.badge.font = Font.create("Arial", 10);
-            myItem.badge.setVisible(true);
+            myItem.badge.setVisible = true;
 
             this.headerBar.setItems([myItem]);
 
