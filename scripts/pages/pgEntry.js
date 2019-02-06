@@ -6,9 +6,12 @@ const pgEntryDesign = require("../ui/ui_pgEntry");
 
 
 const pgEntry = extend(pgEntryDesign)(
-    function(_super) {
+    function(_super,routeData,router) {
         const page = this;
         _super(this);
+        
+        page.router = router;
+        
         var baseOnLoad = page.onLoad;
         var baseOnShow = page.onShow;
         page.onLoad = function onLoad() {
@@ -40,7 +43,7 @@ const pgEntry = extend(pgEntryDesign)(
                         return alert(JSON.stringify(err), "Notifications Service Error");
                     }
 
-                    Router.push("/slider/pgNotification", notificationsData);
+                    page.router.push("/slider/pgNotification", notificationsData);
                 });
             }
         };

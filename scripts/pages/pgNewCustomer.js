@@ -34,10 +34,11 @@ const addCustomer = require("../model/customers").addCustomer;
 const mimicPressed = require("../lib/ui").mimicPressed;
 const VMasker = require('vanilla-masker/lib/vanilla-masker');
 const pgNewCustomer = extend(pgNewCustomerDesign)(
-    function(_super,routeData) {
+    function(_super,routeData,router) {
         const page = this;
         _super(this);
-        this.routeData = routeData;
+        page.routeData = routeData;
+        page.router = router;
         var baseOnLoad = page.onLoad;
         var baseOnShow = page.onShow;
         var tiName, tiSurname, tiEmail, tiPhone, tiAddress;
@@ -49,7 +50,7 @@ const pgNewCustomer = extend(pgNewCustomerDesign)(
             page.ios.safeAreaLayoutMode = true;
             
             Application.android.onBackButtonPressed = () => {
-                Router.goBack();
+                page.router.goBack();
             }
             
             // page.android.onBackButtonPressed = function(e) {
@@ -138,7 +139,7 @@ const pgNewCustomer = extend(pgNewCustomerDesign)(
 
             page.selectMapButton.text = lang.selectOnMap;
             page.selectMapButton.onPress = function() {
-                Router.push("/slider/customersPage/pgSelectMap");
+                page.router.push("/slider/customersPage/pgSelectMap");
             };
 
             if (System.OS === "iOS") {
@@ -154,7 +155,7 @@ const pgNewCustomer = extend(pgNewCustomerDesign)(
 
         var location;
         page.onShow = function onShow(data) {
-            data = this.routeData;
+            data = page.routeData;
             baseOnShow && baseOnShow(data);
             Application.statusBar.style = StatusBarStyle.LIGHTCONTENT;
             applyTheme();
@@ -214,7 +215,7 @@ const pgNewCustomer = extend(pgNewCustomerDesign)(
 
         function back() {
             //TODO: check values ask save?
-            Router.goBack();
+            page.router.goBack();
         }
 
 
@@ -271,7 +272,7 @@ const pgNewCustomer = extend(pgNewCustomerDesign)(
                 dialogWait.showOK(function() {
                     clearDataOnSave.call(page);
                     dialogWait.hide();
-                    Router.goBack();
+                    page.router.goBack();
                 });
             });
         }

@@ -22,10 +22,12 @@ console.log("pgSelectMap");
 
 const PgSelectMap = extend(PgSelectMapDesign)(
   // Constructor
-  function(_super) {
+  function(_super,routeData,router) {
     // Initalizes super class for this page scope
     _super(this);
     page = this;
+    page.router = router;
+    page.routeData = routeData;
     // overrides super.onShow method
     this.onShow = onShow.bind(this, this.onShow.bind(this));
     // overrides super.onLoad method
@@ -50,7 +52,7 @@ function onShow(superOnShow) {
     color: Color.WHITE,
     onPress: function() {
       if (selectedLocation) {
-        Router.goBack("/slider/customersPage/customers/pgNewCustomer", { adress: page.adressLabel.text, location: selectedLocation });
+        page.router.goBack("/slider/customersPage/pgNewCustomer", { adress: page.adressLabel.text, location: selectedLocation });
         selectedLocation = null;
       }
       else {
@@ -116,7 +118,7 @@ function locationConfirmation(currentLocation) {
     index: AlertView.ButtonType.POSITIVE,
     text: lang.ok,
     onClick: function() {
-      Router.goBack("pgNewCustomer", { adress: page.adressLabel.text, location: currentLocation });
+      page.router.goBack("/slider/customersPage/pgNewCustomer", { adress: page.adressLabel.text, location: currentLocation });
       selectedLocation = null;
     }
   });
@@ -161,7 +163,7 @@ function onLoad(superOnLoad) {
   superOnLoad();
   
   Application.android.onBackButtonPressed = () => {
-      Router.goBack();
+      page.router.goBack();
   }
 }
 

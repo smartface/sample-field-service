@@ -17,9 +17,11 @@ const Application = require('sf-core/application');
 const login = require("../model/getAuthUser");
 
 const pgLogin = extend(pgLoginDesign)(
-    function(_super) {
+    function(_super,routeData,router) {
         const page = this;
         _super(this);
+        
+        page.router = router;
         var baseOnLoad = page.onLoad;
         var baseOnShow = page.onShow;
         var tiUserName, tiPassword;
@@ -161,7 +163,7 @@ const pgLogin = extend(pgLoginDesign)(
 
         function showDashboard() {
             sliderDrawer.enabled = true;
-            Router.push("/slider/pgDashboard");
+            page.router.push("/slider/pgDashboard");
         }
 
         page.imgLogo.onTouch = function() {

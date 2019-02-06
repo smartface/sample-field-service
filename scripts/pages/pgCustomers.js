@@ -41,10 +41,11 @@ const pgCustomers = extend(pgCustomersDesign)(
     function(_super,routeData,router) {
         page = this;
         _super(this);
-        this.routeData = routeData;
-        this.router = router;
         
-        data = this.routeData;
+        page.routeData = routeData;
+        page.router = router;
+        
+        data = page.routeData;
         var baseOnLoad = page.onLoad;
         var baseOnShow = page.onShow;
         var isLoading = false;
@@ -59,9 +60,7 @@ const pgCustomers = extend(pgCustomersDesign)(
             page.customerMapview.clusterEnabled = true;
             
             Application.android.onBackButtonPressed = () => {
-                
-                //Router.push("/slider/customersPage/pgCustomerFilter");
-                Router.goBack();
+                page.router.goBack();
             }
             
             page.customerMapview.onCreate = function() {
@@ -83,7 +82,7 @@ const pgCustomers = extend(pgCustomersDesign)(
                 icon: selectedTheme.addCustomer,
                 color: selectedTheme.topBarColor,
                 onClick: function() {
-                    Router.push("/slider/customersPage/pgNewCustomer");
+                    page.router.push("/slider/customersPage/pgNewCustomer");
                 },
             });
             page.layout.addChild(fmNewCustomer);
@@ -214,7 +213,7 @@ const pgCustomers = extend(pgCustomersDesign)(
                 if (item === loadingRowData)
                     return;
 
-                Router.push("/slider/customersPage/pgCustomerDetails", item.id);
+                page.router.push("/slider/customersPage/pgCustomerDetails", item.id);
             };
 
             lvCustomers.ios.rightToLeftSwipeEnabled = true;

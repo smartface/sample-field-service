@@ -15,10 +15,12 @@ const notifications = require("../model/notifications");
 const initTime = require("../lib/init-time");
 
 const pgNotification = extend(pgNotificationDesign)(
-    function(_super,routeData) {
+    function(_super,routeData,router) {
         const page = this;
         _super(this);
-        this.routeData = routeData;
+        page.routeData = routeData;
+        page.router = router;
+        
         const baseOnLoad = page.onLoad;
         const baseOnShow = page.onShow;
 
@@ -62,12 +64,12 @@ const pgNotification = extend(pgNotificationDesign)(
                 page.svNotifications.addChild(flNotifications);
             }
             page.android.onBackButtonPressed = function(e) {
-                Router.goBack("pgDashboard");
+                page.router.goBack("/slider/pgDashboard");
             };
         };
 
         page.onShow = function onShow(data) {
-            data = this.routeData;
+            data = page.routeData;
             baseOnShow && baseOnShow();
 
             if (data.from === "sliderDrawer") {

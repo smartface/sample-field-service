@@ -16,11 +16,13 @@ const speechToText = require("sf-extension-utils/lib/speechtotext");
 
 const pgNoteContent = extend(pgNoteContentDesign)(
 	// Constructor
-	function(_super,routeData) {
+	function(_super,routeData,router) {
 		
 		const page = this;
 		_super(this);
-		this.routeData = routeData;
+		
+		page.router = router;
+		page.routeData = routeData;
 		this.onShow = onShow.bind(this, this.onShow.bind(this));
 		this.onLoad = onLoad.bind(this, this.onLoad.bind(this));
 		this.onHide = onHide.bind(this);
@@ -30,7 +32,7 @@ const pgNoteContent = extend(pgNoteContentDesign)(
 function onShow(superOnShow, data) {
 	const page = this;
 	superOnShow();
-	data = this.routeData;
+	data = page.routeData;
 	page.selectedIndex = data.index;
 	var taNote = page.taNote;
 	var noteData;
@@ -80,7 +82,7 @@ function onLoad(superOnLoad) {
 	page.ios.safeAreaLayoutMode = true;
 
 	Application.android.onBackButtonPressed = () => {
-        Router.goBack();
+        page.router.goBack();
     }
 	var taNote = new TextArea({
 		flexGrow: 1,
@@ -174,11 +176,11 @@ function deleteNote(page) {
 				}
 				return alert(err, "note delete error 22");
 			}
-			Router.goBack("/slider/customersPage/customers/pgNotes");
+			page.router.goBack("/slider/customersPage/customers/pgNotes");
 		});
 	}
 	else {
-		Router.goBack("/slider/customersPage/customers/pgNotes");
+		page.router.goBack("/slider/customersPage/customers/pgNotes");
 	}
 }
 

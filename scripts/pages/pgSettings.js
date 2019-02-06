@@ -12,9 +12,11 @@ const Color = require("sf-core/ui/color");
 const Application = require('sf-core/application');
 
 const pgSettings = extend(pgSettingsDesign)(
-    function(_super) {
+    function(_super,routerData,router) {
         const page = this;
         _super(this);
+        page.router = router;
+        
         var baseOnLoad = page.onLoad;
         var baseOnShow = page.onShow;
         page.onLoad = function onLoad() {
@@ -24,7 +26,7 @@ const pgSettings = extend(pgSettingsDesign)(
 
             sliderDrawer.setLeftItem(page.headerBar);
             page.android.onBackButtonPressed = function(e) {
-                Router.goBack("pgDashboard");
+                page.router.goBack("/slider/pgDashboard");
             };
             page.lblAbout.text = lang.about + " v" + ApplicationG.version;
             page.swNotifications.toggle = true;

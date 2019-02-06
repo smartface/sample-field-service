@@ -26,11 +26,15 @@ if (System.OS === "Android") {
 const Menu = require('sf-core/ui/menu');
 const MenuItem = require('sf-core/ui/menuitem');
 
+var page;
 const pgNotes = extend(pgNotesDesign)(
 	// Constructor
-	function(_super) {
+	function(_super,routeData,router) {
 		// Initalizes super class for this page scope
 		_super(this);
+		page = this;
+		page.router =router;
+		page.routeData = routeData;
 		// overrides super.onShow method
 		this.onShow = onShow.bind(this, this.onShow.bind(this));
 		// overrides super.onLoad method
@@ -40,7 +44,7 @@ const pgNotes = extend(pgNotesDesign)(
 
 // Page.onShow -> This event is called when a page appears on the screen (everytime).
 function onShow(superOnShow, data) {
-	const page = this;
+
 	superOnShow();
 	// const lvNotes = page.lvNotes;
 	// const aiNotes = page.aiNotes;
@@ -57,7 +61,6 @@ function onShow(superOnShow, data) {
 }
 
 function putToWaitMode() {
-	const page = this;
 	const lvNotes = page.lvNotes;
 	const aiNotes = page.aiNotes;
 	aiNotes.visible = true;
@@ -65,7 +68,6 @@ function putToWaitMode() {
 }
 
 function refreshData() {
-	const page = this;
 	const lvNotes = page.lvNotes;
 	const aiNotes = page.aiNotes;
 	setTimeout(function() {
@@ -96,7 +98,7 @@ function refreshData() {
 }
 
 function applyTheme() {
-	const page = this;
+
 	var selectedTheme = theme[theme.selected];
 	page.headerBar.backgroundColor = selectedTheme.topBarColor;
 	page.aiNotes.color = selectedTheme.topBarColor;
@@ -104,13 +106,12 @@ function applyTheme() {
 
 // Page.onLoad -> This event is called once when page is created.
 function onLoad(superOnLoad) {
-	const page = this;
 	superOnLoad();
 
 	page.ios.safeAreaLayoutMode = true;
 	
 	Application.android.onBackButtonPressed = () => {
-        Router.goBack();
+        page.router.goBack();
     }
 	var selectedTheme = theme[theme.selected];
 	const lvNotes = page.lvNotes;
@@ -247,7 +248,7 @@ function onLoad(superOnLoad) {
 	}
 
 	lvNotes.onRowSelected = function(listViewItem, index) {
-		Router.push("/slider/customersPage/pgNoteContent", {
+		page.router.push("/slider/customersPage/pgNoteContent", {
 			noteData: page.data[index],
 			pgNotes: page,
 			index: index
@@ -268,7 +269,7 @@ function onLoad(superOnLoad) {
 		icon: selectedTheme.addCustomer,
 		color: selectedTheme.topBarColor,
 		onClick: function() {
-			Router.push("/slider/customersPage/pgNoteContent", {
+			page.router.push("/slider/customersPage/pgNoteContent", {
 				pgNotes: page
 			});
 		},

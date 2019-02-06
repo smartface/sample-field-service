@@ -21,8 +21,6 @@ const animationDuration = 200;
 const closeKeyboard = require("../lib/ui").closeKeyboard;
 const VMasker = require('vanilla-masker/lib/vanilla-masker');
 
-console.log("pgCustomerFilter");
-
 const textInputDefaults = {
     textAlignment: TextAlignment.MIDLEFT,
     positionType: FlexLayout.PositionType.ABSOLUTE,
@@ -33,9 +31,11 @@ const textInputDefaults = {
 };
 
 const pgCustomerFilter = extend(pgCustomerFilterDesign)(
-    function(_super) {
+    function(_super,routeData,router) {
         const page = this;
         _super(this);
+        page.router = router;
+        
         var baseOnLoad = page.onLoad;
         var baseOnShow = page.onShow;
 
@@ -57,7 +57,7 @@ const pgCustomerFilter = extend(pgCustomerFilterDesign)(
             sliderDrawer.setLeftItem(page.headerBar);
 
             page.android.onBackButtonPressed = function(e) {
-                Router.goBack("/pages/pgDashboard");
+                page.router.goBack("/slider/pgDashboard");
             };
 
             page.flTabIndicator.touchEnabled = false;
@@ -185,7 +185,7 @@ const pgCustomerFilter = extend(pgCustomerFilterDesign)(
             if (tiPhone.text.length > 0)
                 filter.phone = tiPhone.text;
             filter.length = pageLength;
-            Router.push("/slider/customersPage/pgCustomers", {
+            page.router.push("/slider/customersPage/pgCustomers", {
                 filter: filter
             });
         }

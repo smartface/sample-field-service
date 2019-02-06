@@ -35,13 +35,15 @@ const notes = require("../model/notes");
 const getImage = require("../lib/getImage");
 const addChild = require("@smartface/contx/lib/smartface/action/addChild");
 
-console.log("pgCustomerDetails");
-
+var page;
 const pgCustomerDetails = extend(pgCustomerDetailsDesign)(
     function(_super,routeData,router) {
-        const page = this;
+        page = this;
         _super(this);
-        this.routeData = routeData;
+        
+        page.routeData = routeData;
+        page.router = router;
+        
         var baseOnLoad = page.onLoad;
         var baseOnShow = page.onShow;
 
@@ -53,7 +55,7 @@ const pgCustomerDetails = extend(pgCustomerDetailsDesign)(
             page.ios.safeAreaLayoutMode = true;
             
             Application.android.onBackButtonPressed = () => {
-                Router.goBack();
+                page.router.goBack();
             }
             svCustomerDetail = new ScrollView({
                 align: ScrollView.Align.VERTICAL,
@@ -82,7 +84,7 @@ const pgCustomerDetails = extend(pgCustomerDetailsDesign)(
         };
 
         page.onShow = function onShow(id) {
-            id = this.routeData;
+            id = page.routeData;
             baseOnShow && baseOnShow();
             applyTheme();
             sliderDrawer.enabled = false;
@@ -373,11 +375,11 @@ const pgCustomerDetails = extend(pgCustomerDetailsDesign)(
     });
 
 function goBack() {
-    Router.goBack();
+    page.router.goBack();
 }
 
 function showNotes(customerData) {
-    Router.push("/slider/customersPage/pgNotes", {
+    page.router.push("/slider/customersPage/pgNotes", {
         customerId: customerData.id
     });
 }
