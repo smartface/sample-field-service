@@ -1,3 +1,4 @@
+const Application = require("sf-core/application");
 /*globals lang, requireClass*/
 const extend = require('js-base/core/extend');
 const pgNotesDesign = require('ui/ui_pgNotes');
@@ -10,7 +11,7 @@ const Color = require('sf-core/ui/color');
 const View = require('sf-core/ui/view');
 const theme = require("../lib/theme");
 const Font = require('sf-core/ui/font');
-const Router = require("sf-core/ui/router");
+const Router = require("../router/index");
 const backAction = require("../lib/ui").backAction;
 const relativeTime = require("../lib/relative-time");
 const Image = require('sf-core/ui/image');
@@ -108,6 +109,9 @@ function onLoad(superOnLoad) {
 
 	page.ios.safeAreaLayoutMode = true;
 	
+	Application.android.onBackButtonPressed = () => {
+        Router.goBack();
+    }
 	var selectedTheme = theme[theme.selected];
 	const lvNotes = page.lvNotes;
 	// const aiNotes = page.aiNotes;
@@ -243,7 +247,7 @@ function onLoad(superOnLoad) {
 	}
 
 	lvNotes.onRowSelected = function(listViewItem, index) {
-		Router.go("pgNoteContent", {
+		Router.push("/slider/customersPage/pgNoteContent", {
 			noteData: page.data[index],
 			pgNotes: page,
 			index: index
@@ -264,7 +268,7 @@ function onLoad(superOnLoad) {
 		icon: selectedTheme.addCustomer,
 		color: selectedTheme.topBarColor,
 		onClick: function() {
-			Router.go("pgNoteContent", {
+			Router.push("/slider/customersPage/pgNoteContent", {
 				pgNotes: page
 			});
 		},

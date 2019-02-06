@@ -1,0 +1,39 @@
+<ApplicationPackageLicenses>
+    <ApplicationPackageLicense>
+        <CompanyName>Smartface, Inc.</CompanyName>
+        <LicenseName>Field Service</LicenseName>
+        <SASVersion>v5.0.0</SASVersion>
+        <CreateDate>02.01.2019 14:48:43</CreateDate>
+        <ExpireDate>01.01.2029 14:48:43</ExpireDate>
+        <LicenseType>Professional</LicenseType>
+        <PackageType>iOS</PackageType>
+        <PackageName>io.smartface.smartapp.fieldservice</PackageName>
+        <PackageFeatures>
+            <PackageFeature>
+                <FeatureName>Feature</FeatureName>
+                <FeatureValue>Feature</FeatureValue>
+            </PackageFeature>
+        </PackageFeatures>
+        <TripleDESKey>6gyR/oWzhlSN11vLAas1DKUclCqqBNvwAiTdYjIubJQ/GQbOYrO25tDgm/fdIgQTto+hx3bOJGuanBZKst9MzELY8oThZsCePZcS6mqzZv0B1h2M3o0l1pAerMo+At90kCx7k/Ke8hItv3djWt2vWGWeZzKIHUx697eO07B7Q0A=</TripleDESKey>
+        <SignData></SignData>
+    </ApplicationPackageLicense>
+    <ApplicationPackageLicense>
+        <CompanyName>Smartface, Inc.</CompanyName>
+        <LicenseName>Field Service</LicenseName>
+        <SASVersion>v5.0.0</SASVersion>
+        <CreateDate>02.01.2019 14:48:43</CreateDate>
+        <ExpireDate>01.01.2029 14:48:43</ExpireDate>
+        <LicenseType>Professional</LicenseType>
+        <PackageType>Android</PackageType>
+        <PackageName>io.smartface.smartapp.fieldservice</PackageName>
+        <PackageFeatures>
+            <PackageFeature>
+                <FeatureName>Feature</FeatureName>
+                <FeatureValue>Feature</FeatureValue>
+            </PackageFeature>
+        </PackageFeatures>
+        <TripleDESKey>6gyR/oWzhlSN11vLAas1DKUclCqqBNvwAiTdYjIubJQ/GQbOYrO25tDgm/fdIgQTto+hx3bOJGuanBZKst9MzELY8oThZsCePZcS6mqzZv0B1h2M3o0l1pAerMo+At90kCx7k/Ke8hItv3djWt2vWGWeZzKIHUx697eO07B7Q0A=</TripleDESKey>
+        <SignData></SignData>
+    </ApplicationPackageLicense>
+    <TripleDESKeyValue>OGZX+aN+KdKD2JNKHBJguikZrYnuahOt</TripleDESKeyValue>
+</ApplicationPackageLicenses>

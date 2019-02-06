@@ -1,6 +1,6 @@
 /*globals lang */
 const extend = require("js-base/core/extend");
-const Router = require("sf-core/ui/router");
+const Router = require("../router/index");
 const pgNewCustomerDesign = require("../ui/ui_pgNewCustomer");
 const StatusBarStyle = require('sf-core/ui/statusbarstyle');
 const HeaderBarItem = require('sf-core/ui/headerbaritem');
@@ -33,11 +33,11 @@ const DialogWait = require("../components/DialogWait");
 const addCustomer = require("../model/customers").addCustomer;
 const mimicPressed = require("../lib/ui").mimicPressed;
 const VMasker = require('vanilla-masker/lib/vanilla-masker');
-
 const pgNewCustomer = extend(pgNewCustomerDesign)(
-    function(_super) {
+    function(_super,routeData) {
         const page = this;
         _super(this);
+        this.routeData = routeData;
         var baseOnLoad = page.onLoad;
         var baseOnShow = page.onShow;
         var tiName, tiSurname, tiEmail, tiPhone, tiAddress;
@@ -47,10 +47,14 @@ const pgNewCustomer = extend(pgNewCustomerDesign)(
             baseOnLoad && baseOnLoad();
 
             page.ios.safeAreaLayoutMode = true;
-
-            page.android.onBackButtonPressed = function(e) {
-                back();
-            };
+            
+            Application.android.onBackButtonPressed = () => {
+                Router.goBack();
+            }
+            
+            // page.android.onBackButtonPressed = function(e) {
+            //     back();
+            // };
 
             var saveItem = new HeaderBarItem({
                 onPress: function() {
@@ -134,7 +138,7 @@ const pgNewCustomer = extend(pgNewCustomerDesign)(
 
             page.selectMapButton.text = lang.selectOnMap;
             page.selectMapButton.onPress = function() {
-                Router.go("pgSelectMap");
+                Router.push("/slider/customersPage/pgSelectMap");
             };
 
             if (System.OS === "iOS") {
@@ -150,8 +154,9 @@ const pgNewCustomer = extend(pgNewCustomerDesign)(
 
         var location;
         page.onShow = function onShow(data) {
+            data = this.routeData;
             baseOnShow && baseOnShow(data);
-            page.statusBar.ios.style = StatusBarStyle.LIGHTCONTENT;
+            Application.statusBar.style = StatusBarStyle.LIGHTCONTENT;
             applyTheme();
 
             //alert("size " + page.selectMapButton.font );
@@ -201,7 +206,7 @@ const pgNewCustomer = extend(pgNewCustomerDesign)(
 
         function applyTheme() {
             var selectedTheme = theme[theme.selected];
-            page.statusBar.android && (page.statusBar.android.color = selectedTheme.topBarColor);
+            Application.statusBar.android && (Application.statusBar.android.color = selectedTheme.topBarColor);
             page.headerBar.backgroundColor = selectedTheme.topBarColor;
 
             page.headerBar.leftItem && (page.headerBar.leftItem.color = selectedTheme.secondaryColor);

@@ -1,6 +1,8 @@
+const componentContextPatch = require("@smartface/contx/lib/smartface/componentContextPatch");
+const Application = require("sf-core/application");
 /*globals lang, Blob */
 const extend = require("js-base/core/extend");
-const Router = require("sf-core/ui/router");
+const Router = require("../router/index");
 const CustomerRow = require("../components/CustomerRow");
 const pgCustomersDesign = require("../ui/ui_pgCustomers");
 const Image = require('sf-core/ui/image');
@@ -30,14 +32,19 @@ const ImageView = require('sf-core/ui/imageview');
 const MapView = require('sf-core/ui/mapview');
 const AlertView = require('sf-core/ui/alertview');
 
-
 const addChild = require("@smartface/contx/lib/smartface/action/addChild");
 
 var page;
+var data;
+
 const pgCustomers = extend(pgCustomersDesign)(
-    function(_super) {
+    function(_super,routeData,router) {
         page = this;
         _super(this);
+        this.routeData = routeData;
+        this.router = router;
+        
+        data = this.routeData;
         var baseOnLoad = page.onLoad;
         var baseOnShow = page.onShow;
         var isLoading = false;
@@ -50,13 +57,19 @@ const pgCustomers = extend(pgCustomersDesign)(
             baseOnLoad && baseOnLoad();
 
             page.customerMapview.clusterEnabled = true;
-            page.customerMapview.zoomLevel = 10;
-
+            
+            Application.android.onBackButtonPressed = () => {
+                
+                //Router.push("/slider/customersPage/pgCustomerFilter");
+                Router.goBack();
+            }
+            
             page.customerMapview.onCreate = function() {
-                page.customerMapview.centerLocation = {
+                var centerLocation = {
                     latitude: 40.6409884,
                     longitude: -73.9452045
                 };
+                page.customerMapview.setCenterLocationWithZoomLevel( centerLocation, 10, true );
             };
             page.ios.safeAreaLayoutMode = true;
 
@@ -70,7 +83,7 @@ const pgCustomers = extend(pgCustomersDesign)(
                 icon: selectedTheme.addCustomer,
                 color: selectedTheme.topBarColor,
                 onClick: function() {
-                    Router.go("pgNewCustomer");
+                    Router.push("/slider/customersPage/pgNewCustomer");
                 },
             });
             page.layout.addChild(fmNewCustomer);
@@ -201,7 +214,7 @@ const pgCustomers = extend(pgCustomersDesign)(
                 if (item === loadingRowData)
                     return;
 
-                Router.go("pgCustomerDetails", item.id);
+                Router.push("/slider/customersPage/pgCustomerDetails", item.id);
             };
 
             lvCustomers.ios.rightToLeftSwipeEnabled = true;
@@ -228,7 +241,8 @@ const pgCustomers = extend(pgCustomersDesign)(
 
         };
 
-        page.onShow = function onShow(data) {
+        page.onShow = function onShow() {
+            //data = page.routeData;
             baseOnShow && baseOnShow(data);
 
             page.customerMapview.userLocationEnabled = true;
@@ -252,7 +266,7 @@ const pgCustomers = extend(pgCustomersDesign)(
             //     bindData(customerData);
             // }
 
-            page.statusBar.ios.style = StatusBarStyle.LIGHTCONTENT;
+            Application.statusBar.style = StatusBarStyle.LIGHTCONTENT;
             backAction(page);
             applyTheme();
             page.headerBar.title = lang.customers;
@@ -331,7 +345,7 @@ const pgCustomers = extend(pgCustomersDesign)(
 
         function applyTheme() {
             var selectedTheme = theme[theme.selected];
-            page.statusBar.android && (page.statusBar.android.color = selectedTheme.topBarColor);
+            Application.statusBar.android && (Application.statusBar.android.color = selectedTheme.topBarColor);
             page.headerBar.backgroundColor = selectedTheme.topBarColor;
             page.aiWait.color = selectedTheme.topBarColor;
         }

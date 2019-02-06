@@ -1,3 +1,5 @@
+const Application = require("sf-core/application");
+const HeaderBarItem = require("sf-core/ui/headerbaritem");
 /*globals lang*/
 const extend = require("js-base/core/extend");
 const pgDashboardDesign = require("../ui/ui_pgDashboard");
@@ -10,7 +12,6 @@ const FlexLayout = require('sf-core/ui/flexlayout');
 const Font = require('sf-core/ui/font');
 const TextView = require('sf-core/ui/textview');
 const WebView = require('sf-core/ui/webview');
-const UI = require('sf-core/ui');
 const Image = require('sf-core/ui/image');
 const Color = require('sf-core/ui/color');
 
@@ -23,6 +24,8 @@ var viewMargin = 10;
 var oneChartHeight = webViewHeight + (2 * webViewMargin) + labelHeigth + (2 * viewMargin);
 
 
+console.log("pgDashboard");
+
 const pgDashboard = extend(pgDashboardDesign)(
     function(_super) {
         const page = this;
@@ -34,7 +37,7 @@ const pgDashboard = extend(pgDashboardDesign)(
 
             page.ios.safeAreaLayoutMode = true;
 
-            var myItem = new UI.HeaderBarItem({
+            var myItem = new HeaderBarItem({
                 image: Image.createFromFile("images://notify.png"),
                 color: Color.WHITE,
                 onPress: function() {
@@ -150,7 +153,7 @@ const pgDashboard = extend(pgDashboardDesign)(
         page.onShow = function onShow(data) {
             baseOnShow && baseOnShow(data);
             sliderDrawer.enabled = true;
-            page.statusBar.ios.style = StatusBarStyle.LIGHTCONTENT;
+            Application.statusBar.ios.style = StatusBarStyle.LIGHTCONTENT;
             applyTheme();
             sliderDrawer.moveHighlight(0);
             page.headerBar.title = lang.dashboard;
@@ -169,7 +172,7 @@ const pgDashboard = extend(pgDashboardDesign)(
 
         function applyTheme() {
             var selectedTheme = theme[theme.selected];
-            page.statusBar.android && (page.statusBar.android.color = selectedTheme.topBarColor);
+            Application.statusBar.android && (Application.statusBar.android.color = selectedTheme.topBarColor);
             page.headerBar.backgroundColor = selectedTheme.topBarColor;
             //page.imgReports.image = selectedTheme.reportImage;
             page.layout.backgroundColor = selectedTheme.dashboardColor;

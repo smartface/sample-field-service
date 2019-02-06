@@ -1,7 +1,6 @@
 /*globals lang*/
 const Application = require("sf-core/application");
 const extend = require('js-base/core/extend');
-const Router = require("sf-core/ui/router");
 const SliderDrawer = require('library/SliderDrawer');
 const user = require("../lib/user");
 const mimicPressed = require("../lib/ui/mimicPressed");
@@ -11,6 +10,7 @@ const SliderDrawer_ = extend(SliderDrawer)(
 	//constructor
 	function(_super, props, pageName) {
 		var self = this;
+		const Router = require("../router/index");
 		_super(this, props || SliderDrawer.defaults);
 		this.pageName = pageName;
 		var touchControl = {};
@@ -29,13 +29,13 @@ const SliderDrawer_ = extend(SliderDrawer)(
 
 		mimicPressed(this.flDashboard, function() {
 			hide();
-			Router.goBack("pgDashboard", null, false);
+			Router.push("/slider/pgDashboard", null, false);
 			moveHighlight(0);
 		}, touchControl);
 
 		mimicPressed(this.flCustomers, function() {
 			hide();
-			Router.go("pgCustomerFilter", {
+			Router.push("/slider/customersPage/pgCustomerFilter", {
 				reset: true
 			}, false);
 			moveHighlight(1);
@@ -44,14 +44,14 @@ const SliderDrawer_ = extend(SliderDrawer)(
 		mimicPressed(this.flNotifications, function() {
 			hide();
 			moveHighlight(2);
-			Router.go("pgNotification", {
+			Router.push("/slider/pgNotification", {
 				from: "sliderDrawer"
 			}, false);
 		}, touchControl);
 
 		mimicPressed(this.flSettings, function() {
 			hide();
-			Router.go("pgSettings", null, false);
+			Router.push("/slider/pgSettings", null, false);
 			moveHighlight(3);
 		}, touchControl);
 
@@ -90,10 +90,10 @@ const SliderDrawer_ = extend(SliderDrawer)(
 		componentContextPatch(this, "sliderDrawer");
 	}
 );
-
+// console.log(Router);
 function hide() {
 	var sliderDrawer = require("../sliderDrawer");
 	sliderDrawer.hide();
 }
-
+// console.log(Router);
 module && (module.exports = SliderDrawer_);

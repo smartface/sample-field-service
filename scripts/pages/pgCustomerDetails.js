@@ -1,6 +1,6 @@
 /* globals lang */
 const extend = require("js-base/core/extend");
-const Router = require("sf-core/ui/router");
+const Router = require("../router/index");
 const pgCustomerDetailsDesign = require("../ui/ui_pgCustomerDetails");
 const ScrollView = require('sf-core/ui/scrollview');
 const FlexLayout = require('sf-core/ui/flexlayout');
@@ -22,7 +22,7 @@ const shadow = require("../lib/ui").shadow;
 const Application = require("sf-core/application");
 const Contacts = require("sf-core/device/contacts");
 const System = require('sf-core/device/system');
-const permission = require("sf-extension-utils").permission;
+const permission = require("sf-extension-utils/lib/permission");
 //const HeaderBarItem = require('sf-core/ui/headerbaritem');
 const initTime = require("../lib/init-time");
 const getSingleCustomer = require("../model/customers").getSingleCustomer;
@@ -35,11 +35,13 @@ const notes = require("../model/notes");
 const getImage = require("../lib/getImage");
 const addChild = require("@smartface/contx/lib/smartface/action/addChild");
 
+console.log("pgCustomerDetails");
 
 const pgCustomerDetails = extend(pgCustomerDetailsDesign)(
-    function(_super) {
+    function(_super,routeData,router) {
         const page = this;
         _super(this);
+        this.routeData = routeData;
         var baseOnLoad = page.onLoad;
         var baseOnShow = page.onShow;
 
@@ -49,11 +51,16 @@ const pgCustomerDetails = extend(pgCustomerDetailsDesign)(
             baseOnLoad && baseOnLoad();
 
             page.ios.safeAreaLayoutMode = true;
-
-            svCustomerDetail = new ScrollView();
+            
+            Application.android.onBackButtonPressed = () => {
+                Router.goBack();
+            }
+            svCustomerDetail = new ScrollView({
+                align: ScrollView.Align.VERTICAL,
+            });
             page.layout.addChild(svCustomerDetail, "svCustomerDetail", "", function(userProps) {
                 userProps.flexGrow = 1;
-                userProps.align = "VERTICAL";
+                //userProps.align = "VERTICAL";
                 userProps.backgroundColor = "rgba(255, 255, 255,1)";
                 userProps.visible = false;
                 return userProps;
@@ -75,6 +82,7 @@ const pgCustomerDetails = extend(pgCustomerDetailsDesign)(
         };
 
         page.onShow = function onShow(id) {
+            id = this.routeData;
             baseOnShow && baseOnShow();
             applyTheme();
             sliderDrawer.enabled = false;
@@ -157,13 +165,13 @@ const pgCustomerDetails = extend(pgCustomerDetailsDesign)(
 
         function applyTheme() {
             var selectedTheme = theme[theme.selected];
-            page.statusBar.ios.style = StatusBarStyle.LIGHTCONTENT;
-            page.statusBar.itemColor = Color.WHITE;
+            Application.statusBar.style = StatusBarStyle.LIGHTCONTENT;
+            Application.statusBar.itemColor = Color.WHITE;
 
             page.headerBar.titleColor = Color.WHITE;
             page.headerBar.backgroundColor = selectedTheme.topBarColor;
 
-            page.statusBar.android && (page.statusBar.android.color = selectedTheme.topBarColor);
+            Application.statusBar.android && (Application.statusBar.android.color = selectedTheme.topBarColor);
             page.headerBar.backgroundColor = selectedTheme.topBarColor;
             page.aiWait.color = selectedTheme.topBarColor;
         }
@@ -326,8 +334,6 @@ const pgCustomerDetails = extend(pgCustomerDetailsDesign)(
             page.btnShare.onPress = function() {
                 //var contactDataString = JSON.stringify(contactData, null, "\t");
                 //Share.shareText(contactDataString, page, []);
-
-
                 permission.getPermission(Application.android.Permissions.WRITE_EXTERNAL_STORAGE, function(err) {
                     if (err) return;
                     var fileName = customerInfo.firstName.toLocaleLowerCase() + "_" + customerInfo.lastName.toLowerCase() + ".vcf";
@@ -371,7 +377,7 @@ function goBack() {
 }
 
 function showNotes(customerData) {
-    Router.go("pgNotes", {
+    Router.push("/slider/customersPage/pgNotes", {
         customerId: customerData.id
     });
 }

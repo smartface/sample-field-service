@@ -1,6 +1,7 @@
+const Application = require("sf-core/application");
 /* globals lang */
 const extend = require("js-base/core/extend");
-const Router = require("sf-core/ui/router");
+const Router = require("../router/index");
 const pgCustomerFilterDesign = require("../ui/ui_pgCustomerFilter");
 const TextInput = require("../lib/ui").TextInput;
 const TextAlignment = require('sf-core/ui/textalignment');
@@ -19,6 +20,8 @@ const pageLength = 20;
 const animationDuration = 200;
 const closeKeyboard = require("../lib/ui").closeKeyboard;
 const VMasker = require('vanilla-masker/lib/vanilla-masker');
+
+console.log("pgCustomerFilter");
 
 const textInputDefaults = {
     textAlignment: TextAlignment.MIDLEFT,
@@ -54,7 +57,7 @@ const pgCustomerFilter = extend(pgCustomerFilterDesign)(
             sliderDrawer.setLeftItem(page.headerBar);
 
             page.android.onBackButtonPressed = function(e) {
-                Router.goBack("pgDashboard");
+                Router.goBack("/pages/pgDashboard");
             };
 
             page.flTabIndicator.touchEnabled = false;
@@ -145,7 +148,7 @@ const pgCustomerFilter = extend(pgCustomerFilterDesign)(
             if (data) {
                 data.reset && reset();
             }
-            page.statusBar.ios.style = StatusBarStyle.LIGHTCONTENT;
+            Application.statusBar.style = StatusBarStyle.LIGHTCONTENT;
 
             var searchItem = new HeaderBarItem({
                 onPress: function() {
@@ -182,14 +185,14 @@ const pgCustomerFilter = extend(pgCustomerFilterDesign)(
             if (tiPhone.text.length > 0)
                 filter.phone = tiPhone.text;
             filter.length = pageLength;
-            Router.go("pgCustomers", {
+            Router.push("/slider/customersPage/pgCustomers", {
                 filter: filter
             });
         }
 
         function applyTheme() {
             var selectedTheme = theme[theme.selected];
-            page.statusBar.android && (page.statusBar.android.color = selectedTheme.topBarColor);
+            Application.statusBar.android && (Application.statusBar.android.color = selectedTheme.topBarColor);
             page.headerBar.backgroundColor = selectedTheme.topBarColor;
             page.flTab.backgroundColor = selectedTheme.flTabBackgroundColor;
             page.flTabHighlight.backgroundColor = selectedTheme.secondaryColor;

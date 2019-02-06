@@ -19,7 +19,7 @@
 				"backgroundColor": "rgba( 255, 255, 255, 1 )",
 				"orientation": "AUTO"
 			},
-			"version": "6.10.2"
+			"version": "6.14.1"
 		},
 		{
 			"className": ".statusBar",
@@ -204,6 +204,7 @@
 			"className": ".label",
 			"id": "5ad5-38f1-f9e0-f763",
 			"props": {
+				"autoHeight": 32.25806451612903,
 				"children": [],
 				"name": "lblName",
 				"parent": "b55d-a705-8051-d252",
@@ -212,6 +213,7 @@
 			},
 			"type": "TextView",
 			"userProps": {
+				"autoHeight": 32.25806451612903,
 				"flexProps": {
 					"alignSelf": "AUTO"
 				},
@@ -234,6 +236,7 @@
 			"className": ".label",
 			"id": "3b3e-5f16-f5cb-0ce8",
 			"props": {
+				"autoHeight": 25.806451612903228,
 				"children": [],
 				"name": "lblTitle",
 				"parent": "b55d-a705-8051-d252",
@@ -242,6 +245,7 @@
 			},
 			"type": "TextView",
 			"userProps": {
+				"autoHeight": 25.806451612903228,
 				"flexProps": {
 					"alignSelf": "AUTO"
 				},

@@ -1,8 +1,9 @@
 const extend = require("js-base/core/extend");
-const Router = require("sf-core/ui/router");
+const Router = require("../router/index");
 const notifications = require("../model/notifications");
 const mcs = require("../lib/mcs");
 const pgEntryDesign = require("../ui/ui_pgEntry");
+
 
 const pgEntry = extend(pgEntryDesign)(
     function(_super) {
@@ -39,7 +40,7 @@ const pgEntry = extend(pgEntryDesign)(
                         return alert(JSON.stringify(err), "Notifications Service Error");
                     }
 
-                    Router.go("pgNotification", notificationsData);
+                    Router.push("/slider/pgNotification", notificationsData);
                 });
             }
         };

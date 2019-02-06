@@ -9,7 +9,7 @@ const Application = require("sf-core/application");
 const System = require('sf-core/device/system');
 const StatusBarStyle = require('sf-core/ui/statusbarstyle');
 const Location = require('sf-core/device/location');
-const Router = require('sf-core/router');
+const Router = require('../router/index');
 const AlertView = require('sf-core/ui/alertview');
 const Http = require("sf-core/net/http");
 var http = new Http();
@@ -17,6 +17,9 @@ var http = new Http();
 var page;
 var selectedLocation;
 var myPin;
+
+console.log("pgSelectMap");
+
 const PgSelectMap = extend(PgSelectMapDesign)(
   // Constructor
   function(_super) {
@@ -38,7 +41,7 @@ const PgSelectMap = extend(PgSelectMapDesign)(
  */
 function onShow(superOnShow) {
   superOnShow();
-  page.statusBar.ios.style = StatusBarStyle.LIGHTCONTENT;
+  Application.statusBar.style = StatusBarStyle.LIGHTCONTENT;
   page.headerBar.title = lang.map;
   applyTheme();
 
@@ -47,7 +50,7 @@ function onShow(superOnShow) {
     color: Color.WHITE,
     onPress: function() {
       if (selectedLocation) {
-        Router.goBack("pgNewCustomer", { adress: page.adressLabel.text, location: selectedLocation });
+        Router.goBack("/slider/customersPage/customers/pgNewCustomer", { adress: page.adressLabel.text, location: selectedLocation });
         selectedLocation = null;
       }
       else {
@@ -156,11 +159,15 @@ function getAdress(location) {
  */
 function onLoad(superOnLoad) {
   superOnLoad();
+  
+  Application.android.onBackButtonPressed = () => {
+      Router.goBack();
+  }
 }
 
 function applyTheme() {
   var selectedTheme = theme[theme.selected];
-  page.statusBar.android && (page.statusBar.android.color = selectedTheme.topBarColor);
+  Application.statusBar.android && (Application.statusBar.android.color = selectedTheme.topBarColor);
   page.headerBar.backgroundColor = selectedTheme.topBarColor;
 }
 

@@ -1,7 +1,7 @@
 /*globals lang*/
 const theme = require("../lib/theme");
 const extend = require('js-base/core/extend');
-const Router = require("sf-core/ui/router");
+const Router = require("../router/index");
 const DialogWaitDesign = require('library/DialogWait');
 const Dialog = require("sf-core/ui/dialog");
 const Page = require('sf-core/ui/page');
@@ -51,7 +51,8 @@ const DialogWait = extend(DialogWaitDesign)(
 
 DialogWait.show = function showWaitdialog(page) {
 	if (!page)
-		page = Router.getCurrent();
+		page = Router.getState();
+		
 	var sliderDrawer = require("../sliderDrawer");
 	var sliderDrawerEnableChanged = false;
 	var headerBarLeftItemChanged = false;

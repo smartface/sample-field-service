@@ -2,7 +2,7 @@
 module.exports.logOut = logOut;
 const AlertView = require('sf-core/ui/alertview');
 const mcs = require("../lib/mcs");
-const Router = require("sf-core/ui/router");
+const Router = require("../router/index");
 const userData = require("../model/user");
 
 function logOut(callback) {

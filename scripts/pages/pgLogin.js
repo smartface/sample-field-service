@@ -1,7 +1,7 @@
 /*globals lang, Application*/
 const System = require('sf-core/device/system');
 const extend = require("js-base/core/extend");
-const Router = require("sf-core/ui/router");
+const Router = require("../router/index");
 const mcs = require("../lib/mcs");
 const pgLoginDesign = require("../ui/ui_pgLogin");
 const TextInput = require("../lib/ui").TextInput;
@@ -13,6 +13,7 @@ const rau = require("sf-extension-utils/lib/rau");
 const theme = require("../lib/theme");
 const KeyboardType = require('sf-core/ui/keyboardtype');
 const fingerprint = require("sf-extension-utils/lib/fingerprint");
+const Application = require('sf-core/application');
 const login = require("../model/getAuthUser");
 
 const pgLogin = extend(pgLoginDesign)(
@@ -108,7 +109,7 @@ const pgLogin = extend(pgLoginDesign)(
 
         function applyTheme() {
             var selectedTheme = theme[theme.selected];
-            page.statusBar.android && (page.statusBar.android.color = selectedTheme.topBarColor);
+            Application.statusBar.android && (Application.statusBar.android.color = selectedTheme.topBarColor);
             page.headerBar.backgroundColor = selectedTheme.topBarColor;
 
             page.imgLogo.image = selectedTheme.logo;
@@ -160,7 +161,7 @@ const pgLogin = extend(pgLoginDesign)(
 
         function showDashboard() {
             sliderDrawer.enabled = true;
-            Router.go("pgDashboard");
+            Router.push("/slider/pgDashboard");
         }
 
         page.imgLogo.onTouch = function() {

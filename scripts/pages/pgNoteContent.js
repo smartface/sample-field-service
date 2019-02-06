@@ -1,3 +1,4 @@
+const Application = require("sf-core/application");
 /*globals lang*/
 const TextArea = require('sf-core/ui/textarea');
 const extend = require('js-base/core/extend');
@@ -6,19 +7,20 @@ const FlexLayout = require('sf-core/ui/flexlayout');
 const notes = require("../model/notes");
 const theme = require("../lib/theme");
 const Font = require('sf-core/ui/font');
-const Router = require("sf-core/ui/router");
+const Router = require("../router/index");
 const Color = require('sf-core/ui/color');
 const backAction = require("../lib/ui").backAction;
 const HeaderBarItem = require('sf-core/ui/headerbaritem');
-const speechToText = require("sf-extension-utils").speechToText;
-const SpeechRecognizer = require("sf-core/speechrecognizer");
+const speechToText = require("sf-extension-utils/lib/speechtotext");
 
 
 const pgNoteContent = extend(pgNoteContentDesign)(
 	// Constructor
-	function(_super) {
+	function(_super,routeData) {
+		
 		const page = this;
 		_super(this);
+		this.routeData = routeData;
 		this.onShow = onShow.bind(this, this.onShow.bind(this));
 		this.onLoad = onLoad.bind(this, this.onLoad.bind(this));
 		this.onHide = onHide.bind(this);
@@ -28,6 +30,7 @@ const pgNoteContent = extend(pgNoteContentDesign)(
 function onShow(superOnShow, data) {
 	const page = this;
 	superOnShow();
+	data = this.routeData;
 	page.selectedIndex = data.index;
 	var taNote = page.taNote;
 	var noteData;
@@ -76,6 +79,9 @@ function onLoad(superOnLoad) {
 
 	page.ios.safeAreaLayoutMode = true;
 
+	Application.android.onBackButtonPressed = () => {
+        Router.goBack();
+    }
 	var taNote = new TextArea({
 		flexGrow: 1,
 		positionType: FlexLayout.PositionType.RELATIVE,
@@ -168,11 +174,11 @@ function deleteNote(page) {
 				}
 				return alert(err, "note delete error 22");
 			}
-			Router.goBack("pgNotes");
+			Router.goBack("/slider/customersPage/customers/pgNotes");
 		});
 	}
 	else {
-		Router.goBack("pgNotes");
+		Router.goBack("/slider/customersPage/customers/pgNotes");
 	}
 }
 

@@ -1,7 +1,7 @@
 const sliderDrawer = require("../../sliderDrawer");
 const System = require('sf-core/device/system');
 const HeaderBarItem = require('sf-core/ui/headerbaritem');
-const Router = require("sf-core/ui/router");
+const Router = require("@smartface/router");
 const Image = require('sf-core/ui/image');
 const Color = require('sf-core/ui/color');
 

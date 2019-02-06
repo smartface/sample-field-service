@@ -1,3 +1,4 @@
+const Application = require("sf-core/application");
 /*globals lang*/
 const extend = require("js-base/core/extend");
 const ScrollView = require("sf-core/ui/scrollview");
@@ -6,7 +7,7 @@ const FlexLayout = require("sf-core/ui/flexlayout");
 const Color = require("sf-core/ui/color");
 const NotificationRow = require("../lib/ui").NotificationRow;
 const sliderDrawer = require("../sliderDrawer");
-const Router = require("sf-core/ui/router");
+const Router = require("../router/index");
 const backAction = require("../lib/ui").backAction;
 const StatusBarStyle = require('sf-core/ui/statusbarstyle');
 const theme = require("../lib/theme");
@@ -14,9 +15,10 @@ const notifications = require("../model/notifications");
 const initTime = require("../lib/init-time");
 
 const pgNotification = extend(pgNotificationDesign)(
-    function(_super) {
+    function(_super,routeData) {
         const page = this;
         _super(this);
+        this.routeData = routeData;
         const baseOnLoad = page.onLoad;
         const baseOnShow = page.onShow;
 
@@ -65,6 +67,7 @@ const pgNotification = extend(pgNotificationDesign)(
         };
 
         page.onShow = function onShow(data) {
+            data = this.routeData;
             baseOnShow && baseOnShow();
 
             if (data.from === "sliderDrawer") {
@@ -85,7 +88,7 @@ const pgNotification = extend(pgNotificationDesign)(
             else {
                 backAction(page);
             }
-            page.statusBar.ios.style = StatusBarStyle.LIGHTCONTENT;
+            Application.statusBar.style = StatusBarStyle.LIGHTCONTENT;
             applyTheme();
             page.headerBar.title = lang.notificationHistory;
 
@@ -100,7 +103,7 @@ const pgNotification = extend(pgNotificationDesign)(
 
         function applyTheme() {
             var selectedTheme = theme[theme.selected];
-            page.statusBar.android && (page.statusBar.android.color = selectedTheme.topBarColor);
+            Application.statusBar.android && (Application.statusBar.android.color = selectedTheme.topBarColor);
             page.headerBar.backgroundColor = selectedTheme.topBarColor;
             page.aiWait.color = selectedTheme.topBarColor;
         }

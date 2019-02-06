@@ -1,7 +1,7 @@
 /* globals lang */
-const Application = global.Application;
+const ApplicationG = global.Application;
 const extend = require("js-base/core/extend");
-const Router = require("sf-core/ui/router");
+const Router = require("../router/index");
 const pgSettingsDesign = require("../ui/ui_pgSettings");
 const sliderDrawer = require("../sliderDrawer");
 const StatusBarStyle = require('sf-core/ui/statusbarstyle');
@@ -9,6 +9,7 @@ const theme = require("../lib/theme");
 const fingerprint = require("sf-extension-utils/lib/fingerprint");
 const Data = require('sf-core/data');
 const Color = require("sf-core/ui/color");
+const Application = require('sf-core/application');
 
 const pgSettings = extend(pgSettingsDesign)(
     function(_super) {
@@ -25,7 +26,7 @@ const pgSettings = extend(pgSettingsDesign)(
             page.android.onBackButtonPressed = function(e) {
                 Router.goBack("pgDashboard");
             };
-            page.lblAbout.text = lang.about + " v" + Application.version;
+            page.lblAbout.text = lang.about + " v" + ApplicationG.version;
             page.swNotifications.toggle = true;
             page.lblText.text = lang.aboutContent;
 
@@ -62,7 +63,7 @@ const pgSettings = extend(pgSettingsDesign)(
         page.onShow = function onShow(data) {
             baseOnShow && baseOnShow(data);
             sliderDrawer.enabled = true;
-            page.statusBar.ios.style = StatusBarStyle.LIGHTCONTENT;
+            Application.statusBar.ios.style = StatusBarStyle.LIGHTCONTENT;
             setThemeBox();
             applyTheme();
 
@@ -84,7 +85,7 @@ const pgSettings = extend(pgSettingsDesign)(
 
         function applyTheme() {
             var selectedTheme = theme[theme.selected];
-            page.statusBar.android && (page.statusBar.android.color = selectedTheme.topBarColor);
+            Application.statusBar.android && (Application.statusBar.android.color = selectedTheme.topBarColor);
             page.headerBar.backgroundColor = selectedTheme.topBarColor;
 
             page.swFingerprint.thumbOnColor = page.swNotifications.thumbOnColor = selectedTheme.thumbOnColor;

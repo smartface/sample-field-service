@@ -3,9 +3,9 @@
         "rau": {
             "formatVersion": "1.0.0",
             "hashType": "md5",
-            "profileKey": "9eCyMQKfzYvz92RKFVb8JcyWT18dBbtx",
+            "profileKey": "Y9h0JB4ES9AkWiberk9rpCMm0hrl7RLI",
             "revision": 1,
-            "channels": ["test","prod"],
+            "channels": ["production"],
             "meta": {
                 "isMandatory": false,
                 "url": "https://smf.to/fieldservice"
